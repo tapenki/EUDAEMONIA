@@ -1,7 +1,0 @@
-res://main.tscn
-res://shaders/colormap.gdshader
-res://UI/16px_font_theme.tres
-res://UI/18px_font_theme.tres
-res://UI/14px_font_theme.tres
-res://shaders/Highlight.gdshader
-res://shaders/Glow.gdshader
