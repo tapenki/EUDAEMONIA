@@ -5,5 +5,6 @@ res://UI/18px_font_theme.tres
 res://UI/14px_font_theme.tres
 res://shaders/Highlight.gdshader
 res://shaders/Glow.gdshader
+res://UI/version.gd
 res://UI/ui.tscn
 res://paths/blue_magic/icebomb/icebomb.tscn
