@@ -3,6 +3,7 @@ extends Node
 @export var inherited_scale = {"source" : 0.0, "multiplier" : 1.0}
 @export var inherited_damage = {"source" : 10.0, "multiplier" : 1.0}
 @export var inherited_summon_damage = {"source" : 10.0, "multiplier" : 1.0}
+@export var inherited_crit_chance = {"source" : 0.0, "multiplier" : 1.0}
 
 @export var type: String
 
@@ -27,24 +28,25 @@ signal attack_rate_modifiers(modifiers: Dictionary)
 signal attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 signal projectile_created(projectile: Projectile)
+signal attack_impact(position: Vector2, body: Node)
 
 ## summon signals
 signal summon_damage_modifiers(modifiers: Dictionary)
 
 ## damage taken signals
 signal damage_taken_modifiers(modifiers: Dictionary)
-signal damage_taken(source, damage)
+signal damage_taken(source: Node, amount: float)
 signal before_self_death(modifiers: Dictionary)
 signal self_death()
 
 ## damage dealt signals
 signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt_modifiers_no_inh(entity: Entity, modifiers: Dictionary)
-signal damage_dealt(entity: Entity, damage)
-signal attack_impact(position: Vector2, body: Node)
+signal crit_chance_modifiers(modifiers: Dictionary)
+signal damage_dealt(entity: Entity, amount: float, crits: int)
 
 ## misc signals
-signal healed(amount)
+signal healed(amount: float)
 signal upgraded(ability: Node)
 
 ### methods
@@ -68,10 +70,20 @@ func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 	attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["source"] + modifiers["source"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
-func get_damage_dealt(entity: Entity, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+func get_damage_dealt(entity: Entity, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
 	damage_dealt_modifiers.emit(entity, modifiers)
 	damage_dealt_modifiers_no_inh.emit(entity, modifiers)
+	modifiers.multiplier *= pow(2, crits)
 	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"]
+
+func get_crits(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+	crit_chance_modifiers.emit(modifiers)
+	var crit_chance = int((modifiers["source"] + inherited_crit_chance["source"]) * modifiers["multiplier"] * inherited_crit_chance["multiplier"])
+	var leftover = crit_chance % 100
+	var crits = (int)((crit_chance - leftover) * 0.01)
+	if randi_range(1, 101) <= leftover:
+		crits += 1
+	return crits
 
 ## targeting
 func get_enemy_group():
@@ -115,7 +127,7 @@ func find_target(position = owner.global_position, reach = 9999, exclude = {}):
 	return found
 
 ## instancing
-func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritance: int, velocity = Vector2(), damage: Dictionary = {"source" : 0, "multiplier" : 1}, scale: Dictionary = {"source" : 0, "multiplier" : 1}, projectile_group = owner.group):
+func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritance: int, velocity = Vector2(), projectile_group = owner.group):
 	var projectile_instance = projectile_scene.instantiate()
 	projectile_instance.global_position = position
 	projectile_instance.velocity = velocity
@@ -124,20 +136,28 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	
 	inherit(projectile_instance.ability_handler, inheritance)
 	
+	var scale = {"source" : 0, "multiplier" : 1}
 	attack_scale_modifiers.emit(scale)
 	scale["source"] += inherited_scale["source"]
 	scale["multiplier"] *= inherited_scale["multiplier"]
 	projectile_instance.ability_handler.inherited_scale = scale
 	
+	var damage = {"source" : 0, "multiplier" : 1}
 	damage_dealt_modifiers.emit(null, damage)
 	damage["source"] += inherited_damage["source"]
 	damage["multiplier"] *= inherited_damage["multiplier"]
 	projectile_instance.ability_handler.inherited_damage = damage
 	
+	var crit_chance = {"source" : 0, "multiplier" : 1}
+	crit_chance_modifiers.emit(crit_chance)
+	crit_chance["source"] += inherited_crit_chance["source"]
+	crit_chance["multiplier"] *= inherited_crit_chance["multiplier"]
+	projectile_instance.ability_handler.inherited_crit_chance = crit_chance
+	
 	projectile_created.emit(projectile_instance)
 	return projectile_instance
 
-func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int, health: int, damage: Dictionary = {"source" : 0, "multiplier" : 1}, summon_group = owner.group):
+func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int, health: int, summon_group = owner.group):
 	var summon_instance = summon_scene.instantiate()
 	summon_instance.global_position = position
 	
@@ -147,6 +167,7 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	summon_instance.max_health = health
 	summon_instance.health = health
 	
+	var damage = {"source" : 0, "multiplier" : 1}
 	var summon_damage = inherited_summon_damage.duplicate()
 	summon_damage_modifiers.emit(summon_damage)
 	summon_instance.ability_handler.inherited_summon_damage = damage

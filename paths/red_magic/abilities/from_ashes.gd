@@ -25,11 +25,6 @@ func before_self_death(modifiers) -> void:
 		modifiers["prevented"] = true
 		recovery_timer.start(5)
 		ability_handler.owner.immune(ability_handler.owner.immune_duration * 5)
-		#for entity in ability_handler.area_targets(global_position):
-			#ability_handler.apply_status(entity.ability_handler, burn_script, "burn", 10 * level)
-			#var damage = ability_handler.get_damage_dealt(entity, {"source" : 0, "multiplier" : 5 * level})
-			#ability_handler.damage_dealt.emit(entity, damage)
-			#entity.take_damage(ability_handler.owner, damage)
 		get_node("/root/Main").spawn_particles(explosion_scene, global_position, 2, get_node("/root/Main/Config").get_team_color(ability_handler.owner.group, "secondary"))
 
 func day_start(_day: int) -> void:

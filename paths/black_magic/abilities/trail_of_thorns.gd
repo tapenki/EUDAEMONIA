@@ -15,8 +15,8 @@ func movement(distance) -> void:
 	if charge >= 75:
 		charge -= 75
 		var bullet_instance = ability_handler.make_projectile(bullet, 
-			ability_handler.owner.global_position, 
-			3,
-			Vector2(),
-			{"source" : 0, "multiplier" : level})
+		ability_handler.owner.global_position, 
+		3,
+		Vector2())
+		bullet_instance.ability_handler.inherited_damage["multiplier"] *= level
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)

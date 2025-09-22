@@ -10,8 +10,8 @@ func _ready() -> void:
 	
 func attack_impact(impact_position, _body) -> void:
 	var bullet_instance = ability_handler.make_projectile(bullet, 
-		impact_position, 
-		2,
-		Vector2(),
-		{"source" : 0, "multiplier" : 0.25*level})
+	impact_position, 
+	2,
+	Vector2())
+	bullet_instance.ability_handler.inherited_damage["multiplier"] *= 0.25 * level
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)

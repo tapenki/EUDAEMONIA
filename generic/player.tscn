@@ -84,16 +84,17 @@ collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_bmx6j")
 ability_handler = NodePath("AbilityHandler")
-death_sound = null
 animation_player = NodePath("AnimationPlayer")
 max_health = 75
 health = 75.0
 immune_duration = 0.2
-group = null
-summoned = null
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_m6exy")
+inherited_crit_chance = {
+"multiplier": 1.0,
+"source": 5.0
+}
 type = "Entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]

@@ -23,8 +23,8 @@ func day_start(_day: int) -> void:
 		var projectile_instance = ability_handler.make_projectile(projectile_scene, 
 		Vector2.from_angle(TAU / total * repeat) * 150,
 		3,
-		Vector2(),
-		{"source" : 0, "multiplier" : level})
+		Vector2())
+		projectile_instance.ability_handler.inherited_damage["multiplier"] *= level
 		projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat)) * 150).angle()
 		anchor_node.add_child(projectile_instance)
 

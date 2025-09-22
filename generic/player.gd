@@ -15,7 +15,7 @@ func _ready() -> void:
 	$Sprite.modulate = get_node("/root/Main/Config").get_team_color(group, "primary")
 
 func _physics_process(_delta):
-	if health == 0:
+	if not alive:
 		return
 	if Input.is_action_pressed("fire") and not bullet_timer.running:
 		## handle fire rate

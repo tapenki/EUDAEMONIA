@@ -21,8 +21,8 @@ func day_start(_day: int) -> void:
 		var summon_instance = ability_handler.make_summon(summon, 
 		i,
 		3,  ## inheritance
-		ability_handler.owner.max_health * 0.75 + 25 * level, ## health
-		{"source" : 0, "multiplier" : level}) ## damage
+		ability_handler.owner.max_health * 0.75 + 25 * level) ## health
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= level
 		
 		var burn = summon_instance.ability_handler.grant(burn_script, "burn", 10 * level)
 		burn.damage_multiplier = 0

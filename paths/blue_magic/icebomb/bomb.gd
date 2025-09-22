@@ -31,9 +31,8 @@ func timeout() -> void:
 	global_position, ## position
 	3, ## inheritance
 	Vector2(), ## velocity
-	{"source" : stored_damage, "multiplier" : 1}, ## damage
-	{"source" : 0, "multiplier" : 1}, ## scale
 	ability_handler.get_enemy_group()) 
+	explosion_instance.ability_handler.inherited_damage["source"] += stored_damage
 	explosion_instance.scale_multiplier = 8
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)
 	

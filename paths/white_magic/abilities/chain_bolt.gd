@@ -14,7 +14,8 @@ func attack_impact(impact_position, body) -> void:
 	var reach = 160 * attack_scale
 	var target = ability_handler.find_target(impact_position, reach, {body : true})
 	if target:
-		var damage = ability_handler.get_damage_dealt(target)
+		var crits = ability_handler.get_crits()
+		var damage = ability_handler.get_damage_dealt(target, {"source" : 0, "multiplier": 1}, crits)
 		ability_handler.damage_dealt.emit(target, damage)
 		target.take_damage(ability_handler.owner, damage)
 		var particle_scale = ability_handler.get_attack_scale()

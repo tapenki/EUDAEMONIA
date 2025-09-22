@@ -18,5 +18,6 @@ func _on_lifetime_timeout() -> void:
 	hit_enabled = true
 	_physics_process(0)
 	get_node("/root/Main").spawn_particles(quake_scene, ability_handler.owner.global_position, scale.x, sprite.modulate)
-	on_collision(global_position, null)
+	var crits = ability_handler.get_crits()
+	on_collision(global_position, null, crits)
 	kill()

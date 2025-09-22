@@ -20,8 +20,8 @@ func day_start(_day: int) -> void:
 		i,
 		3,  ## inheritance
 		1, ## health
-		{"source" : 0, "multiplier" : 0.25*level}, ## damage
 		ability_handler.get_enemy_group()) ## group
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.25*level
 		
 		summon_instance.get_node("Sprite").modulate = get_node("/root/Main/Config").get_team_color(3, "secondary")
 		
