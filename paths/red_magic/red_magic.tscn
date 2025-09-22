@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://bh6uwpkbehlt4"]
+
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="1_nbhot"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_w3gqa"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_pgluk"]
+[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/red_magic/red.png" id="2_xxy61"]
+[ext_resource type="Script" uid="uid://63tkukcm2htd" path="res://paths/red_magic/abilities/ignition.gd" id="4_43p8p"]
+[ext_resource type="Script" uid="uid://cob2s8m8d821o" path="res://paths/red_magic/abilities/conflagration.gd" id="5_tdidc"]
+[ext_resource type="Script" uid="uid://c2acg4d5to8a5" path="res://paths/red_magic/abilities/firespawning.gd" id="6_pm13r"]
+[ext_resource type="Script" uid="uid://dakxjtsjabw3m" path="res://paths/red_magic/abilities/scorched_earth.gd" id="7_54vqa"]
+[ext_resource type="Script" uid="uid://byr1qnkh5xh6w" path="res://paths/red_magic/abilities/from_ashes.gd" id="8_w3gqa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgluk"]
+resource_local_to_scene = true
+font_size = 30
+outline_size = 8
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="RedMagic" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_w3gqa")
+bbcode_enabled = true
+text = "red_magic_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("2_pgluk")
+subject = "red_magic"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Ignition" parent="GridContainer" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+ability_script = ExtResource("4_43p8p")
+subject = "ignition"
+extra = "upgrade_cost"
+
+[node name="Firespawning" parent="GridContainer" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+ability_script = ExtResource("6_pm13r")
+subject = "firespawning"
+extra = "upgrade_cost"
+
+[node name="Conflagration" parent="GridContainer" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+ability_script = ExtResource("5_tdidc")
+subject = "conflagration"
+extra = "upgrade_cost"
+
+[node name="ScorchedEarth" parent="GridContainer" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+ability_script = ExtResource("7_54vqa")
+subject = "scorched_earth"
+extra = "upgrade_cost"
+
+[node name="FromAshes" parent="GridContainer" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+ability_script = ExtResource("8_w3gqa")
+subject = "from_ashes"
+extra = "upgrade_cost"
+
+[node name="Burn" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -24.0
+offset_right = -176.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_xxy61")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_pgluk")
+subject = "burn"
+
+[node name="Symbol" type="Label" parent="Burn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "bu"
+label_settings = SubResource("LabelSettings_pgluk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Burn" to="Burn" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Burn" to="Burn" method="_on_mouse_exited"]

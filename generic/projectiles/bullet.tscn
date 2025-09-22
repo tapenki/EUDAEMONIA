@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://t53js78y1xq2"]
+
+[ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_eg6ym"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_c6y3j"]
+[ext_resource type="Texture2D" uid="uid://csbg4wfwhnl4h" path="res://generic/projectiles/bullet.png" id="2_p8otf"]
+[ext_resource type="PackedScene" uid="uid://bbq18byf4kfu4" path="res://generic/particles/impact.tscn" id="2_rjaq4"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4ncq8"]
+[ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_4ncq8"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_l88f5"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="8_tprba"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 12.0
+
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_eg6ym")
+hit_particles = ExtResource("2_rjaq4")
+hit_walls = true
+ability_handler = NodePath("AbilityHandler")
+hit_sound = "Peh"
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_c6y3j")
+type = "Projectile"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("3_4ncq8")
+texture = ExtResource("2_p8otf")
+script = ExtResource("5_4ncq8")
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_l88f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("8_tprba")
+wait_time = 2.0
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

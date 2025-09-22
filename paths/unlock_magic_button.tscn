@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://de6a2lvhayf3v"]
+
+[ext_resource type="Texture2D" uid="uid://dhwddiub4fb1t" path="res://paths/mystery.png" id="1_4m7vi"]
+[ext_resource type="Script" uid="uid://diqt2c2lp0wu1" path="res://paths/unlock_magic_button.gd" id="2_p0li8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_muabv"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xm21l"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="TextureButton"]
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(30, 30)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_4m7vi")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_p0li8")
+
+[node name="Symbol" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+label_settings = SubResource("LabelSettings_muabv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 1.0
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_xm21l")
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

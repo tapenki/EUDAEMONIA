@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr0p2q0dtfxad"]
+
+[ext_resource type="Script" uid="uid://8s0b3itubosu" path="res://generic/misc/speech_label.gd" id="1_plyx0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bf8ro"]
+outline_size = 5
+outline_color = Color(1, 0, 0.501961, 1)
+
+[node name="SpeechLabel" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -11.5
+offset_right = 75.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_bf8ro")
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("1_plyx0")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Lifetime" to="." method="kill"]

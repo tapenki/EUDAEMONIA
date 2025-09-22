@@ -1,0 +1,426 @@
+[gd_scene load_steps=21 format=3 uid="uid://bmqfb01e1pny7"]
+
+[ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://UI/ui.gd" id="1_7hxr3"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="2_0w6e5"]
+[ext_resource type="Texture2D" uid="uid://d4eqbunuivgqb" path="res://UI/desc.png" id="2_4fiuh"]
+[ext_resource type="Script" uid="uid://cr7vsr2ht6436" path="res://UI/floor_number.gd" id="3_g7pr5"]
+[ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/points.gd" id="3_mom20"]
+[ext_resource type="Theme" uid="uid://ctgkksssqhxtw" path="res://UI/18px_font_theme.tres" id="3_o2jkc"]
+[ext_resource type="Theme" uid="uid://dbc5act8pigyb" path="res://UI/14px_font_theme.tres" id="5_2qbci"]
+[ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://UI/health_bar.gd" id="5_r6g2f"]
+[ext_resource type="PackedScene" uid="uid://2hguf1pilgru" path="res://paths/magic_picker.tscn" id="6_6rr40"]
+[ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://UI/version.gd" id="10_0w6e5"]
+[ext_resource type="Texture2D" uid="uid://cv53nmyylg8k6" path="res://UI/button_2.png" id="10_h81ot"]
+[ext_resource type="Script" uid="uid://b35lnmakge152" path="res://UI/stats.gd" id="13_o2jkc"]
+[ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://UI/status_container.gd" id="16_s1k1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs3jx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ihmk"]
+bg_color = Color(1, 0, 0, 1)
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbg6h"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 4
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iko4g"]
+bg_color = Color(1, 0, 1, 1)
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(1, 0, 0.498039, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_iknsa"]
+outline_size = 5
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmobw"]
+outline_size = 5
+outline_color = Color(0, 0.501961, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7hxr3")
+
+[node name="TransitionFade" type="ColorRect" parent="."]
+z_index = 25
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Description" type="RichTextLabel" parent="."]
+visible = false
+z_index = 10
+clip_contents = false
+offset_right = 240.0
+offset_bottom = 69.0
+theme = ExtResource("2_0w6e5")
+bbcode_enabled = true
+text = "Now is the time for all good men to come to the aid of the party"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Description"]
+clip_contents = false
+layout_mode = 0
+offset_top = -28.0
+offset_right = 240.0
+offset_bottom = -4.0
+theme = ExtResource("3_o2jkc")
+bbcode_enabled = true
+text = "Pyroclasm"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Description/Title"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4fiuh")
+region_rect = Rect2(0, 0, 64, 58)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+
+[node name="Extra" type="RichTextLabel" parent="Description/Title"]
+visible = false
+clip_contents = false
+layout_mode = 1
+offset_left = 20.0
+offset_top = -22.0
+offset_right = 220.0
+offset_bottom = -4.0
+theme = ExtResource("5_2qbci")
+text = "upgrade_cost"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Description/Title/Extra"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4fiuh")
+region_rect = Rect2(0, 0, 64, 58)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Description"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4fiuh")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Control" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBar" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 36.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_qs3jx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1ihmk")
+value = 50.0
+show_percentage = false
+script = ExtResource("5_r6g2f")
+
+[node name="DamageBar" type="ProgressBar" parent="Control/HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wbg6h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iko4g")
+value = 75.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50/100"
+label_settings = SubResource("LabelSettings_iknsa")
+horizontal_alignment = 1
+
+[node name="DamageTimer" type="Timer" parent="Control/HealthBar"]
+one_shot = true
+
+[node name="StatusContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 91.0
+offset_bottom = 154.0
+script = ExtResource("16_s1k1p")
+
+[node name="FloorNumber" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 16.0
+offset_right = 75.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "Floor 1"
+label_settings = SubResource("LabelSettings_qmobw")
+horizontal_alignment = 1
+script = ExtResource("3_g7pr5")
+
+[node name="UpgradeScreen" type="Control" parent="Control"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level" type="Label" parent="Control/UpgradeScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 1.0
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "upgrade points: 10"
+label_settings = SubResource("LabelSettings_4xnvd")
+horizontal_alignment = 1
+script = ExtResource("3_mom20")
+
+[node name="Version" type="Label" parent="Control/UpgradeScreen"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 77.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "ver"
+label_settings = SubResource("LabelSettings_4xnvd")
+script = ExtResource("10_0w6e5")
+
+[node name="MagicPicker1" parent="Control/UpgradeScreen" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+layout_mode = 1
+offset_top = 40.0
+offset_bottom = 40.0
+next = NodePath("../MagicPicker2")
+
+[node name="MagicPicker2" parent="Control/UpgradeScreen" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+visible = false
+layout_mode = 1
+offset_top = 160.0
+offset_bottom = 160.0
+next = NodePath("../MagicPicker3")
+
+[node name="MagicPicker3" parent="Control/UpgradeScreen" instance=ExtResource("6_6rr40")]
+visible = false
+layout_mode = 1
+offset_top = 280.0
+offset_bottom = 280.0
+
+[node name="Reset" type="Button" parent="Control/UpgradeScreen"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "reset"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/UpgradeScreen/Reset"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_h81ot")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Stats" type="Button" parent="Control/UpgradeScreen"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -80.0
+offset_right = 36.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "stats"
+flat = true
+script = ExtResource("13_o2jkc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/UpgradeScreen/Stats"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_h81ot")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Proceed" type="Button" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "start_day"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Proceed"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_h81ot")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Backdrop" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Control/UpgradeScreen/Reset" to="." method="reset"]
+[connection signal="mouse_entered" from="Control/UpgradeScreen/Stats" to="Control/UpgradeScreen/Stats" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/UpgradeScreen/Stats" to="Control/UpgradeScreen/Stats" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/Proceed" to="." method="toggle_upgrades"]

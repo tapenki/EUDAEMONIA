@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dtkug6ykfekl7"]
+
+[ext_resource type="Shader" uid="uid://ct1oy7gxf0ch" path="res://shaders/Highlight.gdshader" id="1_p0dok"]
+
+[resource]
+shader = ExtResource("1_p0dok")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/offset = 2.0

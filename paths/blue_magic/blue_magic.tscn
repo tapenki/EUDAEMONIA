@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://kgg0o211aihr"]
+
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_arg84"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="1_yxyri"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_7ka4n"]
+[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/blue_magic/blue.png" id="2_yxyri"]
+[ext_resource type="Script" uid="uid://belw8xgio8e8n" path="res://paths/blue_magic/abilities/blue_needle.gd" id="4_arg84"]
+[ext_resource type="Script" uid="uid://14lj1aqvmwxc" path="res://paths/blue_magic/abilities/snowball.gd" id="5_7ka4n"]
+[ext_resource type="Script" uid="uid://d2knr1t8wemu7" path="res://paths/blue_magic/abilities/shatter.gd" id="6_4ousf"]
+[ext_resource type="Script" uid="uid://1l8fvu5q1qf5" path="res://paths/blue_magic/abilities/ice_bombs.gd" id="8_7ka4n"]
+[ext_resource type="Script" uid="uid://ou8aagbfo4j5" path="res://paths/blue_magic/abilities/frostbite.gd" id="9_7ka4n"]
+
+[node name="BlueMagic" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 2.0
+offset_right = 62.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_arg84")
+bbcode_enabled = true
+text = "blue_magic_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("2_7ka4n")
+subject = "blue_magic"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="BlueNeedle" parent="GridContainer" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+ability_script = ExtResource("4_arg84")
+subject = "blue_needle"
+extra = "upgrade_cost"
+
+[node name="Snowball" parent="GridContainer" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+ability_script = ExtResource("5_7ka4n")
+subject = "snowball"
+extra = "upgrade_cost"
+
+[node name="Shatter" parent="GridContainer" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+ability_script = ExtResource("6_4ousf")
+subject = "shatter"
+extra = "upgrade_cost"
+
+[node name="Frostbite" parent="GridContainer" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+ability_script = ExtResource("9_7ka4n")
+subject = "frostbite"
+extra = "upgrade_cost"
+
+[node name="IceBombs" parent="GridContainer" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+ability_script = ExtResource("8_7ka4n")
+subject = "ice_bombs"
+extra = "upgrade_cost"
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

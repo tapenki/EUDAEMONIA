@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi383odcr1yg7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmobw"]
+resource_local_to_scene = true
+outline_size = 5
+outline_color = Color(0, 0.501961, 1, 1)
+
+[node name="StatusLabel" type="Label"]
+text = "Burn (15)"
+label_settings = SubResource("LabelSettings_qmobw")

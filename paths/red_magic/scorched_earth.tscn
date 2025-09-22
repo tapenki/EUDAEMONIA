@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://diq45gst5plkq"]
+
+[ext_resource type="Script" uid="uid://dl1ot8whcchll" path="res://paths/black_magic/spike.gd" id="1_ry3wi"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_7j7ie"]
+[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://generic/particles/flame.png" id="3_73dah"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_o2x1p"]
+[ext_resource type="Script" uid="uid://bpp8xt218ougu" path="res://generic/projectiles/projectile_particle_scaler.gd" id="4_73dah"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_r8bsk"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="6_7dolq"]
+
+[sub_resource type="Curve" id="Curve_mtknr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ate26"]
+curve = SubResource("Curve_mtknr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7j7ie"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 48.0
+inherit_velocity_ratio = 0.2
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 5.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ate26")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 48.0
+
+[node name="ScorchedEarth" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_ry3wi")
+hits_left = -1
+ability_handler = NodePath("AbilityHandler")
+hit_sound = "Peh"
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_7j7ie")
+type = "Projectile"
+
+[node name="Sprite" type="GPUParticles2D" parent="." node_paths=PackedStringArray("ability_handler")]
+z_index = -1
+material = ExtResource("3_o2x1p")
+amount = 12
+texture = ExtResource("3_73dah")
+process_material = SubResource("ParticleProcessMaterial_7j7ie")
+script = ExtResource("4_73dah")
+ability_handler = NodePath("../AbilityHandler")
+shrink = 1.0
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("5_r8bsk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_7dolq")
+wait_time = 1.5
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

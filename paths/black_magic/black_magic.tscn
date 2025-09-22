@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyap2b0glco33"]
+
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_w54y8"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="2_o7hfy"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_xnxfu"]
+[ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/black_magic/black.png" id="3_04yta"]
+[ext_resource type="Script" uid="uid://vmnir30qwfki" path="res://paths/black_magic/abilities/primal_casting.gd" id="4_w54y8"]
+[ext_resource type="Script" uid="uid://baylpcpkbafx6" path="res://paths/black_magic/abilities/trail_of_thorns.gd" id="5_xnxfu"]
+[ext_resource type="Script" uid="uid://bihctb7iu3yqp" path="res://paths/black_magic/abilities/quill_spray.gd" id="6_xa7n3"]
+[ext_resource type="Script" uid="uid://mahea8kqvfma" path="res://paths/black_magic/abilities/wrought_flesh.gd" id="7_m6gya"]
+[ext_resource type="Script" uid="uid://xbssb6wqbtqj" path="res://paths/black_magic/abilities/animated_clay.gd" id="8_sg6r4"]
+
+[node name="BlackMagic" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = 2.0
+offset_right = 66.0
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_w54y8")
+bbcode_enabled = true
+text = "black_magic_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("2_xnxfu")
+subject = "black_magic"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="PrimalCasting" parent="GridContainer" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+ability_script = ExtResource("4_w54y8")
+subject = "primal_casting"
+extra = "upgrade_cost"
+
+[node name="TrailOfThorns" parent="GridContainer" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+ability_script = ExtResource("5_xnxfu")
+subject = "trail_of_thorns"
+extra = "upgrade_cost"
+
+[node name="QuillSpray" parent="GridContainer" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+ability_script = ExtResource("6_xa7n3")
+subject = "quill_spray"
+extra = "upgrade_cost"
+
+[node name="WroughtFlesh" parent="GridContainer" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+ability_script = ExtResource("7_m6gya")
+subject = "wrought_flesh"
+extra = "upgrade_cost"
+
+[node name="AnimatedClay" parent="GridContainer" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+ability_script = ExtResource("8_sg6r4")
+subject = "animated_clay"
+extra = "upgrade_cost"
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

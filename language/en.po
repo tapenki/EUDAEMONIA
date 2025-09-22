@@ -1,0 +1,236 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: eudamonia\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# ui
+msgid "continue"
+msgstr "Continue"
+
+msgid "start_day"
+msgstr "Start Day"
+
+msgid "end_day"
+msgstr "End Day"
+
+msgid "reset"
+msgstr "Reset"
+
+msgid "stats"
+msgstr "Stats"
+
+# paths
+msgid "upgrade_point_counter"
+msgstr "Incrementos: %s"
+
+msgid "unlock_point_counter"
+msgstr "Lucidae: %s"
+
+msgid "path_picker"
+msgstr "Choose your path"
+
+msgid "upgrade_cost"
+msgstr "Cost: 1 Incremento"
+
+msgid "unlock_cost"
+msgstr "Cost: 1 Lucidae"
+
+# red
+msgid "red_magic_title"
+msgstr "[outline_color=#ff0000]Red Magic[/outline_color]"
+
+msgid "red_magic_description"
+msgstr "Set people on fire yay !!!"
+
+msgid "ignition_title"
+msgstr "[outline_color=#ff0000]Ch.1: Ignition[/outline_color]"
+
+msgid "ignition_description"
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10][+3xLEVEL][/outline_size] [outline_color=#ff0000]Burn[/outline_color]."
+
+msgid "firespawning_title"
+msgstr "[outline_color=#ff0000]Ch.2: Firespawning[/outline_color]"
+
+msgid "firespawning_description"
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][+0.75xMAXHP+25xLEVEL][/outline_size] health, [outline_size=10][xLEVEL][/outline_size] damage, and are cloaked in [outline_color=#ff0000]Burn[/outline_color]."
+
+msgid "conflagration_title"
+msgstr "[outline_color=#ff0000]Ch.3: Conflagration[/outline_color]"
+
+msgid "conflagration_description"
+msgstr "[outline_size=10]Upon friend/foe demise:[/outline_size] It spreads [outline_size=10][x0.5xLEVEL][/outline_size] of its [outline_color=#ff0000]Burn[/outline_color] to the nearest foe."
+
+msgid "scorched_earth_title"
+msgstr "[outline_color=#ff0000]Ch.4: Scorched Earth[/outline_color]"
+
+msgid "scorched_earth_description"
+msgstr "[outline_size=10]Upon attack impact:[/outline_size] Leave a pool of fire that deals [outline_size=10][x0.25xLEVEL][/outline_size] damage."
+
+msgid "from_ashes_title"
+msgstr "[outline_color=#ff0000]Ch.5: From Ashes[/outline_color]"
+
+msgid "from_ashes_description"
+msgstr "[outline_size=10]Once a day, upon imminent demise:[/outline_size] Escape your fate and recover [outline_size=10][+10xLEVEL][/outline_size] health per second over [outline_size=10][5][/outline_size] seconds."
+
+msgid "burn_title"
+msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
+
+msgid "burn_description"
+msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second. Expires after dealing damage [outline_size=10][5][/outline_size] times. Reapplying [outline_color=#ff0000]Burn[/outline_color] resets expiration."
+
+# blue
+msgid "blue_magic_title"
+msgstr "[outline_color=#0000ff]Blue Magic[/outline_color]"
+
+msgid "blue_magic_description"
+msgstr "Set people on ice yay !!!"
+
+msgid "blue_needle_title"
+msgstr "[outline_color=#0000ff]Ch.1: Blue Needle[/outline_color]"
+
+msgid "blue_needle_description"
+msgstr "Your projectiles gain [outline_size=10][+LEVEL][/outline_size] pierce."
+
+msgid "snowball_title"
+msgstr "[outline_color=#0000ff]Ch.2: Snowball[/outline_color]"
+
+msgid "snowball_description"
+msgstr "Your projectiles gain [outline_size=10][x0.25xLEVEL][/outline_size] damage and size per second."
+
+msgid "shatter_title"
+msgstr "[outline_color=#0000ff]Ch.3: Shatter[/outline_color]"
+
+msgid "shatter_description"
+msgstr "[outline_size=10]Upon foe demise:[/outline_size] It releases 4 bullets with [outline_size=10][xLEVEL][/outline_size] damage."
+
+msgid "frostbite_title"
+msgstr "[outline_color=#0000ff]Ch.4: Frostbite[/outline_color]"
+
+msgid "frostbite_description"
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply a [outline_size=10][x0.8][/outline_size] speed [outline_color=#0000ff]Chill[/outline_color] for [outline_size=10][+0.5xLEVEL][/outline_size] seconds."
+
+msgid "ice_bombs_title"
+msgstr "[outline_color=#0000ff]Ch.5: Ice Bombs[/outline_color]"
+
+msgid "ice_bombs_description"
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][2][/outline_size] ice bombs. They have [outline_size=10][x0.25xLEVEL][/outline_size] damage and explode dealing [outline_size=10][+TOTALDAMAGETAKEN][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
+
+# black
+msgid "black_magic_title"
+msgstr "[outline_color=#ff00ff]Black Magic[/outline_color]"
+
+msgid "black_magic_description"
+msgstr "Whichcraft !!!"
+
+msgid "primal_casting_title"
+msgstr "[outline_color=#ff00ff]Ch.1: Primal Casting[/outline_color]"
+
+msgid "primal_casting_description"
+msgstr "Gain [outline_size=10][+0.04xMAXHPxLEVEL][/outline_size] damage."
+
+msgid "trail_of_thorns_title"
+msgstr "[outline_color=#ff00ff]Ch.2: Trail of Thorns[/outline_color]"
+
+msgid "trail_of_thorns_description"
+msgstr "[outline_size=10]Every [75]px moved:[/outline_size] Manifest a thorn that deals [outline_size=10][xLEVEL][/outline_size] damage."
+
+msgid "quill_spray_title"
+msgstr "[outline_color=#ff00ff]Ch.3: Quill Spray[/outline_color]"
+
+msgid "quill_spray_description"
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Deal [outline_size=10][x2xLEVEL][/outline_size] damage to nearby foes."
+
+msgid "wrought_flesh_title"
+msgstr "[outline_color=#ff00ff]Ch.4: Wrought Flesh[/outline_color]"
+
+msgid "wrought_flesh_description"
+msgstr "Gain [outline_size=10][+25xLEVEL][/outline_size] max health. Recover [outline_size=10][+LEVEL][/outline_size] health per second."
+
+msgid "animated_clay_title"
+msgstr "[outline_color=#ff00ff]Ch.5: Animated Clay[/outline_color]"
+
+msgid "animated_clay_description"
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10][+MAXHP+0.5xMAXHPxLEVEL][/outline_size] health, [outline_size=10][xLEVEL][/outline_size] damage, and most of your abilities."
+
+# white
+msgid "white_magic_title"
+msgstr "[outline_color=#c19100]White Magic[/outline_color]"
+
+msgid "white_magic_description"
+msgstr "I stared at the sun. It stared back."
+
+msgid "chain_bolt_title"
+msgstr "[outline_color=#c19100]Ch.1: Chain Bolt[/outline_color]"
+
+msgid "chain_bolt_description"
+msgstr "[outline_size=10]Upon attack impact:[/outline_size] Chain damage to the closest enemy within [outline_size=10][80+80xLEVEL][/outline_size]px."
+
+msgid "luminance_title"
+msgstr "[outline_color=#c19100]Ch.2: Luminance[/outline_color]"
+
+msgid "luminance_description"
+msgstr "Gain [outline_size=10][x0.2xLEVEL][/outline_size] attack size. [outline_size=10][x0.1xLEVEL][/outline_size] of your attack size also applies to damage."
+
+msgid "guiding_light_title"
+msgstr "[outline_color=#c19100]Ch.3: Guiding Light[/outline_color]"
+
+msgid "guiding_light_description"
+msgstr "Your projectiles home into enemies within [outline_size=10][50+50xLEVEL][/outline_size]px."
+
+msgid "ball_lightning_title"
+msgstr "[outline_color=#c19100]Ch.4: Ball Lightning[/outline_color]"
+
+msgid "ball_lightning_description"
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][3][/outline_size] ball lightnings orbiting around you. They have [outline_size=10][xLEVEL][/outline_size] damage."
+
+msgid "thunderstep_title"
+msgstr "[outline_color=#c19100]Ch.5: Thunderstep[/outline_color]"
+
+msgid "thunderstep_description"
+msgstr "Gain [outline_size=10][+50xLEVEL][/outline_size] move speed. [outline_size=10]Every [225]px moved:[/outline_size] Activate attack impact."
+
+# spheres
+msgid "day_counter"
+msgstr "Day %s"
+
+msgid "vasis_title"
+msgstr "Sphere 1: Vasis"
+
+msgid "thayma_title"
+msgstr "Sphere 2: Thayma"
+
+msgid "aporia_title"
+msgstr "Sphere 3: Aporia"
+
+msgid "pandemonium_title"
+msgstr "Sphere 4+: Pandemonium"
+
+# quotes
+
+msgid "giga_leaper_spawn_1"
+msgstr "here i come >:)"
+
+msgid "giga_leaper_spawn_2"
+msgstr "i will kill u >:)"
+
+msgid "giga_leaper_death_1"
+msgstr "ahh i lose !!!"
+
+msgid "giga_leaper_death_2"
+msgstr "grrgghn >:("
+
+msgid "giga_spitter_spawn_1"
+msgstr "here i come >:)"
+
+msgid "giga_spitter_spawn_2"
+msgstr "u will die >:)"
+
+msgid "giga_spitter_death_1"
+msgstr "ahh u win !!!"
+
+msgid "giga_spitter_death_2"
+msgstr "adfsfds >:("

@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://dovdyljqfid6t"]
+
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_ck6cw"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_pew5m"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="2_qkm14"]
+[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/white_magic/white.png" id="3_c6jgr"]
+[ext_resource type="Script" uid="uid://cppauk3a44kev" path="res://paths/white_magic/abilities/chain_bolt.gd" id="4_ajj5m"]
+[ext_resource type="Script" uid="uid://cem3cs4m56slv" path="res://paths/white_magic/abilities/luminance.gd" id="5_ck6cw"]
+[ext_resource type="Script" uid="uid://bbtrwemtee5su" path="res://paths/white_magic/abilities/guiding_light.gd" id="6_pew5m"]
+[ext_resource type="Script" uid="uid://bvn3jbh3dqo3y" path="res://paths/white_magic/abilities/ball_lightning.gd" id="7_ck6cw"]
+[ext_resource type="Script" uid="uid://ma02fuxa1p05" path="res://paths/white_magic/abilities/thunderstep.gd" id="7_i0tbc"]
+
+[node name="WhiteMagic" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 2.0
+offset_right = 67.0
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_ck6cw")
+bbcode_enabled = true
+text = "white_magic_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("2_pew5m")
+subject = "white_magic"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="ChainBolt" parent="GridContainer" instance=ExtResource("2_qkm14")]
+layout_mode = 2
+texture_normal = ExtResource("3_c6jgr")
+ability_script = ExtResource("4_ajj5m")
+subject = "chain_bolt"
+extra = "upgrade_cost"
+
+[node name="Luminance" parent="GridContainer" instance=ExtResource("2_qkm14")]
+layout_mode = 2
+texture_normal = ExtResource("3_c6jgr")
+ability_script = ExtResource("5_ck6cw")
+subject = "luminance"
+extra = "upgrade_cost"
+
+[node name="GuidingLight" parent="GridContainer" instance=ExtResource("2_qkm14")]
+layout_mode = 2
+texture_normal = ExtResource("3_c6jgr")
+ability_script = ExtResource("6_pew5m")
+subject = "guiding_light"
+extra = "upgrade_cost"
+
+[node name="BallLightning" parent="GridContainer" instance=ExtResource("2_qkm14")]
+layout_mode = 2
+texture_normal = ExtResource("3_c6jgr")
+ability_script = ExtResource("7_ck6cw")
+subject = "ball_lightning"
+extra = "upgrade_cost"
+
+[node name="Thunderstep" parent="GridContainer" instance=ExtResource("2_qkm14")]
+layout_mode = 2
+texture_normal = ExtResource("3_c6jgr")
+ability_script = ExtResource("7_i0tbc")
+subject = "thunderstep"
+extra = "upgrade_cost"
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
