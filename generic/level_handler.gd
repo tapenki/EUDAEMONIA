@@ -205,7 +205,7 @@ func check_finished(dying_entity):
 		if not players_alive:
 			failed.emit()
 			camera.get_node("AnimationPlayer").play("ZOOM")
-	else: ## check day progress
+	elif not dying_entity.summoned: ## check day progress
 		var enemies_alive = false
 		for entity in get_node("/root/Main/Entities").get_children():
 			if not entity.is_queued_for_deletion() and entity.alive and entity.group == 2 and not entity.summoned:

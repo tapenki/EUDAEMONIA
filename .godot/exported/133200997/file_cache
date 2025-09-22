@@ -1,6 +1,6 @@
 res://generic/misc/Breaker/Breaker.tscn::dc24abc5a07858196cdce3765f322722::1758110587::res://.godot/exported/133200997/export-c80b102d1c0500d4555a329b6c7f101e-Breaker.scn
 res://generic/misc/speech_label.tscn::564149277696a19cdb2659a89d89b037::1757190004::res://.godot/exported/133200997/export-9f8ddc78608918c5305a49de6b85fd95-speech_label.scn
-res://generic/particles/burn.tscn::8055e72682d0aacf1a24d873aaf1c1d9::1758527186::res://.godot/exported/133200997/export-d4c7177323d4d4bc2586678c65464e98-burn.scn
+res://generic/particles/burn.tscn::8055e72682d0aacf1a24d873aaf1c1d9::1758529405::res://.godot/exported/133200997/export-d4c7177323d4d4bc2586678c65464e98-burn.scn
 res://generic/particles/charge.tscn::c5e003ab52bf4432b4a25c98004d7812::1756828558::res://.godot/exported/133200997/export-461b3c0517f3b42a5ae82257a7e68682-charge.scn
 res://generic/particles/explosion.tscn::2339a59c6870d262b502112595433756::1758175144::res://.godot/exported/133200997/export-e93962c5d14ef9efdf5be6a6dc63826a-explosion.scn
 res://generic/particles/firebeam.tscn::7b5f14317cd0554e7db231d02f6b5f24::1758175143::res://.godot/exported/133200997/export-6557992f54d118cd98ad340c680e9c9b-firebeam.scn
@@ -17,12 +17,12 @@ res://paths/black_magic/clay/clay.tscn::7cc0972d9e5006514b75b77656911219::175811
 res://paths/black_magic/black_magic.tscn::ae87e231cdca0cd29eb1dfd5d64396f5::1758358794::res://.godot/exported/133200997/export-6c727433bd89945e74307dfccb718c54-black_magic.scn
 res://paths/black_magic/quills.tscn::be7266becc0275fd352963161c3deea5::1757043273::res://.godot/exported/133200997/export-87da452816c69f1618d93f3ca4cd053f-quills.scn
 res://paths/black_magic/spike.tscn::c7edfe0b9b3bbba0a80a13fea33e4769::1758175143::res://.godot/exported/133200997/export-c790b7633c4ef409f2eafc36ce3976e7-spike.scn
-res://paths/blue_magic/icebomb/icebomb.tscn::7aec8c776ccda2511ee21faf724a6d7e::1758080324::res://.godot/exported/133200997/export-49aa940c5e60d82dceadfe50a96378d5-icebomb.scn
+res://paths/blue_magic/icebomb/icebomb.tscn::0f422a9bc1735863266fa08855be5e08::1758532672::res://.godot/exported/133200997/export-49aa940c5e60d82dceadfe50a96378d5-icebomb.scn
 res://paths/blue_magic/blue_magic.tscn::942fd92f82ed215bc288f0fb7ef481de::1758358794::res://.godot/exported/133200997/export-933c5d7a651ae325b693a19fcd47227f-blue_magic.scn
 res://paths/red_magic/flaming_skull/flaming_skull.tscn::86006a53fc59e819088a6ddb25c62239::1758110835::res://.godot/exported/133200997/export-5420dbfd4c200cf965f09615599bb5ea-flaming_skull.scn
 res://paths/red_magic/red_magic.tscn::64799ab917131bbcd1aca9ceb9810b59::1758358794::res://.godot/exported/133200997/export-365dd24c5470e90e8b8d89ac821635f8-red_magic.scn
 res://paths/red_magic/scorched_earth.tscn::a2073ddbd77f6cf495fe7063506b186f::1758175143::res://.godot/exported/133200997/export-97ba30738b127875e05bae39e15d260a-scorched_earth.scn
-res://paths/white_magic/ball_lightning.tscn::5facde3ca3046c1e1d126a030086d0a9::1758527186::res://.godot/exported/133200997/export-8c2456caffcad7062ae7fe975a1914ff-ball_lightning.scn
+res://paths/white_magic/ball_lightning.tscn::5facde3ca3046c1e1d126a030086d0a9::1758529405::res://.godot/exported/133200997/export-8c2456caffcad7062ae7fe975a1914ff-ball_lightning.scn
 res://paths/white_magic/white_magic.tscn::6186ee73ef5b3dc35619606d978f9698::1758358795::res://.godot/exported/133200997/export-5b0881ac334490d0d10194dca1ad3553-white_magic.scn
 res://paths/white_magic/zap.tscn::afb89578329b601bd3432a854ac90260::1758175144::res://.godot/exported/133200997/export-2e5620abcef56699564ca4e11c1bc226-zap.scn
 res://paths/white_magic/zapbeam.tscn::9f558c07523562a7ee90b68348cc56d8::1758175143::res://.godot/exported/133200997/export-c6948d1e363cd105dcb45c0b338bf135-zapbeam.scn
@@ -40,9 +40,9 @@ res://spheres/vasis/giga_leaper/giga_leaper.tscn::c4f77a7d3711f08313c023b5066ac0
 res://spheres/vasis/giga_spitter/giga_spitter.tscn::3e07064680b006f47db2bf92eba7ed9a::1758435799::res://.godot/exported/133200997/export-f07bc5d8fd9280ff1d79253c1e3e072f-giga_spitter.scn
 res://spheres/vasis/leaper/leaper.tscn::2c1f245f1464188f3e720873e066d70e::1758111010::res://.godot/exported/133200997/export-4f31ef196b36e2a892133326532e0307-leaper.scn
 res://spheres/vasis/spitter/spitter.tscn::837c097eb6223a93c731804c5d55a493::1758435799::res://.godot/exported/133200997/export-f1d1d45c5a4381d1cb0e3ca1041c0031-spitter.scn
-res://UI/14px_font_theme.tres::5b4cf11b5dbea28cf5ebc67fe9598a90::1758525100::res://.godot/exported/133200997/export-36cea53102106c90c31d73c5eed64016-14px_font_theme.res
-res://UI/16px_font_theme.tres::70df449e4ea509e2208eea7763e82d55::1758525100::res://.godot/exported/133200997/export-a8fe222e5455b68c84c90177c291175b-16px_font_theme.res
-res://UI/18px_font_theme.tres::1ec174627092dd94308dd55ee12f3faa::1758525100::res://.godot/exported/133200997/export-a8b6b75ea3c2ab465841f23202ed52e4-18px_font_theme.res
+res://UI/14px_font_theme.tres::5b4cf11b5dbea28cf5ebc67fe9598a90::1758532672::res://.godot/exported/133200997/export-36cea53102106c90c31d73c5eed64016-14px_font_theme.res
+res://UI/16px_font_theme.tres::70df449e4ea509e2208eea7763e82d55::1758532672::res://.godot/exported/133200997/export-a8fe222e5455b68c84c90177c291175b-16px_font_theme.res
+res://UI/18px_font_theme.tres::1ec174627092dd94308dd55ee12f3faa::1758532672::res://.godot/exported/133200997/export-a8b6b75ea3c2ab465841f23202ed52e4-18px_font_theme.res
 res://UI/status_label.tscn::6cde43640ff6f14141b7d26e24e03f88::1755256677::res://.godot/exported/133200997/export-f0a31be4c3c427be3abe1a5d154520ee-status_label.scn
-res://UI/ui.tscn::a62a4236e03b8c23d2769b660745a1c8::1758527186::res://.godot/exported/133200997/export-ab418935c2d2d9c123b4df008070945e-ui.scn
-res://main.tscn::2c188d2277073b5c0f0f34cc6687901f::1758527186::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://UI/ui.tscn::a62a4236e03b8c23d2769b660745a1c8::1758532672::res://.godot/exported/133200997/export-ab418935c2d2d9c123b4df008070945e-ui.scn
+res://main.tscn::2c188d2277073b5c0f0f34cc6687901f::1758532672::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn

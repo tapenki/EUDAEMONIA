@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func damage_taken(_source, damage) -> void:
 	stored_damage += damage
-	if not explosion_timer.running:
+	if not explosion_timer.running and ability_handler.owner.alive:
 		explosion_timer.start(3)
 		ability_handler.owner.get_node("AnimationPlayer").play("PRIMED")
 
