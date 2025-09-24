@@ -1,7 +1,7 @@
 extends Node
 
 func erase():
-	var save_file = FileAccess.open("user://save", FileAccess.WRITE)
+	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
 	save_file.store_var({"version" : ""})
 
 func write():
@@ -17,13 +17,13 @@ func write():
 	for ability in get_node("/root/Main/Entities/Player/AbilityHandler").get_children():
 		if AbilityData.ability_data[ability.name]["type"] != "status":
 			save_data["abilities"][ability.name] = ability.write()
-	var save_file = FileAccess.open("user://save", FileAccess.WRITE)
+	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
 	save_file.store_var(save_data)
 
 func read():
-	if not FileAccess.file_exists("user://save"):
+	if not FileAccess.file_exists("user://run_save"):
 		return
-	var save_file = FileAccess.open("user://save", FileAccess.READ)
+	var save_file = FileAccess.open("user://run_save", FileAccess.READ)
 	var save_data = save_file.get_var()
 	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
 		return

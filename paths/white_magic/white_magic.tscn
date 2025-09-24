@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dovdyljqfid6t"]
+[gd_scene load_steps=6 format=3 uid="uid://dovdyljqfid6t"]
 
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_ck6cw"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_pew5m"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="2_qkm14"]
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/white_magic/white.png" id="3_c6jgr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pmft3"]
+resource_local_to_scene = true
+font_size = 30
+outline_size = 8
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="WhiteMagic" type="Control"]
 layout_mode = 3
@@ -72,5 +78,40 @@ texture_normal = ExtResource("3_c6jgr")
 subject = "thunderstep"
 extra = "upgrade_cost"
 
+[node name="Crit" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -24.0
+offset_right = -176.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_c6jgr")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("2_pew5m")
+subject = "crit"
+
+[node name="Symbol" type="Label" parent="Crit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "cr"
+label_settings = SubResource("LabelSettings_pmft3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Crit" to="Crit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Crit" to="Crit" method="_on_mouse_exited"]

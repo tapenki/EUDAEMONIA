@@ -15,7 +15,7 @@ func _ready() -> void:
 	symbol_label.text = subject.substr(0, 2)
 
 func _on_pressed() -> void:
-	if ui.upgrade_points >= 1:
+	if not ui.defeated and ui.upgrade_points >= 1:
 		ui.upgrade_points -= 1
 		point_counter.update(0)
 		ui.paths.append(subject)

@@ -19,7 +19,7 @@ func _ready() -> void:
 		level_label.text = str(int(ability_node.level))
 
 func _on_pressed() -> void:
-	if ui.upgrade_points >= 1:
+	if not ui.defeated and ui.upgrade_points >= 1:
 		ui.upgrade_points -= 1
 		ability_handler.upgrade(subject, 1)
 		point_counter.update(0)
