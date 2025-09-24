@@ -22,7 +22,7 @@ func _physics_process(delta):
 	for body in get_overlapping_bodies():
 		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
 			exclude[body] = hit_delay
-			var crits = ability_handler.get_crits()
+			var crits = ability_handler.get_crits(body)
 			var damage = ability_handler.get_damage_dealt(body, damage_modifiers, crits)
 			on_hit(body, damage, crits)
 			body.take_damage(ability_handler.owner, damage)

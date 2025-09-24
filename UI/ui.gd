@@ -10,7 +10,7 @@ extends Node
 @onready var proceed = $"Control/Proceed"
 @onready var upgrades = $"Control/UpgradeScreen"
 
-var upgrade_points = 2
+var upgrade_points = 20
 var paths: Array
 
 func _ready() -> void:

@@ -142,7 +142,7 @@ initial_state = NodePath("KeepDistance")
 process_mode = 4
 script = ExtResource("4_06c27")
 speed = 250
-back_off_distance = 150
+back_off_distance = 250
 close_in_distance = 450
 next = NodePath("../PrepareAttack")
 

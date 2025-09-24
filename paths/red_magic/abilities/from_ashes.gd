@@ -24,7 +24,7 @@ func before_self_death(modifiers) -> void:
 		active = false
 		modifiers["prevented"] = true
 		recovery_timer.start(5)
-		ability_handler.owner.immune(ability_handler.owner.immune_duration * 5)
+		ability_handler.owner.immune(ability_handler.get_immune_duration({"source" : ability_handler.owner.immune_duration, "multiplier" : 4}))
 		get_node("/root/Main").spawn_particles(explosion_scene, global_position, 2, Config.get_team_color(ability_handler.owner.group, "secondary"))
 
 func day_start(_day: int) -> void:

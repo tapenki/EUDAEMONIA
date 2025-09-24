@@ -96,8 +96,8 @@ var ability_data = {
 		"script" : preload("res://paths/white_magic/abilities/chain_bolt.gd"),
 		"type" : "upgrade"
 	},
-	"luminance" : {
-		"script" : preload("res://paths/white_magic/abilities/luminance.gd"),
+	"mortal_shock" : {
+		"script" : preload("res://paths/white_magic/abilities/mortal_shock.gd"),
 		"type" : "upgrade"
 	},
 	"guiding_light" : {

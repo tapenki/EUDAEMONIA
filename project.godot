@@ -16,6 +16,7 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/use_filter=false
+boot_splash/image="uid://crse1sc8yl64f"
 config/icon="uid://dl3undunmonyt"
 boot_splash/snap/snap_2d_transforms_to_pixel=false
 boot_splash/rendering_method.web="gl_compatibility"

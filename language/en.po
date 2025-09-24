@@ -167,13 +167,13 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#c19100]Ch.1: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "[outline_size=10]Upon attack impact:[/outline_size] Chain damage to the closest enemy within [outline_size=10][80+80xLEVEL][/outline_size]px."
+msgstr "Gain [outline_size=10][+10xLEVEL][/outline_size]% crit chance. [outline_size=10]Upon dealing crit damage:[/outline_size] Chain damage to the closest enemy within [outline_size=10][80+80xLEVEL][/outline_size]px."
 
-msgid "luminance_title"
-msgstr "[outline_color=#c19100]Ch.2: Luminance[/outline_color]"
+msgid "mortal_shock_title"
+msgstr "[outline_color=#c19100]Ch.2: Mortal Shock[/outline_color]"
 
-msgid "luminance_description"
-msgstr "Gain [outline_size=10][x0.2xLEVEL][/outline_size] attack size. [outline_size=10][x0.1xLEVEL][/outline_size] of your attack size also applies to damage."
+msgid "mortal_shock_description"
+msgstr "Gain [outline_size=10][+25xLEVEL][/outline_size]% crit chance against undamaged foes and [outline_size=10][+5xLEVEL][/outline_size] damage on crit."
 
 msgid "guiding_light_title"
 msgstr "[outline_color=#c19100]Ch.3: Guiding Light[/outline_color]"
@@ -191,7 +191,7 @@ msgid "thunderstep_title"
 msgstr "[outline_color=#c19100]Ch.5: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
-msgstr "Gain [outline_size=10][+50xLEVEL][/outline_size] move speed. [outline_size=10]Every [225]px moved:[/outline_size] Activate attack impact."
+msgstr "Gain [outline_size=10][+50xLEVEL][/outline_size] move speed and [outline_size=10][+0.2xLEVEL][/outline_size] seconds of immunity when hit."
 
 # spheres
 msgid "day_counter"

@@ -136,17 +136,17 @@ type = "Entity"
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_oicv5")
-initial_state = NodePath("CloseIn")
+initial_state = NodePath("KeepDistance")
 
-[node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="KeepDistance" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_5mgv0")
 speed = 250
-back_off_distance = 150
+back_off_distance = 250
 close_in_distance = 450
 next = NodePath("../PrepareAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/CloseIn" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/KeepDistance" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_5mgv0")
 wait_time = 0.8
 ability_handler = NodePath("../../../AbilityHandler")
@@ -179,7 +179,7 @@ process_mode = 4
 script = ExtResource("7_5qife")
 backoff_speed = 150
 backoff_distance = 150
-next = NodePath("../CloseIn")
+next = NodePath("../KeepDistance")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_5mgv0")
@@ -226,7 +226,7 @@ libraries = {
 }
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/CloseIn/Timer" to="StateHandler/CloseIn" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/KeepDistance/Timer" to="StateHandler/KeepDistance" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]

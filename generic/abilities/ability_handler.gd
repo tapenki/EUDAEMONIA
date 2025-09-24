@@ -37,14 +37,15 @@ signal summon_damage_modifiers(modifiers: Dictionary)
 
 ## damage taken signals
 signal damage_taken_modifiers(modifiers: Dictionary)
+signal immune_duration_modifiers(modifiers: Dictionary)
 signal damage_taken(source: Node, amount: float)
 signal before_self_death(modifiers: Dictionary)
 signal self_death()
 
 ## damage dealt signals
-signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
+signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary, crits: int)
 signal inh_damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
-signal crit_chance_modifiers(modifiers: Dictionary)
+signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, amount: float, crits: int)
 
 ## misc signals
@@ -63,6 +64,10 @@ func get_health(health: float, max_health: float):
 	var final_health = final_max_health - max_health + health
 	return {"health" : final_health, "max_health" : final_max_health}
 
+func get_immune_duration(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+	immune_duration_modifiers.emit(modifiers)
+	return modifiers["source"] * modifiers["multiplier"]
+
 func get_move_speed(source: float):
 	var modifiers = {"source" : source, "multiplier" : 1}
 	move_speed_modifiers.emit(modifiers)
@@ -77,14 +82,14 @@ func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 	inh_attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["source"] + modifiers["source"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
-func get_damage_dealt(entity: Entity, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
-	damage_dealt_modifiers.emit(entity, modifiers)
+func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
+	damage_dealt_modifiers.emit(entity, modifiers, crits)
 	inh_damage_dealt_modifiers.emit(entity, modifiers)
 	modifiers.multiplier *= 1 + crits
 	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"]
 
-func get_crits(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
-	crit_chance_modifiers.emit(modifiers)
+func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+	crit_chance_modifiers.emit(entity, modifiers)
 	var crit_chance = int((modifiers["source"] + inherited_crit_chance["source"]) * modifiers["multiplier"] * inherited_crit_chance["multiplier"])
 	var leftover = crit_chance % 100
 	var crits = (int)((crit_chance - leftover) * 0.01)

@@ -20,6 +20,7 @@ var alive = true
 
 func _ready() -> void:
 	immune_timer.ability_handler = ability_handler
+	immune_timer.wait_time = 0
 	add_child(immune_timer)
 
 func kill():
@@ -34,14 +35,15 @@ func kill():
 		get_node("/root/Main").play_sound(death_sound)
 
 func immune(duration: float):
-	immune_timer.start(duration)
+	if immune_timer.time_left < duration:
+		immune_timer.start(duration)
 
 func take_damage(source, damage, immune_affected = true):
-	if immune_duration > 0 and immune_affected:
+	if immune_affected:
 		if immune_timer.running:
 			return
 		else:
-			immune(immune_duration)
+			immune(ability_handler.get_immune_duration({"source" : immune_duration, "multiplier" : 1}))
 	
 	var modified_damage = {"source" : damage, "multiplier" : 1}
 	ability_handler.damage_taken_modifiers.emit(modified_damage)
