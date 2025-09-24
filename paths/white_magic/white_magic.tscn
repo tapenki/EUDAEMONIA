@@ -60,10 +60,10 @@ texture_normal = ExtResource("3_c6jgr")
 subject = "mortal_shock"
 extra = "upgrade_cost"
 
-[node name="GuidingLight" parent="GridContainer" instance=ExtResource("2_qkm14")]
+[node name="Electromagnetism" parent="GridContainer" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
-subject = "guiding_light"
+subject = "electromagnetism"
 extra = "upgrade_cost"
 
 [node name="BallLightning" parent="GridContainer" instance=ExtResource("2_qkm14")]

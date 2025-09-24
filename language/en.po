@@ -167,13 +167,13 @@ msgid "white_magic_title"
 msgstr "[outline_color=#c19100]White Magic[/outline_color]"
 
 msgid "white_magic_description"
-msgstr "I stared at the sun. It stared back."
+msgstr "HELP I CANT SEE."
 
 msgid "chain_bolt_title"
 msgstr "[outline_color=#c19100]Ch.1: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[10xLEVEL]%[/outline_size] crit chance. [outline_size=10]Upon dealing crit damage:[/outline_size] Chain damage to the closest enemy within [outline_size=10][80+80xLEVEL]px[/outline_size]."
+msgstr "Gain [outline_size=10]+[10xLEVEL]%[/outline_size] crit chance. [outline_size=10]Upon dealing crit damage:[/outline_size] Chain damage to the closest foe up to [outline_size=10][LEVEL][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#c19100]Ch.2: Mortal Shock[/outline_color]"
@@ -181,10 +181,10 @@ msgstr "[outline_color=#c19100]Ch.2: Mortal Shock[/outline_color]"
 msgid "mortal_shock_description"
 msgstr "Gain [outline_size=10]+[25xLEVEL]%[/outline_size] crit chance against undamaged foes and [outline_size=10]+[5xLEVEL][/outline_size] damage on crit."
 
-msgid "guiding_light_title"
-msgstr "[outline_color=#c19100]Ch.3: Guiding Light[/outline_color]"
+msgid "electromagnetism_title"
+msgstr "[outline_color=#c19100]Ch.3: Electromagnetism[/outline_color]"
 
-msgid "guiding_light_description"
+msgid "electromagnetism_description"
 msgstr "Your projectiles home into enemies within [outline_size=10][50+50xLEVEL]px[/outline_size]."
 
 msgid "ball_lightning_title"

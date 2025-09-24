@@ -100,8 +100,8 @@ var ability_data = {
 		"script" : preload("res://paths/white_magic/abilities/mortal_shock.gd"),
 		"type" : "upgrade"
 	},
-	"guiding_light" : {
-		"script" : preload("res://paths/white_magic/abilities/guiding_light.gd"),
+	"electromagnetism" : {
+		"script" : preload("res://paths/white_magic/abilities/electromagnetism.gd"),
 		"type" : "upgrade"
 	},
 	"ball_lightning" : {
