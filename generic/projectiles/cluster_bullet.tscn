@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cgo5td5wvfpg7" path="res://generic/projectiles/cluster_bullet.png" id="5_6hcmq"]
 [ext_resource type="Script" uid="uid://g3ciujifhff6" path="res://generic/misc/sprite_spin.gd" id="6_mhfv3"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="7_hkirg"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="9_3n7ey"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="9_3n7ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 20.0

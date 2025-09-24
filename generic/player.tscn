@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="3_s1j76"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entity_sprite.gd" id="4_5wsru"]
 [ext_resource type="Texture2D" uid="uid://b73lo0seio076" path="res://generic/player_hurt.png" id="5_lsmwm"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="8_3wbf3"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="8_3wbf3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbvv7"]
 radius = 16.0

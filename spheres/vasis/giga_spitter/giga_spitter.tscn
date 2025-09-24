@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ba4i20x61ci12" path="res://generic/behavior/states/keep_distance.gd" id="4_bf8ro"]
 [ext_resource type="Script" uid="uid://dyojb7ffn3scj" path="res://spheres/vasis/giga_spitter/giga_spitter_shoot_attack.gd" id="5_84jqv"]
 [ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="6_6dphw"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="6_bf8ro"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_bf8ro"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/states/wait.gd" id="7_fmuhx"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_y2kpw"]
 [ext_resource type="Texture2D" uid="uid://c5wscoacllmkx" path="res://spheres/vasis/giga_spitter/giga_spitter.png" id="9_84jqv"]

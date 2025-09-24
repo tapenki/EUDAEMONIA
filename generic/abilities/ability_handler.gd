@@ -10,8 +10,10 @@ extends Node
 var speed_scale = 1.0
 
 ### signals
-## stats signals
+## health signals
+signal max_health_modifiers(modifiers: Dictionary)
 signal update_health()
+signal healed(amount: float)
 
 ## status signals
 signal status_level_modifiers(status_name: String, modifiers: Dictionary)
@@ -25,7 +27,7 @@ signal movement(distance: float)
 
 ## attack signals
 signal attack_rate_modifiers(modifiers: Dictionary)
-signal attack_scale_modifiers(modifiers: Dictionary)
+signal inh_attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 signal projectile_created(projectile: Projectile)
 signal attack_impact(position: Vector2, body: Node)
@@ -41,13 +43,11 @@ signal self_death()
 
 ## damage dealt signals
 signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
-signal damage_dealt_modifiers_no_inh(entity: Entity, modifiers: Dictionary)
+signal inh_damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
 signal crit_chance_modifiers(modifiers: Dictionary)
 signal damage_dealt(entity: Entity, amount: float, crits: int)
 
 ## misc signals
-signal healed(amount: float)
-signal upgraded(ability: Node)
 
 ### methods
 func _physics_process(_delta: float) -> void:
@@ -56,6 +56,13 @@ func _physics_process(_delta: float) -> void:
 	speed_scale = modifiers["source"] * modifiers["multiplier"]
 
 ## stat getters
+func get_health(health: float, max_health: float):
+	var modifiers = {"source" : max_health, "multiplier" : 1}
+	max_health_modifiers.emit(modifiers)
+	var final_max_health = modifiers["source"] * modifiers["multiplier"]
+	var final_health = final_max_health - max_health + health
+	return {"health" : final_health, "max_health" : final_max_health}
+
 func get_move_speed(source: float):
 	var modifiers = {"source" : source, "multiplier" : 1}
 	move_speed_modifiers.emit(modifiers)
@@ -67,13 +74,13 @@ func get_attack_rate(source: float):
 	return modifiers["source"] * modifiers["multiplier"]
 
 func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
-	attack_scale_modifiers.emit(modifiers)
+	inh_attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["source"] + modifiers["source"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
 func get_damage_dealt(entity: Entity, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
 	damage_dealt_modifiers.emit(entity, modifiers)
-	damage_dealt_modifiers_no_inh.emit(entity, modifiers)
-	modifiers.multiplier *= pow(2, crits)
+	inh_damage_dealt_modifiers.emit(entity, modifiers)
+	modifiers.multiplier *= 1 + crits
 	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"]
 
 func get_crits(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
@@ -136,22 +143,16 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	
 	inherit(projectile_instance.ability_handler, inheritance)
 	
-	var scale = {"source" : 0, "multiplier" : 1}
-	attack_scale_modifiers.emit(scale)
-	scale["source"] += inherited_scale["source"]
-	scale["multiplier"] *= inherited_scale["multiplier"]
+	var scale = inherited_scale.duplicate()
+	inh_attack_scale_modifiers.emit(scale)
 	projectile_instance.ability_handler.inherited_scale = scale
 	
-	var damage = {"source" : 0, "multiplier" : 1}
-	damage_dealt_modifiers.emit(null, damage)
-	damage["source"] += inherited_damage["source"]
-	damage["multiplier"] *= inherited_damage["multiplier"]
+	var damage = inherited_damage.duplicate()
+	inh_damage_dealt_modifiers.emit(null, damage)
 	projectile_instance.ability_handler.inherited_damage = damage
 	
-	var crit_chance = {"source" : 0, "multiplier" : 1}
-	crit_chance_modifiers.emit(crit_chance)
-	crit_chance["source"] += inherited_crit_chance["source"]
-	crit_chance["multiplier"] *= inherited_crit_chance["multiplier"]
+	var crit_chance = inherited_crit_chance.duplicate()
+	#inh_crit_chance_modifiers.emit(crit_chance)
 	projectile_instance.ability_handler.inherited_crit_chance = crit_chance
 	
 	projectile_created.emit(projectile_instance)
@@ -167,14 +168,9 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	summon_instance.max_health = health
 	summon_instance.health = health
 	
-	var damage = {"source" : 0, "multiplier" : 1}
 	var summon_damage = inherited_summon_damage.duplicate()
 	summon_damage_modifiers.emit(summon_damage)
-	summon_instance.ability_handler.inherited_summon_damage = damage
-	
-	damage["source"] += summon_damage["source"]
-	damage["multiplier"] *= summon_damage["multiplier"]
-	summon_instance.ability_handler.inherited_damage = damage
+	summon_instance.ability_handler.inherited_damage = summon_damage
 	
 	inherit(summon_instance.ability_handler, inheritance)
 	return summon_instance
@@ -191,36 +187,36 @@ func get_ranks():
 					ranks[aspect] = ability.aspects[aspect] * ability.level
 	return ranks
 
-func grant(script: Script, ability: String, levels: int):
+func grant(ability: String, levels: int):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.add_level(levels)
 	else:
 		ability_node = Node2D.new()
-		ability_node.set_script(script)
+		ability_node.set_script(AbilityData.ability_data[ability]["script"])
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
-		update_status.emit(ability_node)
+		#update_status.emit(ability_node)
 	return ability_node
 
-func upgrade(script: Script, ability: String, levels: int):
+func upgrade(ability: String, levels: int):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.level += levels
+		update_health.emit()
 	else:
 		ability_node = Node2D.new()
-		ability_node.set_script(script)
+		ability_node.set_script(AbilityData.ability_data[ability]["script"])
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
-	upgraded.emit(ability_node)
 
-func apply_status(handler: Node, script: Script, ability: String, levels: int):
+func apply_status(handler: Node, ability: String, levels: int):
 	var modifiers = {"source" : levels, "multiplier" : 1}
 	status_level_modifiers.emit(ability, modifiers)
 	levels = modifiers["source"] * modifiers["multiplier"]
-	var status = handler.grant(script, ability, levels)
+	var status = handler.grant(ability, levels)
 	status_applied.emit(status, levels)
 	return status
 
@@ -232,12 +228,12 @@ func clear(ability: String, levels: int):
 func inherit(handler: Node, inherit_level: int):
 	for child in get_children():
 		if child.inheritance_level < inherit_level:
-			handler.grant(child.script, child.name, child.level)
+			handler.grant(child.name, child.level)
 
 ## misc
 func recover():
 	owner.health = owner.max_health
 	for ability in get_children():
-		if ability.type == "Status":
+		if AbilityData.ability_data[ability.name]["type"] == "status":
 			ability.clear()
 	update_health.emit()

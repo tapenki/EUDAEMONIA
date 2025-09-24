@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hqi8ax5pnxj6" path="res://paths/black_magic/spike.png" id="4_styyi"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_ubk1i"]
 [ext_resource type="Script" uid="uid://dmwxrs6k70iwj" path="res://generic/projectiles/projectile_sprite_scaler.gd" id="5_ysibf"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="6_afomj"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_afomj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 14.0

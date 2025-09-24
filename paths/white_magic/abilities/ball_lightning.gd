@@ -18,13 +18,14 @@ func _physics_process(delta: float) -> void:
 	anchor_node.rotation += delta * PI * ability_handler.speed_scale
 
 func day_start(_day: int) -> void:
-	var total = 3
+	var total = 2
 	for repeat in total:
 		var projectile_instance = ability_handler.make_projectile(projectile_scene, 
 		Vector2.from_angle(TAU / total * repeat) * 150,
 		3,
 		Vector2())
 		projectile_instance.ability_handler.inherited_damage["multiplier"] *= level
+		projectile_instance.ability_handler.inherited_crit_chance["multiplier"] *= 2
 		projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat)) * 150).angle()
 		anchor_node.add_child(projectile_instance)
 

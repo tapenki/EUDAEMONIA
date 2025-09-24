@@ -15,7 +15,7 @@ func _ready() -> void:
 	ability_handler.damage_taken_modifiers.connect(damage_taken_modifiers)
 	sprite_instance = Sprite2D.new()
 	sprite_instance.texture = texture
-	sprite_instance.modulate = get_node("/root/Main/Config").get_team_color(ability_handler.owner.group, "secondary")
+	sprite_instance.modulate = Config.get_team_color(ability_handler.owner.group, "secondary")
 	sprite_instance.z_index = 1
 	#sprite_instance.material = highlight
 	add_child.call_deferred(sprite_instance)
@@ -27,7 +27,7 @@ func day_start(_day: int) -> void:
 
 func damage_taken(_source, _damage) -> void:
 	if charges > 0:
-		get_node("/root/Main").spawn_particles(particle_scene, global_position, 2, get_node("/root/Main/Config").get_team_color(ability_handler.owner.group, "secondary"))
+		get_node("/root/Main").spawn_particles(particle_scene, global_position, 2, Config.get_team_color(ability_handler.owner.group, "secondary"))
 		charges -= 1
 		if charges == 0:
 			sprite_instance.visible = false

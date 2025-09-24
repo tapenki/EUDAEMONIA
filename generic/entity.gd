@@ -46,9 +46,9 @@ func take_damage(source, damage, immune_affected = true):
 	var modified_damage = {"source" : damage, "multiplier" : 1}
 	ability_handler.damage_taken_modifiers.emit(modified_damage)
 	var final_damage = max(1, modified_damage["source"] * modified_damage["multiplier"])
-	health = max(0, health - final_damage)
+	health = health - final_damage
 	ability_handler.damage_taken.emit(source, final_damage)
-	if health == 0:
+	if ability_handler.get_health(health, max_health)["health"] <= 0:
 		var death_modifiers = {"prevented" : false}
 		ability_handler.before_self_death.emit(death_modifiers)
 		if not death_modifiers["prevented"]:

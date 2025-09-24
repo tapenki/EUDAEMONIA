@@ -135,7 +135,7 @@ func assign_projectile_group(projectile: Projectile, group: int, color: String =
 	projectile.group = group
 	for i in range(1, 3):
 			projectile.set_collision_mask_value(i, i != group)
-	projectile.get_node("Sprite").modulate = get_node("Config").get_team_color(group, color)
+	projectile.get_node("Sprite").modulate = Config.get_team_color(group, color)
 
 func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
 	entity.group = group
@@ -144,7 +144,7 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 		for i in range(1, 3):
 			hurtbox.set_collision_mask_value(i, i != group)
 	entity.set_collision_layer_value(group, true)
-	entity.get_node("Sprite").modulate = get_node("Config").get_team_color(group, color)
+	entity.get_node("Sprite").modulate = Config.get_team_color(group, color)
 
 ## entity spawning
 func spawn_entity(entity: Entity):
@@ -204,6 +204,7 @@ func check_finished(dying_entity):
 				break
 		if not players_alive:
 			failed.emit()
+			Saver.erase()
 			camera.get_node("AnimationPlayer").play("ZOOM")
 	elif not dying_entity.summoned: ## check day progress
 		var enemies_alive = false
@@ -236,7 +237,7 @@ func end_day():
 		if entity.summoned:
 			entity.queue_free()
 		elif entity is Player:
-			entity.max_health += 5
+			entity.ability_handler.upgrade("bonus_health", 1)
 			entity.ability_handler.recover()
 	for projectile in get_node("/root/Main/Projectiles").get_children():
 		projectile.queue_free()
@@ -249,6 +250,7 @@ func end_day():
 	if day % 5 == 0:
 		bad_day = true
 	intermission.emit(day)
+	Saver.write()
 
 ## special effects
 func play_sound(sound: String):

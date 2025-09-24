@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_j1inu"]
 [ext_resource type="Script" uid="uid://ba4i20x61ci12" path="res://generic/behavior/states/keep_distance.gd" id="4_06c27"]
 [ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/states/shoot_attack.gd" id="5_lbqrw"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="6_06c27"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_06c27"]
 [ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="6_7f2ot"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/states/wait.gd" id="7_0bbdo"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_geqdx"]

@@ -12,15 +12,15 @@ func _on_mouse_entered() -> void:
 	
 	var attack_damage = ability_handler.inherited_damage.duplicate()
 	ability_handler.damage_dealt_modifiers.emit(null, attack_damage)
-	ability_handler.damage_dealt_modifiers_no_inh.emit(null, attack_damage)
+	ability_handler.inh_damage_dealt_modifiers.emit(null, attack_damage)
 	var crit_chance = ability_handler.inherited_crit_chance.duplicate()
 	ability_handler.crit_chance_modifiers.emit(crit_chance)
 	var attack_scale = ability_handler.inherited_scale.duplicate()
-	ability_handler.attack_scale_modifiers.emit(attack_scale)
+	ability_handler.inh_attack_scale_modifiers.emit(attack_scale)
 	var move_speed = ability_handler.get_move_speed(450)
 	## yeah
 	description.text = "Attack damage: [outline_size=10][+{attack_damage_source}/x{attack_damage_multiplier}][/outline_size]
-Crit chance: [outline_size=10][{crit_chance}%][/outline_size]
+Crit chance: [outline_size=10][+{crit_chance}][/outline_size]%
 Attack size: [outline_size=10][x{attack_scale}][/outline_size]
 Move speed: [outline_size=10][+{move_speed}][/outline_size]".format({
 "attack_damage_source": int(attack_damage["source"]),

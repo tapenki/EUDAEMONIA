@@ -14,6 +14,10 @@ var upgrade_points = 2
 var paths: Array
 
 func _ready() -> void:
+	var magic_picker = upgrades.get_node("MagicPicker1")
+	for path in paths:
+		magic_picker.pick(path)
+		magic_picker = magic_picker.next
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
@@ -54,4 +58,5 @@ func toggle_upgrades():
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
 
 func reset():
+	Saver.erase()
 	get_tree().reload_current_scene()

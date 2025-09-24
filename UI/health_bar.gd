@@ -15,21 +15,24 @@ func _ready() -> void:
 	update()
 
 func update() -> void:
-	max_value = player.max_health
-	value = player.health
-	damage_bar.max_value = player.max_health
-	damage_bar.value = player.health
-	health_label.text = "%s/%s" % [int(ceil(player.health)), player.max_health]
+	var health_values = ability_handler.get_health(player.health, player.max_health)
+	max_value = health_values["max_health"]
+	value = health_values["health"]
+	damage_bar.max_value = health_values["max_health"]
+	damage_bar.value = health_values["health"]
+	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 
 func damage_taken(_source, _damage) -> void:
-	value = player.health
-	health_label.text = "%s/%s" % [int(ceil(player.health)), player.max_health]
+	var health_values = ability_handler.get_health(player.health, player.max_health)
+	value = health_values["health"]
+	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 	damage_timer.start()
 	camera.shake = 0.2
 
 func healed(_amount) -> void:
-	value = player.health
-	health_label.text = "%s/%s" % [int(ceil(player.health)), player.max_health]
+	var health_values = ability_handler.get_health(player.health, player.max_health)
+	value = health_values["health"]
+	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 
 func _physics_process(_delta: float) -> void:
 	if damage_timer.is_stopped():

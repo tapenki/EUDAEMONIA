@@ -19,5 +19,5 @@ func attack_impact(impact_position, body) -> void:
 		ability_handler.damage_dealt.emit(target, damage)
 		target.take_damage(ability_handler.owner, damage)
 		var particle_scale = ability_handler.get_attack_scale()
-		get_node("/root/Main").particle_beam(zapbeam_scene, impact_position, target.global_position, 32, particle_scale, get_node("/root/Main/Config").get_team_color(ability_handler.owner.group, "secondary"))
-		get_node("/root/Main").spawn_particles(zap_scene, target.global_position, particle_scale, get_node("/root/Main/Config").get_team_color(ability_handler.owner.group, "secondary"))
+		get_node("/root/Main").particle_beam(zapbeam_scene, impact_position, target.global_position, 32, particle_scale, Config.get_team_color(ability_handler.owner.group, "secondary"))
+		get_node("/root/Main").spawn_particles(zap_scene, target.global_position, particle_scale, Config.get_team_color(ability_handler.owner.group, "secondary"))

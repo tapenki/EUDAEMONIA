@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_p0y1b"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_vypyj"]
 [ext_resource type="Texture2D" uid="uid://covist8tci8hy" path="res://generic/projectiles/explosion.png" id="5_sg4bm"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="6_i6r65"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_i6r65"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="7_8xrbx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]

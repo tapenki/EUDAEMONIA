@@ -1,7 +1,6 @@
 extends Ability
 
 var inheritance_level = 20
-var type = "Status"
 
 var particle_scene = preload("res://generic/particles/burn.tscn")
 var particle_instance
@@ -18,7 +17,7 @@ func _ready() -> void:
 	add_child(burn_timer)
 	burn_timer.start()
 	particle_instance = particle_scene.instantiate()
-	particle_instance.modulate = get_node("/root/Main/Config").get_team_color(ability_handler.get_enemy_group(), "secondary")
+	particle_instance.modulate = Config.get_team_color(ability_handler.get_enemy_group(), "secondary")
 	add_child.call_deferred(particle_instance)
 
 func tick():

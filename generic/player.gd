@@ -12,7 +12,7 @@ func shoot(direction):
 
 func _ready() -> void:
 	super()
-	$Sprite.modulate = get_node("/root/Main/Config").get_team_color(group, "primary")
+	$Sprite.modulate = Config.get_team_color(group, "primary")
 
 func _physics_process(_delta):
 	if not alive:

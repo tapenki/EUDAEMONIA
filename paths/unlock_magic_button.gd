@@ -5,12 +5,10 @@ extends Described
 @onready var upgrades_ui = $"../../../"
 @onready var picker = $"../../"
 
-@onready var point_counter = $"../../../Level"
+@onready var point_counter = $"../../../UpgradePoints"
 
 @onready var level_label: = $"Level"
 @onready var symbol_label: = $"Symbol"
-
-@export var path_scene: PackedScene
 
 func _ready() -> void:
 	#rotation_degrees = randf_range(-5, 5)
@@ -21,9 +19,4 @@ func _on_pressed() -> void:
 		ui.upgrade_points -= 1
 		point_counter.update(0)
 		ui.paths.append(subject)
-		var path_instance = path_scene.instantiate()
-		path_instance.position = picker.position
-		upgrades_ui.add_child(path_instance)
-		if picker.next:
-			picker.next.reveal()
-		picker.queue_free()
+		picker.pick(subject)

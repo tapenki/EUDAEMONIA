@@ -1,10 +1,8 @@
 extends Ability
 
 var inheritance_level = 4
-var type = "Upgrade"
 
 var bomb = preload("res://paths/blue_magic/icebomb/icebomb.tscn")
-var bomb_script = preload("res://paths/blue_magic/icebomb/bomb.gd")
 
 var summon_positions = [
 	Vector2(600, 300),
@@ -23,8 +21,8 @@ func day_start(_day: int) -> void:
 		ability_handler.get_enemy_group()) ## group
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.25*level
 		
-		summon_instance.get_node("Sprite").modulate = get_node("/root/Main/Config").get_team_color(3, "secondary")
+		summon_instance.get_node("Sprite").modulate = Config.get_team_color(3, "secondary")
 		
-		summon_instance.ability_handler.grant(bomb_script, "bomb", level)
+		summon_instance.ability_handler.grant("bomb", level)
 		
 		get_node("/root/Main").spawn_entity(summon_instance)

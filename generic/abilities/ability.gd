@@ -41,3 +41,9 @@ func clear():
 		if not offsetting:
 			offsetting = true
 			call_deferred("offset")
+
+func write():
+	return {"level" : level}
+
+func read(data):
+	level = data["level"]

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_r00uu"]
 [ext_resource type="Script" uid="uid://5o1wbrxeu4bd" path="res://generic/particles/particles.gd" id="6_2yt2x"]
 [ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/white_magic/zap.png" id="7_xxnif"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://scaled_timer.gd" id="7_ycxlx"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_ycxlx"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

@@ -1,18 +1,16 @@
 extends Ability
 
 var inheritance_level = 3
-var type = "Upgrade"
 
 func _ready() -> void:
-	ability_handler.upgraded.connect(upgraded)
 	if ability_handler.type != "Entity":
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED
+	else:
+		ability_handler.max_health_modifiers.connect(max_health_modifiers)
+		ability_handler.update_health.emit()
 
 func _physics_process(delta: float) -> void:
 	ability_handler.owner.heal(delta*level*ability_handler.speed_scale)
 
-func upgraded(ability) -> void:
-	if ability == self:
-		ability_handler.owner.max_health += 25
-		ability_handler.owner.health += 25
-		ability_handler.update_health.emit()
+func max_health_modifiers(modifiers) -> void:
+	modifiers["source"] += 25 * level

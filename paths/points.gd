@@ -1,10 +1,10 @@
 extends Label
 
-@onready var ui = $"../../../"
+@onready var ui = get_node("/root/Main/UI")
 
 func _ready() -> void:
 	get_node("/root/Main").day_cleared.connect(update)
-	update(1)
+	update(0)
 	
 func update(_day):
 	text = tr("upgrade_point_counter") % ui.upgrade_points

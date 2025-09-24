@@ -7,8 +7,8 @@ var boost = 1.0
 
 func _ready() -> void:
 	if ability_handler.type == "Projectile":
-		ability_handler.attack_scale_modifiers.connect(attack_scale_modifiers)
-		ability_handler.damage_dealt_modifiers.connect(damage_dealt_modifiers)
+		ability_handler.inh_attack_scale_modifiers.connect(attack_scale_modifiers)
+		ability_handler.inh_damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	else:
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
