@@ -9,7 +9,21 @@ extends Node
 @onready var spawn_reticle = preload("res://generic/spawn_reticle.tscn")
 
 var summon_formations = {
-	"quartet" : [
+	"4wall" : [
+		[
+			Vector2(860, 300),
+			Vector2(40, 300),
+			Vector2(450, 560),
+			Vector2(450, 40)
+		],
+		[
+			Vector2(860, 560),
+			Vector2(860, 40),
+			Vector2(40, 560),
+			Vector2(40, 40)
+		],
+	],
+	"4far" : [
 		[
 			Vector2(800, 300),
 			Vector2(100, 300),
@@ -23,7 +37,7 @@ var summon_formations = {
 			Vector2(100, 100)
 		],
 	],
-	"duo" : [
+	"2far" : [
 		[
 			Vector2(800, 300),
 			Vector2(100, 300),
@@ -33,7 +47,7 @@ var summon_formations = {
 			Vector2(450, 100)
 		],
 	],
-	"single" : [
+	"center" : [
 		[
 			Vector2(450, 300)
 		],
@@ -42,56 +56,61 @@ var summon_formations = {
 
 var sphere_data = {
 	"vasis" : {
+		"tilemap" : preload("res://spheres/vasis/tilemap.png"),
 		"common_waves" : [
-			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "quartet"}],
+			#[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
+			#[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/thayma/mold/mold.tscn"), "formation" : "4wall"}],
 		],
 		"special_waves" : [
 			[
-				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "formation" : "single", "offset" : [Vector2(300, 0)]},
-				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "formation" : "single", "offset" : [Vector2(-300, 0)]}
+				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
+				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
 			],
 		]
 	},
 	"thayma" : {
+		"tilemap" : preload("res://spheres/thayma/tilemap.png"),
 		"common_waves" : [
-			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "quartet"}],
+			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "4far"}],
 		],
 		"special_waves" : [
 			[
-				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "formation" : "single", "offset" : [Vector2(300, 0)]},
-				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "formation" : "single", "offset" : [Vector2(-300, 0)]}
+				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
+				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
 			],
 		]
 	},
 	"aporia" : {
+		"tilemap" : preload("res://spheres/aporia/tilemap.png"),
 		"common_waves" : [
-			[{"enemy" : preload("res://spheres/aporia/hydra/hydra.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/aporia/spitball/spitball.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/aporia/leaker/leaker.tscn"), "formation" : "quartet"}],
+			[{"enemy" : preload("res://spheres/aporia/hydra/hydra.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/aporia/spitball/spitball.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/aporia/leaker/leaker.tscn"), "formation" : "4far"}],
 		],
 		"special_waves" : [
 			[
-				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "formation" : "single", "offset" : [Vector2(300, 0)]},
-				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "formation" : "single", "offset" : [Vector2(-300, 0)]}
+				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
+				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
 			],
 		]
 	},
 	"pandemonium" : {
+		"tilemap" : preload("res://tilemap.png"),
 		"common_waves" : [
-			[{"enemy" : preload("res://spheres/aporia/hydra/hydra.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/aporia/spitball/spitball.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/aporia/leaker/leaker.tscn"), "formation" : "quartet"}],
-			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "quartet", "offset" : [Vector2(25, 0), Vector2(-25, 0), Vector2(0, -25)]}],
-			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "quartet", "offset" : [Vector2(25, 0), Vector2(-25, 0), Vector2(0, -25)]}],
-			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "quartet", "offset" : [Vector2(25, 0), Vector2(-25, 0)]}],
-			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "quartet", "offset" : [Vector2(25, 0), Vector2(-25, 0)]}],
+			[{"enemy" : preload("res://spheres/aporia/hydra/hydra.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/aporia/spitball/spitball.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/aporia/leaker/leaker.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0), Vector2(0, -25)]}],
+			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0), Vector2(0, -25)]}],
+			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0)]}],
+			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0)]}],
 		],
 		"special_waves" : [
 			[
-				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "formation" : "single", "offset" : [Vector2(300, 0)]},
-				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "formation" : "single", "offset" : [Vector2(-300, 0)]}
+				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
+				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
 			],
 		]
 	}
@@ -129,6 +148,8 @@ signal intermission(day: int)
 signal failed()
 
 ### methods
+func _ready() -> void:
+	travel(sphere)
 
 ## groups 
 func assign_projectile_group(projectile: Projectile, group: int, color: String = "secondary"):
@@ -164,7 +185,7 @@ func instantiate_enemy(scene: PackedScene):
 
 func _on_enemy_spawn_timeout() -> void:
 	for enemy_group in enemy_queue[0]:
-		var positions = summon_formations[enemy_group["formation"]].pick_random()
+		var positions = summon_formations[enemy_group.get("formation", "center")].pick_random()
 		for position in positions:
 			if enemy_group.has("offset"):
 				for offset in enemy_group["offset"]:
@@ -180,6 +201,9 @@ func _on_enemy_spawn_timeout() -> void:
 		enemy_spawn_timer.start(4)
 
 ## day progress
+func travel(to_sphere: String):
+	get_node("TileMapLayer").tile_set.get_source(1).texture = sphere_data[to_sphere]["tilemap"]
+
 func start_day():
 	day_over = false
 	day_start.emit(day)

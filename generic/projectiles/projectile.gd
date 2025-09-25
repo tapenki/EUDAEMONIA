@@ -26,7 +26,7 @@ func kill():
 
 func _physics_process(delta):
 	adjust_scale()
-	translate(velocity * delta * ability_handler.speed_scale)
+	movement(delta)
 	super(delta)
 	if hit_walls:
 		for body in get_overlapping_bodies():
@@ -34,6 +34,11 @@ func _physics_process(delta):
 				var crits = ability_handler.get_crits()
 				on_collision(global_position, body, crits)
 				kill()
+
+func movement(delta):
+	var old_position = global_position
+	translate(velocity * delta * ability_handler.speed_scale)
+	ability_handler.movement.emit(old_position.distance_to(global_position))
 
 func on_hit(body, hit_damage, crits):
 	super(body, hit_damage, crits)
