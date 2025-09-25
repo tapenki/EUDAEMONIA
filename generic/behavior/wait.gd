@@ -20,6 +20,7 @@ func _physics_process(_delta):
 func on_enter() -> void:
 	super()
 	if anim != "":
+		#user.animation_player.stop()
 		user.animation_player.play(anim)
 	timer.start()
 

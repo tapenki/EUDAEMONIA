@@ -176,5 +176,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_v1kwl")
 }
 autoplay = "IDLE"
+blend_times = [&"IDLE", &"PRIMED", 0.05, &"PRIMED", &"DEATH", 0.05]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

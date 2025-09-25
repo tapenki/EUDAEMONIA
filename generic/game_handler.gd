@@ -57,10 +57,10 @@ var summon_formations = {
 var sphere_data = {
 	"vasis" : {
 		"tilemap" : preload("res://spheres/vasis/tilemap.png"),
+		"wavecount" : 1,
 		"common_waves" : [
-			#[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
-			#[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
-			[{"enemy" : preload("res://spheres/thayma/mold/mold.tscn"), "formation" : "4wall"}],
+			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
 		],
 		"special_waves" : [
 			[
@@ -74,12 +74,10 @@ var sphere_data = {
 		"common_waves" : [
 			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "4far"}],
 			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/thayma/mold/mold.tscn"), "formation" : "4wall"}],
 		],
 		"special_waves" : [
-			[
-				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
-				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
-			],
+			[{"enemy" : preload("res://spheres/thayma/mold_mother/mold_mother.tscn"), "offset" : [Vector2(0, -260)]}],
 		]
 	},
 	"aporia" : {
@@ -168,6 +166,12 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 	entity.get_node("Sprite").modulate = Config.get_team_color(group, color)
 
 ## entity spawning
+func scale_enemy_health(health: float):
+	return health * pow(1.25, day-1)
+
+func scale_enemy_damage():
+	return 0.75 + (day * 0.25)
+
 func spawn_entity(entity: Entity):
 	var reticle_instance = spawn_reticle.instantiate()
 	reticle_instance.global_position = entity.global_position
@@ -178,9 +182,9 @@ func spawn_entity(entity: Entity):
 func instantiate_enemy(scene: PackedScene):
 	var entity_instance = scene.instantiate()
 	assign_entity_group(entity_instance, 2, "primary")
-	entity_instance.max_health *= pow(1.25, day-1)
+	entity_instance.max_health = scale_enemy_health(entity_instance.max_health)
 	entity_instance.health = entity_instance.max_health
-	entity_instance.ability_handler.inherited_damage["multiplier"] = 0.75 + (day * 0.25)
+	entity_instance.ability_handler.inherited_damage["multiplier"] = scale_enemy_damage()
 	return entity_instance
 
 func _on_enemy_spawn_timeout() -> void:
@@ -208,7 +212,7 @@ func start_day():
 	day_over = false
 	day_start.emit(day)
 	
-	for i in 2:
+	for i in sphere_data[sphere].get("wavecount", 2):
 		if bad_day and i == 0:
 			var chosen_wave
 			chosen_wave = sphere_data[sphere]["special_waves"].pick_random()
@@ -271,6 +275,7 @@ func end_day():
 		if sphere_tiers.has(sphere_tier + 1):
 			sphere_tier += 1
 			sphere = sphere_tiers[sphere_tier].pick_random()
+			travel(sphere)
 	if day % 5 == 0:
 		bad_day = true
 	intermission.emit(day)

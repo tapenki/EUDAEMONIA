@@ -246,3 +246,9 @@ msgstr "ahh u win !!!"
 
 msgid "giga_spitter_death_2"
 msgstr "adfsfds >:("
+
+msgid "mold_mother_spawn_1"
+msgstr "HEE HOO"
+
+msgid "mold_mother_death_1"
+msgstr "WOMP WOMP"

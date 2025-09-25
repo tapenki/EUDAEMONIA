@@ -1,13 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://30xuvt24wxqo"]
+[gd_scene load_steps=23 format=3 uid="uid://30xuvt24wxqo"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entity.gd" id="1_fhpr0"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_h6ah0"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_w7v51"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_cqhco"]
-[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/states/wait.gd" id="6_otdvs"]
-[ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/states/shoot_attack.gd" id="7_l225b"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="6_otdvs"]
+[ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="7_l225b"]
 [ext_resource type="PackedScene" uid="uid://bu3jk0yrnh38t" path="res://spheres/thayma/mold_bullet.tscn" id="7_lfj4u"]
-[ext_resource type="Script" uid="uid://dy1fum6s312ae" path="res://generic/behavior/states/wall_warp.gd" id="8_lfj4u"]
+[ext_resource type="Script" uid="uid://dy1fum6s312ae" path="res://generic/behavior/wall_warp.gd" id="8_lfj4u"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_0dj8c"]
 [ext_resource type="Texture2D" uid="uid://buefy84tw3wi2" path="res://spheres/thayma/mold/mold.png" id="9_bx0li"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entity_sprite.gd" id="11_52cd0"]
@@ -16,12 +16,12 @@
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_fipnm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
-radius = 25.0
+radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
-radius = 25.0
+radius = 24.0
 
-[sub_resource type="Animation" id="Animation_drum4"]
+[sub_resource type="Animation" id="Animation_lfj4u"]
 resource_name = "DEATH"
 length = 0.5
 tracks/0/type = "value"
@@ -37,34 +37,39 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(1.2, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fnls8"]
+[sub_resource type="Animation" id="Animation_ieikq"]
+resource_name = "IDLE"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_7qe7s"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_ieikq"]
+[sub_resource type="Animation" id="Animation_a31a4"]
 resource_name = "WARP"
 length = 0.6
 tracks/0/type = "value"
@@ -80,9 +85,9 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(0, 0), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_vajmc"]
+[sub_resource type="Animation" id="Animation_dq34l"]
 resource_name = "WINDUP"
-length = 0.4
+length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,30 +95,19 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4),
+"times": PackedFloat32Array(0, 0.3, 0.35),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.35, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.174533, 0.174533, 0.0]
-}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8jcm"]
 _data = {
-&"DEATH": SubResource("Animation_drum4"),
-&"RESET": SubResource("Animation_fnls8"),
-&"WARP": SubResource("Animation_ieikq"),
-&"WINDUP": SubResource("Animation_vajmc")
+&"DEATH": SubResource("Animation_lfj4u"),
+&"IDLE": SubResource("Animation_ieikq"),
+&"RESET": SubResource("Animation_7qe7s"),
+&"WARP": SubResource("Animation_a31a4"),
+&"WINDUP": SubResource("Animation_dq34l")
 }
 
 [node name="Mold" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
@@ -135,7 +129,7 @@ type = "Entity"
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_w7v51")
-initial_state = NodePath("PrepareAttack")
+initial_state = NodePath("Warplag")
 
 [node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
@@ -236,8 +230,12 @@ shape = SubResource("CircleShape2D_jpw2x")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 deterministic = true
 libraries = {
-&"": SubResource("AnimationLibrary_v1kwl")
+&"": SubResource("AnimationLibrary_e8jcm")
 }
+autoplay = "IDLE"
+next/WARP = &"IDLE"
+next/WINDUP = &"IDLE"
+blend_times = [&"IDLE", &"WINDUP", 0.05]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
