@@ -12,7 +12,7 @@ extends Node
 
 var defeated: bool
 
-var upgrade_points = 2
+var upgrade_points = 20
 var paths: Array
 
 func _ready() -> void:

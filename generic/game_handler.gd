@@ -6,7 +6,7 @@ extends Node
 
 @onready var spawns = $Spawns
 @onready var enemy_spawn_timer = $EnemySpawnTimer
-@onready var spawn_reticle = preload("res://generic/spawn_reticle.tscn")
+@onready var spawn_reticle = preload("res://generic/entities/spawn_reticle.tscn")
 
 var summon_formations = {
 	"4wall" : [
@@ -57,10 +57,10 @@ var summon_formations = {
 var sphere_data = {
 	"vasis" : {
 		"tilemap" : preload("res://spheres/vasis/tilemap.png"),
-		"wavecount" : 1,
 		"common_waves" : [
-			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
-			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
+			#[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
+			#[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/aporia/mars/mars.tscn"), "formation" : "2far"}],
 		],
 		"special_waves" : [
 			[

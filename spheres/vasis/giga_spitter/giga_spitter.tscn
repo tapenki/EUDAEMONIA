@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bmnbik8xpkhu3"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entity.gd" id="1_xl1yt"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_xl1yt"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_3ocmb"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_btrd6"]
 [ext_resource type="Script" uid="uid://ba4i20x61ci12" path="res://generic/behavior/keep_distance.gd" id="4_bf8ro"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="7_fmuhx"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_y2kpw"]
 [ext_resource type="Texture2D" uid="uid://c5wscoacllmkx" path="res://spheres/vasis/giga_spitter/giga_spitter.png" id="9_84jqv"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entity_sprite.gd" id="10_6t75s"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_6t75s"]
 [ext_resource type="Texture2D" uid="uid://dp1l84sqmamq0" path="res://spheres/vasis/giga_spitter/giga_spitter_hurt.png" id="11_emoxy"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_dn23t"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_j2p2p"]

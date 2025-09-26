@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://imit0udlq3wc"]
 
-[ext_resource type="Texture2D" uid="uid://4lu33jy0tbjw" path="res://generic/spawn_reticle.png" id="2_43fjk"]
+[ext_resource type="Texture2D" uid="uid://4lu33jy0tbjw" path="res://generic/entities/spawn_reticle.png" id="2_43fjk"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="3_d0mjr"]
-[ext_resource type="Script" uid="uid://df3s5gmiyrr4p" path="res://generic/spawn_reticle.gd" id="3_liw71"]
+[ext_resource type="Script" uid="uid://df3s5gmiyrr4p" path="res://generic/entities/spawn_reticle.gd" id="3_liw71"]
 
 [node name="SpawnReticle" type="Sprite2D"]
 visibility_layer = 129

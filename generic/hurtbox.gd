@@ -1,7 +1,7 @@
 class_name Hurtbox extends Area2D
 
 @export var ability_handler: Node2D
-@export var hit_sound: String
+@export var hit_sound = "HitLight"
 
 @export var damage_modifiers = {"source" : 0.0, "multiplier" : 1.0}
 @export var hit_delay: = 0.5

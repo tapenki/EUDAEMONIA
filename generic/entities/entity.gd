@@ -2,7 +2,8 @@ class_name Entity extends CharacterBody2D
 
 @export var ability_handler: Node2D
 
-@export var death_sound = "Snap"
+@export var hurt_sound = "HurtLight"
+@export var death_sound = "DeathLight"
 @export var hurtbox: Hurtbox
 @export var animation_player: AnimationPlayer
 
@@ -45,6 +46,7 @@ func take_damage(source, damage, immune_affected = true):
 		else:
 			immune(ability_handler.get_immune_duration({"source" : immune_duration, "multiplier" : 1}))
 	
+	get_node("/root/Main").play_sound(hurt_sound)
 	var modified_damage = {"source" : damage, "multiplier" : 1}
 	ability_handler.damage_taken_modifiers.emit(modified_damage)
 	var final_damage = max(1, modified_damage["source"] * modified_damage["multiplier"])
@@ -61,13 +63,13 @@ func heal(amount):
 	health = min(max_health, health + amount)
 	ability_handler.healed.emit(amount)
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if not alive:
 		return
 	animation_player.speed_scale = ability_handler.speed_scale
-	movement()
+	movement(delta)
 
-func movement():
+func movement(_delta):
 	var old_position = global_position
 	move_and_slide()
 	ability_handler.movement.emit(old_position.distance_to(global_position))

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://vfefo50rbmvj"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entity.gd" id="1_b87ft"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_b87ft"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_m1uud"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_p5v33"]
 [ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_4eycc"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_uyvgd"]
 [ext_resource type="Texture2D" uid="uid://bs3sx4fme61vw" path="res://spheres/vasis/giga_leaper/giga_leaper.png" id="7_aiths"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="7_uitko"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entity_sprite.gd" id="8_a3csc"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="8_a3csc"]
 [ext_resource type="Texture2D" uid="uid://ck2mh5860ai8h" path="res://spheres/vasis/giga_leaper/giga_leaper_hurt.png" id="9_uitko"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="10_gdqgd"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="11_ivhju"]

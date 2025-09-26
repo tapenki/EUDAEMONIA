@@ -56,19 +56,19 @@ msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ch.1: Ignition[/outline_color]"
 
 msgid "ignition_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10]+[3xLEVEL][/outline_size] [outline_color=#ff0000]Burn[/outline_color]."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10]+[3xLEVEL][/outline_size] burn."
 
 msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ch.2: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10]+[50xLEVEL][/outline_size] health, [outline_size=10]x[LEVEL][/outline_size] damage, and are cloaked in [outline_color=#ff0000]Burn[/outline_color]."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10]+[35xLEVEL][/outline_size] health, [outline_size=10]x[LEVEL][/outline_size] damage, and apply [outline_size=10]+[10xLEVEL][/outline_size] burn to nearby foes when killed."
 
-msgid "conflagration_title"
-msgstr "[outline_color=#ff0000]Ch.3: Conflagration[/outline_color]"
+msgid "fan_the_flames_title"
+msgstr "[outline_color=#ff0000]Ch.3: Fan the Flames[/outline_color]"
 
-msgid "conflagration_description"
-msgstr "[outline_size=10]Upon friend/foe demise:[/outline_size] It spreads [outline_size=10]x[0.5xLEVEL][/outline_size] of its [outline_color=#ff0000]Burn[/outline_color] to the nearest foe."
+msgid "fan_the_flames_description"
+msgstr "[outline_size=10]Upon applying burn:[/outline_size] That burn gains [outline_size=10]x[0.2xLEVEL][/outline_size] damage."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ch.4: Scorched Earth[/outline_color]"
@@ -82,11 +82,18 @@ msgstr "[outline_color=#ff0000]Ch.5: From Ashes[/outline_color]"
 msgid "from_ashes_description"
 msgstr "[outline_size=10]Once a day, upon imminent demise:[/outline_size] Escape your fate and recover [outline_size=10]+[10xLEVEL][/outline_size] health per second over [outline_size=10][5][/outline_size] seconds."
 
+msgid "conflagration_title"
+msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
+
+msgid "conflagration_description"
+msgstr "[outline_size=10]Upon foe demise:[/outline_size] It spreads its burn to the nearest foe."
+
+
 msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
 
 msgid "burn_description"
-msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second. Expires after dealing damage [outline_size=10][5][/outline_size] times. Reapplying [outline_color=#ff0000]Burn[/outline_color] resets expiration."
+msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second. Expires after dealing damage [outline_size=10][5][/outline_size] times. Reapplying burn resets expiration."
 
 # blue
 msgid "blue_magic_title"
@@ -117,7 +124,7 @@ msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ch.4: Frostbite[/outline_color]"
 
 msgid "frostbite_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply a [outline_size=10]x[0.8][/outline_size] speed [outline_color=#0000ff]Chill[/outline_color] for [outline_size=10]+[0.75xLEVEL][/outline_size] seconds."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply a [outline_size=10]x[0.8][/outline_size] speed chill for [outline_size=10]+[0.75xLEVEL][/outline_size] seconds."
 
 msgid "ice_bombs_title"
 msgstr "[outline_color=#0000ff]Ch.5: Ice Bombs[/outline_color]"

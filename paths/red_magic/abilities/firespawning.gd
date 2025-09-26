@@ -19,12 +19,9 @@ func day_start(_day: int) -> void:
 		var summon_instance = ability_handler.make_summon(summon, 
 		i,
 		3,  ## inheritance
-		50 * level) ## health
+		35 * level) ## health
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= level
 		
-		var burn = summon_instance.ability_handler.grant("burn", 10 * level)
-		burn.damage_multiplier = 0
-		burn.total_ticks = -1
-		burn.ticks_left = -1
+		summon_instance.ability_handler.grant("fireburst", level)
 		
 		get_node("/root/Main").spawn_entity(summon_instance)

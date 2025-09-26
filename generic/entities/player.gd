@@ -25,7 +25,7 @@ func _physics_process(_delta):
 		var attack_direction = (get_global_mouse_position() - global_position).normalized()
 		shoot(attack_direction)
 		ability_handler.attack.emit(attack_direction)
-		get_node("/root/Main").play_sound("Pooh")
+		get_node("/root/Main").play_sound("ShootLight")
 	var direction = Input.get_vector("left", "right", "up", "down")
 	var speed = ability_handler.get_move_speed(450) * ability_handler.speed_scale
 	velocity = lerp(velocity, direction * speed, 0.2)

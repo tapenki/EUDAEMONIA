@@ -25,8 +25,12 @@ var ability_data = {
 		"script" : preload("res://paths/red_magic/abilities/firespawning.gd"),
 		"type" : "upgrade"
 	},
-	"conflagration" : {
-		"script" : preload("res://paths/red_magic/abilities/conflagration.gd"),
+	"fireburst" : {
+		"script" : preload("res://paths/red_magic/flaming_skull/fireburst.gd"),
+		"type" : "token"
+	},
+	"fan_the_flames" : {
+		"script" : preload("res://paths/red_magic/abilities/fan_the_flames.gd"),
 		"type" : "upgrade"
 	},
 	"scorched_earth" : {
@@ -35,6 +39,10 @@ var ability_data = {
 	},
 	"from_ashes" : {
 		"script" : preload("res://paths/red_magic/abilities/from_ashes.gd"),
+		"type" : "upgrade"
+	},
+	"conflagration" : {
+		"script" : preload("res://paths/red_magic/abilities/conflagration.gd"),
 		"type" : "upgrade"
 	},
 	"burn" : {

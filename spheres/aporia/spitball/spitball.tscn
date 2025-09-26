@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=3 uid="uid://dwggafrfl3r0d"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entity.gd" id="1_0v5xq"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_0v5xq"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_756k3"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_oicv5"]
 [ext_resource type="Script" uid="uid://ba4i20x61ci12" path="res://generic/behavior/keep_distance.gd" id="4_5mgv0"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entity_sprite.gd" id="5_bl0vf"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="5_bl0vf"]
 [ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="5_mtcj7"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_5mgv0"]
 [ext_resource type="PackedScene" uid="uid://xkp8korlpxmc" path="res://generic/projectiles/cluster_bullet.tscn" id="6_67o3g"]

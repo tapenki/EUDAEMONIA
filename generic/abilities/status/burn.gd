@@ -6,7 +6,7 @@ var particle_scene = preload("res://generic/particles/burn.tscn")
 var particle_instance
 var burn_timer = ScaledTimer.new()
 
-@export var damage_multiplier = 1
+@export var damage_multiplier = 1.0
 @export var total_ticks = 5
 var ticks_left = 5
 

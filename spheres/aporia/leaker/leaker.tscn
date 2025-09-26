@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://6caklaa74kkv"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entity.gd" id="1_dfl1a"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_dfl1a"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_ert6i"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_21wbp"]
 [ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_ag6p6"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="6_rg7yc"]
 [ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="7_m4dc5"]
 [ext_resource type="Texture2D" uid="uid://odncfboij4ni" path="res://spheres/aporia/leaker/leaker.png" id="9_fhwl2"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entity_sprite.gd" id="9_vwm0l"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_vwm0l"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="11_wi12k"]
 [ext_resource type="Texture2D" uid="uid://dx5cmx6luy6fm" path="res://spheres/aporia/leaker/leaker_hurt.png" id="11_wmrog"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_1xd2i"]

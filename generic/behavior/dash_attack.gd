@@ -20,7 +20,8 @@ func on_enter() -> void:
 		direction = user.global_position.direction_to(state_handler.target.global_position)
 	else:
 		direction = Vector2.from_angle(randf()*TAU)
-		
+	
+	get_node("/root/Main").play_sound("Leap")
 	if user.is_on_wall():
 		stick_normal = user.get_last_slide_collision().get_normal()
 		user.wall_min_slide_angle = 0

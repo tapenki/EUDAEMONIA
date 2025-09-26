@@ -60,10 +60,10 @@ texture_normal = ExtResource("2_xxy61")
 subject = "firespawning"
 extra = "upgrade_cost"
 
-[node name="Conflagration" parent="GridContainer" instance=ExtResource("1_nbhot")]
+[node name="FanTheFlames" parent="GridContainer" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
-subject = "conflagration"
+subject = "fan_the_flames"
 extra = "upgrade_cost"
 
 [node name="ScorchedEarth" parent="GridContainer" instance=ExtResource("1_nbhot")]

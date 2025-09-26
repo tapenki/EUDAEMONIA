@@ -1,13 +1,19 @@
-[gd_scene load_steps=14 format=4 uid="uid://defo0ssov0anv"]
+[gd_scene load_steps=20 format=4 uid="uid://defo0ssov0anv"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://UI/ui.tscn" id="2_kek77"]
 [ext_resource type="Texture2D" uid="uid://ut22n8bouys2" path="res://tilemap.png" id="3_4c57u"]
 [ext_resource type="Script" uid="uid://dv31cs2ygwudl" path="res://generic/camera.gd" id="4_efxa6"]
-[ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/player.tscn" id="5_dg77c"]
+[ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="5_dg77c"]
 [ext_resource type="AudioStream" uid="uid://dsmlwa6rfpo1r" path="res://sounds/peh.ogg" id="6_ycdy4"]
 [ext_resource type="AudioStream" uid="uid://wwmwcg6te82e" path="res://sounds/pooh.ogg" id="7_w48qg"]
 [ext_resource type="AudioStream" uid="uid://bmyiexw04eig4" path="res://sounds/snap.ogg" id="8_vivmo"]
+[ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="9_efxa6"]
+[ext_resource type="AudioStream" uid="uid://blkcwcunpcgqm" path="res://sounds/death_light.wav" id="11_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://dacc5mwmkl3k2" path="res://sounds/hit_light.wav" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="12_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_hard.wav" id="13_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="14_w48qg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cjbd"]
 texture = ExtResource("3_4c57u")
@@ -115,6 +121,30 @@ stream = ExtResource("7_w48qg")
 
 [node name="Snap" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("8_vivmo")
+
+[node name="ShootLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_efxa6")
+volume_db = -5.0
+
+[node name="DeathLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_ycdy4")
+volume_db = -10.0
+
+[node name="HitLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_dg77c")
+volume_db = -10.0
+
+[node name="HurtLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_ycdy4")
+volume_db = -10.0
+
+[node name="HurtHard" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_ycdy4")
+volume_db = -5.0
+
+[node name="Leap" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_w48qg")
+volume_db = -5.0
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 4.0
