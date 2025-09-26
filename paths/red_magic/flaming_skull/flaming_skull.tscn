@@ -192,6 +192,7 @@ process_mode = 4
 script = ExtResource("7_h3b6x")
 speed = 600
 spread = 30
+sound = "ShootLight"
 next = NodePath("../PrepareAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]

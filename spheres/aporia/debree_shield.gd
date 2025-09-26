@@ -2,7 +2,7 @@ extends Ability
 
 var inheritance_level = 4
 
-var entity_scene = preload("res://spheres/aporia/debree/debree.tscn")
+@export var entity_scene = preload("res://spheres/aporia/debree/debree.tscn")
 
 func _ready() -> void:
 	for repeat in level:

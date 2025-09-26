@@ -10,6 +10,7 @@ func write():
 		"day" : get_node("/root/Main").day,
 		"sphere" : get_node("/root/Main").sphere,
 		"sphere_tier" : get_node("/root/Main").sphere_tier,
+		"unlock_points" : get_node("/root/Main/UI").unlock_points,
 		"upgrade_points" : get_node("/root/Main/UI").upgrade_points,
 		"paths" : get_node("/root/Main/UI").paths,
 		"abilities" : {},
@@ -28,8 +29,11 @@ func read():
 	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
 		return
 	get_node("/root/Main").day = save_data["day"]
+	if get_node("/root/Main").day % 5 == 0:
+		get_node("/root/Main").bad_day = true
 	get_node("/root/Main").sphere = save_data["sphere"]
 	get_node("/root/Main").sphere_tier = save_data["sphere_tier"]
+	get_node("/root/Main/UI").unlock_points = save_data["unlock_points"]
 	get_node("/root/Main/UI").upgrade_points = save_data["upgrade_points"]
 	for path in save_data["paths"]:
 		get_node("/root/Main/UI").paths.append(path)

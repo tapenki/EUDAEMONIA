@@ -43,7 +43,7 @@ var ability_data = {
 	},
 	"conflagration" : {
 		"script" : preload("res://paths/red_magic/abilities/conflagration.gd"),
-		"type" : "upgrade"
+		"type" : "mastery"
 	},
 	"burn" : {
 		"script" : preload("res://generic/abilities/status/burn.gd"),

@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="2_0w6e5"]
 [ext_resource type="Texture2D" uid="uid://d4eqbunuivgqb" path="res://UI/desc.png" id="2_4fiuh"]
 [ext_resource type="Script" uid="uid://cr7vsr2ht6436" path="res://UI/floor_number.gd" id="3_g7pr5"]
-[ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/points.gd" id="3_mom20"]
+[ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/upgrade_points.gd" id="3_mom20"]
 [ext_resource type="Theme" uid="uid://ctgkksssqhxtw" path="res://UI/18px_font_theme.tres" id="3_o2jkc"]
 [ext_resource type="Theme" uid="uid://dbc5act8pigyb" path="res://UI/14px_font_theme.tres" id="5_2qbci"]
 [ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://UI/health_bar.gd" id="5_r6g2f"]
@@ -64,8 +64,16 @@ outline_color = Color(0, 0.501961, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qmobw"]
 font_size = 40
-outline_size = 10
+outline_size = 5
 outline_color = Color(0, 0.501961, 1, 1)
+stacked_outline_count = 1
+stacked_shadow_count = 2
+stacked_outline_0/size = 2
+stacked_shadow_0/offset = Vector2(1, 1)
+stacked_shadow_0/outline_size = 5
+stacked_shadow_1/offset = Vector2(1, 1)
+stacked_shadow_1/color = Color(0.11764706, 0.09019608, 1, 0.32156864)
+stacked_shadow_1/outline_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
 outline_size = 5
@@ -283,9 +291,9 @@ grow_vertical = 2
 [node name="UpgradePoints" type="Label" parent="Control/UpgradeScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.6
+anchor_right = 0.5
 anchor_bottom = 1.0
 offset_top = -40.0
 offset_bottom = -16.0

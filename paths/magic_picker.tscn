@@ -47,22 +47,18 @@ columns = 5
 layout_mode = 2
 texture_normal = ExtResource("3_rnk8j")
 subject = "red_magic"
-extra = "upgrade_cost"
 
 [node name="BlueMagic" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("5_t4f8r")
 subject = "blue_magic"
-extra = "upgrade_cost"
 
 [node name="BlackMagic" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("6_j1tjt")
 subject = "black_magic"
-extra = "upgrade_cost"
 
 [node name="WhiteMagic" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("7_bj4g6")
 subject = "white_magic"
-extra = "upgrade_cost"

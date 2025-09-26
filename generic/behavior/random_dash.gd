@@ -4,6 +4,7 @@ extends State
 
 @export var speed: int
 @export var spread: int
+@export var sound = "Leap"
 
 @export var next: State
 
@@ -22,7 +23,8 @@ func on_enter() -> void:
 	else:
 		direction = Vector2.from_angle(randf()*TAU)
 	
-	get_node("/root/Main").play_sound("Leap")
+	if sound != "":
+		get_node("/root/Main").play_sound(sound)
 	if user.is_on_wall():
 		stick_normal = user.get_last_slide_collision().get_normal()
 		user.wall_min_slide_angle = 0

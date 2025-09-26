@@ -1,21 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://hgvkjvw24j7"]
+[gd_scene load_steps=16 format=3 uid="uid://bhqe46kgmupeo"]
 
-[ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_88hjm"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jwabc"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_teuop"]
-[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="7_cgupt"]
-[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_yuve4"]
-[ext_resource type="Texture2D" uid="uid://c44l82bwk3ch" path="res://spheres/aporia/debree/debree.png" id="9_fdfy0"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_3drak"]
-[ext_resource type="Texture2D" uid="uid://0bv3ebw0go82" path="res://spheres/aporia/debree/debree_hurt.png" id="11_l11l1"]
-[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_pli3q"]
-[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_gak2i"]
+[ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_qga8u"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jo4yx"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_gpefe"]
+[ext_resource type="Texture2D" uid="uid://vr0ka6fey870" path="res://spheres/aporia/big_debree/big_debree.png" id="4_rvbot"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="5_tu552"]
+[ext_resource type="Texture2D" uid="uid://chwg5yewpt2hn" path="res://spheres/aporia/big_debree/big_debree_hurt.png" id="6_h0enx"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_r7a5u"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="8_mckpu"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="9_id01j"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="10_vba40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
-radius = 14.0
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
-radius = 14.0
+radius = 20.0
 
 [sub_resource type="Animation" id="Animation_drum4"]
 resource_name = "DEATH"
@@ -66,51 +66,49 @@ _data = {
 &"RESET": SubResource("Animation_fnls8")
 }
 
-[node name="Debree" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="BigDebree" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 collision_layer = 2
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_88hjm")
-max_distance = 120.0
+script = ExtResource("1_qga8u")
+max_distance = 160.0
 distance_deviation = 0.5
 speed = 250.0
 speed_deviation = 0.5
 ability_handler = NodePath("AbilityHandler")
-death_sound = "HitLight"
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
-script = ExtResource("2_jwabc")
+script = ExtResource("2_jo4yx")
 type = "Entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = ExtResource("8_yuve4")
-texture = ExtResource("9_fdfy0")
-script = ExtResource("10_3drak")
-base_texture = ExtResource("9_fdfy0")
-hurt_texture = ExtResource("11_l11l1")
+material = ExtResource("3_gpefe")
+texture = ExtResource("4_rvbot")
+script = ExtResource("5_tu552")
+base_texture = ExtResource("4_rvbot")
+hurt_texture = ExtResource("6_h0enx")
 
 [node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("5_teuop")
+script = ExtResource("7_r7a5u")
 wait_time = 0.2
 ability_handler = NodePath("../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("12_pli3q")
+texture = ExtResource("8_mckpu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bhp25")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
 collision_layer = 0
-script = ExtResource("13_gak2i")
+script = ExtResource("9_id01j")
 ability_handler = NodePath("../AbilityHandler")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
@@ -123,7 +121,7 @@ libraries = {
 }
 
 [node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("7_cgupt")
+script = ExtResource("10_vba40")
 wait_time = 2.0
 deviation = 0.3
 ability_handler = NodePath("../AbilityHandler")

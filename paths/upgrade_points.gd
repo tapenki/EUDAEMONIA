@@ -7,4 +7,4 @@ func _ready() -> void:
 	update(0)
 	
 func update(_day):
-	text = tr("upgrade_point_counter") % ui.upgrade_points
+	text = "%s / %s" % [tr("unlock_point_counter") % ui.unlock_points, tr("upgrade_point_counter") % ui.upgrade_points]

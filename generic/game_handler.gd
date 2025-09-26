@@ -58,9 +58,8 @@ var sphere_data = {
 	"vasis" : {
 		"tilemap" : preload("res://spheres/vasis/tilemap.png"),
 		"common_waves" : [
-			#[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
-			#[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
-			[{"enemy" : preload("res://spheres/aporia/mars/mars.tscn"), "formation" : "2far"}],
+			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far"}],
 		],
 		"special_waves" : [
 			[
@@ -86,30 +85,31 @@ var sphere_data = {
 			[{"enemy" : preload("res://spheres/aporia/hydra/hydra.tscn"), "formation" : "4far"}],
 			[{"enemy" : preload("res://spheres/aporia/spitball/spitball.tscn"), "formation" : "4far"}],
 			[{"enemy" : preload("res://spheres/aporia/leaker/leaker.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/aporia/mars/mars.tscn"), "formation" : "2far"}],
 		],
 		"special_waves" : [
-			[
-				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
-				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
-			],
+			[{"enemy" : preload("res://spheres/aporia/saturn/saturn.tscn"), "offset" : [Vector2(0, -100)]}],
 		]
 	},
 	"pandemonium" : {
 		"tilemap" : preload("res://tilemap.png"),
+		"wavecount" : 3,
 		"common_waves" : [
 			[{"enemy" : preload("res://spheres/aporia/hydra/hydra.tscn"), "formation" : "4far"}],
 			[{"enemy" : preload("res://spheres/aporia/spitball/spitball.tscn"), "formation" : "4far"}],
 			[{"enemy" : preload("res://spheres/aporia/leaker/leaker.tscn"), "formation" : "4far"}],
-			[{"enemy" : preload("res://spheres/vasis/leaper/leaper.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0), Vector2(0, -25)]}],
-			[{"enemy" : preload("res://spheres/vasis/spitter/spitter.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0), Vector2(0, -25)]}],
-			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0)]}],
-			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "4far", "offset" : [Vector2(25, 0), Vector2(-25, 0)]}],
+			[{"enemy" : preload("res://spheres/thayma/trispitter/trispitter.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/thayma/rocketjumper/rocketjumper.tscn"), "formation" : "4far"}],
+			[{"enemy" : preload("res://spheres/thayma/mold/mold.tscn"), "formation" : "4wall"}],
+			[{"enemy" : preload("res://spheres/aporia/mars/mars.tscn"), "formation" : "2far"}],
 		],
 		"special_waves" : [
 			[
 				{"enemy" : preload("res://spheres/vasis/giga_leaper/giga_leaper.tscn"), "offset" : [Vector2(300, 0)]},
 				{"enemy" : preload("res://spheres/vasis/giga_spitter/giga_spitter.tscn"), "offset" : [Vector2(-300, 0)]}
 			],
+			[{"enemy" : preload("res://spheres/thayma/mold_mother/mold_mother.tscn"), "offset" : [Vector2(0, -260)]}],
+			[{"enemy" : preload("res://spheres/aporia/saturn/saturn.tscn"), "offset" : [Vector2(0, -100)]}],
 		]
 	}
 }
@@ -256,7 +256,7 @@ func check_finished(dying_entity):
 		if players_alive:
 			get_node("/root/Main/UI").upgrade_points += 1
 			if bad_day:
-				get_node("/root/Main/UI").upgrade_points += 1
+				get_node("/root/Main/UI").unlock_points += 1
 			day_cleared.emit(day)
 			day_over = true
 

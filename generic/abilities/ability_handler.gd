@@ -49,6 +49,7 @@ signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, amount: float, crits: int)
 
 ## misc signals
+signal upgraded()
 
 ### methods
 func _physics_process(_delta: float) -> void:
@@ -216,6 +217,7 @@ func upgrade(ability: String, levels: int):
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
+	upgraded.emit()
 
 func apply_status(handler: Node, ability: String, levels: int):
 	var modifiers = {"source" : levels, "multiplier" : 1}

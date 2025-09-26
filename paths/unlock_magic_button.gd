@@ -1,6 +1,6 @@
 extends Described
 
-@onready var ui = $"../../../../../"
+@onready var ui = get_node("/root/Main/UI")
 
 @onready var upgrades_ui = $"../../../"
 @onready var picker = $"../../"
@@ -15,8 +15,8 @@ func _ready() -> void:
 	symbol_label.text = subject.substr(0, 2)
 
 func _on_pressed() -> void:
-	if not ui.defeated and ui.upgrade_points >= 1:
-		ui.upgrade_points -= 1
+	if not ui.defeated and ui.unlock_points >= 1:
+		ui.unlock_points -= 1
 		point_counter.update(0)
 		ui.paths.append(subject)
 		picker.pick(subject)

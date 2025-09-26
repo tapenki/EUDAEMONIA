@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh6uwpkbehlt4"]
+[gd_scene load_steps=7 format=3 uid="uid://bh6uwpkbehlt4"]
 
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="1_nbhot"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_w3gqa"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_pgluk"]
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/red_magic/red.png" id="2_xxy61"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/mastery_button.tscn" id="5_tdidc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pgluk"]
 resource_local_to_scene = true
@@ -37,7 +38,7 @@ horizontal_alignment = 1
 script = ExtResource("2_pgluk")
 subject = "red_magic"
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Abilities" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,35 +49,54 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="Ignition" parent="GridContainer" instance=ExtResource("1_nbhot")]
+[node name="Ignition" parent="Abilities" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "ignition"
-extra = "upgrade_cost"
 
-[node name="Firespawning" parent="GridContainer" instance=ExtResource("1_nbhot")]
+[node name="Firespawning" parent="Abilities" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "firespawning"
-extra = "upgrade_cost"
 
-[node name="FanTheFlames" parent="GridContainer" instance=ExtResource("1_nbhot")]
+[node name="FanTheFlames" parent="Abilities" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "fan_the_flames"
-extra = "upgrade_cost"
 
-[node name="ScorchedEarth" parent="GridContainer" instance=ExtResource("1_nbhot")]
+[node name="ScorchedEarth" parent="Abilities" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "scorched_earth"
-extra = "upgrade_cost"
 
-[node name="FromAshes" parent="GridContainer" instance=ExtResource("1_nbhot")]
+[node name="FromAshes" parent="Abilities" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "from_ashes"
-extra = "upgrade_cost"
+
+[node name="Masteries" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = -30.0
+offset_right = 294.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 18
+columns = 5
+
+[node name="Conflagration" parent="Masteries" instance=ExtResource("5_tdidc")]
+layout_mode = 2
+accessible_texture = ExtResource("2_xxy61")
+requires = {
+"fan_the_flames": 3
+}
+subject = "conflagration"
 
 [node name="Burn" type="NinePatchRect" parent="."]
 layout_mode = 1
