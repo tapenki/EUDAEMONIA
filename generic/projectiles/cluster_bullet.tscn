@@ -21,7 +21,6 @@ script = ExtResource("1_hil1t")
 hit_particles = ExtResource("2_tgaaq")
 hit_walls = true
 ability_handler = NodePath("AbilityHandler")
-hit_sound = "Peh"
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_hkirg")

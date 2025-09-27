@@ -267,5 +267,4 @@ libraries = {
 [connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
-[connection signal="timeout" from="Sprite/Burn/Lifetime" to="Sprite/Burn" method="_on_lifetime_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

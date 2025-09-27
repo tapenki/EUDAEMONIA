@@ -5,6 +5,8 @@ func erase():
 	save_file.store_var({"version" : ""})
 
 func write():
+	if get_node("/root/Main/UI").defeated:
+		return
 	var save_data = {
 		"version" : ProjectSettings.get_setting("application/config/version"),
 		"day" : get_node("/root/Main").day,

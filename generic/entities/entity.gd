@@ -31,7 +31,8 @@ func kill():
 		for ability in ability_handler.get_children():
 			ability.kill()
 		if hurtbox:
-			hurtbox.hit_enabled = false
+			#hurtbox.hit_enabled = false
+			hurtbox.queue_free()
 		get_node("/root/Main").entity_death.emit(self)
 		get_node("/root/Main").play_sound(death_sound)
 

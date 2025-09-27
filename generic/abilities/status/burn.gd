@@ -33,5 +33,6 @@ func add_level(value):
 	super(value)
 
 func kill():
-	particle_instance.parent_died()
+	if particle_instance.is_inside_tree():
+		particle_instance.parent_died()
 	super()

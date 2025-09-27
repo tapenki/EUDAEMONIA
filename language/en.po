@@ -45,9 +45,12 @@ msgstr "Cost: 1 Incremento"
 msgid "unlock_cost"
 msgstr "Cost: 1 Lucidae"
 
+msgid "learned"
+msgstr "Learned"
+
 # red
 msgid "red_magic_title"
-msgstr "[outline_color=#ff0000]Red Magic[/outline_color]"
+msgstr "[outline_color=#ff0000]Pyromancy[/outline_color]"
 
 msgid "red_magic_description"
 msgstr "Set people on fire yay !!!"
@@ -68,7 +71,7 @@ msgid "fan_the_flames_title"
 msgstr "[outline_color=#ff0000]Ch.3: Fan the Flames[/outline_color]"
 
 msgid "fan_the_flames_description"
-msgstr "[outline_size=10]Upon applying burn:[/outline_size] That burn gains [outline_size=10]x[0.2xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon applying burn:[/outline_size] That burn gains [outline_size=10]x[0.1xLEVEL][/outline_size] damage."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ch.4: Scorched Earth[/outline_color]"
@@ -86,8 +89,7 @@ msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
 
 msgid "conflagration_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] Fan the Flames[br][outline_size=10]Upon burning foe demise:[/outline_size] Spread its burn to the nearest foe."
-
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Fan the Flames[/outline_color][br][outline_size=10]Upon a burning creature dying:[/outline_size] Spread its burn to the nearest foe."
 
 msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
@@ -97,7 +99,7 @@ msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second. Expi
 
 # blue
 msgid "blue_magic_title"
-msgstr "[outline_color=#0000ff]Blue Magic[/outline_color]"
+msgstr "[outline_color=#0000ff]Cryomancy[/outline_color]"
 
 msgid "blue_magic_description"
 msgstr "Set people on ice yay !!!"
@@ -118,7 +120,7 @@ msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ch.3: Shatter[/outline_color]"
 
 msgid "shatter_description"
-msgstr "[outline_size=10]Upon foe demise:[/outline_size] It releases 4 bullets with [outline_size=10]x[LEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon a creature dying:[/outline_size] It releases [outline_size=10][4][/outline_size] bullets with [outline_size=10]x[LEVEL][/outline_size] damage. Summoned creatures only release [outline_size=10][2][/outline_size] bullets."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ch.4: Frostbite[/outline_color]"
@@ -132,12 +134,18 @@ msgstr "[outline_color=#0000ff]Ch.5: Ice Bombs[/outline_color]"
 msgid "ice_bombs_description"
 msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][2][/outline_size] ice bombs. They have [outline_size=10]x[0.25xLEVEL][/outline_size] damage, store taken damage, and explode dealing [outline_size=10]+[STOREDDAMAGE][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
 
+msgid "shard_blast_title"
+msgstr "[outline_color=#0000ff]Mastery: Shard Blast[/outline_color]"
+
+msgid "shard_blast_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Ice Bombs[/outline_color][br]Ice bombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] bullets upon exploding."
+
 # black
 msgid "black_magic_title"
-msgstr "[outline_color=#ff00ff]Black Magic[/outline_color]"
+msgstr "[outline_color=#ff00ff]Witchcraft[/outline_color]"
 
 msgid "black_magic_description"
-msgstr "Whichcraft !!!"
+msgstr "Which craft??"
 
 msgid "primal_casting_title"
 msgstr "[outline_color=#ff00ff]Ch.1: Primal Casting[/outline_color]"
@@ -169,24 +177,30 @@ msgstr "[outline_color=#ff00ff]Ch.5: Animated Clay[/outline_color]"
 msgid "animated_clay_description"
 msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[100xLEVEL][/outline_size] health, [outline_size=10]x[LEVEL][/outline_size] damage, most of your abilities, and your health bonuses."
 
+msgid "multimold_title"
+msgstr "[outline_color=#ff00ff]Mastery: Multimold[/outline_color]"
+
+msgid "multimold_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Animated Clay[/outline_color][br]Manifest [outline_size=10]+[1][/outline_size] clay effigy. Your clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+
 # white
 msgid "white_magic_title"
-msgstr "[outline_color=#c19100]White Magic[/outline_color]"
+msgstr "[outline_color=#c19100]Electromancy[/outline_color]"
 
 msgid "white_magic_description"
-msgstr "HELP I CANT SEE."
+msgstr "i love electricity."
 
 msgid "chain_bolt_title"
 msgstr "[outline_color=#c19100]Ch.1: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[10xLEVEL]%[/outline_size] crit chance. [outline_size=10]Upon dealing crit damage:[/outline_size] Chain damage to the closest foe up to [outline_size=10][LEVEL][/outline_size] times."
+msgstr "Damage to undamaged foes has [outline_size=10]+[25xLEVEL]%[/outline_size] crit chance and chains to the closest foe up to [outline_size=10][LEVEL][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#c19100]Ch.2: Mortal Shock[/outline_color]"
 
 msgid "mortal_shock_description"
-msgstr "Gain [outline_size=10]+[25xLEVEL]%[/outline_size] crit chance against undamaged foes and [outline_size=10]+[5xLEVEL][/outline_size] damage on crit."
+msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance and [outline_size=10]+[8xLEVEL][/outline_size] damage on crit."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#c19100]Ch.3: Electromagnetism[/outline_color]"
@@ -205,6 +219,12 @@ msgstr "[outline_color=#c19100]Ch.5: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
 msgstr "Gain [outline_size=10]+[50xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
+
+msgid "dynamo_title"
+msgstr "[outline_color=#c19100]Mastery: Dynamo[/outline_color]"
+
+msgid "dynamo_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#c19100]Ball Lightning[/outline_color][br]Your ball lightnings gain [outline_size=10]x[0.25][/outline_size] speed per second up to [outline_size=10]x[1][/outline_size] bonus speed. [outline_size=10]Upon attacking:[/outline_size] Reset the speed bonus."
 
 msgid "crit_title"
 msgstr "[outline_color=#c19100]Notes: Crit[/outline_color]"
@@ -259,3 +279,9 @@ msgstr "HEE HOO"
 
 msgid "mold_mother_death_1"
 msgstr "WOMP WOMP"
+
+msgid "saturn_spawn_1"
+msgstr "YYuummmmeerrss"
+
+msgid "saturn_death_1"
+msgstr "OOwwiiee"

@@ -7,4 +7,4 @@ func _ready() -> void:
 	
 func status_applied(status, _levels) -> void:
 	if status.name == "burn":
-		status.damage_multiplier += 0.2 * level
+		status.damage_multiplier += 0.1 * level

@@ -16,7 +16,7 @@ var path_data = {
 }
 
 var ability_data = {
-	## red
+	#region red
 	"ignition" : {
 		"script" : preload("res://paths/red_magic/abilities/ignition.gd"),
 		"type" : "upgrade"
@@ -49,7 +49,8 @@ var ability_data = {
 		"script" : preload("res://generic/abilities/status/burn.gd"),
 		"type" : "status"
 	},
-	## blue
+	#endregion
+	#region blue
 	"blue_needle" : {
 		"script" : preload("res://paths/blue_magic/abilities/blue_needle.gd"),
 		"type" : "upgrade"
@@ -78,7 +79,12 @@ var ability_data = {
 		"script" : preload("res://paths/blue_magic/icebomb/bomb.gd"),
 		"type" : "token"
 	},
-	## black
+	"shard_blast" : {
+		"script" : preload("res://paths/blue_magic/abilities/shard_blast.gd"),
+		"type" : "mastery"
+	},
+	#endregion
+	#region black
 	"primal_casting" : {
 		"script" : preload("res://paths/black_magic/abilities/primal_casting.gd"),
 		"type" : "upgrade"
@@ -99,7 +105,12 @@ var ability_data = {
 		"script" : preload("res://paths/black_magic/abilities/animated_clay.gd"),
 		"type" : "upgrade"
 	},
-	## white
+	"multimold" : {
+		"script" : preload("res://paths/black_magic/abilities/multimold.gd"),
+		"type" : "mastery"
+	},
+	#endregion
+	#region white
 	"chain_bolt" : {
 		"script" : preload("res://paths/white_magic/abilities/chain_bolt.gd"),
 		"type" : "upgrade"
@@ -120,7 +131,12 @@ var ability_data = {
 		"script" : preload("res://paths/white_magic/abilities/thunderstep.gd"),
 		"type" : "upgrade"
 	},
-	## misc
+	"dynamo" : {
+		"script" : preload("res://paths/white_magic/abilities/dynamo.gd"),
+		"type" : "mastery"
+	},
+	#endregion
+	#region misc
 	"bonus_health" : {
 		"script" : preload("res://generic/abilities/bonus_health.gd"),
 		"type" : "token"
@@ -129,4 +145,5 @@ var ability_data = {
 		"script" : preload("res://generic/abilities/enemy/bulletsplosion.gd"),
 		"type" : "token"
 	},
+	#endregion
 }

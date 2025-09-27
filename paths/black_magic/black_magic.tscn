@@ -1,14 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyap2b0glco33"]
+[gd_scene load_steps=6 format=3 uid="uid://cyap2b0glco33"]
 
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_w54y8"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="2_o7hfy"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_xnxfu"]
 [ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/black_magic/black.png" id="3_04yta"]
-[ext_resource type="Script" uid="uid://vmnir30qwfki" path="res://paths/black_magic/abilities/primal_casting.gd" id="4_w54y8"]
-[ext_resource type="Script" uid="uid://baylpcpkbafx6" path="res://paths/black_magic/abilities/trail_of_thorns.gd" id="5_xnxfu"]
-[ext_resource type="Script" uid="uid://bihctb7iu3yqp" path="res://paths/black_magic/abilities/quill_spray.gd" id="6_xa7n3"]
-[ext_resource type="Script" uid="uid://mahea8kqvfma" path="res://paths/black_magic/abilities/wrought_flesh.gd" id="7_m6gya"]
-[ext_resource type="Script" uid="uid://xbssb6wqbtqj" path="res://paths/black_magic/abilities/animated_clay.gd" id="8_sg6r4"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/mastery_button.tscn" id="5_0tpqo"]
 
 [node name="BlackMagic" type="Control"]
 layout_mode = 3
@@ -50,37 +46,51 @@ columns = 5
 [node name="PrimalCasting" parent="GridContainer" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
-ability_script = ExtResource("4_w54y8")
 subject = "primal_casting"
-extra = "upgrade_cost"
 
 [node name="TrailOfThorns" parent="GridContainer" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
-ability_script = ExtResource("5_xnxfu")
 subject = "trail_of_thorns"
-extra = "upgrade_cost"
 
 [node name="QuillSpray" parent="GridContainer" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
-ability_script = ExtResource("6_xa7n3")
 subject = "quill_spray"
-extra = "upgrade_cost"
 
 [node name="WroughtFlesh" parent="GridContainer" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
-ability_script = ExtResource("7_m6gya")
 subject = "wrought_flesh"
-extra = "upgrade_cost"
 
 [node name="AnimatedClay" parent="GridContainer" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
-ability_script = ExtResource("8_sg6r4")
 subject = "animated_clay"
-extra = "upgrade_cost"
+
+[node name="Masteries" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = -30.0
+offset_right = 230.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 18
+columns = 2
+
+[node name="Multimold" parent="Masteries" instance=ExtResource("5_0tpqo")]
+layout_mode = 2
+accessible_texture = ExtResource("3_04yta")
+requires = {
+"animated_clay": 5
+}
+subject = "multimold"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

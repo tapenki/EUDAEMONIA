@@ -81,20 +81,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 170.0
+offset_left = 174.0
 offset_top = -30.0
-offset_right = 294.0
+offset_right = 234.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 18
-columns = 5
+columns = 2
 
 [node name="Conflagration" parent="Masteries" instance=ExtResource("5_tdidc")]
 layout_mode = 2
 accessible_texture = ExtResource("2_xxy61")
 requires = {
-"fan_the_flames": 3
+"fan_the_flames": 5
 }
 subject = "conflagration"
 

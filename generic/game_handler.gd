@@ -4,6 +4,8 @@ extends Node
 
 @onready var camera = $Camera2D
 
+@onready var particles = $Particles
+
 @onready var spawns = $Spawns
 @onready var enemy_spawn_timer = $EnemySpawnTimer
 @onready var spawn_reticle = preload("res://generic/entities/spawn_reticle.tscn")
@@ -286,21 +288,25 @@ func play_sound(sound: String):
 	get_node("Audio/" + sound).play()
 
 func spawn_particles(particle_scene: PackedScene, position: Vector2, scale: float = 1, color: Color = Color.WHITE):
+	#if particles.get_children().size() > 32:
+	#	return
 	var particle_instance = particle_scene.instantiate()
 	particle_instance.global_position = position
 	particle_instance.modulate = color
 	particle_instance.process_material.scale *= scale
 	particle_instance.scale = Vector2(scale, scale)
-	add_child(particle_instance)
+	particles.add_child(particle_instance)
 	particle_instance.timer.start()
 	return particle_instance
 
 func particle_beam(particle_scene: PackedScene, start: Vector2, end: Vector2, spacing: float = 32, scale: float = 1, color: Color = Color.WHITE):
+	#if particles.get_children().size() > 32:
+	#	return
 	var particle_instance: GPUParticles2D = particle_scene.instantiate()
 	particle_instance.modulate = color
 	particle_instance.process_material.scale *= scale
 	particle_instance.scale = Vector2(scale, scale)
-	add_child(particle_instance)
+	particles.add_child(particle_instance)
 	particle_instance.timer.start()
 	
 	var distance = start.distance_to(end)

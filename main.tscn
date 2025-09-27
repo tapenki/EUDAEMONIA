@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://defo0ssov0anv"]
+[gd_scene load_steps=21 format=4 uid="uid://defo0ssov0anv"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://UI/ui.tscn" id="2_kek77"]
@@ -12,8 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://blkcwcunpcgqm" path="res://sounds/death_light.wav" id="11_ycdy4"]
 [ext_resource type="AudioStream" uid="uid://dacc5mwmkl3k2" path="res://sounds/hit_light.wav" id="12_dg77c"]
 [ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="12_ycdy4"]
-[ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_hard.wav" id="13_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="13_ycdy4"]
 [ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="14_w48qg"]
+[ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="15_vivmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cjbd"]
 texture = ExtResource("3_4c57u")
@@ -138,13 +139,19 @@ volume_db = -10.0
 stream = ExtResource("12_ycdy4")
 volume_db = -10.0
 
-[node name="HurtHard" type="AudioStreamPlayer" parent="Audio"]
+[node name="HurtHeavy" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("13_ycdy4")
 volume_db = -5.0
 
 [node name="Leap" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_w48qg")
 volume_db = -5.0
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("15_vivmo")
+volume_db = -10.0
+
+[node name="Particles" type="Node" parent="."]
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 4.0

@@ -26,7 +26,7 @@ scale_curve = SubResource("CurveTexture_ate26")
 [node name="Zap" type="GPUParticles2D"]
 z_index = 2
 material = ExtResource("1_kwhrr")
-amount = 5
+amount = 3
 texture = ExtResource("2_cdpfu")
 lifetime = 0.32
 explosiveness = 1.0

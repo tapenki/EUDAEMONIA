@@ -1,21 +1,31 @@
 extends Ability
 
 var inheritance_level = 4
-var type = "Upgrade"
 
 var projectile_scene = preload("res://paths/white_magic/ball_lightning.tscn")
 var anchor_node
 var hurtbox_one
 var hurtbox_two
 
+var dynamo: bool
+var speed = 1.0
+
 func _ready() -> void:
 	anchor_node = Node2D.new()
 	add_child(anchor_node)
+	if ability_handler.has_node("dynamo"):
+		dynamo = true
+	ability_handler.attack.connect(attack)
 	get_node("/root/Main").day_start.connect(day_start)
 	get_node("/root/Main").intermission.connect(intermission)
 
 func _physics_process(delta: float) -> void:
-	anchor_node.rotation += delta * PI * ability_handler.speed_scale
+	if dynamo:
+		speed = min(speed + delta * ability_handler.speed_scale * 0.25, 2)
+	anchor_node.rotation += delta * PI * ability_handler.speed_scale * speed
+
+func attack(_direction):
+	speed = 1.0
 
 func day_start(_day: int) -> void:
 	var total = 2

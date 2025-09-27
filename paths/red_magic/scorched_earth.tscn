@@ -35,9 +35,10 @@ radius = 48.0
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_ry3wi")
-hits_left = -1
+hits_left = 3
 ability_handler = NodePath("AbilityHandler")
-hit_sound = "Peh"
+hit_delay = 0.2
+hit_enabled = false
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7j7ie")
@@ -63,7 +64,7 @@ shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_7dolq")
-wait_time = 1.5
+wait_time = 0.85
 running = true
 ability_handler = NodePath("../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

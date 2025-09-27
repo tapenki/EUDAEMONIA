@@ -38,4 +38,5 @@ func timeout() -> void:
 	
 	var damage =  {"source" : stored_damage, "multiplier" : 0.25*level}
 	explosion_instance.ability_handler.inherited_damage = damage
+	get_node("/root/Main").play_sound("Explosion")
 	ability_handler.owner.kill()

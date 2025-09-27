@@ -1,6 +1,6 @@
 extends Ability
 
-var inheritance_level = 3
+var inheritance_level = 4
 
 var firebeam_scene = preload("res://generic/particles/firebeam.tscn")
 

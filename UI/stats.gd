@@ -43,9 +43,16 @@ func _on_mouse_entered() -> void:
 	description_title.size = Vector2(240, description_title.get_content_height())
 	description_title.position.y = -description_title.size.y - 4
 	
+	var winsize = get_window().content_scale_size ## horrible and evil solutions
+	var ratio = float(get_window().size.x)/get_window().size.y
+	if ratio > float(winsize.x)/winsize.y:
+		winsize.x = winsize.y * ratio
+	elif ratio < float(winsize.x)/winsize.y:
+		winsize.y = winsize.x / ratio
+	
 	var name_offset = description_title.get_content_height() + 18
 	var description_offset = description.get_content_height() + 6
-	description.global_position = (global_position + Vector2(size.x - description.size.x, size.y) * 0.5).clamp(Vector2(6, name_offset), Vector2(900 - 306, 600 - description_offset))
+	description.global_position = (global_position + Vector2(size.x - description.size.x, size.y) * 0.5).clamp(Vector2(6, name_offset), Vector2(winsize.x - 306, winsize.y - description_offset))
 	
 	description.visible = true
 
