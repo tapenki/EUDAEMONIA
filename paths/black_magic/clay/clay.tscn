@@ -122,7 +122,7 @@ inherited_crit_chance = {
 "multiplier": 1.0,
 "source": 5.0
 }
-type = "Entity"
+type = "entity"
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_etq7d")

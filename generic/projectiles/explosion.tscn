@@ -21,7 +21,7 @@ ability_handler = NodePath("AbilityHandler")
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("3_p0y1b")
-type = "Projectile"
+type = "projectile"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

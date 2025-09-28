@@ -42,7 +42,7 @@ hit_enabled = false
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7j7ie")
-type = "Projectile"
+type = "projectile"
 
 [node name="Sprite" type="GPUParticles2D" parent="." node_paths=PackedStringArray("ability_handler")]
 z_index = -1

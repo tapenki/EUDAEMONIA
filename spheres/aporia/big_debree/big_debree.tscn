@@ -83,7 +83,7 @@ max_health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_jo4yx")
-type = "Entity"
+type = "entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

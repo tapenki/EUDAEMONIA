@@ -18,9 +18,9 @@ func _physics_process(_delta):
 	if not alive:
 		return
 	if Input.is_action_pressed("fire") and not bullet_timer.running:
-		## handle fire rate
-		var fire_rate = ability_handler.get_attack_rate(0.35)
-		bullet_timer.start(fire_rate)
+		## handle fire rate or maybe don't
+		#var fire_rate = ability_handler.get_attack_rate(0.35)
+		bullet_timer.start(0.35)
 		## create bullet
 		var attack_direction = (get_global_mouse_position() - global_position).normalized()
 		shoot(attack_direction)

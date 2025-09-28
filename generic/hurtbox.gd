@@ -9,8 +9,8 @@ class_name Hurtbox extends Area2D
 var exclude: Dictionary
 @export var hit_enabled = true
 
-func on_collision(collision_position: Vector2, body: Node, _crits: int):
-	ability_handler.attack_impact.emit(collision_position, body)
+func on_collision(_collision_position: Vector2, _body: Node, _crits: int):
+	#ability_handler.attack_impact.emit(collision_position, body)
 	if hit_sound:
 		get_node("/root/Main").play_sound(hit_sound)
 

@@ -1,7 +1,6 @@
 extends Ability
 
 var inheritance_level = 3
-var type = "Upgrade"
 
 var bullet = preload("res://paths/black_magic/spike.tscn")
 

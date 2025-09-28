@@ -1,12 +1,11 @@
 extends Ability
 
 var inheritance_level = 1
-var type = "Upgrade"
 
 var boost = 1.0
 
 func _ready() -> void:
-	if ability_handler.type == "Projectile":
+	if ability_handler.type == "projectile":
 		ability_handler.inh_attack_scale_modifiers.connect(attack_scale_modifiers)
 		ability_handler.inh_damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	else:

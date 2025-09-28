@@ -6,7 +6,7 @@ extends Node
 @export var inherited_crit_chance = {"source" : 0.0, "multiplier" : 1.0}
 @export var inherited_speed_scale = {"source" : 1.0, "multiplier" : 1.0}
 
-@export var type: String
+@export_enum("entity", "projectile", "static") var type: String
 
 var speed_scale = 1.0
 
@@ -27,11 +27,11 @@ signal move_speed_modifiers(modifiers: Dictionary)
 signal movement(distance: float)
 
 ## attack signals
-signal attack_rate_modifiers(modifiers: Dictionary)
+#signal attack_rate_modifiers(modifiers: Dictionary)
 signal inh_attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 signal projectile_created(projectile: Projectile)
-signal attack_impact(position: Vector2, body: Node)
+#signal attack_impact(position: Vector2, body: Node)
 
 ## summon signals
 signal summon_damage_modifiers(modifiers: Dictionary)
@@ -75,10 +75,10 @@ func get_move_speed(source: float):
 	move_speed_modifiers.emit(modifiers)
 	return max(modifiers["source"] * modifiers["multiplier"], 0)
 
-func get_attack_rate(source: float):
-	var modifiers = {"source" : source, "multiplier" : 1}
-	attack_rate_modifiers.emit(modifiers)
-	return modifiers["source"] * modifiers["multiplier"]
+#func get_attack_rate(source: float):
+#	var modifiers = {"source" : source, "multiplier" : 1}
+#	attack_rate_modifiers.emit(modifiers)
+#	return modifiers["source"] * modifiers["multiplier"]
 
 func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 	inh_attack_scale_modifiers.emit(modifiers)

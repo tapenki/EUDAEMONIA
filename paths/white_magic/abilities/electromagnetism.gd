@@ -1,12 +1,11 @@
 extends Ability
 
 var inheritance_level = 1
-var type = "Upgrade"
 
 var velocity_decay = false
 
 func _ready() -> void:
-	if ability_handler.type != "Projectile":
+	if ability_handler.type != "projectile":
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
 func _physics_process(_delta: float) -> void:

@@ -1,16 +1,15 @@
 extends Ability
 
 var inheritance_level = 2
-var type = "Upgrade"
 
 var bullet = preload("res://paths/red_magic/scorched_earth.tscn")
 
 func _ready() -> void:
-	ability_handler.attack_impact.connect(attack_impact)
+	ability_handler.self_death.connect(self_death)
 	
-func attack_impact(impact_position, _body) -> void:
+func self_death() -> void:
 	var bullet_instance = ability_handler.make_projectile(bullet, 
-	impact_position, 
+	global_position, 
 	2,
 	Vector2())
 	bullet_instance.ability_handler.inherited_damage["multiplier"] *= 0.25 * level

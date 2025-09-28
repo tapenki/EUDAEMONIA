@@ -53,12 +53,12 @@ layout_mode = 2
 texture_normal = ExtResource("5_t4f8r")
 subject = "blue_magic"
 
-[node name="BlackMagic" parent="GridContainer" instance=ExtResource("2_yj67j")]
-layout_mode = 2
-texture_normal = ExtResource("6_j1tjt")
-subject = "black_magic"
-
 [node name="WhiteMagic" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("7_bj4g6")
 subject = "white_magic"
+
+[node name="BlackMagic" parent="GridContainer" instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("6_j1tjt")
+subject = "black_magic"

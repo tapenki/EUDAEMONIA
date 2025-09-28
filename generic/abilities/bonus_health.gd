@@ -3,7 +3,7 @@ extends Ability
 var inheritance_level = 3
 
 func _ready() -> void:
-	if ability_handler.type == "Entity":
+	if ability_handler.type == "entity":
 		ability_handler.max_health_modifiers.connect(max_health_modifiers)
 		ability_handler.update_health.emit()
 

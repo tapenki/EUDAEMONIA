@@ -1,6 +1,11 @@
 extends Node
 
 var base_values = {
+	"audio" : {
+		"master_volume" = 1,
+		"music_volume" = 1,
+		"sfx_volume" = 1,
+	},
 	"palette" : {
 		"1/primary" = "0080ff",
 		"1/secondary" = "00c0ff",
@@ -21,6 +26,9 @@ func _init() -> void:
 			if loaded != OK or not config.has_section_key(section, key):
 				config.set_value(section, key, base_values[section][key])
 				should_save = true
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), config.get_value("audio", "master_volume", 1))
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), config.get_value("audio", "music_volume", 1))
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), config.get_value("audio", "sfx_volume", 1))
 	if should_save:
 		config.save("user://config.ini")
 

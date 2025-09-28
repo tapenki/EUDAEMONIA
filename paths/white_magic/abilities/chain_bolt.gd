@@ -11,12 +11,11 @@ func _ready() -> void:
 	ability_handler.crit_chance_modifiers.connect(crit_chance_modifiers)
 	ability_handler.damage_dealt.connect(damage_dealt)
 
-func crit_chance_modifiers(entity, modifiers) -> void:
-	if entity and entity.health == entity.max_health:
-		modifiers["source"] += 25 * level
+func crit_chance_modifiers(_entity, modifiers) -> void:
+	modifiers["source"] += 10 * level
 
-func damage_dealt(entity, _damage, _crits_dealt) -> void:
-	if chain.size() < level and entity.health == entity.max_health:
+func damage_dealt(entity, _damage, crits_dealt) -> void:
+	if chain.size() < 2 and crits_dealt > 0:
 		chain[entity] = true
 		var target = ability_handler.find_target(entity.global_position, 9999, chain)
 		if target:

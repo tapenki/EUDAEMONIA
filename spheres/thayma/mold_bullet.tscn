@@ -22,7 +22,7 @@ ability_handler = NodePath("AbilityHandler")
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("3_hyqsw")
-type = "Projectile"
+type = "projectile"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = ExtResource("4_ks5w7")

@@ -21,7 +21,7 @@ hit_sound = "Peh"
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_284hq")
-type = "Projectile"
+type = "projectile"
 
 [node name="Sprite" type="Sprite2D" parent="." node_paths=PackedStringArray("ability_handler")]
 material = ExtResource("3_4p3px")

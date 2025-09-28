@@ -20,7 +20,7 @@ hit_enabled = false
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_aael2")
-type = "Projectile"
+type = "projectile"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("4_gettj")

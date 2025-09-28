@@ -38,7 +38,7 @@ hit_sound = "Peh"
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("3_r00uu")
-type = "Static"
+type = "static"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = ExtResource("2_3eyo0")

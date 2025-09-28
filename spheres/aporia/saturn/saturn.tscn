@@ -138,7 +138,7 @@ max_health = 400
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7xc43")
-type = "Entity"
+type = "entity"
 
 [node name="big_debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_6838j")
