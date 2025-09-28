@@ -163,10 +163,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("5_gnuag")
 bullet = ExtResource("6_s2lvl")
-bullet_lifetime = 0.75
+bullet_lifetime = 0.9
 bullet_count = 3
 spread = 60
-bullet_speed = 500
+bullet_speed = 450
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]

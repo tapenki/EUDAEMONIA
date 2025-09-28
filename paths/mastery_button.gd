@@ -85,7 +85,7 @@ func _on_mouse_entered() -> void:
 	
 	var name_offset = description_title.get_content_height() + 18
 	var description_offset = description.get_content_height() + 6
-	description.global_position = (global_position + Vector2(size.x - description.size.x, size.y) * 0.5).clamp(Vector2(6, name_offset), Vector2(winsize.x - 306, winsize.y - description_offset))
+	description.global_position = (global_position + Vector2(size.x - description.size.x, size.y) * 0.5).clamp(Vector2(6, name_offset), Vector2(winsize.x - 244, winsize.y - description_offset))
 	
 	description.visible = true
 

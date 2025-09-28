@@ -129,7 +129,7 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_cj52d")
-speed = 400
+speed = 350
 distance_margin = 200
 next = NodePath("../PrepareAttack1")
 

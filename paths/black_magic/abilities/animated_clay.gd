@@ -31,5 +31,5 @@ func day_start(_day: int) -> void:
 		summon_position, 
 		4,  ## inheritance
 		100 * level * health_multiplier) ## health
-		summon_instance.ability_handler.inherited_damage["multiplier"] *= level
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 + 0.5 * level
 		get_node("/root/Main").spawn_entity(summon_instance)

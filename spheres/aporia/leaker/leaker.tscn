@@ -129,7 +129,7 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_ag6p6")
-speed = 400
+speed = 350
 distance_margin = 200
 next = NodePath("../PrepareAttack")
 
@@ -161,10 +161,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_pw4qb")
 bullet = ExtResource("7_m4dc5")
-bullet_lifetime = 0.5
+bullet_lifetime = 0.75
 bullet_count = 3
 spread = 60
-bullet_speed = 500
+bullet_speed = 450
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]

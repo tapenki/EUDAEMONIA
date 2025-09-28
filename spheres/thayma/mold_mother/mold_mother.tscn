@@ -123,7 +123,7 @@ script = ExtResource("1_mdyec")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 320
+max_health = 400
 health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
@@ -152,10 +152,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
-bullet_lifetime = 2.0
+bullet_lifetime = 2.4
 bullet_count = 3
 spread = 60
-bullet_speed = 400
+bullet_speed = 350
 next = NodePath("../PrepareAttack2")
 
 [node name="PrepareAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
@@ -175,10 +175,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
-bullet_lifetime = 2.0
+bullet_lifetime = 2.4
 bullet_count = 2
 spread = 45
-bullet_speed = 400
+bullet_speed = 350
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]

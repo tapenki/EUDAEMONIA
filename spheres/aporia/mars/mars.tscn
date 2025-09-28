@@ -120,9 +120,11 @@ max_health = 60
 script = ExtResource("2_p2v6q")
 type = "Entity"
 
-[node name="debree_shield" type="Node2D" parent="AbilityHandler"]
+[node name="debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_aeyf6")
-level = 5.0
+ability_handler = NodePath("../AbilityHandler")
+count = 5
+health = 40
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_qtcyr")

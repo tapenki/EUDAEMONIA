@@ -4,6 +4,7 @@ extends Node
 @export var inherited_damage = {"source" : 10.0, "multiplier" : 1.0}
 @export var inherited_summon_damage = {"source" : 10.0, "multiplier" : 1.0}
 @export var inherited_crit_chance = {"source" : 0.0, "multiplier" : 1.0}
+@export var inherited_speed_scale = {"source" : 1.0, "multiplier" : 1.0}
 
 @export var type: String
 
@@ -21,7 +22,7 @@ signal status_applied(status: Node, levels: int)
 signal update_status(status: Node)
 
 ## movement & speed signals
-signal speed_scale_modifiers(modifiers: Dictionary)
+signal inh_speed_scale_modifiers(modifiers: Dictionary)
 signal move_speed_modifiers(modifiers: Dictionary)
 signal movement(distance: float)
 
@@ -53,9 +54,9 @@ signal upgraded()
 
 ### methods
 func _physics_process(_delta: float) -> void:
-	var modifiers = {"source" : 1.0, "multiplier" : 1}
-	speed_scale_modifiers.emit(modifiers)
-	speed_scale = modifiers["source"] * modifiers["multiplier"]
+	var modifiers = {"source" : 0, "multiplier" : 1}
+	inh_speed_scale_modifiers.emit(modifiers)
+	speed_scale = (inherited_speed_scale["source"] + modifiers["source"]) * inherited_speed_scale["multiplier"] * modifiers["multiplier"]
 
 ## stat getters
 func get_health(health: float, max_health: float):
@@ -160,6 +161,10 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	var crit_chance = inherited_crit_chance.duplicate()
 	#inh_crit_chance_modifiers.emit(crit_chance)
 	projectile_instance.ability_handler.inherited_crit_chance = crit_chance
+	
+	var speed = inherited_speed_scale.duplicate()
+	inh_speed_scale_modifiers.emit(speed)
+	projectile_instance.ability_handler.inherited_speed_scale = speed
 	
 	projectile_created.emit(projectile_instance)
 	return projectile_instance

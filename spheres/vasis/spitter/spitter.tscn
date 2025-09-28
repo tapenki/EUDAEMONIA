@@ -170,8 +170,8 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("5_lbqrw")
 bullet = ExtResource("6_7f2ot")
-bullet_lifetime = 2.0
-bullet_speed = 500
+bullet_lifetime = 2.4
+bullet_speed = 450
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]

@@ -25,7 +25,7 @@ func before_self_death(modifiers) -> void:
 		modifiers["prevented"] = true
 		recovery_timer.start(5)
 		var health_values = ability_handler.get_health(ability_handler.owner.health, ability_handler.owner.max_health)
-		ability_handler.owner.health = ability_handler.owner.max_health - health_values["max_health"]
+		ability_handler.owner.health = max(ability_handler.owner.health, ability_handler.owner.max_health - health_values["max_health"])
 		ability_handler.owner.immune(ability_handler.get_immune_duration({"source" : ability_handler.owner.immune_duration, "multiplier" : 4}))
 		get_node("/root/Main").spawn_particles(explosion_scene, global_position, 2, Config.get_team_color(ability_handler.owner.group, "secondary"))
 

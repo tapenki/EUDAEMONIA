@@ -124,7 +124,7 @@ _data = {
 &"WINDUP": SubResource("Animation_14oqu")
 }
 
-[node name="Orbit" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Saturn" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 2
 collision_mask = 128
@@ -134,20 +134,24 @@ script = ExtResource("1_58q1v")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 320
+max_health = 400
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7xc43")
 type = "Entity"
 
-[node name="big_debree_shield" type="Node2D" parent="AbilityHandler"]
+[node name="big_debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_6838j")
+ability_handler = NodePath("../AbilityHandler")
 entity_scene = ExtResource("4_q8h26")
-level = 6.0
+count = 6
+health = 60
 
-[node name="debree_shield" type="Node2D" parent="AbilityHandler"]
+[node name="debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_6838j")
-level = 6.0
+ability_handler = NodePath("../AbilityHandler")
+count = 6
+health = 40
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vknsd")
@@ -205,9 +209,9 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("9_7ds08")
 bullet = ExtResource("10_nc6hc")
-bullet_lifetime = 2.0
+bullet_lifetime = 2.4
 bullet_count = 8
-bullet_speed = 500
+bullet_speed = 450
 next = NodePath("../PrepareShoot2")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttack1" node_paths=PackedStringArray("ability_handler")]
@@ -231,10 +235,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("9_7ds08")
 bullet = ExtResource("10_nc6hc")
-bullet_lifetime = 2.0
+bullet_lifetime = 2.4
 bullet_count = 8
 angle = 22.5
-bullet_speed = 500
+bullet_speed = 450
 next = NodePath("../Endlag2")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttack2" node_paths=PackedStringArray("ability_handler")]
