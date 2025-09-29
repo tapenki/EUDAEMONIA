@@ -26,6 +26,7 @@ func _ready() -> void:
 
 func kill():
 	if alive:
+		ability_handler.self_death.emit()
 		alive = false
 		animation_player.play("DEATH")
 		for ability in ability_handler.get_children():
@@ -57,7 +58,6 @@ func take_damage(source, damage, immune_affected = true):
 		var death_modifiers = {"prevented" : false}
 		ability_handler.before_self_death.emit(death_modifiers)
 		if not death_modifiers["prevented"]:
-			ability_handler.self_death.emit()
 			kill.call_deferred()
 
 func heal(amount):

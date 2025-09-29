@@ -23,6 +23,6 @@ func _physics_process(delta: float) -> void:
 	scale = base_scale * scaler
 
 func parent_died():
-	base_scale = get_parent().scale
+	base_scale = get_parent().global_scale
 	reparent(get_tree().current_scene)
 	alive = false

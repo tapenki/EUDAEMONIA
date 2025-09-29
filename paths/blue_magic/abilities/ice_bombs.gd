@@ -17,8 +17,9 @@ func day_start(_day: int) -> void:
 		var summon_instance = ability_handler.make_summon(bomb, 
 		i,
 		3,  ## inheritance
-		1, ## health
-		ability_handler.get_enemy_group()) ## group
+		0) ## health
+		for layer in range(1, 3):
+			summon_instance.set_collision_layer_value(layer, layer != ability_handler.owner.group)
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.25*level
 		
 		summon_instance.get_node("Sprite").modulate = Config.get_team_color(3, "secondary")

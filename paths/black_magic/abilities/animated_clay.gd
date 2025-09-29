@@ -21,15 +21,13 @@ func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
 	
 func day_start(_day: int) -> void:
-	var health_multiplier = 1
 	var positions = summon_positions
 	if multimold:
-		health_multiplier = 0.5
 		positions = multimold_positions
 	for summon_position in positions:
 		var summon_instance = ability_handler.make_summon(summon, 
 		summon_position, 
 		4,  ## inheritance
-		100 * level * health_multiplier) ## health
+		100 * level) ## health
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 + 0.5 * level
 		get_node("/root/Main").spawn_entity(summon_instance)

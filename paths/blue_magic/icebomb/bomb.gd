@@ -23,15 +23,13 @@ func damage_taken(_source, damage) -> void:
 		ability_handler.owner.get_node("AnimationPlayer").play("PRIMED")
 
 func before_self_death(modifiers) -> void:
-	ability_handler.owner.health = 1
 	modifiers["prevented"] = true
 
 func timeout() -> void:
 	var explosion_instance = ability_handler.make_projectile(explosion_scene, 
 	global_position, ## position
 	3, ## inheritance
-	Vector2(), ## velocity
-	ability_handler.get_enemy_group()) 
+	Vector2()) ## velocity
 	explosion_instance.ability_handler.inherited_damage["source"] += stored_damage
 	explosion_instance.scale_multiplier = 8
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)

@@ -13,4 +13,6 @@ func self_death() -> void:
 	2,
 	Vector2())
 	bullet_instance.ability_handler.inherited_damage["multiplier"] *= 0.25 * level
+	if ability_handler.type == "entity":
+		bullet_instance.ability_handler.inherited_scale["multiplier"] *= 1.5
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)
