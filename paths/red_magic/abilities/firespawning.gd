@@ -4,17 +4,16 @@ var inheritance_level = 4
 
 var summon = preload("res://paths/red_magic/flaming_skull/flaming_skull.tscn")
 
-var summon_positions = [
-	Vector2(600, 300),
-	Vector2(300, 300),
-	Vector2(450, 450),
-	Vector2(450, 150)
-]
-
 func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
 
 func day_start(_day: int) -> void:
+	var summon_positions = [
+		get_node("/root/Main").layout.get_node("Positions/InnerLeft").global_position,
+		get_node("/root/Main").layout.get_node("Positions/InnerTop").global_position,
+		get_node("/root/Main").layout.get_node("Positions/InnerRight").global_position,
+		get_node("/root/Main").layout.get_node("Positions/InnerBottom").global_position,
+	]
 	for i in summon_positions:
 		var summon_instance = ability_handler.make_summon(summon, 
 		i,

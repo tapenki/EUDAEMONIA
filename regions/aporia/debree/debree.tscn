@@ -1,0 +1,135 @@
+[gd_scene load_steps=16 format=3 uid="uid://hgvkjvw24j7"]
+
+[ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_88hjm"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jwabc"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_teuop"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="7_cgupt"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_yuve4"]
+[ext_resource type="Texture2D" uid="uid://c44l82bwk3ch" path="res://regions/aporia/debree/debree.png" id="9_fdfy0"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_3drak"]
+[ext_resource type="Texture2D" uid="uid://0bv3ebw0go82" path="res://regions/aporia/debree/debree_hurt.png" id="11_l11l1"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_pli3q"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_gak2i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 14.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"RESET": SubResource("Animation_fnls8")
+}
+
+[node name="Debree" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+collision_layer = 2
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_88hjm")
+max_distance = 120.0
+distance_deviation = 0.5
+speed = 250.0
+speed_deviation = 0.5
+ability_handler = NodePath("AbilityHandler")
+death_sound = "HitLight"
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 40
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_jwabc")
+type = "entity"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+material = ExtResource("8_yuve4")
+texture = ExtResource("9_fdfy0")
+script = ExtResource("10_3drak")
+base_texture = ExtResource("9_fdfy0")
+hurt_texture = ExtResource("11_l11l1")
+
+[node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_teuop")
+wait_time = 0.2
+ability_handler = NodePath("../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_pli3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+script = ExtResource("13_gak2i")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+libraries = {
+&"": SubResource("AnimationLibrary_v1kwl")
+}
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("7_cgupt")
+wait_time = 2.0
+deviation = 0.3
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://dvr6gecg7swmt"
+
+[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

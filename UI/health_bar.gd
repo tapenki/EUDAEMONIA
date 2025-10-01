@@ -6,7 +6,6 @@ extends ProgressBar
 
 @onready var player = $"../../".player
 @onready var ability_handler = player.ability_handler
-@onready var camera = $"../../../Camera2D"
 
 func _ready() -> void:
 	ability_handler.damage_taken.connect(damage_taken)
@@ -27,7 +26,7 @@ func damage_taken(_source, _damage) -> void:
 	value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 	damage_timer.start()
-	camera.shake = 0.2
+	get_node("/root/Main").screenshake.emit(0.2)
 
 func healed(_amount) -> void:
 	var health_values = ability_handler.get_health(player.health, player.max_health)

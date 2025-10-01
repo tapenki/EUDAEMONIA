@@ -46,7 +46,7 @@ var ability_data = {
 		"type" : "mastery"
 	},
 	"burn" : {
-		"script" : preload("res://generic/abilities/status/burn.gd"),
+		"script" : preload("res://paths/red_magic/burn.gd"),
 		"type" : "status"
 	},
 	#endregion
@@ -68,7 +68,7 @@ var ability_data = {
 		"type" : "upgrade"
 	},
 	"chill" : {
-		"script" : preload("res://generic/abilities/status/chill.gd"),
+		"script" : preload("res://paths/blue_magic/chill.gd"),
 		"type" : "status"
 	},
 	"ice_bombs" : {

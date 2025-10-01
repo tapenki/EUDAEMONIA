@@ -4,15 +4,14 @@ var inheritance_level = 4
 
 var bomb = preload("res://paths/blue_magic/icebomb/icebomb.tscn")
 
-var summon_positions = [
-	Vector2(600, 300),
-	Vector2(300, 300),
-]
-
 func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
 	
 func day_start(_day: int) -> void:
+	var summon_positions = [
+		get_node("/root/Main").layout.get_node("Positions/InnerLeft").global_position,
+		get_node("/root/Main").layout.get_node("Positions/InnerRight").global_position,
+	]
 	for i in summon_positions:
 		var summon_instance = ability_handler.make_summon(bomb, 
 		i,

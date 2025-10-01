@@ -6,24 +6,15 @@ var summon = preload("res://paths/black_magic/clay/clay.tscn")
 
 var multimold: bool
 
-var summon_positions = [
-	Vector2(450, 300),
-]
-
-var multimold_positions = [
-	Vector2(500, 300),
-	Vector2(400, 300)
-]
-
 func _ready() -> void:
 	if ability_handler.has_node("multimold"):
 		multimold = true
 	get_node("/root/Main").day_start.connect(day_start)
 	
 func day_start(_day: int) -> void:
-	var positions = summon_positions
+	var positions = [global_position + Vector2(0, 50)]
 	if multimold:
-		positions = multimold_positions
+		positions = [global_position + Vector2(50, 0), global_position - Vector2(50, 0)]
 	for summon_position in positions:
 		var summon_instance = ability_handler.make_summon(summon, 
 		summon_position, 

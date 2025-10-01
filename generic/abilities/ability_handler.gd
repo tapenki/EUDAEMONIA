@@ -116,7 +116,7 @@ func enemies_mask():
 	return mask
 
 func area_targets(position: Vector2, radius = 9999, mask = enemies_mask()):
-	var space_state = PhysicsServer2D.space_get_direct_state(get_node("/root/Main").physics_space)
+	var space_state = get_node("/root/Main").physics_space
 	var shape_query = PhysicsShapeQueryParameters2D.new()
 	shape_query.shape = CircleShape2D.new()
 	shape_query.shape.radius = radius

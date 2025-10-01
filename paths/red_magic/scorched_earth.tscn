@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl1ot8whcchll" path="res://paths/black_magic/spike.gd" id="1_ry3wi"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_7j7ie"]
-[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://generic/particles/flame.png" id="3_73dah"]
+[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/red_magic/flame.png" id="3_73dah"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_o2x1p"]
 [ext_resource type="Script" uid="uid://bpp8xt218ougu" path="res://generic/projectiles/projectile_particle_scaler.gd" id="4_73dah"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_r8bsk"]
@@ -52,7 +52,6 @@ lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_7j7ie")
 script = ExtResource("4_73dah")
 ability_handler = NodePath("../AbilityHandler")
-shrink = 1.0
 
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3

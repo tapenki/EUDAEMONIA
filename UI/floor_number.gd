@@ -6,6 +6,6 @@ func _ready() -> void:
 
 func update(_day):
 	text = "%s - %s" % [
-		tr(get_node("/root/Main").sphere+"_title"),
+		tr(get_node("/root/Main").region+"_title"),
 		tr("day_counter") % get_node("/root/Main").day
 	]

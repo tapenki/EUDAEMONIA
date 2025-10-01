@@ -126,13 +126,14 @@ type = "entity"
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_etq7d")
-initial_state = NodePath("Chase")
+initial_state = NodePath("CloseIn")
 
-[node name="Chase" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_huaky")
 speed = 300
 distance_margin = 150
+shapecast_radius = 20
 next = NodePath("../PrepareAttack")
 
 [node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
@@ -162,7 +163,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_vxdbt")
-next = NodePath("../Chase")
+next = NodePath("../CloseIn")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_tdrsd")

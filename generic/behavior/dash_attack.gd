@@ -26,6 +26,8 @@ func on_enter() -> void:
 		get_node("/root/Main").play_sound(sound)
 	if user.is_on_wall():
 		stick_normal = user.get_last_slide_collision().get_normal()
+		stick_normal.x = round(stick_normal.x)
+		stick_normal.y = round(stick_normal.y)
 		user.wall_min_slide_angle = 0
 		stick = true
 	else:
@@ -41,7 +43,7 @@ func _physics_process(_delta):
 	if user.is_on_wall():
 		for i in user.get_slide_collision_count():
 			var collision = user.get_slide_collision(i)
-			if collision.get_normal() != stick_normal:
+			if round(collision.get_normal().x) != stick_normal.x or round(collision.get_normal().y) != stick_normal.y:
 				stick = false
 		if not stick:
 			#get_node("/root/Main").spawn_particles("Impact", user.global_position, user.scale.x * 1.5, user.get_node("Sprite").modulate)

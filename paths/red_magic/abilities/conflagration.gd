@@ -2,7 +2,7 @@ extends Ability
 
 var inheritance_level = 4
 
-var firebeam_scene = preload("res://generic/particles/firebeam.tscn")
+var firebeam_scene = preload("res://paths/red_magic/firebeam.tscn")
 
 func _ready() -> void:
 	get_node("/root/Main").entity_death.connect(entity_death)

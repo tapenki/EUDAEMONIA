@@ -89,7 +89,7 @@ msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
 
 msgid "conflagration_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Fan the Flames[/outline_color][br][outline_size=10]Upon a burning creature dying:[/outline_size] Spread its burn to the nearest foe."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br][outline_size=10]Upon a burning creature dying:[/outline_size] Spread its burn to the nearest foe."
 
 msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"

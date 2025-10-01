@@ -1,7 +1,7 @@
 extends GPUParticles2D
 
 @export var ability_handler: Node
-@export var scaler = 0.0
+@export var scaler = 0.1 ## if you set this to a lower number there will be visual bugs
 @export var max_scaler = 1.0
 @export var grow = 5.0
 @export var shrink = 5.0

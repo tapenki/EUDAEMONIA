@@ -94,7 +94,7 @@ columns = 2
 layout_mode = 2
 accessible_texture = ExtResource("2_xxy61")
 requires = {
-"fan_the_flames": 5
+"ignition": 5
 }
 subject = "conflagration"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://chjju7v5k68xm"]
+[gd_scene load_steps=15 format=3 uid="uid://chjju7v5k68xm"]
 
 [ext_resource type="Script" uid="uid://c1x0f286v1m8v" path="res://generic/entities/player.gd" id="1_bmx6j"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_m6exy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="4_5wsru"]
 [ext_resource type="Texture2D" uid="uid://b73lo0seio076" path="res://generic/entities/player_hurt.png" id="5_lsmwm"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="8_3wbf3"]
+[ext_resource type="Script" uid="uid://dv31cs2ygwudl" path="res://generic/camera.gd" id="9_iyjkv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbvv7"]
 radius = 16.0
@@ -132,6 +133,10 @@ deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_v1kwl")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_enabled = false
+script = ExtResource("9_iyjkv")
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]

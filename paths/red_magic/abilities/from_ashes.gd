@@ -1,10 +1,8 @@
 extends Ability
 
 var inheritance_level = 3
-var type = "Upgrade"
 
-#var burn_script = preload("res://generic/abilities/status/burn.gd")
-var explosion_scene = preload("res://generic/particles/explosion.tscn")
+var explosion_scene = preload("res://paths/red_magic/explosion.tscn")
 var recovery_timer = ScaledTimer.new()
 
 var active = true
