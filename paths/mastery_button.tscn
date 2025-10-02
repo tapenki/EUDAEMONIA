@@ -48,6 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.7853982
 pivot_offset = Vector2(30, 30)
+mouse_default_cursor_shape = 2
 texture = ExtResource("1_jmowc")
 expand_mode = 1
 

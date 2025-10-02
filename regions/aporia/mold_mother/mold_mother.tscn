@@ -1,0 +1,289 @@
+[gd_scene load_steps=26 format=3 uid="uid://gupaoxkbqq1e"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_mdyec"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_2ntoc"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_5jmcu"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_hg44d"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_hciqw"]
+[ext_resource type="Script" uid="uid://brss7bxe5ejqs" path="res://generic/behavior/scattershot_attack.gd" id="6_a2v2i"]
+[ext_resource type="PackedScene" uid="uid://bu3jk0yrnh38t" path="res://regions/aporia/mold_bullet.tscn" id="7_o3tbh"]
+[ext_resource type="Script" uid="uid://dy1fum6s312ae" path="res://generic/behavior/wall_warp.gd" id="8_cynow"]
+[ext_resource type="Script" uid="uid://bsm5f71t71xlo" path="res://generic/behavior/summoning.gd" id="8_j48gv"]
+[ext_resource type="PackedScene" uid="uid://30xuvt24wxqo" path="res://regions/aporia/mold/mold.tscn" id="9_5chnv"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_jv1em"]
+[ext_resource type="Texture2D" uid="uid://c8301mmhj5mjf" path="res://regions/aporia/mold_mother/mold_mother.png" id="10_mma2i"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_6quvf"]
+[ext_resource type="Texture2D" uid="uid://bwjc8sxk7qssx" path="res://regions/aporia/mold_mother/mold_mother_hurt.png" id="12_wpqwi"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_ov3p2"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_ybnfo"]
+[ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="16_ciuuc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 32.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a2v2i"]
+resource_name = "IDLE"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ieikq"]
+resource_name = "WARP"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(5, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vajmc"]
+resource_name = "WINDUP"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.35, 0.65, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jcicx"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"IDLE": SubResource("Animation_a2v2i"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WARP": SubResource("Animation_ieikq"),
+&"WINDUP": SubResource("Animation_vajmc")
+}
+
+[node name="Mold" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 2
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_mdyec")
+ability_handler = NodePath("AbilityHandler")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 400
+health = 40
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_2ntoc")
+type = "Entity"
+
+[node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_5jmcu")
+initial_state = NodePath("Warplag")
+
+[node name="PrepareAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+anim = "WINDUP"
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../ShootAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_hciqw")
+wait_time = 0.3
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("6_a2v2i")
+bullet = ExtResource("7_o3tbh")
+bullet_lifetime = 2.4
+bullet_count = 3
+spread = 60
+bullet_speed = 350
+next = NodePath("../PrepareAttack2")
+
+[node name="PrepareAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../ShootAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_hciqw")
+wait_time = 0.35
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("6_a2v2i")
+bullet = ExtResource("7_o3tbh")
+bullet_lifetime = 2.4
+bullet_count = 2
+spread = 45
+bullet_speed = 350
+next = NodePath("../Endlag")
+
+[node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../Summoning")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_hciqw")
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Summoning" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_j48gv")
+summon = ExtResource("9_5chnv")
+summon_health = 40.0
+max_summons = 4
+next = NodePath("../PrepareWallwarp")
+
+[node name="PrepareWallwarp" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+anim = "WARP"
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../Wallwarp")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareWallwarp" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_hciqw")
+wait_time = 0.3
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Wallwarp" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_cynow")
+next = NodePath("../Warplag")
+
+[node name="Warplag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../PrepareAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/Warplag" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_hciqw")
+wait_time = 0.5
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+material = ExtResource("9_jv1em")
+texture = ExtResource("10_mma2i")
+script = ExtResource("11_6quvf")
+base_texture = ExtResource("10_mma2i")
+hurt_texture = ExtResource("12_wpqwi")
+
+[node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_hciqw")
+wait_time = 0.2
+ability_handler = NodePath("../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(2, 2)
+texture = ExtResource("13_ov3p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+script = ExtResource("14_ybnfo")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+libraries = {
+&"": SubResource("AnimationLibrary_jcicx")
+}
+autoplay = "IDLE"
+next/WARP = &"IDLE"
+next/WINDUP = &"IDLE"
+blend_times = [&"IDLE", &"WINDUP", 0.05]
+
+[node name="Speech" type="Node2D" parent="."]
+position = Vector2(0, -25)
+script = ExtResource("16_ciuuc")
+spawn_quotes = ["mold_mother_spawn_1"]
+death_quotes = ["mold_mother_death_1"]
+
+[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareWallwarp/Timer" to="StateHandler/PrepareWallwarp" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Warplag/Timer" to="StateHandler/Warplag" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

@@ -7,6 +7,8 @@ var bullet = preload("res://generic/projectiles/bullet.tscn")
 var shard_blast: bool
 
 func _ready() -> void:
+	if ability_handler.has_node("shard_blast"):
+		shard_blast = true
 	get_node("/root/Main").entity_death.connect(entity_death)
 	
 func entity_death(dying_entity: Entity):

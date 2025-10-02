@@ -38,10 +38,10 @@ var region_data = {
 		"common_waves" : [
 			[{"enemy" : preload("res://regions/thayma/trispitter/trispitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/thayma/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/thayma/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
+			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
-			[{"enemy" : preload("res://regions/thayma/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
+			[{"enemy" : preload("res://regions/thayma/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
 		]
 	},
 	"aporia" : {
@@ -55,10 +55,10 @@ var region_data = {
 			[{"enemy" : preload("res://regions/aporia/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
+			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
 		],
 		"special_waves" : [
-			[{"enemy" : preload("res://regions/aporia/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
+			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
 		]
 	},
 	"pandemonium" : {
@@ -80,19 +80,19 @@ var region_data = {
 		"common_waves" : [
 			[{"enemy" : preload("res://regions/thayma/trispitter/trispitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/thayma/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/thayma/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
+			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
 			[{"enemy" : preload("res://regions/aporia/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
+			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
 			[
 				{"enemy" : preload("res://regions/vasis/giga_leaper/giga_leaper.tscn"), "positions" : ["OuterRight"]},
 				{"enemy" : preload("res://regions/vasis/giga_spitter/giga_spitter.tscn"), "positions" : ["OuterLeft"]}
 			],
-			[{"enemy" : preload("res://regions/thayma/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
-			[{"enemy" : preload("res://regions/aporia/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
+			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
+			[{"enemy" : preload("res://regions/thayma/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
 		]
 	}
 }
@@ -315,3 +315,11 @@ func particle_beam(particle_scene: PackedScene, start: Vector2, end: Vector2, sp
 		delta += spacing
 		particle_instance.emit_particle(Transform2D(0, start.move_toward(end, delta)), Vector2(), color, color, 1)
 	return particle_instance
+
+@onready var floating_text_scene = preload("res://generic/misc/floating_text.tscn")
+func floating_text(text_position: Vector2, text: String, color: Color):
+	var instance = floating_text_scene.instantiate()
+	instance.position = text_position
+	instance.get_node("Label").text = text
+	instance.modulate = color
+	add_child(instance)

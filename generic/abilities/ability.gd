@@ -18,7 +18,6 @@ func offset():
 	level *= level_multiplier
 	level_offset = 0
 	level_multiplier = 1
-	ability_handler.update_status.emit(self)
 	if level <= 0:
 		kill()
 

@@ -39,6 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -30.0
+offset_right = 94.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5
@@ -75,14 +79,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 174.0
+offset_left = 110.0
 offset_top = -30.0
-offset_right = 234.0
+offset_right = 248.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 18
 columns = 2
+
+[node name="SnapFreeze" parent="Masteries" instance=ExtResource("5_ukwux")]
+layout_mode = 2
+accessible_texture = ExtResource("2_yxyri")
+requires = {
+"frostbite": 5
+}
+subject = "snap_freeze"
 
 [node name="ShardBlast" parent="Masteries" instance=ExtResource("5_ukwux")]
 layout_mode = 2

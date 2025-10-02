@@ -12,7 +12,7 @@ func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
 	
 func day_start(_day: int) -> void:
-	var positions = [global_position + Vector2(0, 50)]
+	var positions = [global_position + Vector2(0, 0)]
 	if multimold:
 		positions = [global_position + Vector2(50, 0), global_position - Vector2(50, 0)]
 	for summon_position in positions:

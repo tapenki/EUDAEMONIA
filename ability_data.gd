@@ -71,6 +71,10 @@ var ability_data = {
 		"script" : preload("res://paths/blue_magic/chill.gd"),
 		"type" : "status"
 	},
+	"freeze" : {
+		"script" : preload("res://paths/blue_magic/freeze.gd"),
+		"type" : "status"
+	},
 	"ice_bombs" : {
 		"script" : preload("res://paths/blue_magic/abilities/ice_bombs.gd"),
 		"type" : "upgrade"
@@ -78,6 +82,10 @@ var ability_data = {
 	"bomb" : {
 		"script" : preload("res://paths/blue_magic/icebomb/bomb.gd"),
 		"type" : "token"
+	},
+	"snap_freeze" : {
+		"script" : preload("res://paths/blue_magic/abilities/snap_freeze.gd"),
+		"type" : "mastery"
 	},
 	"shard_blast" : {
 		"script" : preload("res://paths/blue_magic/abilities/shard_blast.gd"),

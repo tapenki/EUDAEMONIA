@@ -19,7 +19,7 @@ signal healed(amount: float)
 ## status signals
 signal status_level_modifiers(status_name: String, modifiers: Dictionary)
 signal status_applied(status: Node, levels: int)
-signal update_status(status: Node)
+#signal update_status(status: Node)
 
 ## movement & speed signals
 signal inh_speed_scale_modifiers(modifiers: Dictionary)
@@ -87,8 +87,9 @@ func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
 	damage_dealt_modifiers.emit(entity, modifiers, crits)
 	inh_damage_dealt_modifiers.emit(entity, modifiers)
-	modifiers.multiplier *= 1 + crits
-	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"]
+	if entity:
+		entity.ability_handler.damage_taken_modifiers.emit(modifiers)
+	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"] * (1 + crits)
 
 func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 	crit_chance_modifiers.emit(entity, modifiers)

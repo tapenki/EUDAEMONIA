@@ -3,7 +3,6 @@ class_name Hurtbox extends Area2D
 @export var ability_handler: Node2D
 @export var hit_sound = "HitLight"
 
-@export var damage_modifiers = {"source" : 0.0, "multiplier" : 1.0}
 @export var hit_delay: = 0.5
 
 var exclude: Dictionary
@@ -23,7 +22,7 @@ func _physics_process(delta):
 		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
 			exclude[body] = hit_delay
 			var crits = ability_handler.get_crits(body)
-			var damage = ability_handler.get_damage_dealt(body, damage_modifiers, crits)
+			var damage = ability_handler.get_damage_dealt(body, {"source" : 0.0, "multiplier" : 1.0}, crits)
 			on_hit(body, damage, crits)
 			body.take_damage(ability_handler.owner, damage)
 	for body in exclude:

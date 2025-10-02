@@ -5,8 +5,8 @@ extends GridContainer
 
 var status_label = preload("res://UI/status_label.tscn")
 
-func _ready() -> void:
-	ability_handler.update_status.connect(update)
+#func _ready() -> void:
+	#ability_handler.update_status.connect(update)
 
 func update(status):
 	var label = get_node_or_null(NodePath(status.name))

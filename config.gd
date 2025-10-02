@@ -1,6 +1,10 @@
 extends Node
 
 var base_values = {
+	"gameplay" :
+	{
+		"damage_numbers" = true,
+	},
 	"audio" : {
 		"master_volume" = 1,
 		"music_volume" = 1,

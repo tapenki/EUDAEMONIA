@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://defo0ssov0anv"]
+
+[ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://UI/ui.tscn" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="5_dg77c"]
+[ext_resource type="AudioStream" uid="uid://dsmlwa6rfpo1r" path="res://sounds/peh.ogg" id="6_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://wwmwcg6te82e" path="res://sounds/pooh.ogg" id="7_w48qg"]
+[ext_resource type="AudioStream" uid="uid://bmyiexw04eig4" path="res://sounds/snap.ogg" id="8_vivmo"]
+[ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="9_efxa6"]
+[ext_resource type="AudioStream" uid="uid://blkcwcunpcgqm" path="res://sounds/death_light.wav" id="11_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://dacc5mwmkl3k2" path="res://sounds/hit_light.wav" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="12_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="13_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="14_w48qg"]
+[ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="15_vivmo"]
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_5vw27")
+
+[node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_kek77")]
+player = NodePath("../Entities/Player")
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("5_dg77c")]
+z_index = 2
+position = Vector2(450, 350)
+group = 1
+
+[node name="Projectiles" type="Node" parent="."]
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="Audio" type="Node" parent="."]
+process_mode = 3
+
+[node name="Peh" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_ycdy4")
+bus = &"SFX"
+
+[node name="Pooh" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_w48qg")
+bus = &"SFX"
+
+[node name="Snap" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_vivmo")
+bus = &"SFX"
+
+[node name="ShootLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_efxa6")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="DeathLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_ycdy4")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HitLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_dg77c")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_ycdy4")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtHeavy" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_ycdy4")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Leap" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_w48qg")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("15_vivmo")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Particles" type="Node" parent="."]
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="entity_death" from="." to="." method="check_finished"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timeout"]
