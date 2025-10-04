@@ -65,3 +65,4 @@ func _physics_process(_delta):
 	if avoid:
 		var avoid_direction = avoid.global_position.direction_to(user.global_position)
 		user.velocity = lerp(user.velocity, avoid_direction * final_speed, 0.075)
+	user.animation_player.play("WALK")

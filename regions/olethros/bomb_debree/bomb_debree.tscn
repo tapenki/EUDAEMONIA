@@ -1,13 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://rpbpoi46vncw"]
+[gd_scene load_steps=16 format=3 uid="uid://c511sypv8nipf"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_pekaw"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_mys48"]
-[ext_resource type="Texture2D" uid="uid://4evr7hxpbd0s" path="res://paths/blue_magic/cryobomb/cryobomb.png" id="4_6o6mo"]
-[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="7_yyjck"]
-[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_td7yl"]
+[ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_6h8y6"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jblvk"]
+[ext_resource type="Script" uid="uid://7y1a24i15d2p" path="res://regions/olethros/bomb_debree/enemy_bomb.gd" id="3_311us"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_pboui"]
+[ext_resource type="Texture2D" uid="uid://d14qxvhr1egdt" path="res://regions/olethros/bomb_debree/bomb_debree.png" id="4_x63fb"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="8_5m6cv"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="9_vyhaw"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="10_j8ubj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
-radius = 20.0
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 22.0
 
 [sub_resource type="Animation" id="Animation_drum4"]
 resource_name = "DEATH"
@@ -157,7 +163,7 @@ tracks/3/keys = {
 "values": [1.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewwjw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74e7t"]
 _data = {
 &"DEATH": SubResource("Animation_drum4"),
 &"IDLE": SubResource("Animation_6o6mo"),
@@ -165,41 +171,64 @@ _data = {
 &"RESET": SubResource("Animation_fnls8")
 }
 
-[node name="Icebomb" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "animation_player")]
-z_index = 1
-collision_layer = 0
-collision_mask = 128
+[node name="BombDebree" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+collision_layer = 2
+collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_pekaw")
+script = ExtResource("1_6h8y6")
+max_distance = 100.0
+distance_deviation = 0.25
+speed = 250.0
+speed_deviation = 0.5
 ability_handler = NodePath("AbilityHandler")
+hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 0
-health = 0.0
+max_health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
-script = ExtResource("2_mys48")
+script = ExtResource("2_jblvk")
 type = "entity"
+
+[node name="EnemyBomb" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("3_311us")
+ability_handler = NodePath("../AbilityHandler")
+explosion_scale = 2.0
+explosion_delay = 1.25
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = ExtResource("7_yyjck")
-texture = ExtResource("4_6o6mo")
+material = ExtResource("3_pboui")
+texture = ExtResource("4_x63fb")
 
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("11_td7yl")
+texture = ExtResource("8_5m6cv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bhp25")
 
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+script = ExtResource("9_vyhaw")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_jpw2x")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 deterministic = true
 libraries = {
-&"": SubResource("AnimationLibrary_ewwjw")
+&"": SubResource("AnimationLibrary_74e7t")
 }
 autoplay = "IDLE"
-blend_times = [&"IDLE", &"PRIMED", 0.05, &"PRIMED", &"DEATH", 0.05]
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("10_j8ubj")
+wait_time = 2.0
+deviation = 0.3
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

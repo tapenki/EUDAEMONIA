@@ -38,7 +38,7 @@ func update():
 	if passed:
 		texture_rect1.texture = accessible_texture
 		texture_rect2.texture = accessible_texture
-		symbol_label.text = subject.substr(0, 2)
+		symbol_label.text = name.substr(0, 2)
 		accessible = true
 		var ability_node = ability_handler.get_node_or_null(subject)
 		if ability_node:

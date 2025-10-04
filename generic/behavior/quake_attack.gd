@@ -1,6 +1,6 @@
 extends State
 
-@export var scale: float
+@export var scale = 1.0
 
 @export var next: State
 

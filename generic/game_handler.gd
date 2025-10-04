@@ -18,8 +18,9 @@ var region_data = {
 			},
 		],
 		"common_waves" : [
-			[{"enemy" : preload("res://regions/vasis/leaper/leaper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/vasis/spitter/spitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			#[{"enemy" : preload("res://regions/vasis/leaper/leaper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			#[{"enemy" : preload("res://regions/vasis/spitter/spitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
 			[
@@ -70,7 +71,8 @@ var region_data = {
 		"common_waves" : [
 			[{"enemy" : preload("res://regions/olethros/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/olethros/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
+			[{"enemy" : preload("res://regions/olethros/griefer/griefer.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
+			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
 			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
@@ -97,13 +99,14 @@ var region_data = {
 			},
 		],
 		"common_waves" : [
-			[{"enemy" : preload("res://regions/thayma/trispitter/trispitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/olethros/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
 			[{"enemy" : preload("res://regions/olethros/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
+			[{"enemy" : preload("res://regions/olethros/griefer/griefer.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
+			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
 			[

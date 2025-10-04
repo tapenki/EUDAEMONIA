@@ -1,19 +1,20 @@
-[gd_scene load_steps=22 format=3 uid="uid://d01t4lj50gno6"]
+[gd_scene load_steps=23 format=3 uid="uid://c8dtaqmm82y8x"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_215r3"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_p2v6q"]
-[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://regions/thayma/debree_shield.gd" id="3_aeyf6"]
-[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="4_qtcyr"]
-[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_vlyki"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_77vvh"]
-[ext_resource type="Script" uid="uid://c6b6v8sr70sib" path="res://generic/behavior/pathing_dash.gd" id="7_a5mce"]
-[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_l7vb6"]
-[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="8_lkaxu"]
-[ext_resource type="Texture2D" uid="uid://vvwhf7gkmtpt" path="res://regions/thayma/mars/mars.png" id="9_r133b"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_ub0du"]
-[ext_resource type="Texture2D" uid="uid://uuld0etjkjnv" path="res://regions/thayma/mars/mars_hurt.png" id="11_276uv"]
-[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_1ku38"]
-[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_5kbcb"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_5dxxv"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_tj0jb"]
+[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://regions/thayma/debree_shield.gd" id="3_irfvx"]
+[ext_resource type="PackedScene" uid="uid://c511sypv8nipf" path="res://regions/olethros/bomb_debree/bomb_debree.tscn" id="4_6lqvu"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="4_fnkkn"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_pj6vt"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_spe3e"]
+[ext_resource type="Script" uid="uid://c6b6v8sr70sib" path="res://generic/behavior/pathing_dash.gd" id="7_1qawn"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_jwdqo"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="9_dycxl"]
+[ext_resource type="Texture2D" uid="uid://c8scgoik5p153" path="res://regions/olethros/meteor/meteor.png" id="9_t8eg7"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_olt0q"]
+[ext_resource type="Texture2D" uid="uid://ce4wppcs772wc" path="res://regions/olethros/meteor/meteor_hurt.png" id="11_5du8u"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_x0p1f"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_ywl2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 28.0
@@ -105,80 +106,104 @@ _data = {
 &"WINDUP": SubResource("Animation_14oqu")
 }
 
-[node name="Mars" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Meteor" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 2
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_215r3")
+script = ExtResource("1_5dxxv")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 60
 
 [node name="AbilityHandler" type="Node2D" parent="."]
-script = ExtResource("2_p2v6q")
+script = ExtResource("2_tj0jb")
 type = "entity"
 
 [node name="debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("3_aeyf6")
+script = ExtResource("3_irfvx")
 ability_handler = NodePath("../AbilityHandler")
-count = 5
-health = 40
+entity_scene = ExtResource("4_6lqvu")
+count = 3
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("4_qtcyr")
+script = ExtResource("4_fnkkn")
 initial_state = NodePath("Endlag")
 
-[node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="PrepareAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("5_vlyki")
+script = ExtResource("5_pj6vt")
 anim = "WINDUP"
-next = NodePath("../DashAttack")
+next = NodePath("../DashAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_77vvh")
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
 wait_time = 0.3
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="DashAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("7_a5mce")
+script = ExtResource("7_1qawn")
+speed = 650
+next = NodePath("../PrepareAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.35
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_pj6vt")
+anim = "WINDUP"
+next = NodePath("../DashAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.35
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_1qawn")
 speed = 650
 next = NodePath("../Endlag")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_77vvh")
-wait_time = 0.35
+[node name="Timer" type="Node" parent="StateHandler/DashAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.3
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("5_vlyki")
-next = NodePath("../PrepareAttack")
+script = ExtResource("5_pj6vt")
+next = NodePath("../PrepareAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("8_lkaxu")
-wait_time = 0.3
+script = ExtResource("9_dycxl")
+wait_time = 0.5
 deviation = 0.25
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-material = ExtResource("8_l7vb6")
+material = ExtResource("8_jwdqo")
 position = Vector2(0, 28)
-texture = ExtResource("9_r133b")
+texture = ExtResource("9_t8eg7")
 offset = Vector2(0, -28)
-script = ExtResource("10_ub0du")
-base_texture = ExtResource("9_r133b")
-hurt_texture = ExtResource("11_276uv")
+script = ExtResource("10_olt0q")
+base_texture = ExtResource("9_t8eg7")
+hurt_texture = ExtResource("11_5du8u")
 
 [node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_77vvh")
+script = ExtResource("6_spe3e")
 wait_time = 0.2
 ability_handler = NodePath("../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
@@ -187,14 +212,14 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 z_index = -3
 position = Vector2(0, -28)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_1ku38")
+texture = ExtResource("12_x0p1f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bhp25")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
 collision_layer = 0
-script = ExtResource("13_5kbcb")
+script = ExtResource("13_ywl2w")
 ability_handler = NodePath("../AbilityHandler")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
@@ -209,8 +234,10 @@ autoplay = "IDLE"
 next/WINDUP = &"IDLE"
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

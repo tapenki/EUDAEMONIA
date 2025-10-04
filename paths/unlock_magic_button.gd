@@ -11,7 +11,7 @@ extends Described
 
 func _ready() -> void:
 	#rotation_degrees = randf_range(-5, 5)
-	symbol_label.text = subject.substr(0, 2)
+	symbol_label.text = name.substr(0, 2)
 
 func _on_pressed() -> void:
 	if not ui.defeated and ui.unlock_points >= 1:

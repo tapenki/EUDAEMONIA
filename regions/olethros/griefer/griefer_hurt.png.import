@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgs40kj138avg"
-path="res://.godot/imported/blue.png-f86ae53d453b9758a225d1ff0034befe.ctex"
+uid="uid://c7pv0pegd50lh"
+path="res://.godot/imported/griefer_hurt.png-a233b0c9e576fd6cb2581ba508e86e93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/blue_magic/blue.png"
-dest_files=["res://.godot/imported/blue.png-f86ae53d453b9758a225d1ff0034befe.ctex"]
+source_file="res://regions/olethros/griefer/griefer_hurt.png"
+dest_files=["res://.godot/imported/griefer_hurt.png-a233b0c9e576fd6cb2581ba508e86e93.ctex"]
 
 [params]
 

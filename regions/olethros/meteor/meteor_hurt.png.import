@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgs40kj138avg"
-path="res://.godot/imported/blue.png-f86ae53d453b9758a225d1ff0034befe.ctex"
+uid="uid://ce4wppcs772wc"
+path="res://.godot/imported/meteor_hurt.png-de9427d2855790fbf293b3d693df380c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/blue_magic/blue.png"
-dest_files=["res://.godot/imported/blue.png-f86ae53d453b9758a225d1ff0034befe.ctex"]
+source_file="res://regions/olethros/meteor/meteor_hurt.png"
+dest_files=["res://.godot/imported/meteor_hurt.png-de9427d2855790fbf293b3d693df380c.ctex"]
 
 [params]
 

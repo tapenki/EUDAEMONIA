@@ -11,7 +11,7 @@ extends Described
 
 func _ready() -> void:
 	#rotation_degrees = randf_range(-5, 5)
-	symbol_label.text = subject.substr(0, 2)
+	symbol_label.text = name.substr(0, 2)
 	var ability_node = ability_handler.get_node_or_null(subject)
 	if ability_node:
 		self_modulate = Color.WHITE
