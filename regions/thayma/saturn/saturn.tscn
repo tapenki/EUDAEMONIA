@@ -155,41 +155,75 @@ health = 40
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vknsd")
-initial_state = NodePath("Endlag2")
+initial_state = NodePath("Endlag3")
 
-[node name="PrepareDash" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="PrepareDash1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_53qhx")
 anim = "WINDUP"
-next = NodePath("../DashAttack")
+next = NodePath("../DashAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareDash" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareDash1" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
 wait_time = 0.3
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="DashAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_vtn1a")
-speed = 500
-spread = 75
+speed = 600
 next = NodePath("../Endlag1")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack1" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
-wait_time = 0.5
+wait_time = 0.3
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Endlag1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_53qhx")
-next = NodePath("../PrepareShoot1")
+next = NodePath("../PrepareDash2")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag1" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
-wait_time = 0.5
+wait_time = 0.2
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareDash2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_53qhx")
+anim = "WINDUP"
+next = NodePath("../DashAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareDash2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_0yn8a")
+wait_time = 0.3
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_vtn1a")
+speed = 600
+next = NodePath("../Endlag2")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_0yn8a")
+wait_time = 0.3
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Endlag2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_53qhx")
+next = NodePath("../PrepareShoot1")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_0yn8a")
+wait_time = 0.4
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -239,7 +273,7 @@ bullet_lifetime = 2.4
 bullet_count = 8
 angle = 22.5
 bullet_speed = 450
-next = NodePath("../Endlag2")
+next = NodePath("../Endlag3")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttack2" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
@@ -247,14 +281,14 @@ wait_time = 0.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Endlag2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="Endlag3" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_53qhx")
-next = NodePath("../PrepareDash")
+next = NodePath("../PrepareDash1")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag2" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/Endlag3" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
-wait_time = 0.75
+wait_time = 0.6
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -307,13 +341,16 @@ spawn_quotes = ["saturn_spawn_1"]
 death_quotes = ["saturn_death_1"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/PrepareDash/Timer" to="StateHandler/PrepareDash" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareDash1/Timer" to="StateHandler/PrepareDash1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag1/Timer" to="StateHandler/Endlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareDash2/Timer" to="StateHandler/PrepareDash2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareShoot1/Timer" to="StateHandler/PrepareShoot1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/ShootAttack1/Timer" to="StateHandler/ShootAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareShoot2/Timer" to="StateHandler/PrepareShoot2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/ShootAttack2/Timer" to="StateHandler/ShootAttack2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag3/Timer" to="StateHandler/Endlag3" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

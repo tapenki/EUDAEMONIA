@@ -2,7 +2,7 @@ extends Ability
 
 var inheritance_level = 4
 
-var bomb = preload("res://paths/blue_magic/icebomb/icebomb.tscn")
+var bomb = preload("res://paths/blue_magic/cryobomb/cryobomb.tscn")
 
 func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
@@ -23,6 +23,6 @@ func day_start(_day: int) -> void:
 		
 		summon_instance.get_node("Sprite").modulate = Config.get_team_color(3, "secondary")
 		
-		summon_instance.ability_handler.grant("bomb", level)
+		summon_instance.ability_handler.grant("cryonic_volatility", level)
 		
 		get_node("/root/Main").spawn_entity(summon_instance)

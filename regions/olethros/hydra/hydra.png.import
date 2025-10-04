@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bptqhgd06efup"
-path="res://.godot/imported/hydra.png-0b90d1e9b84ff84bf968e0fa6303d978.ctex"
+path="res://.godot/imported/hydra.png-4f85aca3a7e9beecf70d94a94237841b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/aporia/hydra/hydra.png"
-dest_files=["res://.godot/imported/hydra.png-0b90d1e9b84ff84bf968e0fa6303d978.ctex"]
+source_file="res://regions/olethros/hydra/hydra.png"
+dest_files=["res://.godot/imported/hydra.png-4f85aca3a7e9beecf70d94a94237841b.ctex"]
 
 [params]
 

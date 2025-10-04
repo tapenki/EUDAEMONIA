@@ -29,8 +29,8 @@ var ability_data = {
 		"script" : preload("res://paths/red_magic/flaming_skull/fireburst.gd"),
 		"type" : "token"
 	},
-	"fan_the_flames" : {
-		"script" : preload("res://paths/red_magic/abilities/fan_the_flames.gd"),
+	"melt" : {
+		"script" : preload("res://paths/red_magic/abilities/melt.gd"),
 		"type" : "upgrade"
 	},
 	"scorched_earth" : {
@@ -43,6 +43,10 @@ var ability_data = {
 	},
 	"conflagration" : {
 		"script" : preload("res://paths/red_magic/abilities/conflagration.gd"),
+		"type" : "mastery"
+	},
+	"undying_flames" : {
+		"script" : preload("res://paths/red_magic/abilities/undying_flames.gd"),
 		"type" : "mastery"
 	},
 	"burn" : {
@@ -75,12 +79,12 @@ var ability_data = {
 		"script" : preload("res://paths/blue_magic/freeze.gd"),
 		"type" : "status"
 	},
-	"ice_bombs" : {
-		"script" : preload("res://paths/blue_magic/abilities/ice_bombs.gd"),
+	"cryobombs" : {
+		"script" : preload("res://paths/blue_magic/abilities/cryobombs.gd"),
 		"type" : "upgrade"
 	},
-	"bomb" : {
-		"script" : preload("res://paths/blue_magic/icebomb/bomb.gd"),
+	"cryonic_volatility" : {
+		"script" : preload("res://paths/blue_magic/cryobomb/cryonic_volatility.gd"),
 		"type" : "token"
 	},
 	"snap_freeze" : {

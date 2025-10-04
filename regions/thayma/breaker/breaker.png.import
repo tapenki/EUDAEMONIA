@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://edlrfguk1nxb"
-path="res://.godot/imported/hydra_hurt.png-c7a8195c0d29294ca425199146305d14.ctex"
+uid="uid://b87y7kub5vv2g"
+path="res://.godot/imported/breaker.png-51f1abeebf899917c18bcac41985bbd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/aporia/hydra/hydra_hurt.png"
-dest_files=["res://.godot/imported/hydra_hurt.png-c7a8195c0d29294ca425199146305d14.ctex"]
+source_file="res://regions/thayma/breaker/breaker.png"
+dest_files=["res://.godot/imported/breaker.png-51f1abeebf899917c18bcac41985bbd0.ctex"]
 
 [params]
 

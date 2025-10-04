@@ -100,6 +100,16 @@ func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "mu
 		crits += 1
 	return crits
 
+func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1}):
+	var crits = get_crits(entity)
+	var final_damage = get_damage_dealt(entity, damage, crits)
+	damage_dealt.emit(entity, final_damage, crits)
+	var damaged = entity.take_damage(self, final_damage)
+	if damaged:
+		if Config.config.get_value("gameplay", "damage_numbers"): ## damage numbers
+			get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(final_damage)), Config.get_team_color(owner.group, "secondary"))
+	return {"damage" : final_damage, "crits" : crits}
+
 ## targeting
 func get_enemy_group():
 	if owner.group == 1:

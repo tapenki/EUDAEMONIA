@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_pekaw"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_mys48"]
-[ext_resource type="Texture2D" uid="uid://4evr7hxpbd0s" path="res://paths/blue_magic/icebomb/icebomb.png" id="4_6o6mo"]
+[ext_resource type="Texture2D" uid="uid://4evr7hxpbd0s" path="res://paths/blue_magic/cryobomb/cryobomb.png" id="4_6o6mo"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="7_yyjck"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_td7yl"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://gxufrboss13g"]
 
-[ext_resource type="TileSet" uid="uid://d4e1hwov6jkr2" path="res://regions/aporia/layouts/aporita_wall_tilesettres.tres" id="1_w12j1"]
+[ext_resource type="TileSet" uid="uid://d4e1hwov6jkr2" path="res://regions/aporia/layouts/aporia_wall_tileset.tres" id="1_w12j1"]
 [ext_resource type="TileSet" uid="uid://cahhl6x6vxi3f" path="res://regions/aporia/layouts/aporia_floor_tileset.tres" id="2_48e2s"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nxy3w"]

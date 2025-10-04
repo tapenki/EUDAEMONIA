@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 func entity_death(dying_entity: Entity):
 	var total = 3
-	if shard_blast and dying_entity.scene_file_path == "res://paths/blue_magic/icebomb/icebomb.tscn":
+	if shard_blast and dying_entity.scene_file_path == "res://paths/blue_magic/cryobomb/cryobomb.tscn":
 		total = 6
 	elif dying_entity.summoned:
 		total = 1
@@ -30,7 +30,7 @@ func entity_death(dying_entity: Entity):
 		bullet_instance.ability_handler.inherited_damage["multiplier"] *= level
 		bullet_instance.ability_handler.inherited_scale["multiplier"] *= 1.2
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
-	if shard_blast and dying_entity.scene_file_path == "res://paths/blue_magic/icebomb/icebomb.tscn":
+	if shard_blast and dying_entity.scene_file_path == "res://paths/blue_magic/cryobomb/cryobomb.tscn":
 		for repeat in total:
 			var bullet_instance = ability_handler.make_projectile(bullet, 
 			dying_entity.global_position, 

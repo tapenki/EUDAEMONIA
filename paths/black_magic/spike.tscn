@@ -15,9 +15,11 @@ radius = 14.0
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_de1e7")
-hit_particles = "impact"
 ability_handler = NodePath("AbilityHandler")
 hit_sound = "Peh"
+hit_particles = "impact"
+hit_delay = 1.0
+hits_left = 2
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_284hq")

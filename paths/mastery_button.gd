@@ -6,7 +6,8 @@ extends TextureButton
 
 @onready var point_counter = $"../../../UpgradePoints"
 
-@onready var texture_rect: = $"TextureRect"
+@onready var texture_rect1: = $"TextureRect1"
+@onready var texture_rect2: = $"TextureRect2"
 @onready var symbol_label: = $"Symbol"
 
 @export var accessible_texture: Texture2D
@@ -35,14 +36,14 @@ func update():
 			break
 	
 	if passed:
-		texture_normal = accessible_texture
-		texture_rect.texture = accessible_texture
+		texture_rect1.texture = accessible_texture
+		texture_rect2.texture = accessible_texture
 		symbol_label.text = subject.substr(0, 2)
 		accessible = true
 		var ability_node = ability_handler.get_node_or_null(subject)
 		if ability_node:
-			self_modulate = Color.WHITE
-			texture_rect.self_modulate = Color.WHITE
+			texture_rect1.self_modulate = Color.WHITE
+			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
 			extra = "learned"
 
@@ -53,8 +54,8 @@ func _on_pressed() -> void:
 			ui.unlock_points -= 1
 			ability_handler.upgrade(subject, 1)
 			point_counter.update(0)
-			self_modulate = Color.WHITE
-			texture_rect.self_modulate = Color.WHITE
+			texture_rect1.self_modulate = Color.WHITE
+			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
 			extra = "Learned"
 			description_extra.text = extra

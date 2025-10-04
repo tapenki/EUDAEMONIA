@@ -41,8 +41,8 @@ func clear():
 			offsetting = true
 			call_deferred("offset")
 
-func write():
+func serialize():
 	return {"level" : level}
 
-func read(data):
+func deserialize(data):
 	level = data["level"]

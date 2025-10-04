@@ -131,36 +131,70 @@ type = "entity"
 script = ExtResource("3_w7v51")
 initial_state = NodePath("Warplag")
 
-[node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="PrepareAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_otdvs")
 anim = "WINDUP"
 backoff_speed = 150
 backoff_distance = 150
-next = NodePath("../ShootAttack")
+next = NodePath("../ShootAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("5_cqhco")
 wait_time = 0.3
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="ShootAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_l225b")
 bullet = ExtResource("7_lfj4u")
 bullet_lifetime = 2.4
 bullet_speed = 350
-next = NodePath("../Endlag")
+next = NodePath("../Endlag1")
 
-[node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="Endlag1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("6_otdvs")
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../PrepareAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_cqhco")
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("6_otdvs")
+anim = "WINDUP"
+backoff_speed = 150
+backoff_distance = 150
+next = NodePath("../ShootAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("5_cqhco")
+wait_time = 0.3
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_l225b")
+bullet = ExtResource("7_lfj4u")
+bullet_lifetime = 2.4
+bullet_speed = 350
+next = NodePath("../Endlag2")
+
+[node name="Endlag2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_otdvs")
 backoff_speed = 150
 backoff_distance = 150
 next = NodePath("../PrepareWallwarp")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/Endlag2" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("5_cqhco")
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
@@ -189,7 +223,7 @@ process_mode = 4
 script = ExtResource("6_otdvs")
 backoff_speed = 150
 backoff_distance = 150
-next = NodePath("../PrepareAttack")
+next = NodePath("../PrepareAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/Warplag" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("5_cqhco")
@@ -238,8 +272,10 @@ next/WINDUP = &"IDLE"
 blend_times = [&"IDLE", &"WINDUP", 0.05]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag1/Timer" to="StateHandler/Endlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareWallwarp/Timer" to="StateHandler/PrepareWallwarp" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Warplag/Timer" to="StateHandler/Warplag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]

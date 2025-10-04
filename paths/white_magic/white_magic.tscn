@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dovdyljqfid6t"]
+[gd_scene load_steps=8 format=3 uid="uid://dovdyljqfid6t"]
 
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_ck6cw"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_pew5m"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="2_qkm14"]
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/white_magic/white.png" id="3_c6jgr"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/blank.png" id="5_axvqs"]
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/mastery_button.tscn" id="5_nhh6t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pmft3"]
@@ -38,42 +39,42 @@ horizontal_alignment = 1
 script = ExtResource("2_pew5m")
 subject = "white_magic"
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Abilities" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -222.0
+offset_left = -322.0
 offset_top = -30.0
-offset_right = 94.0
+offset_right = -6.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="ChainBolt" parent="GridContainer" instance=ExtResource("2_qkm14")]
+[node name="ChainBolt" parent="Abilities" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "chain_bolt"
 
-[node name="MortalShock" parent="GridContainer" instance=ExtResource("2_qkm14")]
+[node name="MortalShock" parent="Abilities" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "mortal_shock"
 
-[node name="Electromagnetism" parent="GridContainer" instance=ExtResource("2_qkm14")]
+[node name="Electromagnetism" parent="Abilities" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "electromagnetism"
 
-[node name="BallLightning" parent="GridContainer" instance=ExtResource("2_qkm14")]
+[node name="BallLightning" parent="Abilities" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "ball_lightning"
 
-[node name="Thunderstep" parent="GridContainer" instance=ExtResource("2_qkm14")]
+[node name="Thunderstep" parent="Abilities" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "thunderstep"
@@ -85,13 +86,88 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 110.0
+offset_left = 6.0
 offset_top = -30.0
-offset_right = 170.0
+offset_right = 322.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 2
+columns = 5
+
+[node name="Blank1" type="Control" parent="Masteries"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank1"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_axvqs")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Blank2" type="Control" parent="Masteries"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank2"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_axvqs")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Blank3" type="Control" parent="Masteries"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank3"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_axvqs")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 
 [node name="Dynamo" parent="Masteries" instance=ExtResource("5_nhh6t")]
 layout_mode = 2
@@ -101,6 +177,31 @@ requires = {
 }
 subject = "dynamo"
 
+[node name="Blank4" type="Control" parent="Masteries"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank4"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_axvqs")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
 [node name="Crit" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -108,9 +209,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -288.0
+offset_left = -386.0
 offset_top = -24.0
-offset_right = -240.0
+offset_right = -338.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2

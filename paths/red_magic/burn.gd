@@ -21,8 +21,12 @@ func _ready() -> void:
 	add_child.call_deferred(particle_instance)
 
 func tick():
-	if damage_multiplier > 0:
-		ability_handler.owner.take_damage(ability_handler.owner, level * damage_multiplier, false)
+	var damage = {"source" : level, "multiplier" : damage_multiplier}
+	ability_handler.damage_taken_modifiers.emit(damage)
+	var damage_final = damage["source"] * damage["multiplier"]
+	ability_handler.owner.take_damage(ability_handler, damage_final, false)
+	if Config.config.get_value("gameplay", "damage_numbers"): ## damage numbers
+		get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage_final)), Config.get_team_color(1, "secondary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

@@ -13,18 +13,12 @@ func on_collision(_collision_position: Vector2, _body: Node, _crits: int):
 	if hit_sound:
 		get_node("/root/Main").play_sound(hit_sound)
 
-func on_hit(body: Node, hit_damage: float, crits: int):
-	ability_handler.damage_dealt.emit(body, hit_damage, crits)
-	on_collision(body.global_position, body, crits)
-
 func _physics_process(delta):
 	for body in get_overlapping_bodies():
 		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
 			exclude[body] = hit_delay
-			var crits = ability_handler.get_crits(body)
-			var damage = ability_handler.get_damage_dealt(body, {"source" : 0.0, "multiplier" : 1.0}, crits)
-			on_hit(body, damage, crits)
-			body.take_damage(ability_handler.owner, damage)
+			var damage = ability_handler.deal_damage(body)
+			on_collision(body.global_position, body, damage["crits"])
 	for body in exclude:
 		exclude[body] -= delta * ability_handler.speed_scale
 		if exclude[body] <= 0:

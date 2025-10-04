@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cv5nksivfg1qo"]
+[gd_scene load_steps=26 format=3 uid="uid://cv5nksivfg1qo"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_kmxvn"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_oyhwu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c6b6v8sr70sib" path="res://generic/behavior/pathing_dash.gd" id="7_h3b6x"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="7_msdoi"]
 [ext_resource type="Texture2D" uid="uid://bb6f56hji22r4" path="res://paths/red_magic/flaming_skull/flaming_skull.png" id="8_5iypb"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="8_div0h"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_ws2h1"]
 [ext_resource type="Texture2D" uid="uid://b7y5jlp5qyeyw" path="res://paths/red_magic/flaming_skull/flaming_skull_hurt.png" id="10_qvixt"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_26aru"]
@@ -191,13 +192,13 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("7_h3b6x")
 speed = 600
-spread = 30
 sound = "ShootLight"
 next = NodePath("../PrepareAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_oyhwu")
-wait_time = 0.2
+script = ExtResource("8_div0h")
+wait_time = 0.24
+deviation = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

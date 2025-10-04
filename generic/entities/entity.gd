@@ -44,20 +44,19 @@ func immune(duration: float):
 func take_damage(source, damage, immune_affected = true):
 	if immune_affected:
 		if immune_timer.running:
-			return
+			return false
 		else:
 			immune(ability_handler.get_immune_duration({"source" : immune_duration, "multiplier" : 1}))
 	
 	get_node("/root/Main").play_sound(hurt_sound)
 	health = health - damage
 	ability_handler.damage_taken.emit(source, damage)
-	if Config.config.get_value("gameplay", "damage_numbers"): ## damage numbers
-		get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage)), Config.get_team_color(ability_handler.get_enemy_group(), "secondary"))
 	if ability_handler.get_health(health, max_health)["health"] <= 0:
 		var death_modifiers = {"prevented" : false}
 		ability_handler.before_self_death.emit(death_modifiers)
 		if not death_modifiers["prevented"]:
 			kill.call_deferred()
+	return true
 
 func heal(amount):
 	health = min(max_health, health + amount)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mmw1xc85hhby"
-path="res://.godot/imported/rocketjumper_hurt.png-d70b09d815a23e9fd13600fa31974426.ctex"
+uid="uid://cchve0tb7088g"
+path="res://.godot/imported/rocketjumper.png-8ebc9120820b8f9b282187e4e7dcd14a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/thayma/rocketjumper/rocketjumper_hurt.png"
-dest_files=["res://.godot/imported/rocketjumper_hurt.png-d70b09d815a23e9fd13600fa31974426.ctex"]
+source_file="res://regions/olethros/rocketjumper/rocketjumper.png"
+dest_files=["res://.godot/imported/rocketjumper.png-8ebc9120820b8f9b282187e4e7dcd14a.ctex"]
 
 [params]
 

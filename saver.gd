@@ -20,7 +20,7 @@ func write():
 	}
 	for ability in get_node("/root/Main/Entities/Player/AbilityHandler").get_children():
 		if AbilityData.ability_data[ability.name]["type"] != "status":
-			save_data["abilities"][ability.name] = ability.write()
+			save_data["abilities"][ability.name] = ability.serialize()
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
 	save_file.store_var(save_data)
 
@@ -44,7 +44,7 @@ func read():
 	for ability in save_data["abilities"]:
 		var ability_node = Node2D.new()
 		ability_node.set_script(AbilityData.ability_data[ability]["script"])
-		ability_node.read(save_data["abilities"][ability])
+		ability_node.deserialize(save_data["abilities"][ability])
 		ability_node.name = ability
 		get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
 

@@ -4,7 +4,7 @@ var inheritance_level = 1
 var type = "Upgrade"
 
 func _ready() -> void:
-	if ability_handler.type == "Entity":
+	if ability_handler.type == "entity":
 		ability_handler.inh_damage_dealt_modifiers.connect(damage_dealt_modifiers)
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:

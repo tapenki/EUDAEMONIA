@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cchve0tb7088g"
-path="res://.godot/imported/rocketjumper.png-9fe7f30492a79d613228f219f9cf895e.ctex"
+uid="uid://bxmgv5dcfkdlx"
+path="res://.godot/imported/tilemap_walls.png-bc493373f1e1dbbd49061ad0665b5345.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/thayma/rocketjumper/rocketjumper.png"
-dest_files=["res://.godot/imported/rocketjumper.png-9fe7f30492a79d613228f219f9cf895e.ctex"]
+source_file="res://regions/olethros/layouts/tilemap_walls.png"
+dest_files=["res://.godot/imported/tilemap_walls.png-bc493373f1e1dbbd49061ad0665b5345.ctex"]
 
 [params]
 

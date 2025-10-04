@@ -7,7 +7,6 @@ extends Described
 
 @onready var point_counter = $"../../../UpgradePoints"
 
-@onready var level_label: = $"Level"
 @onready var symbol_label: = $"Symbol"
 
 func _ready() -> void:

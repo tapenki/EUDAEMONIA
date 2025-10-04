@@ -37,7 +37,7 @@ var region_data = {
 		],
 		"common_waves" : [
 			[{"enemy" : preload("res://regions/thayma/trispitter/trispitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/thayma/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/thayma/breaker/breaker.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
@@ -52,9 +52,24 @@ var region_data = {
 			},
 		],
 		"common_waves" : [
-			[{"enemy" : preload("res://regions/aporia/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
+		],
+		"special_waves" : [
+			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
+		]
+	},
+	"olethros" : {
+		"layouts" : [
+			{
+				"scene" : preload("res://regions/olethros/layouts/olethros_layout_0.tscn"), 
+				"zoom_scale" : 0.9, 
+			},
+		],
+		"common_waves" : [
+			[{"enemy" : preload("res://regions/olethros/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/olethros/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
 		],
 		"special_waves" : [
@@ -76,12 +91,16 @@ var region_data = {
 				"scene" : preload("res://regions/aporia/layouts/aporia_layout_0.tscn"), 
 				"zoom_scale" : 0.9, 
 			},
+			{
+				"scene" : preload("res://regions/olethros/layouts/olethros_layout_0.tscn"), 
+				"zoom_scale" : 0.9, 
+			},
 		],
 		"common_waves" : [
 			[{"enemy" : preload("res://regions/thayma/trispitter/trispitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/thayma/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/olethros/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
-			[{"enemy" : preload("res://regions/aporia/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/olethros/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
@@ -107,10 +126,12 @@ var sphere_data = {
 		"aporia"
 	],
 	4 : [
+		"olethros"
+	],
+	5 : [
 		"pandemonium"
 	],
 }
-var max_tier = 1
 
 var region = "vasis"
 var sphere = 1
@@ -192,7 +213,7 @@ func _on_enemy_spawn_timeout() -> void:
 				spawn_entity(enemy_instance)
 	enemy_queue.remove_at(0)
 	if not enemy_queue.is_empty():
-		enemy_spawn_timer.start(4)
+		enemy_spawn_timer.start(2.5)
 
 ## day progress
 func travel(to_region: String):
@@ -274,8 +295,8 @@ func end_day():
 	day += 1
 	if bad_day:
 		bad_day = false
-		if sphere_data.has(sphere + 1):
-			sphere += 1
+		sphere += 1
+		if sphere_data.has(sphere):
 			travel(sphere_data[sphere].pick_random())
 	if day % 5 == 0:
 		bad_day = true

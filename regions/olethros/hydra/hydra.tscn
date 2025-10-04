@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="6_l3h1w"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="7_3hypy"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_p6kf3"]
-[ext_resource type="Texture2D" uid="uid://bptqhgd06efup" path="res://regions/aporia/hydra/hydra.png" id="9_idkhh"]
+[ext_resource type="Texture2D" uid="uid://bptqhgd06efup" path="res://regions/olethros/hydra/hydra.png" id="9_idkhh"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_h25ub"]
-[ext_resource type="Texture2D" uid="uid://edlrfguk1nxb" path="res://regions/aporia/hydra/hydra_hurt.png" id="11_3n20i"]
+[ext_resource type="Texture2D" uid="uid://edlrfguk1nxb" path="res://regions/olethros/hydra/hydra_hurt.png" id="11_3n20i"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_tyrj1"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_346t3"]
 

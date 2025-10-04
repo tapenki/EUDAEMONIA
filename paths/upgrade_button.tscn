@@ -37,6 +37,7 @@ extra = "upgrade_cost"
 
 [node name="Symbol" type="Label" parent="."]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -46,6 +47,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Level" type="Label" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.95

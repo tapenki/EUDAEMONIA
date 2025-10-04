@@ -85,7 +85,7 @@ bus = &"SFX"
 [node name="Particles" type="Node" parent="."]
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.5
 one_shot = true
 
 [connection signal="entity_death" from="." to="." method="check_finished"]
