@@ -133,7 +133,7 @@ func area_targets(position: Vector2, radius = 9999, mask = enemies_mask()):
 	shape_query.shape.radius = radius
 	shape_query.transform = shape_query.transform.translated(position)
 	shape_query.collision_mask = mask
-	var intersections = space_state.intersect_shape(shape_query)
+	var intersections = space_state.intersect_shape(shape_query, 128)
 	var returned: Array
 	for i in intersections:
 		var entity = i.get("collider")

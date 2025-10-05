@@ -8,4 +8,4 @@ func _ready() -> void:
 		ability_handler.update_health.emit()
 
 func max_health_modifiers(modifiers) -> void:
-	modifiers["source"] += 5 * level
+	modifiers["source"] += level

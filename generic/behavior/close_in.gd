@@ -51,7 +51,7 @@ func _physics_process(_delta):
 		shape_query.shape = ConvexPolygonShape2D.new()
 		shape_query.shape.set_point_cloud(cloud)
 		shape_query.collision_mask = 128
-		var intersections = world.direct_space_state.intersect_shape(shape_query)
+		var intersections = world.direct_space_state.intersect_shape(shape_query, 1)
 		if not intersections:
 			state_handler.change_state(next)
 			return

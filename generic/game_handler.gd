@@ -18,9 +18,8 @@ var region_data = {
 			},
 		],
 		"common_waves" : [
-			#[{"enemy" : preload("res://regions/vasis/leaper/leaper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			#[{"enemy" : preload("res://regions/vasis/spitter/spitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
+			[{"enemy" : preload("res://regions/vasis/leaper/leaper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
+			[{"enemy" : preload("res://regions/vasis/spitter/spitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
 		],
 		"special_waves" : [
 			[
@@ -75,7 +74,7 @@ var region_data = {
 			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
 		],
 		"special_waves" : [
-			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
+			[{"enemy" : preload("res://regions/olethros/harbinger/harbinger.tscn"), "positions" : ["OuterTop"]}],
 		]
 	},
 	"pandemonium" : {
@@ -115,6 +114,7 @@ var region_data = {
 			],
 			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
 			[{"enemy" : preload("res://regions/thayma/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
+			[{"enemy" : preload("res://regions/olethros/harbinger/harbinger.tscn"), "positions" : ["OuterTop"]}],
 		]
 	}
 }
@@ -168,6 +168,7 @@ func assign_projectile_group(projectile: Projectile, group: int, color: String =
 	projectile.group = group
 	for i in range(1, 3):
 			projectile.set_collision_mask_value(i, i != group)
+	projectile.set_collision_layer_value(group, true)
 	projectile.get_node("Sprite").modulate = Config.get_team_color(group, color)
 
 func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
@@ -291,7 +292,10 @@ func end_day():
 		if entity.summoned:
 			entity.queue_free()
 		elif entity is Player:
-			entity.ability_handler.upgrade("bonus_health", 1)
+			if bad_day:
+				entity.ability_handler.upgrade("bonus_health", 10)
+			else:
+				entity.ability_handler.upgrade("bonus_health", 5)
 			entity.ability_handler.recover()
 	for projectile in get_node("/root/Main/Projectiles").get_children():
 		projectile.queue_free()

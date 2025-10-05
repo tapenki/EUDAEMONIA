@@ -26,7 +26,6 @@ func damage_taken(_source, _damage) -> void:
 	value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 	damage_timer.start()
-	get_node("/root/Main").screenshake.emit(0.2)
 
 func healed(_amount) -> void:
 	var health_values = ability_handler.get_health(player.health, player.max_health)

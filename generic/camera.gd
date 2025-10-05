@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta):
 	if shake:
 		shake = max(shake - delta, 0)
-		var amount = pow(shake, 2)
+		var amount = pow(shake, 2) * Config.config.get_value("gameplay", "screenshake")
 		offset.x = 90 * amount * randf_range(-1, 1)
 		offset.y = 60 * amount * randf_range(-1, 1)
 

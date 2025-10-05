@@ -1,15 +1,19 @@
-extends Ability
+extends Node2D
 
-var inheritance_level = 3
-var type = "Special"
+@export var ability_handler: Node
 
 var bullet = preload("res://generic/projectiles/bullet.tscn")
+var splosion = preload("res://generic/projectiles/explosion.tscn")
 
 func _ready() -> void:
 	ability_handler.self_death.connect(self_death)
 
 func self_death() -> void:
-	var bullet_count = 2 + level
+	var splosion_instance = ability_handler.make_projectile(splosion, 
+	global_position, 
+	3)
+	get_node("/root/Main/Projectiles").add_child(splosion_instance)
+	var bullet_count = 3
 	var direction = ability_handler.owner.velocity.normalized() * -1
 	var stepsize = deg_to_rad(60) / (bullet_count - 1)
 	var halfspan = deg_to_rad(60) * 0.5

@@ -200,7 +200,7 @@ script = ExtResource("8_div0h")
 wait_time = 0.24
 deviation = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4

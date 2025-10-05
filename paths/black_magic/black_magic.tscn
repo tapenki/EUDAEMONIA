@@ -53,6 +53,11 @@ layout_mode = 2
 texture_normal = ExtResource("3_04yta")
 subject = "primal_casting"
 
+[node name="WroughtFlesh" parent="Abilities" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+subject = "wrought_flesh"
+
 [node name="TrailOfThorns" parent="Abilities" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
@@ -62,11 +67,6 @@ subject = "trail_of_thorns"
 layout_mode = 2
 texture_normal = ExtResource("3_04yta")
 subject = "quill_spray"
-
-[node name="WroughtFlesh" parent="Abilities" instance=ExtResource("2_o7hfy")]
-layout_mode = 2
-texture_normal = ExtResource("3_04yta")
-subject = "wrought_flesh"
 
 [node name="AnimatedClay" parent="Abilities" instance=ExtResource("2_o7hfy")]
 layout_mode = 2
@@ -113,62 +113,22 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
+[node name="PainWalk" parent="Masteries" instance=ExtResource("5_0tpqo")]
+custom_minimum_size = Vector2(124, 60)
+layout_mode = 2
+accessible_texture = ExtResource("3_04yta")
+requires = {
+"trail_of_thorns": 3,
+"wrought_flesh": 3
+}
+subject = "pain_walk"
+
 [node name="Blank2" type="Control" parent="Masteries"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
 [node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank2"]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_g6tul")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="Blank3" type="Control" parent="Masteries"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank3"]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_g6tul")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="Blank4" type="Control" parent="Masteries"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank4"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1

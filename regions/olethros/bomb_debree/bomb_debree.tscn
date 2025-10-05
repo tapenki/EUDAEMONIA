@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c511sypv8nipf"]
+[gd_scene load_steps=15 format=3 uid="uid://c511sypv8nipf"]
 
-[ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_6h8y6"]
+[ext_resource type="Script" uid="uid://exdrobvaiphc" path="res://regions/olethros/bomb_debree/bomb_debree.gd" id="1_311us"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jblvk"]
-[ext_resource type="Script" uid="uid://7y1a24i15d2p" path="res://regions/olethros/bomb_debree/enemy_bomb.gd" id="3_311us"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_pboui"]
 [ext_resource type="Texture2D" uid="uid://d14qxvhr1egdt" path="res://regions/olethros/bomb_debree/bomb_debree.png" id="4_x63fb"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="8_5m6cv"]
@@ -176,7 +175,7 @@ collision_layer = 2
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_6h8y6")
+script = ExtResource("1_311us")
 max_distance = 100.0
 distance_deviation = 0.25
 speed = 250.0
@@ -189,12 +188,6 @@ max_health = 40
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_jblvk")
 type = "entity"
-
-[node name="EnemyBomb" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("3_311us")
-ability_handler = NodePath("../AbilityHandler")
-explosion_scale = 2.0
-explosion_delay = 1.25
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

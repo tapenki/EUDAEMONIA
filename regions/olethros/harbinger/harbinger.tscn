@@ -1,0 +1,337 @@
+[gd_scene load_steps=26 format=3 uid="uid://c78i4sbx3r6jh"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_m4hsf"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_sublx"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_dgt3o"]
+[ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_s3wuf"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_hyg13"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_04ynr"]
+[ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="7_tsh4m"]
+[ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="8_tyr7c"]
+[ext_resource type="Script" uid="uid://b0v32boqfguky" path="res://regions/olethros/harbinger/harbinger_booster_dash.gd" id="9_33aw5"]
+[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="10_x18un"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="11_gs2a3"]
+[ext_resource type="Texture2D" uid="uid://ci4nv8t5khsek" path="res://regions/olethros/harbinger/harbinger.png" id="12_o4x2o"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="13_yk0yl"]
+[ext_resource type="Texture2D" uid="uid://lxvukviq6jn3" path="res://regions/olethros/harbinger/harbinger_hurt.png" id="14_67870"]
+[ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="15_i12jv"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="15_sfmxc"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="16_m0v1g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 40.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rj0pm"]
+resource_name = "ENDLAG"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_icb8a"]
+resource_name = "WALK"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_14oqu"]
+resource_name = "WINDUP"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"ENDLAG": SubResource("Animation_rj0pm"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WALK": SubResource("Animation_icb8a"),
+&"WINDUP": SubResource("Animation_14oqu")
+}
+
+[node name="Harbinger" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 2
+collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_m4hsf")
+ability_handler = NodePath("AbilityHandler")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 480
+health = 480.0
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_sublx")
+type = "entity"
+
+[node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_dgt3o")
+initial_state = NodePath("CloseIn1")
+
+[node name="CloseIn1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_s3wuf")
+speed = 400
+distance_margin = 250
+shapecast_radius = 20
+next = NodePath("../PrepareAttack1")
+
+[node name="PrepareAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_hyg13")
+anim = "WINDUP"
+next = NodePath("../DashAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.4
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_tsh4m")
+speed = 600
+next = NodePath("../QuakeAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.24
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="QuakeAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_tyr7c")
+scale = 3.0
+next = NodePath("../PrepareAttack2")
+
+[node name="PrepareAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_hyg13")
+anim = "WINDUP"
+next = NodePath("../DashAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.4
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_tsh4m")
+speed = 600
+next = NodePath("../QuakeAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.24
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="QuakeAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_tyr7c")
+scale = 4.0
+next = NodePath("../Endlag1")
+
+[node name="Endlag1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_hyg13")
+anim = "ENDLAG"
+next = NodePath("../CloseIn2")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag1" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.75
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="CloseIn2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_s3wuf")
+speed = 400
+distance_margin = 400
+shapecast_radius = 20
+next = NodePath("../PrepareAttack3")
+
+[node name="PrepareAttack3" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_hyg13")
+anim = "WINDUP"
+next = NodePath("../DashAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack3" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.4
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack3" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("9_33aw5")
+speed = 800
+bullet = ExtResource("10_x18un")
+next = NodePath("../QuakeAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack3" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 2.0
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="QuakeAttack3" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_tyr7c")
+scale = 3.0
+next = NodePath("../Endlag2")
+
+[node name="Endlag2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_hyg13")
+anim = "ENDLAG"
+next = NodePath("../CloseIn1")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag2" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.5
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+material = ExtResource("11_gs2a3")
+position = Vector2(0, 40)
+texture = ExtResource("12_o4x2o")
+offset = Vector2(0, -40)
+script = ExtResource("13_yk0yl")
+base_texture = ExtResource("12_o4x2o")
+hurt_texture = ExtResource("14_67870")
+
+[node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_04ynr")
+wait_time = 0.2
+ability_handler = NodePath("../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+position = Vector2(0, -36)
+scale = Vector2(2, 2)
+texture = ExtResource("15_sfmxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
+position = Vector2(0, 4)
+collision_layer = 0
+script = ExtResource("16_m0v1g")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+libraries = {
+&"": SubResource("AnimationLibrary_v1kwl")
+}
+
+[node name="Speech" type="Node2D" parent="."]
+position = Vector2(0, -25)
+script = ExtResource("15_i12jv")
+spawn_quotes = ["harbinger_spawn_1"]
+death_quotes = ["harbinger_death_1"]
+
+[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag1/Timer" to="StateHandler/Endlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack3/Timer" to="StateHandler/PrepareAttack3" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack3/Timer" to="StateHandler/DashAttack3" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

@@ -4,6 +4,7 @@ var base_values = {
 	"gameplay" :
 	{
 		"damage_numbers" = true,
+		"screenshake" = 1.0,
 	},
 	"audio" : {
 		"master_volume" = 1,

@@ -25,6 +25,6 @@ func on_enter() -> void:
 			bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime * liferangemult
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
 		#user.ability_handler.attack.emit(direction)
-		get_node("/root/Main").play_sound("Pooh")
+		get_node("/root/Main").play_sound("ShootLight")
 	state_handler.target = null
 	state_handler.change_state(next)

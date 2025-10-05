@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7jqndlvprk5w"
-path="res://.godot/imported/bomb_debree_hurt.png-4494471fc29d5f9b05398fe459128f96.ctex"
+uid="uid://fjn1y3j6f363"
+path="res://.godot/imported/mask.png-978da37010b1742e5490edf509785594.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/olethros/bomb_debree/bomb_debree_hurt.png"
-dest_files=["res://.godot/imported/bomb_debree_hurt.png-4494471fc29d5f9b05398fe459128f96.ctex"]
+source_file="res://generic/misc/mask.png"
+dest_files=["res://.godot/imported/mask.png-978da37010b1742e5490edf509785594.ctex"]
 
 [params]
 

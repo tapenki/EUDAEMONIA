@@ -1,4 +1,4 @@
-extends Entity
+class_name OrbitingEntity extends Entity
 
 @export var max_distance: float
 @export var distance_deviation: float

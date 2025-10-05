@@ -190,7 +190,7 @@ script = ExtResource("9_dycxl")
 wait_time = 0.5
 deviation = 0.25
 ability_handler = NodePath("../../../AbilityHandler")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)

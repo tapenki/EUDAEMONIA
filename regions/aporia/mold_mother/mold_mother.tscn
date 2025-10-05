@@ -113,7 +113,7 @@ _data = {
 &"WINDUP": SubResource("Animation_vajmc")
 }
 
-[node name="Mold" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="MoldMother" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 2
 collision_mask = 0
@@ -124,7 +124,7 @@ ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 400
-health = 40
+health = 400.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_2ntoc")

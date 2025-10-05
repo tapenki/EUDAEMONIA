@@ -117,6 +117,10 @@ var ability_data = {
 		"script" : preload("res://paths/black_magic/abilities/animated_clay.gd"),
 		"type" : "upgrade"
 	},
+	"pain_walk" : {
+		"script" : preload("res://paths/black_magic/abilities/pain_walk.gd"),
+		"type" : "mastery"
+	},
 	"multimold" : {
 		"script" : preload("res://paths/black_magic/abilities/multimold.gd"),
 		"type" : "mastery"
@@ -147,14 +151,14 @@ var ability_data = {
 		"script" : preload("res://paths/white_magic/abilities/dynamo.gd"),
 		"type" : "mastery"
 	},
+	"repulsar" : {
+		"script" : preload("res://paths/white_magic/abilities/repulsar.gd"),
+		"type" : "mastery"
+	},
 	#endregion
 	#region misc
 	"bonus_health" : {
 		"script" : preload("res://generic/abilities/bonus_health.gd"),
-		"type" : "token"
-	},
-	"bulletsplosion" : {
-		"script" : preload("res://generic/abilities/enemy/bulletsplosion.gd"),
 		"type" : "token"
 	},
 	#endregion
