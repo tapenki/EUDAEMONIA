@@ -2,8 +2,8 @@ class_name Projectile extends Area2D
 
 @export var ability_handler: Node2D
 @export var hit_sound = "HitLight"
-@export var hit_particles: PackedScene
-@export var crit_particles: PackedScene = preload("res://paths/white_magic/zap.tscn")
+@export var hit_particles: String = "Impact"
+@export var crit_particles: String = "Zap"
 
 @export var hit_delay: = 0.5
 @export var hit_enabled = true
@@ -21,9 +21,9 @@ func _ready() -> void:
 
 func on_collision(crits: int):
 	if hit_particles:
-		get_node("/root/Main").spawn_particles(hit_particles, global_position, scale.x, get_node("Sprite").modulate)
+		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + hit_particles), 4, global_position, scale.x, get_node("Sprite").modulate)
 	if crits > 0 and crit_particles:
-		get_node("/root/Main").spawn_particles(crit_particles, global_position, scale.x, get_node("Sprite").modulate)
+		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + crit_particles), 4, global_position, scale.x, get_node("Sprite").modulate)
 	if hit_sound:
 		get_node("/root/Main").play_sound(hit_sound)
 
@@ -49,7 +49,7 @@ func _physics_process(delta):
 	if hit_walls:
 		for body in get_overlapping_bodies():
 			if body is TileMapLayer:
-				var crits = ability_handler.get_crits()
+				var crits = 0#ability_handler.get_crits()
 				on_collision(crits)
 				kill()
 
@@ -65,7 +65,7 @@ func on_hit(crits):
 		kill()
 
 func _on_lifetime_timeout() -> void:
-	var crits = ability_handler.get_crits()
+	var crits = 0#ability_handler.get_crits()
 	on_collision(crits)
 	kill()
 

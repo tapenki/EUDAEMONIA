@@ -2,8 +2,6 @@ extends Ability
 
 var inheritance_level = 3
 
-var firebeam_scene = preload("res://paths/red_magic/firebeam.tscn")
-
 func _ready() -> void:
 	ability_handler.self_death.connect(self_death)
 	
@@ -12,4 +10,4 @@ func self_death():
 	var reach = 100 * attack_scale
 	for entity in ability_handler.area_targets(global_position, reach):
 		ability_handler.apply_status(entity.ability_handler, "burn", level * 10)
-		get_node("/root/Main").particle_beam(firebeam_scene, global_position, entity.global_position, 32, 1, Config.get_team_color(ability_handler.owner.group, "secondary"))
+		get_node("/root/Main").particle_beam(get_node("/root/Main/Particles/Firebeam"), global_position, entity.global_position, 32, 1, Config.get_team_color(ability_handler.owner.group, "secondary"))

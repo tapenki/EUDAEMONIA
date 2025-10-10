@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://t53js78y1xq2"]
+[gd_scene load_steps=9 format=3 uid="uid://t53js78y1xq2"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_eg6ym"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_c6y3j"]
 [ext_resource type="Texture2D" uid="uid://csbg4wfwhnl4h" path="res://generic/projectiles/bullet.png" id="2_p8otf"]
-[ext_resource type="PackedScene" uid="uid://bbq18byf4kfu4" path="res://generic/particles/impact.tscn" id="2_rjaq4"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4ncq8"]
 [ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_4ncq8"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_l88f5"]
@@ -17,9 +16,8 @@ z_index = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_eg6ym")
-hit_particles = ExtResource("2_rjaq4")
-hit_walls = true
 ability_handler = NodePath("AbilityHandler")
+hit_walls = true
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_c6y3j")

@@ -315,33 +315,16 @@ func end_day():
 func play_sound(sound: String):
 	get_node("Audio/" + sound).play()
 
-func spawn_particles(particle_scene: PackedScene, position: Vector2, scale: float = 1, color: Color = Color.WHITE):
-	#if particles.get_children().size() > 32:
-	#	return
-	var particle_instance = particle_scene.instantiate()
-	particle_instance.global_position = position
-	particle_instance.modulate = color
-	particle_instance.process_material.scale *= scale
-	particle_instance.scale = Vector2(scale, scale)
-	particles.add_child(particle_instance)
-	particle_instance.timer.start()
-	return particle_instance
+func spawn_particles(particle_instance: GPUParticles2D, count: int, position: Vector2, scale: float = 1, color: Color = Color.WHITE):
+	for i in count:
+		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, position), Vector2(), color, Color(), 11)
 
-func particle_beam(particle_scene: PackedScene, start: Vector2, end: Vector2, spacing: int = 32, scale: float = 1, color: Color = Color.WHITE):
-	#if particles.get_children().size() > 32:
-	#	return
-	var particle_instance: GPUParticles2D = particle_scene.instantiate()
-	particle_instance.modulate = color
-	particle_instance.process_material.scale *= scale
-	particle_instance.scale = Vector2(scale, scale)
-	particles.add_child(particle_instance)
-	particle_instance.timer.start()
-	
+func particle_beam(particle_instance: GPUParticles2D, start: Vector2, end: Vector2, spacing: int = 32, scale: float = 1, color: Color = Color.WHITE):
 	var distance = start.distance_to(end)
 	var delta = 0
 	while delta < distance:
 		delta += spacing
-		particle_instance.emit_particle(Transform2D(0, start.move_toward(end, delta)), Vector2(), color, color, 1)
+		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, start.move_toward(end, delta)), Vector2(), color, Color(), 11)
 	return particle_instance
 
 @onready var floating_text_scene = preload("res://generic/misc/floating_text.tscn")

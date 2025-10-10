@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqq6sh3amo6gc"]
+[gd_scene load_steps=22 format=3 uid="uid://dqq6sh3amo6gc"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_wxecl"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_d1k6k"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="7_vxdbt"]
 [ext_resource type="Texture2D" uid="uid://bwsj4h3xb6pid" path="res://paths/black_magic/clay/clay.png" id="7_y2u7u"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="8_2qjnk"]
+[ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="8_hem8k"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_vxm3h"]
 [ext_resource type="Texture2D" uid="uid://dqggvfwuuajj" path="res://paths/black_magic/clay/clay_hurt.png" id="9_16mca"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="10_eduxh"]
@@ -131,7 +132,7 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_huaky")
-speed = 300
+speed = 400
 distance_margin = 150
 shapecast_radius = 20
 next = NodePath("../PrepareAttack")
@@ -151,14 +152,20 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_6ngl6")
-speed = 600
-next = NodePath("../Endlag")
+speed = 700
+next = NodePath("../QuakeAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_tdrsd")
-wait_time = 0.4
+wait_time = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="QuakeAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_hem8k")
+scale = 1.5
+next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4

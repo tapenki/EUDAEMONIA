@@ -2,9 +2,6 @@ extends Ability
 
 var inheritance_level = 1
 
-var zap_scene = preload("res://paths/white_magic/zap.tscn")
-var zapbeam_scene = preload("res://paths/white_magic/zapbeam.tscn")
-
 var chain = {}
 
 func _ready() -> void:
@@ -21,6 +18,6 @@ func damage_dealt(entity, _damage, crits_dealt) -> void:
 		if target:
 			ability_handler.deal_damage(target)
 			var particle_scale = ability_handler.get_attack_scale()
-			get_node("/root/Main").particle_beam(zapbeam_scene, entity.global_position, target.global_position, 48, particle_scale, Config.get_team_color(ability_handler.owner.group, "secondary"))
-			get_node("/root/Main").spawn_particles(zap_scene, target.global_position, particle_scale, Config.get_team_color(ability_handler.owner.group, "secondary"))
+			get_node("/root/Main").particle_beam(get_node("/root/Main/Particles/Zap"), entity.global_position, target.global_position, 48, particle_scale, Config.get_team_color(ability_handler.owner.group, "secondary"))
+			get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Zap"), 4, target.global_position, particle_scale, Config.get_team_color(ability_handler.owner.group, "secondary"))
 	chain.clear()

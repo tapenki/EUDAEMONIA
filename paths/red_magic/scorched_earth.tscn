@@ -34,10 +34,12 @@ radius = 48.0
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_ry3wi")
-hits_left = 3
 ability_handler = NodePath("AbilityHandler")
+hit_particles = ""
+crit_particles = ""
 hit_delay = 0.2
 hit_enabled = false
+hits_left = -1
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7j7ie")
@@ -52,6 +54,7 @@ lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_7j7ie")
 script = ExtResource("4_73dah")
 ability_handler = NodePath("../AbilityHandler")
+shrink = 2.5
 
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3

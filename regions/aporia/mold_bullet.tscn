@@ -1,7 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bu3jk0yrnh38t"]
 
 [ext_resource type="Script" uid="uid://cd3ridfw6k6lk" path="res://regions/aporia/mold_bullet.gd" id="1_th00q"]
-[ext_resource type="PackedScene" uid="uid://bbq18byf4kfu4" path="res://generic/particles/impact.tscn" id="2_xiaf7"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_hyqsw"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_ks5w7"]
 [ext_resource type="Texture2D" uid="uid://cmwxts226muwa" path="res://regions/aporia/mold_bullet.png" id="5_th00q"]
@@ -17,7 +16,6 @@ z_index = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_th00q")
-hit_particles = ExtResource("2_xiaf7")
 ability_handler = NodePath("AbilityHandler")
 
 [node name="AbilityHandler" type="Node2D" parent="."]
