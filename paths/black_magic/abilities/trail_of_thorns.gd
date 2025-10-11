@@ -33,6 +33,6 @@ func movement(distance) -> void:
 				if pain_walk_counter == 0:
 					ability_handler.owner.take_damage(ability_handler, 2, false)
 					if Config.config.get_value("gameplay", "damage_numbers"): ## damage numbers
-						get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(2), Config.get_team_color(1, "secondary"))
+						get_node("/root/Main/FloatingText").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(2), Config.get_team_color(1, "secondary"))
 		else:
 			spawn(ability_handler.owner.global_position)

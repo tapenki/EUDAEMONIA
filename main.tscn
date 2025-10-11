@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://defo0ssov0anv"]
+[gd_scene load_steps=34 format=3 uid="uid://defo0ssov0anv"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://UI/ui.tscn" id="2_kek77"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/red_magic/flame.png" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_82xsv"]
 [ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/white_magic/zap.png" id="20_82xsv"]
+[ext_resource type="Script" uid="uid://8nfunvded3hu" path="res://floating_text.gd" id="21_getpj"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -246,6 +247,10 @@ lifetime = 0.32
 visibility_rect = Rect2(-10000, -10000, 20000, 20000)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_0odxb")
+
+[node name="FloatingText" type="Node2D" parent="."]
+z_index = 3
+script = ExtResource("21_getpj")
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 2.5

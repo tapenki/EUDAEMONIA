@@ -36,5 +36,7 @@ func _physics_process(_delta):
 	super(_delta)
 
 func take_damage(source, damage, immune_affected = true):
-	if super(source, damage, immune_affected) and immune_affected:
+	var took_damage = super(source, damage, immune_affected)
+	if took_damage and immune_affected:
 		get_node("/root/Main").screenshake.emit(0.2)
+	return took_damage

@@ -26,7 +26,7 @@ func tick():
 	var damage_final = damage["source"] * damage["multiplier"]
 	ability_handler.owner.take_damage(ability_handler, damage_final, false)
 	if Config.config.get_value("gameplay", "damage_numbers"): ## damage numbers
-		get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage_final)), Config.get_team_color(1, "secondary"))
+		get_node("/root/Main/FloatingText").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage_final)), Config.get_team_color(1, "secondary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

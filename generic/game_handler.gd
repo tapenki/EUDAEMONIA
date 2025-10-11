@@ -326,11 +326,3 @@ func particle_beam(particle_instance: GPUParticles2D, start: Vector2, end: Vecto
 		delta += spacing
 		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, start.move_toward(end, delta)), Vector2(), color, Color(), 11)
 	return particle_instance
-
-@onready var floating_text_scene = preload("res://generic/misc/floating_text.tscn")
-func floating_text(text_position: Vector2, text: String, color: Color):
-	var instance = floating_text_scene.instantiate()
-	instance.position = text_position
-	instance.get_node("Label").text = text
-	instance.modulate = color
-	add_child(instance)

@@ -19,7 +19,7 @@ func _physics_process(delta):
 			exclude[body] = hit_delay
 			var damage = ability_handler.deal_damage(body)
 			on_collision(body.global_position, body, damage["crits"])
-	for body in exclude:
+	for body in exclude.keys():
 		exclude[body] -= delta * ability_handler.speed_scale
 		if exclude[body] <= 0:
 			exclude.erase(body)
