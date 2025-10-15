@@ -7,8 +7,14 @@ extends Node
 @onready var fade = $"TransitionFade"
 @onready var backdrop = $"Backdrop"
 
-@onready var proceed = $"Control/Proceed"
-@onready var upgrades = $"Control/UpgradeScreen"
+@onready var proceed = $"HUD/Proceed"
+@onready var game_menu = $"GameMenu"
+
+@onready var settings = $"Settings"
+@onready var settings_tab = $"Settings/General"
+@onready var settings_tab_button = $"Settings/ToGeneral"
+
+var keybind_setting: Node
 
 var defeated: bool
 
@@ -17,7 +23,7 @@ var unlock_points = 100
 var paths: Array
 
 func _ready() -> void:
-	var magic_picker = upgrades.get_node("MagicPicker1")
+	var magic_picker = game_menu.get_node("MagicPicker1")
 	for path in paths:
 		magic_picker.pick(path)
 		magic_picker = magic_picker.next
@@ -28,16 +34,19 @@ func _ready() -> void:
 	player.ability_handler.self_death.connect(defeat)
 	toggle_pause(true)
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
-		toggle_upgrades()
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed_by_event("pause", event):
+		if settings.visible:
+			toggle_settings()
+		else:
+			toggle_game_menu()
 
 func toggle_pause(pause):
 	get_tree().paused = pause
 
-func toggle_upgrades():
-	if upgrades.visible:
-		upgrades.visible = false
+func toggle_game_menu():
+	if game_menu.visible:
+		game_menu.visible = false
 		backdrop.visible = false
 		if not defeated:
 			proceed.visible = false
@@ -45,7 +54,7 @@ func toggle_upgrades():
 			main.start_day()
 		toggle_pause(false)
 	else:
-		upgrades.visible = true
+		game_menu.visible = true
 		backdrop.visible = true
 		if main.day_over:
 			main.end_day()
@@ -58,10 +67,22 @@ func toggle_upgrades():
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
 
+func toggle_settings():
+	if settings.visible:
+		settings.visible = false
+		if keybind_setting:
+			keybind_setting.bind.button_pressed = false
+			keybind_setting = null
+	else:
+		settings.visible = true
+	fade.color = Color(0,0,0)
+	var tween = create_tween()
+	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
+
 func defeat():
 	proceed.visible = true
 	proceed.text = "menu"
-	get_node("Control/Defeated").visible = true
+	get_node("HUD/Defeated").visible = true
 	defeated = true
 
 func day_cleared(_day) -> void:

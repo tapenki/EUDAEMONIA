@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ui = $"../../../"
+@onready var ui = $"../../"
 
 @onready var grid = $"GridContainer"
 

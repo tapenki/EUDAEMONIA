@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=31 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://UI/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="2_0w6e5"]
@@ -9,10 +9,18 @@
 [ext_resource type="Theme" uid="uid://dbc5act8pigyb" path="res://UI/14px_font_theme.tres" id="5_2qbci"]
 [ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://UI/health_bar.gd" id="5_r6g2f"]
 [ext_resource type="PackedScene" uid="uid://2hguf1pilgru" path="res://paths/magic_picker.tscn" id="6_6rr40"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://UI/button_theme.tres" id="9_7j5ik"]
+[ext_resource type="Script" uid="uid://vh8xivmipwsn" path="res://UI/reset.gd" id="9_ow1yt"]
 [ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://UI/version.gd" id="10_0w6e5"]
-[ext_resource type="Texture2D" uid="uid://cv53nmyylg8k6" path="res://UI/button_2.png" id="10_h81ot"]
+[ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://UI/button_red.png" id="12_2qbci"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://UI/button.png" id="12_o2jkc"]
 [ext_resource type="Script" uid="uid://b35lnmakge152" path="res://UI/stats.gd" id="13_o2jkc"]
+[ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://UI/slider_setting.tscn" id="16_o2t6a"]
 [ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://UI/status_container.gd" id="16_s1k1p"]
+[ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://UI/toggle_setting.tscn" id="17_8gukh"]
+[ext_resource type="Script" uid="uid://byi7dd5lpcl53" path="res://UI/settings_tab_button.gd" id="18_8gkfd"]
+[ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://UI/button_blue.png" id="19_0tr35"]
+[ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://UI/keybind_setting.tscn" id="19_i1yd8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs3jx"]
 
@@ -60,7 +68,7 @@ outline_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
 outline_size = 5
-outline_color = Color(0, 0.501961, 1, 1)
+outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qmobw"]
 font_size = 40
@@ -79,9 +87,22 @@ stacked_shadow_1/outline_size = 15
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_o2t6a"]
+font_size = 18
+outline_size = 10
+outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_7hxr3")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="TransitionFade" type="ColorRect" parent="."]
 z_index = 25
@@ -185,7 +206,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Control" type="Control" parent="."]
+[node name="HUD" type="Control" parent="."]
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -199,8 +220,9 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="HealthBar" type="ProgressBar" parent="Control"]
+[node name="HealthBar" type="ProgressBar" parent="HUD"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -212,7 +234,7 @@ value = 50.0
 show_percentage = false
 script = ExtResource("5_r6g2f")
 
-[node name="DamageBar" type="ProgressBar" parent="Control/HealthBar"]
+[node name="DamageBar" type="ProgressBar" parent="HUD/HealthBar"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -225,7 +247,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_iko4g")
 value = 75.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="Control/HealthBar"]
+[node name="Label" type="Label" parent="HUD/HealthBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -238,10 +260,10 @@ text = "50/100"
 label_settings = SubResource("LabelSettings_iknsa")
 horizontal_alignment = 1
 
-[node name="DamageTimer" type="Timer" parent="Control/HealthBar"]
+[node name="DamageTimer" type="Timer" parent="HUD/HealthBar"]
 one_shot = true
 
-[node name="StatusContainer" type="GridContainer" parent="Control"]
+[node name="StatusContainer" type="GridContainer" parent="HUD"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 50.0
@@ -249,7 +271,7 @@ offset_right = 91.0
 offset_bottom = 154.0
 script = ExtResource("16_s1k1p")
 
-[node name="FloorNumber" type="Label" parent="Control"]
+[node name="FloorNumber" type="Label" parent="HUD"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -263,7 +285,7 @@ label_settings = SubResource("LabelSettings_o2jkc")
 horizontal_alignment = 1
 script = ExtResource("3_g7pr5")
 
-[node name="Defeated" type="Label" parent="Control"]
+[node name="Defeated" type="Label" parent="HUD"]
 visible = false
 z_index = -1
 layout_mode = 1
@@ -279,23 +301,65 @@ text = "defeated"
 label_settings = SubResource("LabelSettings_qmobw")
 horizontal_alignment = 1
 
-[node name="UpgradeScreen" type="Control" parent="Control"]
-z_index = 3
+[node name="Proceed" type="Button" parent="HUD"]
+z_index = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "start_day"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD/Proceed"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("12_o2jkc")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
-[node name="UpgradePoints" type="Label" parent="Control/UpgradeScreen"]
+[node name="GameMenu" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UpgradePoints" type="Label" parent="GameMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -0.5
 offset_top = -40.0
+offset_right = 0.5
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -303,7 +367,7 @@ label_settings = SubResource("LabelSettings_4xnvd")
 horizontal_alignment = 1
 script = ExtResource("3_mom20")
 
-[node name="Version" type="Label" parent="Control/UpgradeScreen"]
+[node name="Version" type="Label" parent="GameMenu"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -317,26 +381,26 @@ text = "ver"
 label_settings = SubResource("LabelSettings_4xnvd")
 script = ExtResource("10_0w6e5")
 
-[node name="MagicPicker1" parent="Control/UpgradeScreen" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker1" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 layout_mode = 1
 offset_top = 40.0
 offset_bottom = 40.0
 next = NodePath("../MagicPicker2")
 
-[node name="MagicPicker2" parent="Control/UpgradeScreen" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker2" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 1
 offset_top = 160.0
 offset_bottom = 160.0
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="Control/UpgradeScreen" instance=ExtResource("6_6rr40")]
+[node name="MagicPicker3" parent="GameMenu" instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 1
 offset_top = 280.0
 offset_bottom = 280.0
 
-[node name="Reset" type="Button" parent="Control/UpgradeScreen"]
+[node name="Reset" type="Button" parent="GameMenu"]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -345,17 +409,19 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -92.0
-offset_top = -46.0
+offset_top = -79.0
 offset_right = -20.0
-offset_bottom = -15.0
+offset_bottom = -48.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
 text = "reset"
 flat = true
+script = ExtResource("9_ow1yt")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control/UpgradeScreen/Reset"]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Reset"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -364,14 +430,50 @@ anchor_bottom = 1.0
 offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_h81ot")
+texture = ExtResource("12_2qbci")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Stats" type="Button" parent="Control/UpgradeScreen"]
+[node name="Settings" type="Button" parent="GameMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "settings"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Settings"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_o2jkc")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Stats" type="Button" parent="GameMenu"]
 z_index = 1
 layout_mode = 1
 anchors_preset = 7
@@ -387,11 +489,12 @@ grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
 text = "stats"
 flat = true
 script = ExtResource("13_o2jkc")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control/UpgradeScreen/Stats"]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Stats"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -400,30 +503,211 @@ anchor_bottom = 1.0
 offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_h81ot")
+texture = ExtResource("12_o2jkc")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Proceed" type="Button" parent="Control"]
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+z_index = 5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Backdrop" type="ColorRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="General" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -120.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="Label" parent="Settings/General"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "audio"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="GenVolume" parent="Settings/General" instance=ExtResource("16_o2t6a")]
+visible = false
+layout_mode = 2
+text = "general_volume"
+
+[node name="MusicVolume" parent="Settings/General" instance=ExtResource("16_o2t6a")]
+visible = false
+layout_mode = 2
+text = "music_volume"
+key = "music_volume"
+
+[node name="SFXVolume" parent="Settings/General" instance=ExtResource("16_o2t6a")]
+layout_mode = 2
+text = "sfx_volume"
+key = "sfx_volume"
+
+[node name="Gameplay" type="Label" parent="Settings/General"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "gameplay"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="Screenshake" parent="Settings/General" instance=ExtResource("16_o2t6a")]
+layout_mode = 2
+text = "screenshake"
+section = "gameplay"
+key = "screenshake"
+
+[node name="DamageNumbers" parent="Settings/General" instance=ExtResource("17_8gukh")]
+layout_mode = 2
+text = "damage_numbers"
+section = "gameplay"
+key = "damage_numbers"
+
+[node name="Keybinds" type="VBoxContainer" parent="Settings"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -120.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Keybinds" type="Label" parent="Settings/Keybinds"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "keybinds"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="Up" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
+layout_mode = 2
+text = "up_keybind"
+action = "up"
+
+[node name="Left" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
+layout_mode = 2
+text = "left_keybind"
+action = "left"
+
+[node name="Down" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
+layout_mode = 2
+text = "down_keybind"
+action = "down"
+
+[node name="Right" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
+layout_mode = 2
+text = "right_keybind"
+action = "right"
+
+[node name="Pause" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
+layout_mode = 2
+text = "pause_keybind"
+action = "pause"
+
+[node name="Back" type="Button" parent="Settings"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "back"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/Back"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_o2jkc")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ToGeneral" type="Button" parent="Settings" node_paths=PackedStringArray("tab")]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -92.0
+offset_left = -87.0
 offset_top = 12.0
 offset_right = -20.0
 offset_bottom = 43.0
 grow_horizontal = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-text = "start_day"
+theme = ExtResource("9_7j5ik")
+text = "general"
 flat = true
+script = ExtResource("18_8gkfd")
+tab = NodePath("../General")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control/Proceed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/ToGeneral"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -432,23 +716,55 @@ anchor_bottom = 1.0
 offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_h81ot")
+texture = ExtResource("19_0tr35")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Backdrop" type="ColorRect" parent="."]
-anchors_preset = 15
+[node name="ToKeybinds" type="Button" parent="Settings" node_paths=PackedStringArray("tab")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 45.0
+offset_right = -20.0
+offset_bottom = 76.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "keybinds"
+flat = true
+script = ExtResource("18_8gkfd")
+tab = NodePath("../Keybinds")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/ToKeybinds"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("12_o2jkc")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
-[connection signal="pressed" from="Control/UpgradeScreen/Reset" to="." method="reset"]
-[connection signal="mouse_entered" from="Control/UpgradeScreen/Stats" to="Control/UpgradeScreen/Stats" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/UpgradeScreen/Stats" to="Control/UpgradeScreen/Stats" method="_on_mouse_exited"]
-[connection signal="pressed" from="Control/Proceed" to="." method="toggle_upgrades"]
+[connection signal="pressed" from="HUD/Proceed" to="." method="toggle_game_menu"]
+[connection signal="button_down" from="GameMenu/Reset" to="GameMenu/Reset" method="down"]
+[connection signal="button_up" from="GameMenu/Reset" to="GameMenu/Reset" method="up"]
+[connection signal="mouse_exited" from="GameMenu/Reset" to="GameMenu/Reset" method="up"]
+[connection signal="pressed" from="GameMenu/Settings" to="." method="toggle_settings"]
+[connection signal="mouse_entered" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_exited"]
+[connection signal="pressed" from="Settings/Back" to="." method="toggle_settings"]
+[connection signal="pressed" from="Settings/ToGeneral" to="Settings/ToGeneral" method="pressed"]
+[connection signal="pressed" from="Settings/ToKeybinds" to="Settings/ToKeybinds" method="pressed"]

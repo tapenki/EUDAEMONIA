@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dmwaa3dp74vat"]
+
+[ext_resource type="Texture2D" uid="uid://dmqs33kffhpbl" path="res://UI/grabber.png" id="1_q5ep0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydqtj"]
+bg_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_580mg"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_q5ep0")
+HSlider/icons/grabber_highlight = ExtResource("1_q5ep0")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ydqtj")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ydqtj")
+HSlider/styles/slider = SubResource("StyleBoxFlat_580mg")

@@ -18,6 +18,13 @@ var base_values = {
 		"2/secondary" = "ff0080",
 		"3/primary" = "ffcc00",
 		"3/secondary" = "ffaa00",
+	},
+	"keybinds" : {
+		"up" : KEY_W,
+		"down" : KEY_S,
+		"left" : KEY_A,
+		"right" : KEY_D,
+		"pause" : KEY_ESCAPE,
 	}
 }
 
@@ -34,6 +41,12 @@ func _init() -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), config.get_value("audio", "master_volume", 1))
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), config.get_value("audio", "music_volume", 1))
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), config.get_value("audio", "sfx_volume", 1))
+	
+	for action in config.get_section_keys("keybinds"):
+		var input_event = InputEventKey.new()
+		input_event.keycode = config.get_value("keybinds", action)
+		InputMap.action_add_event(action, input_event)
+	
 	if should_save:
 		config.save("user://config.ini")
 

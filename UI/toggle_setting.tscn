@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://6ever7o6jn0f"]
+
+[ext_resource type="Script" uid="uid://cfbl1hvkyht4v" path="res://UI/toggle_setting.gd" id="1_3ab8c"]
+[ext_resource type="Texture2D" uid="uid://caqhg57wkn1ua" path="res://UI/checkedbox.png" id="1_osjxi"]
+[ext_resource type="Texture2D" uid="uid://bjcgg758s2qcj" path="res://UI/checkbox.png" id="2_3ab8c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
+outline_size = 5
+outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
+[sub_resource type="Theme" id="Theme_xrxe2"]
+CheckBox/icons/checked = ExtResource("1_osjxi")
+CheckBox/icons/unchecked = ExtResource("2_3ab8c")
+
+[node name="ToggleSetting" type="Label"]
+size_flags_horizontal = 0
+label_settings = SubResource("LabelSettings_o2jkc")
+horizontal_alignment = 1
+script = ExtResource("1_3ab8c")
+
+[node name="CheckBox" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_right = 31.0
+offset_bottom = 1.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_xrxe2")
+toggle_mode = true
+texture_normal = ExtResource("2_3ab8c")
+texture_pressed = ExtResource("1_osjxi")
+
+[connection signal="toggled" from="CheckBox" to="." method="toggle"]

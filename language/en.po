@@ -9,16 +9,16 @@ msgstr ""
 
 # ui
 msgid "menu"
-msgstr "Menu (esc)"
+msgstr "Menu"
 
 msgid "continue"
-msgstr "Continue (esc)"
+msgstr "Continue"
 
 msgid "start_day"
-msgstr "Start Day (esc)"
+msgstr "Start Day"
 
 msgid "end_day"
-msgstr "End Day (esc)"
+msgstr "End Day"
 
 msgid "reset"
 msgstr "Reset"
@@ -27,7 +27,55 @@ msgid "stats"
 msgstr "Stats"
 
 msgid "defeated"
-msgstr "You Lose !!!"
+msgstr "died :("
+
+msgid "settings"
+msgstr "Settings"
+
+msgid "back"
+msgstr "Back"
+
+msgid "general"
+msgstr "General"
+
+msgid "audio"
+msgstr "Audio"
+
+msgid "general_volume"
+msgstr "General Volume:"
+
+msgid "music_volume"
+msgstr "Music Volume:"
+
+msgid "sfx_volume"
+msgstr "SFX Volume:"
+
+msgid "gameplay"
+msgstr "Gameplay"
+
+msgid "screenshake"
+msgstr "Screenshake:"
+
+msgid "damage_numbers"
+msgstr "Damage Numbers:"
+
+msgid "keybinds"
+msgstr "Keybinds"
+
+msgid "up_keybind"
+msgstr "Up:"
+
+msgid "left_keybind"
+msgstr "Left:"
+
+msgid "down_keybind"
+msgstr "Down:"
+
+msgid "right_keybind"
+msgstr "Right:"
+
+msgid "pause_keybind"
+msgstr "Pause/Proceed:"
 
 # paths
 msgid "upgrade_point_counter"
