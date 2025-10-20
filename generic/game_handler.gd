@@ -6,147 +6,23 @@ extends Node
 @onready var particles = $Particles
 
 @onready var spawns = $Spawns
-@onready var enemy_spawn_timer = $EnemySpawnTimer
 @onready var spawn_reticle = preload("res://generic/entities/spawn_reticle.tscn")
 
-var region_data = {
-	"vasis" : {
-		"layouts" : [
-			{
-				"scene" : preload("res://regions/vasis/layouts/vasis_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-		],
-		"common_waves" : [
-			[{"enemy" : preload("res://regions/vasis/leaper/leaper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/vasis/spitter/spitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-		],
-		"special_waves" : [
-			[
-				{"enemy" : preload("res://regions/vasis/giga_leaper/giga_leaper.tscn"), "positions" : ["OuterRight"]},
-				{"enemy" : preload("res://regions/vasis/giga_spitter/giga_spitter.tscn"), "positions" : ["OuterLeft"]}
-			],
-		]
-	},
-	"thayma" : {
-		"layouts" : [
-			{
-				"scene" : preload("res://regions/thayma/layouts/thayma_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-		],
-		"common_waves" : [
-			[{"enemy" : preload("res://regions/thayma/trispitter/trispitter.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/thayma/breaker/breaker.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-		],
-		"special_waves" : [
-			[{"enemy" : preload("res://regions/thayma/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
-		]
-	},
-	"aporia" : {
-		"layouts" : [
-			{
-				"scene" : preload("res://regions/aporia/layouts/aporia_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-		],
-		"common_waves" : [
-			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
-		],
-		"special_waves" : [
-			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
-		]
-	},
-	"olethros" : {
-		"layouts" : [
-			{
-				"scene" : preload("res://regions/olethros/layouts/olethros_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-		],
-		"common_waves" : [
-			[{"enemy" : preload("res://regions/olethros/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/olethros/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/olethros/griefer/griefer.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-		],
-		"special_waves" : [
-			[{"enemy" : preload("res://regions/olethros/harbinger/harbinger.tscn"), "positions" : ["OuterTop"]}],
-		]
-	},
-	"pandemonium" : {
-		"wavecount" : 3,
-		"layouts" : [
-			{
-				"scene" : preload("res://regions/vasis/layouts/vasis_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-			{
-				"scene" : preload("res://regions/thayma/layouts/thayma_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-			{
-				"scene" : preload("res://regions/aporia/layouts/aporia_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-			{
-				"scene" : preload("res://regions/olethros/layouts/olethros_layout_0.tscn"), 
-				"zoom_scale" : 0.9, 
-			},
-		],
-		"common_waves" : [
-			[{"enemy" : preload("res://regions/olethros/rocketjumper/rocketjumper.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/mold/mold.tscn"), "positions" : ["WallLeft", "WallTop", "WallRight", "WallBottom"]}],
-			[{"enemy" : preload("res://regions/olethros/hydra/hydra.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/spitball/spitball.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/aporia/leaker/leaker.tscn"), "positions" : ["OuterTopLeft", "OuterTopRight", "OuterBottomLeft", "OuterBottomRight"]}],
-			[{"enemy" : preload("res://regions/thayma/mars/mars.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-			[{"enemy" : preload("res://regions/olethros/griefer/griefer.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-			[{"enemy" : preload("res://regions/olethros/meteor/meteor.tscn"), "positions" : ["OuterLeft", "OuterRight"]}],
-		],
-		"special_waves" : [
-			[
-				{"enemy" : preload("res://regions/vasis/giga_leaper/giga_leaper.tscn"), "positions" : ["OuterRight"]},
-				{"enemy" : preload("res://regions/vasis/giga_spitter/giga_spitter.tscn"), "positions" : ["OuterLeft"]}
-			],
-			[{"enemy" : preload("res://regions/aporia/mold_mother/mold_mother.tscn"), "positions" : ["WallTop"]}],
-			[{"enemy" : preload("res://regions/thayma/saturn/saturn.tscn"), "positions" : ["OuterTop"]}],
-			[{"enemy" : preload("res://regions/olethros/harbinger/harbinger.tscn"), "positions" : ["OuterTop"]}],
-		]
-	}
-}
-var sphere_data = {
-	1 : [
-		"vasis"
-	],
-	2 : [
-		"thayma"
-	],
-	3 : [
-		"aporia"
-	],
-	4 : [
-		"olethros"
-	],
-	5 : [
-		"pandemonium"
-	],
-}
+@onready var nav_polygon = $NavRegion.navigation_polygon
+var astar = AStarGrid2D.new()
 
-var region = "vasis"
-var sphere = 1
+var region = "thayma"
 
-var layout: Node
-var layout_id: int
+var room_node: Node
+var room = "thayma_room_0"
+var door = "Entrance0"
 
 var day = 1
-var bad_day = false
-var day_over = true
+var day_started = false
 
 var enemy_queue: Array
+
+var game_over: bool
 
 ### signals
 
@@ -154,14 +30,17 @@ signal camera_parameters(zoom_scale: float)#, left: int, top: int, right: int, b
 signal screenshake(intensity: float)
 
 signal entity_death(entity: Entity)
+
+signal wave_start(wave: Wave)
+signal wave_cleared()
+
 signal day_start(day: int)
 signal day_cleared(day: int)
 signal intermission(day: int)
+
 signal failed()
 
 ### methods
-func _ready() -> void:
-	travel(region)
 
 ## groups 
 func assign_projectile_group(projectile: Projectile, group: int, color: String = "secondary"):
@@ -202,112 +81,100 @@ func instantiate_enemy(scene: PackedScene):
 	entity_instance.ability_handler.inherited_damage["multiplier"] = scale_enemy_damage()
 	return entity_instance
 
-func _on_enemy_spawn_timeout() -> void:
-	for enemy_group in enemy_queue[0]:
-		for position in enemy_group["positions"]:
-			position = layout.get_node("Positions/%s" % position).global_position
-			if enemy_group.has("offset"):
-				for offset in enemy_group["offset"]:
-					var enemy_instance = instantiate_enemy(enemy_group["enemy"])
-					enemy_instance.position = position + offset
-					spawn_entity(enemy_instance)
-			else:
-				var enemy_instance = instantiate_enemy(enemy_group["enemy"])
-				enemy_instance.position = position
-				spawn_entity(enemy_instance)
-	enemy_queue.remove_at(0)
-	if not enemy_queue.is_empty():
-		enemy_spawn_timer.start(2.5)
-
 ## day progress
-func travel(to_region: String):
-	region = to_region
-	pass
-
 func generate_map():
-	if layout != null:
-		layout.queue_free()
-	var layout_data = region_data[region]["layouts"][layout_id]
-	layout = layout_data["scene"].instantiate()
-	add_child(layout)
-	player.global_position = layout.get_node("Positions/InnerBottom").global_position
-	camera_parameters.emit(layout_data["zoom_scale"])#, layout_data["left"], layout_data["top"], layout_data["right"], layout_data["bottom"])
+	if room_node != null:
+		room_node.queue_free()
+	var room_data = RegionData.room_data[room]#region_data[region]["layouts"][layout_id]
+	room_node = room_data["scene"].instantiate()
+	add_child(room_node)
+	#generate_nav_polygon()
+	setup_astar()
+	var entrance_door = room_node.get_node("Doors/"+door)
+	player.global_position = entrance_door.global_position + Vector2(0, 60).rotated(entrance_door.rotation)
+	camera_parameters.emit(room_data["zoom_scale"])#, layout_data["left"], layout_data["top"], layout_data["right"], layout_data["bottom"])
+
+func setup_astar():
+	var tilemap = room_node.get_node("TileMap")
+	astar.region = tilemap.get_used_rect()
+	astar.region.end.x += 1
+	astar.region.end.y += 1
+	astar.cell_size = tilemap.tile_set.tile_size
+	astar.offset = astar.cell_size * 0.5
+	astar.update()
+	
+	for i in range(astar.region.position.x, astar.region.end.x):
+		for j in range(astar.region.position.y, astar.region.end.y):
+			var pos = Vector2i(i, j)
+			if tilemap.get_cell_source_id(pos) != 2:
+				astar.set_point_solid(pos)
+
+func generate_nav_polygon():
+	var tilemap = room_node.get_node("TileMap")
+	var usedRect = tilemap.get_used_rect()
+	var outline = PackedVector2Array([
+		Vector2(usedRect.position.x * 30, usedRect.position.y * 30),
+		Vector2(usedRect.position.x * 30, usedRect.end.y * 30),
+		Vector2(usedRect.end.x * 30, usedRect.end.y * 30),
+		Vector2(usedRect.end.x * 30, usedRect.position.y * 30),
+	])
+	nav_polygon.clear_outlines()
+	nav_polygon.add_outline(outline)
+	var source_geometry_data = NavigationMeshSourceGeometryData2D.new()
+	NavigationServer2D.parse_source_geometry_data(nav_polygon, source_geometry_data, tilemap)
+	NavigationServer2D.bake_from_source_geometry_data(nav_polygon, source_geometry_data)
 
 func start_day():
 	generate_map()
-	day_over = false
+	day_started = true
 	day_start.emit(day)
-	
-	for i in region_data[region].get("wavecount", 2):
-		if bad_day and i == 0:
-			var chosen_wave
-			chosen_wave = region_data[region]["special_waves"].pick_random()
-			enemy_queue.append(chosen_wave)
-		else:
-			var chosen_wave
-			chosen_wave = region_data[region]["common_waves"].pick_random()
-			enemy_queue.append(chosen_wave)
-	_on_enemy_spawn_timeout()
 
 func check_finished(dying_entity):
 	if dying_entity is Player: ## failstate
 		var players_alive = false
 		for entity in get_node("/root/Main/Entities").get_children():
-			if entity is Player and entity.alive and not entity.is_queued_for_deletion():
+			if entity is Player and entity.alive:
 				players_alive = true
 				break
 		if not players_alive:
+			game_over = true
 			failed.emit()
 			Saver.erase()
 			#var tween = create_tween()
 			#tween.tween_property(camera, "zoom", Vector2(2, 2), 15)
-	elif not dying_entity.summoned: ## check day progress
+	elif not dying_entity.summoned: ## check wave progress
 		var enemies_alive = false
 		for entity in get_node("/root/Main/Entities").get_children():
-			if not entity.is_queued_for_deletion() and entity.alive and entity.group == 2 and not entity.summoned:
+			if entity.alive and entity.group == 2 and not entity.summoned:
 				enemies_alive = true
 				break
 		for spawn in spawns.get_children():
-			if not spawn.is_queued_for_deletion() and spawn.entity.alive and spawn.entity.group == 2 and not spawn.entity.summoned:
+			if not spawn.is_queued_for_deletion() and spawn.entity.group == 2 and not spawn.entity.summoned:
 				enemies_alive = true
 				break
-		if not enemy_queue.is_empty():
-			if not enemies_alive and enemy_spawn_timer.time_left > 0.5:
-				enemy_spawn_timer.start(0.5) ## spawn the next wave faster when clearing everything
-			return ## return if there's still enemies left to spawn
 		if enemies_alive: return ## return if there's still enemies left alive
-		var players_alive = false
-		for entity in get_node("/root/Main/Entities").get_children():
-			if entity is Player:
-				players_alive = true
-		if players_alive:
-			get_node("/root/Main/UI").upgrade_points += 1
-			if bad_day:
-				get_node("/root/Main/UI").unlock_points += 1
-			day_cleared.emit(day)
-			day_over = true
+		wave_cleared.emit()
 
-func end_day():
+func travel(to_room, to_door):
 	for entity in get_node("/root/Main/Entities").get_children():
-		if entity.summoned:
-			entity.queue_free()
-		elif entity is Player:
-			if bad_day:
+		if entity is Player:
+			if RegionData.room_data[room].has("challenge"):
 				entity.ability_handler.upgrade("bonus_health", 10)
 			else:
 				entity.ability_handler.upgrade("bonus_health", 5)
 			entity.ability_handler.recover()
+		else:
+			entity.queue_free()
 	for projectile in get_node("/root/Main/Projectiles").get_children():
 		projectile.queue_free()
+	get_node("/root/Main/UI").upgrade_points += 1
+	if RegionData.room_data[room].has("challenge"):
+		get_node("/root/Main/UI").unlock_points += 1
 	day += 1
-	if bad_day:
-		bad_day = false
-		sphere += 1
-		if sphere_data.has(sphere):
-			travel(sphere_data[sphere].pick_random())
-	if day % 5 == 0:
-		bad_day = true
-	layout_id = randi_range(0, region_data[region]["layouts"].size() - 1)
+	day_started = false
+	room = to_room
+	door = to_door
+	region = RegionData.room_data[room]["region"]
 	intermission.emit(day)
 	Saver.write()
 

@@ -14,8 +14,8 @@ func _ready() -> void:
 	symbol_label.text = name.substr(0, 2)
 
 func _on_pressed() -> void:
-	if not ui.defeated and ui.unlock_points >= 1:
+	if not get_node("/root/Main").game_over and ui.unlock_points >= 1:
 		ui.unlock_points -= 1
-		point_counter.update(0)
+		point_counter.update()
 		ui.paths.append(subject)
 		picker.pick(subject)

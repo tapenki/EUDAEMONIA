@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://defo0ssov0anv"]
+[gd_scene load_steps=35 format=3 uid="uid://defo0ssov0anv"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://UI/ui.tscn" id="2_kek77"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/red_magic/flame.png" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_82xsv"]
 [ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/white_magic/zap.png" id="20_82xsv"]
-[ext_resource type="Script" uid="uid://8nfunvded3hu" path="res://floating_text.gd" id="21_getpj"]
+[ext_resource type="Script" uid="uid://8nfunvded3hu" path="res://generic/floating_text.gd" id="21_getpj"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -131,6 +131,10 @@ shader_parameter/lifetime_randomness = 0.0
 shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
 shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
 shader_parameter/scale_curve = SubResource("CurveTexture_1u8w0")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_getpj"]
+parsed_collision_mask = 4294901888
+agent_radius = 20.0
 
 [node name="Main" type="Node2D"]
 process_mode = 1
@@ -252,9 +256,8 @@ process_material = SubResource("ShaderMaterial_0odxb")
 z_index = 3
 script = ExtResource("21_getpj")
 
-[node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 2.5
-one_shot = true
+[node name="NavRegion" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_getpj")
 
 [connection signal="entity_death" from="." to="." method="check_finished"]
-[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timeout"]

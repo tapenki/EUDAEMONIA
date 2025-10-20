@@ -9,9 +9,6 @@ extends State
 
 var direction: Vector2
 
-var nav_parameters = NavigationPathQueryParameters2D.new()
-var nav_result = NavigationPathQueryResult2D.new()
-
 func on_enter() -> void:
 	super()
 	if not is_instance_valid(state_handler.target):
@@ -19,11 +16,25 @@ func on_enter() -> void:
 	
 	user.velocity = Vector2()
 	if is_instance_valid(state_handler.target):
-		nav_parameters.map = get_viewport().world_2d.navigation_map
-		nav_parameters.start_position = user.global_position
-		nav_parameters.target_position = state_handler.target.global_position
-		NavigationServer2D.query_path(nav_parameters, nav_result)
-		direction = user.global_position.direction_to(nav_result.path[1])
+		var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+		var start = tilemap.local_to_map(state_handler.target.global_position)
+		var end = tilemap.local_to_map(user.global_position)
+		var path = get_node("/root/Main").astar.get_point_path(start, end)
+		if path.size() > 1:
+			var next_position
+			for i in path:
+				var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, i)
+				ray_query.collision_mask = 128
+				var intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
+				if not intersection:
+					next_position = i
+					break
+			if next_position:
+				direction = user.global_position.direction_to(next_position)
+			else: ## check out my epical staircase
+				direction = Vector2.from_angle(randf()*TAU)
+		else:
+			direction = Vector2.from_angle(randf()*TAU)
 	else:
 		direction = Vector2.from_angle(randf()*TAU)
 	

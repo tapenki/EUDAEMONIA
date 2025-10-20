@@ -19,10 +19,10 @@ func _ready() -> void:
 		level_label.text = str(int(ability_node.level))
 
 func _on_pressed() -> void:
-	if not ui.defeated and ui.upgrade_points >= 1:
+	if not get_node("/root/Main").game_over and ui.upgrade_points >= 1:
 		ui.upgrade_points -= 1
 		ability_handler.upgrade(subject, 1)
-		point_counter.update(0)
+		point_counter.update()
 		var ability_node = ability_handler.get_node_or_null(subject)
 		if ability_node:
 			self_modulate = Color.WHITE

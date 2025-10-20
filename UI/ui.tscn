@@ -111,6 +111,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Description" type="RichTextLabel" parent="."]
@@ -228,6 +229,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 260.0
 offset_bottom = 36.0
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_qs3jx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1ihmk")
 value = 50.0
@@ -242,6 +244,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_wbg6h")
 theme_override_styles/fill = SubResource("StyleBoxFlat_iko4g")
 value = 75.0
@@ -269,6 +272,7 @@ offset_left = 20.0
 offset_top = 50.0
 offset_right = 91.0
 offset_bottom = 154.0
+mouse_filter = 2
 script = ExtResource("16_s1k1p")
 
 [node name="FloorNumber" type="Label" parent="HUD"]
@@ -287,7 +291,7 @@ script = ExtResource("3_g7pr5")
 
 [node name="Defeated" type="Label" parent="HUD"]
 visible = false
-z_index = -1
+z_index = -2
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

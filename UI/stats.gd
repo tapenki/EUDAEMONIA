@@ -35,7 +35,7 @@ func _on_mouse_entered() -> void:
 	description_title.text = "stats"
 	description_extra.visible = false
 	
-	if not get_node("/root/Main/UI").defeated:
+	if not get_node("/root/Main").game_over:
 		update_stattext()
 	description.text = stattext
 	

@@ -22,14 +22,9 @@ func spawn(spawn_position: Vector2):
 	get_node("/root/Main").spawn_entity(summon_instance)
 
 func day_start(_day: int) -> void:
-	var summon_positions = [
-		get_node("/root/Main").layout.get_node("Positions/InnerLeft").global_position,
-		get_node("/root/Main").layout.get_node("Positions/InnerTop").global_position,
-		get_node("/root/Main").layout.get_node("Positions/InnerRight").global_position,
-		get_node("/root/Main").layout.get_node("Positions/InnerBottom").global_position,
-	]
-	for i in summon_positions:
-		spawn(i)
+	for i in 4:
+		var spawn_position = NavigationServer2D.map_get_random_point(get_viewport().world_2d.navigation_map, 1, false)
+		spawn(spawn_position)
 
 func entity_death(dying_entity: Entity):
 	if undying_flames and dying_entity.scene_file_path == "res://paths/red_magic/flaming_skull/flaming_skull.tscn":

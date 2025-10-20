@@ -32,6 +32,6 @@ func healed(_amount) -> void:
 	value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if damage_timer.is_stopped():
-		damage_bar.value = max(damage_bar.value-2, value)
+		damage_bar.value = max(damage_bar.value-120*delta, value)

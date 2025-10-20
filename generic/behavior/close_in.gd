@@ -6,9 +6,6 @@ extends State
 
 @export var next: State
 
-var nav_parameters = NavigationPathQueryParameters2D.new()
-var nav_result = NavigationPathQueryResult2D.new()
-
 func avoidance():
 	var reach = 3000
 	var found
@@ -27,17 +24,7 @@ func _physics_process(_delta):
 		user.velocity = lerp(user.velocity, Vector2(), 0.5)
 		return
 	
-	var world = get_viewport().world_2d
-	nav_parameters.map = world.navigation_map
-	nav_parameters.start_position = user.global_position
-	nav_parameters.target_position = state_handler.target.global_position
-	
-	NavigationServer2D.query_path(nav_parameters, nav_result)
-	
-	if nav_result.path.size() < 2:
-		user.velocity = lerp(user.velocity, Vector2(), 0.5)
-		return
-	
+	## proceed to next state
 	var distance = user.global_position.distance_to(state_handler.target.global_position)
 	if distance < distance_margin:
 		var perpendicular = user.global_position.direction_to(state_handler.target.global_position).rotated(PI/2)
@@ -51,12 +38,32 @@ func _physics_process(_delta):
 		shape_query.shape = ConvexPolygonShape2D.new()
 		shape_query.shape.set_point_cloud(cloud)
 		shape_query.collision_mask = 128
-		var intersections = world.direct_space_state.intersect_shape(shape_query, 1)
+		var intersections = get_node("/root/Main").physics_space.intersect_shape(shape_query, 1)
 		if not intersections:
 			state_handler.change_state(next)
 			return
 	
-	var next_position = nav_result.path[1]
+	## follow path
+	var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+	var start = tilemap.local_to_map(state_handler.target.global_position)
+	var end = tilemap.local_to_map(user.global_position)
+	var path = get_node("/root/Main").astar.get_point_path(start, end)
+	
+	if path.size() < 2:
+		user.velocity = lerp(user.velocity, Vector2(), 0.5)
+		return
+	
+	var next_position
+	for i in path:
+		var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, i)
+		ray_query.collision_mask = 128
+		var intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
+		if not intersection:
+			next_position = i
+			break
+	if not next_position:
+		return
+	
 	var direction = user.global_position.direction_to(next_position)
 	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)

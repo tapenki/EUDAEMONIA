@@ -3,6 +3,8 @@ class_name Player extends Entity
 @onready var bullet_timer = $BulletTimer
 var bullet = preload("res://generic/projectiles/bullet.tscn")
 
+var attack: bool
+
 func shoot(direction):
 	var bullet_instance = ability_handler.make_projectile(bullet, 
 	global_position + direction * 25, 
@@ -17,7 +19,7 @@ func _ready() -> void:
 func _physics_process(_delta):
 	if not alive:
 		return
-	if Input.is_action_pressed("fire") and not bullet_timer.running:
+	if attack and not bullet_timer.running:
 		## handle fire rate or maybe don't
 		#var fire_rate = ability_handler.get_attack_rate(0.35)
 		bullet_timer.start(0.35)
@@ -34,6 +36,13 @@ func _physics_process(_delta):
 	else:
 		animation_player.play("RESET")
 	super(_delta)
+
+func _unhandled_input(event: InputEvent) -> void: ## doesn't work with inputmap ??
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			attack = true
+		else:
+			attack = false
 
 func take_damage(source, damage, immune_affected = true):
 	var took_damage = super(source, damage, immune_affected)

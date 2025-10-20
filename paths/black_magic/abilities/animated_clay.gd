@@ -12,10 +12,12 @@ func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
 	
 func day_start(_day: int) -> void:
-	var positions = [global_position + Vector2(0, 0)]
+	var offsets = [Vector2(0, 60)]
 	if multimold:
-		positions = [global_position + Vector2(50, 0), global_position - Vector2(50, 0)]
-	for summon_position in positions:
+		offsets = [Vector2(15, 60), Vector2(-15, 60)]
+	var entrance_door = get_node("/root/Main").room_node.get_node("Doors/"+get_node("/root/Main").door)
+	for summon_offset in offsets:
+		var summon_position = entrance_door.global_position + summon_offset.rotated(entrance_door.rotation)
 		var summon_instance = ability_handler.make_summon(summon, 
 		summon_position, 
 		4,  ## inheritance

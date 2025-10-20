@@ -54,6 +54,16 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="Ignition" parent="Abilities" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "ignition"
+
+[node name="Firespawning" parent="Abilities" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "firespawning"
+
 [node name="Melt" parent="Abilities" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
@@ -68,16 +78,6 @@ subject = "scorched_earth"
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "from_ashes"
-
-[node name="Ignition" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "ignition"
-
-[node name="Firespawning" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "firespawning"
 
 [node name="Masteries" type="HBoxContainer" parent="."]
 layout_direction = 2

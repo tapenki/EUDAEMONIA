@@ -14,10 +14,13 @@ var base_values = {
 	"palette" : {
 		"1/primary" = "0080ff",
 		"1/secondary" = "00c0ff",
+		"1/tertiary" = "00ff00",
 		"2/primary" = "ff0000",
 		"2/secondary" = "ff0080",
-		"3/primary" = "ffcc00",
-		"3/secondary" = "ffaa00",
+		"2/tertiary" = "ff00ff",
+		"3/primary" = "ffaa00",
+		"3/secondary" = "ffcc00",
+		"3/tertiary" = "ffff00",
 	},
 	"keybinds" : {
 		"up" : KEY_W,

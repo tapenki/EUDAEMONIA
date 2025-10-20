@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct15fsuhi0fdx"]
+
+[ext_resource type="Texture2D" uid="uid://4mon6i40d7sc" path="res://regions/broken_door.png" id="1_kc4c7"]
+
+[node name="BrokenDoor" type="Sprite2D"]
+self_modulate = Color(1, 0.6666667, 0, 1)
+texture = ExtResource("1_kc4c7")

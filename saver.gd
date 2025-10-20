@@ -5,14 +5,14 @@ func erase():
 	save_file.store_var({"version" : ""})
 
 func write():
-	if get_node("/root/Main/UI").defeated:
+	if get_node("/root/Main").game_over:
 		return
 	var save_data = {
 		"version" : ProjectSettings.get_setting("application/config/version"),
 		"day" : get_node("/root/Main").day,
 		"region" : get_node("/root/Main").region,
-		"sphere" : get_node("/root/Main").sphere,
-		"layout" : get_node("/root/Main").layout_id,
+		"room" : get_node("/root/Main").room,
+		"door" : get_node("/root/Main").door,
 		"unlock_points" : get_node("/root/Main/UI").unlock_points,
 		"upgrade_points" : get_node("/root/Main/UI").upgrade_points,
 		"paths" : get_node("/root/Main/UI").paths,
@@ -32,11 +32,9 @@ func read():
 	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
 		return
 	get_node("/root/Main").day = save_data["day"]
-	if get_node("/root/Main").day % 5 == 0:
-		get_node("/root/Main").bad_day = true
 	get_node("/root/Main").region = save_data["region"]
-	get_node("/root/Main").sphere = save_data["sphere"]
-	get_node("/root/Main").layout_id = save_data["layout"]
+	get_node("/root/Main").room = save_data["room"]
+	get_node("/root/Main").door = save_data["door"]
 	get_node("/root/Main/UI").unlock_points = save_data["unlock_points"]
 	get_node("/root/Main/UI").upgrade_points = save_data["upgrade_points"]
 	for path in save_data["paths"]:

@@ -159,7 +159,6 @@ ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
-health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_oyhwu")
@@ -242,8 +241,6 @@ amount = 16
 texture = ExtResource("13_h3b6x")
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_c27jy")
-
-[node name="Lifetime" type="Timer" parent="Sprite/Burn"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bhp25")

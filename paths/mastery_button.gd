@@ -48,12 +48,12 @@ func update():
 			extra = "learned"
 
 func _on_pressed() -> void:
-	if not ui.defeated and accessible and ui.unlock_points >= 1:
+	if not get_node("/root/Main").game_over and accessible and ui.unlock_points >= 1:
 		var ability_node = ability_handler.get_node_or_null(subject)
 		if not ability_node:
 			ui.unlock_points -= 1
 			ability_handler.upgrade(subject, 1)
-			point_counter.update(0)
+			point_counter.update()
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

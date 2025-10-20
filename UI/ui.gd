@@ -16,8 +16,6 @@ extends Node
 
 var keybind_setting: Node
 
-var defeated: bool
-
 var upgrade_points = 100
 var unlock_points = 100
 var paths: Array
@@ -30,7 +28,7 @@ func _ready() -> void:
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
-	main.day_cleared.connect(day_cleared)
+	main.intermission.connect(intermission)
 	player.ability_handler.self_death.connect(defeat)
 	toggle_pause(true)
 
@@ -48,19 +46,18 @@ func toggle_game_menu():
 	if game_menu.visible:
 		game_menu.visible = false
 		backdrop.visible = false
-		if not defeated:
+		if not main.game_over:
 			proceed.visible = false
-		if main.day_over:
+		if not main.day_started:
 			main.start_day()
 		toggle_pause(false)
 	else:
 		game_menu.visible = true
 		backdrop.visible = true
-		if main.day_over:
-			main.end_day()
+		proceed.visible = true
+		if not main.day_started:
 			proceed.text = "start_day"
-		elif not defeated:
-			proceed.visible = true
+		elif not main.game_over:
 			proceed.text = "continue"
 		toggle_pause(true)
 	fade.color = Color(0,0,0)
@@ -83,11 +80,11 @@ func defeat():
 	proceed.visible = true
 	proceed.text = "menu"
 	get_node("HUD/Defeated").visible = true
-	defeated = true
 
-func day_cleared(_day) -> void:
-	proceed.visible = true
-	proceed.text = "end_day"
+func intermission(_day) -> void:
+	if not game_menu.visible:
+		toggle_game_menu()
+	proceed.text = "start_day"
 
 func reset():
 	Saver.erase()
