@@ -19,7 +19,7 @@ func on_enter() -> void:
 		var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
 		var start = tilemap.local_to_map(state_handler.target.global_position)
 		var end = tilemap.local_to_map(user.global_position)
-		var path = get_node("/root/Main").astar.get_point_path(start, end)
+		var path = get_node("/root/Main").astar.get_point_path(start, end, true)
 		if path.size() > 1:
 			var next_position
 			for i in path:

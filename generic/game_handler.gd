@@ -8,13 +8,10 @@ extends Node
 @onready var spawns = $Spawns
 @onready var spawn_reticle = preload("res://generic/entities/spawn_reticle.tscn")
 
-@onready var nav_polygon = $NavRegion.navigation_polygon
 var astar = AStarGrid2D.new()
 
-var region = "thayma"
-
 var room_node: Node
-var room = "thayma_room_0"
+var room = "olethros_throne_room"
 var door = "Entrance0"
 
 var day = 1
@@ -95,12 +92,12 @@ func generate_map():
 	camera_parameters.emit(room_data["zoom_scale"])#, layout_data["left"], layout_data["top"], layout_data["right"], layout_data["bottom"])
 
 func setup_astar():
+	astar.clear()
 	var tilemap = room_node.get_node("TileMap")
 	astar.region = tilemap.get_used_rect()
-	astar.region.end.x += 1
-	astar.region.end.y += 1
 	astar.cell_size = tilemap.tile_set.tile_size
-	astar.offset = astar.cell_size * 0.5
+	astar.offset = astar.cell_size
+	astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
 	astar.update()
 	
 	for i in range(astar.region.position.x, astar.region.end.x):
@@ -108,21 +105,10 @@ func setup_astar():
 			var pos = Vector2i(i, j)
 			if tilemap.get_cell_source_id(pos) != 2:
 				astar.set_point_solid(pos)
-
-func generate_nav_polygon():
-	var tilemap = room_node.get_node("TileMap")
-	var usedRect = tilemap.get_used_rect()
-	var outline = PackedVector2Array([
-		Vector2(usedRect.position.x * 30, usedRect.position.y * 30),
-		Vector2(usedRect.position.x * 30, usedRect.end.y * 30),
-		Vector2(usedRect.end.x * 30, usedRect.end.y * 30),
-		Vector2(usedRect.end.x * 30, usedRect.position.y * 30),
-	])
-	nav_polygon.clear_outlines()
-	nav_polygon.add_outline(outline)
-	var source_geometry_data = NavigationMeshSourceGeometryData2D.new()
-	NavigationServer2D.parse_source_geometry_data(nav_polygon, source_geometry_data, tilemap)
-	NavigationServer2D.bake_from_source_geometry_data(nav_polygon, source_geometry_data)
+				for k in range(-2, 2):
+					for l in range(-2, 2):
+						if astar.is_in_boundsv(pos + Vector2i(k, l)):
+							astar.set_point_weight_scale(pos + Vector2i(k, l), 4)
 
 func start_day():
 	generate_map()
@@ -174,7 +160,6 @@ func travel(to_room, to_door):
 	day_started = false
 	room = to_room
 	door = to_door
-	region = RegionData.room_data[room]["region"]
 	intermission.emit(day)
 	Saver.write()
 
@@ -193,3 +178,14 @@ func particle_beam(particle_instance: GPUParticles2D, start: Vector2, end: Vecto
 		delta += spacing
 		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, start.move_toward(end, delta)), Vector2(), color, Color(), 11)
 	return particle_instance
+	
+
+@onready var floating_text_scene = preload("res://generic/misc/floating_text.tscn")
+func floating_text(text_position: Vector2, text: String, color: Color):
+	if not Config.config.get_value("gameplay", "damage_numbers"):
+		return
+	var instance = floating_text_scene.instantiate()
+	instance.position = text_position
+	instance.get_node("Label").text = text
+	instance.modulate = color
+	add_child(instance)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xkp8korlpxmc"]
+[gd_scene load_steps=10 format=3 uid="uid://xkp8korlpxmc"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_hil1t"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_hkirg"]

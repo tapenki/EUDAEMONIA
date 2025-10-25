@@ -23,7 +23,9 @@ func spawn(spawn_position: Vector2):
 
 func day_start(_day: int) -> void:
 	for i in 4:
-		var spawn_position = NavigationServer2D.map_get_random_point(get_viewport().world_2d.navigation_map, 1, false)
+		var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+		var cell = tilemap.get_used_cells_by_id(2).pick_random()
+		var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 		spawn(spawn_position)
 
 func entity_death(dying_entity: Entity):

@@ -10,7 +10,6 @@ func write():
 	var save_data = {
 		"version" : ProjectSettings.get_setting("application/config/version"),
 		"day" : get_node("/root/Main").day,
-		"region" : get_node("/root/Main").region,
 		"room" : get_node("/root/Main").room,
 		"door" : get_node("/root/Main").door,
 		"unlock_points" : get_node("/root/Main/UI").unlock_points,
@@ -32,7 +31,6 @@ func read():
 	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
 		return
 	get_node("/root/Main").day = save_data["day"]
-	get_node("/root/Main").region = save_data["region"]
 	get_node("/root/Main").room = save_data["room"]
 	get_node("/root/Main").door = save_data["door"]
 	get_node("/root/Main/UI").unlock_points = save_data["unlock_points"]

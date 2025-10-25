@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp8slcxx2cl7q"]
+[gd_scene load_steps=13 format=3 uid="uid://cp8slcxx2cl7q"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_0owue"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_3eyo0"]
-[ext_resource type="PackedScene" uid="uid://b573k1wuax843" path="res://paths/white_magic/zap.tscn" id="2_xxnif"]
 [ext_resource type="Texture2D" uid="uid://csbg4wfwhnl4h" path="res://generic/projectiles/bullet.png" id="3_0owue"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_r00uu"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_r00uu"]
@@ -31,10 +30,9 @@ radius = 20.0
 
 [node name="BallLightning" type="Area2D" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("1_0owue")
-hit_particles = ExtResource("2_xxnif")
-hits_left = -1
 ability_handler = NodePath("AbilityHandler")
 hit_sound = "Peh"
+hits_left = -1
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("3_r00uu")

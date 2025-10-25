@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_c3w83"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_edfbk"]
 [ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="7_6ab7k"]
-[ext_resource type="Texture2D" uid="uid://b87y7kub5vv2g" path="res://regions/thayma/breaker/breaker.png" id="8_ikggl"]
+[ext_resource type="Texture2D" uid="uid://b87y7kub5vv2g" path="res://regions/aporia/breaker/breaker.png" id="8_ikggl"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="8_s5jc4"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_bltuv"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_rj0pm"]
-[ext_resource type="Texture2D" uid="uid://b65lpshbn2xmg" path="res://regions/thayma/breaker/breaker_hurt.png" id="10_yxutj"]
+[ext_resource type="Texture2D" uid="uid://b65lpshbn2xmg" path="res://regions/aporia/breaker/breaker_hurt.png" id="10_yxutj"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_rkogy"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_duci3"]
 

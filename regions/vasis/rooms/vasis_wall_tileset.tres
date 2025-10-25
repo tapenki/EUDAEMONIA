@@ -1,8 +1,7 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://iaorlxpk6ipa"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://iaorlxpk6ipa"]
 
 [ext_resource type="Texture2D" uid="uid://bv6fk2yp5anlg" path="res://regions/vasis/rooms/tilemap_walls.png" id="1_xjf0u"]
 [ext_resource type="Texture2D" uid="uid://cprmi30gx6uwl" path="res://regions/vasis/rooms/tilemap_floor.png" id="2_pe7ml"]
-[ext_resource type="Texture2D" uid="uid://qsrps0aurp2u" path="res://blank.png" id="3_4l0ff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_riut6"]
 resource_name = "inner"
@@ -49,13 +48,6 @@ texture_region_size = Vector2i(30, 30)
 3:0/0 = 0
 3:0/0/z_index = -5
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7c4b"]
-resource_name = "boundry"
-texture = ExtResource("3_4l0ff")
-texture_region_size = Vector2i(30, 30)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
-
 [resource]
 tile_size = Vector2i(30, 30)
 physics_layer_0/collision_layer = 128
@@ -63,4 +55,3 @@ physics_layer_0/collision_mask = 128
 sources/0 = SubResource("TileSetAtlasSource_riut6")
 sources/1 = SubResource("TileSetAtlasSource_l4hup")
 sources/2 = SubResource("TileSetAtlasSource_4l0ff")
-sources/3 = SubResource("TileSetAtlasSource_e7c4b")

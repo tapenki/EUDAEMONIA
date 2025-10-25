@@ -23,7 +23,7 @@ func add_level(value):
 	if value > 0:
 		if value > level_offset:
 			level_offset = value
-		duration_timer.start(0.1 * level_offset)
+		duration_timer.start(0.15 * level_offset)
 	if not offsetting:
 		offsetting = true
 		call_deferred("offset")

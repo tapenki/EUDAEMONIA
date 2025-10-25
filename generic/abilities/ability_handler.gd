@@ -30,7 +30,7 @@ signal movement(distance: float)
 #signal attack_rate_modifiers(modifiers: Dictionary)
 signal inh_attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
-signal projectile_created(projectile: Projectile)
+#signal projectile_created(projectile: Projectile)
 #signal attack_impact(position: Vector2, body: Node)
 
 ## summon signals
@@ -106,8 +106,8 @@ func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier
 	damage_dealt.emit(entity, final_damage, crits)
 	var damaged = entity.take_damage(self, final_damage)
 	if damaged:
-		if Config.config.get_value("gameplay", "damage_numbers"): ## damage numbers
-			get_node("/root/Main/FloatingText").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(final_damage)), Config.get_team_color(owner.group, "secondary"))
+		var damage_color = Config.get_team_color(owner.group, "secondary")
+		get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(final_damage)), damage_color)
 	return {"damage" : final_damage, "crits" : crits}
 
 ## targeting
@@ -159,8 +159,6 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	
 	get_node("/root/Main/").assign_projectile_group(projectile_instance, projectile_group)
 	
-	inherit(projectile_instance.ability_handler, inheritance)
-	
 	var scale = inherited_scale.duplicate()
 	inh_attack_scale_modifiers.emit(scale)
 	projectile_instance.ability_handler.inherited_scale = scale
@@ -177,7 +175,8 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	inh_speed_scale_modifiers.emit(speed)
 	projectile_instance.ability_handler.inherited_speed_scale = speed
 	
-	projectile_created.emit(projectile_instance)
+	inherit(projectile_instance.ability_handler, inheritance)
+	#projectile_created.emit(projectile_instance)
 	return projectile_instance
 
 func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int, health: int, summon_group = owner.group):

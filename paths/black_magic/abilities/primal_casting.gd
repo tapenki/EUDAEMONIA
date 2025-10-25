@@ -1,7 +1,6 @@
 extends Ability
 
 var inheritance_level = 1
-var type = "Upgrade"
 
 func _ready() -> void:
 	if ability_handler.type == "entity":

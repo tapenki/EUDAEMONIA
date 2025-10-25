@@ -44,29 +44,37 @@ func _physics_process(_delta):
 			return
 	
 	## follow path
+	var direction: Vector2
+	
+	#var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, state_handler.target.global_position)
+	#ray_query.collision_mask = 128
+	#var intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
+	#
+	#if intersection:
 	var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
-	var start = tilemap.local_to_map(state_handler.target.global_position)
-	var end = tilemap.local_to_map(user.global_position)
-	var path = get_node("/root/Main").astar.get_point_path(start, end)
+	var start = tilemap.local_to_map(user.global_position)
+	var end = tilemap.local_to_map(state_handler.target.global_position)
+	var path = get_node("/root/Main").astar.get_point_path(start, end, true)
+	
+	var offset = 0
+	for i in path.size():
+		var next_position = path[i - offset]
+		if user.global_position.distance_to(next_position) < 45:
+			path.remove_at(0)
+			offset += 1
+		else:
+			break
 	
 	if path.size() < 2:
 		user.velocity = lerp(user.velocity, Vector2(), 0.5)
 		return
 	
-	var next_position
-	for i in path:
-		var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, i)
-		ray_query.collision_mask = 128
-		var intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
-		if not intersection:
-			next_position = i
-			break
-	if not next_position:
-		return
+	direction = user.global_position.direction_to(path[0])
+	#else:
+		#direction = user.global_position.direction_to(state_handler.target.global_position)
 	
-	var direction = user.global_position.direction_to(next_position)
 	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
-	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
+	user.velocity = lerp(user.velocity, direction * final_speed, 0.25)
 	
 	var avoid = avoidance()
 	if avoid:

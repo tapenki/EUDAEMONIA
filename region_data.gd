@@ -58,15 +58,55 @@ var room_data = {
 	},
 	#endregion
 	#region aporia
+	"aporia_entrance_hall" : {
+		"scene" : preload("res://regions/aporia/rooms/aporia_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "aporia",
+	},
 	"aporia_room_0" : {
 		"scene" : preload("res://regions/aporia/rooms/aporia_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
 		"region" : "aporia",
 	},
+	"aporia_room_1" : {
+		"scene" : preload("res://regions/aporia/rooms/aporia_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "aporia",
+	},
+	"aporia_room_2" : {
+		"scene" : preload("res://regions/aporia/rooms/aporia_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "aporia",
+	},
+	"aporia_throne_room" : {
+		"scene" : preload("res://regions/aporia/rooms/aporia_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "aporia",
+	},
 	#endregion
 	#region olethros
+	"olethros_entrance_hall" : {
+		"scene" : preload("res://regions/olethros/rooms/olethros_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "olethros",
+	},
 	"olethros_room_0" : {
 		"scene" : preload("res://regions/olethros/rooms/olethros_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "olethros",
+	},
+	"olethros_room_1" : {
+		"scene" : preload("res://regions/olethros/rooms/olethros_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "olethros",
+	},
+	"olethros_room_2" : {
+		"scene" : preload("res://regions/olethros/rooms/olethros_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "olethros",
+	},
+	"olethros_throne_room" : {
+		"scene" : preload("res://regions/olethros/rooms/olethros_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
 		"region" : "olethros",
 	},
@@ -89,8 +129,8 @@ var entity_data = {
 	},
 	#endregion
 	#region thayma
-	"breaker" : {
-		"scene" : preload("res://regions/thayma/breaker/breaker.tscn")
+	"spitball" : {
+		"scene" : preload("res://regions/thayma/spitball/spitball.tscn")
 	},
 	"mars" : {
 		"scene" : preload("res://regions/thayma/mars/mars.tscn")
@@ -109,8 +149,8 @@ var entity_data = {
 	"leaker" : {
 		"scene" : preload("res://regions/aporia/leaker/leaker.tscn")
 	},
-	"spitball" : {
-		"scene" : preload("res://regions/aporia/spitball/spitball.tscn")
+	"breaker" : {
+		"scene" : preload("res://regions/aporia/breaker/breaker.tscn")
 	},
 	"mold_mother" : {
 		"scene" : preload("res://regions/aporia/mold_mother/mold_mother.tscn")

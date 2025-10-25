@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc1u033x16b4a"
-path="res://.godot/imported/spitball.png-f039dc71beea2f8caa336b92a1f975bb.ctex"
+uid="uid://bwhdqqonqgcdy"
+path="res://.godot/imported/star.png-f30ef4140786bc054dbc80de538385a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/aporia/spitball/spitball.png"
-dest_files=["res://.godot/imported/spitball.png-f039dc71beea2f8caa336b92a1f975bb.ctex"]
+source_file="res://generic/particles/star.png"
+dest_files=["res://.godot/imported/star.png-f30ef4140786bc054dbc80de538385a1.ctex"]
 
 [params]
 

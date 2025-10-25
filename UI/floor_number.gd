@@ -1,11 +1,11 @@
 extends Label
 
 func _ready() -> void:
-	get_node("/root/Main").intermission.connect(update)
-	update(0)
+	get_node("/root/Main").intermission.connect(update.unbind(1))
+	update()
 
-func update(_day):
+func update():
 	text = "%s - %s" % [
-		tr(get_node("/root/Main").region+"_title"),
+		tr(RegionData.room_data[get_node("/root/Main").room]["region"]+"_title"),
 		tr("day_counter") % get_node("/root/Main").day
 	]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b87y7kub5vv2g"
-path="res://.godot/imported/breaker.png-51f1abeebf899917c18bcac41985bbd0.ctex"
+uid="uid://b65lpshbn2xmg"
+path="res://.godot/imported/breaker_hurt.png-eb622aaac0fda9e2139497ac10b5cb30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/thayma/breaker/breaker.png"
-dest_files=["res://.godot/imported/breaker.png-51f1abeebf899917c18bcac41985bbd0.ctex"]
+source_file="res://regions/aporia/breaker/breaker_hurt.png"
+dest_files=["res://.godot/imported/breaker_hurt.png-eb622aaac0fda9e2139497ac10b5cb30.ctex"]
 
 [params]
 

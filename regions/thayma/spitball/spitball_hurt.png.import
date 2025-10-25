@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwtfl0f3d0p4f"
-path="res://.godot/imported/spitball_hurt.png-117521ff99de381154a3e070ce04148d.ctex"
+path="res://.godot/imported/spitball_hurt.png-11f7bf9d9e259eca47f349de918f744e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/aporia/spitball/spitball_hurt.png"
-dest_files=["res://.godot/imported/spitball_hurt.png-117521ff99de381154a3e070ce04148d.ctex"]
+source_file="res://regions/thayma/spitball/spitball_hurt.png"
+dest_files=["res://.godot/imported/spitball_hurt.png-11f7bf9d9e259eca47f349de918f744e.ctex"]
 
 [params]
 

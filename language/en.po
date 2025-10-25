@@ -119,7 +119,7 @@ msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ch.3: Melt[/outline_color]"
 
 msgid "melt_description"
-msgstr "[outline_size=10]Upon applying burn:[/outline_size] That instance of burn gains [outline_size=10]x[0.1xLEVEL][/outline_size] damage."
+msgstr "Gain [outline_size=10]x[0.25xLEVELxSTACKS][/outline_size] damage against burning foes."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ch.4: Scorched Earth[/outline_color]"
@@ -131,7 +131,7 @@ msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ch.5: From Ashes[/outline_color]"
 
 msgid "from_ashes_description"
-msgstr "[outline_size=10]Once a day, upon imminent demise:[/outline_size] Escape your fate and recover [outline_size=10]+[10xLEVEL][/outline_size] health per second over [outline_size=10][5][/outline_size] seconds."
+msgstr "[outline_size=10]Once a day, upon Your imminent demise:[/outline_size] Escape [outline_size=10]Your[/outline_size] fate and recover [outline_size=10]+[10xLEVEL][/outline_size] health per second over [outline_size=10][5][/outline_size] seconds."
 
 msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
@@ -162,13 +162,13 @@ msgid "blue_needle_title"
 msgstr "[outline_color=#0000ff]Ch.1: Blue Needle[/outline_color]"
 
 msgid "blue_needle_description"
-msgstr "Your projectiles gain [outline_size=10]+[LEVEL][/outline_size] pierce."
+msgstr "Projectiles gain [outline_size=10]+[LEVEL][/outline_size] pierce."
 
 msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ch.2: Snowball[/outline_color]"
 
 msgid "snowball_description"
-msgstr "Your projectiles gain [outline_size=10]x[0.25xLEVEL][/outline_size] damage and size per second."
+msgstr "Projectiles gain [outline_size=10]x[0.5xLEVEL][/outline_size] damage and [outline_size=10]x[1-0.5^LEVEL][/outline_size] size per second."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ch.3: Frostbite[/outline_color]"
@@ -192,7 +192,7 @@ msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged creature:[/outline_size] Apply a [outline_size=10]x[0][/outline_size] speed freeze for [outline_size=10]+[0.1xFROSTBITELEVEL][/outline_size] seconds."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged creature:[/outline_size] Apply a [outline_size=10]x[0][/outline_size] speed freeze for [outline_size=10]+[0.15xFROSTBITELEVEL][/outline_size] seconds."
 
 msgid "shard_blast_title"
 msgstr "[outline_color=#0000ff]Polymastery: Shard Blast[/outline_color]"
@@ -217,37 +217,37 @@ msgid "wrought_flesh_title"
 msgstr "[outline_color=#ff00ff]Ch.2: Wrought Flesh[/outline_color]"
 
 msgid "wrought_flesh_description"
-msgstr "Gain [outline_size=10]+[25xLEVEL][/outline_size] max health. Recover [outline_size=10]+[LEVEL][/outline_size] health per second."
+msgstr "[outline_size=10]You[/outline_size] gain [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
 
 msgid "trail_of_thorns_title"
 msgstr "[outline_color=#ff00ff]Ch.3: Trail of Thorns[/outline_color]"
 
 msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [75]px moved:[/outline_size] Manifest a thorn that deals [outline_size=10]x[LEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Every [75]px You move:[/outline_size] Manifest a thorn that deals [outline_size=10]x[LEVEL][/outline_size] damage."
 
 msgid "quill_spray_title"
 msgstr "[outline_color=#ff00ff]Ch.4: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
+msgstr "[outline_size=10]Upon Your taking damage:[/outline_size] Deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#ff00ff]Ch.5: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[100xLEVEL][/outline_size] health, [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] damage, most of your abilities, and your health bonuses."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[100xLEVEL][/outline_size] health, [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] damage, [outline_size=10]Your[/outline_size] abilities, and health bonuses."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#ff00ff]Polymastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px moved:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px You move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
 
 msgid "multimold_title"
 msgstr "[outline_color=#ff00ff]Mastery: Multimold[/outline_color]"
 
 msgid "multimold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Animated Clay[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] clay effigy. Your clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Animated Clay[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
 
 # white
 msgid "white_magic_title"
@@ -272,31 +272,31 @@ msgid "ball_lightning_title"
 msgstr "[outline_color=#c19100]Ch.3: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]x[LEVEL][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around [outline_size=10]You[/outline_size]. They have [outline_size=10]x[LEVEL][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#c19100]Ch.4: Electromagnetism[/outline_color]"
 
 msgid "electromagnetism_description"
-msgstr "Your projectiles home into enemies within [outline_size=10][50+50xLEVEL]px[/outline_size]."
+msgstr "Projectiles home into enemies within [outline_size=10][50+50xLEVEL]px[/outline_size]."
 
 msgid "thunderstep_title"
 msgstr "[outline_color=#c19100]Ch.5: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
-msgstr "Gain [outline_size=10]+[50xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
+msgstr "[outline_size=10]You[/outline_size] gain [outline_size=10]+[50xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
 
 msgid "dynamo_title"
 msgstr "[outline_color=#c19100]Mastery: Dynamo[/outline_color]"
 
 msgid "dynamo_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#c19100]Ball Lightning[/outline_color][br]Your ball lightnings gain [outline_size=10]x[0.25][/outline_size] speed per second up to [outline_size=10]x[1][/outline_size] bonus speed. [outline_size=10]Upon attacking:[/outline_size] Reset the speed bonus."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#c19100]Ball Lightning[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[2][/outline_size] ball lightnings"
 
 msgid "repulsar_title"
 msgstr "[outline_color=#c19100]Polymastery: Repulsar[/outline_color]"
 
 msgid "repulsar_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#c19100]Electromagnetism[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#c19100]Thunderstep[/outline_color][br]Divert nearby enemy projectiles."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#c19100]Electromagnetism[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#c19100]Thunderstep[/outline_color][br][outline_size=10]You[/outline_size] divert nearby enemy projectiles."
 
 msgid "crit_title"
 msgstr "[outline_color=#c19100]Notes: Crit[/outline_color]"

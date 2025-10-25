@@ -14,6 +14,8 @@ var velocity: Vector2
 
 @export var group: int
 
+var alive = true
+
 var exclude: Dictionary
 
 func _ready() -> void:
@@ -28,9 +30,11 @@ func on_collision(crits: int):
 		get_node("/root/Main").play_sound(hit_sound)
 
 func kill():
-	queue_free()
-	hit_enabled = false
-	ability_handler.self_death.emit()
+	if alive:
+		alive = false
+		queue_free()
+		hit_enabled = false
+		ability_handler.self_death.emit()
 
 func _physics_process(delta):
 	adjust_scale()
