@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 4
-
 var explosion_scene = preload("res://generic/projectiles/explosion.tscn")
 
 var explosion_timer = ScaledTimer.new()
@@ -34,3 +32,6 @@ func timeout() -> void:
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)
 	get_node("/root/Main").play_sound("Explosion")
 	ability_handler.owner.kill()
+
+func inherit(_handler, _tier):
+	return

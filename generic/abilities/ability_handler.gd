@@ -28,7 +28,7 @@ signal movement(distance: float)
 
 ## attack signals
 #signal attack_rate_modifiers(modifiers: Dictionary)
-signal inh_attack_scale_modifiers(modifiers: Dictionary)
+signal attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 #signal projectile_created(projectile: Projectile)
 #signal attack_impact(position: Vector2, body: Node)
@@ -45,7 +45,6 @@ signal self_death()
 
 ## damage dealt signals
 signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary, crits: int)
-signal inh_damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
 signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, amount: float, crits: int)
 
@@ -81,12 +80,11 @@ func get_move_speed(source: float):
 #	return modifiers["source"] * modifiers["multiplier"]
 
 func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
-	inh_attack_scale_modifiers.emit(modifiers)
+	attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["source"] + modifiers["source"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
 func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
 	damage_dealt_modifiers.emit(entity, modifiers, crits)
-	inh_damage_dealt_modifiers.emit(entity, modifiers)
 	if entity:
 		entity.ability_handler.damage_taken_modifiers.emit(modifiers)
 	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"] * (1 + crits)
@@ -160,11 +158,9 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	get_node("/root/Main/").assign_projectile_group(projectile_instance, projectile_group)
 	
 	var scale = inherited_scale.duplicate()
-	inh_attack_scale_modifiers.emit(scale)
 	projectile_instance.ability_handler.inherited_scale = scale
 	
 	var damage = inherited_damage.duplicate()
-	inh_damage_dealt_modifiers.emit(null, damage)
 	projectile_instance.ability_handler.inherited_damage = damage
 	
 	var crit_chance = inherited_crit_chance.duplicate()
@@ -197,17 +193,6 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	return summon_instance
 
 ## ability manipulation
-func get_ranks():
-	var ranks: Dictionary
-	for ability in get_children():
-		if ability.type == "Upgrade":
-			for aspect in ability.aspects:
-				if ranks.has(aspect):
-					ranks[aspect] += ability.aspects[aspect] * ability.level
-				else:
-					ranks[aspect] = ability.aspects[aspect] * ability.level
-	return ranks
-
 func grant(ability: String, levels: int):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
@@ -249,8 +234,7 @@ func clear(ability: String, levels: int):
 
 func inherit(handler: Node, inherit_level: int):
 	for child in get_children():
-		if child.inheritance_level < inherit_level:
-			handler.grant(child.name, child.level)
+		child.inherit(handler, inherit_level)
 
 ## misc
 func recover():

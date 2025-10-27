@@ -1,8 +1,5 @@
 extends Ability
 
-var inheritance_level = 3
-var type = "Upgrade"
-
 var charge = 0
 
 func _ready() -> void:
@@ -14,3 +11,8 @@ func move_speed_modifiers(modifiers) -> void:
 
 func immune_duration_modifiers(modifiers) -> void:
 	modifiers["source"] += 0.2 * level
+
+func inherit(handler, tier):
+	if tier < 3:
+		return
+	super(handler, tier)

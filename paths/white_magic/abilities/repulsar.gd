@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 3
-
 func _physics_process(delta: float) -> void:
 	var space_state = get_node("/root/Main").physics_space
 	var shape_query = PhysicsShapeQueryParameters2D.new()
@@ -16,3 +14,8 @@ func _physics_process(delta: float) -> void:
 		var projectile = i.get("collider")
 		if projectile is Projectile:
 			projectile.velocity += global_position.direction_to(projectile.global_position) * 400 * delta * ability_handler.speed_scale
+
+func inherit(handler, tier):
+	if tier < 3:
+		return
+	super(handler, tier)

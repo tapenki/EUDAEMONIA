@@ -28,6 +28,7 @@ func kill():
 	if alive:
 		ability_handler.self_death.emit()
 		alive = false
+		animation_player.speed_scale = 1 
 		animation_player.play("DEATH")
 		for ability in ability_handler.get_children():
 			ability.kill()

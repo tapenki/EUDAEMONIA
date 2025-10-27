@@ -21,7 +21,7 @@ func on_enter() -> void:
 		for i in bullet_count:
 			var bullet_instance = user.ability_handler.make_projectile(bullet, 
 			user.global_position + direction * 25, 
-			3,
+			2,
 			direction.rotated(halfspan - (stepsize * i)) * bullet_speed)
 			bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)

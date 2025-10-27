@@ -41,6 +41,16 @@ func clear():
 			offsetting = true
 			call_deferred("offset")
 
+func inherit(handler, _tier):
+	var ability_node = handler.get_node_or_null(str(name))
+	if not ability_node:
+		ability_node = Node2D.new()
+		ability_node.set_script(get_script())
+		ability_node.name = name
+		handler.add_child(ability_node)
+	ability_node.level += level
+	return ability_node
+
 func serialize():
 	return {"level" : level}
 

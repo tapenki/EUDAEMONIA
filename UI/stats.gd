@@ -14,11 +14,10 @@ func _ready() -> void:
 func update_stattext():
 	var attack_damage = ability_handler.inherited_damage.duplicate()
 	ability_handler.damage_dealt_modifiers.emit(null, attack_damage, 0)
-	ability_handler.inh_damage_dealt_modifiers.emit(null, attack_damage)
 	var crit_chance = ability_handler.inherited_crit_chance.duplicate()
 	ability_handler.crit_chance_modifiers.emit(null, crit_chance)
 	var attack_scale = ability_handler.inherited_scale.duplicate()
-	ability_handler.inh_attack_scale_modifiers.emit(attack_scale)
+	ability_handler.attack_scale_modifiers.emit(attack_scale)
 	var move_speed = ability_handler.get_move_speed(450)
 	## yeah
 	stattext = "Attack damage: [outline_size=10]+[{attack_damage_source}]x[{attack_damage_multiplier}][/outline_size]

@@ -61,7 +61,7 @@ func _physics_process(delta):
 		for i in 2:
 			var bullet_instance = user.ability_handler.make_projectile(bullet, 
 			user.global_position, 
-			3,
+			2,
 			direction.rotated(randf_range(-1, 1)) * -250 * randf_range(1, 2))
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
 		get_node("/root/Main").play_sound("ShootLight")

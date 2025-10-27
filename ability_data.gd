@@ -49,6 +49,10 @@ var ability_data = {
 		"script" : preload("res://paths/red_magic/abilities/undying_flames.gd"),
 		"type" : "mastery"
 	},
+	"fiery_rebirth" : {
+		"script" : preload("res://paths/red_magic/abilities/fiery_rebirth.gd"),
+		"type" : "mastery"
+	},
 	"burn" : {
 		"script" : preload("res://paths/red_magic/burn.gd"),
 		"type" : "status"
@@ -75,10 +79,6 @@ var ability_data = {
 		"script" : preload("res://paths/blue_magic/chill.gd"),
 		"type" : "status"
 	},
-	"freeze" : {
-		"script" : preload("res://paths/blue_magic/freeze.gd"),
-		"type" : "status"
-	},
 	"cryobombs" : {
 		"script" : preload("res://paths/blue_magic/abilities/cryobombs.gd"),
 		"type" : "upgrade"
@@ -87,9 +87,17 @@ var ability_data = {
 		"script" : preload("res://paths/blue_magic/cryobomb/cryonic_volatility.gd"),
 		"type" : "token"
 	},
+	"snowball_ii" : {
+		"script" : preload("res://paths/blue_magic/abilities/snowball_ii.gd"),
+		"type" : "mastery"
+	},
 	"snap_freeze" : {
 		"script" : preload("res://paths/blue_magic/abilities/snap_freeze.gd"),
 		"type" : "mastery"
+	},
+	"freeze" : {
+		"script" : preload("res://paths/blue_magic/freeze.gd"),
+		"type" : "status"
 	},
 	"shard_blast" : {
 		"script" : preload("res://paths/blue_magic/abilities/shard_blast.gd"),
@@ -121,6 +129,10 @@ var ability_data = {
 		"script" : preload("res://paths/black_magic/abilities/pain_walk.gd"),
 		"type" : "mastery"
 	},
+	"pressurized_quills" : {
+		"script" : preload("res://paths/black_magic/abilities/pressurized_quills.gd"),
+		"type" : "mastery"
+	},
 	"multimold" : {
 		"script" : preload("res://paths/black_magic/abilities/multimold.gd"),
 		"type" : "mastery"
@@ -146,6 +158,14 @@ var ability_data = {
 	"thunderstep" : {
 		"script" : preload("res://paths/white_magic/abilities/thunderstep.gd"),
 		"type" : "upgrade"
+	},
+	"shocking_grasp" : {
+		"script" : preload("res://paths/white_magic/abilities/shocking_grasp.gd"),
+		"type" : "mastery"
+	},
+	"shock" : {
+		"script" : preload("res://paths/white_magic/shock.gd"),
+		"type" : "status"
 	},
 	"dynamo" : {
 		"script" : preload("res://paths/white_magic/abilities/dynamo.gd"),

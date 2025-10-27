@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 3
-
 func _ready() -> void:
 	if ability_handler.type != "entity":
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED
@@ -14,3 +12,8 @@ func _physics_process(delta: float) -> void:
 
 func max_health_modifiers(modifiers) -> void:
 	modifiers["source"] += 25 * level
+
+func inherit(handler, tier):
+	if tier < 3:
+		return
+	super(handler, tier)

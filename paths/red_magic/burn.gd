@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 20
-
 var particle_scene = preload("res://paths/red_magic/burn.tscn")
 var particle_instance
 var burn_timer = ScaledTimer.new()
@@ -38,3 +36,6 @@ func kill():
 	if particle_instance.is_inside_tree():
 		particle_instance.parent_died()
 	super()
+
+func inherit(_handler, _tier):
+	return

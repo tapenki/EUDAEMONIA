@@ -119,30 +119,13 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="Blank2" type="Control" parent="Masteries"]
-custom_minimum_size = Vector2(60, 60)
+[node name="ShockingGrasp" parent="Masteries" instance=ExtResource("5_nhh6t")]
 layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank2"]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_axvqs")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
+accessible_texture = ExtResource("3_c6jgr")
+requires = {
+"mortal_shock": 5
+}
+subject = "shocking_grasp"
 
 [node name="Dynamo" parent="Masteries" instance=ExtResource("5_nhh6t")]
 layout_mode = 2

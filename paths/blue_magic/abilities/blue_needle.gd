@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 1
-
 func _ready() -> void:
 	if ability_handler.type == "projectile":
 		if ability_handler.owner.hits_left > 0:

@@ -20,7 +20,7 @@ func on_enter() -> void:
 			var liferangemult = randf_range(0.2, 1.2)
 			var bullet_instance = user.ability_handler.make_projectile(bullet, 
 			user.global_position + direction * 25 + Vector2(randf_range(-25, 25), randf_range(-25, 25)), 
-			3,
+			2,
 			direction * bullet_speed * liferangemult)
 			bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime * liferangemult
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)

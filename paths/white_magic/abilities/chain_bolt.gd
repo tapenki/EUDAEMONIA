@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 1
-
 var chain = {}
 
 func _ready() -> void:

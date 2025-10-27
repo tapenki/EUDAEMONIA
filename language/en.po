@@ -63,16 +63,16 @@ msgid "keybinds"
 msgstr "Keybinds"
 
 msgid "up_keybind"
-msgstr "Up:"
+msgstr "Move up:"
 
 msgid "left_keybind"
-msgstr "Left:"
+msgstr "Move left:"
 
 msgid "down_keybind"
-msgstr "Down:"
+msgstr "Move down:"
 
 msgid "right_keybind"
-msgstr "Right:"
+msgstr "Move right:"
 
 msgid "pause_keybind"
 msgstr "Pause/Proceed:"
@@ -145,6 +145,13 @@ msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
 msgid "undying_flames_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Reconstitute it."
 
+msgid "fiery_rebirth_title"
+msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
+
+msgid "fiery_rebirth_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activating:[/outline_size] Apply [outline_size=10]+[10xFROMASHESLEVEL][/outline_size] burn to all enemies then double their burn."
+
+
 msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
 
@@ -187,6 +194,12 @@ msgstr "[outline_color=#0000ff]Ch.5: Cryobombs[/outline_color]"
 
 msgid "cryobombs_description"
 msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10]x[0.25xLEVEL][/outline_size] damage, store taken damage, and explode dealing [outline_size=10]+[STOREDDAMAGE][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
+
+msgid "snowball_ii_title"
+msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
+
+msgid "snowball_ii_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.5xSNOWBALLLEVEL][/outline_size] crit chance and status applied per second."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
@@ -243,6 +256,12 @@ msgstr "[outline_color=#ff00ff]Polymastery: Pain Walk[/outline_color]"
 msgid "pain_walk_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px You move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
 
+msgid "pressurized_quills_title"
+msgstr "[outline_color=#ff00ff]Mastery: Pressurized Quills[/outline_color]"
+
+msgid "pressurized_quills_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Quill Spray[/outline_color][br][outline_color=#ff00ff]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
+
 msgid "multimold_title"
 msgstr "[outline_color=#ff00ff]Mastery: Multimold[/outline_color]"
 
@@ -285,6 +304,12 @@ msgstr "[outline_color=#c19100]Ch.5: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
 msgstr "[outline_size=10]You[/outline_size] gain [outline_size=10]+[50xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
+
+msgid "shocking_grasp_title"
+msgstr "[outline_color=#c19100]Mastery: Shocking Grasp[/outline_color]"
+
+msgid "shocking_grasp_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#c19100]Mortal Shock[/outline_color][br][outline_color=#c19100]Mortal Shock's[/outline_color] crit chance bonus persists for [outline_size=10][2.5][/outline_size] seconds"
 
 msgid "dynamo_title"
 msgstr "[outline_color=#c19100]Mastery: Dynamo[/outline_color]"

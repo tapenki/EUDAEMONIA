@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 4
-
 var bomb = preload("res://paths/blue_magic/cryobomb/cryobomb.tscn")
 
 func _ready() -> void:
@@ -14,7 +12,7 @@ func day_start(_day: int) -> void:
 		var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 		var summon_instance = ability_handler.make_summon(bomb, 
 		spawn_position,
-		3,  ## inheritance
+		2,  ## inheritance
 		0) ## health
 		for layer in range(1, 3):
 			summon_instance.set_collision_layer_value(layer, layer != ability_handler.owner.group)
@@ -25,3 +23,6 @@ func day_start(_day: int) -> void:
 		summon_instance.ability_handler.grant("cryonic_volatility", level)
 		
 		get_node("/root/Main").spawn_entity(summon_instance)
+
+func inherit(_handler, _tier):
+	return

@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 1
-
 func _ready() -> void:
 	ability_handler.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 

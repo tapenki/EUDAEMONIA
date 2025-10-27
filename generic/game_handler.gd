@@ -11,7 +11,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-var room = "olethros_throne_room"
+var room = "vasis_entrance_hall"
 var door = "Entrance0"
 
 var day = 1
@@ -78,7 +78,7 @@ func instantiate_enemy(scene: PackedScene):
 	entity_instance.ability_handler.inherited_damage["multiplier"] = scale_enemy_damage()
 	return entity_instance
 
-## day progress
+## map
 func generate_map():
 	if room_node != null:
 		room_node.queue_free()
@@ -96,8 +96,10 @@ func setup_astar():
 	var tilemap = room_node.get_node("TileMap")
 	astar.region = tilemap.get_used_rect()
 	astar.cell_size = tilemap.tile_set.tile_size
-	astar.offset = astar.cell_size
+	astar.offset = astar.cell_size * 0.5
 	astar.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+	astar.default_compute_heuristic = AStarGrid2D.HEURISTIC_CHEBYSHEV
+	astar.default_estimate_heuristic = AStarGrid2D.HEURISTIC_CHEBYSHEV
 	astar.update()
 	
 	for i in range(astar.region.position.x, astar.region.end.x):
@@ -105,10 +107,47 @@ func setup_astar():
 			var pos = Vector2i(i, j)
 			if tilemap.get_cell_source_id(pos) != 2:
 				astar.set_point_solid(pos)
-				for k in range(-2, 2):
-					for l in range(-2, 2):
+				for k in range(-2, 3):
+					for l in range(-2, 3):
 						if astar.is_in_boundsv(pos + Vector2i(k, l)):
 							astar.set_point_weight_scale(pos + Vector2i(k, l), 4)
+
+func pathfind(start, end):
+	var tilemap = room_node.get_node("TileMap")
+	start = tilemap.local_to_map(start)
+	end = tilemap.local_to_map(end)
+	var path = astar.get_point_path(start, end, true)
+	
+	## path post processing and the bane of my existence
+	if path.size() != 0:
+		var pruned = 0
+		var prev_position = null
+		var prev_offset = null
+		var offset_decay = 0
+		for i in path.size():
+			var next_position = path[path.size() + pruned - i - 1]
+			if prev_position != null:
+				var next_offset = prev_position - next_position
+				if prev_offset != null:
+					if (prev_offset.x == next_offset.x or prev_offset.y == next_offset.y) and prev_offset.x != next_offset.x * -1 and prev_offset.y != next_offset.y * -1 and offset_decay < 2:
+						path.remove_at(path.size() + pruned - i - 1)
+						pruned += 1
+						if prev_offset.x != next_offset.x or prev_offset.y != next_offset.y:
+							offset_decay += 1
+						elif offset_decay > 0:
+							offset_decay -= 1
+					else:
+						prev_offset = next_offset
+						offset_decay = 0
+				else:
+					prev_offset = next_offset
+			prev_position = next_position
+		if tilemap.local_to_map(path[0]) == start:
+			path.remove_at(0)
+	
+	return path
+
+## day progress
 
 func start_day():
 	generate_map()

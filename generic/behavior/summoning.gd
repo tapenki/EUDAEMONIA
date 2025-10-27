@@ -17,7 +17,7 @@ func on_enter() -> void:
 	if summons.size() < max_summons:
 		var summon_instance = user.ability_handler.make_summon(summon, 
 		user.global_position, 
-		3,
+		2,
 		get_node("/root/Main").scale_enemy_health(summon_health))
 		summon_instance.ability_handler.inherited_damage["multiplier"] = get_node("/root/Main").scale_enemy_damage()
 		get_node("/root/Main/Entities").add_child(summon_instance)

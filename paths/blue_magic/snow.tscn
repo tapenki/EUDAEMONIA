@@ -26,7 +26,6 @@ scale_curve = SubResource("CurveTexture_ate26")
 [node name="Snow" type="GPUParticles2D"]
 z_index = -1
 material = ExtResource("1_rueob")
-amount = 12
 texture = ExtResource("1_mh31h")
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_c27jy")

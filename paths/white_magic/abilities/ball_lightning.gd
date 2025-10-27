@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 4
-
 var projectile_scene = preload("res://paths/white_magic/ball_lightning.tscn")
 var anchor_node
 var hurtbox_one
@@ -12,8 +10,6 @@ var dynamo: bool
 func _ready() -> void:
 	anchor_node = Node2D.new()
 	add_child(anchor_node)
-	if ability_handler.has_node("dynamo"):
-		dynamo = true
 	get_node("/root/Main").day_start.connect(day_start)
 	get_node("/root/Main").intermission.connect(intermission)
 
@@ -27,7 +23,7 @@ func day_start(_day: int) -> void:
 	for repeat in total:
 		var projectile_instance = ability_handler.make_projectile(projectile_scene, 
 		Vector2.from_angle(TAU / total * repeat) * 150,
-		3,
+		2,
 		Vector2())
 		projectile_instance.ability_handler.inherited_damage["multiplier"] *= level
 		projectile_instance.ability_handler.inherited_crit_chance["multiplier"] *= 2
@@ -43,3 +39,6 @@ func kill():
 		projectile.get_node("Sprite/Charge").modulate = projectile.get_node("Sprite").modulate
 		projectile.get_node("Sprite/Charge").parent_died()
 	super()
+
+func inherit(_handler, _tier):
+	return

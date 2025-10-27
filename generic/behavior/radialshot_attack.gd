@@ -13,7 +13,7 @@ func on_enter() -> void:
 	for i in bullet_count:
 		var bullet_instance = user.ability_handler.make_projectile(bullet, 
 		user.global_position, 
-		3,
+		2,
 		Vector2.from_angle(deg_to_rad(angle) + (TAU / bullet_count * i)) * bullet_speed)
 		bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)

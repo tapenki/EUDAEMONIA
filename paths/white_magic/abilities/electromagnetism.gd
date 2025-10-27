@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 1
-
 var velocity_decay = false
 
 func _ready() -> void:

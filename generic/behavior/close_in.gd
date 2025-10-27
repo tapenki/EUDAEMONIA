@@ -6,6 +6,11 @@ extends State
 
 @export var next: State
 
+#var node2d = Node2D.new()
+#
+#func _ready() -> void:
+	#add_child(node2d)
+
 func avoidance():
 	var reach = 3000
 	var found
@@ -18,13 +23,15 @@ func avoidance():
 	return found
 
 func _physics_process(_delta):
+	#for i in node2d.get_children():
+		#i.queue_free()
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_handler.find_target()
 	if not is_instance_valid(state_handler.target):
 		user.velocity = lerp(user.velocity, Vector2(), 0.5)
 		return
 	
-	## proceed to next state
+	## shapecast to proceed to next state
 	var distance = user.global_position.distance_to(state_handler.target.global_position)
 	if distance < distance_margin:
 		var perpendicular = user.global_position.direction_to(state_handler.target.global_position).rotated(PI/2)
@@ -46,35 +53,22 @@ func _physics_process(_delta):
 	## follow path
 	var direction: Vector2
 	
-	#var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, state_handler.target.global_position)
-	#ray_query.collision_mask = 128
-	#var intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
-	#
-	#if intersection:
-	var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
-	var start = tilemap.local_to_map(user.global_position)
-	var end = tilemap.local_to_map(state_handler.target.global_position)
-	var path = get_node("/root/Main").astar.get_point_path(start, end, true)
+	var path = get_node("/root/Main").pathfind(user.global_position, state_handler.target.global_position)
 	
-	var offset = 0
-	for i in path.size():
-		var next_position = path[i - offset]
-		if user.global_position.distance_to(next_position) < 45:
-			path.remove_at(0)
-			offset += 1
-		else:
-			break
-	
-	if path.size() < 2:
+	if path.size() == 0:
 		user.velocity = lerp(user.velocity, Vector2(), 0.5)
 		return
 	
+	#for i in path:
+		#var rect = ColorRect.new()
+		#rect.position = i
+		#rect.size = Vector2(4, 4)
+		#node2d.add_child(rect)
+	
 	direction = user.global_position.direction_to(path[0])
-	#else:
-		#direction = user.global_position.direction_to(state_handler.target.global_position)
 	
 	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
-	user.velocity = lerp(user.velocity, direction * final_speed, 0.25)
+	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
 	
 	var avoid = avoidance()
 	if avoid:

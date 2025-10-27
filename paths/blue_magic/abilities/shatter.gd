@@ -1,14 +1,10 @@
 extends Ability
 
-var inheritance_level = 4
-
 var bullet = preload("res://generic/projectiles/bullet.tscn")
 
 var shard_blast: bool
 
 func _ready() -> void:
-	if ability_handler.has_node("shard_blast"):
-		shard_blast = true
 	get_node("/root/Main").entity_death.connect(entity_death)
 	
 func entity_death(dying_entity: Entity):
@@ -25,7 +21,7 @@ func entity_death(dying_entity: Entity):
 	for repeat in total:
 		var bullet_instance = ability_handler.make_projectile(bullet, 
 		dying_entity.global_position, 
-		3,
+		2,
 		Vector2.from_angle(angle + (TAU / total * repeat)) * 600)
 		bullet_instance.ability_handler.inherited_damage["multiplier"] *= level
 		bullet_instance.ability_handler.inherited_scale["multiplier"] *= 1.2
@@ -34,8 +30,11 @@ func entity_death(dying_entity: Entity):
 		for repeat in total:
 			var bullet_instance = ability_handler.make_projectile(bullet, 
 			dying_entity.global_position, 
-			3,
+			2,
 			Vector2.from_angle(angle + PI / total + (TAU / total * repeat)) * 450)
 			bullet_instance.ability_handler.inherited_damage["multiplier"] *= level
 			bullet_instance.ability_handler.inherited_scale["multiplier"] *= 1.2
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
+
+func inherit(_handler, _tier):
+	return

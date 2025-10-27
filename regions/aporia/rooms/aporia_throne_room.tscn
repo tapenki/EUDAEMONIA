@@ -64,7 +64,7 @@ rotation = 4.712389
 [node name="Exit0" parent="Doors" instance=ExtResource("5_ck126")]
 position = Vector2(30, 570)
 rotation = 4.712389
-room = "aporia_room_0"
+room = "olethros_entrance_hall"
 door = "Entrance0"
 
 [node name="Exit1" parent="Doors" instance=ExtResource("4_nelx5")]

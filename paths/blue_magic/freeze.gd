@@ -1,7 +1,5 @@
 extends Ability
 
-var inheritance_level = 20
-
 #var particle_scene = preload("res://paths/blue_magic/snow.tscn")
 #var particle_instance
 var duration_timer = Timer.new()
@@ -19,11 +17,13 @@ func inh_speed_scale_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= 0
 
 func add_level(value):
-	clear()
 	if value > 0:
-		if value > level_offset:
+		if 0.75 * value > duration_timer.time_left:
+			clear()
 			level_offset = value
-		duration_timer.start(0.15 * level_offset)
+			duration_timer.start(0.75 * value)
+	else:
+		clear()
 	if not offsetting:
 		offsetting = true
 		call_deferred("offset")
@@ -32,3 +32,6 @@ func add_level(value):
 	#if particle_instance.is_inside_tree():
 		#particle_instance.parent_died()
 	#super()
+
+func inherit(_handler, _tier):
+	return
