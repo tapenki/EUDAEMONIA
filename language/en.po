@@ -248,7 +248,7 @@ msgid "animated_clay_title"
 msgstr "[outline_color=#ff00ff]Ch.5: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[100xLEVEL][/outline_size] health, [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] damage, [outline_size=10]Your[/outline_size] abilities, and health bonuses."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and [outline_size=10]Your[/outline_size] abilities and health bonuses."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#ff00ff]Polymastery: Pain Walk[/outline_color]"

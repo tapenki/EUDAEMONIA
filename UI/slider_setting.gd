@@ -1,4 +1,4 @@
-extends Label
+class_name SliderSetting extends Label
 
 @export var section : String
 @export var key : String
