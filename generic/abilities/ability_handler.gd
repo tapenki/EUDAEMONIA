@@ -104,8 +104,11 @@ func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier
 	damage_dealt.emit(entity, final_damage, crits)
 	var damaged = entity.take_damage(self, final_damage)
 	if damaged:
+		var damage_text = str(int(final_damage))
+		if crits > 0:
+			damage_text += "!"
 		var damage_color = Config.get_team_color(owner.group, "secondary")
-		get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(final_damage)), damage_color)
+		get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), damage_text, damage_color)
 	return {"damage" : final_damage, "crits" : crits}
 
 ## targeting

@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://UI/version.gd" id="10_0w6e5"]
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://UI/button_red.png" id="12_2qbci"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://UI/button.png" id="12_o2jkc"]
-[ext_resource type="Script" uid="uid://b35lnmakge152" path="res://UI/stats.gd" id="13_o2jkc"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="16_j5i65"]
 [ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://UI/slider_setting.tscn" id="16_o2t6a"]
 [ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://UI/status_container.gd" id="16_s1k1p"]
 [ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://UI/toggle_setting.tscn" id="17_8gukh"]
@@ -495,9 +495,10 @@ grow_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_7j5ik")
-text = "stats"
+text = "stats_title"
 flat = true
-script = ExtResource("13_o2jkc")
+script = ExtResource("16_j5i65")
+subject = "stats"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Stats"]
 show_behind_parent = true

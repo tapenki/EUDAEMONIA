@@ -135,6 +135,7 @@ ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 400
+health = 400.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7xc43")
@@ -151,7 +152,7 @@ health = 60
 script = ExtResource("3_6838j")
 ability_handler = NodePath("../AbilityHandler")
 count = 6
-health = 40
+health = 30
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vknsd")

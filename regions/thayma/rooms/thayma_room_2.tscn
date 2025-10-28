@@ -25,12 +25,12 @@ wait_time = 5.0
 one_shot = true
 
 [node name="SpawnMars1" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(180, 330)
+position = Vector2(150, 330)
 script = ExtResource("3_4865x")
 entity = "mars"
 
 [node name="SpawnMars2" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(900, 330)
+position = Vector2(930, 330)
 script = ExtResource("3_4865x")
 entity = "mars"
 
@@ -39,26 +39,26 @@ script = ExtResource("2_qln08")
 next = NodePath("../Wave3")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2"]
-wait_time = 2.5
+wait_time = 5.0
 one_shot = true
 
 [node name="SpawnTrispitter1" type="Node2D" parent="Waves/Wave2"]
-position = Vector2(300, 180)
+position = Vector2(180, 420)
 script = ExtResource("3_4865x")
 entity = "trispitter"
 
 [node name="SpawnTrispitter2" type="Node2D" parent="Waves/Wave2"]
-position = Vector2(780, 180)
-script = ExtResource("3_4865x")
-entity = "trispitter"
-
-[node name="SpawnTrispitter3" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(300, 480)
 script = ExtResource("3_4865x")
 entity = "trispitter"
 
-[node name="SpawnTrispitter4" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnTrispitter3" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(780, 480)
+script = ExtResource("3_4865x")
+entity = "trispitter"
+
+[node name="SpawnTrispitter4" type="Node2D" parent="Waves/Wave2"]
+position = Vector2(900, 420)
 script = ExtResource("3_4865x")
 entity = "trispitter"
 
@@ -70,12 +70,12 @@ wait_time = 5.0
 one_shot = true
 
 [node name="SpawnSpitball1" type="Node2D" parent="Waves/Wave3"]
-position = Vector2(540, 150)
+position = Vector2(420, 510)
 script = ExtResource("3_4865x")
 entity = "spitball"
 
 [node name="SpawnSpitball2" type="Node2D" parent="Waves/Wave3"]
-position = Vector2(540, 510)
+position = Vector2(660, 510)
 script = ExtResource("3_4865x")
 entity = "spitball"
 

@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://kgg0o211aihr"]
+
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_arg84"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="1_yxyri"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_7ka4n"]
+[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/cryomancy/blue.png" id="2_yxyri"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/blank.png" id="5_7gvls"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/mastery_button.tscn" id="5_ukwux"]
+
+[node name="Cryomancy" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.2
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 2.0
+offset_right = 62.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_arg84")
+bbcode_enabled = true
+text = "cryomancy_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("2_7ka4n")
+subject = "cryomancy"
+
+[node name="Abilities" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BlueNeedle" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "blue_needle"
+
+[node name="Snowball" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "snowball"
+
+[node name="Frostbite" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "frostbite"
+
+[node name="Shatter" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "shatter"
+
+[node name="Cryobombs" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "cryobombs"
+
+[node name="Masteries" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -30.0
+offset_right = 322.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blank1" type="Control" parent="Masteries"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank1"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_7gvls")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="SnowballII" parent="Masteries" instance=ExtResource("5_ukwux")]
+layout_mode = 2
+accessible_texture = ExtResource("2_yxyri")
+requires = {
+"snowball": 5
+}
+subject = "snowball_ii"
+
+[node name="SnapFreeze" parent="Masteries" instance=ExtResource("5_ukwux")]
+layout_mode = 2
+accessible_texture = ExtResource("2_yxyri")
+requires = {
+"frostbite": 5
+}
+subject = "snap_freeze"
+
+[node name="ShardBlast" parent="Masteries" instance=ExtResource("5_ukwux")]
+custom_minimum_size = Vector2(124, 60)
+layout_mode = 2
+accessible_texture = ExtResource("2_yxyri")
+requires = {
+"cryobombs": 3,
+"shatter": 3
+}
+subject = "shard_blast"
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

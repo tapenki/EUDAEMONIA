@@ -23,8 +23,11 @@ msgstr "End Day"
 msgid "reset"
 msgstr "Reset"
 
-msgid "stats"
-msgstr "Stats"
+msgid "stats_title"
+msgstr "Base Stats"
+
+msgid "stats_description"
+msgstr "Attack damage: [outline_size=10]+[10][/outline_size][br]Crit chance: [outline_size=10]+[5]%[/outline_size][br]Move speed: [outline_size=10]+[450][/outline_size]""
 
 msgid "defeated"
 msgstr "died :("
@@ -97,17 +100,17 @@ msgid "learned"
 msgstr "Learned"
 
 # red
-msgid "red_magic_title"
+msgid "pyromancy_title"
 msgstr "[outline_color=#ff0000]Pyromancy[/outline_color]"
 
-msgid "red_magic_description"
+msgid "pyromancy_description"
 msgstr "Set people on fire yay !!!"
 
 msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ch.1: Ignition[/outline_color]"
 
 msgid "ignition_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10]+[3xLEVEL][/outline_size] burn."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] burn."
 
 msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ch.2: Firespawning[/outline_color]"
@@ -159,10 +162,10 @@ msgid "burn_description"
 msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second. Expires after dealing damage [outline_size=10][5][/outline_size] times. Reapplying burn resets expiration."
 
 # blue
-msgid "blue_magic_title"
+msgid "cryomancy_title"
 msgstr "[outline_color=#0000ff]Cryomancy[/outline_color]"
 
-msgid "blue_magic_description"
+msgid "cryomancy_description"
 msgstr "Set people on ice yay !!!"
 
 msgid "blue_needle_title"
@@ -211,68 +214,13 @@ msgid "shard_blast_title"
 msgstr "[outline_color=#0000ff]Polymastery: Shard Blast[/outline_color]"
 
 msgid "shard_blast_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] bullets upon exploding."
-
-# black
-msgid "black_magic_title"
-msgstr "[outline_color=#ff00ff]Witchcraft[/outline_color]"
-
-msgid "black_magic_description"
-msgstr "Which craft??"
-
-msgid "primal_casting_title"
-msgstr "[outline_color=#ff00ff]Ch.1: Primal Casting[/outline_color]"
-
-msgid "primal_casting_description"
-msgstr "Gain [outline_size=10]+[0.04xMAXHPxLEVEL][/outline_size] damage."
-
-msgid "wrought_flesh_title"
-msgstr "[outline_color=#ff00ff]Ch.2: Wrought Flesh[/outline_color]"
-
-msgid "wrought_flesh_description"
-msgstr "[outline_size=10]You[/outline_size] gain [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
-
-msgid "trail_of_thorns_title"
-msgstr "[outline_color=#ff00ff]Ch.3: Trail of Thorns[/outline_color]"
-
-msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [75]px You move:[/outline_size] Manifest a thorn that deals [outline_size=10]x[LEVEL][/outline_size] damage."
-
-msgid "quill_spray_title"
-msgstr "[outline_color=#ff00ff]Ch.4: Quill Spray[/outline_color]"
-
-msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon Your taking damage:[/outline_size] Deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
-
-msgid "animated_clay_title"
-msgstr "[outline_color=#ff00ff]Ch.5: Animated Clay[/outline_color]"
-
-msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and [outline_size=10]Your[/outline_size] abilities and health bonuses."
-
-msgid "pain_walk_title"
-msgstr "[outline_color=#ff00ff]Polymastery: Pain Walk[/outline_color]"
-
-msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px You move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
-
-msgid "pressurized_quills_title"
-msgstr "[outline_color=#ff00ff]Mastery: Pressurized Quills[/outline_color]"
-
-msgid "pressurized_quills_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Quill Spray[/outline_color][br][outline_color=#ff00ff]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
-
-msgid "multimold_title"
-msgstr "[outline_color=#ff00ff]Mastery: Multimold[/outline_color]"
-
-msgid "multimold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Animated Clay[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] bullets with [outline_size=10]x[2][/outline_size] damage upon exploding."
 
 # white
-msgid "white_magic_title"
+msgid "electromancy_title"
 msgstr "[outline_color=#c19100]Electromancy[/outline_color]"
 
-msgid "white_magic_description"
+msgid "electromancy_description"
 msgstr "i love electricity."
 
 msgid "chain_bolt_title"
@@ -328,6 +276,61 @@ msgstr "[outline_color=#c19100]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
 msgstr "When dealing damage, roll for crits. Damage is increased by [outline_size=10]x[1+CRITCOUNT][/outline_size]. Each [outline_size=10][100]%[/outline_size] is a guaranteed crit and the rest is rolled as usual."
+
+# black
+msgid "druidry_title"
+msgstr "[outline_color=#ff00ff]Druidry[/outline_color]"
+
+msgid "druidry_description"
+msgstr "Which ry??"
+
+msgid "primal_casting_title"
+msgstr "[outline_color=#ff00ff]Ch.1: Primal Casting[/outline_color]"
+
+msgid "primal_casting_description"
+msgstr "Gain [outline_size=10]+[0.04xMAXHPxLEVEL][/outline_size] damage."
+
+msgid "wrought_flesh_title"
+msgstr "[outline_color=#ff00ff]Ch.2: Wrought Flesh[/outline_color]"
+
+msgid "wrought_flesh_description"
+msgstr "[outline_size=10]You[/outline_size] gain [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
+
+msgid "trail_of_thorns_title"
+msgstr "[outline_color=#ff00ff]Ch.3: Trail of Thorns[/outline_color]"
+
+msgid "trail_of_thorns_description"
+msgstr "[outline_size=10]Every [75]px You move:[/outline_size] Manifest a thorn that deals [outline_size=10]x[LEVEL][/outline_size] damage."
+
+msgid "quill_spray_title"
+msgstr "[outline_color=#ff00ff]Ch.4: Quill Spray[/outline_color]"
+
+msgid "quill_spray_description"
+msgstr "[outline_size=10]Upon Your taking damage:[/outline_size] Deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
+
+msgid "animated_clay_title"
+msgstr "[outline_color=#ff00ff]Ch.5: Animated Clay[/outline_color]"
+
+msgid "animated_clay_description"
+msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and [outline_size=10]Your[/outline_size] abilities and health bonuses."
+
+msgid "pain_walk_title"
+msgstr "[outline_color=#ff00ff]Polymastery: Pain Walk[/outline_color]"
+
+msgid "pain_walk_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#ff00ff]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px You move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
+
+msgid "pressurized_quills_title"
+msgstr "[outline_color=#ff00ff]Mastery: Pressurized Quills[/outline_color]"
+
+msgid "pressurized_quills_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Quill Spray[/outline_color][br][outline_color=#ff00ff]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
+
+msgid "multimold_title"
+msgstr "[outline_color=#ff00ff]Mastery: Multimold[/outline_color]"
+
+msgid "multimold_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff00ff]Animated Clay[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
 
 # spheres
 msgid "day_counter"

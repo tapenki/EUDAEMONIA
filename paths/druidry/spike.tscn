@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2x7ke5n7fusk"]
+
+[ext_resource type="Script" uid="uid://dl1ot8whcchll" path="res://paths/druidry/spike.gd" id="1_de1e7"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_284hq"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4p3px"]
+[ext_resource type="Texture2D" uid="uid://hqi8ax5pnxj6" path="res://paths/druidry/spike.png" id="4_styyi"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_ubk1i"]
+[ext_resource type="Script" uid="uid://dmwxrs6k70iwj" path="res://generic/projectiles/projectile_sprite_scaler.gd" id="5_ysibf"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_afomj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 14.0
+
+[node name="Spike" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_de1e7")
+ability_handler = NodePath("AbilityHandler")
+hit_sound = "Peh"
+hit_particles = ""
+crit_particles = ""
+hit_delay = 1.0
+hits_left = 2
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_284hq")
+type = "projectile"
+
+[node name="Sprite" type="Sprite2D" parent="." node_paths=PackedStringArray("ability_handler")]
+material = ExtResource("3_4p3px")
+texture = ExtResource("4_styyi")
+script = ExtResource("5_ysibf")
+ability_handler = NodePath("../AbilityHandler")
+scaler = 0.5
+grow = 2.5
+shrink = 2.5
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_ubk1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_afomj")
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

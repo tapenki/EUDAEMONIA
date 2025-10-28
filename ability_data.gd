@@ -1,178 +1,178 @@
 extends Node
 
 var path_data = {
-	"red_magic" : {
-		"scene" : preload("res://paths/red_magic/red_magic.tscn"),
+	"pyromancy" : {
+		"scene" : preload("res://paths/pyromancy/pyromancy.tscn"),
 	},
-	"blue_magic" : {
-		"scene" : preload("res://paths/blue_magic/blue_magic.tscn"),
+	"cryomancy" : {
+		"scene" : preload("res://paths/cryomancy/cryomancy.tscn"),
 	},
-	"black_magic" : {
-		"scene" : preload("res://paths/black_magic/black_magic.tscn"),
+	"electromancy" : {
+		"scene" : preload("res://paths/electromancy/electromancy.tscn"),
 	},
-	"white_magic" : {
-		"scene" : preload("res://paths/white_magic/white_magic.tscn"),
+	"druidry" : {
+		"scene" : preload("res://paths/druidry/druidry.tscn"),
 	},
 }
 
 var ability_data = {
 	#region red
 	"ignition" : {
-		"script" : preload("res://paths/red_magic/abilities/ignition.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/ignition.gd"),
 		"type" : "upgrade"
 	},
 	"firespawning" : {
-		"script" : preload("res://paths/red_magic/abilities/firespawning.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/firespawning.gd"),
 		"type" : "upgrade"
 	},
 	"fireburst" : {
-		"script" : preload("res://paths/red_magic/flaming_skull/fireburst.gd"),
+		"script" : preload("res://paths/pyromancy/flaming_skull/fireburst.gd"),
 		"type" : "token"
 	},
 	"melt" : {
-		"script" : preload("res://paths/red_magic/abilities/melt.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/melt.gd"),
 		"type" : "upgrade"
 	},
 	"scorched_earth" : {
-		"script" : preload("res://paths/red_magic/abilities/scorched_earth.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/scorched_earth.gd"),
 		"type" : "upgrade"
 	},
 	"from_ashes" : {
-		"script" : preload("res://paths/red_magic/abilities/from_ashes.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/from_ashes.gd"),
 		"type" : "upgrade"
 	},
 	"conflagration" : {
-		"script" : preload("res://paths/red_magic/abilities/conflagration.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/conflagration.gd"),
 		"type" : "mastery"
 	},
 	"undying_flames" : {
-		"script" : preload("res://paths/red_magic/abilities/undying_flames.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/undying_flames.gd"),
 		"type" : "mastery"
 	},
 	"fiery_rebirth" : {
-		"script" : preload("res://paths/red_magic/abilities/fiery_rebirth.gd"),
+		"script" : preload("res://paths/pyromancy/abilities/fiery_rebirth.gd"),
 		"type" : "mastery"
 	},
 	"burn" : {
-		"script" : preload("res://paths/red_magic/burn.gd"),
+		"script" : preload("res://paths/pyromancy/burn.gd"),
 		"type" : "status"
 	},
 	#endregion
 	#region blue
 	"blue_needle" : {
-		"script" : preload("res://paths/blue_magic/abilities/blue_needle.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/blue_needle.gd"),
 		"type" : "upgrade"
 	},
 	"snowball" : {
-		"script" : preload("res://paths/blue_magic/abilities/snowball.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/snowball.gd"),
 		"type" : "upgrade"
 	},
 	"shatter" : {
-		"script" : preload("res://paths/blue_magic/abilities/shatter.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/shatter.gd"),
 		"type" : "upgrade"
 	},
 	"frostbite" : {
-		"script" : preload("res://paths/blue_magic/abilities/frostbite.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/frostbite.gd"),
 		"type" : "upgrade"
 	},
 	"chill" : {
-		"script" : preload("res://paths/blue_magic/chill.gd"),
+		"script" : preload("res://paths/cryomancy/chill.gd"),
 		"type" : "status"
 	},
 	"cryobombs" : {
-		"script" : preload("res://paths/blue_magic/abilities/cryobombs.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/cryobombs.gd"),
 		"type" : "upgrade"
 	},
 	"cryonic_volatility" : {
-		"script" : preload("res://paths/blue_magic/cryobomb/cryonic_volatility.gd"),
+		"script" : preload("res://paths/cryomancy/cryobomb/cryonic_volatility.gd"),
 		"type" : "token"
 	},
 	"snowball_ii" : {
-		"script" : preload("res://paths/blue_magic/abilities/snowball_ii.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/snowball_ii.gd"),
 		"type" : "mastery"
 	},
 	"snap_freeze" : {
-		"script" : preload("res://paths/blue_magic/abilities/snap_freeze.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/snap_freeze.gd"),
 		"type" : "mastery"
 	},
 	"freeze" : {
-		"script" : preload("res://paths/blue_magic/freeze.gd"),
+		"script" : preload("res://paths/cryomancy/freeze.gd"),
 		"type" : "status"
 	},
 	"shard_blast" : {
-		"script" : preload("res://paths/blue_magic/abilities/shard_blast.gd"),
+		"script" : preload("res://paths/cryomancy/abilities/shard_blast.gd"),
 		"type" : "mastery"
 	},
 	#endregion
 	#region black
 	"primal_casting" : {
-		"script" : preload("res://paths/black_magic/abilities/primal_casting.gd"),
+		"script" : preload("res://paths/druidry/abilities/primal_casting.gd"),
 		"type" : "upgrade"
 	},
 	"trail_of_thorns" : {
-		"script" : preload("res://paths/black_magic/abilities/trail_of_thorns.gd"),
+		"script" : preload("res://paths/druidry/abilities/trail_of_thorns.gd"),
 		"type" : "upgrade"
 	},
 	"quill_spray" : {
-		"script" : preload("res://paths/black_magic/abilities/quill_spray.gd"),
+		"script" : preload("res://paths/druidry/abilities/quill_spray.gd"),
 		"type" : "upgrade"
 	},
 	"wrought_flesh" : {
-		"script" : preload("res://paths/black_magic/abilities/wrought_flesh.gd"),
+		"script" : preload("res://paths/druidry/abilities/wrought_flesh.gd"),
 		"type" : "upgrade"
 	},
 	"animated_clay" : {
-		"script" : preload("res://paths/black_magic/abilities/animated_clay.gd"),
+		"script" : preload("res://paths/druidry/abilities/animated_clay.gd"),
 		"type" : "upgrade"
 	},
 	"pain_walk" : {
-		"script" : preload("res://paths/black_magic/abilities/pain_walk.gd"),
+		"script" : preload("res://paths/druidry/abilities/pain_walk.gd"),
 		"type" : "mastery"
 	},
 	"pressurized_quills" : {
-		"script" : preload("res://paths/black_magic/abilities/pressurized_quills.gd"),
+		"script" : preload("res://paths/druidry/abilities/pressurized_quills.gd"),
 		"type" : "mastery"
 	},
 	"multimold" : {
-		"script" : preload("res://paths/black_magic/abilities/multimold.gd"),
+		"script" : preload("res://paths/druidry/abilities/multimold.gd"),
 		"type" : "mastery"
 	},
 	#endregion
 	#region white
 	"chain_bolt" : {
-		"script" : preload("res://paths/white_magic/abilities/chain_bolt.gd"),
+		"script" : preload("res://paths/electromancy/abilities/chain_bolt.gd"),
 		"type" : "upgrade"
 	},
 	"mortal_shock" : {
-		"script" : preload("res://paths/white_magic/abilities/mortal_shock.gd"),
+		"script" : preload("res://paths/electromancy/abilities/mortal_shock.gd"),
 		"type" : "upgrade"
 	},
 	"electromagnetism" : {
-		"script" : preload("res://paths/white_magic/abilities/electromagnetism.gd"),
+		"script" : preload("res://paths/electromancy/abilities/electromagnetism.gd"),
 		"type" : "upgrade"
 	},
 	"ball_lightning" : {
-		"script" : preload("res://paths/white_magic/abilities/ball_lightning.gd"),
+		"script" : preload("res://paths/electromancy/abilities/ball_lightning.gd"),
 		"type" : "upgrade"
 	},
 	"thunderstep" : {
-		"script" : preload("res://paths/white_magic/abilities/thunderstep.gd"),
+		"script" : preload("res://paths/electromancy/abilities/thunderstep.gd"),
 		"type" : "upgrade"
 	},
 	"shocking_grasp" : {
-		"script" : preload("res://paths/white_magic/abilities/shocking_grasp.gd"),
+		"script" : preload("res://paths/electromancy/abilities/shocking_grasp.gd"),
 		"type" : "mastery"
 	},
 	"shock" : {
-		"script" : preload("res://paths/white_magic/shock.gd"),
+		"script" : preload("res://paths/electromancy/shock.gd"),
 		"type" : "status"
 	},
 	"dynamo" : {
-		"script" : preload("res://paths/white_magic/abilities/dynamo.gd"),
+		"script" : preload("res://paths/electromancy/abilities/dynamo.gd"),
 		"type" : "mastery"
 	},
 	"repulsar" : {
-		"script" : preload("res://paths/white_magic/abilities/repulsar.gd"),
+		"script" : preload("res://paths/electromancy/abilities/repulsar.gd"),
 		"type" : "mastery"
 	},
 	#endregion
