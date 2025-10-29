@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://2hguf1pilgru"]
 
-[ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/magic_picker.gd" id="1_rnk8j"]
-[ext_resource type="PackedScene" uid="uid://bi383odcr1yg7" path="res://UI/status_label.tscn" id="1_yj67j"]
-[ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/unlock_magic_button.tscn" id="2_yj67j"]
+[ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/ui/magic_picker.gd" id="1_rnk8j"]
+[ext_resource type="PackedScene" uid="uid://bi383odcr1yg7" path="res://ui/status_label.tscn" id="1_yj67j"]
+[ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/ui/unlock_magic_button.tscn" id="2_yj67j"]
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/pyromancy/red.png" id="3_rnk8j"]
 [ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/cryomancy/blue.png" id="5_t4f8r"]
 [ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/druidry/green.png" id="6_j1tjt"]

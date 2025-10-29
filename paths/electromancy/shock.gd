@@ -16,8 +16,7 @@ func _ready() -> void:
 func add_level(value):
 	if value > 0:
 		if 2.5 * value > duration_timer.time_left:
-			clear()
-			level_offset = value
+			level_offset = value - level
 			duration_timer.start(2.5 * value)
 	else:
 		clear()

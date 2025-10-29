@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgujkskmg6j61"
-path="res://.godot/imported/dark_blank.png-14a0d5b7bdcaa4fbf00c6e5baeff6584.ctex"
+uid="uid://dhwddiub4fb1t"
+path="res://.godot/imported/mystery.png-a90feac64f048bffeceafb23fa44d6c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/dark_blank.png"
-dest_files=["res://.godot/imported/dark_blank.png-14a0d5b7bdcaa4fbf00c6e5baeff6584.ctex"]
+source_file="res://paths/ui/mystery.png"
+dest_files=["res://.godot/imported/mystery.png-a90feac64f048bffeceafb23fa44d6c6.ctex"]
 
 [params]
 

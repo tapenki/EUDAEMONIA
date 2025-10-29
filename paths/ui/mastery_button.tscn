@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1ylajdgg6vyo"]
 
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/blank.png" id="1_jmowc"]
-[ext_resource type="Script" uid="uid://cj2612bumlodp" path="res://paths/mastery_button.gd" id="2_jmowc"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="1_jmowc"]
+[ext_resource type="Script" uid="uid://cj2612bumlodp" path="res://paths/ui/mastery_button.gd" id="2_jmowc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_muabv"]
 resource_local_to_scene = true

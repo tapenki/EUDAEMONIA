@@ -139,6 +139,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3
 position = Vector2(0, -20)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("11_hcilj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

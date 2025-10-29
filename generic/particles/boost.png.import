@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhwddiub4fb1t"
-path="res://.godot/imported/mystery.png-8e774585ebda491a4283b88846e5cf86.ctex"
+uid="uid://b23rqso03mp6p"
+path="res://.godot/imported/boost.png-0bb9407cffbb9ce8676c07caa132faf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/mystery.png"
-dest_files=["res://.godot/imported/mystery.png-8e774585ebda491a4283b88846e5cf86.ctex"]
+source_file="res://generic/particles/boost.png"
+dest_files=["res://.godot/imported/boost.png-0bb9407cffbb9ce8676c07caa132faf8.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

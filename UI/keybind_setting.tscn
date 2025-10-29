@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cep2eleduru2x"]
 
-[ext_resource type="Script" uid="uid://bnqia8f7f2kay" path="res://UI/keybind_setting.gd" id="1_ju02s"]
-[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://UI/button_theme.tres" id="2_ju02s"]
-[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://UI/button.png" id="3_wj8mo"]
+[ext_resource type="Script" uid="uid://bnqia8f7f2kay" path="res://ui/keybind_setting.gd" id="1_ju02s"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="2_ju02s"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_wj8mo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
 outline_size = 5

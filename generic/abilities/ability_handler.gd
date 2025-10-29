@@ -197,7 +197,7 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	return summon_instance
 
 ## ability manipulation
-func grant(ability: String, levels: int):
+func grant(ability: String, levels: float):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.add_level(levels)
@@ -210,7 +210,7 @@ func grant(ability: String, levels: int):
 		#update_status.emit(ability_node)
 	return ability_node
 
-func upgrade(ability: String, levels: int):
+func upgrade(ability: String, levels: float):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.level += levels
@@ -223,7 +223,7 @@ func upgrade(ability: String, levels: int):
 		add_child(ability_node)
 	upgraded.emit()
 
-func apply_status(handler: Node, ability: String, levels: int):
+func apply_status(handler: Node, ability: String, levels: float):
 	var modifiers = {"source" : levels, "multiplier" : 1}
 	status_level_modifiers.emit(ability, modifiers)
 	levels = modifiers["source"] * modifiers["multiplier"]
@@ -231,12 +231,12 @@ func apply_status(handler: Node, ability: String, levels: int):
 	status_applied.emit(status, levels)
 	return status
 
-func clear(ability: String, levels: int):
+func clear(ability: String, levels: float):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.add_level(-levels)
 
-func inherit(handler: Node, inherit_level: int):
+func inherit(handler: Node, inherit_level: float):
 	for child in get_children():
 		child.inherit(handler, inherit_level)
 

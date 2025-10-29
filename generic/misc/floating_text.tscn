@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://sk1gmox3jop5"]
 
 [ext_resource type="Script" uid="uid://cg4bmfdin5hr2" path="res://generic/misc/floating_text.gd" id="1_pioch"]
-[ext_resource type="FontVariation" uid="uid://dq838p2vrg02f" path="res://UI/damage_numbers_font.tres" id="2_hfupv"]
+[ext_resource type="FontVariation" uid="uid://dq838p2vrg02f" path="res://ui/damage_numbers_font.tres" id="2_hfupv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bf8ro"]
 font = ExtResource("2_hfupv")

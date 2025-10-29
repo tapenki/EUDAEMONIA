@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://de6a2lvhayf3v"]
+[gd_scene load_steps=5 format=3 uid="uid://dgnmcjqbr70jb"]
 
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/blank.png" id="1_3a1dv"]
-[ext_resource type="Script" uid="uid://diqt2c2lp0wu1" path="res://paths/unlock_magic_button.gd" id="2_p0li8"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="1_slgqf"]
+[ext_resource type="Script" uid="uid://b4jrqlqj62mpk" path="res://paths/ui/upgrade_button.gd" id="1_xh7g6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_muabv"]
 resource_local_to_scene = true
@@ -9,7 +9,12 @@ font_size = 40
 outline_size = 8
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_xm21l"]
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
 [node name="Button" type="TextureButton"]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 custom_minimum_size = Vector2(60, 60)
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,13 +29,14 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(30, 30)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_3a1dv")
+texture_normal = ExtResource("1_slgqf")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("2_p0li8")
-extra = "unlock_cost"
+script = ExtResource("1_xh7g6")
+extra = "upgrade_cost"
 
 [node name="Symbol" type="Label" parent="."]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -39,6 +45,21 @@ anchor_bottom = 1.0
 label_settings = SubResource("LabelSettings_muabv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Level" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 1.0
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_xm21l")
+horizontal_alignment = 2
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

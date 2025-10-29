@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://6ever7o6jn0f"]
 
-[ext_resource type="Script" uid="uid://cfbl1hvkyht4v" path="res://UI/toggle_setting.gd" id="1_3ab8c"]
-[ext_resource type="Texture2D" uid="uid://caqhg57wkn1ua" path="res://UI/checkedbox.png" id="1_osjxi"]
-[ext_resource type="Texture2D" uid="uid://bjcgg758s2qcj" path="res://UI/checkbox.png" id="2_3ab8c"]
+[ext_resource type="Script" uid="uid://cfbl1hvkyht4v" path="res://ui/toggle_setting.gd" id="1_3ab8c"]
+[ext_resource type="Texture2D" uid="uid://caqhg57wkn1ua" path="res://ui/checkedbox.png" id="1_osjxi"]
+[ext_resource type="Texture2D" uid="uid://bjcgg758s2qcj" path="res://ui/checkbox.png" id="2_3ab8c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
 outline_size = 5

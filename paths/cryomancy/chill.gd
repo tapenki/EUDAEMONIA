@@ -19,8 +19,7 @@ func inh_speed_scale_modifiers(modifiers) -> void:
 func add_level(value):
 	if value > 0:
 		if 0.75 * value > duration_timer.time_left:
-			clear()
-			level_offset = value
+			level_offset = value - level
 			duration_timer.start(0.75 * value)
 	else:
 		clear()

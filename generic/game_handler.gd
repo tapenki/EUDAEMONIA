@@ -117,6 +117,8 @@ func pathfind(start, end):
 	var tilemap = room_node.get_node("TileMap")
 	start = tilemap.local_to_map(start)
 	end = tilemap.local_to_map(end)
+	if not astar.is_in_boundsv(start) or not astar.is_in_boundsv(end):
+		return PackedVector2Array()
 	var path = astar.get_point_path(start, end, true)
 	
 	## path post processing and the bane of my existence

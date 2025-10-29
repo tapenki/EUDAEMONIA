@@ -188,15 +188,31 @@ var ability_data = {
 		"script" : preload("res://paths/necromancy/abilities/death_touch.gd"),
 		"type" : "upgrade"
 	},
+	"hunger" : {
+		"script" : preload("res://paths/necromancy/abilities/hunger.gd"),
+		"type" : "upgrade"
+	},
 	"bone_shield" : {
 		"script" : preload("res://paths/necromancy/abilities/bone_shield.gd"),
 		"type" : "upgrade"
+	},
+	"bone_spear" : {
+		"script" : preload("res://paths/necromancy/abilities/bone_spear.gd"),
+		"type" : "mastery"
 	},
 	#endregion
 	#region misc
 	"bonus_health" : {
 		"script" : preload("res://generic/abilities/bonus_health.gd"),
 		"type" : "token"
+	},
+	"dark_price" : {
+		"script" : preload("res://generic/abilities/dark_price.gd"),
+		"type" : "token"
+	},
+	"haste" : {
+		"script" : preload("res://generic/abilities/status/haste.gd"),
+		"type" : "status"
 	},
 	#endregion
 }

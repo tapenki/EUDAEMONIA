@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://kgg0o211aihr"]
 
-[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://UI/16px_font_theme.tres" id="1_arg84"]
-[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/upgrade_button.tscn" id="1_yxyri"]
-[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://UI/described.gd" id="2_7ka4n"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_arg84"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="1_yxyri"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="2_7ka4n"]
 [ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/cryomancy/blue.png" id="2_yxyri"]
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/blank.png" id="5_7gvls"]
-[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/mastery_button.tscn" id="5_ukwux"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="5_7gvls"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_ukwux"]
 
 [node name="Cryomancy" type="Control"]
 layout_mode = 3

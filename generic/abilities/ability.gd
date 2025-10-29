@@ -18,6 +18,7 @@ func offset():
 	level *= level_multiplier
 	level_offset = 0
 	level_multiplier = 1
+	cleared = false
 	if level <= 0:
 		kill()
 

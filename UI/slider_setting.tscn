@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bgovbas7d6tye"]
 
-[ext_resource type="Script" uid="uid://btkblwwyaido2" path="res://UI/slider_setting.gd" id="1_e24d1"]
-[ext_resource type="Theme" uid="uid://dmwaa3dp74vat" path="res://UI/slider_theme.tres" id="2_03bt8"]
+[ext_resource type="Script" uid="uid://btkblwwyaido2" path="res://ui/slider_setting.gd" id="1_e24d1"]
+[ext_resource type="Theme" uid="uid://dmwaa3dp74vat" path="res://ui/slider_theme.tres" id="2_03bt8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
 outline_size = 5

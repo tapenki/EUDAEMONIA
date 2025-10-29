@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3wex0msyo1yg"]
 
-[ext_resource type="Script" uid="uid://cj2612bumlodp" path="res://paths/mastery_button.gd" id="1_v5nmr"]
-[ext_resource type="Texture2D" uid="uid://cgujkskmg6j61" path="res://paths/dark_blank.png" id="2_v5nmr"]
+[ext_resource type="Script" uid="uid://cbd6kv4xpumes" path="res://paths/ui/dark_mastery_button.gd" id="1_lbblf"]
+[ext_resource type="Texture2D" uid="uid://cgujkskmg6j61" path="res://paths/ui/dark_blank.png" id="2_v5nmr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_muabv"]
 resource_local_to_scene = true
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(30, 30)
 mouse_default_cursor_shape = 2
-script = ExtResource("1_v5nmr")
+script = ExtResource("1_lbblf")
 accessible_texture = ExtResource("2_v5nmr")
 extra = "dark_unlock_cost"
 

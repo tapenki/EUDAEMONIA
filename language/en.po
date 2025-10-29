@@ -353,13 +353,25 @@ msgid "death_touch_title"
 msgstr "[outline_color=#cc00cc]Ch.2: Death Touch[/outline_color]"
 
 msgid "death_touch_description"
-msgstr "Gain a [outline_size=10]+[1xLEVEL]%[/outline_size] chance to deal [outline_size=10]x[100][/outline_size] damage."
+msgstr "Gain a [outline_size=10]+[LEVEL]%[/outline_size] chance to deal [outline_size=10]x[100][/outline_size] damage."
+
+msgid "hunger_title"
+msgstr "[outline_color=#cc00cc]Ch.3: Hunger[/outline_color]"
+
+msgid "hunger_description"
+msgstr "[outline_size=10]Upon a creature dying:[/outline_size] Summons gain a [outline_size=10]x[1.5][/outline_size] speed haste for [outline_size=10]+[0.5xLEVEL][/outline_size] seconds and recover [outline_size=10]+[15xLEVEL][/outline_size] health."
 
 msgid "bone_shield_title"
 msgstr "[outline_color=#cc00cc]Ch.4: Bone Shield[/outline_color]"
 
 msgid "bone_shield_description"
 msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health and [outline_size=10]x[LEVEL][/outline_size] damage."
+
+msgid "bone_spear_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
+
+msgid "bone_spear_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[3][/outline_size] bone shields."
 
 
 # spheres
