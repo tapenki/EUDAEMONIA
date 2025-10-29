@@ -7,12 +7,12 @@
 [ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="5_6ngl6"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_tdrsd"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="7_vxdbt"]
-[ext_resource type="Texture2D" uid="uid://bwsj4h3xb6pid" path="res://paths/druidry/clay/clay.png" id="7_y2u7u"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="8_2qjnk"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="8_hem8k"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_vxm3h"]
-[ext_resource type="Texture2D" uid="uid://dqggvfwuuajj" path="res://paths/druidry/clay/clay_hurt.png" id="9_16mca"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="10_eduxh"]
+[ext_resource type="Texture2D" uid="uid://bwsj4h3xb6pid" path="res://paths/druidry/clay/clay.png" id="10_moxgt"]
+[ext_resource type="Texture2D" uid="uid://dqggvfwuuajj" path="res://paths/druidry/clay/clay_hurt.png" id="12_6wrf8"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_udn53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
@@ -106,7 +106,6 @@ _data = {
 }
 
 [node name="Clay" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
-z_index = 1
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -183,11 +182,11 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 modulate = Color(0, 0.501961, 1, 1)
 material = ExtResource("8_vxm3h")
 position = Vector2(0, 20)
-texture = ExtResource("7_y2u7u")
+texture = ExtResource("10_moxgt")
 offset = Vector2(0, -20)
 script = ExtResource("8_2qjnk")
-base_texture = ExtResource("7_y2u7u")
-hurt_texture = ExtResource("9_16mca")
+base_texture = ExtResource("10_moxgt")
+hurt_texture = ExtResource("12_6wrf8")
 
 [node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_tdrsd")

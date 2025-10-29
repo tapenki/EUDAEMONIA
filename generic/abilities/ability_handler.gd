@@ -185,8 +185,9 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	get_node("/root/Main/").assign_entity_group(summon_instance, summon_group)
 	summon_instance.summoned = true
 	
-	summon_instance.max_health = health
-	summon_instance.health = health
+	if health > -1:
+		summon_instance.max_health = health
+	summon_instance.health = summon_instance.max_health
 	
 	var summon_damage = inherited_summon_damage.duplicate()
 	summon_damage_modifiers.emit(summon_damage)

@@ -63,12 +63,13 @@ func scale_enemy_health(health: float):
 func scale_enemy_damage():
 	return 0.75 + (day * 0.25)
 
-func spawn_entity(entity: Entity):
+func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()
 	reticle_instance.global_position = entity.global_position
 	reticle_instance.entity = entity
 	reticle_instance.modulate = entity.get_node("Sprite").modulate
 	spawns.add_child(reticle_instance)
+	reticle_instance.get_node("SpawnTimer").start(delay)
 
 func instantiate_enemy(scene: PackedScene):
 	var entity_instance = scene.instantiate()

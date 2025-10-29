@@ -67,7 +67,7 @@ _data = {
 }
 
 [node name="Debree" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -80,7 +80,8 @@ ability_handler = NodePath("AbilityHandler")
 death_sound = "HitLight"
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 40
+max_health = 30
+health = 30.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_jwabc")

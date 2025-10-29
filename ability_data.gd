@@ -13,10 +13,13 @@ var path_data = {
 	"druidry" : {
 		"scene" : preload("res://paths/druidry/druidry.tscn"),
 	},
+	"necromancy" : {
+		"scene" : preload("res://paths/necromancy/necromancy.tscn"),
+	},
 }
 
 var ability_data = {
-	#region red
+	#region pyromancy
 	"ignition" : {
 		"script" : preload("res://paths/pyromancy/abilities/ignition.gd"),
 		"type" : "upgrade"
@@ -58,7 +61,7 @@ var ability_data = {
 		"type" : "status"
 	},
 	#endregion
-	#region blue
+	#region cryomancy
 	"blue_needle" : {
 		"script" : preload("res://paths/cryomancy/abilities/blue_needle.gd"),
 		"type" : "upgrade"
@@ -104,41 +107,7 @@ var ability_data = {
 		"type" : "mastery"
 	},
 	#endregion
-	#region black
-	"primal_casting" : {
-		"script" : preload("res://paths/druidry/abilities/primal_casting.gd"),
-		"type" : "upgrade"
-	},
-	"trail_of_thorns" : {
-		"script" : preload("res://paths/druidry/abilities/trail_of_thorns.gd"),
-		"type" : "upgrade"
-	},
-	"quill_spray" : {
-		"script" : preload("res://paths/druidry/abilities/quill_spray.gd"),
-		"type" : "upgrade"
-	},
-	"wrought_flesh" : {
-		"script" : preload("res://paths/druidry/abilities/wrought_flesh.gd"),
-		"type" : "upgrade"
-	},
-	"animated_clay" : {
-		"script" : preload("res://paths/druidry/abilities/animated_clay.gd"),
-		"type" : "upgrade"
-	},
-	"pain_walk" : {
-		"script" : preload("res://paths/druidry/abilities/pain_walk.gd"),
-		"type" : "mastery"
-	},
-	"pressurized_quills" : {
-		"script" : preload("res://paths/druidry/abilities/pressurized_quills.gd"),
-		"type" : "mastery"
-	},
-	"multimold" : {
-		"script" : preload("res://paths/druidry/abilities/multimold.gd"),
-		"type" : "mastery"
-	},
-	#endregion
-	#region white
+	#region electromancy
 	"chain_bolt" : {
 		"script" : preload("res://paths/electromancy/abilities/chain_bolt.gd"),
 		"type" : "upgrade"
@@ -174,6 +143,54 @@ var ability_data = {
 	"repulsar" : {
 		"script" : preload("res://paths/electromancy/abilities/repulsar.gd"),
 		"type" : "mastery"
+	},
+	#endregion
+	#region druidry
+	"primal_casting" : {
+		"script" : preload("res://paths/druidry/abilities/primal_casting.gd"),
+		"type" : "upgrade"
+	},
+	"trail_of_thorns" : {
+		"script" : preload("res://paths/druidry/abilities/trail_of_thorns.gd"),
+		"type" : "upgrade"
+	},
+	"quill_spray" : {
+		"script" : preload("res://paths/druidry/abilities/quill_spray.gd"),
+		"type" : "upgrade"
+	},
+	"wrought_flesh" : {
+		"script" : preload("res://paths/druidry/abilities/wrought_flesh.gd"),
+		"type" : "upgrade"
+	},
+	"animated_clay" : {
+		"script" : preload("res://paths/druidry/abilities/animated_clay.gd"),
+		"type" : "upgrade"
+	},
+	"pain_walk" : {
+		"script" : preload("res://paths/druidry/abilities/pain_walk.gd"),
+		"type" : "mastery"
+	},
+	"pressurized_quills" : {
+		"script" : preload("res://paths/druidry/abilities/pressurized_quills.gd"),
+		"type" : "mastery"
+	},
+	"multimold" : {
+		"script" : preload("res://paths/druidry/abilities/multimold.gd"),
+		"type" : "mastery"
+	},
+	#endregion
+	#region necromancy
+	"army_of_the_dead" : {
+		"script" : preload("res://paths/necromancy/abilities/army_of_the_dead.gd"),
+		"type" : "upgrade"
+	},
+	"death_touch" : {
+		"script" : preload("res://paths/necromancy/abilities/death_touch.gd"),
+		"type" : "upgrade"
+	},
+	"bone_shield" : {
+		"script" : preload("res://paths/necromancy/abilities/bone_shield.gd"),
+		"type" : "upgrade"
 	},
 	#endregion
 	#region misc

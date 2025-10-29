@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3wex0msyo1yg"]
+
+[ext_resource type="Script" uid="uid://cj2612bumlodp" path="res://paths/mastery_button.gd" id="1_v5nmr"]
+[ext_resource type="Texture2D" uid="uid://cgujkskmg6j61" path="res://paths/dark_blank.png" id="2_v5nmr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_muabv"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="Button" type="TextureButton"]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(30, 30)
+mouse_default_cursor_shape = 2
+script = ExtResource("1_v5nmr")
+accessible_texture = ExtResource("2_v5nmr")
+extra = "dark_unlock_cost"
+
+[node name="TextureRect1" type="NinePatchRect" parent="."]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v5nmr")
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+
+[node name="TextureRect2" type="NinePatchRect" parent="."]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -29.999985
+offset_right = 30.0
+offset_bottom = 30.000015
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.7853982
+pivot_offset = Vector2(30, 30)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_v5nmr")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Symbol" type="Label" parent="."]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "?"
+label_settings = SubResource("LabelSettings_muabv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -29,6 +29,8 @@ func _physics_process(_delta):
 		state_handler.target = user.ability_handler.find_target()
 	if not is_instance_valid(state_handler.target):
 		user.velocity = lerp(user.velocity, Vector2(), 0.5)
+		if user.animation_player.current_animation == "WALK":
+			user.animation_player.stop()
 		return
 	
 	## shapecast to proceed to next state
@@ -57,6 +59,8 @@ func _physics_process(_delta):
 	
 	if path.size() == 0:
 		user.velocity = lerp(user.velocity, Vector2(), 0.5)
+		if user.animation_player.current_animation == "WALK":
+			user.animation_player.stop()
 		return
 	
 	#for i in path:

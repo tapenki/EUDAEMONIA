@@ -67,7 +67,7 @@ _data = {
 }
 
 [node name="BigDebree" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -79,7 +79,8 @@ speed_deviation = 0.5
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 40
+max_health = 60
+health = 60.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_jo4yx")
