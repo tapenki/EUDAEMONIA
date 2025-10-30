@@ -43,6 +43,7 @@ func toggle_pause(pause):
 	get_tree().paused = pause
 
 func toggle_game_menu():
+	cancel_keybind()
 	if game_menu.visible:
 		game_menu.visible = false
 		backdrop.visible = false
@@ -64,12 +65,15 @@ func toggle_game_menu():
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
 
+func cancel_keybind():
+	if keybind_setting:
+		keybind_setting.keybind_button.button_pressed = false
+		keybind_setting = null
+
 func toggle_settings():
+	cancel_keybind()
 	if settings.visible:
 		settings.visible = false
-		if keybind_setting:
-			keybind_setting.bind.button_pressed = false
-			keybind_setting = null
 	else:
 		settings.visible = true
 	fade.color = Color(0,0,0)

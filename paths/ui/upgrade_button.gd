@@ -16,7 +16,7 @@ func _ready() -> void:
 	if ability_node:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
-		level_label.text = str(int(ability_node.level))
+		level_label.text = "[%s]" % int(ability_node.level)
 
 func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and ui.upgrade_points >= 1:
@@ -27,4 +27,4 @@ func _on_pressed() -> void:
 		if ability_node:
 			self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
-			level_label.text = str(int(ability_node.level))
+			level_label.text = "[%s]" % int(ability_node.level)

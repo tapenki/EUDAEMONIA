@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvqgjf3aefht7"]
+[gd_scene load_steps=9 format=3 uid="uid://dvqgjf3aefht7"]
 
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_satne"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="2_4f4ow"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="3_vlamy"]
 [ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/necromancy/black.png" id="4_xpvhb"]
+[ext_resource type="PackedScene" uid="uid://bmsbb262j11w7" path="res://paths/ui/trick_upgrade_button.tscn" id="5_4llcc"]
 [ext_resource type="Texture2D" uid="uid://cgujkskmg6j61" path="res://paths/ui/dark_blank.png" id="5_g1eiv"]
 [ext_resource type="PackedScene" uid="uid://d3wex0msyo1yg" path="res://paths/ui/dark_mastery_button.tscn" id="6_x8qv0"]
 [ext_resource type="Texture2D" uid="uid://cell330b8j08n" path="res://paths/necromancy/dark_black.png" id="7_4llcc"]
@@ -68,6 +69,11 @@ subject = "hunger"
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "bone_shield"
+
+[node name="DarkHarvest" parent="Abilities" instance=ExtResource("5_4llcc")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpvhb")
+subject = "dark_harvest"
 
 [node name="Masteries" type="HBoxContainer" parent="."]
 layout_mode = 1

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EUDAEMONIA"
-config/version="5"
+config/version="6"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -47,23 +47,27 @@ window/stretch/aspect="expand"
 [input]
 
 up={
-"deadzone": 0.5,
+"deadzone": 0.2,
 "events": []
 }
 down={
-"deadzone": 0.5,
+"deadzone": 0.2,
 "events": []
 }
 left={
-"deadzone": 0.5,
+"deadzone": 0.2,
 "events": []
 }
 right={
-"deadzone": 0.5,
+"deadzone": 0.2,
 "events": []
 }
 pause={
-"deadzone": 0.5,
+"deadzone": 0.2,
+"events": []
+}
+dark_harvest={
+"deadzone": 0.2,
 "events": []
 }
 

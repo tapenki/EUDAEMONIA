@@ -222,6 +222,7 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_behavior_recursive = 1
 mouse_filter = 2
 
 [node name="HealthBar" type="ProgressBar" parent="HUD"]
@@ -353,6 +354,7 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_behavior_recursive = 1
 mouse_filter = 2
 
 [node name="UpgradePoints" type="Label" parent="GameMenu"]
@@ -531,6 +533,7 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_behavior_recursive = 1
 mouse_filter = 2
 
 [node name="Settings" type="Control" parent="."]
@@ -548,6 +551,7 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_behavior_recursive = 1
 mouse_filter = 2
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]

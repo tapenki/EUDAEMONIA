@@ -196,6 +196,10 @@ var ability_data = {
 		"script" : preload("res://paths/necromancy/abilities/bone_shield.gd"),
 		"type" : "upgrade"
 	},
+	"dark_harvest" : {
+		"script" : preload("res://paths/necromancy/abilities/dark_harvest.gd"),
+		"type" : "upgrade"
+	},
 	"bone_spear" : {
 		"script" : preload("res://paths/necromancy/abilities/bone_spear.gd"),
 		"type" : "mastery"

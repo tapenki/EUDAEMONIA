@@ -25,8 +25,8 @@ func day_start(_day: int) -> void:
 		spawn(spawn_position)
 
 func entity_death(dying_entity: Entity):
-	if undying_flames and dying_entity.scene_file_path == "res://paths/red_magic/flaming_skull/flaming_skull.tscn":
-		spawn(dying_entity.global_position, 2.5)
+	if undying_flames and dying_entity.scene_file_path == "res://paths/pyromancy/flaming_skull/flaming_skull.tscn":
+		spawn(dying_entity.global_position, 1)
 
 func inherit(_handler, _tier):
 	return

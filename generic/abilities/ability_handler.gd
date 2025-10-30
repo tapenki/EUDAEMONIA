@@ -58,7 +58,7 @@ func _physics_process(_delta: float) -> void:
 	speed_scale = (inherited_speed_scale["source"] + modifiers["source"]) * inherited_speed_scale["multiplier"] * modifiers["multiplier"]
 
 ## stat getters
-func get_health(health: float, max_health: float):
+func get_health(health = owner.health, max_health = owner.max_health):
 	var modifiers = {"source" : max_health, "multiplier" : 1}
 	max_health_modifiers.emit(modifiers)
 	var final_max_health = modifiers["source"] * modifiers["multiplier"]

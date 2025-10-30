@@ -28,6 +28,7 @@ var base_values = {
 		"left" : KEY_A,
 		"right" : KEY_D,
 		"pause" : KEY_ESCAPE,
+		"dark_harvest" : KEY_E,
 	}
 }
 

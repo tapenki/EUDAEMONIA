@@ -15,7 +15,7 @@ func day_start(_day: int) -> void:
 	for i in count:
 		var summon_instance = ability_handler.make_summon(summon_scene, 
 		Vector2(),
-		3,
+		2,
 		60 * level)
 		summon_instance.distance = 50*(i+1)
 		summon_instance.scale *= 1 + (count - i) * 0.2

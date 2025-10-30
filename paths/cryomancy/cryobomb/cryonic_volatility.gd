@@ -25,7 +25,7 @@ func before_self_death(modifiers) -> void:
 func timeout() -> void:
 	var explosion_instance = ability_handler.make_projectile(explosion_scene, 
 	global_position, ## position
-	3, ## inheritance
+	2, ## inheritance
 	Vector2()) ## velocity
 	explosion_instance.ability_handler.inherited_damage["source"] += stored_damage
 	explosion_instance.scale_multiplier = 8

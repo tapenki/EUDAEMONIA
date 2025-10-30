@@ -7,7 +7,7 @@
 resource_local_to_scene = true
 font_size = 40
 outline_size = 8
-outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [node name="Button" type="TextureButton"]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)

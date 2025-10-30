@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dre5oi8vnusf3"]
+
+[ext_resource type="Script" uid="uid://bauj1wnsvphta" path="res://generic/projectiles/explosion.gd" id="1_rhm4h"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_8bs8h"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_dqch4"]
+[ext_resource type="Texture2D" uid="uid://cynbu06cbbvau" path="res://paths/necromancy/harvest_explosion.png" id="4_e07et"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_b34si"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_itlf8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 50.0
+
+[node name="HarvestExplosion" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_rhm4h")
+ability_handler = NodePath("AbilityHandler")
+hit_particles = ""
+crit_particles = ""
+hits_left = -1
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_8bs8h")
+type = "projectile"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+material = ExtResource("3_dqch4")
+texture = ExtResource("4_e07et")
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_b34si")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_itlf8")
+wait_time = 0.3
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -16,7 +16,4 @@ func pressed() -> void:
 		ui.settings_tab_button = self
 		tab.visible = true
 		rect.texture = on
-		
-		if ui.keybind_setting:
-			ui.keybind_setting.bind.button_pressed = false
-			ui.keybind_setting = null
+		ui.cancel_keybind()

@@ -9,7 +9,7 @@ func _ready() -> void:
 	for repeat in count:
 		var entity_instance = ability_handler.make_summon(entity_scene, 
 		Vector2(),
-		3,
+		2,
 		-1)
 		entity_instance.max_health = get_node("/root/Main").scale_enemy_health(entity_instance.max_health)
 		entity_instance.health = entity_instance.max_health

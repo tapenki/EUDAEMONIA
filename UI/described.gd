@@ -7,9 +7,15 @@ class_name Described extends Control
 @export var subject: String
 @export var extra: String
 
+func get_title():
+	return tr(subject+"_title")
+
+func get_description():
+	return tr(subject+"_description")
+
 func _on_mouse_entered() -> void:
-	description_title.text = subject+"_title"
-	description.text = subject+"_description"
+	description_title.text = get_title()
+	description.text = get_description()
 	if extra != "":
 		description_extra.text = extra
 		description_extra.visible = true

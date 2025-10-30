@@ -278,7 +278,7 @@ msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
-msgstr "When dealing damage, roll for crits. Damage is increased by [outline_size=10]x[1+CRITCOUNT][/outline_size]. Each [outline_size=10][100]%[/outline_size] is a guaranteed crit and the rest is rolled as usual."
+msgstr "When dealing damage, roll for crits. Damage is increased by [outline_size=10]x[1+CRITCOUNT][/outline_size]. Crit chance over [outline_size=10][100]%[/outline_size] is converted into extra crits."
 
 # druidry
 msgid "druidry_title"
@@ -366,6 +366,12 @@ msgstr "[outline_color=#cc00cc]Ch.4: Bone Shield[/outline_color]"
 
 msgid "bone_shield_description"
 msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health and [outline_size=10]x[LEVEL][/outline_size] damage."
+
+msgid "dark_harvest_title"
+msgstr "[outline_color=#cc00cc]Ch.5: Dark Harvest[/outline_color]"
+
+msgid "dark_harvest_description"
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.25xALLYMAXHP]x[2xLEVEL][/outline_size] damage."
 
 msgid "bone_spear_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
