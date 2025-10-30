@@ -10,8 +10,8 @@ extends Described
 @onready var symbol_label: = $"Symbol"
 @onready var keybind_button: = $"Bind"
 
-var on = preload("res://UI/button_blue.png")
-var off = preload("res://UI/button.png")
+var on = preload("res://ui/button_blue.png")
+var off = preload("res://ui/button.png")
 
 func get_description():
 	return super().format({"keybind": keybind_button.text})

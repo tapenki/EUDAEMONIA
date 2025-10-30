@@ -6,8 +6,8 @@ extends Label
 @onready var keybind_button = $"Bind"
 @onready var rect = $"Bind/NinePatchRect"
 
-var on = preload("res://UI/button_blue.png")
-var off = preload("res://UI/button.png")
+var on = preload("res://ui/button_blue.png")
+var off = preload("res://ui/button.png")
 
 func _ready() -> void:
 	set_process_unhandled_input(false)
