@@ -5,8 +5,8 @@ extends Button
 
 @export var tab : Node
 
-var on = preload("res://UI/button_blue.png")
-var off = preload("res://UI/button.png")
+var on = preload("res://ui/button_blue.png")
+var off = preload("res://ui/button.png")
 
 func pressed() -> void:
 	if ui.settings_tab != tab:

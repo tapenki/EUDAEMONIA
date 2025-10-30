@@ -3,7 +3,7 @@ extends GridContainer
 @onready var player = $"../../".player
 @onready var ability_handler = player.ability_handler
 
-var status_label = preload("res://UI/status_label.tscn")
+var status_label = preload("res://ui/status_label.tscn")
 
 #func _ready() -> void:
 	#ability_handler.update_status.connect(update)

@@ -371,7 +371,7 @@ msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ch.5: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.25xALLYMAXHP]x[2xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.25xALLYMAXHP]x[LEVEL][/outline_size] damage."
 
 msgid "bone_spear_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
