@@ -13,6 +13,8 @@ func say(text: String):
 	add_child(label_instance)
 
 func _ready() -> void:
+	if owner.group != 2:
+		return
 	if spawn_quotes.size() > 0:
 		say(spawn_quotes.pick_random())
 	var ability_handler = owner.get_node_or_null("AbilityHandler")
