@@ -20,9 +20,9 @@ func _ready() -> void:
 func tick():
 	var damage = {"source" : level, "multiplier" : 1.0}
 	ability_handler.damage_taken_modifiers.emit(damage)
-	var damage_final = damage["source"] * damage["multiplier"]
-	ability_handler.owner.take_damage(ability_handler, damage_final, false)
-	get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage_final)), Config.get_team_color(1, "secondary"))
+	damage["final"] = damage["source"] * damage["multiplier"]
+	ability_handler.owner.take_damage(ability_handler, damage, false)
+	get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage["final"])), Config.get_team_color(1, "secondary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

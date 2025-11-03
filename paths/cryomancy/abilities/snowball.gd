@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 func attack_scale_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= scale_boost
 
-func damage_dealt_modifiers(_entity, modifiers, _crits) -> void:
+func damage_dealt_modifiers(_entity, modifiers) -> void:
 	modifiers["multiplier"] *= damage_boost
 
 func crit_chance_modifiers(_entity, modifiers) -> void:

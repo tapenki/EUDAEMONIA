@@ -200,6 +200,14 @@ var ability_data = {
 		"script" : preload("res://paths/necromancy/abilities/dark_harvest.gd"),
 		"type" : "upgrade"
 	},
+	"ante_mortem" : {
+		"script" : preload("res://paths/necromancy/abilities/bone_spear.gd"),
+		"type" : "mastery"
+	},
+	"starvation" : {
+		"script" : preload("res://paths/necromancy/abilities/starvation.gd"),
+		"type" : "mastery"
+	},
 	"bone_spear" : {
 		"script" : preload("res://paths/necromancy/abilities/bone_spear.gd"),
 		"type" : "mastery"

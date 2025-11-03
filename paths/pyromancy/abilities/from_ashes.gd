@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		ability_handler.owner.heal(delta*10*level*ability_handler.speed_scale)
 
 func before_self_death(modifiers) -> void:
-	if active and not modifiers["prevented"]:
+	if active and not modifiers.has("prevented"):
 		active = false
 		modifiers["prevented"] = true
 		recovery_timer.start(5)

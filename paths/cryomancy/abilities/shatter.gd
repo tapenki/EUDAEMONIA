@@ -17,7 +17,7 @@ func entity_death(dying_entity: Entity):
 		total = 1
 	
 	var angle = randf_range(0, TAU)
-	var target = ability_handler.find_target(dying_entity.global_position, 9999, {dying_entity = true})
+	var target = ability_handler.find_target(dying_entity.global_position, 9999, {dying_entity : true})
 	if target:
 		angle = dying_entity.global_position.direction_to(target.global_position).angle()
 	for repeat in total:
@@ -25,6 +25,7 @@ func entity_death(dying_entity: Entity):
 		dying_entity.global_position, 
 		2,
 		Vector2.from_angle(angle + (TAU / total * repeat)) * 600)
+		bullet_instance.exclude[dying_entity] = INF
 		bullet_instance.ability_handler.inherited_damage["multiplier"] *= damage_mult
 		bullet_instance.ability_handler.inherited_scale["multiplier"] *= 1.2
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
@@ -34,6 +35,7 @@ func entity_death(dying_entity: Entity):
 			dying_entity.global_position, 
 			2,
 			Vector2.from_angle(angle + PI / total + (TAU / total * repeat)) * 450)
+			bullet_instance.exclude[dying_entity] = INF
 			bullet_instance.ability_handler.inherited_damage["multiplier"] *= damage_mult
 			bullet_instance.ability_handler.inherited_scale["multiplier"] *= 1.2
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)

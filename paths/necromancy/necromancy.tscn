@@ -139,30 +139,13 @@ patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
 
-[node name="Blank3" type="Control" parent="Masteries"]
-custom_minimum_size = Vector2(60, 60)
+[node name="Starvation" parent="Masteries" instance=ExtResource("6_x8qv0")]
 layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank3"]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_g1eiv")
-patch_margin_left = 18
-patch_margin_top = 18
-patch_margin_right = 18
-patch_margin_bottom = 18
+accessible_texture = ExtResource("7_4llcc")
+requires = {
+"hunger": 5
+}
+subject = "starvation"
 
 [node name="BoneSpear" parent="Masteries" instance=ExtResource("6_x8qv0")]
 layout_mode = 2
@@ -172,12 +155,12 @@ requires = {
 }
 subject = "bone_spear"
 
-[node name="Blank4" type="Control" parent="Masteries"]
+[node name="Blank3" type="Control" parent="Masteries"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank4"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank3"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1

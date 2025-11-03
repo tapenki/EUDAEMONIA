@@ -6,9 +6,9 @@ var bullet = preload("res://generic/projectiles/bullet.tscn")
 var splosion = preload("res://generic/projectiles/explosion.tscn")
 
 func _ready() -> void:
-	ability_handler.self_death.connect(self_death)
+	ability_handler.death_effects.connect(death_effects)
 
-func self_death() -> void:
+func death_effects() -> void:
 	var splosion_instance = ability_handler.make_projectile(splosion, 
 	global_position, 
 	3)

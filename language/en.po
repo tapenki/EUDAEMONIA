@@ -155,7 +155,7 @@ msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
 
 msgid "fiery_rebirth_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activating:[/outline_size] Apply [outline_size=10]+[10xFROMASHESLEVEL][/outline_size] burn to all enemies then double their burn."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[10xFROMASHESLEVEL][/outline_size] burn to all enemies then double their burn."
 
 
 msgid "burn_title"
@@ -372,6 +372,18 @@ msgstr "[outline_color=#cc00cc]Ch.5: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
 msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.25xALLYMAXHP]x[LEVEL][/outline_size] damage."
+
+msgid "ante_mortem_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Ante Mortem[/outline_color]"
+
+msgid "ante_mortem_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Death Touch[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#cc00cc]Death Touch[/outline_color][outline_size=10] activation:[/outline_size] Activate death effects for the affected creature."
+
+msgid "starvation_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"
+
+msgid "starvation_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon a creature dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] damage."
 
 msgid "bone_spear_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"

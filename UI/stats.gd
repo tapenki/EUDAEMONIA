@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func update_stattext():
 	var attack_damage = ability_handler.inherited_damage.duplicate()
-	ability_handler.damage_dealt_modifiers.emit(null, attack_damage, 0)
+	ability_handler.damage_dealt_modifiers.emit(null, attack_damage)
 	var crit_chance = ability_handler.inherited_crit_chance.duplicate()
 	ability_handler.crit_chance_modifiers.emit(null, crit_chance)
 	var attack_scale = ability_handler.inherited_scale.duplicate()

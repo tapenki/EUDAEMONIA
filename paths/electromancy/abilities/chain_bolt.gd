@@ -9,8 +9,8 @@ func _ready() -> void:
 func crit_chance_modifiers(_entity, modifiers) -> void:
 	modifiers["source"] += 10 * level
 
-func damage_dealt(entity, _damage, crits_dealt) -> void:
-	if chain.size() < 2 and crits_dealt > 0:
+func damage_dealt(entity, damage) -> void:
+	if chain.size() < 2 and damage.get("crits", 0) > 0:
 		chain[entity] = true
 		var target = ability_handler.find_target(entity.global_position, 9999, chain)
 		if target:

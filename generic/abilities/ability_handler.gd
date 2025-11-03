@@ -39,14 +39,15 @@ signal summon_damage_modifiers(modifiers: Dictionary)
 ## damage taken signals
 signal damage_taken_modifiers(modifiers: Dictionary)
 signal immune_duration_modifiers(modifiers: Dictionary)
-signal damage_taken(source: Node, amount: float)
+signal damage_taken(source: Node, damage: Dictionary)
 signal before_self_death(modifiers: Dictionary)
+signal death_effects()
 signal self_death()
 
 ## damage dealt signals
-signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary, crits: int)
+signal damage_dealt_modifiers(entity: Entity, modifiers: Dictionary)
 signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
-signal damage_dealt(entity: Entity, amount: float, crits: int)
+signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ## misc signals
 signal upgraded()
@@ -83,11 +84,13 @@ func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 	attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["source"] + modifiers["source"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
-func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, crits: int = 0):
-	damage_dealt_modifiers.emit(entity, modifiers, crits)
+func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+	damage_dealt_modifiers.emit(entity, modifiers)
 	if entity:
 		entity.ability_handler.damage_taken_modifiers.emit(modifiers)
-	return (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"] * (1 + crits)
+	modifiers["final"] = (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"]
+	if modifiers.has("crits"):
+		modifiers["final"] *= (1 + modifiers["crits"])
 
 func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
 	crit_chance_modifiers.emit(entity, modifiers)
@@ -100,16 +103,17 @@ func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "mu
 
 func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1}):
 	var crits = get_crits(entity)
-	var final_damage = get_damage_dealt(entity, damage, crits)
-	damage_dealt.emit(entity, final_damage, crits)
-	var damaged = entity.take_damage(self, final_damage)
+	damage["crits"] = crits
+	get_damage_dealt(entity, damage)
+	damage_dealt.emit(entity, damage)
+	var damaged = entity.take_damage(self, damage)
 	if damaged:
-		var damage_text = str(int(final_damage))
+		var damage_text = str(int(damage["final"]))
 		if crits > 0:
 			damage_text += "!"
 		var damage_color = Config.get_team_color(owner.group, "secondary")
 		get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), damage_text, damage_color)
-	return {"damage" : final_damage, "crits" : crits}
+	return damage
 
 ## targeting
 func get_enemy_group():

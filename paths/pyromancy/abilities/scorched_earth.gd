@@ -3,9 +3,9 @@ extends Ability
 var bullet = preload("res://paths/pyromancy/scorched_earth.tscn")
 
 func _ready() -> void:
-	ability_handler.self_death.connect(self_death)
+	ability_handler.death_effects.connect(death_effects)
 	
-func self_death() -> void:
+func death_effects() -> void:
 	var bullet_instance = ability_handler.make_projectile(bullet, 
 	global_position, 
 	1,

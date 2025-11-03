@@ -59,5 +59,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		keybind_button.text = "[%s]" % event.as_text()
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
-		if description.visible:
-			_on_mouse_entered()
+		#if description.visible:
+		#	_on_mouse_entered()

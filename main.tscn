@@ -246,5 +246,3 @@ lifetime = 0.32
 visibility_rect = Rect2(-10000, -10000, 20000, 20000)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_0odxb")
-
-[connection signal="entity_death" from="." to="." method="check_finished"]

@@ -12,6 +12,6 @@ func crit_chance_modifiers(entity, modifiers) -> void:
 		if shocking_grasp and entity.health == entity.max_health:
 			ability_handler.apply_status(entity.ability_handler, "shock", 1)
 
-func damage_dealt_modifiers(_entity, modifiers, crits) -> void:
-	if crits > 0:
+func damage_dealt_modifiers(_entity, modifiers) -> void:
+	if modifiers.get("crits", 0) > 0:
 		modifiers["source"] += 5 * level
