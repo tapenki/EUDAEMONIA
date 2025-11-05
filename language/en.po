@@ -97,7 +97,7 @@ msgid "unlock_cost"
 msgstr "Cost: 1 Lucidae"
 
 msgid "dark_unlock_cost"
-msgstr "Cost: 50 Health"
+msgstr "Cost: 40 Health"
 
 msgid "learned"
 msgstr "Learned"
@@ -119,13 +119,13 @@ msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ch.2: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10]+[35xLEVEL][/outline_size] health, [outline_size=10]x[LEVEL][/outline_size] damage, and apply [outline_size=10]+[10xLEVEL][/outline_size] burn to nearby foes when killed."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10]+[35xLEVEL][/outline_size] health, [outline_size=10]x[LEVEL][/outline_size] damage, and apply [outline_size=10]+[10xLEVEL][/outline_size] burn to nearby foes when killed."
 
 msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ch.3: Melt[/outline_color]"
 
 msgid "melt_description"
-msgstr "Gain [outline_size=10]x[0.25xLEVELxSTACKS][/outline_size] damage against burning foes."
+msgstr "Gain [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning foes."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ch.4: Scorched Earth[/outline_color]"
@@ -181,7 +181,7 @@ msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ch.2: Snowball[/outline_color]"
 
 msgid "snowball_description"
-msgstr "Projectiles gain [outline_size=10]x[0.5xLEVEL][/outline_size] damage and [outline_size=10]x[1-0.5^LEVEL][/outline_size] size per second."
+msgstr "Projectiles gain [outline_size=10]x[0.5xLEVEL][/outline_size] bonus damage and [outline_size=10]x[1-0.5^LEVEL][/outline_size] bonus size per second."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ch.3: Frostbite[/outline_color]"
@@ -199,13 +199,13 @@ msgid "cryobombs_title"
 msgstr "[outline_color=#0000ff]Ch.5: Cryobombs[/outline_color]"
 
 msgid "cryobombs_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10]x[0.25xLEVEL][/outline_size] damage, store taken damage, and explode dealing [outline_size=10]+[STOREDDAMAGE][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10]x[0.25xLEVEL][/outline_size] damage, store taken damage, and explode dealing [outline_size=10]+[STOREDDAMAGE][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
 
 msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.5xSNOWBALLLEVEL][/outline_size] crit chance and status applied per second."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.5xSNOWBALLLEVEL][/outline_size] bonus crit chance and status applied per second."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
@@ -315,7 +315,7 @@ msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ch.5: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities and health bonuses."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Polymastery: Pain Walk[/outline_color]"
@@ -327,13 +327,13 @@ msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
 
 msgid "pressurized_quills_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
 
 msgid "multimold_title"
 msgstr "[outline_color=#0f9936]Mastery: Multimold[/outline_color]"
 
 msgid "multimold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
 
 # necromancy
 
@@ -365,7 +365,7 @@ msgid "bone_shield_title"
 msgstr "[outline_color=#cc00cc]Ch.4: Bone Shield[/outline_color]"
 
 msgid "bone_shield_description"
-msgstr "[outline_size=10]Upon day start:[/outline_size] Manifest a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health and [outline_size=10]x[LEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon day start:[/outline_size] Summon a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health and [outline_size=10]x[LEVEL][/outline_size] damage."
 
 msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ch.5: Dark Harvest[/outline_color]"
@@ -383,13 +383,13 @@ msgid "starvation_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"
 
 msgid "starvation_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon a creature dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon a creature dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] bonus damage."
 
 msgid "bone_spear_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
 
 msgid "bone_spear_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Manifest [outline_size=10]+[3][/outline_size] bone shields."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
 
 
 # spheres

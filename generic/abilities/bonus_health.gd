@@ -8,7 +8,5 @@ func _ready() -> void:
 func max_health_modifiers(modifiers) -> void:
 	modifiers["source"] += level
 
-func inherit(handler, tier):
-	if tier < 3:
-		return
-	super(handler, tier)
+func inherit(_handler, _tier):
+	return
