@@ -186,10 +186,7 @@ func check_finished(dying_entity):
 func travel(to_room, to_door):
 	for entity in get_node("/root/Main/Entities").get_children():
 		if entity is Player:
-			if RegionData.room_data[room].has("challenge"):
-				entity.ability_handler.upgrade("bonus_health", 10)
-			else:
-				entity.ability_handler.upgrade("bonus_health", 5)
+			entity.ability_handler.upgrade("bonus_health", 5)
 			entity.ability_handler.recover()
 		else:
 			entity.queue_free()

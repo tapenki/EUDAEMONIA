@@ -1,0 +1,19 @@
+extends Ability
+
+var base_texture = preload("res://equipment/armor/hermits_cloak/hermits_cloak.png")
+var hurt_texture = preload("res://equipment/armor/hermits_cloak/hermits_cloak_hurt.png")
+
+func _ready() -> void:
+	if ability_handler.type == "entity":
+		ability_handler.max_health_modifiers.connect(max_health_modifiers)
+		ability_handler.update_health.emit()
+		if ability_handler.owner is Player:
+			ability_handler.owner.sprite.texture = base_texture
+			ability_handler.owner.sprite.base_texture = base_texture
+			ability_handler.owner.sprite.hurt_texture = hurt_texture
+
+func max_health_modifiers(modifiers) -> void:
+	modifiers["multiplier"] *= 1.25
+
+func inherit(_handler, _tier):
+	return

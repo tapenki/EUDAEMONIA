@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b73lo0seio076"
-path="res://.godot/imported/player_hurt.png-ae529e2eedd041b5117beda1133883eb.ctex"
+uid="uid://bqtgqqufh61vr"
+path="res://.godot/imported/hermits_cloak.png-773cec51252cb024d409529f4382d38b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://generic/entities/player_hurt.png"
-dest_files=["res://.godot/imported/player_hurt.png-ae529e2eedd041b5117beda1133883eb.ctex"]
+source_file="res://equipment/armor/hermits_cloak/hermits_cloak.png"
+dest_files=["res://.godot/imported/hermits_cloak.png-773cec51252cb024d409529f4382d38b.ctex"]
 
 [params]
 

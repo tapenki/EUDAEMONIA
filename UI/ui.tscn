@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=36 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -18,8 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://ui/slider_setting.tscn" id="16_o2t6a"]
 [ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://ui/status_container.gd" id="16_s1k1p"]
 [ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://ui/toggle_setting.tscn" id="17_8gukh"]
+[ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://gear.png" id="17_bw7v0"]
+[ext_resource type="Script" uid="uid://b1e3hvb0r8fib" path="res://ui/word_wheel.gd" id="18_0avjw"]
 [ext_resource type="Script" uid="uid://byi7dd5lpcl53" path="res://ui/settings_tab_button.gd" id="18_8gkfd"]
 [ext_resource type="Script" uid="uid://cjfp8hq1cvmbj" path="res://ui/volume_slider_setting.gd" id="18_j5i65"]
+[ext_resource type="Script" uid="uid://detflvrwqig8" path="res://ui/control_spin.gd" id="18_rkf1o"]
 [ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="19_0tr35"]
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/keybind_setting.tscn" id="19_i1yd8"]
 
@@ -75,18 +78,19 @@ outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
 font_size = 40
 outline_size = 5
 outline_color = Color(0, 0.501961, 1, 1)
-stacked_outline_count = 1
-stacked_shadow_count = 2
-stacked_outline_0/size = 2
-stacked_shadow_0/offset = Vector2(1, 1)
-stacked_shadow_0/outline_size = 5
-stacked_shadow_1/offset = Vector2(1, 1)
-stacked_shadow_1/color = Color(0.11764706, 0.09019608, 1, 0.32156864)
-stacked_shadow_1/outline_size = 15
+shadow_color = Color(0, 0.5019608, 1, 1)
+shadow_offset = Vector2(3, 3)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3fg2"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0, 0.501961, 1, 1)
+shadow_color = Color(0, 0.5019608, 1, 1)
+shadow_offset = Vector2(3, 3)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2t6a"]
 font_size = 18
@@ -209,6 +213,7 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="HUD" type="Control" parent="."]
+visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -292,7 +297,6 @@ horizontal_alignment = 1
 script = ExtResource("3_g7pr5")
 
 [node name="Defeated" type="Label" parent="HUD"]
-visible = false
 z_index = -2
 layout_mode = 1
 anchors_preset = 5
@@ -341,6 +345,7 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="GameMenu" type="Control" parent="."]
+visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -519,7 +524,6 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="MainMenu" type="Control" parent="."]
-visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -535,6 +539,128 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
+
+[node name="Title" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 4.0
+offset_right = 161.0
+offset_bottom = 71.0
+grow_horizontal = 2
+text = "EUDAEMONIA"
+label_settings = SubResource("LabelSettings_c3fg2")
+horizontal_alignment = 1
+
+[node name="Gear1" type="TextureRect" parent="MainMenu/Title"]
+modulate = Color(0, 0, 0.09803922, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120, 120)
+texture = ExtResource("17_bw7v0")
+script = ExtResource("18_rkf1o")
+rotation_speed = -0.5
+
+[node name="Gear2" type="TextureRect" parent="MainMenu/Title"]
+modulate = Color(0, 0, 0.39215687, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 80)
+texture = ExtResource("17_bw7v0")
+script = ExtResource("18_rkf1o")
+rotation_speed = 0.5
+
+[node name="WordWheel1" type="Control" parent="MainMenu/Title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_0avjw")
+radius = 120
+rotation_speed = -0.8
+text = "AKRAMMACHAMAREI"
+text_color = Color(0, 0, 0.5882353, 1)
+outline_color = Color(0, 0, 0.19607843, 1)
+
+[node name="WordWheel2" type="Control" parent="MainMenu/Title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_0avjw")
+text = "ABLANATHANALBA"
+text_color = Color(0, 0.29411766, 1, 1)
+outline_color = Color(0, 0, 0.5882353, 1)
+
+[node name="Settings" type="Button" parent="MainMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "settings"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainMenu/Settings"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_o2jkc")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
 [node name="Settings" type="Control" parent="."]
 visible = false
@@ -781,6 +907,7 @@ patch_margin_bottom = 10
 [connection signal="pressed" from="GameMenu/Settings" to="." method="toggle_settings"]
 [connection signal="mouse_entered" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_exited"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="toggle_settings"]
 [connection signal="pressed" from="Settings/Back" to="." method="toggle_settings"]
 [connection signal="pressed" from="Settings/ToGeneral" to="Settings/ToGeneral" method="pressed"]
 [connection signal="pressed" from="Settings/ToKeybinds" to="Settings/ToKeybinds" method="pressed"]

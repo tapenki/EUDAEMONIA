@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var floating_text_font = preload("res://UI/damage_numbers_font.tres")
+@onready var floating_text_font = preload("res://ui/damage_numbers_font.tres")
 var floating_texts: Dictionary
 func floating_text(text_position: Vector2, text: String, color: Color):
 	var text_line = TextLine.new()
