@@ -107,6 +107,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TransitionFade" type="ColorRect" parent="."]
@@ -297,6 +298,7 @@ horizontal_alignment = 1
 script = ExtResource("3_g7pr5")
 
 [node name="Defeated" type="Label" parent="HUD"]
+visible = false
 z_index = -2
 layout_mode = 1
 anchors_preset = 5
@@ -397,6 +399,7 @@ script = ExtResource("10_0w6e5")
 layout_mode = 1
 offset_top = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 next = NodePath("../MagicPicker2")
 
 [node name="MagicPicker2" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
@@ -404,6 +407,7 @@ visible = false
 layout_mode = 1
 offset_top = 160.0
 offset_bottom = 160.0
+mouse_filter = 2
 next = NodePath("../MagicPicker3")
 
 [node name="MagicPicker3" parent="GameMenu" instance=ExtResource("6_6rr40")]
@@ -411,6 +415,7 @@ visible = false
 layout_mode = 1
 offset_top = 280.0
 offset_bottom = 280.0
+mouse_filter = 2
 
 [node name="Reset" type="Button" parent="GameMenu"]
 z_index = 1
@@ -626,6 +631,20 @@ text = "ABLANATHANALBA"
 text_color = Color(0, 0.29411766, 1, 1)
 outline_color = Color(0, 0, 0.5882353, 1)
 
+[node name="Version" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 77.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "ver"
+label_settings = SubResource("LabelSettings_4xnvd")
+script = ExtResource("10_0w6e5")
+
 [node name="Settings" type="Button" parent="MainMenu"]
 z_index = 1
 layout_mode = 1
@@ -656,6 +675,42 @@ offset_top = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_o2jkc")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Start" type="Button" parent="MainMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -79.0
+offset_right = -20.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "start_game"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainMenu/Start"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_0tr35")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10
 patch_margin_top = 10
@@ -768,6 +823,11 @@ size_flags_horizontal = 0
 text = "keybinds"
 label_settings = SubResource("LabelSettings_o2t6a")
 horizontal_alignment = 1
+
+[node name="Attack" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
+layout_mode = 2
+text = "attack_keybind"
+action = "attack"
 
 [node name="Up" parent="Settings/Keybinds" instance=ExtResource("19_i1yd8")]
 layout_mode = 2
@@ -908,6 +968,7 @@ patch_margin_bottom = 10
 [connection signal="mouse_entered" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_exited"]
 [connection signal="pressed" from="MainMenu/Settings" to="." method="toggle_settings"]
+[connection signal="pressed" from="MainMenu/Start" to="." method="toggle_main_menu"]
 [connection signal="pressed" from="Settings/Back" to="." method="toggle_settings"]
 [connection signal="pressed" from="Settings/ToGeneral" to="Settings/ToGeneral" method="pressed"]
 [connection signal="pressed" from="Settings/ToKeybinds" to="Settings/ToKeybinds" method="pressed"]

@@ -8,30 +8,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # ui
-msgid "menu"
-msgstr "Menu"
-
-msgid "continue"
-msgstr "Continue"
-
-msgid "start_day"
-msgstr "Start Day"
-
-msgid "end_day"
-msgstr "End Day"
-
-msgid "reset"
-msgstr "Reset"
-
-msgid "stats_title"
-msgstr "Base Stats"
-
-msgid "stats_description"
-msgstr "Attack damage: [outline_size=10]+[10][/outline_size][br]Crit chance: [outline_size=10]+[5]%[/outline_size][br]Move speed: [outline_size=10]+[450][/outline_size]""
-
-msgid "defeated"
-msgstr "died :("
-
 msgid "settings"
 msgstr "Settings"
 
@@ -65,6 +41,9 @@ msgstr "Damage Numbers:"
 msgid "keybinds"
 msgstr "Keybinds"
 
+msgid "attack_keybind"
+msgstr "Attack:"
+
 msgid "up_keybind"
 msgstr "Move up:"
 
@@ -79,6 +58,33 @@ msgstr "Move right:"
 
 msgid "pause_keybind"
 msgstr "Pause/Proceed:"
+
+msgid "start_game"
+msgstr "Start"
+
+msgid "menu"
+msgstr "Menu"
+
+msgid "continue"
+msgstr "Continue"
+
+msgid "start_day"
+msgstr "Start Day"
+
+msgid "end_day"
+msgstr "End Day"
+
+msgid "reset"
+msgstr "Reset"
+
+msgid "stats_title"
+msgstr "Base Stats"
+
+msgid "stats_description"
+msgstr "Attack damage: [outline_size=10]+[10][/outline_size][br]Crit chance: [outline_size=10]+[5]%[/outline_size][br]Move speed: [outline_size=10]+[450][/outline_size]""
+
+msgid "defeated"
+msgstr "died :("
 
 # paths
 msgid "upgrade_point_counter"

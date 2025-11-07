@@ -23,12 +23,13 @@ var base_values = {
 		"3/tertiary" = "ffff00",
 	},
 	"keybinds" : {
-		"up" : KEY_W,
-		"down" : KEY_S,
-		"left" : KEY_A,
-		"right" : KEY_D,
-		"pause" : KEY_ESCAPE,
-		"dark_harvest" : KEY_E,
+		"attack" : [1, 1],
+		"up" : [0, KEY_W],
+		"left" : [0, KEY_A],
+		"down" : [0, KEY_S],
+		"right" : [0, KEY_D],
+		"pause" : [0, KEY_ESCAPE],
+		"dark_harvest" : [0, KEY_E],
 	}
 }
 
@@ -47,9 +48,15 @@ func _init() -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), config.get_value("audio", "sfx_volume", 1))
 	
 	for action in config.get_section_keys("keybinds"):
-		var input_event = InputEventKey.new()
-		input_event.keycode = config.get_value("keybinds", action)
-		InputMap.action_add_event(action, input_event)
+		var value = config.get_value("keybinds", action)
+		if value[0] == 0:
+			var input_event = InputEventKey.new()
+			input_event.keycode = value[1]
+			InputMap.action_add_event(action, input_event)
+		else:
+			var input_event = InputEventMouseButton.new()
+			input_event.button_index = value[1]
+			InputMap.action_add_event(action, input_event)
 	
 	if should_save:
 		config.save("user://config.ini")

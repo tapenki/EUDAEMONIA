@@ -11,6 +11,7 @@
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.2
+mouse_filter = 2
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -32,46 +33,6 @@ autowrap_mode = 0
 horizontal_alignment = 1
 script = ExtResource("2_7ka4n")
 subject = "cryomancy"
-
-[node name="Abilities" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -322.0
-offset_top = -30.0
-offset_right = -6.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="BlueNeedle" parent="Abilities" instance=ExtResource("1_yxyri")]
-layout_mode = 2
-texture_normal = ExtResource("2_yxyri")
-subject = "blue_needle"
-
-[node name="Snowball" parent="Abilities" instance=ExtResource("1_yxyri")]
-layout_mode = 2
-texture_normal = ExtResource("2_yxyri")
-subject = "snowball"
-
-[node name="Frostbite" parent="Abilities" instance=ExtResource("1_yxyri")]
-layout_mode = 2
-texture_normal = ExtResource("2_yxyri")
-subject = "frostbite"
-
-[node name="Shatter" parent="Abilities" instance=ExtResource("1_yxyri")]
-layout_mode = 2
-texture_normal = ExtResource("2_yxyri")
-subject = "shatter"
-
-[node name="Cryobombs" parent="Abilities" instance=ExtResource("1_yxyri")]
-layout_mode = 2
-texture_normal = ExtResource("2_yxyri")
-subject = "cryobombs"
 
 [node name="Masteries" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -137,6 +98,46 @@ requires = {
 "shatter": 3
 }
 subject = "shard_blast"
+
+[node name="Abilities" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BlueNeedle" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "blue_needle"
+
+[node name="Snowball" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "snowball"
+
+[node name="Frostbite" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "frostbite"
+
+[node name="Shatter" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "shatter"
+
+[node name="Cryobombs" parent="Abilities" instance=ExtResource("1_yxyri")]
+layout_mode = 2
+texture_normal = ExtResource("2_yxyri")
+subject = "cryobombs"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

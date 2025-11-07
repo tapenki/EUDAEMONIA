@@ -33,6 +33,7 @@ func read():
 	get_node("/root/Main").day = save_data["day"]
 	get_node("/root/Main").room = save_data["room"]
 	get_node("/root/Main").door = save_data["door"]
+	get_node("/root/Main/UI").toggle_main_menu()
 	get_node("/root/Main/UI").unlock_points = save_data["unlock_points"]
 	get_node("/root/Main/UI").upgrade_points = save_data["upgrade_points"]
 	for path in save_data["paths"]:

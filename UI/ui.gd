@@ -4,15 +4,18 @@ extends Node
 
 @onready var main = get_node("/root/Main")
 
+@onready var main_menu = $"MainMenu"
+
+@onready var settings = $"Settings"
+@onready var settings_tab = $"Settings/General"
+@onready var settings_tab_button = $"Settings/ToGeneral"
+
 @onready var fade = $"TransitionFade"
 @onready var backdrop = $"Backdrop"
 
 @onready var proceed = $"HUD/Proceed"
 @onready var game_menu = $"GameMenu"
-
-@onready var settings = $"Settings"
-@onready var settings_tab = $"Settings/General"
-@onready var settings_tab_button = $"Settings/ToGeneral"
+@onready var hud = $"HUD"
 
 var keybind_setting: Node
 
@@ -32,12 +35,39 @@ func _ready() -> void:
 	player.ability_handler.self_death.connect(defeat)
 	toggle_pause(true)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed_by_event("pause", event):
+func _unhandled_input(event) -> void:
+	##is_action_just_pressed_by_event doesn't work with mouse buttons :(
+	if Input.is_action_just_pressed("pause") and event.is_action("pause"): 
 		if settings.visible:
 			toggle_settings()
-		else:
+			return
+		if not main_menu.visible:
 			toggle_game_menu()
+
+func toggle_main_menu():
+	if $"MainMenu".visible:
+		$"MainMenu".visible = false
+		$"MainMenu".process_mode = Node.PROCESS_MODE_DISABLED
+		$"GameMenu".visible = true
+		$"HUD".visible = true
+	$"TransitionFade".color = Color(0,0,0)
+	var tween = create_tween()
+	tween.tween_property($"TransitionFade", "color", Color(0,0,0,0), 0.4)
+
+func cancel_keybind():
+	if keybind_setting:
+		keybind_setting.keybind_button.button_pressed = false
+		keybind_setting = null
+
+func toggle_settings():
+	cancel_keybind()
+	if settings.visible:
+		settings.visible = false
+	else:
+		settings.visible = true
+	fade.color = Color(0,0,0)
+	var tween = create_tween()
+	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
 
 func toggle_pause(pause):
 	get_tree().paused = pause
@@ -61,21 +91,6 @@ func toggle_game_menu():
 		elif not main.game_over:
 			proceed.text = "continue"
 		toggle_pause(true)
-	fade.color = Color(0,0,0)
-	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
-
-func cancel_keybind():
-	if keybind_setting:
-		keybind_setting.keybind_button.button_pressed = false
-		keybind_setting = null
-
-func toggle_settings():
-	cancel_keybind()
-	if settings.visible:
-		settings.visible = false
-	else:
-		settings.visible = true
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)

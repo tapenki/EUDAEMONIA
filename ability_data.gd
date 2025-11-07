@@ -19,6 +19,12 @@ var path_data = {
 }
 
 var ability_data = {
+	#region weapons
+	"magic_missile" : {
+		"script" : preload("res://equipment/weapons/magic_missile.gd"),
+		"type" : "weapon"
+	},
+	#endregion
 	#region pyromancy
 	"ignition" : {
 		"script" : preload("res://paths/pyromancy/abilities/ignition.gd"),

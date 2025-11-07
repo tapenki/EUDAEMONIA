@@ -2,9 +2,8 @@ extends Ability
 
 var explosion_scene = preload("res://paths/necromancy/harvest_explosion.tscn")
 
-
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed_by_event("dark_harvest", event):
+	if Input.is_action_just_pressed("dark_harvest") and event.is_action("dark_harvest"):
 		var target
 		var to_target = INF
 		for entity in ability_handler.area_targets(get_global_mouse_position(), 9999, pow(2, ability_handler.owner.group-1)):

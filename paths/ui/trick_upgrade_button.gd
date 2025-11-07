@@ -17,7 +17,7 @@ func get_description():
 	return super().format({"keybind": keybind_button.text})
 
 func _ready() -> void:
-	set_process_unhandled_input(false)
+	set_process_input(false)
 	#rotation_degrees = randf_range(-5, 5)
 	symbol_label.text = name.substr(0, 2)
 	keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
@@ -41,7 +41,7 @@ func _on_pressed() -> void:
 			keybind_button.visible = true
 
 func toggle_keybind_input(toggled_on: bool) -> void:
-	set_process_unhandled_input(toggled_on)
+	set_process_input(toggled_on)
 	if toggled_on:
 		ui.cancel_keybind()
 		ui.keybind_setting = self
@@ -50,14 +50,24 @@ func toggle_keybind_input(toggled_on: bool) -> void:
 		keybind_button.get_node("NinePatchRect").texture = off
 		ui.keybind_setting = null
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
+		var new_event = InputEventKey.new()
+		new_event.keycode = event.keycode
 		InputMap.action_add_event(subject, event)
-		Config.config.set_value("keybinds", subject, event.keycode)
+		Config.config.set_value("keybinds", subject, [0, event.keycode])
 		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % event.as_text()
+		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
-		#if description.visible:
-		#	_on_mouse_entered()
+	if event is InputEventMouseButton and event.pressed:
+		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
+		var new_event = InputEventMouseButton.new()
+		new_event.button_index = event.button_index
+		InputMap.action_add_event(subject, new_event)
+		Config.config.set_value("keybinds", subject, [1, event.button_index])
+		Config.config.save("user://config.ini")
+		keybind_button.text = "[%s]" % new_event.as_text()
+		keybind_button.button_pressed = false
+		get_viewport().set_input_as_handled()

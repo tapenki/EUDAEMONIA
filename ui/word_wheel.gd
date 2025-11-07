@@ -20,7 +20,6 @@ func _ready() -> void:
 		var text_line = TextLine.new()
 		text_line.add_string(i, font, font_size)
 		letters.append(text_line)
-	letters.reverse()
 
 func _draw():
 	for i in letters.size():

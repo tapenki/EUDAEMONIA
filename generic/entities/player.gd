@@ -1,5 +1,7 @@
 class_name Player extends Entity
 
+var attacking: bool
+
 func _ready() -> void:
 	super()
 	$Sprite.modulate = Config.get_team_color(group, "primary")
@@ -7,7 +9,7 @@ func _ready() -> void:
 func _physics_process(_delta):
 	if not alive:
 		return
-	if Input.is_action_pressed("attack"):
+	if attacking:
 		var attack_direction = (get_global_mouse_position() - global_position).normalized()
 		ability_handler.attack.emit(attack_direction)
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -18,6 +20,13 @@ func _physics_process(_delta):
 	else:
 		animation_player.play("RESET")
 	super(_delta)
+
+func _unhandled_input(event: InputEvent) -> void:
+	 ##is_action_just_pressed_by_event doesn't work with mouse buttons :(
+	if Input.is_action_just_pressed("attack") and event.is_action("attack"):
+		attacking = true
+	if Input.is_action_just_released("attack") and event.is_action("attack"):
+		attacking = false
 
 func take_damage(source, damage, immune_affected = true):
 	var took_damage = super(source, damage, immune_affected)

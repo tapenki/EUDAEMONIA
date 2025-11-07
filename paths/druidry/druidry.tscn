@@ -11,6 +11,7 @@
 layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.2
+mouse_filter = 2
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -32,46 +33,6 @@ autowrap_mode = 0
 horizontal_alignment = 1
 script = ExtResource("2_xnxfu")
 subject = "druidry"
-
-[node name="Abilities" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -322.0
-offset_top = -30.0
-offset_right = -6.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="PrimalCasting" parent="Abilities" instance=ExtResource("2_o7hfy")]
-layout_mode = 2
-texture_normal = ExtResource("3_04yta")
-subject = "primal_casting"
-
-[node name="WroughtFlesh" parent="Abilities" instance=ExtResource("2_o7hfy")]
-layout_mode = 2
-texture_normal = ExtResource("3_04yta")
-subject = "wrought_flesh"
-
-[node name="TrailOfThorns" parent="Abilities" instance=ExtResource("2_o7hfy")]
-layout_mode = 2
-texture_normal = ExtResource("3_04yta")
-subject = "trail_of_thorns"
-
-[node name="QuillSpray" parent="Abilities" instance=ExtResource("2_o7hfy")]
-layout_mode = 2
-texture_normal = ExtResource("3_04yta")
-subject = "quill_spray"
-
-[node name="AnimatedClay" parent="Abilities" instance=ExtResource("2_o7hfy")]
-layout_mode = 2
-texture_normal = ExtResource("3_04yta")
-subject = "animated_clay"
 
 [node name="Masteries" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -137,6 +98,46 @@ requires = {
 "animated_clay": 5
 }
 subject = "multimold"
+
+[node name="Abilities" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PrimalCasting" parent="Abilities" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+subject = "primal_casting"
+
+[node name="WroughtFlesh" parent="Abilities" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+subject = "wrought_flesh"
+
+[node name="TrailOfThorns" parent="Abilities" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+subject = "trail_of_thorns"
+
+[node name="QuillSpray" parent="Abilities" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+subject = "quill_spray"
+
+[node name="AnimatedClay" parent="Abilities" instance=ExtResource("2_o7hfy")]
+layout_mode = 2
+texture_normal = ExtResource("3_04yta")
+subject = "animated_clay"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
