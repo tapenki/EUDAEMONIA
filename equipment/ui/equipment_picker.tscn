@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg830ii8c47r8"]
+
+[ext_resource type="Texture2D" uid="uid://hhfhujkknr05" path="res://equipment/ui/armor.png" id="1_c8l48"]
+[ext_resource type="Script" uid="uid://b1cp4eff14rup" path="res://equipment/ui/equipment_picker.gd" id="2_srhlf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_srhlf"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[node name="EquipmentPicker" type="TextureButton"]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+custom_minimum_size = Vector2(60, 60)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_c8l48")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_srhlf")
+
+[node name="Symbol" type="Label" parent="."]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+text = "?"
+label_settings = SubResource("LabelSettings_srhlf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

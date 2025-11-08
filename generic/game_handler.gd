@@ -167,7 +167,7 @@ func check_finished(dying_entity):
 		if not players_alive:
 			game_over = true
 			failed.emit()
-			Saver.erase()
+			Saver.erase_run()
 			#var tween = create_tween()
 			#tween.tween_property(camera, "zoom", Vector2(2, 2), 15)
 	elif not dying_entity.summoned: ## check wave progress
@@ -186,7 +186,7 @@ func check_finished(dying_entity):
 func travel(to_room, to_door):
 	for entity in get_node("/root/Main/Entities").get_children():
 		if entity is Player:
-			entity.ability_handler.upgrade("bonus_health", 5)
+			entity.ability_handler.upgrade("bonus_health", 4)
 			entity.ability_handler.recover()
 		else:
 			entity.queue_free()
@@ -200,7 +200,7 @@ func travel(to_room, to_door):
 	room = to_room
 	door = to_door
 	intermission.emit(day)
-	Saver.write()
+	Saver.write_run()
 
 ## special effects
 func play_sound(sound: String):

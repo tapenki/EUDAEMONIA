@@ -25,6 +25,16 @@ var ability_data = {
 		"type" : "weapon"
 	},
 	#endregion
+	#region armor
+	"hermits_cloak" : {
+		"script" : preload("res://equipment/armor/hermits_cloak/hermits_cloak.gd"),
+		"type" : "armor"
+	},
+	"mystic_robes" : {
+		"script" : preload("res://equipment/armor/mystic_robes/mystic_robes.gd"),
+		"type" : "armor"
+	},
+	#endregion
 	#region pyromancy
 	"ignition" : {
 		"script" : preload("res://paths/pyromancy/abilities/ignition.gd"),

@@ -86,6 +86,38 @@ msgstr "Attack damage: [outline_size=10]+[10][/outline_size][br]Crit chance: [ou
 msgid "defeated"
 msgstr "died :("
 
+# equipment
+
+msgid "weapons"
+msgstr "Weapons"
+
+msgid "armor"
+msgstr "Armor"
+
+msgid "tricks"
+msgstr "Tricks"
+
+msgid "selected"
+msgstr "Selected"
+
+# weapons
+
+# armor
+
+msgid "hermits_cloak_title"
+msgstr "[outline_color=#287828]Armor: Hermit's Cloak[/outline_color]"
+
+msgid "hermits_cloak_description"
+msgstr "Gain [outline_size=10]x[1.25][/outline_size] health."
+
+msgid "mystic_robes_title"
+msgstr "[outline_color=#287828]Armor: Mystic Robes[/outline_color]"
+
+msgid "mystic_robes_description"
+msgstr "Start with [outline_size=10]+[1][/outline_size] lucidae."
+
+# tricks
+
 # paths
 msgid "upgrade_point_counter"
 msgstr "Incrementos: %s"
@@ -103,7 +135,7 @@ msgid "unlock_cost"
 msgstr "Cost: 1 Lucidae"
 
 msgid "dark_unlock_cost"
-msgstr "Cost: 40 Health"
+msgstr "Cost: 32 Health"
 
 msgid "learned"
 msgstr "Learned"
@@ -303,7 +335,7 @@ msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ch.2: Wrought Flesh[/outline_color]"
 
 msgid "wrought_flesh_description"
-msgstr "You gain [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
+msgstr "You gain [outline_size=10]+[20xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
 
 msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ch.3: Trail of Thorns[/outline_color]"

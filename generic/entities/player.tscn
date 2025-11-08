@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://chjju7v5k68xm"]
+[gd_scene load_steps=15 format=3 uid="uid://chjju7v5k68xm"]
 
 [ext_resource type="Script" uid="uid://c1x0f286v1m8v" path="res://generic/entities/player.gd" id="1_bmx6j"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_m6exy"]
 [ext_resource type="Texture2D" uid="uid://bqtgqqufh61vr" path="res://equipment/armor/hermits_cloak/hermits_cloak.png" id="3_8dav1"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_prmdv"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="3_s1j76"]
-[ext_resource type="Script" uid="uid://dicq2uf40b0fc" path="res://equipment/weapons/magic_missile.gd" id="3_w3kts"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="4_5wsru"]
 [ext_resource type="Texture2D" uid="uid://b73lo0seio076" path="res://equipment/armor/hermits_cloak/hermits_cloak_hurt.png" id="5_lsmwm"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="8_3wbf3"]
@@ -99,10 +98,6 @@ inherited_crit_chance = {
 "source": 5.0
 }
 type = "entity"
-
-[node name="magic_missile" type="Node2D" parent="AbilityHandler"]
-script = ExtResource("3_w3kts")
-level = 1.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(0, 0.501961, 1, 1)

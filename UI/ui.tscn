@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=37 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://detflvrwqig8" path="res://ui/control_spin.gd" id="18_rkf1o"]
 [ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="19_0tr35"]
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/keybind_setting.tscn" id="19_i1yd8"]
+[ext_resource type="PackedScene" uid="uid://bg830ii8c47r8" path="res://equipment/ui/equipment_picker.tscn" id="21_fgtw6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs3jx"]
 
@@ -717,6 +718,58 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
+[node name="Armor" type="Control" parent="MainMenu"]
+anchors_preset = 0
+offset_left = 450.0
+offset_top = 450.0
+offset_right = 675.0
+offset_bottom = 575.0
+mouse_filter = 2
+
+[node name="Label" type="RichTextLabel" parent="MainMenu/Armor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("2_0w6e5")
+bbcode_enabled = true
+text = "armor"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Container" type="HBoxContainer" parent="MainMenu/Armor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -30.0
+offset_right = 158.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="hermits_cloak" parent="MainMenu/Armor/Container" instance=ExtResource("21_fgtw6")]
+layout_mode = 2
+type = "armor"
+subject = "hermits_cloak"
+
+[node name="mystic_robes" parent="MainMenu/Armor/Container" instance=ExtResource("21_fgtw6")]
+layout_mode = 2
+type = "armor"
+subject = "mystic_robes"
+
 [node name="Settings" type="Control" parent="."]
 visible = false
 z_index = 5
@@ -968,7 +1021,7 @@ patch_margin_bottom = 10
 [connection signal="mouse_entered" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_exited"]
 [connection signal="pressed" from="MainMenu/Settings" to="." method="toggle_settings"]
-[connection signal="pressed" from="MainMenu/Start" to="." method="toggle_main_menu"]
+[connection signal="pressed" from="MainMenu/Start" to="." method="start_run"]
 [connection signal="pressed" from="Settings/Back" to="." method="toggle_settings"]
 [connection signal="pressed" from="Settings/ToGeneral" to="Settings/ToGeneral" method="pressed"]
 [connection signal="pressed" from="Settings/ToKeybinds" to="Settings/ToKeybinds" method="pressed"]

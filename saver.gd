@@ -1,10 +1,29 @@
 extends Node
 
-func erase():
+func write_meta():
+	var save_data = {
+		"version" : ProjectSettings.get_setting("application/config/version"),
+		"weapon" : get_node("/root/Main/UI").weapon,
+		"armor" : get_node("/root/Main/UI").armor,
+	}
+	var save_file = FileAccess.open("user://meta_save", FileAccess.WRITE)
+	save_file.store_var(save_data)
+
+func read_meta():
+	if not FileAccess.file_exists("user://meta_save"):
+		return
+	var save_file = FileAccess.open("user://meta_save", FileAccess.READ)
+	var save_data = save_file.get_var()
+	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
+		return
+	get_node("/root/Main/UI").weapon = save_data["weapon"]
+	get_node("/root/Main/UI").armor = save_data["armor"]
+
+func erase_run():
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
 	save_file.store_var({"version" : ""})
 
-func write():
+func write_run():
 	if get_node("/root/Main").game_over:
 		return
 	var save_data = {
@@ -23,7 +42,7 @@ func write():
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
 	save_file.store_var(save_data)
 
-func read():
+func read_run():
 	if not FileAccess.file_exists("user://run_save"):
 		return
 	var save_file = FileAccess.open("user://run_save", FileAccess.READ)
@@ -46,4 +65,5 @@ func read():
 		get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
 
 func _ready():
-	read()
+	read_meta()
+	read_run()

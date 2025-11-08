@@ -4,8 +4,6 @@ extends TextureButton
 @onready var player = get_node("/root/Main/UI").player
 @onready var ability_handler = player.get_node("AbilityHandler")
 
-@onready var point_counter = $"../../../UpgradePoints"
-
 @onready var texture_rect1: = $"TextureRect1"
 @onready var texture_rect2: = $"TextureRect2"
 @onready var symbol_label: = $"Symbol"
@@ -51,9 +49,8 @@ func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and accessible:
 		var ability_node = ability_handler.get_node_or_null(subject)
 		if not ability_node:
-			ability_handler.upgrade("dark_price", 40)
+			ability_handler.upgrade("dark_price", 32)
 			ability_handler.upgrade(subject, 1)
-			point_counter.update()
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

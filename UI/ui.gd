@@ -19,6 +19,9 @@ extends Node
 
 var keybind_setting: Node
 
+var weapon = "magic_missile"
+var armor = "mystic_robes"
+
 var upgrade_points = 100
 var unlock_points = 100
 var paths: Array
@@ -53,6 +56,12 @@ func toggle_main_menu():
 	$"TransitionFade".color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property($"TransitionFade", "color", Color(0,0,0,0), 0.4)
+
+func start_run():
+	Saver.write_meta()
+	toggle_main_menu()
+	player.ability_handler.grant(weapon, 1)
+	player.ability_handler.grant(armor, 1)
 
 func cancel_keybind():
 	if keybind_setting:
@@ -106,5 +115,5 @@ func intermission(_day) -> void:
 	proceed.text = "start_day"
 
 func reset():
-	Saver.erase()
+	Saver.erase_run()
 	get_tree().reload_current_scene()
