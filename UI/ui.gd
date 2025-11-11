@@ -3,6 +3,7 @@ extends Node
 @export var player: Entity
 
 @onready var main = get_node("/root/Main")
+@onready var saver = get_node("/root/Main/Saver")
 
 @onready var main_menu = $"MainMenu"
 
@@ -58,10 +59,11 @@ func toggle_main_menu():
 	tween.tween_property($"TransitionFade", "color", Color(0,0,0,0), 0.4)
 
 func start_run():
-	Saver.write_meta()
+	saver.write_meta()
 	toggle_main_menu()
 	player.ability_handler.grant(weapon, 1)
 	player.ability_handler.grant(armor, 1)
+	$"GameMenu/Equipment".remload()
 
 func cancel_keybind():
 	if keybind_setting:
@@ -115,5 +117,5 @@ func intermission(_day) -> void:
 	proceed.text = "start_day"
 
 func reset():
-	Saver.erase_run()
+	saver.erase_run()
 	get_tree().reload_current_scene()

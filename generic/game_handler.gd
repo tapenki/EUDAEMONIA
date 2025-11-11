@@ -1,7 +1,9 @@
 extends Node
 
-@onready var player = get_node("/root/Main/Entities/Player")
 @onready var physics_space = get_viewport().world_2d.direct_space_state
+@onready var saver = $Saver
+
+@onready var player = get_node("/root/Main/Entities/Player")
 
 @onready var particles = $Particles
 
@@ -167,7 +169,7 @@ func check_finished(dying_entity):
 		if not players_alive:
 			game_over = true
 			failed.emit()
-			Saver.erase_run()
+			saver.erase_run()
 			#var tween = create_tween()
 			#tween.tween_property(camera, "zoom", Vector2(2, 2), 15)
 	elif not dying_entity.summoned: ## check wave progress
@@ -200,7 +202,7 @@ func travel(to_room, to_door):
 	room = to_room
 	door = to_door
 	intermission.emit(day)
-	Saver.write_run()
+	saver.write_run()
 
 ## special effects
 func play_sound(sound: String):

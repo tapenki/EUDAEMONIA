@@ -2,7 +2,6 @@ extends Node
 
 func write_meta():
 	var save_data = {
-		"version" : ProjectSettings.get_setting("application/config/version"),
 		"weapon" : get_node("/root/Main/UI").weapon,
 		"armor" : get_node("/root/Main/UI").armor,
 	}
@@ -14,10 +13,10 @@ func read_meta():
 		return
 	var save_file = FileAccess.open("user://meta_save", FileAccess.READ)
 	var save_data = save_file.get_var()
-	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
-		return
-	get_node("/root/Main/UI").weapon = save_data["weapon"]
-	get_node("/root/Main/UI").armor = save_data["armor"]
+	if AbilityData.ability_data.has(save_data["weapon"]):
+		get_node("/root/Main/UI").weapon = save_data["weapon"]
+	if AbilityData.ability_data.has(save_data["armor"]):
+		get_node("/root/Main/UI").armor = save_data["armor"]
 
 func erase_run():
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)

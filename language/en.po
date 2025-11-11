@@ -81,12 +81,15 @@ msgid "stats_title"
 msgstr "Base Stats"
 
 msgid "stats_description"
-msgstr "Attack damage: [outline_size=10]+[10][/outline_size][br]Crit chance: [outline_size=10]+[5]%[/outline_size][br]Move speed: [outline_size=10]+[450][/outline_size]""
+msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[450][/outline_size].""
 
 msgid "defeated"
 msgstr "died :("
 
 # equipment
+
+msgid "equipment"
+msgstr "Equipment"
 
 msgid "weapons"
 msgstr "Weapons"
@@ -102,6 +105,12 @@ msgstr "Selected"
 
 # weapons
 
+msgid "magic_missile_title"
+msgstr "[outline_color=#BF4040]Weapon: Magic Missile[/outline_color]"
+
+msgid "magic_missile_description"
+msgstr "The baseline.[br]Speed: [outline_size=10][600][/outline_size].[br]Duration: [outline_size=10][2][/outline_size] seconds.[br]Cooldown: [outline_size=10][0.35][/outline_size] seconds."
+
 # armor
 
 msgid "hermits_cloak_title"
@@ -115,6 +124,12 @@ msgstr "[outline_color=#287828]Armor: Mystic Robes[/outline_color]"
 
 msgid "mystic_robes_description"
 msgstr "Start with [outline_size=10]+[1][/outline_size] lucidae."
+
+msgid "cursemail_title"
+msgstr "[outline_color=#287828]Armor: Cursemail[/outline_color]"
+
+msgid "cursemail_description"
+msgstr "Take [outline_size=10]x[0.5][/outline_size] less damage.[br][outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
 
 # tricks
 
@@ -194,7 +209,6 @@ msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
 
 msgid "fiery_rebirth_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[10xFROMASHESLEVEL][/outline_size] burn to all enemies then double their burn."
-
 
 msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
@@ -347,7 +361,7 @@ msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ch.4: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon your taking damage:[/outline_size] Deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] You deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ch.5: Animated Clay[/outline_color]"

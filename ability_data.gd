@@ -21,7 +21,11 @@ var path_data = {
 var ability_data = {
 	#region weapons
 	"magic_missile" : {
-		"script" : preload("res://equipment/weapons/magic_missile.gd"),
+		"script" : preload("res://equipment/weapons/magic_missile/magic_missile.gd"),
+		"type" : "weapon"
+	},
+	"trick_bullets" : {
+		"script" : preload("res://equipment/weapons/trick_bullets/trick_bullets.gd"),
 		"type" : "weapon"
 	},
 	#endregion
@@ -32,6 +36,10 @@ var ability_data = {
 	},
 	"mystic_robes" : {
 		"script" : preload("res://equipment/armor/mystic_robes/mystic_robes.gd"),
+		"type" : "armor"
+	},
+	"cursemail" : {
+		"script" : preload("res://equipment/armor/cursemail/cursemail.gd"),
 		"type" : "armor"
 	},
 	#endregion

@@ -8,7 +8,7 @@ extends Described
 var selected: bool
 
 func _ready() -> void:
-	symbol_label.text = name.substr(0, 2)
+	symbol_label.text = name.substr(0, 2).capitalize()
 	if ui[type] == subject:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://defo0ssov0anv"]
+[gd_scene load_steps=34 format=3 uid="uid://defo0ssov0anv"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://ui/ui.tscn" id="2_kek77"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/pyromancy/flame.png" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_82xsv"]
 [ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/electromancy/zap.png" id="20_82xsv"]
+[ext_resource type="Script" uid="uid://dkd8kokuj05rb" path="res://saver.gd" id="21_getpj"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -134,6 +135,9 @@ shader_parameter/scale_curve = SubResource("CurveTexture_1u8w0")
 [node name="Main" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_5vw27")
+
+[node name="Saver" type="Node" parent="."]
+script = ExtResource("21_getpj")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_kek77")]
 player = NodePath("../Entities/Player")

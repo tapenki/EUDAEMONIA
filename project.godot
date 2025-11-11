@@ -30,7 +30,6 @@ boot_splash/rendering_method.web="gl_compatibility"
 AbilityData="*res://ability_data.gd"
 RegionData="*res://region_data.gd"
 Config="*res://config.gd"
-Saver="*res://saver.gd"
 
 [debug]
 
