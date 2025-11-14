@@ -1,13 +1,17 @@
 class_name ScaledTimer extends Node
 
 @export var wait_time = 1.0
-@onready var time_left = wait_time
+@onready var time_left = 0.0
 
 @export var one_shot = true
 @export var running = false
 @export var ability_handler: Node
 
 signal timeout()
+
+func _ready() -> void:
+	if running:
+		time_left = wait_time
 
 func _process(delta: float) -> void:
 	if running:

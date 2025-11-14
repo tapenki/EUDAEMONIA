@@ -27,7 +27,7 @@ func _physics_process(_delta):
 		#i.queue_free()
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_handler.find_target()
-	if not is_instance_valid(state_handler.target):
+	if not is_instance_valid(state_handler.target) or user.knockback_timer.running:
 		if user.animation_player.current_animation == "WALK":
 			user.animation_player.stop()
 		return
@@ -69,7 +69,7 @@ func _physics_process(_delta):
 	
 	direction = user.global_position.direction_to(path[0])
 	
-	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
+	var final_speed = user.ability_handler.get_move_speed(speed)
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
 	
 	var avoid = avoidance()

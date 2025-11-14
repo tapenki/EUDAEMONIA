@@ -42,7 +42,7 @@ func on_enter() -> void:
 	state_handler.target = null
 
 func _physics_process(delta):
-	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
+	var final_speed = user.ability_handler.get_move_speed(speed)
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.2)
 	user.still = false
 	if user.is_on_wall():

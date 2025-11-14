@@ -9,8 +9,12 @@ extends State
 
 var direction: Vector2
 
+var knockback_affect: float
+
 func on_enter() -> void:
 	super()
+	knockback_affect = user.knockback_affect
+	user.knockback_affect = 0
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_handler.find_target()
 	
@@ -47,7 +51,7 @@ func on_enter() -> void:
 	state_handler.target = null
 
 func _physics_process(_delta):
-	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
+	var final_speed = user.ability_handler.get_move_speed(speed)
 	if user.is_on_wall():
 		user.velocity = Vector2()
 		direction = direction.bounce(user.get_last_slide_collision().get_normal())
@@ -59,6 +63,7 @@ func _on_timer_timeout() -> void:
 	state_handler.change_state(next)
 
 func on_exit() -> void:
-	user.velocity = Vector2()
+	user.knockback_affect = knockback_affect
+	user.velocity *= 0.25
 	user.wall_min_slide_angle = 0
 	super()

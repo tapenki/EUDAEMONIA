@@ -12,19 +12,21 @@ class_name Entity extends CharacterBody2D
 
 var immune_timer = ScaledTimer.new()
 @export var immune_duration: float = 0
+var knockback_timer = ScaledTimer.new()
+@export var knockback_affect: float = 1.0
 @export_category("tags")
 @export var group: int
 @export var summoned: bool
 var target
 
 var alive = true
-
 var still = true
 
 func _ready() -> void:
 	immune_timer.ability_handler = ability_handler
-	immune_timer.wait_time = 0
 	add_child(immune_timer)
+	knockback_timer.ability_handler = ability_handler
+	add_child(knockback_timer)
 
 func kill(modifiers = {}):
 	if alive:
@@ -73,12 +75,21 @@ func _physics_process(delta):
 	movement(delta)
 
 func movement(_delta):
-	if still:
-		velocity = lerp(velocity, Vector2(), 0.5)
+	if knockback_timer.running:
+		if is_on_wall():
+			velocity = velocity.bounce(get_last_slide_collision().get_normal()) * 0.5
+			knockback_timer.start(knockback_timer.time_left * 0.5)
+		velocity = lerp(velocity, Vector2(), 0.2)
 	else:
-		still = true
+		if still:
+			velocity = lerp(velocity, Vector2(), 0.5)
+		else:
+			still = true
 	var old_position = global_position
+	var old_velocity = velocity
+	velocity *= ability_handler.speed_scale
 	move_and_slide()
+	velocity = old_velocity
 	ability_handler.movement.emit(old_position.distance_to(global_position))
 
 func animation_finished(anim_name: StringName) -> void:

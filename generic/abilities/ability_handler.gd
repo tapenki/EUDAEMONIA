@@ -115,7 +115,20 @@ func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier
 			damage_text += "!"
 		var damage_color = Config.get_team_color(owner.group, "secondary")
 		get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), damage_text, damage_color)
+	if damage.has("direction"):
+		apply_knockback(entity, damage["direction"])
 	return damage
+
+func apply_knockback(entity: Entity, direction: Vector2, intensity = 1.0):
+	intensity *= entity.knockback_affect
+	if intensity == 0:
+		return
+	var duration = 0.1*intensity
+	if entity.knockback_timer.time_left < duration:
+		entity.knockback_timer.start(duration)
+	var knockback_velocity = direction * 1500 * (1 - pow(0.5, intensity))
+	var max_length = max(knockback_velocity.length(), entity.velocity.length())
+	entity.velocity += knockback_velocity * (entity.velocity - knockback_velocity).limit_length(max_length).length()/max_length
 
 ## targeting
 func get_enemy_group():

@@ -45,7 +45,9 @@ func _unhandled_input(event) -> void:
 		if settings.visible:
 			toggle_settings()
 			return
-		if not main_menu.visible:
+		if main_menu.visible:
+			start_run()
+		else:
 			toggle_game_menu()
 
 func toggle_main_menu():
