@@ -518,3 +518,11 @@ msgstr "*You shall perish*"
 
 msgid "harbinger_death_1"
 msgstr "*Woe is me*"
+
+# inputstrings
+
+msgid "[Right Mouse Button]"
+msgstr "[RMB]"
+
+msgid "[Left Mouse Button]"
+msgstr "[LMB]"
