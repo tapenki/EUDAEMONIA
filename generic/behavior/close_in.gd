@@ -28,7 +28,6 @@ func _physics_process(_delta):
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_handler.find_target()
 	if not is_instance_valid(state_handler.target):
-		user.velocity = lerp(user.velocity, Vector2(), 0.5)
 		if user.animation_player.current_animation == "WALK":
 			user.animation_player.stop()
 		return
@@ -58,7 +57,6 @@ func _physics_process(_delta):
 	var path = get_node("/root/Main").pathfind(user.global_position, state_handler.target.global_position)
 	
 	if path.size() == 0:
-		user.velocity = lerp(user.velocity, Vector2(), 0.5)
 		if user.animation_player.current_animation == "WALK":
 			user.animation_player.stop()
 		return
@@ -79,3 +77,4 @@ func _physics_process(_delta):
 		var avoid_direction = avoid.global_position.direction_to(user.global_position)
 		user.velocity = lerp(user.velocity, avoid_direction * final_speed, 0.075)
 	user.animation_player.play("WALK")
+	user.still = false

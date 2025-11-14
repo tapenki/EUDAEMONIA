@@ -10,7 +10,6 @@ func remload():
 	for i in player.ability_handler.get_children():
 		if AbilityData.ability_data.has(i.name) and (AbilityData.ability_data[i.name].type == "weapon" or AbilityData.ability_data[i.name].type == "armor"):
 			var reminder_instance = reminder.instantiate()
-			reminder_instance.name = i.name
 			reminder_instance.subject = i.name
 			if AbilityData.ability_data[i.name].type == "weapon":
 				reminder_instance.texture_normal = weapon_texture

@@ -1,7 +1,5 @@
 extends Ability
 
-var charge = 0
-
 func _ready() -> void:
 	ability_handler.move_speed_modifiers.connect(move_speed_modifiers)
 	ability_handler.immune_duration_modifiers.connect(immune_duration_modifiers)

@@ -24,6 +24,14 @@ var ability_data = {
 		"script" : preload("res://equipment/weapons/magic_missile/magic_missile.gd"),
 		"type" : "weapon"
 	},
+	"star_blaze" : {
+		"script" : preload("res://equipment/weapons/star_blaze/star_blaze.gd"),
+		"type" : "weapon"
+	},
+	"category_one" : {
+		"script" : preload("res://equipment/weapons/category_one/category_one.gd"),
+		"type" : "weapon"
+	},
 	"trick_bullets" : {
 		"script" : preload("res://equipment/weapons/trick_bullets/trick_bullets.gd"),
 		"type" : "weapon"

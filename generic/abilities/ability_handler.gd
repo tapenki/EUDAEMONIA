@@ -103,7 +103,7 @@ func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "mu
 		crits += 1
 	return crits
 
-func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1}):
+func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1, "direction" : Vector2()}):
 	var crits = get_crits(entity)
 	damage["crits"] = crits
 	get_damage_dealt(entity, damage)

@@ -17,9 +17,12 @@ func _physics_process(delta):
 	for body in get_overlapping_bodies():
 		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
 			exclude[body] = hit_delay
-			var damage = ability_handler.deal_damage(body)
+			var damage = ability_handler.deal_damage(body, {"source" : 0, "multiplier" : 1, "direction" : get_knockback_direction(body)})
 			on_collision(body.global_position, body, damage["crits"])
 	for body in exclude.keys():
 		exclude[body] -= delta * ability_handler.speed_scale
 		if exclude[body] <= 0:
 			exclude.erase(body)
+
+func get_knockback_direction(target):
+	return lerp(ability_handler.owner.velocity, global_position.direction_to(target.global_position), 1/max(ability_handler.owner.velocity.length()*0.01, 1)).normalized()

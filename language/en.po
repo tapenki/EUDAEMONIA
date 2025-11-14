@@ -109,7 +109,13 @@ msgid "magic_missile_title"
 msgstr "[outline_color=#BF4040]Weapon: Magic Missile[/outline_color]"
 
 msgid "magic_missile_description"
-msgstr "The baseline.[br]Speed: [outline_size=10][600][/outline_size].[br]Duration: [outline_size=10][2][/outline_size] seconds.[br]Cooldown: [outline_size=10][0.35][/outline_size] seconds."
+msgstr "Speed: [outline_size=10][600][/outline_size].[br]Duration: [outline_size=10][2][/outline_size] seconds.[br]Cooldown: [outline_size=10][0.35][/outline_size] seconds.[br]The baseline."
+
+msgid "star_blaze_title"
+msgstr "[outline_color=#BF4040]Weapon: Star Blaze[/outline_color]"
+
+msgid "star_blaze_description"
+msgstr "Cooldown: [outline_size=10][0.8][/outline_size] seconds.[br]Projectiles explode on contact.[br]"
 
 # armor
 

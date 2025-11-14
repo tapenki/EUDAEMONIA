@@ -19,6 +19,8 @@ var target
 
 var alive = true
 
+var still = true
+
 func _ready() -> void:
 	immune_timer.ability_handler = ability_handler
 	immune_timer.wait_time = 0
@@ -71,6 +73,10 @@ func _physics_process(delta):
 	movement(delta)
 
 func movement(_delta):
+	if still:
+		velocity = lerp(velocity, Vector2(), 0.5)
+	else:
+		still = true
 	var old_position = global_position
 	move_and_slide()
 	ability_handler.movement.emit(old_position.distance_to(global_position))

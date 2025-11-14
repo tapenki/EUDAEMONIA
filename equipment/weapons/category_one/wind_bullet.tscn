@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://c37msytxwcoye"]
+
+[ext_resource type="Script" uid="uid://bwptkd7u32hnh" path="res://equipment/weapons/category_one/wind_bullet.gd" id="1_1ypef"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_sk0lo"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_25fl6"]
+[ext_resource type="Texture2D" uid="uid://cfsa7fnxns4dp" path="res://equipment/weapons/category_one/wind_bullet.png" id="4_l2gon"]
+[ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_x64r6"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_pafch"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_4ijtd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 12.0
+
+[node name="BouncingBullet" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+z_index = 1
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_1ypef")
+ability_handler = NodePath("AbilityHandler")
+hit_walls = true
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_sk0lo")
+type = "projectile"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("3_25fl6")
+texture = ExtResource("4_l2gon")
+script = ExtResource("5_x64r6")
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_pafch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("7_4ijtd")
+wait_time = 3.0
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

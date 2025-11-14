@@ -52,6 +52,7 @@ func _physics_process(_delta):
 		user.velocity = Vector2()
 		direction = direction.bounce(user.get_last_slide_collision().get_normal())
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.25)
+	user.still = false
 
 func _on_timer_timeout() -> void:
 	#user.ability_handler.attack.emit(direction)

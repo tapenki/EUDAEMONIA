@@ -2,8 +2,6 @@ extends Projectile
 
 var wobble = 0
 
-func movement(delta):
-	var old_position = global_position
+func calculate_movement(delta):
 	wobble += delta * ability_handler.speed_scale * 10
-	translate((velocity * delta * ability_handler.speed_scale).rotated(sin(wobble)*0.75))
-	ability_handler.movement.emit(old_position.distance_to(global_position))
+	return global_position + (velocity * delta * ability_handler.speed_scale).rotated(sin(wobble)*0.75)

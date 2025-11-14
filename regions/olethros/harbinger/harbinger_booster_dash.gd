@@ -44,6 +44,7 @@ func on_enter() -> void:
 func _physics_process(delta):
 	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.2)
+	user.still = false
 	if user.is_on_wall():
 		for i in user.get_slide_collision_count():
 			var collision = user.get_slide_collision(i)

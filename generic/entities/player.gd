@@ -13,9 +13,10 @@ func _physics_process(_delta):
 		var attack_direction = (get_global_mouse_position() - global_position).normalized()
 		ability_handler.attack.emit(attack_direction)
 	var direction = Input.get_vector("left", "right", "up", "down")
-	var speed = ability_handler.get_move_speed(450) * ability_handler.speed_scale
-	velocity = lerp(velocity, direction * speed, 0.2)
-	if direction.length() > 0:
+	if direction:
+		still = false
+		var speed = ability_handler.get_move_speed(450) * ability_handler.speed_scale
+		velocity = lerp(velocity, direction * speed, 0.2)
 		animation_player.play("WALK")
 	else:
 		animation_player.play("RESET")
