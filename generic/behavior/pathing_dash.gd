@@ -9,12 +9,8 @@ extends State
 
 var direction: Vector2
 
-var knockback_affect: float
-
 func on_enter() -> void:
 	super()
-	knockback_affect = user.knockback_affect
-	user.knockback_affect = 0
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_handler.find_target()
 	
@@ -63,7 +59,6 @@ func _on_timer_timeout() -> void:
 	state_handler.change_state(next)
 
 func on_exit() -> void:
-	user.knockback_affect = knockback_affect
 	user.velocity *= 0.25
 	user.wall_min_slide_angle = 0
 	super()

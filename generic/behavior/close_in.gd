@@ -27,7 +27,7 @@ func _physics_process(_delta):
 		#i.queue_free()
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_handler.find_target()
-	if not is_instance_valid(state_handler.target) or user.knockback_timer.running:
+	if not is_instance_valid(state_handler.target):# or user.knockback_timer.running:
 		if user.animation_player.current_animation == "WALK":
 			user.animation_player.stop()
 		return

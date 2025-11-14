@@ -1,6 +1,6 @@
 extends Ability
 
-var bullet = preload("res://generic/projectiles/bullet.tscn")
+var bullet = preload("res://equipment/weapons/gale_rend/wind_bullet.tscn")
 const bullet_count = 4
 const spread = 60
 const wait_time = 0.7
@@ -28,7 +28,7 @@ func fire(direction):
 		2,
 		direction.rotated(randf_range(-halfspan, halfspan)) * bullet_speed * liferangemult)
 		bullet_instance.ability_handler.inherited_damage["multiplier"] *= 0.5
-		bullet_instance.get_node("Lifetime").wait_time = 0.5 * liferangemult
+		bullet_instance.get_node("Lifetime").wait_time *= liferangemult
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 	
 	get_node("/root/Main").play_sound("HurtLight")

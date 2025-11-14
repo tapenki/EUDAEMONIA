@@ -816,11 +816,11 @@ texture_normal = ExtResource("22_br2v7")
 type = "weapon"
 subject = "star_blaze"
 
-[node name="category_one" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
+[node name="gale_rend" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
 layout_mode = 2
 texture_normal = ExtResource("22_br2v7")
 type = "weapon"
-subject = "category_one"
+subject = "gale_rend"
 
 [node name="trick_bullets" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
 visible = false

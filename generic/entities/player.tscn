@@ -90,7 +90,6 @@ animation_player = NodePath("AnimationPlayer")
 max_health = 60
 health = 60.0
 immune_duration = 0.2
-knockback_affect = 0.2
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_m6exy")

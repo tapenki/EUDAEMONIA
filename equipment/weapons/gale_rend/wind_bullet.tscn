@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://c37msytxwcoye"]
 
-[ext_resource type="Script" uid="uid://bwptkd7u32hnh" path="res://equipment/weapons/category_one/wind_bullet.gd" id="1_1ypef"]
+[ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_5khav"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_sk0lo"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_25fl6"]
-[ext_resource type="Texture2D" uid="uid://cfsa7fnxns4dp" path="res://equipment/weapons/category_one/wind_bullet.png" id="4_l2gon"]
+[ext_resource type="Texture2D" uid="uid://cfsa7fnxns4dp" path="res://equipment/weapons/gale_rend/wind_bullet.png" id="4_l2gon"]
 [ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_x64r6"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_pafch"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_4ijtd"]
@@ -11,12 +11,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 12.0
 
-[node name="BouncingBullet" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+[node name="WindBullet" type="Area2D" node_paths=PackedStringArray("ability_handler")]
 z_index = 1
 collision_layer = 0
-collision_mask = 0
-monitoring = false
-script = ExtResource("1_1ypef")
+collision_mask = 128
+script = ExtResource("1_5khav")
 ability_handler = NodePath("AbilityHandler")
 hit_walls = true
 
@@ -39,7 +38,7 @@ shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("7_4ijtd")
-wait_time = 3.0
+wait_time = 0.6
 running = true
 ability_handler = NodePath("../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

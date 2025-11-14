@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfsa7fnxns4dp"
-path="res://.godot/imported/wind_bullet.png-51ad76c7857b821d341f88a81c8b611c.ctex"
+path="res://.godot/imported/wind_bullet.png-07dade55558f93dfffc47294233a3a8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://equipment/weapons/category_one/wind_bullet.png"
-dest_files=["res://.godot/imported/wind_bullet.png-51ad76c7857b821d341f88a81c8b611c.ctex"]
+source_file="res://equipment/weapons/gale_rend/wind_bullet.png"
+dest_files=["res://.godot/imported/wind_bullet.png-07dade55558f93dfffc47294233a3a8a.ctex"]
 
 [params]
 

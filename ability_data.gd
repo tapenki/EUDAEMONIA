@@ -28,8 +28,8 @@ var ability_data = {
 		"script" : preload("res://equipment/weapons/star_blaze/star_blaze.gd"),
 		"type" : "weapon"
 	},
-	"category_one" : {
-		"script" : preload("res://equipment/weapons/category_one/category_one.gd"),
+	"gale_rend" : {
+		"script" : preload("res://equipment/weapons/gale_rend/gale_rend.gd"),
 		"type" : "weapon"
 	},
 	"trick_bullets" : {
