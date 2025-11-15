@@ -82,6 +82,7 @@ var room_data = {
 		"scene" : preload("res://regions/aporia/rooms/aporia_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
 		"region" : "aporia",
+		"challenge" : true,
 	},
 	#endregion
 	#region olethros
@@ -109,6 +110,7 @@ var room_data = {
 		"scene" : preload("res://regions/olethros/rooms/olethros_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
 		"region" : "olethros",
+		"challenge" : true,
 	},
 	#endregion
 }
