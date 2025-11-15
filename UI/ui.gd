@@ -66,6 +66,7 @@ func start_run():
 	player.ability_handler.grant(weapon, 1)
 	player.ability_handler.grant(armor, 1)
 	$"GameMenu/Equipment".remload()
+	get_node("/root/Main").game_start.emit()
 
 func cancel_keybind():
 	if keybind_setting:

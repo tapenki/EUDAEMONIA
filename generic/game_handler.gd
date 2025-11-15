@@ -37,6 +37,8 @@ signal day_start(day: int)
 signal day_cleared(day: int)
 signal intermission(day: int)
 
+signal game_start()
+
 signal failed()
 
 ### methods
