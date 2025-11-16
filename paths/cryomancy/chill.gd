@@ -1,16 +1,22 @@
 extends Ability
 
 var particle_scene = preload("res://paths/cryomancy/snow.tscn")
-var particle_instance
+var particle_instances: Array
 var duration_timer = Timer.new()
 
 func _ready() -> void:
 	duration_timer.timeout.connect(clear)
 	add_child(duration_timer)
 	duration_timer.start(0.75 * level)
-	particle_instance = particle_scene.instantiate()
-	particle_instance.modulate = Config.get_team_color(1, "secondary")
-	add_child.call_deferred(particle_instance)
+	for i in ability_handler.owner.prestidigitate():
+		var particle_instance = particle_scene.instantiate()
+		particle_instance.modulate = Config.get_team_color(1, "secondary")
+		particle_instance.position = i.position
+		particle_instance.process_material.emission_box_extents.x = i.size.x * 0.5
+		particle_instance.process_material.emission_box_extents.y = i.size.y * 0.5
+		particle_instance.amount = max(particle_instance.amount * i.size.x * i.size.y * 0.0005, 1)
+		particle_instances.append(particle_instance)
+		add_child.call_deferred(particle_instance)
 	ability_handler.inh_speed_scale_modifiers.connect(inh_speed_scale_modifiers)
 
 func inh_speed_scale_modifiers(modifiers) -> void:
@@ -28,8 +34,9 @@ func add_level(value):
 		call_deferred("offset")
 
 func kill():
-	if particle_instance.is_inside_tree():
-		particle_instance.parent_died()
+	for i in particle_instances:
+		if i.is_inside_tree():
+			i.self_death()
 	super()
 
 func inherit(_handler, _tier):

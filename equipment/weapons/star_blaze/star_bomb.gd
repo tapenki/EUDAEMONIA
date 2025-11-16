@@ -11,8 +11,6 @@ func death_effects() -> void:
 	1)
 	splosion_instance.scale_multiplier += (hits_left-1)*0.5
 	get_node("/root/Main/Projectiles").add_child(splosion_instance)
-	get_node("Sprite/Trail").modulate = get_node("Sprite").modulate
-	get_node("Sprite/Trail").parent_died()
 
 func on_hit(crits):
 	on_collision(crits)

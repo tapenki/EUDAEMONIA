@@ -34,11 +34,5 @@ func intermission(_day: int) -> void:
 	for projectile in anchor_node.get_children():
 		projectile.queue_free()
 
-func kill():
-	for projectile in anchor_node.get_children():
-		projectile.get_node("Sprite/Charge").modulate = projectile.get_node("Sprite").modulate
-		projectile.get_node("Sprite/Charge").parent_died()
-	super()
-
 func inherit(_handler, _tier):
 	return

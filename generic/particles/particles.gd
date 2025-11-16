@@ -1,9 +1,15 @@
 extends GPUParticles2D
 
 @onready var timer = $Lifetime
+@export var ability_handler: Node
 
-func parent_died():
+func _ready() -> void:
+	if ability_handler:
+		ability_handler.self_death.connect(self_death)
+
+func self_death():
 	kill()
+	modulate *= get_parent().modulate
 	reparent(get_tree().current_scene)
 
 func kill():
