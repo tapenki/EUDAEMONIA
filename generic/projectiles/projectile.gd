@@ -61,9 +61,9 @@ func movement(new_position):
 
 func on_collision(crits: int):
 	if hit_particles:
-		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + hit_particles), 4, global_position, scale.x, get_node("Sprite").modulate)
+		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + hit_particles), 4, global_position, scale.x, get_node("Sprite").self_modulate)
 	if crits > 0 and crit_particles:
-		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + crit_particles), 4, global_position, scale.x, get_node("Sprite").modulate)
+		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + crit_particles), 4, global_position, scale.x, get_node("Sprite").self_modulate)
 	if hit_sound:
 		get_node("/root/Main").play_sound(hit_sound)
 
@@ -92,3 +92,10 @@ func kill():
 		hit_enabled = false
 		ability_handler.death_effects.emit()
 		ability_handler.self_death.emit()
+
+func get_sprites():
+	var sprites: Array
+	for i in get_children():
+		if i is Sprite2D:
+			sprites.append({"node" : i, "size" : i.texture.get_size(), "position" : i.position + i.offset})
+	return sprites

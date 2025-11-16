@@ -146,13 +146,11 @@ script = ExtResource("3_6838j")
 ability_handler = NodePath("../AbilityHandler")
 entity_scene = ExtResource("4_q8h26")
 count = 6
-health = 60
 
 [node name="debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_6838j")
 ability_handler = NodePath("../AbilityHandler")
 count = 6
-health = 30
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_vknsd")
@@ -294,7 +292,6 @@ ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 material = ExtResource("8_3du5a")
 position = Vector2(0, 36)
 texture = ExtResource("9_gc870")

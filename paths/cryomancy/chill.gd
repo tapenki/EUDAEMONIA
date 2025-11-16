@@ -8,15 +8,15 @@ func _ready() -> void:
 	duration_timer.timeout.connect(clear)
 	add_child(duration_timer)
 	duration_timer.start(0.75 * level)
-	for i in ability_handler.owner.prestidigitate():
+	for sprite in ability_handler.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
 		particle_instance.modulate = Config.get_team_color(1, "secondary")
-		particle_instance.position = i.position
-		particle_instance.process_material.emission_box_extents.x = i.size.x * 0.5
-		particle_instance.process_material.emission_box_extents.y = i.size.y * 0.5
-		particle_instance.amount = max(particle_instance.amount * i.size.x * i.size.y * 0.0005, 1)
+		particle_instance.position = sprite["offset"]
+		particle_instance.process_material.emission_box_extents.x = sprite["size"].x * 0.5
+		particle_instance.process_material.emission_box_extents.y = sprite["size"].y * 0.5
+		particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
 		particle_instances.append(particle_instance)
-		add_child.call_deferred(particle_instance)
+		sprite["node"].add_child.call_deferred(particle_instance)
 	ability_handler.inh_speed_scale_modifiers.connect(inh_speed_scale_modifiers)
 
 func inh_speed_scale_modifiers(modifiers) -> void:

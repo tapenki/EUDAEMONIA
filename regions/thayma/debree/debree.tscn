@@ -88,7 +88,6 @@ script = ExtResource("2_jwabc")
 type = "entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 material = ExtResource("8_yuve4")
 texture = ExtResource("9_fdfy0")
 script = ExtResource("10_3drak")

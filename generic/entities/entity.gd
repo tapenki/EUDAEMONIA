@@ -95,9 +95,9 @@ func animation_finished(anim_name: StringName) -> void:
 	if anim_name == "DEATH":
 		queue_free()
 
-func prestidigitate():
-	var special_effects: Array
+func get_sprites():
+	var sprites: Array
 	for i in get_children():
 		if i is Sprite2D:
-			special_effects.append({"size" : i.base_texture.get_size(), "position" : i.position + i.offset})
-	return special_effects
+			sprites.append({"node" : i, "size" : i.base_texture.get_size(), "position" : i.position, "offset" : i.offset})
+	return sprites

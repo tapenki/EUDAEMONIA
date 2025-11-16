@@ -49,7 +49,12 @@ func assign_projectile_group(projectile: Projectile, group: int, color: String =
 	for i in range(1, 3):
 			projectile.set_collision_mask_value(i, i != group)
 	projectile.set_collision_layer_value(group, true)
-	projectile.get_node("Sprite").modulate = Config.get_team_color(group, color)
+	var team_color = Config.get_team_color(group, color) 
+	for sprite in projectile.get_sprites():
+		sprite["node"].self_modulate = team_color
+		for spritescendant in sprite["node"].get_children():
+			if spritescendant is CanvasItem:
+				spritescendant.modulate = team_color
 
 func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
 	entity.group = group
@@ -58,7 +63,12 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 		for i in range(1, 3):
 			hurtbox.set_collision_mask_value(i, i != group)
 	entity.set_collision_layer_value(group, true)
-	entity.get_node("Sprite").modulate = Config.get_team_color(group, color)
+	var team_color = Config.get_team_color(group, color) 
+	for sprite in entity.get_sprites():
+		sprite["node"].self_modulate = team_color
+		for spritescendant in sprite["node"].get_children():
+			if spritescendant is CanvasItem:
+				spritescendant.modulate = team_color
 
 ## entity spawning
 func scale_enemy_health(health: float):
@@ -71,7 +81,7 @@ func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()
 	reticle_instance.global_position = entity.global_position
 	reticle_instance.entity = entity
-	reticle_instance.modulate = entity.get_node("Sprite").modulate
+	reticle_instance.modulate = entity.get_node("Sprite").self_modulate
 	spawns.add_child(reticle_instance)
 	reticle_instance.get_node("SpawnTimer").start(delay)
 

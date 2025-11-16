@@ -180,7 +180,6 @@ ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 position = Vector2(0, 20.5)
 texture = ExtResource("9_fhwl2")
 offset = Vector2(0, -20.5)

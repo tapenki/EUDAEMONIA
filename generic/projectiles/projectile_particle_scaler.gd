@@ -1,4 +1,6 @@
-extends GPUParticles2D
+extends Node2D
+
+@onready var particles = $Particles
 
 @export var ability_handler: Node
 @export var scaler = 0.1 ## DON'T set to 0 or screen will explode
@@ -18,10 +20,10 @@ func _physics_process(delta: float) -> void:
 		scaler = min(scaler + grow * delta * ability_handler.speed_scale, max_scaler)
 	else:
 		scaler = max(scaler - shrink * delta, 0)
-		if scaler == 0:
+		if scaler <= 0:
 			queue_free()
 	scale = base_scale * scaler
-	process_material.scale = global_scale
+	particles.process_material.scale = global_scale
 
 func parent_died():
 	base_scale = get_parent().global_scale
