@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/pyromancy/flame.png" id="2_onyeo"]
 [ext_resource type="Script" uid="uid://5o1wbrxeu4bd" path="res://generic/particles/particles.gd" id="3_jolul"]
 
-
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -29,6 +28,7 @@ amount = 16
 texture = ExtResource("2_onyeo")
 lifetime = 0.32
 explosiveness = 1.0
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 process_material = SubResource("ParticleProcessMaterial_c27jy")
 script = ExtResource("3_jolul")
 

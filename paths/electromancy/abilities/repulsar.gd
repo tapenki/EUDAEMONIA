@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	for i in intersections:
 		var projectile = i.get("collider")
 		if projectile is Projectile:
-			projectile.velocity += global_position.direction_to(projectile.global_position) * 400 * delta * ability_handler.speed_scale
+			projectile.velocity += global_position.direction_to(projectile.global_position) * 300 * delta * ability_handler.speed_scale
 
 func inherit(handler, tier):
 	if tier < 3:

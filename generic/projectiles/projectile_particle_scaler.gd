@@ -3,7 +3,7 @@ extends Node2D
 @onready var particles = $Particles
 
 @export var ability_handler: Node
-@export var scaler = 0.1 ## DON'T set to 0 or screen will explode
+@export var scaler = 0.0
 @export var max_scaler = 1.0
 @export var grow = 5.0
 @export var shrink = 5.0

@@ -171,7 +171,7 @@ patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 
-[node name="Extra" type="RichTextLabel" parent="Description/Title"]
+[node name="Tag" type="RichTextLabel" parent="Description/Title"]
 visible = false
 clip_contents = false
 layout_mode = 1
@@ -184,7 +184,7 @@ text = "upgrade_cost"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Description/Title/Extra"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Description/Title/Tag"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -657,7 +657,7 @@ grow_vertical = 2
 script = ExtResource("18_0avjw")
 radius = 120
 rotation_speed = -0.8
-text = "AKRAMMACHAMAREI"
+text = "MAYTHEWORLDSEEABETTERFATE"
 text_color = Color(0, 0, 0.5882353, 1)
 outline_color = Color(0, 0, 0.19607843, 1)
 
@@ -672,7 +672,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("18_0avjw")
-text = "ABLANATHANALBA"
+text = "MAYETERNITYBEJOYOUS"
 text_color = Color(0, 0.29411766, 1, 1)
 outline_color = Color(0, 0, 0.5882353, 1)
 

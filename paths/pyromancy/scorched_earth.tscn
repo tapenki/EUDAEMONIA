@@ -59,7 +59,7 @@ scale = Vector2(0.57142854, 0.57142854)
 amount = 12
 texture = ExtResource("3_73dah")
 lifetime = 0.5
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 process_material = SubResource("ParticleProcessMaterial_7j7ie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://defo0ssov0anv"]
+[gd_scene load_steps=37 format=3 uid="uid://defo0ssov0anv"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://ui/ui.tscn" id="2_kek77"]
@@ -12,10 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="12_ycdy4"]
 [ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="13_ycdy4"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="14_2cqfq"]
-[ext_resource type="PackedScene" uid="uid://xavq6u15l5sw" path="res://generic/particles/impact.tscn" id="14_vivmo"]
 [ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="14_w48qg"]
 [ext_resource type="Shader" uid="uid://drjpyynjqtv52" path="res://shaders/aligned_particle_shader.gdshader" id="15_2cqfq"]
 [ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://bxijlb14fyxl3" path="res://generic/particles/bullet.png" id="16_getpj"]
 [ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/druidry/quill.png" id="16_yaehf"]
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/pyromancy/flame.png" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_82xsv"]
@@ -23,11 +23,38 @@
 [ext_resource type="Script" uid="uid://dkd8kokuj05rb" path="res://saver.gd" id="21_getpj"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
+_limits = [0.0, 0.7, 0.0, 1.0]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hnl0o"]
+curve = SubResource("Curve_mtknr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
+shader = ExtResource("15_2cqfq")
+shader_parameter/direction = Vector3(0, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/initial_linear_velocity_min = 45.0
+shader_parameter/initial_linear_velocity_max = 60.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/scale_curve = SubResource("CurveTexture_hnl0o")
+
+[sub_resource type="Curve" id="Curve_1u8w0"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_cegan"]
-curve = SubResource("Curve_mtknr")
+curve = SubResource("Curve_1u8w0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cegan"]
 shader = ExtResource("15_2cqfq")
@@ -205,7 +232,16 @@ bus = &"SFX"
 
 [node name="Particles" type="Node" parent="."]
 
-[node name="Impact" parent="Particles" instance=ExtResource("14_vivmo")]
+[node name="Impact" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("14_2cqfq")
+emitting = false
+amount = 128
+texture = ExtResource("16_getpj")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_074og")
 
 [node name="Quills" type="GPUParticles2D" parent="Particles"]
 z_index = 2
@@ -214,7 +250,7 @@ emitting = false
 amount = 128
 texture = ExtResource("16_yaehf")
 lifetime = 0.32
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_cegan")
 
@@ -225,7 +261,7 @@ emitting = false
 amount = 128
 texture = ExtResource("18_cegan")
 lifetime = 0.32
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_d13ii")
 
@@ -236,7 +272,7 @@ emitting = false
 amount = 128
 texture = ExtResource("18_cegan")
 lifetime = 0.32
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_1u8w0")
 
@@ -247,6 +283,6 @@ emitting = false
 amount = 128
 texture = ExtResource("20_82xsv")
 lifetime = 0.32
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_0odxb")

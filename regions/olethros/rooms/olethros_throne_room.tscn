@@ -29,11 +29,12 @@ position = Vector2(780, 360)
 script = ExtResource("3_oqujk")
 entity = "harbinger"
 
-[node name="Wave2" type="Node2D" parent="Waves"]
+[node name="Wave2" type="Node2D" parent="Waves" node_paths=PackedStringArray("next")]
 script = ExtResource("2_bieg0")
+next = NodePath("../Wave3")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2"]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnGriefer" type="Node2D" parent="Waves/Wave2"]
@@ -51,6 +52,28 @@ position = Vector2(210, 150)
 script = ExtResource("3_oqujk")
 entity = "rocketjumper"
 
+[node name="Wave3" type="Node2D" parent="Waves"]
+script = ExtResource("2_bieg0")
+
+[node name="Timer" type="Timer" parent="Waves/Wave3"]
+wait_time = 7.5
+one_shot = true
+
+[node name="SpawnMeteor" type="Node2D" parent="Waves/Wave3"]
+position = Vector2(150, 360)
+script = ExtResource("3_oqujk")
+entity = "meteor"
+
+[node name="SpawnHydra1" type="Node2D" parent="Waves/Wave3"]
+position = Vector2(210, 570)
+script = ExtResource("3_oqujk")
+entity = "hydra"
+
+[node name="SpawnHydra2" type="Node2D" parent="Waves/Wave3"]
+position = Vector2(210, 150)
+script = ExtResource("3_oqujk")
+entity = "hydra"
+
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Entrance0" parent="Doors" instance=ExtResource("2_vrt6i")]
@@ -66,3 +89,4 @@ door = "Entrance0"
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]
+[connection signal="timeout" from="Waves/Wave3/Timer" to="Waves/Wave3" method="proceed"]

@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name EntitySprite extends Sprite2D
 
 @onready var hurt_timer = $Hurt
 

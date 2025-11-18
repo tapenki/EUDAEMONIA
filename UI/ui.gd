@@ -21,7 +21,7 @@ extends Node
 var keybind_setting: Node
 
 var weapon = "magic_missile"
-var armor = "mystic_robes"
+var armor = "hermits_cloak"
 
 var upgrade_points = 1
 var unlock_points = 1

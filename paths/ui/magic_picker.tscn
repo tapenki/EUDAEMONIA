@@ -47,23 +47,33 @@ columns = 5
 layout_mode = 2
 texture_normal = ExtResource("3_rnk8j")
 subject = "pyromancy"
+extra = ""
+tag = "unlock_cost"
 
 [node name="Cryomancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("5_t4f8r")
 subject = "cryomancy"
+extra = ""
+tag = "unlock_cost"
 
 [node name="Electromancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("7_bj4g6")
 subject = "electromancy"
+extra = ""
+tag = "unlock_cost"
 
 [node name="Druidry" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("6_j1tjt")
 subject = "druidry"
+extra = ""
+tag = "unlock_cost"
 
 [node name="Necromancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("8_vx3qw")
 subject = "necromancy"
+extra = ""
+tag = "unlock_cost"

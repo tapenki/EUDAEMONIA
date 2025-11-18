@@ -42,7 +42,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_rj0pm"]
 resource_name = "ENDLAG"
-length = 0.5
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,7 +50,7 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
@@ -149,7 +149,7 @@ initial_state = NodePath("CloseIn1")
 [node name="CloseIn1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_s3wuf")
-speed = 400
+speed = 360
 distance_margin = 250
 shapecast_radius = 20
 next = NodePath("../PrepareAttack1")
@@ -169,7 +169,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_tsh4m")
-speed = 600
+speed = 480
 next = NodePath("../QuakeAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack1" node_paths=PackedStringArray("ability_handler")]
@@ -199,7 +199,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_tsh4m")
-speed = 600
+speed = 480
 next = NodePath("../QuakeAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack2" node_paths=PackedStringArray("ability_handler")]
@@ -222,7 +222,7 @@ next = NodePath("../CloseIn2")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag1" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_04ynr")
-wait_time = 0.5
+wait_time = 0.4
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -249,7 +249,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack3" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("9_33aw5")
-speed = 800
+speed = 750
 bullet = ExtResource("10_x18un")
 next = NodePath("../QuakeAttack3")
 
@@ -273,7 +273,7 @@ next = NodePath("../CloseIn1")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag2" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_04ynr")
-wait_time = 0.5
+wait_time = 0.4
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

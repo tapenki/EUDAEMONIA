@@ -21,5 +21,5 @@ func death_effects() -> void:
 		var bullet_instance = ability_handler.make_projectile(bullet, 
 		global_position + direction * 25, 
 		2,
-		direction.rotated(halfspan - (stepsize * i)) * 450)
+		direction.rotated(halfspan - (stepsize * i)) * 360)
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)

@@ -5,7 +5,7 @@ func _ready() -> void:
 	ability_handler.immune_duration_modifiers.connect(immune_duration_modifiers)
 
 func move_speed_modifiers(modifiers) -> void:
-	modifiers["source"] += 50 * level
+	modifiers["source"] += 40 * level
 
 func immune_duration_modifiers(modifiers) -> void:
 	modifiers["source"] += 0.2 * level

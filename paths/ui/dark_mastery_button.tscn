@@ -27,7 +27,7 @@ pivot_offset = Vector2(30, 30)
 mouse_default_cursor_shape = 2
 script = ExtResource("1_lbblf")
 accessible_texture = ExtResource("2_v5nmr")
-extra = "dark_unlock_cost"
+tag = "dark_unlock_cost"
 
 [node name="TextureRect1" type="NinePatchRect" parent="."]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)

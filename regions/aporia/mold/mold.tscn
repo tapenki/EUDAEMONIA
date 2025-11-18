@@ -135,8 +135,6 @@ initial_state = NodePath("Warplag")
 process_mode = 4
 script = ExtResource("6_otdvs")
 anim = "WINDUP"
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../ShootAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" node_paths=PackedStringArray("ability_handler")]
@@ -149,15 +147,13 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("7_l225b")
 bullet = ExtResource("7_lfj4u")
-bullet_lifetime = 2.4
-bullet_speed = 350
+bullet_lifetime = 2.75
+bullet_speed = 300
 next = NodePath("../Endlag1")
 
 [node name="Endlag1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_otdvs")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../PrepareAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag1" node_paths=PackedStringArray("ability_handler")]
@@ -169,8 +165,6 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_otdvs")
 anim = "WINDUP"
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../ShootAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" node_paths=PackedStringArray("ability_handler")]
@@ -183,15 +177,13 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("7_l225b")
 bullet = ExtResource("7_lfj4u")
-bullet_lifetime = 2.4
-bullet_speed = 350
+bullet_lifetime = 2.75
+bullet_speed = 300
 next = NodePath("../Endlag2")
 
 [node name="Endlag2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_otdvs")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../PrepareWallwarp")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag2" node_paths=PackedStringArray("ability_handler")]
@@ -203,8 +195,6 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_otdvs")
 anim = "WARP"
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../Wallwarp")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareWallwarp" node_paths=PackedStringArray("ability_handler")]
@@ -221,8 +211,6 @@ next = NodePath("../Warplag")
 [node name="Warplag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_otdvs")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../PrepareAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/Warplag" node_paths=PackedStringArray("ability_handler")]

@@ -11,7 +11,6 @@ var stick_normal: Vector2
 var stick: bool
 var direction: Vector2
 
-
 func on_enter() -> void:
 	super()
 	if not is_instance_valid(state_handler.target):

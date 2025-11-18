@@ -28,7 +28,7 @@ z_index = -1
 material = ExtResource("1_rueob")
 texture = ExtResource("1_mh31h")
 lifetime = 0.5
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 process_material = SubResource("ParticleProcessMaterial_c27jy")
 script = ExtResource("2_rueob")
 

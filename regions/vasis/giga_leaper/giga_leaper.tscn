@@ -148,7 +148,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_nw14a")
-speed = 800
+speed = 750
 next = NodePath("../QuakeAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]

@@ -141,7 +141,7 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_bf8ro")
-speed = 300
+speed = 250
 distance_margin = 450
 next = NodePath("../PrepareAttack")
 
@@ -149,8 +149,6 @@ next = NodePath("../PrepareAttack")
 process_mode = 4
 script = ExtResource("7_fmuhx")
 anim = "WINDUP"
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../ShootAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
@@ -170,8 +168,6 @@ next = NodePath("../Endlag")
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_fmuhx")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../CloseIn")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]

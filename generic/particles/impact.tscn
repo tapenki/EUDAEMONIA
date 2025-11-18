@@ -38,6 +38,6 @@ emitting = false
 amount = 128
 texture = ExtResource("2_qvaty")
 lifetime = 0.32
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_074og")

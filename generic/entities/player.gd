@@ -15,7 +15,7 @@ func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	if direction: #and not knockback_timer.running:
 		still = false
-		var speed = ability_handler.get_move_speed(450)
+		var speed = ability_handler.get_move_speed(360)
 		velocity = lerp(velocity, direction * speed, 0.2)
 		animation_player.play("WALK")
 	elif animation_player.current_animation == "WALK":

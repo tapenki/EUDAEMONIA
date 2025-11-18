@@ -29,6 +29,7 @@ amount = 16
 texture = ExtResource("2_0fqh5")
 lifetime = 0.32
 explosiveness = 1.0
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 process_material = SubResource("ParticleProcessMaterial_c27jy")
 script = ExtResource("3_sccy7")
 

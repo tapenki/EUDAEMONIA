@@ -33,7 +33,7 @@ texture_normal = ExtResource("1_slgqf")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("1_xh7g6")
-extra = "upgrade_cost"
+tag = "upgrade_cost"
 
 [node name="Symbol" type="Label" parent="."]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)

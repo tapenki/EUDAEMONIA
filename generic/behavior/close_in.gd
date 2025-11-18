@@ -12,15 +12,17 @@ extends State
 	#add_child(node2d)
 
 func avoidance():
-	var reach = 3000
+	var reach = 200
 	var found
+	var distance = 0
 	for entity in get_node("/root/Main/Entities").get_children():
-		if entity != user and not user.ability_handler.can_hit(entity):
-			var distance = user.global_position.distance_to(entity.global_position)
+		if entity != user and entity.scene_file_path == user.scene_file_path and not user.ability_handler.can_hit(entity):
+			distance = user.global_position.distance_to(entity.global_position)
 			if distance < reach:
 				reach = distance
 				found = entity
-	return found
+	if found:
+		return {"target" : found, "distance" : distance}
 
 func _physics_process(_delta):
 	#for i in node2d.get_children():
@@ -70,11 +72,13 @@ func _physics_process(_delta):
 	direction = user.global_position.direction_to(path[0])
 	
 	var final_speed = user.ability_handler.get_move_speed(speed)
-	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
+	var final_velocity = direction * final_speed
 	
 	var avoid = avoidance()
 	if avoid:
-		var avoid_direction = avoid.global_position.direction_to(user.global_position)
-		user.velocity = lerp(user.velocity, avoid_direction * final_speed, 0.075)
+		var avoid_direction = avoid["target"].global_position.direction_to(user.global_position)
+		final_velocity = lerp(final_velocity, avoid_direction * final_speed, min(10/avoid["distance"], 1))
+	
+	user.velocity = lerp(user.velocity, final_velocity, 0.5)
 	user.animation_player.play("WALK")
 	user.still = false

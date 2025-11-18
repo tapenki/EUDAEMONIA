@@ -81,7 +81,7 @@ msgid "stats_title"
 msgstr "Base Stats"
 
 msgid "stats_description"
-msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[450][/outline_size].""
+msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[360][/outline_size].""
 
 msgid "defeated"
 msgstr "died :("
@@ -141,7 +141,7 @@ msgid "cursemail_title"
 msgstr "[outline_color=#287828]Armor: Cursemail[/outline_color]"
 
 msgid "cursemail_description"
-msgstr "Take [outline_size=10]x[0.5][/outline_size] less damage.[br][outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
+msgstr "Damage taken reduced to [outline_size=10]x[0.5][/outline_size].[br][outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
 
 # tricks
 
@@ -318,7 +318,7 @@ msgid "thunderstep_title"
 msgstr "[outline_color=#a87e00]Ch.5: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
-msgstr "You gain [outline_size=10]+[50xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
+msgstr "You gain [outline_size=10]+[40xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
 
 msgid "shocking_grasp_title"
 msgstr "[outline_color=#a87e00]Mastery: Shocking Grasp[/outline_color]"

@@ -14,10 +14,10 @@ extends TextureButton
 ## from described
 @onready var description = get_node("/root/Main/UI/Description")
 @onready var description_title = description.get_node("Title")
-@onready var description_extra = description_title.get_node("Extra")
+@onready var description_tag = description_title.get_node("Tag")
 
 @export var subject: String
-@export var extra: String
+@export var tag: String
 
 var accessible: bool
 
@@ -43,7 +43,7 @@ func update():
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
-			extra = "learned"
+			tag = "learned"
 
 func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and accessible:
@@ -54,8 +54,8 @@ func _on_pressed() -> void:
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
-			extra = "Learned"
-			description_extra.text = extra
+			tag = "Learned"
+			description_tag.text = tag
 
 ## from described
 func _on_mouse_entered() -> void:
@@ -64,11 +64,11 @@ func _on_mouse_entered() -> void:
 	
 	description_title.text = subject+"_title"
 	description.text = subject+"_description"
-	if extra != "":
-		description_extra.text = extra
-		description_extra.visible = true
+	if tag != "":
+		description_tag.text = tag
+		description_tag.visible = true
 	else:
-		description_extra.visible = false
+		description_tag.visible = false
 	
 	description.size = Vector2(240, description.get_content_height())
 	description_title.size = Vector2(240, description_title.get_content_height())

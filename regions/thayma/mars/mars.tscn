@@ -113,10 +113,15 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_215r3")
 ability_handler = NodePath("AbilityHandler")
+hurt_sound = null
+death_sound = null
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 60
 health = 60.0
+immune_duration = null
+group = null
+summoned = null
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_p2v6q")
@@ -146,12 +151,12 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_a5mce")
-speed = 650
+speed = 500
 next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_77vvh")
-wait_time = 0.35
+wait_time = 0.45
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

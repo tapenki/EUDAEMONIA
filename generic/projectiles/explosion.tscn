@@ -25,7 +25,6 @@ script = ExtResource("3_p0y1b")
 type = "projectile"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
 material = ExtResource("4_vypyj")
 texture = ExtResource("5_sg4bm")
 

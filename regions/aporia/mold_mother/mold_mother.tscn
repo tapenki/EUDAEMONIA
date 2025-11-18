@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="16_ciuuc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
-radius = 42.0
+radius = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
 radius = 32.0
@@ -90,7 +90,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vajmc"]
 resource_name = "WINDUP"
-length = 0.75
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,7 +98,7 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.35, 0.65, 0.75),
+"times": PackedFloat32Array(0, 0.3, 0.35, 0.75, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
@@ -138,8 +138,6 @@ initial_state = NodePath("Warplag")
 process_mode = 4
 script = ExtResource("4_hg44d")
 anim = "WINDUP"
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../ShootAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" node_paths=PackedStringArray("ability_handler")]
@@ -152,22 +150,20 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
-bullet_lifetime = 2.4
+bullet_lifetime = 2.75
 bullet_count = 3
 spread = 60
-bullet_speed = 350
+bullet_speed = 300
 next = NodePath("../PrepareAttack2")
 
 [node name="PrepareAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../ShootAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("5_hciqw")
-wait_time = 0.35
+wait_time = 0.45
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -175,17 +171,15 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
-bullet_lifetime = 2.4
+bullet_lifetime = 2.75
 bullet_count = 2
 spread = 45
-bullet_speed = 350
+bullet_speed = 300
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../Summoning")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
@@ -205,8 +199,6 @@ next = NodePath("../PrepareWallwarp")
 process_mode = 4
 script = ExtResource("4_hg44d")
 anim = "WARP"
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../Wallwarp")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareWallwarp" node_paths=PackedStringArray("ability_handler")]
@@ -223,8 +215,6 @@ next = NodePath("../Warplag")
 [node name="Warplag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-backoff_speed = 150
-backoff_distance = 150
 next = NodePath("../PrepareAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/Warplag" node_paths=PackedStringArray("ability_handler")]

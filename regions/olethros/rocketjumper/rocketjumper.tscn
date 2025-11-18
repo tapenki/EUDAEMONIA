@@ -129,8 +129,8 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_cj52d")
-speed = 350
-distance_margin = 250
+speed = 300
+distance_margin = 200
 shapecast_radius = 20
 next = NodePath("../PrepareAttack1")
 
@@ -155,7 +155,7 @@ next = NodePath("../DashAttack1")
 [node name="DashAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_scvkh")
-speed = 800
+speed = 600
 next = NodePath("../PrepareAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack1" node_paths=PackedStringArray("ability_handler")]
@@ -185,7 +185,7 @@ next = NodePath("../DashAttack2")
 [node name="DashAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_scvkh")
-speed = 800
+speed = 600
 next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack2" node_paths=PackedStringArray("ability_handler")]

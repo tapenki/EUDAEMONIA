@@ -148,7 +148,7 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_w271t")
-speed = 400
+speed = 300
 distance_margin = 150
 shapecast_radius = 20
 next = NodePath("../PrepareAttack")
@@ -168,7 +168,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_byrvh")
-speed = 750
+speed = 480
 next = NodePath("../QuakeAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
@@ -187,9 +187,9 @@ next = NodePath("../RadialshotAttack")
 process_mode = 4
 script = ExtResource("9_7u8rj")
 bullet = ExtResource("10_n6wox")
-bullet_lifetime = 1.0
+bullet_lifetime = 1.2
 bullet_count = 6
-bullet_speed = 450
+bullet_speed = 360
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]

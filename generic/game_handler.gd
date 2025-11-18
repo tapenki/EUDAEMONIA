@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-var room = "vasis_entrance_hall"
+var room = "vasis_throne_room"
 var door = "Entrance0"
 
 var day = 1
@@ -52,9 +52,9 @@ func assign_projectile_group(projectile: Projectile, group: int, color: String =
 	var team_color = Config.get_team_color(group, color) 
 	for sprite in projectile.get_sprites():
 		sprite["node"].self_modulate = team_color
-		for spritescendant in sprite["node"].get_children():
-			if spritescendant is CanvasItem:
-				spritescendant.modulate = team_color
+		for spritechild in sprite["node"].get_children():
+			if spritechild is CanvasItem:
+				spritechild.self_modulate = team_color
 
 func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
 	entity.group = group
@@ -66,9 +66,9 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 	var team_color = Config.get_team_color(group, color) 
 	for sprite in entity.get_sprites():
 		sprite["node"].self_modulate = team_color
-		for spritescendant in sprite["node"].get_children():
-			if spritescendant is CanvasItem:
-				spritescendant.modulate = team_color
+		for spritechild in sprite["node"].get_children():
+			if spritechild is CanvasItem:
+				spritechild.self_modulate = team_color
 
 ## entity spawning
 func scale_enemy_health(health: float):

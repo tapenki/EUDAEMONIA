@@ -12,12 +12,12 @@ func _ready() -> void:
 	if ui[type] == subject:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
-		extra = "selected"
+		tag = "selected"
 
 func deselect():
 	self_modulate = Color("7f7f7f")
 	symbol_label.self_modulate = Color("7f7f7f")
-	extra = ""
+	tag = ""
 
 func _on_pressed() -> void:
 	if not selected:
@@ -26,5 +26,5 @@ func _on_pressed() -> void:
 		ui[type] = subject
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
-		extra = "selected"
+		tag = "selected"
 		_on_mouse_entered()

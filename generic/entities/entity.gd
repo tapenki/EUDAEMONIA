@@ -99,5 +99,10 @@ func get_sprites():
 	var sprites: Array
 	for i in get_children():
 		if i is Sprite2D:
-			sprites.append({"node" : i, "size" : i.base_texture.get_size(), "position" : i.position, "offset" : i.offset})
+			var size
+			if i is EntitySprite:
+				size = i.base_texture.get_size()
+			else:
+				size = i.texture.get_size()
+			sprites.append({"node" : i, "size" : size, "position" : i.position, "offset" : i.offset})
 	return sprites

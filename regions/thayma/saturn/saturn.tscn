@@ -171,12 +171,12 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack1" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_vtn1a")
-speed = 600
+speed = 500
 next = NodePath("../Endlag1")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack1" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
-wait_time = 0.3
+wait_time = 0.35
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -206,12 +206,12 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_vtn1a")
-speed = 600
+speed = 500
 next = NodePath("../Endlag2")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack2" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_0yn8a")
-wait_time = 0.3
+wait_time = 0.35
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -242,9 +242,9 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("9_7ds08")
 bullet = ExtResource("10_nc6hc")
-bullet_lifetime = 2.4
+bullet_lifetime = 2.75
 bullet_count = 8
-bullet_speed = 450
+bullet_speed = 360
 next = NodePath("../PrepareShoot2")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttack1" node_paths=PackedStringArray("ability_handler")]
@@ -268,10 +268,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("9_7ds08")
 bullet = ExtResource("10_nc6hc")
-bullet_lifetime = 2.4
+bullet_lifetime = 2.75
 bullet_count = 8
 angle = 22.5
-bullet_speed = 450
+bullet_speed = 360
 next = NodePath("../Endlag3")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttack2" node_paths=PackedStringArray("ability_handler")]

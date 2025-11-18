@@ -241,7 +241,7 @@ position = Vector2(0, -19)
 amount = 16
 texture = ExtResource("13_h3b6x")
 lifetime = 0.5
-visibility_rect = Rect2(-10000, -10000, 20000, 20000)
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 process_material = SubResource("ParticleProcessMaterial_c27jy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -149,8 +149,6 @@ next = NodePath("../PrepareAttack")
 process_mode = 4
 script = ExtResource("6_s8iko")
 anim = "WINDUP"
-backoff_speed = 150
-backoff_distance = 100
 next = NodePath("../ShootAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
@@ -163,17 +161,15 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("5_gnuag")
 bullet = ExtResource("6_s2lvl")
-bullet_lifetime = 0.9
+bullet_lifetime = 1.2
 bullet_count = 3
 spread = 60
-bullet_speed = 450
+bullet_speed = 360
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_s8iko")
-backoff_speed = 150
-backoff_distance = 100
 next = NodePath("../CloseIn")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]

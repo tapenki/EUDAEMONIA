@@ -2,10 +2,10 @@ class_name Described extends Control
 
 @onready var description = get_node("/root/Main/UI/Description")
 @onready var description_title = description.get_node("Title")
-@onready var description_extra = description_title.get_node("Extra")
+@onready var description_tag = description_title.get_node("Tag")
 
 @export var subject: String
-@export var extra: String
+@export var tag: String
 
 func get_title():
 	return tr(subject+"_title")
@@ -16,11 +16,11 @@ func get_description():
 func _on_mouse_entered() -> void:
 	description_title.text = get_title()
 	description.text = get_description()
-	if extra != "":
-		description_extra.text = extra
-		description_extra.visible = true
+	if tag != "":
+		description_tag.text = tag
+		description_tag.visible = true
 	else:
-		description_extra.visible = false
+		description_tag.visible = false
 	
 	description.size = Vector2(240, description.get_content_height())
 	description_title.size = Vector2(240, description_title.get_content_height())
