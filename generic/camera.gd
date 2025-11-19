@@ -26,5 +26,7 @@ func screenshake(intensity):
 
 func defeat():
 	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_QUART)
 	tween.tween_property(self, "zoom", zoom * 0.5, 15)
 	reparent(get_node("/root/Main"))

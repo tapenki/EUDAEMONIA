@@ -100,7 +100,6 @@ inherited_crit_chance = {
 type = "entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(0, 0.501961, 1, 1)
 material = ExtResource("3_prmdv")
 position = Vector2(0, 20)
 texture = ExtResource("3_8dav1")
@@ -122,11 +121,6 @@ texture = ExtResource("3_s1j76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cbvv7")
-
-[node name="BulletTimer" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("8_3wbf3")
-ability_handler = NodePath("../AbilityHandler")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 deterministic = true

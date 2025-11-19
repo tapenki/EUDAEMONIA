@@ -94,8 +94,14 @@ func kill():
 		ability_handler.self_death.emit()
 
 func get_sprites():
-	var sprites: Array
-	for i in get_children():
-		if i is Sprite2D:
-			sprites.append({"node" : i, "size" : i.texture.get_size(), "position" : i.position + i.offset})
-	return sprites
+	var sprite = get_node("Sprite")
+	return [{"node" : sprite, "size" : sprite.texture.get_size(), "position" : sprite.position, "offset" : sprite.offset}]
+
+func apply_palette(team, denominator):
+	var sprites = get_sprites()
+	var team_color = Config.get_team_color(team, denominator)
+	for sprite in sprites:
+		sprite["node"].self_modulate = team_color
+		for spritechild in sprite["node"].get_children():
+			if spritechild is CanvasItem:
+				spritechild.self_modulate = team_color

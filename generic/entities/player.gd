@@ -4,7 +4,7 @@ var attacking: bool
 
 func _ready() -> void:
 	super()
-	$Sprite.modulate = Config.get_team_color(group, "primary")
+	apply_palette(group, "primary")
 
 func _physics_process(_delta):
 	if not alive:

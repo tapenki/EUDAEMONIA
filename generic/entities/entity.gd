@@ -96,13 +96,19 @@ func animation_finished(anim_name: StringName) -> void:
 		queue_free()
 
 func get_sprites():
-	var sprites: Array
-	for i in get_children():
-		if i is Sprite2D:
-			var size
-			if i is EntitySprite:
-				size = i.base_texture.get_size()
-			else:
-				size = i.texture.get_size()
-			sprites.append({"node" : i, "size" : size, "position" : i.position, "offset" : i.offset})
-	return sprites
+	var sprite = get_node("Sprite")
+	var size
+	if sprite is EntitySprite:
+		size = sprite.base_texture.get_size()
+	else:
+		size = sprite.texture.get_size()
+	return [{"node" : sprite, "size" : size, "position" : sprite.position, "offset" : sprite.offset}]
+
+func apply_palette(team, denominator):
+	var sprites = get_sprites()
+	var team_color = Config.get_team_color(team, denominator)
+	for sprite in sprites:
+		sprite["node"].self_modulate = team_color
+		for spritechild in sprite["node"].get_children():
+			if spritechild is CanvasItem:
+				spritechild.self_modulate = team_color

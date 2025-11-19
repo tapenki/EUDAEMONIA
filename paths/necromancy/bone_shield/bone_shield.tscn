@@ -121,7 +121,6 @@ inherited_crit_chance = {
 type = "entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(0, 0.501961, 1, 1)
 material = ExtResource("9_onlb1")
 position = Vector2(0, 20)
 texture = ExtResource("7_y2u7u")

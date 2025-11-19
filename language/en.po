@@ -473,7 +473,7 @@ msgid "olethros_title"
 msgstr "Sphere 4: Olethros"
 
 msgid "pandemonium_title"
-msgstr "Sphere 5+: Pandemonium"
+msgstr "Sphere ??: Pandemonium"
 
 # quotes
 

@@ -181,6 +181,7 @@ distance_deviation = 0.25
 speed = 250.0
 speed_deviation = 0.5
 ability_handler = NodePath("AbilityHandler")
+death_sound = "HitLight"
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 0

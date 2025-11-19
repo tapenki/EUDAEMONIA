@@ -19,7 +19,7 @@ curve = SubResource("Curve_mtknr")
 resource_local_to_scene = true
 particle_flag_disable_z = true
 emission_shape = 2
-emission_sphere_radius = 48.0
+emission_sphere_radius = 32.0
 direction = Vector3(0, -1, 0)
 spread = 0.0
 initial_velocity_min = 5.0
@@ -55,7 +55,6 @@ shrink = 2.5
 [node name="Particles" type="GPUParticles2D" parent="Sprite"]
 z_index = 2
 material = ExtResource("3_o2x1p")
-scale = Vector2(0.57142854, 0.57142854)
 amount = 12
 texture = ExtResource("3_73dah")
 lifetime = 0.5

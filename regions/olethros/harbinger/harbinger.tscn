@@ -229,7 +229,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="CloseIn2" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_s3wuf")
-speed = 400
+speed = 360
 distance_margin = 400
 shapecast_radius = 20
 next = NodePath("../PrepareAttack3")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=41 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -92,6 +92,10 @@ outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 resource_local_to_scene = true
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c44sx"]
+outline_size = 5
+outline_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c3fg2"]
 font_size = 48
@@ -498,6 +502,20 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="Hint" type="Label" parent="GameMenu/Reset"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = -8.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "click and hold ->"
+label_settings = SubResource("LabelSettings_c44sx")
 
 [node name="Settings" type="Button" parent="GameMenu"]
 z_index = 1
@@ -1132,6 +1150,7 @@ patch_margin_bottom = 10
 [connection signal="pressed" from="HUD/Proceed" to="." method="toggle_game_menu"]
 [connection signal="button_down" from="GameMenu/Reset" to="GameMenu/Reset" method="down"]
 [connection signal="button_up" from="GameMenu/Reset" to="GameMenu/Reset" method="up"]
+[connection signal="mouse_entered" from="GameMenu/Reset" to="GameMenu/Reset" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GameMenu/Reset" to="GameMenu/Reset" method="up"]
 [connection signal="pressed" from="GameMenu/Settings" to="." method="toggle_settings"]
 [connection signal="mouse_entered" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_entered"]

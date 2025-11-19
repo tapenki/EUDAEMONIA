@@ -113,6 +113,14 @@ var room_data = {
 		"challenge" : true,
 	},
 	#endregion
+	#region misc
+	"debug_room" : {
+		"scene" : preload("res://regions/debug_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "pandemonium",
+		"challenge" : true,
+	},
+	#endregion
 }
 
 var entity_data = {

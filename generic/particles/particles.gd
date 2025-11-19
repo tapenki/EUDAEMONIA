@@ -1,4 +1,6 @@
 extends GPUParticles2D
+## TODO particles with finite visibility rect cause visual issues when scaled to 0 
+## particles with infinite visibility rect cause visual issues when rotated
 
 @onready var timer = $Lifetime
 @export var ability_handler: Node

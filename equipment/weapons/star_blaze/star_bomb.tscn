@@ -59,7 +59,6 @@ texture = ExtResource("6_rfdyg")
 [node name="Trail" type="GPUParticles2D" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
 z_index = -1
 material = ExtResource("3_ihqtc")
-scale = Vector2(0.666667, 0.666667)
 amount = 16
 texture = ExtResource("7_xs4nw")
 lifetime = 0.4
