@@ -11,9 +11,29 @@
 
 [node name="Necromancy" type="Control"]
 layout_mode = 3
-anchor_right = 1.0
-anchor_bottom = 0.2
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
 mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xpvhb")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -36,26 +56,74 @@ horizontal_alignment = 1
 script = ExtResource("2_4f4ow")
 subject = "necromancy"
 
-[node name="Masteries" type="HBoxContainer" parent="."]
+[node name="Abilities1" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -30.0
-offset_right = 322.0
-offset_bottom = 30.0
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
 grow_horizontal = 2
-grow_vertical = 2
+alignment = 1
 
-[node name="Blank1" type="Control" parent="Masteries"]
+[node name="ArmyOfTheDead" parent="Abilities1" instance=ExtResource("3_vlamy")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpvhb")
+subject = "army_of_the_dead"
+
+[node name="DeathTouch" parent="Abilities1" instance=ExtResource("3_vlamy")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpvhb")
+subject = "death_touch"
+
+[node name="Hunger" parent="Abilities1" instance=ExtResource("3_vlamy")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpvhb")
+subject = "hunger"
+
+[node name="Abilities2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="BoneShield" parent="Abilities2" instance=ExtResource("3_vlamy")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpvhb")
+subject = "bone_shield"
+
+[node name="DarkHarvest" parent="Abilities2" instance=ExtResource("5_4llcc")]
+layout_mode = 2
+texture_normal = ExtResource("4_xpvhb")
+subject = "dark_harvest"
+
+[node name="Masteries1" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 162.0
+offset_right = 112.5
+offset_bottom = 222.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Blank1" type="Control" parent="Masteries1"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank1"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -75,12 +143,12 @@ patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
 
-[node name="Blank2" type="Control" parent="Masteries"]
+[node name="Blank2" type="Control" parent="Masteries1"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank2"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank2"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -100,7 +168,7 @@ patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
 
-[node name="Starvation" parent="Masteries" instance=ExtResource("6_x8qv0")]
+[node name="Starvation" parent="Masteries1" instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -108,7 +176,20 @@ requires = {
 }
 subject = "starvation"
 
-[node name="BoneSpear" parent="Masteries" instance=ExtResource("6_x8qv0")]
+[node name="Masteries2" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 226.0
+offset_right = 112.5
+offset_bottom = 286.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="BoneSpear" parent="Masteries2" instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -116,12 +197,12 @@ requires = {
 }
 subject = "bone_spear"
 
-[node name="Blank3" type="Control" parent="Masteries"]
+[node name="Blank3" type="Control" parent="Masteries2"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank3"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank3"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -140,46 +221,6 @@ patch_margin_left = 18
 patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
-
-[node name="Abilities" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -322.0
-offset_top = -30.0
-offset_right = -6.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="ArmyOfTheDead" parent="Abilities" instance=ExtResource("3_vlamy")]
-layout_mode = 2
-texture_normal = ExtResource("4_xpvhb")
-subject = "army_of_the_dead"
-
-[node name="DeathTouch" parent="Abilities" instance=ExtResource("3_vlamy")]
-layout_mode = 2
-texture_normal = ExtResource("4_xpvhb")
-subject = "death_touch"
-
-[node name="Hunger" parent="Abilities" instance=ExtResource("3_vlamy")]
-layout_mode = 2
-texture_normal = ExtResource("4_xpvhb")
-subject = "hunger"
-
-[node name="BoneShield" parent="Abilities" instance=ExtResource("3_vlamy")]
-layout_mode = 2
-texture_normal = ExtResource("4_xpvhb")
-subject = "bone_shield"
-
-[node name="DarkHarvest" parent="Abilities" instance=ExtResource("5_4llcc")]
-layout_mode = 2
-texture_normal = ExtResource("4_xpvhb")
-subject = "dark_harvest"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

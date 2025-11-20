@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://2hguf1pilgru"]
+[gd_scene load_steps=10 format=3 uid="uid://2hguf1pilgru"]
 
 [ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/ui/magic_picker.gd" id="1_rnk8j"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="2_rmcok"]
 [ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/ui/unlock_magic_button.tscn" id="2_yj67j"]
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/pyromancy/red.png" id="3_rnk8j"]
 [ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/cryomancy/blue.png" id="5_t4f8r"]
@@ -15,9 +16,29 @@ outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="MagicPicker" type="Control"]
 layout_mode = 3
-anchor_right = 1.0
-anchor_bottom = 0.2
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
 script = ExtResource("1_rnk8j")
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rmcok")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -32,48 +53,51 @@ grow_horizontal = 2
 text = "path_picker"
 label_settings = SubResource("LabelSettings_wf76l")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Paths2" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
 grow_horizontal = 2
-grow_vertical = 2
-columns = 5
+alignment = 1
 
-[node name="Pyromancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
-layout_mode = 2
-texture_normal = ExtResource("3_rnk8j")
-subject = "pyromancy"
-extra = ""
-tag = "unlock_cost"
-
-[node name="Cryomancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
-layout_mode = 2
-texture_normal = ExtResource("5_t4f8r")
-subject = "cryomancy"
-extra = ""
-tag = "unlock_cost"
-
-[node name="Electromancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
-layout_mode = 2
-texture_normal = ExtResource("7_bj4g6")
-subject = "electromancy"
-extra = ""
-tag = "unlock_cost"
-
-[node name="Druidry" parent="GridContainer" instance=ExtResource("2_yj67j")]
+[node name="Druidry" parent="Paths2" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("6_j1tjt")
 subject = "druidry"
-extra = ""
-tag = "unlock_cost"
 
-[node name="Necromancy" parent="GridContainer" instance=ExtResource("2_yj67j")]
+[node name="Necromancy" parent="Paths2" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("8_vx3qw")
 subject = "necromancy"
-extra = ""
-tag = "unlock_cost"
+
+[node name="Paths1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Pyromancy" parent="Paths1" instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("3_rnk8j")
+subject = "pyromancy"
+
+[node name="Cryomancy" parent="Paths1" instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("5_t4f8r")
+subject = "cryomancy"
+
+[node name="Electromancy" parent="Paths1" instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("7_bj4g6")
+subject = "electromancy"

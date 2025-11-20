@@ -156,13 +156,13 @@ msgid "path_picker"
 msgstr "Choose your path"
 
 msgid "upgrade_cost"
-msgstr "Cost: 1 Incremento"
+msgstr "Price: 1 Incremento"
 
 msgid "unlock_cost"
-msgstr "Cost: 1 Lucidae"
+msgstr "Price: 1 Lucidae"
 
 msgid "dark_unlock_cost"
-msgstr "Cost: 32 Health"
+msgstr "Dark Price: 32 Max Health"
 
 msgid "learned"
 msgstr "Learned"

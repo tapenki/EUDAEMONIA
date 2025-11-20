@@ -6,7 +6,6 @@ var hurt_texture = preload("res://equipment/armor/hermits_cloak/hermits_cloak_hu
 func _ready() -> void:
 	if ability_handler.type == "entity":
 		ability_handler.max_health_modifiers.connect(max_health_modifiers)
-		ability_handler.update_health.emit()
 		if ability_handler.owner is Player:
 			ability_handler.owner.get_node("Sprite").texture = base_texture
 			ability_handler.owner.get_node("Sprite").base_texture = base_texture

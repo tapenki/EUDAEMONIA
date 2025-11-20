@@ -1,8 +1,6 @@
 extends Control
 
-@onready var ui = $"../../"
-
-@onready var grid = $"GridContainer"
+@onready var ui = get_node("/root/Main/UI")
 
 @export var next: Node
 
@@ -16,6 +14,7 @@ func pick(path):
 
 func reveal():
 	visible = true
-	for button in grid.get_children():
-		if ui.paths.has(button.subject):
-			button.visible = false
+	for child in get_children():
+		for button in child.get_children():
+			if button is UnlockPathButton and ui.paths.has(button.subject):
+				button.disable()

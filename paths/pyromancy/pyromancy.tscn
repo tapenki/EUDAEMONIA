@@ -15,9 +15,28 @@ outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="Pyromancy" type="Control"]
 layout_mode = 3
-anchor_right = 1.0
-anchor_bottom = 0.2
+offset_right = 225.0
+offset_bottom = 300.0
 mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xxy61")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -40,23 +59,69 @@ horizontal_alignment = 1
 script = ExtResource("2_pgluk")
 subject = "pyromancy"
 
-[node name="Masteries" type="HBoxContainer" parent="."]
-layout_direction = 2
+[node name="Abilities1" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -30.0
-offset_right = 322.0
-offset_bottom = 30.0
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
 grow_horizontal = 2
-grow_vertical = 2
 alignment = 1
 
-[node name="Conflagration" parent="Masteries" instance=ExtResource("5_tdidc")]
+[node name="Ignition" parent="Abilities1" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "ignition"
+
+[node name="Firespawning" parent="Abilities1" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "firespawning"
+
+[node name="Melt" parent="Abilities1" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "melt"
+
+[node name="Abilities2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ScorchedEarth" parent="Abilities2" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "scorched_earth"
+
+[node name="FromAshes" parent="Abilities2" instance=ExtResource("1_nbhot")]
+layout_mode = 2
+texture_normal = ExtResource("2_xxy61")
+subject = "from_ashes"
+
+[node name="Masteries1" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 162.0
+offset_right = 112.5
+offset_bottom = 222.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Conflagration" parent="Masteries1" instance=ExtResource("5_tdidc")]
 layout_mode = 2
 accessible_texture = ExtResource("2_xxy61")
 requires = {
@@ -64,7 +129,7 @@ requires = {
 }
 subject = "conflagration"
 
-[node name="UndyingFlames" parent="Masteries" instance=ExtResource("5_tdidc")]
+[node name="UndyingFlames" parent="Masteries1" instance=ExtResource("5_tdidc")]
 layout_mode = 2
 accessible_texture = ExtResource("2_xxy61")
 requires = {
@@ -72,12 +137,12 @@ requires = {
 }
 subject = "undying_flames"
 
-[node name="Blank1" type="Control" parent="Masteries"]
+[node name="Blank1" type="Control" parent="Masteries1"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank1"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -97,13 +162,26 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="Blank2" type="Control" parent="Masteries"]
+[node name="Masteries2" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 226.0
+offset_right = 112.5
+offset_bottom = 286.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Blank2" type="Control" parent="Masteries2"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries/Blank2"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank2"]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -123,7 +201,7 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="FieryRebirth" parent="Masteries" instance=ExtResource("5_tdidc")]
+[node name="FieryRebirth" parent="Masteries2" instance=ExtResource("5_tdidc")]
 layout_mode = 2
 accessible_texture = ExtResource("2_xxy61")
 requires = {
@@ -131,47 +209,8 @@ requires = {
 }
 subject = "fiery_rebirth"
 
-[node name="Abilities" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -322.0
-offset_top = -30.0
-offset_right = -6.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Ignition" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "ignition"
-
-[node name="Firespawning" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "firespawning"
-
-[node name="Melt" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "melt"
-
-[node name="ScorchedEarth" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "scorched_earth"
-
-[node name="FromAshes" parent="Abilities" instance=ExtResource("1_nbhot")]
-layout_mode = 2
-texture_normal = ExtResource("2_xxy61")
-subject = "from_ashes"
-
 [node name="Burn" type="NinePatchRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5

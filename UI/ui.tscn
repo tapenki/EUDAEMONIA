@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=43 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
 [ext_resource type="Texture2D" uid="uid://d4eqbunuivgqb" path="res://ui/desc.png" id="2_4fiuh"]
 [ext_resource type="Script" uid="uid://cr7vsr2ht6436" path="res://ui/floor_number.gd" id="3_g7pr5"]
+[ext_resource type="Script" uid="uid://kjoospqb13n5" path="res://ui/description.gd" id="3_k48q6"]
 [ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/ui/upgrade_points.gd" id="3_mom20"]
 [ext_resource type="Theme" uid="uid://ctgkksssqhxtw" path="res://ui/18px_font_theme.tres" id="3_o2jkc"]
 [ext_resource type="Theme" uid="uid://dbc5act8pigyb" path="res://ui/14px_font_theme.tres" id="5_2qbci"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="12_2qbci"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="12_o2jkc"]
 [ext_resource type="Script" uid="uid://clk3eog3f12cy" path="res://equipment/ui/equipment_container.gd" id="14_c44sx"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="14_c74r5"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="16_j5i65"]
 [ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://ui/slider_setting.tscn" id="16_o2t6a"]
 [ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://ui/status_container.gd" id="16_s1k1p"]
@@ -144,6 +146,7 @@ text = "Now is the time for all good men to come to the aid of the party"
 scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 1
+script = ExtResource("3_k48q6")
 
 [node name="Title" type="RichTextLabel" parent="Description"]
 clip_contents = false
@@ -407,34 +410,122 @@ text = "ver"
 label_settings = SubResource("LabelSettings_4xnvd")
 script = ExtResource("10_0w6e5")
 
+[node name="Gear1" type="TextureRect" parent="GameMenu"]
+modulate = Color(0, 0, 0.047058824, 1)
+show_behind_parent = true
+z_index = -1
+layout_mode = 0
+offset_left = 150.0
+offset_top = -75.0
+offset_right = 750.0
+offset_bottom = 525.0
+pivot_offset = Vector2(300, 300)
+texture = ExtResource("17_bw7v0")
+script = ExtResource("18_rkf1o")
+rotation_speed = 0.1
+
+[node name="Gear2" type="TextureRect" parent="GameMenu"]
+modulate = Color(0, 0, 0.09803922, 1)
+show_behind_parent = true
+z_index = -1
+layout_mode = 0
+offset_left = 210.0
+offset_top = -15.0
+offset_right = 690.0
+offset_bottom = 465.0
+pivot_offset = Vector2(240, 240)
+texture = ExtResource("17_bw7v0")
+script = ExtResource("18_rkf1o")
+rotation_speed = -0.1
+
+[node name="Background1" type="NinePatchRect" parent="GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 79.0
+offset_right = 221.0
+offset_bottom = 371.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background2" type="NinePatchRect" parent="GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 229.0
+offset_top = 79.0
+offset_right = 446.0
+offset_bottom = 371.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background3" type="NinePatchRect" parent="GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 454.0
+offset_top = 79.0
+offset_right = 671.0
+offset_bottom = 371.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background4" type="NinePatchRect" parent="GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 679.0
+offset_top = 79.0
+offset_right = 896.0
+offset_bottom = 371.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
 [node name="MagicPicker1" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
-layout_mode = 1
-offset_top = 40.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_top = 75.0
+offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker2")
 
 [node name="MagicPicker2" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
-layout_mode = 1
-offset_top = 160.0
-offset_bottom = 160.0
+layout_mode = 0
+offset_left = 225.0
+offset_top = 75.0
+offset_right = 450.0
+offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker3")
 
 [node name="MagicPicker3" parent="GameMenu" instance=ExtResource("6_6rr40")]
 visible = false
-layout_mode = 1
-offset_top = 280.0
-offset_bottom = 280.0
+layout_mode = 0
+offset_left = 450.0
+offset_top = 75.0
+offset_right = 675.0
+offset_bottom = 375.0
 mouse_filter = 2
 
 [node name="Equipment" type="Control" parent="GameMenu"]
-layout_mode = 1
-anchor_right = 1.0
-anchor_bottom = 0.2
-offset_top = 400.0
-offset_bottom = 400.0
+anchors_preset = 0
+offset_left = 675.0
+offset_top = 75.0
+offset_right = 900.0
+offset_bottom = 375.0
 mouse_filter = 2
 script = ExtResource("14_c44sx")
 
@@ -453,17 +544,14 @@ label_settings = SubResource("LabelSettings_wf76l")
 
 [node name="Container" type="HBoxContainer" parent="GameMenu/Equipment"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -158.0
-offset_top = -30.0
+offset_top = 30.0
 offset_right = 158.0
-offset_bottom = 30.0
+offset_bottom = 90.0
 grow_horizontal = 2
-grow_vertical = 2
 alignment = 1
 
 [node name="Reset" type="Button" parent="GameMenu"]
@@ -788,6 +876,25 @@ offset_right = 425.0
 offset_bottom = 575.0
 mouse_filter = 2
 
+[node name="Background" type="NinePatchRect" parent="MainMenu/Weapons"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
 [node name="Label" type="RichTextLabel" parent="MainMenu/Weapons"]
 layout_mode = 1
 anchors_preset = 5
@@ -854,6 +961,25 @@ offset_top = 450.0
 offset_right = 700.0
 offset_bottom = 575.0
 mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="MainMenu/Armor"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
 
 [node name="Label" type="RichTextLabel" parent="MainMenu/Armor"]
 layout_mode = 1

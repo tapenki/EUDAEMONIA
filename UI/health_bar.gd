@@ -10,7 +10,7 @@ extends ProgressBar
 func _ready() -> void:
 	ability_handler.damage_taken.connect(damage_taken)
 	ability_handler.healed.connect(healed)
-	ability_handler.update_health.connect(update)
+	ability_handler.update_abilities.connect(update)
 	update()
 
 func update() -> void:

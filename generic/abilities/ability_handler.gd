@@ -13,7 +13,6 @@ var speed_scale = 1.0
 ### signals
 ## health signals
 signal max_health_modifiers(modifiers: Dictionary)
-signal update_health()
 signal healed(amount: float)
 
 ## status signals
@@ -50,7 +49,7 @@ signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ## misc signals
-signal upgraded()
+signal update_abilities()
 
 ### methods
 func _physics_process(_delta: float) -> void:
@@ -226,21 +225,19 @@ func grant(ability: String, levels: float):
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
-		#update_status.emit(ability_node)
 	return ability_node
 
 func upgrade(ability: String, levels: float):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.level += levels
-		update_health.emit()
 	else:
 		ability_node = Node2D.new()
 		ability_node.set_script(AbilityData.ability_data[ability]["script"])
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
-	upgraded.emit()
+	update_abilities.emit()
 
 func apply_status(handler: Node, ability: String, levels: float):
 	var modifiers = {"source" : levels, "multiplier" : 1}
@@ -249,11 +246,6 @@ func apply_status(handler: Node, ability: String, levels: float):
 	var status = handler.grant(ability, levels)
 	status_applied.emit(status, levels)
 	return status
-
-func clear(ability: String, levels: float):
-	var ability_node = get_node_or_null(ability)
-	if ability_node:
-		ability_node.add_level(-levels)
 
 func inherit(handler: Node, inherit_level: float):
 	for child in get_children():
@@ -265,4 +257,4 @@ func recover():
 	for ability in get_children():
 		if AbilityData.ability_data[ability.name]["type"] == "status":
 			ability.clear()
-	update_health.emit()
+	update_abilities.emit()
