@@ -1,13 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=41 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
-[ext_resource type="Texture2D" uid="uid://d4eqbunuivgqb" path="res://ui/desc.png" id="2_4fiuh"]
 [ext_resource type="Script" uid="uid://cr7vsr2ht6436" path="res://ui/floor_number.gd" id="3_g7pr5"]
-[ext_resource type="Script" uid="uid://kjoospqb13n5" path="res://ui/description.gd" id="3_k48q6"]
 [ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/ui/upgrade_points.gd" id="3_mom20"]
-[ext_resource type="Theme" uid="uid://ctgkksssqhxtw" path="res://ui/18px_font_theme.tres" id="3_o2jkc"]
-[ext_resource type="Theme" uid="uid://dbc5act8pigyb" path="res://ui/14px_font_theme.tres" id="5_2qbci"]
 [ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://ui/health_bar.gd" id="5_r6g2f"]
 [ext_resource type="PackedScene" uid="uid://2hguf1pilgru" path="res://paths/ui/magic_picker.tscn" id="6_6rr40"]
 [ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="9_7j5ik"]
@@ -30,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/keybind_setting.tscn" id="19_i1yd8"]
 [ext_resource type="PackedScene" uid="uid://bg830ii8c47r8" path="res://equipment/ui/equipment_picker.tscn" id="21_fgtw6"]
 [ext_resource type="Texture2D" uid="uid://n3nosr7kqvbu" path="res://equipment/ui/weapon.png" id="22_br2v7"]
+[ext_resource type="PackedScene" uid="uid://dkylah0plkb87" path="res://description.tscn" id="27_br2v7"]
+[ext_resource type="Script" uid="uid://cpudn72h0uuh5" path="res://ui/primary_description.gd" id="28_c44sx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs3jx"]
 
@@ -133,100 +131,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
-
-[node name="Description" type="RichTextLabel" parent="."]
-visible = false
-z_index = 10
-clip_contents = false
-offset_right = 240.0
-offset_bottom = 69.0
-theme = ExtResource("2_0w6e5")
-bbcode_enabled = true
-text = "Now is the time for all good men to come to the aid of the party"
-scroll_active = false
-autowrap_mode = 2
-horizontal_alignment = 1
-script = ExtResource("3_k48q6")
-
-[node name="Title" type="RichTextLabel" parent="Description"]
-clip_contents = false
-layout_mode = 0
-offset_top = -28.0
-offset_right = 240.0
-offset_bottom = -4.0
-theme = ExtResource("3_o2jkc")
-bbcode_enabled = true
-text = "Pyroclasm"
-scroll_active = false
-horizontal_alignment = 1
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Description/Title"]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -6.0
-offset_top = -2.0
-offset_right = 6.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_4fiuh")
-region_rect = Rect2(0, 0, 64, 58)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-
-[node name="Tag" type="RichTextLabel" parent="Description/Title"]
-visible = false
-clip_contents = false
-layout_mode = 1
-offset_left = 20.0
-offset_top = -22.0
-offset_right = 220.0
-offset_bottom = -4.0
-theme = ExtResource("5_2qbci")
-text = "upgrade_cost"
-scroll_active = false
-horizontal_alignment = 1
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Description/Title/Tag"]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -6.0
-offset_top = -2.0
-offset_right = 6.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_4fiuh")
-region_rect = Rect2(0, 0, 64, 58)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Description"]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -6.0
-offset_top = -2.0
-offset_right = 6.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_4fiuh")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
 
 [node name="HUD" type="Control" parent="."]
 visible = false
@@ -1272,6 +1176,11 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="PrimaryDescription" parent="." instance=ExtResource("27_br2v7")]
+script = ExtResource("28_c44sx")
+
+[node name="SecondaryDescription" parent="." instance=ExtResource("27_br2v7")]
 
 [connection signal="pressed" from="HUD/Proceed" to="." method="toggle_game_menu"]
 [connection signal="button_down" from="GameMenu/Reset" to="GameMenu/Reset" method="down"]

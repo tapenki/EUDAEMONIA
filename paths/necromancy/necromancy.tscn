@@ -73,10 +73,10 @@ layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "army_of_the_dead"
 
-[node name="DeathTouch" parent="Abilities1" instance=ExtResource("3_vlamy")]
+[node name="FatedEnd" parent="Abilities1" instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
-subject = "death_touch"
+subject = "fated_end"
 
 [node name="Hunger" parent="Abilities1" instance=ExtResource("3_vlamy")]
 layout_mode = 2

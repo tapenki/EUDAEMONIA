@@ -29,6 +29,7 @@ var base_values = {
 		"down" : [0, KEY_S],
 		"right" : [0, KEY_D],
 		"pause" : [0, KEY_ESCAPE],
+		"inspect" : [0, KEY_SHIFT],
 		"dark_harvest" : [0, KEY_E],
 	}
 }

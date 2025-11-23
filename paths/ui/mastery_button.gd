@@ -14,9 +14,9 @@ extends TextureButton
 @export var requires: Dictionary
 
 ## from described
-@onready var description = get_node("/root/Main/UI/Description")
-@onready var description_title = description.get_node("Title")
-@onready var description_tag = description_title.get_node("Tag")
+@onready var primary_description = get_node("/root/Main/UI/PrimaryDescription")
+@onready var secondary_description = get_node("/root/Main/UI/SecondaryDescription")
+var current_description: Node
 
 @export var subject: String
 @export var tag: String
@@ -58,18 +58,24 @@ func _on_pressed() -> void:
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
 			tag = "Learned"
-			description_tag.text = tag
+			if current_description:
+				current_description.set_tag(tag)
 
 ## from described
+func get_title():
+	return tr(subject+"_title")
+
+func get_description():
+	return tr(subject+"_description")
+	
 func _on_mouse_entered() -> void:
 	if not accessible:
 		return
-	description.set_title(subject+"_title")
-	description.set_description(subject+"_description")
-	description.set_tag(tag)
-	
-	description.positionize(global_position + Vector2(size.x - description.size.x, size.y) * 0.5)
-	description.visible = true
+	if primary_description.locked and primary_description.visible:
+		secondary_description.describe(self)
+	else:
+		primary_description.describe(self)
 
 func _on_mouse_exited() -> void:
-	description.visible = false
+	if current_description and not current_description.locked:
+		current_description.undescribe()

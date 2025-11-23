@@ -18,6 +18,8 @@ func deselect():
 	self_modulate = Color("7f7f7f")
 	symbol_label.self_modulate = Color("7f7f7f")
 	tag = ""
+	if current_description:
+		current_description.set_tag(tag)
 
 func _on_pressed() -> void:
 	if not selected:
@@ -27,4 +29,5 @@ func _on_pressed() -> void:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
 		tag = "selected"
-		_on_mouse_entered()
+		if current_description:
+			current_description.set_tag(tag)

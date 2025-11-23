@@ -68,6 +68,10 @@ pause={
 "deadzone": 0.2,
 "events": []
 }
+inspect={
+"deadzone": 0.2,
+"events": []
+}
 dark_harvest={
 "deadzone": 0.2,
 "events": []

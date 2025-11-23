@@ -198,6 +198,7 @@ texture = ExtResource("4_x63fb")
 
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("8_5m6cv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

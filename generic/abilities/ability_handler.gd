@@ -87,8 +87,6 @@ func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" :
 	damage_dealt_modifiers.emit(entity, modifiers)
 	if entity:
 		entity.ability_handler.damage_taken_modifiers.emit(modifiers)
-		if entity.health == entity.max_health:
-			modifiers["first_blood"] = true
 	modifiers["final"] = (inherited_damage["source"] + modifiers["source"]) * inherited_damage["multiplier"] * modifiers["multiplier"]
 	if modifiers.has("crits"):
 		modifiers["final"] *= (1 + modifiers["crits"])
@@ -103,6 +101,8 @@ func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "mu
 	return crits
 
 func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1, "direction" : Vector2()}):
+	if entity.health == entity.max_health:
+		damage["first_blood"] = true
 	var crits = get_crits(entity)
 	damage["crits"] = crits
 	get_damage_dealt(entity, damage)

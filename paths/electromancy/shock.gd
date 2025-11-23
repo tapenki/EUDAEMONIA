@@ -11,7 +11,7 @@ func _ready() -> void:
 	duration_timer.start(2.5 * level)
 	for sprite in ability_handler.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
-		particle_instance.modulate = Config.get_team_color(1, "secondary")
+		particle_instance.modulate = Config.get_team_color(1, "tertiary")
 		particle_instance.position = sprite["offset"]
 		particle_instance.process_material.emission_box_extents.x = sprite["size"].x * 0.5
 		particle_instance.process_material.emission_box_extents.y = sprite["size"].y * 0.5

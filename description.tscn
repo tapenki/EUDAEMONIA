@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkylah0plkb87"]
+
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_1pkbs"]
+[ext_resource type="Script" uid="uid://kjoospqb13n5" path="res://ui/description.gd" id="2_4ope8"]
+[ext_resource type="Texture2D" uid="uid://d4eqbunuivgqb" path="res://ui/desc.png" id="3_a1pjw"]
+[ext_resource type="Theme" uid="uid://ctgkksssqhxtw" path="res://ui/18px_font_theme.tres" id="4_m4p3t"]
+[ext_resource type="Theme" uid="uid://dbc5act8pigyb" path="res://ui/14px_font_theme.tres" id="5_ol2u0"]
+
+[node name="Description" type="RichTextLabel"]
+visible = false
+z_index = 10
+clip_contents = false
+offset_right = 240.0
+offset_bottom = 69.0
+mouse_behavior_recursive = 1
+theme = ExtResource("1_1pkbs")
+bbcode_enabled = true
+text = "Now is the time for all good men to come to the aid of the party"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+meta_underlined = false
+script = ExtResource("2_4ope8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("3_a1pjw")
+region_rect = Rect2(0, 6, 64, 58)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Title" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = -10.0
+offset_top = -28.0
+offset_right = 250.0
+offset_bottom = -4.0
+mouse_filter = 1
+theme = ExtResource("4_m4p3t")
+bbcode_enabled = true
+text = "Pyroclasm"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("3_a1pjw")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Tag" type="RichTextLabel" parent="Title"]
+visible = false
+clip_contents = false
+layout_mode = 1
+offset_left = 30.0
+offset_top = -22.0
+offset_right = 230.0
+offset_bottom = -4.0
+mouse_filter = 1
+theme = ExtResource("5_ol2u0")
+text = "upgrade_cost"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Title/Tag"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 6.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("3_a1pjw")
+region_rect = Rect2(0, 0, 64, 58)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+
+[connection signal="meta_hover_ended" from="." to="." method="meta_hover_ended"]
+[connection signal="meta_hover_started" from="." to="." method="meta_hover_started"]

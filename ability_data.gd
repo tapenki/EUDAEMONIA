@@ -216,9 +216,13 @@ var ability_data = {
 		"script" : preload("res://paths/necromancy/abilities/army_of_the_dead.gd"),
 		"type" : "upgrade"
 	},
-	"death_touch" : {
-		"script" : preload("res://paths/necromancy/abilities/death_touch.gd"),
+	"fated_end" : {
+		"script" : preload("res://paths/necromancy/abilities/fated_end.gd"),
 		"type" : "upgrade"
+	},
+	"doom" : {
+		"script" : preload("res://paths/necromancy/doom.gd"),
+		"type" : "status"
 	},
 	"hunger" : {
 		"script" : preload("res://paths/necromancy/abilities/hunger.gd"),
@@ -231,10 +235,6 @@ var ability_data = {
 	"dark_harvest" : {
 		"script" : preload("res://paths/necromancy/abilities/dark_harvest.gd"),
 		"type" : "upgrade"
-	},
-	"ante_mortem" : {
-		"script" : preload("res://paths/necromancy/abilities/bone_spear.gd"),
-		"type" : "mastery"
 	},
 	"starvation" : {
 		"script" : preload("res://paths/necromancy/abilities/starvation.gd"),
