@@ -110,16 +110,19 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "chain_bolt"
+extras = ["crit"]
 
 [node name="MortalShock" parent="Abilities1" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "mortal_shock"
+extras = ["crit"]
 
 [node name="BallLightning" parent="Abilities1" instance=ExtResource("2_qkm14")]
 layout_mode = 2
 texture_normal = ExtResource("3_c6jgr")
 subject = "ball_lightning"
+extras = ["crit"]
 
 [node name="Abilities2" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -188,6 +191,7 @@ requires = {
 "mortal_shock": 5
 }
 subject = "shocking_grasp"
+extras = ["crit"]
 
 [node name="Dynamo" parent="Masteries1" instance=ExtResource("5_nhh6t")]
 layout_mode = 2

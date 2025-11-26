@@ -455,6 +455,11 @@ msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
 msgid "bone_spear_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon day start:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
 
+msgid "doom_title"
+msgstr "[outline_color=#cc00cc]Notes: Doom[/outline_color]"
+
+msgid "doom_description"
+msgstr "Stores damage taken and deals [outline_size=10][STOREDDAMAGExSTACKS][/outline_size] damage after [outline_size=10][5][/outline_size] seconds."
 
 # spheres
 msgid "day_counter"

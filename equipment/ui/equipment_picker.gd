@@ -1,6 +1,5 @@
 extends Described
 
-@onready var ui = get_node("/root/Main/UI")
 @onready var symbol_label: = $"Symbol"
 
 @export_enum("weapon", "armor", "trick") var type: String
@@ -18,8 +17,6 @@ func deselect():
 	self_modulate = Color("7f7f7f")
 	symbol_label.self_modulate = Color("7f7f7f")
 	tag = ""
-	if current_description:
-		current_description.set_tag(tag)
 
 func _on_pressed() -> void:
 	if not selected:
@@ -29,5 +26,6 @@ func _on_pressed() -> void:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
 		tag = "selected"
-		if current_description:
-			current_description.set_tag(tag)
+		if description_nodes.size() > 0:
+			description_nodes[0].set_tag(tag)
+			

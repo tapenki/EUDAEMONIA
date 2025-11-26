@@ -1,7 +1,5 @@
 class_name UnlockPathButton extends Described
 
-@onready var ui = get_node("/root/Main/UI")
-
 @onready var upgrades_ui = $"../../../"
 @onready var picker = $"../../"
 

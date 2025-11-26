@@ -1,6 +1,5 @@
 extends Described
 
-@onready var ui = get_node("/root/Main/UI")
 @onready var player = get_node("/root/Main/UI").player
 @onready var ability_handler = player.get_node("AbilityHandler")
 

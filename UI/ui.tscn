@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=39 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -26,8 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/keybind_setting.tscn" id="19_i1yd8"]
 [ext_resource type="PackedScene" uid="uid://bg830ii8c47r8" path="res://equipment/ui/equipment_picker.tscn" id="21_fgtw6"]
 [ext_resource type="Texture2D" uid="uid://n3nosr7kqvbu" path="res://equipment/ui/weapon.png" id="22_br2v7"]
-[ext_resource type="PackedScene" uid="uid://dkylah0plkb87" path="res://description.tscn" id="27_br2v7"]
-[ext_resource type="Script" uid="uid://cpudn72h0uuh5" path="res://ui/primary_description.gd" id="28_c44sx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs3jx"]
 
@@ -1176,11 +1174,6 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
-
-[node name="PrimaryDescription" parent="." instance=ExtResource("27_br2v7")]
-script = ExtResource("28_c44sx")
-
-[node name="SecondaryDescription" parent="." instance=ExtResource("27_br2v7")]
 
 [connection signal="pressed" from="HUD/Proceed" to="." method="toggle_game_menu"]
 [connection signal="button_down" from="GameMenu/Reset" to="GameMenu/Reset" method="down"]

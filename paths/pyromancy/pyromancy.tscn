@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh6uwpkbehlt4"]
+[gd_scene load_steps=7 format=3 uid="uid://bh6uwpkbehlt4"]
 
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="1_nbhot"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_w3gqa"]
@@ -7,14 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_tdidc"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="6_pm13r"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_pgluk"]
-resource_local_to_scene = true
-font_size = 30
-outline_size = 8
-outline_color = Color(0.25098, 0.25098, 0.25098, 1)
-
 [node name="Pyromancy" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
@@ -75,11 +70,13 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "ignition"
+extras = ["burn"]
 
 [node name="Firespawning" parent="Abilities1" instance=ExtResource("1_nbhot")]
 layout_mode = 2
 texture_normal = ExtResource("2_xxy61")
 subject = "firespawning"
+extras = ["burn"]
 
 [node name="Melt" parent="Abilities1" instance=ExtResource("1_nbhot")]
 layout_mode = 2
@@ -128,6 +125,7 @@ requires = {
 "ignition": 5
 }
 subject = "conflagration"
+extras = ["burn"]
 
 [node name="UndyingFlames" parent="Masteries1" instance=ExtResource("5_tdidc")]
 layout_mode = 2
@@ -208,42 +206,7 @@ requires = {
 "from_ashes": 5
 }
 subject = "fiery_rebirth"
-
-[node name="Burn" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -386.0
-offset_top = -24.0
-offset_right = -338.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-texture = ExtResource("2_xxy61")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-script = ExtResource("2_pgluk")
-subject = "burn"
-
-[node name="Symbol" type="Label" parent="Burn"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Bu"
-label_settings = SubResource("LabelSettings_pgluk")
-horizontal_alignment = 1
-vertical_alignment = 1
+extras = ["burn"]
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Burn" to="Burn" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Burn" to="Burn" method="_on_mouse_exited"]

@@ -1,6 +1,5 @@
 extends Described
 
-@onready var ui = get_node("/root/Main/UI")
 @onready var player = get_node("/root/Main/UI").player
 @onready var ability_handler = player.get_node("AbilityHandler")
 
@@ -12,9 +11,6 @@ extends Described
 
 var on = preload("res://ui/button_blue.png")
 var off = preload("res://ui/button.png")
-
-func get_description():
-	return super().format({"keybind": keybind_button.text})
 
 func _ready() -> void:
 	set_process_input(false)
