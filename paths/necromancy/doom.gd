@@ -5,6 +5,7 @@ var particle_instances: Array
 var doom_timer = ScaledTimer.new()
 
 var stored_damage: float
+var swift_fate: bool
 
 func _ready() -> void:
 	ability_handler.damage_taken.connect(damage_taken)
@@ -27,6 +28,8 @@ func damage_taken(_source, damage) -> void:
 
 func timeout():
 	var damage = {"source" : stored_damage, "multiplier" : level, "piercing" : true}
+	if swift_fate:
+		damage["multiplier"] *= 1.5
 	damage["final"] = damage["source"] * damage["multiplier"]
 	ability_handler.owner.take_damage(ability_handler, damage, false)
 	get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage["final"])), Config.get_team_color(1, "tertiary"))

@@ -437,11 +437,11 @@ msgstr "[outline_color=#cc00cc]Ch.5: Dark Harvest[/outline_color]"
 msgid "dark_harvest_description"
 msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.25xALLYMAXHP]x[LEVEL][/outline_size] damage."
 
-msgid "ante_mortem_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Ante Mortem[/outline_color]"
+msgid "swift_fate_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Swift Fate[/outline_color]"
 
-msgid "ante_mortem_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Death Touch[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#cc00cc]Death Touch[/outline_color][outline_size=10] activation:[/outline_size] Activate death effects for the affected creature."
+msgid "swift_fate_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Fated End[/outline_color][br]Doom you apply has [outline_size=10]x[0.5][/outline_size] duration and [outline_size=10]x[1.5][/outline_size] damage."
 
 msgid "starvation_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"

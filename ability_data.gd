@@ -236,6 +236,10 @@ var ability_data = {
 		"script" : preload("res://paths/necromancy/abilities/dark_harvest.gd"),
 		"type" : "upgrade"
 	},
+	"swift_fate" : {
+		"script" : preload("res://paths/necromancy/abilities/swift_fate.gd"),
+		"type" : "mastery"
+	},
 	"starvation" : {
 		"script" : preload("res://paths/necromancy/abilities/starvation.gd"),
 		"type" : "mastery"

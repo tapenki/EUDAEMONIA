@@ -40,9 +40,9 @@ func _on_mouse_entered() -> void:
 	
 	var description_position = Vector2(640, 16)
 	var direction = -1
-	if global_position.x + size.x * 0.5 > winsize.x * 0.5:
-		description_position = Vector2(20, 16)
-		direction = 1
+	#if global_position.x + size.x * 0.5 > winsize.x * 0.5:
+		#description_position = Vector2(20, 16)
+		#direction = 1
 	description_position.x += (winsize.x - get_window().content_scale_size.x) * 0.5
 	
 	make_description(get_description_title(subject), get_description_text(subject), tag, description_position)
