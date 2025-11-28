@@ -24,11 +24,7 @@ func _ready() -> void:
 		sprite["node"].add_child.call_deferred(particle_instance)
 
 func tick():
-	var damage = {"source" : level, "multiplier" : 1.0}
-	ability_handler.damage_taken_modifiers.emit(damage)
-	damage["final"] = damage["source"] * damage["multiplier"]
-	ability_handler.owner.take_damage(ability_handler, damage, false)
-	get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage["final"])), Config.get_team_color(1, "tertiary"))
+	ability_handler.deal_damage(ability_handler.owner, {"source" : level, "multiplier" : 1.0}, false, true, Config.get_team_color(1, "tertiary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

@@ -27,12 +27,10 @@ func damage_taken(_source, damage) -> void:
 	stored_damage += damage["final"]
 
 func timeout():
-	var damage = {"source" : stored_damage, "multiplier" : level, "piercing" : true}
+	var damage = {"source" : stored_damage, "multiplier" : level}
 	if swift_fate:
 		damage["multiplier"] *= 1.5
-	damage["final"] = damage["source"] * damage["multiplier"]
-	ability_handler.owner.take_damage(ability_handler, damage, false)
-	get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(int(damage["final"])), Config.get_team_color(1, "tertiary"))
+	ability_handler.deal_damage(ability_handler.owner, damage, false, true, Config.get_team_color(1, "tertiary"))
 	clear()
 
 func add_level(value):

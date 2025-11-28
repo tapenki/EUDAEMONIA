@@ -27,8 +27,7 @@ func movement(distance) -> void:
 			if ability_handler.type == "entity":
 				pain_walk_counter = (pain_walk_counter + 1) % 2
 				if pain_walk_counter == 0:
-					ability_handler.owner.take_damage(ability_handler, {"final" : 2, "piercing" : true}, false)
-					get_node("/root/Main").floating_text(global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), str(2), Config.get_team_color(1, "tertiary"))
+					ability_handler.deal_damage(ability_handler.owner, {"source" : 2, "multiplier" : 1.0}, false, false, Config.get_team_color(1, "tertiary"))
 		else:
 			spawn(ability_handler.owner.global_position)
 
