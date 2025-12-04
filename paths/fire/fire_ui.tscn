@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh6uwpkbehlt4"]
+
+[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_y46ig"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_lgc5t"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_8hyeq"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_la5fy"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_2ix0u"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="6_ya0lw"]
+
+[node name="Fire" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
+mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y46ig")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_lgc5t")
+bbcode_enabled = true
+text = "fire_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("3_8hyeq")
+subject = "fire"
+
+[node name="Abilities1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Ignition" parent="Abilities1" instance=ExtResource("4_la5fy")]
+layout_mode = 2
+texture_normal = ExtResource("1_y46ig")
+subject = "ignition"
+extras = ["burn"]
+
+[node name="Firespawning" parent="Abilities1" instance=ExtResource("4_la5fy")]
+layout_mode = 2
+texture_normal = ExtResource("1_y46ig")
+subject = "firespawning"
+extras = ["burn"]
+
+[node name="Melt" parent="Abilities1" instance=ExtResource("4_la5fy")]
+layout_mode = 2
+texture_normal = ExtResource("1_y46ig")
+subject = "melt"
+
+[node name="Abilities2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ScorchedEarth" parent="Abilities2" instance=ExtResource("4_la5fy")]
+layout_mode = 2
+texture_normal = ExtResource("1_y46ig")
+subject = "scorched_earth"
+
+[node name="FromAshes" parent="Abilities2" instance=ExtResource("4_la5fy")]
+layout_mode = 2
+texture_normal = ExtResource("1_y46ig")
+subject = "from_ashes"
+
+[node name="Masteries1" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 162.0
+offset_right = 112.5
+offset_bottom = 222.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Conflagration" parent="Masteries1" instance=ExtResource("5_2ix0u")]
+layout_mode = 2
+accessible_texture = ExtResource("1_y46ig")
+requires = {
+"ignition": 5
+}
+subject = "conflagration"
+extras = ["burn"]
+
+[node name="UndyingFlames" parent="Masteries1" instance=ExtResource("5_2ix0u")]
+layout_mode = 2
+accessible_texture = ExtResource("1_y46ig")
+requires = {
+"firespawning": 5
+}
+subject = "undying_flames"
+
+[node name="Blank1" type="Control" parent="Masteries1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ya0lw")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Masteries2" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 226.0
+offset_right = 112.5
+offset_bottom = 286.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Blank2" type="Control" parent="Masteries2"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank2"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ya0lw")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="FieryRebirth" parent="Masteries2" instance=ExtResource("5_2ix0u")]
+layout_mode = 2
+accessible_texture = ExtResource("1_y46ig")
+requires = {
+"from_ashes": 5
+}
+subject = "fiery_rebirth"
+extras = ["burn"]
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

@@ -1,0 +1,230 @@
+[gd_scene load_steps=8 format=3 uid="uid://dovdyljqfid6t"]
+
+[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="1_ijwcu"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_mva7w"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_1d61d"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3rk0q"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="5_wnqbv"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_eepm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pmft3"]
+resource_local_to_scene = true
+font_size = 30
+outline_size = 8
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="Lightning" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
+mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ijwcu")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 2.0
+offset_right = 67.0
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_mva7w")
+bbcode_enabled = true
+text = "lightning_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("3_1d61d")
+subject = "lightning"
+
+[node name="Crit" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -24.0
+offset_right = -338.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_ijwcu")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource("3_1d61d")
+subject = "crit"
+
+[node name="Symbol" type="Label" parent="Crit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Cr"
+label_settings = SubResource("LabelSettings_pmft3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Abilities1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ChainBolt" parent="Abilities1" instance=ExtResource("4_3rk0q")]
+layout_mode = 2
+texture_normal = ExtResource("1_ijwcu")
+subject = "chain_bolt"
+extras = ["crit"]
+
+[node name="MortalShock" parent="Abilities1" instance=ExtResource("4_3rk0q")]
+layout_mode = 2
+texture_normal = ExtResource("1_ijwcu")
+subject = "mortal_shock"
+extras = ["crit"]
+
+[node name="BallLightning" parent="Abilities1" instance=ExtResource("4_3rk0q")]
+layout_mode = 2
+texture_normal = ExtResource("1_ijwcu")
+subject = "ball_lightning"
+extras = ["crit"]
+
+[node name="Abilities2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Electromagnetism" parent="Abilities2" instance=ExtResource("4_3rk0q")]
+layout_mode = 2
+texture_normal = ExtResource("1_ijwcu")
+subject = "electromagnetism"
+
+[node name="Thunderstep" parent="Abilities2" instance=ExtResource("4_3rk0q")]
+layout_mode = 2
+texture_normal = ExtResource("1_ijwcu")
+subject = "thunderstep"
+
+[node name="Masteries1" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 162.0
+offset_right = 112.5
+offset_bottom = 222.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Blank1" type="Control" parent="Masteries1"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_wnqbv")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="ShockingGrasp" parent="Masteries1" instance=ExtResource("6_eepm7")]
+layout_mode = 2
+accessible_texture = ExtResource("1_ijwcu")
+requires = {
+"mortal_shock": 5
+}
+subject = "shocking_grasp"
+extras = ["crit"]
+
+[node name="Dynamo" parent="Masteries1" instance=ExtResource("6_eepm7")]
+layout_mode = 2
+accessible_texture = ExtResource("1_ijwcu")
+requires = {
+"ball_lightning": 5
+}
+subject = "dynamo"
+
+[node name="Masteries2" type="HBoxContainer" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 226.0
+offset_right = 112.5
+offset_bottom = 286.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Repulsar" parent="Masteries2" instance=ExtResource("6_eepm7")]
+custom_minimum_size = Vector2(124, 60)
+layout_mode = 2
+accessible_texture = ExtResource("1_ijwcu")
+requires = {
+"electromagnetism": 3,
+"thunderstep": 3
+}
+subject = "repulsar"
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Crit" to="Crit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Crit" to="Crit" method="_on_mouse_exited"]

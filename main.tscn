@@ -16,10 +16,10 @@
 [ext_resource type="Shader" uid="uid://drjpyynjqtv52" path="res://shaders/aligned_particle_shader.gdshader" id="15_2cqfq"]
 [ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://bxijlb14fyxl3" path="res://generic/particles/bullet.png" id="16_getpj"]
-[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/druidry/quill.png" id="16_yaehf"]
-[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/pyromancy/flame.png" id="18_cegan"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quill.png" id="16_yaehf"]
+[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_82xsv"]
-[ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/electromancy/zap.png" id="20_82xsv"]
+[ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/lightning/zap.png" id="20_82xsv"]
 [ext_resource type="Script" uid="uid://dkd8kokuj05rb" path="res://saver.gd" id="21_getpj"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]

@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/ui/magic_picker.gd" id="1_rnk8j"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="2_rmcok"]
 [ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/ui/unlock_magic_button.tscn" id="2_yj67j"]
-[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/pyromancy/red.png" id="3_rnk8j"]
-[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/cryomancy/blue.png" id="5_t4f8r"]
-[ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/druidry/green.png" id="6_j1tjt"]
-[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/electromancy/white.png" id="7_bj4g6"]
-[ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/necromancy/black.png" id="8_vx3qw"]
+[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="3_rnk8j"]
+[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/ice/blue.png" id="5_t4f8r"]
+[ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/life/green.png" id="6_j1tjt"]
+[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="7_bj4g6"]
+[ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/death/black.png" id="8_vx3qw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wf76l"]
 resource_local_to_scene = true
@@ -53,28 +53,6 @@ grow_horizontal = 2
 text = "path_picker"
 label_settings = SubResource("LabelSettings_wf76l")
 
-[node name="Paths2" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 94.0
-offset_right = 112.5
-offset_bottom = 154.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Druidry" parent="Paths2" instance=ExtResource("2_yj67j")]
-layout_mode = 2
-texture_normal = ExtResource("6_j1tjt")
-subject = "druidry"
-
-[node name="Necromancy" parent="Paths2" instance=ExtResource("2_yj67j")]
-layout_mode = 2
-texture_normal = ExtResource("8_vx3qw")
-subject = "necromancy"
-
 [node name="Paths1" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -87,17 +65,39 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Pyromancy" parent="Paths1" instance=ExtResource("2_yj67j")]
+[node name="Fire" parent="Paths1" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("3_rnk8j")
-subject = "pyromancy"
+subject = "fire"
 
-[node name="Cryomancy" parent="Paths1" instance=ExtResource("2_yj67j")]
+[node name="Ice" parent="Paths1" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("5_t4f8r")
-subject = "cryomancy"
+subject = "ice"
 
-[node name="Electromancy" parent="Paths1" instance=ExtResource("2_yj67j")]
+[node name="Lightning" parent="Paths1" instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("7_bj4g6")
-subject = "electromancy"
+subject = "lightning"
+
+[node name="Paths2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Life" parent="Paths2" instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("6_j1tjt")
+subject = "life"
+
+[node name="Death" parent="Paths2" instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("8_vx3qw")
+subject = "death"

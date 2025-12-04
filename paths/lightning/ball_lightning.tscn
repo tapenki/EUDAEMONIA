@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://cp8slcxx2cl7q"]
+
+[ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_0owue"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_3eyo0"]
+[ext_resource type="Texture2D" uid="uid://csbg4wfwhnl4h" path="res://generic/projectiles/bullet.png" id="3_0owue"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_r00uu"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_r00uu"]
+[ext_resource type="Script" uid="uid://5o1wbrxeu4bd" path="res://generic/particles/particles.gd" id="6_2yt2x"]
+[ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/lightning/zap.png" id="7_xxnif"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_ycxlx"]
+
+[sub_resource type="Curve" id="Curve_mtknr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ate26"]
+curve = SubResource("Curve_mtknr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xxnif"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 32.0
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ate26")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxnif"]
+radius = 20.0
+
+[node name="BallLightning" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("1_0owue")
+ability_handler = NodePath("AbilityHandler")
+hit_sound = "Peh"
+hits_left = -1
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("3_r00uu")
+type = "static"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("2_3eyo0")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_0owue")
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_r00uu")
+
+[node name="Charge" type="GPUParticles2D" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+z_index = -1
+material = ExtResource("2_3eyo0")
+scale = Vector2(0.666667, 0.666667)
+amount = 16
+texture = ExtResource("7_xxnif")
+lifetime = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_xxnif")
+script = ExtResource("6_2yt2x")
+ability_handler = NodePath("../../AbilityHandler")
+
+[node name="Lifetime" type="Timer" parent="Sprite/Charge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xxnif")
+
+[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("7_ycxlx")
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Sprite/Charge/Lifetime" to="Sprite/Charge" method="_on_lifetime_timeout"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

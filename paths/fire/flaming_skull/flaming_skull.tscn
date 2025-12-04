@@ -1,0 +1,269 @@
+[gd_scene load_steps=26 format=3 uid="uid://cv5nksivfg1qo"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_kmxvn"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_oyhwu"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_h3b6x"]
+[ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_div0h"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_wloi5"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_oyhwu"]
+[ext_resource type="Script" uid="uid://c6b6v8sr70sib" path="res://generic/behavior/pathing_dash.gd" id="7_h3b6x"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="7_msdoi"]
+[ext_resource type="Texture2D" uid="uid://bb6f56hji22r4" path="res://paths/fire/flaming_skull/flaming_skull.png" id="8_5iypb"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="8_div0h"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_ws2h1"]
+[ext_resource type="Texture2D" uid="uid://b7y5jlp5qyeyw" path="res://paths/fire/flaming_skull/flaming_skull_hurt.png" id="10_qvixt"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_26aru"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_crknv"]
+[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="13_h3b6x"]
+
+[sub_resource type="Curve" id="Curve_mtknr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ate26"]
+curve = SubResource("Curve_mtknr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c27jy"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ate26")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Burn:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Burn:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_icb8a"]
+resource_name = "WALK"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_hwbj6"]
+resource_name = "WINDUP"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WALK": SubResource("Animation_icb8a"),
+&"WINDUP": SubResource("Animation_hwbj6")
+}
+
+[node name="FlamingSkull" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_kmxvn")
+ability_handler = NodePath("AbilityHandler")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 40
+
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_oyhwu")
+type = "entity"
+
+[node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_h3b6x")
+initial_state = NodePath("PrepareAttack")
+
+[node name="Chase" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_div0h")
+speed = 300
+distance_margin = 100
+next = NodePath("../PrepareAttack")
+
+[node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_wloi5")
+anim = "WINDUP"
+next = NodePath("../DashAttack")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_oyhwu")
+wait_time = 0.2
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_h3b6x")
+speed = 600
+sound = "ShootLight"
+next = NodePath("../PrepareAttack")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("8_div0h")
+wait_time = 0.24
+deviation = 0.2
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://dvr6gecg7swmt"
+
+[node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_wloi5")
+next = NodePath("../PrepareAttack")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_oyhwu")
+wait_time = 0.2
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = ExtResource("7_msdoi")
+position = Vector2(0, 19)
+texture = ExtResource("8_5iypb")
+offset = Vector2(0, -19)
+script = ExtResource("9_ws2h1")
+base_texture = ExtResource("8_5iypb")
+hurt_texture = ExtResource("10_qvixt")
+
+[node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_oyhwu")
+wait_time = 0.2
+ability_handler = NodePath("../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Glow" type="Sprite2D" parent="Sprite"]
+z_index = -3
+position = Vector2(0, -19)
+texture = ExtResource("11_26aru")
+
+[node name="Burn" type="GPUParticles2D" parent="Sprite"]
+z_index = -1
+material = ExtResource("7_msdoi")
+position = Vector2(0, -19)
+amount = 16
+texture = ExtResource("13_h3b6x")
+lifetime = 0.5
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+process_material = SubResource("ParticleProcessMaterial_c27jy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("12_crknv")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+libraries = {
+&"": SubResource("AnimationLibrary_v1kwl")
+}
+
+[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
