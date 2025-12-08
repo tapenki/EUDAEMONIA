@@ -52,7 +52,7 @@ func _input(event: InputEvent) -> void:
 		var new_event = InputEventKey.new()
 		new_event.keycode = event.keycode
 		InputMap.action_add_event(subject, event)
-		Config.config.set_value("keybinds", subject, [0, event.keycode])
+		Config.config.set_value("keyboard_controls", subject, [0, event.keycode])
 		Config.config.save("user://config.ini")
 		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false
@@ -62,7 +62,7 @@ func _input(event: InputEvent) -> void:
 		var new_event = InputEventMouseButton.new()
 		new_event.button_index = event.button_index
 		InputMap.action_add_event(subject, new_event)
-		Config.config.set_value("keybinds", subject, [1, event.button_index])
+		Config.config.set_value("keyboard_controls", subject, [1, event.button_index])
 		Config.config.save("user://config.ini")
 		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false

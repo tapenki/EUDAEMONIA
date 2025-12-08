@@ -18,7 +18,7 @@ func day_start(_day: int) -> void:
 			summon_instance.set_collision_layer_value(layer, layer != ability_handler.owner.group)
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.25*level
 		
-		summon_instance.get_node("Sprite").modulate = Config.get_team_color(ability_handler.owner.group, "tertiary")
+		summon_instance.apply_palette(ability_handler.owner.group, "tertiary")
 		
 		summon_instance.ability_handler.grant("cryonic_volatility", level)
 		

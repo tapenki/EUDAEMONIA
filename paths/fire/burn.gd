@@ -15,16 +15,16 @@ func _ready() -> void:
 	burn_timer.start()
 	for sprite in ability_handler.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
-		particle_instance.modulate = Config.get_team_color(1, "tertiary")
+		particle_instance.modulate = Config.get_team_color(1, "secondary")
 		particle_instance.position = sprite["offset"]
 		particle_instance.process_material.emission_box_extents.x = sprite["size"].x * 0.5
 		particle_instance.process_material.emission_box_extents.y = sprite["size"].y * 0.5
 		particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
 		particle_instances.append(particle_instance)
-		sprite["node"].add_child.call_deferred(particle_instance)
+		sprite["node"].add_child(particle_instance)
 
 func tick():
-	ability_handler.deal_damage(ability_handler.owner, {"source" : level, "multiplier" : 1.0}, false, true, Config.get_team_color(1, "tertiary"))
+	ability_handler.deal_damage(ability_handler.owner, {"source" : level, "multiplier" : 1.0}, false, true, Config.get_team_color(1, "secondary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

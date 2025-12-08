@@ -22,7 +22,7 @@ var base_values = {
 		"3/secondary" = "ffcc00",
 		"3/tertiary" = "ffff00",
 	},
-	"keybinds" : {
+	"keyboard_controls" : {
 		"attack" : [1, 1],
 		"up" : [0, KEY_W],
 		"left" : [0, KEY_A],
@@ -48,8 +48,8 @@ func _init() -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), config.get_value("audio", "music_volume", 1))
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), config.get_value("audio", "sfx_volume", 1))
 	
-	for action in config.get_section_keys("keybinds"):
-		var value = config.get_value("keybinds", action)
+	for action in config.get_section_keys("keyboard_controls"):
+		var value = config.get_value("keyboard_controls", action)
 		if value[0] == 0:
 			var input_event = InputEventKey.new()
 			input_event.keycode = value[1]

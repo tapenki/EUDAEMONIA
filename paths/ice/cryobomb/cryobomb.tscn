@@ -172,17 +172,17 @@ collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_pekaw")
-max_health = 0
-health = 0.0
 ability_handler = NodePath("AbilityHandler")
 animation_player = NodePath("AnimationPlayer")
+max_health = 0
+health = 0.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_mys48")
 type = "entity"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
 material = ExtResource("7_yyjck")
 texture = ExtResource("4_6o6mo")
 
@@ -195,7 +195,6 @@ texture = ExtResource("11_td7yl")
 shape = SubResource("CircleShape2D_bhp25")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_ewwjw")
 }

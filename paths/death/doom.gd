@@ -15,13 +15,13 @@ func _ready() -> void:
 	doom_timer.start(5)
 	for sprite in ability_handler.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
-		particle_instance.modulate = Config.get_team_color(1, "tertiary")
+		particle_instance.modulate = Config.get_team_color(1, "secondary")
 		particle_instance.position = sprite["offset"]
 		particle_instance.process_material.emission_box_extents.x = sprite["size"].x * 0.5
 		particle_instance.process_material.emission_box_extents.y = sprite["size"].y * 0.5
 		particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
 		particle_instances.append(particle_instance)
-		sprite["node"].add_child.call_deferred(particle_instance)
+		sprite["node"].add_child(particle_instance)
 
 func damage_taken(_source, damage) -> void:
 	stored_damage += damage["final"]
@@ -30,7 +30,7 @@ func timeout():
 	var damage = {"source" : stored_damage, "multiplier" : level}
 	if swift_fate:
 		damage["multiplier"] *= 1.5
-	ability_handler.deal_damage(ability_handler.owner, damage, false, true, Config.get_team_color(1, "tertiary"))
+	ability_handler.deal_damage(ability_handler.owner, damage, false, true, Config.get_team_color(1, "secondary"))
 	clear()
 
 func add_level(value):
