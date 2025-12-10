@@ -70,8 +70,7 @@ func scale_enemy_damage():
 func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()
 	reticle_instance.global_position = entity.global_position
-	reticle_instance.entity = entity
-	reticle_instance.modulate = entity.get_node("Sprite").self_modulate
+	reticle_instance.set_spawn(entity)
 	spawns.add_child(reticle_instance)
 	reticle_instance.get_node("SpawnTimer").start(delay)
 

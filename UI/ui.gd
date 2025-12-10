@@ -23,8 +23,8 @@ var keybind_setting: Node
 var weapon = "magic_missile"
 var armor = "hermits_cloak"
 
-var upgrade_points = 100
-var unlock_points = 100
+var upgrade_points = 1
+var unlock_points = 1
 var paths: Array
 
 func _ready() -> void:

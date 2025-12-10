@@ -1,4 +1,4 @@
-extends GPUParticles2D
+class_name Particles extends GPUParticles2D
 ## TODO particles with finite visibility rect cause visual issues when scaled to 0 
 ## particles with infinite visibility rect cause visual issues when rotated
 
