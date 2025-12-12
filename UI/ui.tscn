@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=35 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -26,46 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/keybind_setting.tscn" id="19_i1yd8"]
 [ext_resource type="PackedScene" uid="uid://bg830ii8c47r8" path="res://equipment/ui/equipment_picker.tscn" id="21_fgtw6"]
 [ext_resource type="Texture2D" uid="uid://n3nosr7kqvbu" path="res://equipment/ui/weapon.png" id="22_br2v7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qs3jx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ihmk"]
-bg_color = Color(1, 0, 0, 1)
-border_width_top = 3
-border_width_bottom = 3
-border_color = Color(0.431373, 0, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbg6h"]
-bg_color = Color(0.154876, 0.154876, 0.154876, 1)
-border_width_top = 3
-border_width_bottom = 3
-border_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 4
-expand_margin_top = 2.0
-expand_margin_bottom = 2.0
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iko4g"]
-bg_color = Color(1, 0, 1, 1)
-border_width_top = 3
-border_width_bottom = 3
-border_color = Color(1, 0, 0.498039, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 4
-anti_aliasing = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_iknsa"]
 outline_size = 5
@@ -148,20 +108,23 @@ grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
 
-[node name="HealthBar" type="ProgressBar" parent="HUD"]
+[node name="HealthBar" type="TextureProgressBar" parent="HUD"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 260.0
 offset_bottom = 36.0
 mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxEmpty_qs3jx")
-theme_override_styles/fill = SubResource("StyleBoxFlat_1ihmk")
 value = 50.0
-show_percentage = false
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_progress = ExtResource("12_2qbci")
 script = ExtResource("5_r6g2f")
 
-[node name="DamageBar" type="ProgressBar" parent="HUD/HealthBar"]
+[node name="DamageBar" type="TextureProgressBar" parent="HUD/HealthBar"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -170,10 +133,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_wbg6h")
-theme_override_styles/fill = SubResource("StyleBoxFlat_iko4g")
 value = 75.0
-show_percentage = false
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("12_o2jkc")
+texture_progress = ExtResource("19_0tr35")
 
 [node name="Label" type="Label" parent="HUD/HealthBar"]
 layout_mode = 1
