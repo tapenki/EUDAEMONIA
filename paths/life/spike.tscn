@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_afomj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
-radius = 14.0
+radius = 16.0
 
 [node name="Spike" type="Area2D" node_paths=PackedStringArray("ability_handler")]
 collision_layer = 0
@@ -45,6 +45,7 @@ shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_afomj")
+wait_time = 1.5
 running = true
 ability_handler = NodePath("../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

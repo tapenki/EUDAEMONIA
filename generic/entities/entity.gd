@@ -61,7 +61,7 @@ func take_damage(source, damage, immune_affected = true):
 	health = health - damage["final"]
 	ability_handler.damage_taken.emit(source, damage)
 	if ability_handler.get_health(health, max_health)["health"] <= 0:
-		kill(damage)
+		kill.call_deferred(damage) ## delay to apply all effects before proceeding to kill
 	return true
 
 func heal(amount):
