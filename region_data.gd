@@ -113,6 +113,13 @@ var room_data = {
 		"challenge" : true,
 	},
 	#endregion
+	#region anapnoi
+	"anapnoi_entrance_hall" : {
+		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "anapnoi",
+	},
+	#endregion
 	#region misc
 	"debug_room" : {
 		"scene" : preload("res://regions/debug_room.tscn"), 
@@ -181,6 +188,11 @@ var entity_data = {
 	},
 	"harbinger" : {
 		"scene" : preload("res://regions/olethros/harbinger/harbinger.tscn")
+	},
+	#endregion
+	#region anapnoi
+	"sprout" : {
+		"scene" : preload("res://regions/anapnoi/sprout/sprout.tscn")
 	},
 	#endregion
 }
