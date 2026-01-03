@@ -23,7 +23,7 @@ hit_walls = true
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_hkirg")
-type = "projectile"
+is_projectile = true
 
 [node name="Bulletsplosion" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_rcjvb")

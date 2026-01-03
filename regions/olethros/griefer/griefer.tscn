@@ -139,7 +139,7 @@ health = 80.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_5vg6s")
-type = "entity"
+is_entity = true
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_pu8i7")

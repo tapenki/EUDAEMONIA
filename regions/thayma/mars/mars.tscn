@@ -123,7 +123,7 @@ summoned = null
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_p2v6q")
-type = "entity"
+is_entity = true
 
 [node name="debree_shield" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("3_aeyf6")

@@ -6,7 +6,7 @@ var scale_boost = 1.0
 func _ready() -> void:
 	ability_handler.attack_scale_modifiers.connect(attack_scale_modifiers)
 	ability_handler.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-	if ability_handler.type != "projectile":
+	if !ability_handler.is_projectile:
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
 func _physics_process(delta: float) -> void:

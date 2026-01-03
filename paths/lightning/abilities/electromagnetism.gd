@@ -3,7 +3,7 @@ extends Ability
 var velocity_decay = false
 
 func _ready() -> void:
-	if ability_handler.type != "projectile":
+	if !ability_handler.is_projectile:
 		process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
 func _physics_process(_delta: float) -> void:

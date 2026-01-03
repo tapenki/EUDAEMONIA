@@ -194,5 +194,8 @@ var entity_data = {
 	"sprout" : {
 		"scene" : preload("res://regions/anapnoi/sprout/sprout.tscn")
 	},
+	"stalk" : {
+		"scene" : preload("res://regions/anapnoi/stalk/stalk.tscn")
+	},
 	#endregion
 }

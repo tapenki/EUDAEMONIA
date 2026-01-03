@@ -81,10 +81,9 @@ position = Vector2(30, 360)
 rotation = 4.712389
 
 [node name="Exit0" parent="Doors" instance=ExtResource("3_bieg0")]
-self_modulate = Color(1, 0.2509804, 0, 1)
 position = Vector2(960, 360)
 rotation = 1.5707964
-room = "vasis_entrance_hall"
+room = "anapnoi_entrance_hall"
 door = "Entrance0"
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]

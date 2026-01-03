@@ -6,7 +6,8 @@ extends Node
 @export var inherited_crit_chance = {"source" : 0.0, "multiplier" : 1.0}
 @export var inherited_speed_scale = {"source" : 1.0, "multiplier" : 1.0}
 
-@export_enum("entity", "projectile", "static") var type: String
+@export var is_entity: bool
+@export var is_projectile: bool
 
 var speed_scale = 1.0
 

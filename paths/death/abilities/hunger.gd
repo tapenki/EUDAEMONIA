@@ -4,7 +4,7 @@ var starvation: bool
 var inherited_damage: float
 
 func _ready() -> void:
-	if ability_handler.type == "entity" and not ability_handler.owner is Player:
+	if ability_handler.is_entity and not ability_handler.owner is Player:
 		get_node("/root/Main").entity_death.connect(entity_death)
 	ability_handler.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 

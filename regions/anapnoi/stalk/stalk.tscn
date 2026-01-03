@@ -1,25 +1,24 @@
-[gd_scene load_steps=22 format=3 uid="uid://br85yiholjjui"]
+[gd_scene load_steps=21 format=3 uid="uid://cqjwjy5rcc8q4"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_fmkbv"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_06c27"]
-[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_j1inu"]
-[ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_06c27"]
-[ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="5_lbqrw"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_06c27"]
-[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="6_7f2ot"]
-[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="7_0bbdo"]
-[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_geqdx"]
-[ext_resource type="Texture2D" uid="uid://du30rxxea4vmo" path="res://regions/vasis/spitter/spitter.png" id="9_15fgn"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_41ofl"]
-[ext_resource type="Texture2D" uid="uid://b8r4p1vtok6yq" path="res://regions/vasis/spitter/spitter_hurt.png" id="11_8ddnx"]
-[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_u62mg"]
-[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_aub82"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_cuxw7"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_vql3y"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_bvwtb"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_fnypg"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_hyi1y"]
+[ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="7_fln2o"]
+[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="8_a2obm"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_s3087"]
+[ext_resource type="Texture2D" uid="uid://dv2r26dihq26w" path="res://regions/anapnoi/stalk/stalk.png" id="10_e1eok"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_3v50x"]
+[ext_resource type="Texture2D" uid="uid://bk4qg42qk1vaa" path="res://regions/anapnoi/stalk/stalk_hurt.png" id="12_11g70"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_rs6p0"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_jj4bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
-radius = 20.0
+radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
-radius = 20.0
+radius = 30.0
 
 [sub_resource type="Animation" id="Animation_drum4"]
 resource_name = "DEATH"
@@ -117,91 +116,82 @@ _data = {
 &"WINDUP": SubResource("Animation_vajmc")
 }
 
-[node name="Spitter" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Stalk" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_fmkbv")
+script = ExtResource("1_cuxw7")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 40
-health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
-script = ExtResource("2_06c27")
+script = ExtResource("2_vql3y")
 is_entity = true
 
-[node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("3_j1inu")
-initial_state = NodePath("CloseIn")
-
-[node name="CloseIn" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
-process_mode = 4
-script = ExtResource("4_06c27")
-speed = 200
-distance_margin = 300
-next = NodePath("../PrepareAttack")
+[node name="StateHandler" type="Node" parent="."]
+script = ExtResource("3_bvwtb")
 
 [node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("7_0bbdo")
+script = ExtResource("5_fnypg")
 anim = "WINDUP"
 next = NodePath("../ShootAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_06c27")
+script = ExtResource("6_hyi1y")
 wait_time = 0.3
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="ShootAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("5_lbqrw")
-bullet = ExtResource("6_7f2ot")
+script = ExtResource("7_fln2o")
+bullet = ExtResource("8_a2obm")
 bullet_lifetime = 2.75
 bullet_speed = 360
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("7_0bbdo")
-next = NodePath("../CloseIn")
+script = ExtResource("5_fnypg")
+next = NodePath("../PrepareAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_06c27")
+script = ExtResource("6_hyi1y")
 wait_time = 0.4
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="."]
-material = ExtResource("8_geqdx")
-position = Vector2(0, 32)
-texture = ExtResource("9_15fgn")
-offset = Vector2(0, -32)
-script = ExtResource("10_41ofl")
-base_texture = ExtResource("9_15fgn")
-hurt_texture = ExtResource("11_8ddnx")
+material = ExtResource("9_s3087")
+position = Vector2(0, 37)
+texture = ExtResource("10_e1eok")
+offset = Vector2(0, -37)
+script = ExtResource("11_3v50x")
+base_texture = ExtResource("10_e1eok")
+hurt_texture = ExtResource("12_11g70")
 
 [node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
-script = ExtResource("6_06c27")
+script = ExtResource("6_hyi1y")
 wait_time = 0.2
 ability_handler = NodePath("../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3
-position = Vector2(0, -32)
-texture = ExtResource("12_u62mg")
+position = Vector2(0, -37)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("13_rs6p0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bhp25")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
 collision_layer = 0
-script = ExtResource("13_aub82")
+script = ExtResource("14_jj4bs")
 ability_handler = NodePath("../AbilityHandler")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]

@@ -74,8 +74,8 @@ entity = "sprout"
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Entrance0" parent="Doors" instance=ExtResource("4_tlb2j")]
-position = Vector2(210, 720)
-rotation = 3.1415927
+position = Vector2(150, 510)
+rotation = 4.712389
 
 [node name="Exit0" parent="Doors" instance=ExtResource("5_wm4g2")]
 position = Vector2(450, 30)

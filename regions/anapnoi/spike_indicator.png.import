@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4lu33jy0tbjw"
-path="res://.godot/imported/spawn_reticle.png-e8eb1a639867d16742ddbf5b0ee9079d.ctex"
+uid="uid://d1ks80pffpgtn"
+path="res://.godot/imported/spike_indicator.png-5d8e0a450e7f0e7e0106643e2b5c6b49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://generic/entities/spawn_reticle.png"
-dest_files=["res://.godot/imported/spawn_reticle.png-e8eb1a639867d16742ddbf5b0ee9079d.ctex"]
+source_file="res://regions/anapnoi/spike_indicator.png"
+dest_files=["res://.godot/imported/spike_indicator.png-5d8e0a450e7f0e7e0106643e2b5c6b49.ctex"]
 
 [params]
 

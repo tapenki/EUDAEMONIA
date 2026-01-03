@@ -5,7 +5,7 @@ var type = "Upgrade"
 
 func _ready() -> void:
 	ability_handler.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-	if ability_handler.type != "projectile":
+	if !ability_handler.is_projectile:
 		ability_handler.inh_attack_scale_modifiers.connect(attack_scale_modifiers)
 
 func attack_scale_modifiers(modifiers) -> void:

@@ -21,7 +21,7 @@ hit_walls = true
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_c6y3j")
-type = "projectile"
+is_projectile = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = ExtResource("3_4ncq8")

@@ -117,7 +117,7 @@ max_health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_37jx0")
-type = "entity"
+is_entity = true
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_1o3sq")

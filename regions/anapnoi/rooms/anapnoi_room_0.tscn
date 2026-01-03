@@ -25,24 +25,19 @@ wait_time = 5.0
 one_shot = true
 
 [node name="SpawnSprout1" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(180, 360)
+position = Vector2(810, 240)
 script = ExtResource("3_ov5x1")
 entity = "sprout"
 
 [node name="SpawnSprout2" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(150, 480)
+position = Vector2(570, 240)
 script = ExtResource("3_ov5x1")
 entity = "sprout"
 
-[node name="SpawnSprout3" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(300, 330)
+[node name="SpawnStalk" type="Node2D" parent="Waves/Wave1"]
+position = Vector2(690, 120)
 script = ExtResource("3_ov5x1")
-entity = "sprout"
-
-[node name="SpawnSprout4" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(270, 450)
-script = ExtResource("3_ov5x1")
-entity = "sprout"
+entity = "stalk"
 
 [node name="Wave2" type="Node2D" parent="Waves"]
 script = ExtResource("2_h6qnl")
@@ -78,7 +73,8 @@ position = Vector2(480, 960)
 rotation = 3.1415927
 
 [node name="Exit0" parent="Doors" instance=ExtResource("5_sydwf")]
-position = Vector2(690, 30)
+position = Vector2(30, 450)
+rotation = 4.712389
 room = "aporia_room_0"
 door = "Entrance0"
 

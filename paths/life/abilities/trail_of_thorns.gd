@@ -24,7 +24,7 @@ func movement(distance) -> void:
 		if pain_walk:
 			for i in 2:
 				spawn(ability_handler.owner.global_position + Vector2(randf_range(-24, 24), randf_range(-24, 24)))
-			if ability_handler.type == "entity":
+			if ability_handler.is_entity:
 				pain_walk_counter = (pain_walk_counter + 1) % 2
 				if pain_walk_counter == 0:
 					ability_handler.deal_damage(ability_handler.owner, {"source" : 2, "multiplier" : 1.0}, false, false, Config.get_team_color(1, "tertiary"))

@@ -85,7 +85,7 @@ health = 30.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_jwabc")
-type = "entity"
+is_entity = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = ExtResource("8_yuve4")

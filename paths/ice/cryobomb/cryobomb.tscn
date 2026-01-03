@@ -179,7 +179,7 @@ health = 0.0
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_mys48")
-type = "entity"
+is_entity = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 self_modulate = Color(0, 1, 0, 1)
