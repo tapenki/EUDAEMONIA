@@ -43,7 +43,7 @@ hits_left = 4
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_7j7ie")
-type = "projectile"
+is_projectile = true
 
 [node name="Sprite" type="Sprite2D" parent="." node_paths=PackedStringArray("ability_handler")]
 z_index = -3

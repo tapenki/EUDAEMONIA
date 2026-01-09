@@ -1,5 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://wmp0gjc61rqi"]
+[gd_scene load_steps=13 format=3 uid="uid://wmp0gjc61rqi"]
 
+[ext_resource type="Script" uid="uid://e36a7r84wcf8" path="res://regions/anapnoi/spike_reticle.gd" id="1_u546l"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_blg4x"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_ftt11"]
 [ext_resource type="Texture2D" uid="uid://d1ks80pffpgtn" path="res://regions/anapnoi/spike_indicator.png" id="3_u546l"]
 [ext_resource type="Script" uid="uid://dy7ist73q37ws" path="res://generic/particles/glow_particles.gd" id="4_blg4x"]
@@ -28,14 +30,23 @@ gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_ate26")
 alpha_curve = SubResource("CurveTexture_cidvn")
 
-[node name="SpikeReticle" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpvjx"]
+radius = 12.0
+
+[node name="SpikeReticle" type="Area2D" node_paths=PackedStringArray("ability_handler")]
 visibility_layer = 129
+script = ExtResource("1_u546l")
+ability_handler = NodePath("AbilityHandler")
+hit_sound = ""
+hit_particles = ""
+crit_particles = ""
+hit_enabled = false
 
-[node name="SpawnTimer" type="Timer" parent="."]
-autostart = true
+[node name="AbilityHandler" type="Node2D" parent="."]
+script = ExtResource("2_blg4x")
+is_projectile = true
 
-[node name="Indicator" type="GPUParticles2D" parent="."]
-z_index = -1
+[node name="Sprite" type="GPUParticles2D" parent="." node_paths=PackedStringArray("ability_handler")]
 material = ExtResource("2_ftt11")
 amount = 6
 texture = ExtResource("3_u546l")
@@ -44,13 +55,20 @@ visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_jhupx")
 script = ExtResource("4_blg4x")
+ability_handler = NodePath("../AbilityHandler")
 
-[node name="Lifetime" type="Timer" parent="Indicator"]
+[node name="Lifetime" type="Timer" parent="Sprite"]
 wait_time = 0.7
 
-[node name="Glow" type="Sprite2D" parent="Indicator"]
+[node name="Glow" type="Sprite2D" parent="Sprite"]
 z_index = -3
 texture = ExtResource("5_jpvjx")
 
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Indicator/Lifetime" to="Indicator" method="_on_lifetime_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jpvjx")
+
+[node name="Lifetime" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Sprite/Lifetime" to="Sprite" method="_on_lifetime_timeout"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

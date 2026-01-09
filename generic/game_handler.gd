@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-var room = "anapnoi_entrance_hall"
+var room = "anapnoi_room_0"
 var door = "Entrance0"
 
 var day = 1
