@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_f5pal"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_33os3"]
 [ext_resource type="Script" uid="uid://b03xje6de2ajy" path="res://regions/anapnoi/spike_dash_attack.gd" id="7_22vc7"]
-[ext_resource type="PackedScene" uid="uid://d2x7ke5n7fusk" path="res://paths/life/spike.tscn" id="8_0g841"]
+[ext_resource type="PackedScene" uid="uid://be5p70xoowmvb" path="res://regions/anapnoi/anapnoi_thorn.tscn" id="8_0g841"]
 [ext_resource type="Texture2D" uid="uid://dfpr2cn2bm1j" path="res://regions/anapnoi/sprout/sprout.png" id="8_22vc7"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_u30as"]
 [ext_resource type="Texture2D" uid="uid://bl4uh2dc3u2dn" path="res://regions/anapnoi/sprout/sprout_hurt.png" id="10_0g841"]

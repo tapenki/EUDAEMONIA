@@ -1,6 +1,6 @@
 extends Projectile
 
-var bullet = preload("res://paths/life/spike.tscn")
+var bullet = preload("res://regions/anapnoi/anapnoi_thorn.tscn")
 
 func _ready() -> void:
 	ability_handler.death_effects.connect(death_effects)

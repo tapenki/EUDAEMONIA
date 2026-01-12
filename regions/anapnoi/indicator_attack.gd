@@ -10,8 +10,13 @@ func on_enter() -> void:
 		state_handler.target = user.ability_handler.find_target()
 	
 	if is_instance_valid(state_handler.target):
+		var ray_query = PhysicsRayQueryParameters2D.new()
+		ray_query.from = state_handler.target.global_position
+		ray_query.to = state_handler.target.global_position + state_handler.target.velocity * bullet_lifetime
+		ray_query.collision_mask = 128
+		var raycast_result = get_node("/root/Main").physics_space.intersect_ray(ray_query)
 		var reticle_instance = user.ability_handler.make_projectile(reticle, 
-		state_handler.target.global_position + state_handler.target.velocity * bullet_lifetime, 
+		raycast_result.get("position", state_handler.target.global_position + state_handler.target.velocity * bullet_lifetime), 
 		2)
 		reticle_instance.get_node("Lifetime").wait_time = bullet_lifetime
 		get_node("/root/Main/Projectiles").add_child(reticle_instance)

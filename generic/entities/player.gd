@@ -1,5 +1,6 @@
 class_name Player extends Entity
 
+@onready var sprite = $Sprite
 var attacking: bool
 
 func _ready() -> void:
@@ -17,9 +18,12 @@ func _physics_process(_delta):
 		still = false
 		var speed = ability_handler.get_move_speed(360)
 		velocity = lerp(velocity, direction * speed, 0.2)
+		sprite.rotation = lerp(sprite.rotation, velocity.normalized().x * 0.2, 0.2)
 		animation_player.play("WALK")
-	elif animation_player.current_animation == "WALK":
-		animation_player.play("RESET")
+	else:
+		sprite.rotation = lerp(sprite.rotation, 0.0, 0.2)
+		if animation_player.current_animation == "WALK":
+			animation_player.play("RESET")
 	super(_delta)
 
 func _unhandled_input(event: InputEvent) -> void:

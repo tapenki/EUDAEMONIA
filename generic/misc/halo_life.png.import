@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://edlrfguk1nxb"
-path="res://.godot/imported/hydra_hurt.png-1ccdc18a49e117324d51fd98d480f3ca.ctex"
+uid="uid://dvxl5onmy0avt"
+path="res://.godot/imported/halo_life.png-d3df804748dc63505a299590c392e06b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/olethros/hydra/hydra_hurt.png"
-dest_files=["res://.godot/imported/hydra_hurt.png-1ccdc18a49e117324d51fd98d480f3ca.ctex"]
+source_file="res://generic/misc/halo_life.png"
+dest_files=["res://.godot/imported/halo_life.png-d3df804748dc63505a299590c392e06b.ctex"]
 
 [params]
 

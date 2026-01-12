@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bptqhgd06efup"
-path="res://.godot/imported/hydra.png-4f85aca3a7e9beecf70d94a94237841b.ctex"
+uid="uid://2n5jels2jnne"
+path="res://.godot/imported/anapnoi_thorn.png-66df46141b9284a7d136ec7adb28e51f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/olethros/hydra/hydra.png"
-dest_files=["res://.godot/imported/hydra.png-4f85aca3a7e9beecf70d94a94237841b.ctex"]
+source_file="res://regions/anapnoi/anapnoi_thorn.png"
+dest_files=["res://.godot/imported/anapnoi_thorn.png-66df46141b9284a7d136ec7adb28e51f.ctex"]
 
 [params]
 

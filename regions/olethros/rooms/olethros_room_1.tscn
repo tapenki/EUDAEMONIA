@@ -24,20 +24,15 @@ next = NodePath("../Wave2")
 wait_time = 5.0
 one_shot = true
 
-[node name="SpawnHydra1" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(150, 300)
-script = ExtResource("3_cwnww")
-entity = "hydra"
-
-[node name="SpawnHydra2" type="Node2D" parent="Waves/Wave1"]
+[node name="SpawnGriefer" type="Node2D" parent="Waves/Wave1"]
 position = Vector2(750, 300)
 script = ExtResource("3_cwnww")
-entity = "hydra"
-
-[node name="SpawnGriefer" type="Node2D" parent="Waves/Wave1"]
-position = Vector2(450, 150)
-script = ExtResource("3_cwnww")
 entity = "griefer"
+
+[node name="SpawnMeteor" type="Node2D" parent="Waves/Wave1"]
+position = Vector2(150, 300)
+script = ExtResource("3_cwnww")
+entity = "meteor"
 
 [node name="Wave2" type="Node2D" parent="Waves"]
 script = ExtResource("2_j2ce0")
@@ -46,20 +41,15 @@ script = ExtResource("2_j2ce0")
 wait_time = 5.0
 one_shot = true
 
-[node name="SpawnHydra1" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnGriefer" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(150, 540)
 script = ExtResource("3_cwnww")
-entity = "hydra"
+entity = "griefer"
 
-[node name="SpawnHydra2" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnMeteor" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(750, 540)
 script = ExtResource("3_cwnww")
-entity = "hydra"
-
-[node name="SpawnGriefer" type="Node2D" parent="Waves/Wave2"]
-position = Vector2(450, 150)
-script = ExtResource("3_cwnww")
-entity = "griefer"
+entity = "meteor"
 
 [node name="Doors" type="Node2D" parent="."]
 

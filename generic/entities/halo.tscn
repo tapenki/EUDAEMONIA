@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwqtju3j0vbm3"]
+
+[ext_resource type="Texture2D" uid="uid://74ysebxreuku" path="res://generic/misc/halo_background.png" id="1_4d1j3"]
+[ext_resource type="Texture2D" uid="uid://dvxl5onmy0avt" path="res://generic/misc/halo_life.png" id="2_g84mc"]
+[ext_resource type="Script" uid="uid://dvoyqfvsunl37" path="res://generic/entities/halo.gd" id="3_mg0l4"]
+
+[node name="Halo" type="Node2D"]
+
+[node name="Health" type="TextureProgressBar" parent="."]
+show_behind_parent = true
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+step = 0.0
+fill_mode = 4
+radial_initial_angle = 214.0
+radial_fill_degrees = 292.0
+texture_under = ExtResource("1_4d1j3")
+texture_progress = ExtResource("2_g84mc")
+script = ExtResource("3_mg0l4")

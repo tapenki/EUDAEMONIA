@@ -59,20 +59,15 @@ script = ExtResource("2_bieg0")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnMeteor" type="Node2D" parent="Waves/Wave3"]
-position = Vector2(150, 360)
+[node name="SpawnMeteor1" type="Node2D" parent="Waves/Wave3"]
+position = Vector2(210, 150)
 script = ExtResource("3_oqujk")
 entity = "meteor"
 
-[node name="SpawnHydra1" type="Node2D" parent="Waves/Wave3"]
+[node name="SpawnMeteor2" type="Node2D" parent="Waves/Wave3"]
 position = Vector2(210, 570)
 script = ExtResource("3_oqujk")
-entity = "hydra"
-
-[node name="SpawnHydra2" type="Node2D" parent="Waves/Wave3"]
-position = Vector2(210, 150)
-script = ExtResource("3_oqujk")
-entity = "hydra"
+entity = "meteor"
 
 [node name="Doors" type="Node2D" parent="."]
 

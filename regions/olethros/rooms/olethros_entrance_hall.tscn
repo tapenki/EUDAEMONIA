@@ -51,25 +51,25 @@ script = ExtResource("2_lb48w")
 wait_time = 5.0
 one_shot = true
 
-[node name="SpawnHydra1" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnRocketjumper1" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(150, 270)
 script = ExtResource("3_bje13")
-entity = "hydra"
+entity = "rocketjumper"
 
-[node name="SpawnHydra2" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnRocketjumper2" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(810, 270)
 script = ExtResource("3_bje13")
-entity = "hydra"
+entity = "rocketjumper"
 
-[node name="SpawnHydra3" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnRocketjumper3" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(150, 570)
 script = ExtResource("3_bje13")
-entity = "hydra"
+entity = "rocketjumper"
 
-[node name="SpawnHydra4" type="Node2D" parent="Waves/Wave2"]
+[node name="SpawnRocketjumper4" type="Node2D" parent="Waves/Wave2"]
 position = Vector2(810, 570)
 script = ExtResource("3_bje13")
-entity = "hydra"
+entity = "rocketjumper"
 
 [node name="Doors" type="Node2D" parent="."]
 

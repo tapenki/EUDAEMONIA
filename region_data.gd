@@ -188,9 +188,6 @@ var entity_data = {
 	"meteor" : {
 		"scene" : preload("res://regions/olethros/meteor/meteor.tscn")
 	},
-	"hydra" : {
-		"scene" : preload("res://regions/olethros/hydra/hydra.tscn")
-	},
 	"harbinger" : {
 		"scene" : preload("res://regions/olethros/harbinger/harbinger.tscn")
 	},
@@ -201,6 +198,9 @@ var entity_data = {
 	},
 	"stalk" : {
 		"scene" : preload("res://regions/anapnoi/stalk/stalk.tscn")
+	},
+	"hydra" : {
+		"scene" : preload("res://regions/anapnoi/hydra/hydra.tscn")
 	},
 	#endregion
 }
