@@ -124,6 +124,21 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"region" : "anapnoi",
 	},
+	"anapnoi_room_1" : {
+		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "anapnoi",
+	},
+	"anapnoi_room_2" : {
+		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "anapnoi",
+	},
+	"anapnoi_throne_room" : {
+		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "anapnoi",
+	},
 	#endregion
 	#region misc
 	"debug_room" : {
