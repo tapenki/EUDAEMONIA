@@ -153,7 +153,7 @@ next = NodePath("../QuakeAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_uyvgd")
-wait_time = 7.5
+wait_time = 2.0
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

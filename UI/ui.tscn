@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://ui/slider_setting.tscn" id="16_o2t6a"]
 [ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://ui/status_container.gd" id="16_s1k1p"]
 [ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://ui/toggle_setting.tscn" id="17_8gukh"]
-[ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://gear.png" id="17_bw7v0"]
+[ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://ui/gear.png" id="17_bw7v0"]
 [ext_resource type="Script" uid="uid://b1e3hvb0r8fib" path="res://ui/word_wheel.gd" id="18_0avjw"]
 [ext_resource type="Script" uid="uid://byi7dd5lpcl53" path="res://ui/settings_tab_button.gd" id="18_8gkfd"]
 [ext_resource type="Script" uid="uid://cjfp8hq1cvmbj" path="res://ui/volume_slider_setting.gd" id="18_j5i65"]

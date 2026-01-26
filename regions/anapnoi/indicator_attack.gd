@@ -16,7 +16,7 @@ func on_enter() -> void:
 		ray_query.collision_mask = 128
 		var raycast_result = get_node("/root/Main").physics_space.intersect_ray(ray_query)
 		var reticle_instance = user.ability_handler.make_projectile(reticle, 
-		raycast_result.get("position", state_handler.target.global_position + state_handler.target.velocity * bullet_lifetime), 
+		raycast_result.get("position", ray_query.to), 
 		2)
 		reticle_instance.get_node("Lifetime").wait_time = bullet_lifetime
 		get_node("/root/Main/Projectiles").add_child(reticle_instance)

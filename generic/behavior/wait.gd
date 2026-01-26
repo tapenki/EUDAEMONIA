@@ -9,7 +9,8 @@ class_name WaitState extends State
 func on_enter() -> void:
 	super()
 	if anim != "":
-		#user.animation_player.stop()
+		if user.animation_player.current_animation == anim:
+			user.animation_player.stop()
 		user.animation_player.play(anim)
 	timer.start()
 

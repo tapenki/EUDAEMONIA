@@ -150,7 +150,6 @@ next = NodePath("../PrepareAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("8_e1eok")
-wait_time = 0.8
 deviation = 0.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

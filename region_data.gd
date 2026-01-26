@@ -138,6 +138,7 @@ var room_data = {
 		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
 		"region" : "anapnoi",
+		"challenge" : true,
 	},
 	#endregion
 	#region misc
@@ -216,6 +217,12 @@ var entity_data = {
 	},
 	"hydra" : {
 		"scene" : preload("res://regions/anapnoi/hydra/hydra.tscn")
+	},
+	"gall" : {
+		"scene" : preload("res://regions/anapnoi/gall/gall.tscn")
+	},
+	"giga_sprout" : {
+		"scene" : preload("res://regions/anapnoi/giga_sprout/giga_sprout.tscn")
 	},
 	#endregion
 }
