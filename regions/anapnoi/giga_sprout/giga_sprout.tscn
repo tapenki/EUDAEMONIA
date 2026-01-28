@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdvfiw08c6nnb"]
+[gd_scene load_steps=23 format=3 uid="uid://bdvfiw08c6nnb"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_007a3"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_yklba"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7gsxtvvflfek" path="res://regions/anapnoi/giga_sprout/giga_sprout_hurt.png" id="11_313mo"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_wgu50"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_8jfyq"]
+[ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="15_41ets"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 30.0
@@ -142,7 +143,7 @@ next = NodePath("../DashAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_a24i7")
-wait_time = 0.4
+wait_time = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -151,7 +152,7 @@ process_mode = 4
 script = ExtResource("7_u7mec")
 speed = 750
 bullet = ExtResource("8_a0dhh")
-bullet_rate = 0.16
+bullet_rate = 0.1
 next = NodePath("../QuakeAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
@@ -213,6 +214,12 @@ deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_v1kwl")
 }
+
+[node name="Speech" type="Node2D" parent="."]
+position = Vector2(0, -25)
+script = ExtResource("15_41ets")
+spawn_quotes = ["giga_sprout_spawn_1"]
+death_quotes = ["giga_sprout_death_1"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]

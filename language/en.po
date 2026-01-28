@@ -86,6 +86,11 @@ msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [o
 msgid "defeated"
 msgstr "died :("
 
+# challenges
+
+msgid "challenges"
+msgstr "Challenges"
+
 # equipment
 
 msgid "equipment"
@@ -162,7 +167,7 @@ msgid "unlock_cost"
 msgstr "Price: 1 Lucidae"
 
 msgid "dark_unlock_cost"
-msgstr "Dark Price: 32 Max Health"
+msgstr "Dark Price: 25 Max Health"
 
 msgid "learned"
 msgstr "Learned"
@@ -361,7 +366,7 @@ msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ch.2: Wrought Flesh[/outline_color]"
 
 msgid "wrought_flesh_description"
-msgstr "You gain [outline_size=10]+[20xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
+msgstr "You gain [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
 
 msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ch.3: Trail of Thorns[/outline_color]"
@@ -525,6 +530,15 @@ msgstr "*You shall perish*"
 
 msgid "harbinger_death_1"
 msgstr "*Woe is me*"
+
+msgid "gall_spawn_1"
+msgstr "Wise Mystical Tree"
+
+msgid "giga_sprout_spawn_1"
+msgstr "fool fool fool !!!"
+
+msgid "giga_sprout_death_1"
+msgstr "grrgghn >:("
 
 # inputstrings
 

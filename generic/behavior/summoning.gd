@@ -1,7 +1,7 @@
 extends State
 
 @export var summon: PackedScene
-@export var summon_health: float
+@export var summon_health: float = 1.0
 @export var max_summons: int
 
 @export var next: State
@@ -18,7 +18,7 @@ func on_enter() -> void:
 		var summon_instance = user.ability_handler.make_summon(summon, 
 		user.global_position, 
 		2,
-		get_node("/root/Main").scale_enemy_health(summon_health))
+		user.max_health * summon_health)
 		summon_instance.ability_handler.inherited_damage["multiplier"] = get_node("/root/Main").scale_enemy_damage()
 		get_node("/root/Main/Entities").add_child(summon_instance)
 		get_node("/root/Main/Entities").move_child(summon_instance, 0)

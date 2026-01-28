@@ -20,8 +20,9 @@ extends Node
 
 var keybind_setting: Node
 
-var weapon = "magic_missile"
-var armor = "hermits_cloak"
+#var weapon = "magic_missile"
+#var armor = "hermits_cloak"
+var challenges: Array
 
 var upgrade_points = 1
 var unlock_points = 1
@@ -63,9 +64,11 @@ func toggle_main_menu():
 func start_run():
 	saver.write_meta()
 	toggle_main_menu()
-	player.ability_handler.upgrade(weapon, 1)
-	player.ability_handler.upgrade(armor, 1)
-	$"GameMenu/Equipment".remload()
+	#player.ability_handler.upgrade(weapon, 1)
+	#player.ability_handler.upgrade(armor, 1)
+	for i in challenges:
+		player.ability_handler.upgrade(i, 1)
+	$"GameMenu/Challenges".remload()
 	get_node("/root/Main").game_start.emit()
 
 func cancel_keybind():

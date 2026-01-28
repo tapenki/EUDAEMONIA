@@ -49,7 +49,7 @@ func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and accessible:
 		var ability_node = ability_handler.get_node_or_null(subject)
 		if not ability_node:
-			ability_handler.upgrade("dark_price", 32)
+			ability_handler.upgrade("dark_price", 25)
 			ability_handler.upgrade(subject, 1)
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE

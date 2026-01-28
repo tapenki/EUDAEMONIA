@@ -51,6 +51,20 @@ var ability_data = {
 		"type" : "armor"
 	},
 	#endregion
+	#region challenges
+	"lasting_wounds" : {
+		"script" : preload("res://challenges/lasting_wounds.gd"),
+		"type" : "challenge"
+	},
+	"burning_hours" : {
+		"script" : preload("res://challenges/burning_hours.gd"),
+		"type" : "challenge"
+	},
+	"era_wink" : {
+		"script" : preload("res://challenges/era_wink.gd"),
+		"type" : "challenge"
+	},
+	#endregion
 	#region fire
 	"ignition" : {
 		"script" : preload("res://paths/fire/abilities/ignition.gd"),

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbacgjor4wear"]
+[gd_scene load_steps=4 format=3 uid="uid://m8e1a3uvgf8i"]
 
-[ext_resource type="Texture2D" uid="uid://hhfhujkknr05" path="res://equipment/ui/armor.png" id="1_lau1c"]
-[ext_resource type="Script" uid="uid://bw2p6wbjt2dqy" path="res://equipment/ui/equipment_reminder.gd" id="2_lau1c"]
+[ext_resource type="Texture2D" uid="uid://dgux5aejbmeo" path="res://challenges/ui/challenge.png" id="1_s6rr0"]
+[ext_resource type="Script" uid="uid://3x7g6dldh7nm" path="res://challenges/ui/challenge_picker.gd" id="2_o08yn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_srhlf"]
 resource_local_to_scene = true
@@ -9,15 +9,17 @@ font_size = 40
 outline_size = 8
 outline_color = Color(1, 1, 1, 0.2509804)
 
-[node name="EquipmentReminder" type="TextureButton"]
+[node name="ChallengePicker" type="TextureButton"]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 custom_minimum_size = Vector2(60, 60)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_lau1c")
+texture_normal = ExtResource("1_s6rr0")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("2_lau1c")
+script = ExtResource("2_o08yn")
 
 [node name="Symbol" type="Label" parent="."]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1

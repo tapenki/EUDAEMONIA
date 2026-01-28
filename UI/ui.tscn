@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene load_steps=33 format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -11,21 +11,20 @@
 [ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://ui/version.gd" id="10_0w6e5"]
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="12_2qbci"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="12_o2jkc"]
-[ext_resource type="Script" uid="uid://clk3eog3f12cy" path="res://equipment/ui/equipment_container.gd" id="14_c44sx"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="14_c74r5"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="16_j5i65"]
 [ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://ui/slider_setting.tscn" id="16_o2t6a"]
 [ext_resource type="Script" uid="uid://dat0qv5abwi7t" path="res://ui/status_container.gd" id="16_s1k1p"]
 [ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://ui/toggle_setting.tscn" id="17_8gukh"]
 [ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://ui/gear.png" id="17_bw7v0"]
+[ext_resource type="Script" uid="uid://bvj8m276etwfq" path="res://challenges/ui/challenge_container.gd" id="17_rkf1o"]
 [ext_resource type="Script" uid="uid://b1e3hvb0r8fib" path="res://ui/word_wheel.gd" id="18_0avjw"]
 [ext_resource type="Script" uid="uid://byi7dd5lpcl53" path="res://ui/settings_tab_button.gd" id="18_8gkfd"]
 [ext_resource type="Script" uid="uid://cjfp8hq1cvmbj" path="res://ui/volume_slider_setting.gd" id="18_j5i65"]
 [ext_resource type="Script" uid="uid://detflvrwqig8" path="res://ui/control_spin.gd" id="18_rkf1o"]
 [ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="19_0tr35"]
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/keybind_setting.tscn" id="19_i1yd8"]
-[ext_resource type="PackedScene" uid="uid://bg830ii8c47r8" path="res://equipment/ui/equipment_picker.tscn" id="21_fgtw6"]
-[ext_resource type="Texture2D" uid="uid://n3nosr7kqvbu" path="res://equipment/ui/weapon.png" id="22_br2v7"]
+[ext_resource type="PackedScene" uid="uid://m8e1a3uvgf8i" path="res://challenges/ui/challenge_picker.tscn" id="20_rkf1o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iknsa"]
 outline_size = 5
@@ -43,11 +42,6 @@ shadow_color = Color(0, 0.5019608, 1, 1)
 shadow_offset = Vector2(3, 3)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
-outline_size = 5
-outline_color = Color(0.25098, 0.25098, 0.25098, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_wf76l"]
-resource_local_to_scene = true
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
@@ -251,16 +245,16 @@ mouse_filter = 2
 [node name="UpgradePoints" type="Label" parent="GameMenu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.29200003
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 0.293
 anchor_bottom = 1.0
-offset_left = -0.5
+offset_left = -0.3000183
 offset_top = -40.0
-offset_right = 0.5
+offset_right = -0.2000122
 offset_bottom = -16.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 label_settings = SubResource("LabelSettings_4xnvd")
 horizontal_alignment = 1
 script = ExtResource("3_mom20")
@@ -380,7 +374,7 @@ offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="GameMenu" instance=ExtResource("6_6rr40")]
+[node name="MagicPicker3" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 450.0
@@ -388,40 +382,16 @@ offset_top = 75.0
 offset_right = 675.0
 offset_bottom = 375.0
 mouse_filter = 2
+next = NodePath("../MagicPicker4")
 
-[node name="Equipment" type="Control" parent="GameMenu"]
-anchors_preset = 0
+[node name="MagicPicker4" parent="GameMenu" instance=ExtResource("6_6rr40")]
+visible = false
+layout_mode = 0
 offset_left = 675.0
 offset_top = 75.0
 offset_right = 900.0
 offset_bottom = 375.0
 mouse_filter = 2
-script = ExtResource("14_c44sx")
-
-[node name="Label" type="Label" parent="GameMenu/Equipment"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -39.5
-offset_top = 2.0
-offset_right = 39.5
-offset_bottom = 25.0
-grow_horizontal = 2
-text = "equipment"
-label_settings = SubResource("LabelSettings_wf76l")
-
-[node name="Container" type="HBoxContainer" parent="GameMenu/Equipment"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -158.0
-offset_top = 30.0
-offset_right = 158.0
-offset_bottom = 90.0
-grow_horizontal = 2
-alignment = 1
 
 [node name="Reset" type="Button" parent="GameMenu"]
 z_index = 1
@@ -513,14 +483,13 @@ patch_margin_bottom = 10
 [node name="Stats" type="Button" parent="GameMenu"]
 z_index = 1
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.245
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 0.33800003
 anchor_bottom = 1.0
-offset_left = -36.0
 offset_top = -80.0
-offset_right = 36.0
+offset_right = 0.2999878
 offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -547,6 +516,69 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="Challenges" type="Control" parent="GameMenu"]
+anchors_preset = 0
+offset_left = 525.0
+offset_top = 500.0
+offset_right = 750.0
+offset_bottom = 590.0
+mouse_filter = 2
+script = ExtResource("17_rkf1o")
+
+[node name="Background" type="NinePatchRect" parent="GameMenu/Challenges"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="GameMenu/Challenges"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("2_0w6e5")
+bbcode_enabled = true
+text = "challenges"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Container" type="HBoxContainer" parent="GameMenu/Challenges"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -30.0
+offset_right = 158.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="MainMenu" type="Control" parent="."]
 z_index = 1
@@ -737,15 +769,15 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Weapons" type="Control" parent="MainMenu"]
+[node name="Challenges" type="Control" parent="MainMenu"]
 anchors_preset = 0
-offset_left = 200.0
-offset_top = 450.0
-offset_right = 425.0
-offset_bottom = 575.0
+offset_left = 525.0
+offset_top = 465.0
+offset_right = 750.0
+offset_bottom = 590.0
 mouse_filter = 2
 
-[node name="Background" type="NinePatchRect" parent="MainMenu/Weapons"]
+[node name="Background" type="NinePatchRect" parent="MainMenu/Challenges"]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -764,7 +796,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="MainMenu/Weapons"]
+[node name="Label" type="RichTextLabel" parent="MainMenu/Challenges"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -777,13 +809,13 @@ grow_horizontal = 2
 mouse_filter = 2
 theme = ExtResource("2_0w6e5")
 bbcode_enabled = true
-text = "weapons"
+text = "challenges"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Container" type="HBoxContainer" parent="MainMenu/Weapons"]
+[node name="Container" type="HBoxContainer" parent="MainMenu/Challenges"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -798,106 +830,17 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="magic_missile" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
+[node name="LastingWounds" parent="MainMenu/Challenges/Container" instance=ExtResource("20_rkf1o")]
 layout_mode = 2
-texture_normal = ExtResource("22_br2v7")
-type = "weapon"
-subject = "magic_missile"
+subject = "lasting_wounds"
 
-[node name="star_blaze" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
+[node name="BurningHours" parent="MainMenu/Challenges/Container" instance=ExtResource("20_rkf1o")]
 layout_mode = 2
-texture_normal = ExtResource("22_br2v7")
-type = "weapon"
-subject = "star_blaze"
+subject = "burning_hours"
 
-[node name="gale_rend" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
+[node name="EraWink" parent="MainMenu/Challenges/Container" instance=ExtResource("20_rkf1o")]
 layout_mode = 2
-texture_normal = ExtResource("22_br2v7")
-type = "weapon"
-subject = "gale_rend"
-
-[node name="trick_bullets" parent="MainMenu/Weapons/Container" instance=ExtResource("21_fgtw6")]
-visible = false
-layout_mode = 2
-texture_normal = ExtResource("22_br2v7")
-type = "weapon"
-subject = "trick_bullets"
-
-[node name="Armor" type="Control" parent="MainMenu"]
-anchors_preset = 0
-offset_left = 475.0
-offset_top = 450.0
-offset_right = 700.0
-offset_bottom = 575.0
-mouse_filter = 2
-
-[node name="Background" type="NinePatchRect" parent="MainMenu/Armor"]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_c74r5")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="Label" type="RichTextLabel" parent="MainMenu/Armor"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -58.5
-offset_top = 2.0
-offset_right = 58.5
-offset_bottom = 25.0
-grow_horizontal = 2
-mouse_filter = 2
-theme = ExtResource("2_0w6e5")
-bbcode_enabled = true
-text = "armor"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Container" type="HBoxContainer" parent="MainMenu/Armor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -30.0
-offset_right = 158.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="hermits_cloak" parent="MainMenu/Armor/Container" instance=ExtResource("21_fgtw6")]
-layout_mode = 2
-type = "armor"
-subject = "hermits_cloak"
-
-[node name="mystic_robes" parent="MainMenu/Armor/Container" instance=ExtResource("21_fgtw6")]
-layout_mode = 2
-type = "armor"
-subject = "mystic_robes"
-
-[node name="cursemail" parent="MainMenu/Armor/Container" instance=ExtResource("21_fgtw6")]
-layout_mode = 2
-type = "armor"
-subject = "cursemail"
+subject = "era_wink"
 
 [node name="Settings" type="Control" parent="."]
 visible = false

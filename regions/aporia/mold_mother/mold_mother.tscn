@@ -191,7 +191,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("8_j48gv")
 summon = ExtResource("9_5chnv")
-summon_health = 40.0
+summon_health = 0.1
 max_summons = 4
 next = NodePath("../PrepareWallwarp")
 

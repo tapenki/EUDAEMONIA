@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c7god5qi3in7b"]
+[gd_scene load_steps=26 format=3 uid="uid://c7god5qi3in7b"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_urbcv"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_ps0y5"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dxudw2f1yo84l" path="res://regions/anapnoi/gall/gall_hurt.png" id="12_mu7j5"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_lb0j7"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_pu6sn"]
+[ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="18_fbqmp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 45.0
@@ -129,7 +130,6 @@ is_entity = true
 script = ExtResource("3_8sugv")
 ability_handler = NodePath("../AbilityHandler")
 summon = ExtResource("4_a1dje")
-summon_health = 300
 
 [node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_tdhm5")
@@ -269,6 +269,11 @@ deterministic = true
 libraries = {
 &"": SubResource("AnimationLibrary_v1kwl")
 }
+
+[node name="Speech" type="Node2D" parent="."]
+position = Vector2(0, -25)
+script = ExtResource("18_fbqmp")
+spawn_quotes = ["gall_spawn_1"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareCageAttack/Timer" to="StateHandler/PrepareCageAttack" method="_on_timer_timeout"]

@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	ability_handler.owner.heal(delta*level*ability_handler.speed_scale)
 
 func max_health_modifiers(modifiers) -> void:
-	modifiers["source"] += 20 * level
+	modifiers["source"] += 25 * level
 
 func inherit(handler, tier):
 	if tier < 3:
