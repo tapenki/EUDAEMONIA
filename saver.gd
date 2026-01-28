@@ -45,6 +45,7 @@ func write_run():
 	save_file.store_var(save_data)
 
 func read_run():
+	Engine.time_scale = 1.0 ## reset era wink time scale
 	if not FileAccess.file_exists("user://run_save"):
 		return
 	var save_file = FileAccess.open("user://run_save", FileAccess.READ)

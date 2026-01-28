@@ -150,6 +150,26 @@ msgstr "Damage taken reduced to [outline_size=10]x[0.5][/outline_size].[br][outl
 
 # tricks
 
+# challenges
+
+msgid "lasting_wounds_title"
+msgstr "[outline_color=#666666]Challenge: Lasting Wounds[/outline_color]"
+
+msgid "lasting_wounds_description"
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
+
+msgid "burning_hours_title"
+msgstr "[outline_color=#666666]Challenge: Burning Hours[/outline_color]"
+
+msgid "burning_hours_description"
+msgstr "[outline_size=10]Every [60] seconds:[/outline_size] A day passes."
+
+msgid "era_wink_title"
+msgstr "[outline_color=#666666]Challenge: Era Wink[/outline_color]"
+
+msgid "era_wink_description"
+msgstr "Time is [outline_size=10]x[1.25][/outline_size] faster."
+
 # paths
 msgid "upgrade_point_counter"
 msgstr "Incrementos: %s"

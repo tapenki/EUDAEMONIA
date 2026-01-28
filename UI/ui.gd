@@ -64,7 +64,7 @@ func toggle_main_menu():
 func start_run():
 	saver.write_meta()
 	toggle_main_menu()
-	#player.ability_handler.upgrade(weapon, 1)
+	player.ability_handler.upgrade("magic_missile", 1)
 	#player.ability_handler.upgrade(armor, 1)
 	for i in challenges:
 		player.ability_handler.upgrade(i, 1)
