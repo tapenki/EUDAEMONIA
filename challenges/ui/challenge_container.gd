@@ -1,7 +1,7 @@
 extends Control
 
 @onready var container = $Container
-var reminder = preload("res://ui/reminder.tscn")
+var reminder = preload("res://ui/misc/reminder.tscn")
 
 func remload():
 	var player = get_node("/root/Main/UI").player

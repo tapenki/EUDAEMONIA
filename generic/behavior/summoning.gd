@@ -19,7 +19,7 @@ func on_enter() -> void:
 		user.global_position, 
 		2,
 		user.max_health * summon_health)
-		summon_instance.ability_handler.inherited_damage["multiplier"] = get_node("/root/Main").scale_enemy_damage()
+		summon_instance.ability_handler.inherited_damage = user.ability_handler.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
 		get_node("/root/Main/Entities").add_child(summon_instance)
 		get_node("/root/Main/Entities").move_child(summon_instance, 0)
 		summons.append(summon_instance)

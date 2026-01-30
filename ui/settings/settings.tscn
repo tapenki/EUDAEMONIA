@@ -1,0 +1,264 @@
+[gd_scene load_steps=11 format=3 uid="uid://djssli0g02cdt"]
+
+[ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://ui/settings/slider_setting.tscn" id="1_jxi54"]
+[ext_resource type="Script" uid="uid://cjfp8hq1cvmbj" path="res://ui/settings/volume_slider_setting.gd" id="2_q0pcl"]
+[ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://ui/settings/toggle_setting.tscn" id="3_bqqix"]
+[ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/settings/keybind_setting.tscn" id="4_b4akq"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="5_uh4u3"]
+[ext_resource type="Script" uid="uid://dgt5ep53mbugy" path="res://ui/settings/back.gd" id="6_h58ci"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="6_s70fv"]
+[ext_resource type="Script" uid="uid://byi7dd5lpcl53" path="res://ui/settings/settings_tab_button.gd" id="7_06elf"]
+[ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="8_g3f8h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2t6a"]
+font_size = 18
+outline_size = 10
+outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
+[node name="Settings" type="Control"]
+visible = false
+z_index = 5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+mouse_filter = 2
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="General" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -120.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio" type="Label" parent="General"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "audio"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="GenVolume" parent="General" instance=ExtResource("1_jxi54")]
+visible = false
+layout_mode = 2
+text = "general_volume"
+script = ExtResource("2_q0pcl")
+bus_index = "Master"
+
+[node name="MusicVolume" parent="General" instance=ExtResource("1_jxi54")]
+visible = false
+layout_mode = 2
+text = "music_volume"
+script = ExtResource("2_q0pcl")
+bus_index = "Music"
+key = "music_volume"
+
+[node name="SFXVolume" parent="General" instance=ExtResource("1_jxi54")]
+layout_mode = 2
+text = "sfx_volume"
+script = ExtResource("2_q0pcl")
+bus_index = "SFX"
+key = "sfx_volume"
+
+[node name="Gameplay" type="Label" parent="General"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "gameplay"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="Screenshake" parent="General" instance=ExtResource("1_jxi54")]
+layout_mode = 2
+text = "screenshake"
+section = "gameplay"
+key = "screenshake"
+
+[node name="DamageNumbers" parent="General" instance=ExtResource("3_bqqix")]
+layout_mode = 2
+text = "damage_numbers"
+section = "gameplay"
+key = "damage_numbers"
+
+[node name="Keybinds" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -120.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Keybinds" type="Label" parent="Keybinds"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "keybinds"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="Attack" parent="Keybinds" instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "attack_keybind"
+action = "attack"
+
+[node name="Up" parent="Keybinds" instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "up_keybind"
+action = "up"
+
+[node name="Left" parent="Keybinds" instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "left_keybind"
+action = "left"
+
+[node name="Down" parent="Keybinds" instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "down_keybind"
+action = "down"
+
+[node name="Right" parent="Keybinds" instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "right_keybind"
+action = "right"
+
+[node name="Pause" parent="Keybinds" instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "pause_keybind"
+action = "pause"
+
+[node name="Back" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_uh4u3")
+text = "back"
+flat = true
+script = ExtResource("6_h58ci")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s70fv")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ToGeneral" type="Button" parent="." node_paths=PackedStringArray("tab")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_uh4u3")
+text = "general"
+flat = true
+script = ExtResource("7_06elf")
+tab = NodePath("../General")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ToGeneral"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_g3f8h")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ToKeybinds" type="Button" parent="." node_paths=PackedStringArray("tab")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 45.0
+offset_right = -20.0
+offset_bottom = 76.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_uh4u3")
+text = "keybinds"
+flat = true
+script = ExtResource("7_06elf")
+tab = NodePath("../Keybinds")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ToKeybinds"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s70fv")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[connection signal="pressed" from="Back" to="Back" method="pressed"]
+[connection signal="pressed" from="ToGeneral" to="ToGeneral" method="pressed"]
+[connection signal="pressed" from="ToKeybinds" to="ToKeybinds" method="pressed"]

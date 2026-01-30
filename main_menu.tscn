@@ -1,0 +1,382 @@
+[gd_scene load_steps=26 format=3 uid="uid://bj4okui2tg38g"]
+
+[ext_resource type="Script" uid="uid://gogirhfnitr1" path="res://saver_menu.gd" id="1_saq78"]
+[ext_resource type="Script" uid="uid://tq3csc0oqday" path="res://ui/ui_menu.gd" id="2_saq78"]
+[ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://ui/misc/gear.png" id="3_ai24q"]
+[ext_resource type="Script" uid="uid://detflvrwqig8" path="res://ui/control_spin.gd" id="4_qby1g"]
+[ext_resource type="Script" uid="uid://b1e3hvb0r8fib" path="res://ui/misc/word_wheel.gd" id="5_04soa"]
+[ext_resource type="AudioStream" uid="uid://dsmlwa6rfpo1r" path="res://sounds/peh.ogg" id="5_ql5ya"]
+[ext_resource type="AudioStream" uid="uid://wwmwcg6te82e" path="res://sounds/pooh.ogg" id="6_ka3nr"]
+[ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://ui/version.gd" id="6_u6vjd"]
+[ext_resource type="AudioStream" uid="uid://bmyiexw04eig4" path="res://sounds/snap.ogg" id="7_48knj"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="7_swr0i"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="8_2urq5"]
+[ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="8_m2y5l"]
+[ext_resource type="AudioStream" uid="uid://blkcwcunpcgqm" path="res://sounds/death_light.wav" id="9_imjy1"]
+[ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="9_ix6bv"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="10_2kjvi"]
+[ext_resource type="AudioStream" uid="uid://dacc5mwmkl3k2" path="res://sounds/hit_light.wav" id="10_u5051"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="11_kvjq3"]
+[ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="11_v2sba"]
+[ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="12_ai24q"]
+[ext_resource type="PackedScene" uid="uid://m8e1a3uvgf8i" path="res://challenges/ui/challenge_picker.tscn" id="12_h1gbt"]
+[ext_resource type="PackedScene" uid="uid://djssli0g02cdt" path="res://ui/settings/settings.tscn" id="13_km3bq"]
+[ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="13_qby1g"]
+[ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="14_04soa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3fg2"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0, 0.501961, 1, 1)
+shadow_color = Color(0, 0.5019608, 1, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+
+[node name="Saver" type="Node" parent="."]
+script = ExtResource("1_saq78")
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("2_saq78")
+
+[node name="Backdrop" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TransitionFade" type="ColorRect" parent="UI"]
+z_index = 25
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MainMenu" type="Control" parent="UI"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 4.0
+offset_right = 161.0
+offset_bottom = 71.0
+grow_horizontal = 2
+text = "EUDAEMONIA"
+label_settings = SubResource("LabelSettings_c3fg2")
+horizontal_alignment = 1
+
+[node name="Gear1" type="TextureRect" parent="UI/MainMenu/Title"]
+modulate = Color(0, 0, 0.09803922, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(120, 120)
+texture = ExtResource("3_ai24q")
+script = ExtResource("4_qby1g")
+rotation_speed = -0.5
+
+[node name="Gear2" type="TextureRect" parent="UI/MainMenu/Title"]
+modulate = Color(0, 0, 0.39215687, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 80)
+texture = ExtResource("3_ai24q")
+script = ExtResource("4_qby1g")
+rotation_speed = 0.5
+
+[node name="WordWheel1" type="Control" parent="UI/MainMenu/Title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_04soa")
+radius = 120
+rotation_speed = -0.8
+text = "MAYTHEWORLDSEEABETTERFATE"
+text_color = Color(0, 0, 0.5882353, 1)
+outline_color = Color(0, 0, 0.19607843, 1)
+
+[node name="WordWheel2" type="Control" parent="UI/MainMenu/Title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_04soa")
+text = "MAYETERNITYBEJOYOUS"
+text_color = Color(0, 0.29411766, 1, 1)
+outline_color = Color(0, 0, 0.5882353, 1)
+
+[node name="Version" type="Label" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 77.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "ver"
+label_settings = SubResource("LabelSettings_4xnvd")
+script = ExtResource("6_u6vjd")
+
+[node name="Settings" type="Button" parent="UI/MainMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_swr0i")
+text = "settings"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Settings"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_2urq5")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Start" type="Button" parent="UI/MainMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -79.0
+offset_right = -20.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_swr0i")
+text = "start_game"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Start"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ix6bv")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Challenges" type="Control" parent="UI/MainMenu"]
+anchors_preset = 0
+offset_left = 525.0
+offset_top = 465.0
+offset_right = 750.0
+offset_bottom = 590.0
+mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="UI/MainMenu/Challenges"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_2kjvi")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="UI/MainMenu/Challenges"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("11_kvjq3")
+bbcode_enabled = true
+text = "challenges"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Container" type="HBoxContainer" parent="UI/MainMenu/Challenges"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -30.0
+offset_right = 158.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LastingWounds" parent="UI/MainMenu/Challenges/Container" instance=ExtResource("12_h1gbt")]
+layout_mode = 2
+subject = "lasting_wounds"
+
+[node name="BurningHours" parent="UI/MainMenu/Challenges/Container" instance=ExtResource("12_h1gbt")]
+layout_mode = 2
+subject = "burning_hours"
+
+[node name="EraWink" parent="UI/MainMenu/Challenges/Container" instance=ExtResource("12_h1gbt")]
+layout_mode = 2
+subject = "era_wink"
+
+[node name="Settings" parent="UI" instance=ExtResource("13_km3bq")]
+
+[node name="Audio" type="Node" parent="."]
+process_mode = 3
+
+[node name="Peh" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_ql5ya")
+bus = &"SFX"
+
+[node name="Pooh" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_ka3nr")
+bus = &"SFX"
+
+[node name="Snap" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_48knj")
+bus = &"SFX"
+
+[node name="ShootLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_m2y5l")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="DeathLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_imjy1")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HitLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("10_u5051")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_v2sba")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtHeavy" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_ai24q")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Leap" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_qby1g")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_04soa")
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="pressed" from="UI/MainMenu/Settings" to="UI" method="toggle_settings"]
+[connection signal="pressed" from="UI/MainMenu/Start" to="UI" method="start_run"]

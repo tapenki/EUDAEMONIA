@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cep2eleduru2x"]
+
+[ext_resource type="Script" uid="uid://bnqia8f7f2kay" path="res://ui/settings/keybind_setting.gd" id="1_ju02s"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="2_ju02s"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_wj8mo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
+outline_size = 5
+outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
+[node name="KeybindSetting" type="Label"]
+size_flags_horizontal = 0
+text = "keybind:"
+label_settings = SubResource("LabelSettings_o2jkc")
+horizontal_alignment = 1
+script = ExtResource("1_ju02s")
+
+[node name="Bind" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -6.0
+offset_right = 37.0
+offset_bottom = 2.0
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_ju02s")
+toggle_mode = true
+text = "[A]"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bind"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wj8mo")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[connection signal="toggled" from="Bind" to="." method="toggle"]

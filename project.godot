@@ -12,7 +12,7 @@ config_version=5
 
 config/name="EUDAEMONIA"
 config/version="0.1.0"
-run/main_scene="res://main.tscn"
+run/main_scene="uid://bj4okui2tg38g"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/use_filter=false
