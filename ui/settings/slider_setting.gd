@@ -17,3 +17,4 @@ func value_changed(value):
 func drag_ended(_changed: bool) -> void:
 	Config.config.set_value(section, key, slider.value)
 	Config.config.save("user://config.ini")
+	get_node("/root/Main").play_sound("Click")

@@ -1,7 +1,5 @@
 extends UICore
 
-@onready var main_menu = $"MainMenu"
-
 #var weapon = "magic_missile"
 #var armor = "hermits_cloak"
 var challenges: Array
@@ -20,6 +18,7 @@ func _unhandled_input(event) -> void:
 		start_run()
 
 func start_run():
+	get_node("/root/Main").play_sound("Click")
 	saver.write_meta()
 	#player.ability_handler.upgrade("magic_missile", 1)
 	#player.ability_handler.upgrade(armor, 1)

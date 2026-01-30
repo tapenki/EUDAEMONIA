@@ -8,8 +8,8 @@ var base_values = {
 	},
 	"audio" : {
 		"master_volume" = 1,
-		"music_volume" = 1,
-		"sfx_volume" = 1,
+		"music_volume" = 0.5,
+		"sfx_volume" = 0.5,
 	},
 	"palette" : {
 		"1/primary" = "0080ff",

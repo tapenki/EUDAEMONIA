@@ -60,6 +60,9 @@ func _on_pressed() -> void:
 			tag = "Learned"
 			if description_nodes.size() > 0:
 				description_nodes[0].set_tag(tag)
+		get_node("/root/Main").play_sound("Click")
+	else:
+		get_node("/root/Main").play_sound("Error")
 
 ## from described
 func get_description_title(what):

@@ -3,6 +3,8 @@ extends Node
 var tutorial_stage: int
 var reset_tutorial: bool
 
+var starter_abilities = {"magic_missile" : {"level" : 1}}
+
 func write_meta():
 	var save_data = {
 		"tutorial_stage" : tutorial_stage,
@@ -53,11 +55,11 @@ func write_run():
 func read_run():
 	Engine.time_scale = 1.0 ## reset era wink time scale
 	if not FileAccess.file_exists("user://run_save"):
-		return
+		return false
 	var save_file = FileAccess.open("user://run_save", FileAccess.READ)
 	var save_data = save_file.get_var()
 	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
-		return
+		return false
 	get_node("/root/Main").day = save_data["day"]
 	get_node("/root/Main").room = save_data["room"]
 	get_node("/root/Main").door = save_data["door"]
@@ -72,7 +74,14 @@ func read_run():
 		ability_node.deserialize(save_data["abilities"][ability])
 		ability_node.name = ability
 		get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
+	return true
 
 func _ready():
 	read_meta()
-	read_run()
+	if not read_run():
+		for ability in starter_abilities:
+			var ability_node = Node2D.new()
+			ability_node.set_script(AbilityData.ability_data[ability]["script"])
+			ability_node.deserialize(starter_abilities[ability])
+			ability_node.name = ability
+			get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)

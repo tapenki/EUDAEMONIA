@@ -2,9 +2,9 @@
 
 [ext_resource type="TileSet" uid="uid://iaorlxpk6ipa" path="res://regions/vasis/rooms/vasis_wall_tileset.tres" id="1_mna3l"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_0ghgj"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/broken_door.tscn" id="4_264cv"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_264cv"]
 [ext_resource type="Script" uid="uid://xeupa83p6o05" path="res://regions/debug.gd" id="4_rku4c"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/door.tscn" id="5_4n77a"]
+[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_4n77a"]
 [ext_resource type="Texture2D" uid="uid://cmwxts226muwa" path="res://regions/aporia/mold_bullet.png" id="5_rku4c"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xnbjy"]

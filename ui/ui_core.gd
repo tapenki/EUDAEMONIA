@@ -37,6 +37,7 @@ func toggle_settings():
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
+	get_node("/root/Main").play_sound("Click")
 
 func toggle_pause(pause):
 	get_tree().paused = pause

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://bf0a78ivtre7l"]
 
 [ext_resource type="TileSet" uid="uid://d4e1hwov6jkr2" path="res://regions/aporia/rooms/aporia_wall_tileset.tres" id="1_dy6ky"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/wave.gd" id="2_ljhkk"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/broken_door.tscn" id="2_vabwu"]
-[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/wave_spawn.gd" id="3_2eikl"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/door.tscn" id="3_gqsrt"]
+[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_ljhkk"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="2_vabwu"]
+[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_2eikl"]
+[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="3_gqsrt"]
 
 [node name="AporiaEntranceHall" type="Node2D"]
 

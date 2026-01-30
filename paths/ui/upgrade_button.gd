@@ -27,3 +27,6 @@ func _on_pressed() -> void:
 			self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
 			level_label.text = "[%s]" % int(ability_node.level)
+		get_node("/root/Main").play_sound("Click")
+	else:
+		get_node("/root/Main").play_sound("Error")

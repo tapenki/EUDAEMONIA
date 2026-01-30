@@ -35,6 +35,9 @@ func _on_pressed() -> void:
 			symbol_label.self_modulate = Color.WHITE
 			level_label.text = "[%s]" % int(ability_node.level)
 			keybind_button.visible = true
+		get_node("/root/Main").play_sound("Click")
+	else:
+		get_node("/root/Main").play_sound("Error")
 
 func toggle_keybind_input(toggled_on: bool) -> void:
 	set_process_input(toggled_on)
@@ -45,6 +48,7 @@ func toggle_keybind_input(toggled_on: bool) -> void:
 	else:
 		keybind_button.get_node("NinePatchRect").texture = off
 		ui.keybind_setting = null
+	get_node("/root/Main").play_sound("Click")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -57,6 +61,7 @@ func _input(event: InputEvent) -> void:
 		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
+		get_node("/root/Main").play_sound("Click")
 	if event is InputEventMouseButton and event.pressed:
 		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
 		var new_event = InputEventMouseButton.new()
@@ -67,3 +72,4 @@ func _input(event: InputEvent) -> void:
 		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
+		get_node("/root/Main").play_sound("Click")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4mon6i40d7sc"
-path="res://.godot/imported/broken_door.png-b5b7b421ddf2611af29ae09013c7a112.ctex"
+uid="uid://ut22n8bouys2"
+path="res://.godot/imported/tilemap.png-4334fd850052ff5d3a27096f0aa2e766.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://regions/broken_door.png"
-dest_files=["res://.godot/imported/broken_door.png-b5b7b421ddf2611af29ae09013c7a112.ctex"]
+source_file="res://regions/environment/tilemap.png"
+dest_files=["res://.godot/imported/tilemap.png-4334fd850052ff5d3a27096f0aa2e766.ctex"]
 
 [params]
 

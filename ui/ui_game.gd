@@ -58,6 +58,7 @@ func toggle_game_menu():
 		elif not main.game_over:
 			proceed.text = "continue"
 		toggle_pause(true)
+	get_node("/root/Main").play_sound("Click")
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)

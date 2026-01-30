@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://4c7kwv63xyme"]
 
 [ext_resource type="TileSet" uid="uid://iaorlxpk6ipa" path="res://regions/vasis/rooms/vasis_wall_tileset.tres" id="1_m4bev"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/wave.gd" id="2_a2pje"]
-[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/wave_spawn.gd" id="3_o6cqx"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/broken_door.tscn" id="4_xq7yb"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/door.tscn" id="5_tre4k"]
+[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_a2pje"]
+[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_o6cqx"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_xq7yb"]
+[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_tre4k"]
 
 [node name="VasisRoom2" type="Node2D"]
 

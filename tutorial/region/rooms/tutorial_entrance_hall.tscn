@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://pvc6jv5ttk7m"]
 
 [ext_resource type="TileSet" uid="uid://c4kyki7ku4aqj" path="res://tutorial/region/rooms/tutorial_wall_tileset.tres" id="1_mgude"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/wave.gd" id="2_6pugm"]
-[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/wave_spawn.gd" id="3_5hfvo"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/broken_door.tscn" id="4_8gr7m"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/door.tscn" id="5_jp6cj"]
+[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_6pugm"]
+[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_5hfvo"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_8gr7m"]
+[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_jp6cj"]
 
 [node name="TutorialEntranceHall" type="Node2D"]
 

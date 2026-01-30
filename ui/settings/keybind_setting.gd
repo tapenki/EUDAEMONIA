@@ -22,6 +22,7 @@ func toggle(toggled_on: bool) -> void:
 	else:
 		rect.texture = off
 		ui.keybind_setting = null
+	get_node("/root/Main").play_sound("Click")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -34,6 +35,7 @@ func _input(event: InputEvent) -> void:
 		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
+		get_node("/root/Main").play_sound("Click")
 	if event is InputEventMouseButton and event.pressed:
 		InputMap.action_erase_event(action, InputMap.action_get_events(action)[0])
 		var new_event = InputEventMouseButton.new()
@@ -44,3 +46,4 @@ func _input(event: InputEvent) -> void:
 		keybind_button.text = "[%s]" % new_event.as_text()
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
+		get_node("/root/Main").play_sound("Click")

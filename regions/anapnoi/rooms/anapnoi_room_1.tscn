@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=4 uid="uid://qj376odg5i6l"]
 
 [ext_resource type="TileSet" uid="uid://bx5hrcuh7e0xe" path="res://regions/anapnoi/rooms/anapnoi_wall_tileset.tres" id="1_a5k3d"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/wave.gd" id="2_wi48n"]
-[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/wave_spawn.gd" id="3_o03xb"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/broken_door.tscn" id="4_c41um"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/door.tscn" id="5_fp5ia"]
+[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_wi48n"]
+[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_o03xb"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_c41um"]
+[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_fp5ia"]
 
 [node name="AnapnoiRoom0" type="Node2D"]
 

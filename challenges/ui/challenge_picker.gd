@@ -23,7 +23,9 @@ func _on_mouse_entered() -> void:
 
 func _on_pressed() -> void:
 	if not accessible:
+		get_node("/root/Main").play_sound("Error")
 		return
+	get_node("/root/Main").play_sound("Click")
 	if selected:
 		selected = false
 		ui.challenges.erase(subject)

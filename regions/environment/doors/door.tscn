@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://davf88x6b6eoq"]
 
-[ext_resource type="Texture2D" uid="uid://drpb75gbucjf6" path="res://regions/door.png" id="1_p6fvc"]
+[ext_resource type="Texture2D" uid="uid://drpb75gbucjf6" path="res://regions/environment/doors/door.png" id="1_p6fvc"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_p6fvc"]
-[ext_resource type="Script" uid="uid://2fu53neukijg" path="res://regions/door.gd" id="2_pe745"]
+[ext_resource type="Script" uid="uid://2fu53neukijg" path="res://regions/environment/doors/door.gd" id="2_pe745"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_p6fvc"]
 
 [sub_resource type="Curve" id="Curve_t73xu"]

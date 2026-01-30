@@ -185,6 +185,7 @@ func check_finished(dying_entity):
 				break
 		if enemies_alive: return ## return if there's still enemies left alive
 		wave_cleared.emit()
+		play_sound("Completion")
 
 func travel(to_room, to_door):
 	for entity in get_node("/root/Main/Entities").get_children():
@@ -206,8 +207,10 @@ func travel(to_room, to_door):
 	saver.write_run()
 
 ## special effects
-func play_sound(sound: String):
-	get_node("Audio/" + sound).play()
+func play_sound(sound: String, pitch_scale = randf_range(0.9, 1.1)):
+	var node = get_node("Audio/" + sound)
+	node.pitch_scale = pitch_scale
+	node.play()
 
 func spawn_particles(particle_instance: GPUParticles2D, count: int, position: Vector2, scale: float = 1, color: Color = Color.WHITE):
 	for i in count:
@@ -220,7 +223,6 @@ func particle_beam(particle_instance: GPUParticles2D, start: Vector2, end: Vecto
 		delta += spacing
 		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, start.move_toward(end, delta)), Vector2(), color, Color(), 11)
 	return particle_instance
-	
 
 @onready var floating_text_scene = preload("res://generic/misc/floating_text.tscn")
 func floating_text(text_position: Vector2, text: String, color: Color):

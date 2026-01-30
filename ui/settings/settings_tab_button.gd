@@ -17,3 +17,4 @@ func pressed() -> void:
 		tab.visible = true
 		rect.texture = on
 		ui.cancel_keybind()
+		get_node("/root/Main").play_sound("Click")

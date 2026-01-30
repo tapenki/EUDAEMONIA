@@ -18,6 +18,9 @@ func _on_pressed() -> void:
 		point_counter.update()
 		ui.paths.append(subject)
 		picker.pick(subject)
+		get_node("/root/Main").play_sound("Click")
+	else:
+		get_node("/root/Main").play_sound("Error")
 
 func disable():
 	modulate = Color(0.125, 0.125, 0.125)

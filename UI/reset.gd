@@ -9,6 +9,7 @@ var offset: Vector2
 
 func _process(delta: float) -> void:
 	if held:
+		get_node("/root/Main").play_sound("Click", 0.8 + hold_timer * 2)
 		hold_timer += delta
 		if hold_timer >= 0.5:
 			ui.reset()
