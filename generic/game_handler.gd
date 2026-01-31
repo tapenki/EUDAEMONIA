@@ -185,20 +185,17 @@ func check_finished(dying_entity):
 				break
 		if enemies_alive: return ## return if there's still enemies left alive
 		wave_cleared.emit()
-		play_sound("Completion")
+
+func full_clear():
+	play_sound("Completion")
+	day_cleared.emit(day)
 
 func travel(to_room, to_door):
 	for entity in get_node("/root/Main/Entities").get_children():
-		if entity is Player:
-			entity.ability_handler.upgrade("bonus_health", 5)
-			entity.ability_handler.recover()
-		else:
+		if not entity is Player:
 			entity.queue_free()
 	for projectile in get_node("/root/Main/Projectiles").get_children():
 		projectile.queue_free()
-	get_node("/root/Main/UI").upgrade_points += 1
-	if RegionData.room_data[room].has("challenge"):
-		get_node("/root/Main/UI").unlock_points += 1
 	day += 1
 	day_started = false
 	room = to_room

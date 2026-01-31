@@ -21,7 +21,7 @@ func proceed():
 
 func wave_cleared():
 	if not next:
-		get_node("/root/Main").day_cleared.emit(get_node("/root/Main").day)
+		get_node("/root/Main").full_clear()
 	elif timer.time_left > 0.5:
 		timer.start(0.5)
 	

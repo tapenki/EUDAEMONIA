@@ -54,7 +54,7 @@ shader_parameter/scale_curve = SubResource("CurveTexture_hnl0o")
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5019921, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_cegan"]
+[sub_resource type="CurveTexture" id="CurveTexture_vn0ol"]
 curve = SubResource("Curve_1u8w0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cegan"]
@@ -76,7 +76,7 @@ shader_parameter/scale_max = 1.0
 shader_parameter/lifetime_randomness = 0.0
 shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
 shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
-shader_parameter/scale_curve = SubResource("CurveTexture_cegan")
+shader_parameter/scale_curve = SubResource("CurveTexture_vn0ol")
 
 [sub_resource type="Curve" id="Curve_getpj"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

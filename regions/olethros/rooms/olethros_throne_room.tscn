@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://7gmj80sawoef"]
+[gd_scene load_steps=10 format=4 uid="uid://7gmj80sawoef"]
 
 [ext_resource type="TileSet" uid="uid://bgy68txdpxat8" path="res://regions/olethros/rooms/olethros_wall_tileset.tres" id="1_op0v8"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_bieg0"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="2_vrt6i"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="3_bieg0"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_oqujk"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_hy2kp"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_c6lg1"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_kxdll"]
+[ext_resource type="PackedScene" uid="uid://ppjabc1udges" path="res://regions/environment/rewards/nous_reward.tscn" id="9_c6lg1"]
 
 [node name="OlethrosThroneRoom" type="Node2D"]
 
@@ -80,6 +84,15 @@ position = Vector2(960, 360)
 rotation = 1.5707964
 room = "anapnoi_entrance_hall"
 door = "Entrance0"
+
+[node name="HealthRewardGiver" parent="." instance=ExtResource("6_hy2kp")]
+reward = ExtResource("7_c6lg1")
+
+[node name="QualiaRewardGiver" parent="." instance=ExtResource("6_hy2kp")]
+reward = ExtResource("8_kxdll")
+
+[node name="NousRewardGiver" parent="." instance=ExtResource("6_hy2kp")]
+reward = ExtResource("9_c6lg1")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

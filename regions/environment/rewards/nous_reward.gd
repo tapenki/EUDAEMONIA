@@ -5,9 +5,8 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	visible = false
-	var player = get_node("/root/Main/UI").player
-	player.ability_handler.upgrade("bonus_health", 5)
-	player.ability_handler.recover()
+	get_node("/root/Main/UI").unlock_points += 1
+	get_node("/root/Main/UI/GameMenu/UpgradePoints").update()
 	get_node("/root/Main").play_sound("Click")
 	get_node("../Particles").emitting = false
 	await get_tree().create_timer(1).timeout

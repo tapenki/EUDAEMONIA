@@ -172,22 +172,22 @@ msgstr "Time is [outline_size=10]x[1.25][/outline_size] faster."
 
 # paths
 msgid "upgrade_point_counter"
-msgstr "Incrementos: %s"
+msgstr "Qualia: [%s]"
 
 msgid "unlock_point_counter"
-msgstr "Lucidae: %s"
+msgstr "Nous: [%s]"
 
 msgid "path_picker"
 msgstr "Choose your path"
 
 msgid "upgrade_cost"
-msgstr "Price: 1 Incremento"
+msgstr "Price: [1] Qualia"
 
 msgid "unlock_cost"
-msgstr "Price: 1 Lucidae"
+msgstr "Price: [1] Nous"
 
 msgid "dark_unlock_cost"
-msgstr "Dark Price: 25 Max Health"
+msgstr "Dark Price: [25] Max Health"
 
 msgid "learned"
 msgstr "Learned"
@@ -487,25 +487,25 @@ msgstr "Stores damage taken and deals [outline_size=10][STOREDDAMAGExSTACKS][/ou
 
 # spheres
 msgid "day_counter"
-msgstr "Day %s"
+msgstr "Day [%s]"
 
 msgid "vasis_title"
-msgstr "Sphere 1: Vasis"
+msgstr "Sphere [1]: Vasis"
 
 msgid "thayma_title"
-msgstr "Sphere 2: Thayma"
+msgstr "Sphere [2]: Thayma"
 
 msgid "aporia_title"
-msgstr "Sphere 3: Aporia"
+msgstr "Sphere [3]: Aporia"
 
 msgid "olethros_title"
-msgstr "Sphere 4: Olethros"
+msgstr "Sphere [4]: Olethros"
 
 msgid "anapnoi_title"
-msgstr "Sphere 5: Anapnoi"
+msgstr "Sphere [5]: Anapnoi"
 
 msgid "pandemonium_title"
-msgstr "Sphere ??: Pandemonium"
+msgstr "Sphere [??]: Pandemonium"
 
 # quotes
 
@@ -559,6 +559,26 @@ msgstr "fool fool fool !!!"
 
 msgid "giga_sprout_death_1"
 msgstr "grrgghn >:("
+
+# rewards
+
+msgid "health_reward_title"
+msgstr "[outline_color=#0066dd]Reward: Health[/outline_color]"
+
+msgid "health_reward_description"
+msgstr "Gain +[outline_size=10][5][/outline_size] max health and fully recover."
+
+msgid "qualia_reward_title"
+msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"
+
+msgid "qualia_reward_description"
+msgstr "The what it is like."
+
+msgid "nous_reward_title"
+msgstr "[outline_color=#0066dd]Reward: +[1] Nous[/outline_color]"
+
+msgid "nous_reward_description"
+msgstr "Your minds."
 
 # inputstrings
 

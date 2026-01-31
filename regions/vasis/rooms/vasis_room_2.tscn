@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://4c7kwv63xyme"]
+[gd_scene load_steps=9 format=4 uid="uid://4c7kwv63xyme"]
 
 [ext_resource type="TileSet" uid="uid://iaorlxpk6ipa" path="res://regions/vasis/rooms/vasis_wall_tileset.tres" id="1_m4bev"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_a2pje"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_o6cqx"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_xq7yb"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_tre4k"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_xq7yb"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_tre4k"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_u5d5x"]
 
 [node name="VasisRoom2" type="Node2D"]
 
@@ -85,6 +88,12 @@ rotation = 3.1415927
 position = Vector2(480, 30)
 room = "vasis_throne_room"
 door = "Entrance0"
+
+[node name="HealthRewardGiver" parent="." instance=ExtResource("6_xq7yb")]
+reward = ExtResource("7_tre4k")
+
+[node name="QualiaRewardGiver" parent="." instance=ExtResource("6_xq7yb")]
+reward = ExtResource("8_u5d5x")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://bf0a78ivtre7l"]
+[gd_scene load_steps=9 format=4 uid="uid://bf0a78ivtre7l"]
 
 [ext_resource type="TileSet" uid="uid://d4e1hwov6jkr2" path="res://regions/aporia/rooms/aporia_wall_tileset.tres" id="1_dy6ky"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_ljhkk"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="2_vabwu"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_2eikl"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="3_gqsrt"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_qafou"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_ps4lg"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_tgryf"]
 
 [node name="AporiaEntranceHall" type="Node2D"]
 
@@ -61,6 +64,12 @@ rotation = 3.1415927
 position = Vector2(330, 30)
 room = "aporia_room_0"
 door = "Entrance0"
+
+[node name="HealthRewardGiver" parent="." instance=ExtResource("6_qafou")]
+reward = ExtResource("7_ps4lg")
+
+[node name="QualiaRewardGiver" parent="." instance=ExtResource("6_qafou")]
+reward = ExtResource("8_tgryf")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

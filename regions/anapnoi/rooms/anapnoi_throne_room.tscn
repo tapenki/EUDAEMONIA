@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://dabe73du7owpg"]
+[gd_scene load_steps=10 format=4 uid="uid://dabe73du7owpg"]
 
 [ext_resource type="TileSet" uid="uid://bx5hrcuh7e0xe" path="res://regions/anapnoi/rooms/anapnoi_wall_tileset.tres" id="1_htdl3"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_p66np"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_jbp5y"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_agge2"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_34phv"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_34phv"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_3mek5"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_syd18"]
+[ext_resource type="PackedScene" uid="uid://ppjabc1udges" path="res://regions/environment/rewards/nous_reward.tscn" id="9_ey1iv"]
 
 [node name="AnapnoiThroneRoom" type="Node2D"]
 
@@ -65,6 +69,15 @@ self_modulate = Color(1, 0.29803923, 0, 1)
 position = Vector2(540, 30)
 room = "vasis_entrance_hall"
 door = "Entrance0"
+
+[node name="HealthRewardGiver" parent="." instance=ExtResource("6_34phv")]
+reward = ExtResource("7_3mek5")
+
+[node name="QualiaRewardGiver" parent="." instance=ExtResource("6_34phv")]
+reward = ExtResource("8_syd18")
+
+[node name="NousRewardGiver" parent="." instance=ExtResource("6_34phv")]
+reward = ExtResource("9_ey1iv")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

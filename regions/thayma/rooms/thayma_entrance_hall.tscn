@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://c0tidjioyeppw"]
+[gd_scene load_steps=9 format=4 uid="uid://c0tidjioyeppw"]
 
 [ext_resource type="TileSet" uid="uid://cvpg0dl0gcihy" path="res://regions/thayma/rooms/thayma_wall_tileset.tres" id="1_exg1n"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_8gnxx"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="2_e1u8p"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_gh6y3"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="3_v2os6"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_8u02a"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_3rdyo"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_fddgr"]
 
 [node name="ThaymaEntranceHall" type="Node2D"]
 
@@ -61,6 +64,12 @@ rotation = 1.5707964
 position = Vector2(300, 30)
 room = "thayma_room_0"
 door = "Entrance0"
+
+[node name="HealthRewardGiver" parent="." instance=ExtResource("6_8u02a")]
+reward = ExtResource("7_3rdyo")
+
+[node name="QualiaRewardGiver" parent="." instance=ExtResource("6_8u02a")]
+reward = ExtResource("8_fddgr")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]
