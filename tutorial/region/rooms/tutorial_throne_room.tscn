@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://c5vmi0p3qjfv4"]
+[gd_scene load_steps=9 format=4 uid="uid://c5vmi0p3qjfv4"]
 
 [ext_resource type="TileSet" uid="uid://c4kyki7ku4aqj" path="res://tutorial/region/rooms/tutorial_wall_tileset.tres" id="1_ivawd"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_621cv"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_42tcs"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_m1lvw"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_xe2tj"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_h8ay6"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_272hh"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_a3yxu"]
 
 [node name="TutorialThroneRoom" type="Node2D"]
 
@@ -76,6 +79,12 @@ position = Vector2(30, 330)
 rotation = 4.712389
 room = "thayma_entrance_hall"
 door = "Entrance0"
+
+[node name="HealthRewardGiver" parent="." instance=ExtResource("6_h8ay6")]
+reward = ExtResource("7_272hh")
+
+[node name="QualiaRewardGiver" parent="." instance=ExtResource("6_h8ay6")]
+reward = ExtResource("8_a3yxu")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

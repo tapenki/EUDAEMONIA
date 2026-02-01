@@ -11,7 +11,7 @@ func _ready() -> void:
 	ability_handler.damage_taken.connect(damage_taken)
 	ability_handler.healed.connect(healed)
 	ability_handler.update_abilities.connect(update)
-	update()
+	update.call_deferred()
 
 func update() -> void:
 	var health_values = ability_handler.get_health(player.health, player.max_health)

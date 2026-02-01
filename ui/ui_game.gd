@@ -4,8 +4,13 @@ extends UICore
 
 @onready var backdrop = $"Backdrop"
 
+var button_red = preload("res://ui/button_red.png")
+var button_blue = preload("res://ui/button_blue.png")
+var button_gray = preload("res://ui/button.png")
+
 @onready var proceed = $"HUD/Proceed"
 @onready var game_menu = $"GameMenu"
+@onready var reset_button = $"GameMenu/Reset"
 @onready var hud = $"HUD"
 
 #var weapon = "magic_missile"
@@ -27,6 +32,17 @@ func _ready() -> void:
 	main.intermission.connect(intermission)
 	player.ability_handler.self_death.connect(defeat)
 	toggle_pause(true)
+
+func _process(_delta: float) -> void:
+	if main.game_over:
+		if not game_menu.visible and Time.get_ticks_msec() % 400 < 200:
+			proceed.get_node("NinePatchRect").texture = button_blue
+		else:
+			proceed.get_node("NinePatchRect").texture = button_gray
+		if Time.get_ticks_msec() % 400 < 200:
+			reset_button.get_node("NinePatchRect").texture = button_blue
+		else:
+			reset_button.get_node("NinePatchRect").texture = button_red
 
 func _unhandled_input(event) -> void:
 	##is_action_just_pressed_by_event doesn't work with mouse buttons :(

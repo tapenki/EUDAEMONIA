@@ -1,12 +1,10 @@
 extends Node
 
 var tutorial_stage: int
-var reset_tutorial: bool
 
 func write_meta():
 	var save_data = {
 		"tutorial_stage" : tutorial_stage,
-		"reset_tutorial" : reset_tutorial,
 		#"weapon" : get_node("/root/Main/UI").weapon,
 		#"armor" : get_node("/root/Main/UI").armor,
 		"challenges" : get_node("/root/Main/UI").challenges,
@@ -20,7 +18,6 @@ func read_meta():
 	var save_file = FileAccess.open("user://meta_save", FileAccess.READ)
 	var save_data = save_file.get_var()
 	tutorial_stage = save_data.get("tutorial_stage", 0)
-	reset_tutorial = save_data.get("reset_tutorial", false)
 	#if AbilityData.ability_data.has(save_data["weapon"]):
 	#	get_node("/root/Main/UI").weapon = save_data["weapon"]
 	#if AbilityData.ability_data.has(save_data["armor"]):
