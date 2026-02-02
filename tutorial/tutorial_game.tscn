@@ -1,0 +1,857 @@
+[gd_scene load_steps=60 format=3 uid="uid://rupy08jng400"]
+
+[ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5ot4n"]
+[ext_resource type="Script" uid="uid://dmr22mfrayynh" path="res://saver_game.gd" id="2_w7oih"]
+[ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui_game.gd" id="3_wfgev"]
+[ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="4_kktqm"]
+[ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="4_t5v04"]
+[ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="5_2hyu6"]
+[ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://ui/health_bar.gd" id="5_nj3ya"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="6_0wl52"]
+[ext_resource type="AudioStream" uid="uid://blkcwcunpcgqm" path="res://sounds/death_light.wav" id="6_rqls7"]
+[ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="7_dy25x"]
+[ext_resource type="AudioStream" uid="uid://dacc5mwmkl3k2" path="res://sounds/hit_light.wav" id="7_mj5p3"]
+[ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="8_nkvxt"]
+[ext_resource type="Script" uid="uid://cr7vsr2ht6436" path="res://ui/floor_number.gd" id="8_r0ery"]
+[ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="9_60vvb"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="9_r2yfh"]
+[ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/ui/upgrade_points.gd" id="10_dvfo5"]
+[ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="10_jtxca"]
+[ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="11_2fjtk"]
+[ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://ui/misc/version.gd" id="11_lvowx"]
+[ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://ui/misc/gear.png" id="12_dsb7f"]
+[ext_resource type="AudioStream" uid="uid://cn2883qf8ucnf" path="res://sounds/completion.wav" id="12_toyx1"]
+[ext_resource type="Script" uid="uid://detflvrwqig8" path="res://ui/misc/control_spin.gd" id="13_ngqgq"]
+[ext_resource type="AudioStream" uid="uid://bwbuvxyk7t5ji" path="res://sounds/error.wav" id="13_o7co7"]
+[ext_resource type="AudioStream" uid="uid://ps2ils4552ox" path="res://sounds/click.wav" id="14_7p5gt"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="14_xtque"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="15_3qjo3"]
+[ext_resource type="PackedScene" uid="uid://bgpscaxywuyn6" path="res://tutorial/tutorial_path_picker.tscn" id="15_xvoxj"]
+[ext_resource type="Texture2D" uid="uid://bxijlb14fyxl3" path="res://generic/particles/bullet.png" id="16_h1wje"]
+[ext_resource type="Script" uid="uid://vh8xivmipwsn" path="res://ui/reset.gd" id="16_ocakq"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="17_8i5ba"]
+[ext_resource type="Shader" uid="uid://drjpyynjqtv52" path="res://shaders/aligned_particle_shader.gdshader" id="17_tln5d"]
+[ext_resource type="Script" uid="uid://bvj8m276etwfq" path="res://challenges/ui/challenge_container.gd" id="18_cwo5d"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quill.png" id="18_d4f8b"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="19_jjpt0"]
+[ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_pmn51"]
+[ext_resource type="PackedScene" uid="uid://djssli0g02cdt" path="res://ui/settings/settings.tscn" id="20_7valt"]
+[ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="20_uo7ol"]
+[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="21_ck2lu"]
+[ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/lightning/zap.png" id="22_73884"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iknsa"]
+outline_size = 5
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2jkc"]
+outline_size = 5
+outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmobw"]
+font_size = 40
+outline_size = 5
+outline_color = Color(0, 0.501961, 1, 1)
+shadow_color = Color(0, 0.5019608, 1, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c44sx"]
+outline_size = 5
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_mtknr"]
+_limits = [0.0, 0.7, 0.0, 1.0]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hnl0o"]
+curve = SubResource("Curve_mtknr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
+shader = ExtResource("17_tln5d")
+shader_parameter/direction = Vector3(0, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/initial_linear_velocity_min = 45.0
+shader_parameter/initial_linear_velocity_max = 60.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/scale_curve = SubResource("CurveTexture_hnl0o")
+
+[sub_resource type="Curve" id="Curve_1u8w0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5019921, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vn0ol"]
+curve = SubResource("Curve_1u8w0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cegan"]
+shader = ExtResource("19_pmn51")
+shader_parameter/direction = Vector3(0, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/initial_linear_velocity_min = 180.0
+shader_parameter/initial_linear_velocity_max = 360.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/initial_angle_min = 0.0
+shader_parameter/initial_angle_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/scale_curve = SubResource("CurveTexture_vn0ol")
+
+[sub_resource type="Curve" id="Curve_getpj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_82xsv"]
+curve = SubResource("Curve_getpj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d13ii"]
+shader = ExtResource("19_pmn51")
+shader_parameter/direction = Vector3(0, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/initial_linear_velocity_min = 180.0
+shader_parameter/initial_linear_velocity_max = 360.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/initial_angle_min = 0.0
+shader_parameter/initial_angle_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/scale_curve = SubResource("CurveTexture_82xsv")
+
+[sub_resource type="Curve" id="Curve_ryguw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d13ii"]
+curve = SubResource("Curve_ryguw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1u8w0"]
+shader = ExtResource("19_pmn51")
+shader_parameter/direction = Vector3(0, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/initial_linear_velocity_min = 180.0
+shader_parameter/initial_linear_velocity_max = 270.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/damping_min = 900.0
+shader_parameter/damping_max = 900.0
+shader_parameter/initial_angle_min = 0.0
+shader_parameter/initial_angle_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/scale_curve = SubResource("CurveTexture_d13ii")
+
+[sub_resource type="Curve" id="Curve_d13ii"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1u8w0"]
+curve = SubResource("Curve_d13ii")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0odxb"]
+shader = ExtResource("19_pmn51")
+shader_parameter/direction = Vector3(0, 0, 0)
+shader_parameter/spread = 180.0
+shader_parameter/initial_linear_velocity_min = 180.0
+shader_parameter/initial_linear_velocity_max = 270.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/damping_min = 900.0
+shader_parameter/damping_max = 900.0
+shader_parameter/initial_angle_min = 0.0
+shader_parameter/initial_angle_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/scale_curve = SubResource("CurveTexture_1u8w0")
+
+[node name="Main" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_5ot4n")
+room = "tutorial_entrance_hall"
+
+[node name="Saver" type="Node" parent="."]
+script = ExtResource("2_w7oih")
+
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("player")]
+process_mode = 3
+script = ExtResource("3_wfgev")
+player = NodePath("../Entities/Player")
+
+[node name="Backdrop" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TransitionFade" type="ColorRect" parent="UI"]
+z_index = 25
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="HUD" type="Control" parent="UI"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+mouse_filter = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI/HUD"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 260.0
+offset_bottom = 36.0
+mouse_filter = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_progress = ExtResource("4_kktqm")
+script = ExtResource("5_nj3ya")
+
+[node name="DamageBar" type="TextureProgressBar" parent="UI/HUD/HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+value = 75.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("6_0wl52")
+texture_progress = ExtResource("7_dy25x")
+
+[node name="Label" type="Label" parent="UI/HUD/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "50/100"
+label_settings = SubResource("LabelSettings_iknsa")
+horizontal_alignment = 1
+
+[node name="DamageTimer" type="Timer" parent="UI/HUD/HealthBar"]
+one_shot = true
+
+[node name="FloorNumber" type="Label" parent="UI/HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 16.0
+offset_right = 75.0
+offset_bottom = 39.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_o2jkc")
+horizontal_alignment = 1
+script = ExtResource("8_r0ery")
+
+[node name="Defeated" type="Label" parent="UI/HUD"]
+visible = false
+z_index = -2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 64.0
+offset_right = 86.0
+offset_bottom = 119.0
+grow_horizontal = 2
+text = "defeated"
+label_settings = SubResource("LabelSettings_qmobw")
+horizontal_alignment = 1
+
+[node name="Proceed" type="Button" parent="UI/HUD"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_r2yfh")
+text = "start_day"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/HUD/Proceed"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0wl52")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="GameMenu" type="Control" parent="UI"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+mouse_filter = 2
+
+[node name="UpgradePoints" type="Label" parent="UI/GameMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29200003
+anchor_top = 1.0
+anchor_right = 0.293
+anchor_bottom = 1.0
+offset_left = -0.3000183
+offset_top = -40.0
+offset_right = -0.2000122
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_4xnvd")
+horizontal_alignment = 1
+script = ExtResource("10_dvfo5")
+
+[node name="Version" type="Label" parent="UI/GameMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 77.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "ver"
+label_settings = SubResource("LabelSettings_4xnvd")
+script = ExtResource("11_lvowx")
+
+[node name="Gear1" type="TextureRect" parent="UI/GameMenu"]
+modulate = Color(0, 0, 0.047058824, 1)
+show_behind_parent = true
+z_index = -1
+layout_mode = 0
+offset_left = 150.0
+offset_top = -75.0
+offset_right = 750.0
+offset_bottom = 525.0
+pivot_offset = Vector2(300, 300)
+texture = ExtResource("12_dsb7f")
+script = ExtResource("13_ngqgq")
+rotation_speed = 0.1
+
+[node name="Gear2" type="TextureRect" parent="UI/GameMenu"]
+modulate = Color(0, 0, 0.09803922, 1)
+show_behind_parent = true
+z_index = -1
+layout_mode = 0
+offset_left = 210.0
+offset_top = -15.0
+offset_right = 690.0
+offset_bottom = 465.0
+pivot_offset = Vector2(240, 240)
+texture = ExtResource("12_dsb7f")
+script = ExtResource("13_ngqgq")
+rotation_speed = -0.1
+
+[node name="Background1" type="NinePatchRect" parent="UI/GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 79.0
+offset_right = 221.0
+offset_bottom = 371.0
+texture = ExtResource("14_xtque")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background2" type="NinePatchRect" parent="UI/GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 229.0
+offset_top = 79.0
+offset_right = 446.0
+offset_bottom = 371.0
+texture = ExtResource("14_xtque")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background3" type="NinePatchRect" parent="UI/GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 454.0
+offset_top = 79.0
+offset_right = 671.0
+offset_bottom = 371.0
+texture = ExtResource("14_xtque")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background4" type="NinePatchRect" parent="UI/GameMenu"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 679.0
+offset_top = 79.0
+offset_right = 896.0
+offset_bottom = 371.0
+texture = ExtResource("14_xtque")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="MagicPicker1" parent="UI/GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+layout_mode = 0
+offset_top = 75.0
+offset_bottom = 375.0
+next = NodePath("../MagicPicker2")
+
+[node name="MagicPicker2" parent="UI/GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_top = 75.0
+offset_right = 450.0
+offset_bottom = 375.0
+next = NodePath("../MagicPicker3")
+
+[node name="MagicPicker3" parent="UI/GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 75.0
+offset_right = 675.0
+offset_bottom = 375.0
+next = NodePath("../MagicPicker4")
+
+[node name="MagicPicker4" parent="UI/GameMenu" instance=ExtResource("15_xvoxj")]
+visible = false
+layout_mode = 0
+offset_left = 675.0
+offset_top = 75.0
+offset_right = 900.0
+offset_bottom = 375.0
+
+[node name="Reset" type="Button" parent="UI/GameMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -79.0
+offset_right = -20.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_r2yfh")
+text = "reset"
+flat = true
+script = ExtResource("16_ocakq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/Reset"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kktqm")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Hint" type="Label" parent="UI/GameMenu/Reset"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = -8.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "click and hold ->"
+label_settings = SubResource("LabelSettings_c44sx")
+
+[node name="Settings" type="Button" parent="UI/GameMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_r2yfh")
+text = "settings"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/Settings"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0wl52")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Stats" type="Button" parent="UI/GameMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.245
+anchor_top = 1.0
+anchor_right = 0.33800003
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 0.2999878
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_r2yfh")
+text = "stats_title"
+flat = true
+script = ExtResource("17_8i5ba")
+subject = "stats"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/Stats"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0wl52")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Challenges" type="Control" parent="UI/GameMenu"]
+anchors_preset = 0
+offset_left = 525.0
+offset_top = 500.0
+offset_right = 750.0
+offset_bottom = 590.0
+mouse_filter = 2
+script = ExtResource("18_cwo5d")
+
+[node name="Background" type="NinePatchRect" parent="UI/GameMenu/Challenges"]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_xtque")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="UI/GameMenu/Challenges"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("19_jjpt0")
+bbcode_enabled = true
+text = "challenges"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Container" type="HBoxContainer" parent="UI/GameMenu/Challenges"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -30.0
+offset_right = 158.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Settings" parent="UI" instance=ExtResource("20_7valt")]
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("4_t5v04")]
+z_index = 2
+position = Vector2(450, 350)
+group = 1
+
+[node name="Projectiles" type="Node" parent="."]
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="Audio" type="Node" parent="."]
+process_mode = 3
+
+[node name="ShootLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_2hyu6")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="DeathLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_rqls7")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HitLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_mj5p3")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtLight" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_nkvxt")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtHeavy" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_60vvb")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Leap" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("10_jtxca")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_2fjtk")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Completion" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_toyx1")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="Error" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13_o7co7")
+bus = &"SFX"
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_7p5gt")
+bus = &"SFX"
+
+[node name="Particles" type="Node" parent="."]
+
+[node name="Impact" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("15_3qjo3")
+emitting = false
+amount = 128
+texture = ExtResource("16_h1wje")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_074og")
+
+[node name="Quills" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("15_3qjo3")
+emitting = false
+amount = 128
+texture = ExtResource("18_d4f8b")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_cegan")
+
+[node name="Stars" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("15_3qjo3")
+emitting = false
+amount = 128
+texture = ExtResource("20_uo7ol")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_cegan")
+
+[node name="Fire" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("15_3qjo3")
+emitting = false
+amount = 128
+texture = ExtResource("21_ck2lu")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_d13ii")
+
+[node name="Firebeam" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("15_3qjo3")
+emitting = false
+amount = 128
+texture = ExtResource("21_ck2lu")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_1u8w0")
+
+[node name="Zap" type="GPUParticles2D" parent="Particles"]
+z_index = 2
+material = ExtResource("15_3qjo3")
+emitting = false
+amount = 128
+texture = ExtResource("22_73884")
+lifetime = 0.32
+visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
+draw_order = 0
+process_material = SubResource("ShaderMaterial_0odxb")
+
+[connection signal="pressed" from="UI/HUD/Proceed" to="UI" method="toggle_game_menu"]
+[connection signal="button_down" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="down"]
+[connection signal="button_up" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="up"]
+[connection signal="mouse_entered" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="up"]
+[connection signal="pressed" from="UI/GameMenu/Settings" to="UI" method="toggle_settings"]
+[connection signal="mouse_entered" from="UI/GameMenu/Stats" to="UI/GameMenu/Stats" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/GameMenu/Stats" to="UI/GameMenu/Stats" method="_on_mouse_exited"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://nw5cjw5gk85y"]
 
-[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/ice/blue.png" id="1_cd403"]
+[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_duqkn"]
 [ext_resource type="Script" uid="uid://cyntow0qmgtea" path="res://regions/environment/rewards/health_reward.gd" id="2_5gkhu"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_cd403"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_ghm7y"]
@@ -62,7 +62,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_cd403")
+texture_normal = ExtResource("1_duqkn")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_5gkhu")

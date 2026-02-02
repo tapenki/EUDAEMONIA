@@ -38,6 +38,9 @@ msgstr "Screenshake:"
 msgid "damage_numbers"
 msgstr "Damage Numbers:"
 
+msgid "auto_restart"
+msgstr "Return to menu on defeat:"
+
 msgid "keybinds"
 msgstr "Keybinds"
 
@@ -85,6 +88,12 @@ msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [o
 
 msgid "defeated"
 msgstr "died :("
+
+msgid "move_controls"
+msgstr "{up}{left}{down}{right} to move."
+
+msgid "attack_controls"
+msgstr "{attack} to attack."
 
 # challenges
 
@@ -563,7 +572,7 @@ msgstr "grrgghn >:("
 # rewards
 
 msgid "health_reward_title"
-msgstr "[outline_color=#0066dd]Reward: Health[/outline_color]"
+msgstr "[outline_color=#dd0000]Reward: Health[/outline_color]"
 
 msgid "health_reward_description"
 msgstr "Gain +[outline_size=10][5][/outline_size] max health and fully recover."

@@ -102,6 +102,12 @@ text = "damage_numbers"
 section = "gameplay"
 key = "damage_numbers"
 
+[node name="AutoRestart" parent="General" instance=ExtResource("3_bqqix")]
+layout_mode = 2
+text = "auto_restart"
+section = "gameplay"
+key = "auto_restart"
+
 [node name="Keybinds" type="VBoxContainer" parent="."]
 visible = false
 layout_mode = 1

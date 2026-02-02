@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://pvc6jv5ttk7m"]
+[gd_scene load_steps=11 format=4 uid="uid://pvc6jv5ttk7m"]
 
 [ext_resource type="TileSet" uid="uid://c4kyki7ku4aqj" path="res://tutorial/region/rooms/tutorial_wall_tileset.tres" id="1_mgude"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_6pugm"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_8gr7m"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_jp6cj"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_dcxaw"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="6_ivgmi"]
+[ext_resource type="Script" uid="uid://5uawsuo0rmkx" path="res://tutorial/tutorial_controls.gd" id="6_vyqfd"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_ivgmi"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_vyqfd"]
 
@@ -84,6 +86,47 @@ rotation = 3.1415927
 position = Vector2(480, 30)
 room = "tutorial_room_0"
 door = "Entrance0"
+
+[node name="TutorialControls" type="Node2D" parent="."]
+z_index = -5
+position = Vector2(480, 240)
+script = ExtResource("6_vyqfd")
+
+[node name="Label1" type="RichTextLabel" parent="TutorialControls"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 2.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("6_ivgmi")
+bbcode_enabled = true
+text = "move_controls"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="TutorialControls"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.5
+offset_top = 52.0
+offset_right = 58.5
+offset_bottom = 75.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("6_ivgmi")
+bbcode_enabled = true
+text = "attack_controls"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
 
 [node name="HealthRewardGiver" parent="." instance=ExtResource("6_dcxaw")]
 reward = ExtResource("7_ivgmi")

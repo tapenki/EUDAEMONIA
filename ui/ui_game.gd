@@ -80,6 +80,9 @@ func toggle_game_menu():
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
 
 func defeat():
+	if Config.config.get_value("gameplay", "auto_restart"):
+		reset.call_deferred()
+		return
 	proceed.visible = true
 	proceed.text = "menu"
 	get_node("HUD/Defeated").visible = true

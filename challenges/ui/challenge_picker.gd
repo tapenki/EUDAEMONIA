@@ -7,7 +7,7 @@ var accessible: bool
 var selected: bool
 
 func _ready() -> void:
-	if get_node("/root/Main/Saver").tutorial_stage > 0:
+	if get_node("/root/Main/Saver").tutorial_complete:
 		symbol_label.text = subject.substr(0, 2).capitalize()
 		accessible = true
 		if ui.challenges.has(subject):

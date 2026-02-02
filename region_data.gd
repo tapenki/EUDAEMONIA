@@ -1,6 +1,34 @@
 extends Node
 
 var room_data = {
+	#region tutorial
+	"tutorial_entrance_hall" : {
+		"scene" : preload("res://tutorial/region/rooms/tutorial_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "vasis",
+	},
+	"tutorial_room_0" : {
+		"scene" : preload("res://tutorial/region/rooms/tutorial_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "vasis",
+	},
+	"tutorial_room_1" : {
+		"scene" : preload("res://tutorial/region/rooms/tutorial_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "vasis",
+	},
+	"tutorial_room_2" : {
+		"scene" : preload("res://tutorial/region/rooms/tutorial_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "vasis",
+	},
+	"tutorial_throne_room" : {
+		"scene" : preload("res://tutorial/region/rooms/tutorial_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "vasis",
+		"challenge" : true,
+	},
+	#endregion
 	#region vasis
 	"vasis_entrance_hall" : {
 		"scene" : preload("res://regions/vasis/rooms/vasis_entrance_hall.tscn"), 

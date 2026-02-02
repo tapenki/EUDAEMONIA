@@ -24,5 +24,8 @@ func start_run():
 	#player.ability_handler.upgrade(armor, 1)
 	#for i in challenges:
 	#	player.ability_handler.upgrade(i, 1)
-	get_tree().change_scene_to_file("res://main_game.tscn")
+	if saver.tutorial_complete:
+		get_tree().change_scene_to_file("res://main_game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://tutorial/tutorial_game.tscn")
 	#get_node("/root/Main").game_start.emit()

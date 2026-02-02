@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgpscaxywuyn6"]
+
+[ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/ui/magic_picker.gd" id="1_682e8"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="2_575kd"]
+[ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/ui/unlock_magic_button.tscn" id="3_715gr"]
+[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="4_k0bwj"]
+[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/ice/blue.png" id="5_4ix6l"]
+[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="6_77b6k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_soowg"]
+resource_local_to_scene = true
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="MagicPicker1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
+mouse_filter = 2
+script = ExtResource("1_682e8")
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_575kd")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_top = 2.0
+offset_right = 39.5
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "path_picker"
+label_settings = SubResource("LabelSettings_soowg")
+
+[node name="Paths" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Fire" parent="Paths" instance=ExtResource("3_715gr")]
+layout_mode = 2
+texture_normal = ExtResource("4_k0bwj")
+subject = "fire"
+
+[node name="Ice" parent="Paths" instance=ExtResource("3_715gr")]
+layout_mode = 2
+texture_normal = ExtResource("5_4ix6l")
+subject = "ice"
+
+[node name="Lightning" parent="Paths" instance=ExtResource("3_715gr")]
+layout_mode = 2
+texture_normal = ExtResource("6_77b6k")
+subject = "lightning"

@@ -1,12 +1,12 @@
 extends Node
 
-var tutorial_stage: int
+var tutorial_complete: bool
 
 var starter_abilities = {"magic_missile" : {"level" : 1}}
 
 func write_meta():
 	var save_data = {
-		"tutorial_stage" : tutorial_stage,
+		"tutorial_complete" : tutorial_complete,
 		#"weapon" : get_node("/root/Main/UI").weapon,
 		#"armor" : get_node("/root/Main/UI").armor,
 		"challenges" : get_node("/root/Main/UI").challenges,
@@ -19,7 +19,7 @@ func read_meta():
 		return
 	var save_file = FileAccess.open("user://meta_save", FileAccess.READ)
 	var save_data = save_file.get_var()
-	tutorial_stage = save_data.get("tutorial_stage", 0)
+	tutorial_complete = save_data.get("tutorial_complete", false)
 	#if AbilityData.ability_data.has(save_data["weapon"]):
 	#	get_node("/root/Main/UI").weapon = save_data["weapon"]
 	#if AbilityData.ability_data.has(save_data["armor"]):
