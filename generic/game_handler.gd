@@ -62,10 +62,10 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 
 ## entity spawning
 func scale_enemy_health(health: float):
-	return health * pow(1.25, day-1)
+	return health * (1 + 0.05 * pow(day-1, 2))
 
 func scale_enemy_damage():
-	return 0.75 + (day * 0.25)
+	return 0.8 + (day * 0.2)
 
 func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()
@@ -196,7 +196,6 @@ func travel(to_room, to_door):
 			entity.queue_free()
 	for projectile in get_node("/root/Main/Projectiles").get_children():
 		projectile.queue_free()
-	day += 1
 	day_started = false
 	room = to_room
 	door = to_door

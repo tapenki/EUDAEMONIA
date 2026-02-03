@@ -5,5 +5,5 @@ func _ready() -> void:
 	
 func damage_dealt(entity, damage) -> void:
 	if damage.has("first_blood"):
-		var doom = ability_handler.apply_status(entity.ability_handler, "doom", level)
+		var doom = ability_handler.apply_status(entity.ability_handler, "doom", level*4)
 		doom.stored_damage += damage["final"]

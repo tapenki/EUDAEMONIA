@@ -6,6 +6,8 @@ func _ready() -> void:
 	ability_handler.death_effects.connect(death_effects)
 	
 func death_effects() -> void:
+	if ability_handler.is_projectile and randi() % 2 == 0:
+		return
 	var bullet_instance = ability_handler.make_projectile(bullet, 
 	global_position, 
 	1,

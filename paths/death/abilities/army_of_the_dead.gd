@@ -9,9 +9,9 @@ func entity_death(dying_entity: Entity):
 		dying_entity.global_position,
 		2,  ## inheritance
 		-1) ## health
-		summon_instance.max_health *= 0.5 + 0.5 * level
+		summon_instance.max_health *= 0.4 + 0.4 * level
 		summon_instance.health = summon_instance.max_health
-		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 + 0.5 * level
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.4 + 0.4 * level
 		get_node("/root/Main").spawn_entity(summon_instance)
 
 func inherit(_handler, _tier):

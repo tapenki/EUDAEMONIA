@@ -7,7 +7,7 @@ func _ready() -> void:
 	ability_handler.damage_dealt.connect(damage_dealt)
 
 func crit_chance_modifiers(_entity, modifiers) -> void:
-	modifiers["source"] += 10 * level
+	modifiers["source"] += 5 * level
 
 func damage_dealt(entity, damage) -> void:
 	if chain.size() < 2 and damage.get("crits", 0) > 0:

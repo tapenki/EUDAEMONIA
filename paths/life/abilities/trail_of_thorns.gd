@@ -14,7 +14,7 @@ func spawn(spawn_position):
 	spawn_position, 
 	2,
 	Vector2())
-	bullet_instance.ability_handler.inherited_damage["multiplier"] *= level
+	bullet_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 * level
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)
 
 func movement(distance) -> void:

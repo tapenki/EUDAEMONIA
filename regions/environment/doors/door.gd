@@ -6,6 +6,8 @@ class_name Door extends Sprite2D
 @export var room: String
 @export var door: String
 
+@export var travel_time = 1
+
 func _ready() -> void:
 	get_node("/root/Main").day_cleared.connect(activate.unbind(1))
 
@@ -16,4 +18,5 @@ func activate():
 	particles.emitting = true
 
 func enter():
+	get_node("/root/Main").day += travel_time
 	get_node("/root/Main").travel(room, door)

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_p66np"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_jbp5y"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_agge2"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_34phv"]
+[ext_resource type="PackedScene" uid="uid://caj2w8w8af8wu" path="res://regions/environment/doors/sphere_door.tscn" id="5_34phv"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_34phv"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_3mek5"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_syd18"]
@@ -64,7 +64,7 @@ entity = "stalk"
 position = Vector2(540, 1290)
 rotation = 3.1415927
 
-[node name="Exit0" parent="Doors" instance=ExtResource("5_34phv")]
+[node name="Door" parent="Doors" instance=ExtResource("5_34phv")]
 self_modulate = Color(1, 0.29803923, 0, 1)
 position = Vector2(540, 30)
 room = "vasis_entrance_hall"

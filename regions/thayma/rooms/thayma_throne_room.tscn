@@ -3,8 +3,8 @@
 [ext_resource type="TileSet" uid="uid://cvpg0dl0gcihy" path="res://regions/thayma/rooms/thayma_wall_tileset.tres" id="1_0hd80"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="2_3k6qr"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_260iv"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="3_260iv"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_xydnr"]
+[ext_resource type="PackedScene" uid="uid://caj2w8w8af8wu" path="res://regions/environment/doors/sphere_door.tscn" id="5_33smu"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_33smu"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_1841i"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_aadvh"]
@@ -56,7 +56,7 @@ entity = "mars"
 position = Vector2(30, 570)
 rotation = 4.712389
 
-[node name="Exit0" parent="Doors" instance=ExtResource("3_260iv")]
+[node name="Exit0" parent="Doors" instance=ExtResource("5_33smu")]
 position = Vector2(570, 30)
 room = "aporia_entrance_hall"
 door = "Entrance0"

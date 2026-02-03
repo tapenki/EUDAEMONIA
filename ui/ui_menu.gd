@@ -20,12 +20,7 @@ func _unhandled_input(event) -> void:
 func start_run():
 	get_node("/root/Main").play_sound("Click")
 	saver.write_meta()
-	#player.ability_handler.upgrade("magic_missile", 1)
-	#player.ability_handler.upgrade(armor, 1)
-	#for i in challenges:
-	#	player.ability_handler.upgrade(i, 1)
 	if saver.tutorial_complete:
 		get_tree().change_scene_to_file("res://main_game.tscn")
 	else:
 		get_tree().change_scene_to_file("res://tutorial/tutorial_game.tscn")
-	#get_node("/root/Main").game_start.emit()

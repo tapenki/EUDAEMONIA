@@ -101,7 +101,9 @@ subject = "quill_spray"
 [node name="AnimatedClay" parent="Abilities2" instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
+cost = 2
 subject = "animated_clay"
+tag = "greater_upgrade_cost"
 
 [node name="Masteries1" type="HBoxContainer" parent="."]
 layout_direction = 2
@@ -176,7 +178,7 @@ subject = "pressurized_quills"
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {
-"animated_clay": 5
+"animated_clay": 3
 }
 subject = "multimold"
 

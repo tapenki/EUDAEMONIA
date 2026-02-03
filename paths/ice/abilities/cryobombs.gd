@@ -16,7 +16,7 @@ func day_start(_day: int) -> void:
 		0) ## health
 		for layer in range(1, 3):
 			summon_instance.set_collision_layer_value(layer, layer != ability_handler.owner.group)
-		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.25*level
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.2*level
 		
 		summon_instance.apply_palette(ability_handler.owner.group, "tertiary")
 		

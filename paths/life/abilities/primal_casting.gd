@@ -8,7 +8,7 @@ func _ready() -> void:
 func get_modifier():
 	if ability_handler.is_entity:
 		var health_values = ability_handler.get_health(ability_handler.owner.health, ability_handler.owner.max_health)
-		return health_values["max_health"] * 0.04 * level
+		return health_values["max_health"] * 0.02 * level
 	return inherited_damage
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:

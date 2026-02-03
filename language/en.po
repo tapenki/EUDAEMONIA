@@ -192,6 +192,9 @@ msgstr "Choose your path"
 msgid "upgrade_cost"
 msgstr "Price: [1] Qualia"
 
+msgid "greater_upgrade_cost"
+msgstr "Price: [2] Qualia"
+
 msgid "unlock_cost"
 msgstr "Price: [1] Nous"
 
@@ -212,13 +215,13 @@ msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ability: Ignition[/outline_color]"
 
 msgid "ignition_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10][2xLEVEL][/outline_size] burn."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Apply [outline_size=10][LEVEL][/outline_size] burn."
 
 msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10]+[35xLEVEL][/outline_size] health, [outline_size=10]x[LEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby foes when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][35xLEVEL][/outline_size] health, [outline_size=10]x[0.5xLEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby foes when killed."
 
 msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ability: Melt[/outline_color]"
@@ -230,7 +233,7 @@ msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon projectile or summon expiration:[/outline_size] It leaves a pool of fire that deals [outline_size=10]x[0.25xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon a summon dying or [50]% upon a projectile expiring:[/outline_size] Manifest a pool of fire that deals [outline_size=10]x[0.25xLEVEL][/outline_size] damage."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -242,7 +245,7 @@ msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
 
 msgid "conflagration_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br][outline_size=10]Upon a burning creature dying:[/outline_size] Spread its burn to the nearest foe."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br][outline_size=10]Upon a burning entity dying:[/outline_size] Spread its burn to the nearest foe."
 
 msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
@@ -270,7 +273,7 @@ msgid "ice_description"
 msgstr "Delay the inevitable.[br]Allow enemies to break."
 
 msgid "blue_needle_title"
-msgstr "[outline_color=#0000ff]Ability: Blue Needle[/outline_color]"
+msgstr "[outline_color=#0000ff]Parability: Blue Needle[/outline_color]"
 
 msgid "blue_needle_description"
 msgstr "Projectiles gain [outline_size=10]+[LEVEL][/outline_size] pierce."
@@ -279,7 +282,7 @@ msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ability: Snowball[/outline_color]"
 
 msgid "snowball_description"
-msgstr "Projectiles gain [outline_size=10]x[0.5xLEVEL][/outline_size] bonus damage and [outline_size=10]x[1-0.5^LEVEL][/outline_size] bonus size per second."
+msgstr "Projectiles gain [outline_size=10]x[0.25xLEVEL][/outline_size] bonus damage and [outline_size=10]x[1-0.5^LEVEL][/outline_size] bonus size per second."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
@@ -291,31 +294,31 @@ msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ability: Shatter[/outline_color]"
 
 msgid "shatter_description"
-msgstr "[outline_size=10]Upon a creature dying:[/outline_size] It releases [outline_size=10][3][/outline_size] bullets with [outline_size=10]x[LEVEL][/outline_size] damage. Summoned creatures only release [outline_size=10][1][/outline_size] bullet."
+msgstr "[outline_size=10]Upon an entity dying:[/outline_size] It releases [outline_size=10][3][/outline_size] projectiles with [outline_size=10]x[0.5xLEVEL][/outline_size] damage. Summoned entities only release [outline_size=10][1][/outline_size] projectile."
 
 msgid "cryobombs_title"
 msgstr "[outline_color=#0000ff]Ability: Cryobombs[/outline_color]"
 
 msgid "cryobombs_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10]x[0.25xLEVEL][/outline_size] damage, store taken damage, and explode dealing [outline_size=10]+[STOREDDAMAGE][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10]x[0.2xLEVEL][/outline_size] damage, store taken damage, and explode dealing [outline_size=10]+[STOREDDAMAGE][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
 
 msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.5xSNOWBALLLEVEL][/outline_size] bonus crit chance and status applied per second."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.25xSNOWBALLLEVEL][/outline_size] bonus crit chance and status applied per second."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged creature:[/outline_size] Apply a [outline_size=10]x[0][/outline_size] speed freeze for [outline_size=10]+[0.15xFROSTBITELEVEL][/outline_size] seconds."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply a [outline_size=10]x[0][/outline_size] speed freeze for [outline_size=10]+[0.15xFROSTBITELEVEL][/outline_size] seconds."
 
 msgid "shard_blast_title"
 msgstr "[outline_color=#0000ff]Polymastery: Shard Blast[/outline_color]"
 
 msgid "shard_blast_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] bullets with [outline_size=10]x[2][/outline_size] damage upon exploding."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] projectiles with [outline_size=10]x[2][/outline_size] damage upon exploding."
 
 # lightning
 msgid "lightning_title"
@@ -328,19 +331,19 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[10xLEVEL]%[/outline_size] crit chance. Critical damage chains to the closest foe up to [outline_size=10][2][/outline_size] times."
+msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance. Critical damage chains to the closest foe up to [outline_size=10][2][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#a87e00]Ability: Mortal Shock[/outline_color]"
 
 msgid "mortal_shock_description"
-msgstr "Gain [outline_size=10]+[25xLEVEL]%[/outline_size] crit chance against undamaged foes and [outline_size=10]+[5xLEVEL][/outline_size] damage on crit."
+msgstr "Gain [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged foes and [outline_size=10]+[2xLEVEL][/outline_size] damage on crit."
 
 msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]x[LEVEL][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]x[0.5xLEVEL][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
@@ -389,7 +392,7 @@ msgid "primal_casting_title"
 msgstr "[outline_color=#0f9936]Ability: Primal Casting[/outline_color]"
 
 msgid "primal_casting_description"
-msgstr "Gain [outline_size=10]+[0.04xMAXHPxLEVEL][/outline_size] damage."
+msgstr "Gain [outline_size=10]+[0.02xMAXHPxLEVEL][/outline_size] damage."
 
 msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
@@ -401,16 +404,16 @@ msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
 
 msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [75]px you move:[/outline_size] Manifest a thorn that deals [outline_size=10]x[LEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Every [75]px you move:[/outline_size] Manifest a thorn that deals [outline_size=10]x[0.5xLEVEL][/outline_size] damage."
 
 msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] You deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby foes."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] You deal [outline_size=10]x[LEVEL][/outline_size] damage to nearby foes."
 
 msgid "animated_clay_title"
-msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
+msgstr "[outline_color=#0f9936]Parability: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
 msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities."
@@ -431,7 +434,7 @@ msgid "multimold_title"
 msgstr "[outline_color=#0f9936]Mastery: Multimold[/outline_color]"
 
 msgid "multimold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
 
 # death
 msgid "death_title"
@@ -444,19 +447,19 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned foe:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] health and damage."
+msgstr "[outline_size=10]Upon slaying a non summoned foe:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.4+0.4xLEVEL][/outline_size] health and damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"
 
 msgid "fated_end_description"
-msgstr "[outline_size=10]Upon dealing damage to an undamaged creature:[/outline_size] Apply [outline_size=10][LEVEL][/outline_size] doom."
+msgstr "[outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10][4xLEVEL][/outline_size] doom."
 
 msgid "hunger_title"
 msgstr "[outline_color=#cc00cc]Ability: Hunger[/outline_color]"
 
 msgid "hunger_description"
-msgstr "[outline_size=10]Upon a creature dying:[/outline_size] Summons gain a [outline_size=10]x[1.5][/outline_size] speed haste for [outline_size=10]+[0.5xLEVEL][/outline_size] seconds and recover [outline_size=10]+[15xLEVEL][/outline_size] health."
+msgstr "[outline_size=10]Upon an entity dying:[/outline_size] Summons gain a [outline_size=10]x[1.5][/outline_size] speed haste for [outline_size=10]+[0.5xLEVEL][/outline_size] seconds and recover [outline_size=10]+[15xLEVEL][/outline_size] health."
 
 msgid "bone_shield_title"
 msgstr "[outline_color=#cc00cc]Ability: Bone Shield[/outline_color]"
@@ -480,7 +483,7 @@ msgid "starvation_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"
 
 msgid "starvation_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon a creature dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] bonus damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon an entity dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] bonus damage."
 
 msgid "bone_spear_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
@@ -492,7 +495,7 @@ msgid "doom_title"
 msgstr "[outline_color=#cc00cc]Notes: Doom[/outline_color]"
 
 msgid "doom_description"
-msgstr "Stores damage taken and deals [outline_size=10][STOREDDAMAGExSTACKS][/outline_size] damage after [outline_size=10][5][/outline_size] seconds."
+msgstr "Stores damage taken and deals [outline_size=10][STOREDDAMAGExSTACKSx0.1][/outline_size] damage after [outline_size=10][5][/outline_size] seconds."
 
 # spheres
 msgid "day_counter"
