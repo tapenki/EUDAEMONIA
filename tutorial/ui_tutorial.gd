@@ -1,19 +1,9 @@
 extends UIGame
 
-#var tutorial_step = 0
-
-#func _ready() -> void:
-#	update_abilities.connect(check_step_1)
-#	super()
-
-#func toggle_game_menu():
-#	if tutorial_step < 2:
-#		get_node("/root/Main").play_sound("Error")
-#		return
-#	elif tutorial_step == 2:
-#		tutorial_step = 3
-#	super()
-
-#func check_step_1():
-#	if tutorial_step == 1:
-#		tutorial_step = 2
+func _process(_delta: float) -> void:
+	super(_delta)
+	if not main.game_over:
+		if upgrade_points == 0 and not main.day_started and Time.get_ticks_msec() % 400 < 200:
+			proceed.get_node("NinePatchRect").texture = button_blue
+		else:
+			proceed.get_node("NinePatchRect").texture = button_gray

@@ -502,6 +502,7 @@ layout_mode = 0
 offset_top = 75.0
 offset_bottom = 375.0
 next = NodePath("../MagicPicker2")
+blink = true
 
 [node name="MagicPicker2" parent="UI/GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 visible = false
