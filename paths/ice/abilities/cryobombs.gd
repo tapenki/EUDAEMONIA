@@ -20,7 +20,7 @@ func day_start(_day: int) -> void:
 		
 		summon_instance.apply_palette(ability_handler.owner.group, "tertiary")
 		
-		summon_instance.ability_handler.grant("cryonic_volatility", level)
+		summon_instance.ability_handler.apply_ability("cryonic_volatility", level)
 		
 		get_node("/root/Main").spawn_entity(summon_instance)
 

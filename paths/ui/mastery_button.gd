@@ -24,7 +24,7 @@ var description_nodes: Array
 var accessible: bool
 
 func _ready() -> void:
-	ability_handler.update_abilities.connect(update)
+	ui.update_abilities.connect(update)
 	update()
 
 func update():

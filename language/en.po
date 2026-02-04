@@ -447,7 +447,7 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned foe:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.4+0.4xLEVEL][/outline_size] health and damage."
+msgstr "[outline_size=10]Upon slaying a non summoned foe:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.4+0.4xLEVEL][/outline_size] of its base health and damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"
@@ -471,7 +471,7 @@ msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.25xALLYMAXHP]x[LEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.2xALLYMAXHP]x[LEVEL][/outline_size] damage."
 
 msgid "swift_fate_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Swift Fate[/outline_color]"

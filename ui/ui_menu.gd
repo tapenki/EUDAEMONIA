@@ -1,7 +1,5 @@
 extends UICore
 
-#var weapon = "magic_missile"
-#var armor = "hermits_cloak"
 var challenges: Array
 
 func _ready() -> void:

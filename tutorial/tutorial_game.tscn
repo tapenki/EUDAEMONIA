@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5ot4n"]
 [ext_resource type="Script" uid="uid://dmr22mfrayynh" path="res://saver_game.gd" id="2_w7oih"]
-[ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui_game.gd" id="3_wfgev"]
+[ext_resource type="Script" uid="uid://yyn4tad8snr2" path="res://tutorial/ui_tutorial.gd" id="3_wfgev"]
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="4_kktqm"]
 [ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="4_t5v04"]
 [ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="5_2hyu6"]
@@ -497,6 +497,7 @@ patch_margin_right = 14
 patch_margin_bottom = 14
 
 [node name="MagicPicker1" parent="UI/GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+z_index = 5
 layout_mode = 0
 offset_top = 75.0
 offset_bottom = 375.0

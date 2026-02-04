@@ -14,7 +14,7 @@ func spawn(spawn_position: Vector2, delay = 0.5):
 	2,  ## inheritance
 	35 * level) ## health
 	summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 * level
-	summon_instance.ability_handler.grant("fireburst", level)
+	summon_instance.ability_handler.apply_ability("fireburst", level)
 	get_node("/root/Main").spawn_entity(summon_instance, delay)
 
 func day_start(_day: int) -> void:

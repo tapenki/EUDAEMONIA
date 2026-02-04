@@ -38,3 +38,10 @@ func take_damage(source, damage, immune_affected = true):
 	if took_damage and immune_affected:
 		get_node("/root/Main").screenshake.emit(0.2)
 	return took_damage
+
+func recover():
+	health = max_health
+	for ability in ability_handler.get_children():
+		if AbilityData.ability_data[ability.name]["type"] == "status":
+			ability.clear()
+	get_node("/root/Main/UI").update_abilities.emit()

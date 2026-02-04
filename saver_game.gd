@@ -24,7 +24,7 @@ func read_meta():
 	#	get_node("/root/Main/UI").weapon = save_data["weapon"]
 	#if AbilityData.ability_data.has(save_data["armor"]):
 	#	get_node("/root/Main/UI").armor = save_data["armor"]
-	get_node("/root/Main/UI").challenges = save_data.get(["challenges"], [])
+	get_node("/root/Main/UI").challenges = save_data.get("challenges", [])
 
 func erase_run():
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
@@ -81,4 +81,9 @@ func _ready():
 			ability_node.set_script(AbilityData.ability_data[ability]["script"])
 			ability_node.deserialize(starter_abilities[ability])
 			ability_node.name = ability
+			get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
+		for challenge in get_node("/root/Main/UI").challenges:
+			var ability_node = Node2D.new()
+			ability_node.set_script(AbilityData.ability_data[challenge]["script"])
+			ability_node.name = challenge
 			get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)

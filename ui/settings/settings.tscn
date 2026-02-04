@@ -17,7 +17,7 @@ outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
 
 [node name="Settings" type="Control"]
 visible = false
-z_index = 5
+z_index = 10
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

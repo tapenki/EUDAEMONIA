@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://r1rn63ji0xx1"]
+
+[ext_resource type="Texture2D" uid="uid://cf4xdwdge0pxg" path="res://regions/environment/doors/sphere_door.png" id="1_ve1lo"]
+[ext_resource type="Script" uid="uid://6vhd80owhrf0" path="res://tutorial/tutorial_exit_door.gd" id="2_7buts"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_kae70"]
+[ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_bdmps"]
+
+[sub_resource type="Curve" id="Curve_t73xu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ate26"]
+curve = SubResource("Curve_t73xu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yajsy"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 1, 0)
+emission_shape = 2
+emission_sphere_radius = 32.0
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ate26")
+
+[node name="Door" type="Sprite2D"]
+self_modulate = Color(1, 0.6666667, 0, 1)
+texture = ExtResource("1_ve1lo")
+script = ExtResource("2_7buts")
+travel_time = 3
+
+[node name="Button" type="TextureButton" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+self_modulate = Color(0, 0.78431374, 1, 1)
+show_behind_parent = true
+material = ExtResource("3_kae70")
+emitting = false
+amount = 24
+texture = ExtResource("4_bdmps")
+lifetime = 0.5
+local_coords = true
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_yajsy")
+
+[connection signal="pressed" from="Button" to="." method="enter"]

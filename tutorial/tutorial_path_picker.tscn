@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgpscaxywuyn6"]
 
-[ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/ui/magic_picker.gd" id="1_682e8"]
+[ext_resource type="Script" uid="uid://d2nbwwug3j2og" path="res://tutorial/tutorial_path_picker.gd" id="1_1hvll"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="2_575kd"]
 [ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/ui/unlock_magic_button.tscn" id="3_715gr"]
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="4_k0bwj"]
@@ -12,13 +12,13 @@ resource_local_to_scene = true
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[node name="MagicPicker1" type="Control"]
+[node name="PathPicker" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
-script = ExtResource("1_682e8")
+script = ExtResource("1_1hvll")
 
 [node name="Background" type="NinePatchRect" parent="."]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)

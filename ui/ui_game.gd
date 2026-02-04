@@ -1,4 +1,4 @@
-extends UICore
+class_name UIGame extends UICore
 
 @export var player: Entity
 
@@ -13,13 +13,13 @@ var button_gray = preload("res://ui/button.png")
 @onready var reset_button = $"GameMenu/Reset"
 @onready var hud = $"HUD"
 
-#var weapon = "magic_missile"
-#var armor = "hermits_cloak"
-var challenges: Array
-
 var upgrade_points = 1
 var unlock_points = 1
 var paths: Array
+
+var challenges: Array
+
+signal update_abilities()
 
 func _ready() -> void:
 	var magic_picker = game_menu.get_node("MagicPicker1")

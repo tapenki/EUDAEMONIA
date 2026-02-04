@@ -50,7 +50,6 @@ signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ## misc signals
-signal update_abilities()
 
 ### methods
 func _physics_process(_delta: float) -> void:
@@ -221,7 +220,7 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	return summon_instance
 
 ## ability manipulation
-func grant(ability: String, levels: float):
+func apply_ability(ability: String, levels: float):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
 		ability_node.add_level(levels)
@@ -233,6 +232,14 @@ func grant(ability: String, levels: float):
 		add_child(ability_node)
 	return ability_node
 
+func apply_status(handler: Node, ability: String, levels: float):
+	var modifiers = {"source" : levels, "multiplier" : 1}
+	status_level_modifiers.emit(ability, modifiers)
+	levels = modifiers["source"] * modifiers["multiplier"]
+	var status = handler.apply_ability(ability, levels)
+	status_applied.emit(status, levels)
+	return status
+
 func upgrade(ability: String, levels: float):
 	var ability_node = get_node_or_null(ability)
 	if ability_node:
@@ -243,24 +250,9 @@ func upgrade(ability: String, levels: float):
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
-	update_abilities.emit()
-
-func apply_status(handler: Node, ability: String, levels: float):
-	var modifiers = {"source" : levels, "multiplier" : 1}
-	status_level_modifiers.emit(ability, modifiers)
-	levels = modifiers["source"] * modifiers["multiplier"]
-	var status = handler.grant(ability, levels)
-	status_applied.emit(status, levels)
-	return status
+	if owner is Player:
+		get_node("/root/Main/UI").update_abilities.emit()
 
 func inherit(handler: Node, inherit_level: float):
 	for child in get_children():
 		child.inherit(handler, inherit_level)
-
-## misc
-func recover():
-	owner.health = owner.max_health
-	for ability in get_children():
-		if AbilityData.ability_data[ability.name]["type"] == "status":
-			ability.clear()
-	update_abilities.emit()

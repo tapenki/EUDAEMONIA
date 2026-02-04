@@ -31,12 +31,10 @@ radius = 20.0
 [node name="BallLightning" type="Area2D" node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("1_0owue")
 ability_handler = NodePath("AbilityHandler")
-hit_sound = "Peh"
 hits_left = -1
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("3_r00uu")
-type = "static"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = ExtResource("2_3eyo0")

@@ -22,7 +22,7 @@ func read_meta():
 	#	get_node("/root/Main/UI").weapon = save_data["weapon"]
 	#if AbilityData.ability_data.has(save_data["armor"]):
 	#	get_node("/root/Main/UI").armor = save_data["armor"]
-	get_node("/root/Main/UI").challenges = save_data.get(["challenges"], [])
+	get_node("/root/Main/UI").challenges = save_data.get("challenges", [])
 
 func read_run():
 	if not FileAccess.file_exists("user://run_save"):
