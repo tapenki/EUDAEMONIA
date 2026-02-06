@@ -165,7 +165,7 @@ msgid "lasting_wounds_title"
 msgstr "[outline_color=#666666]Challenge: Lasting Wounds[/outline_color]"
 
 msgid "lasting_wounds_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
+msgstr "[outline_size=10]Upon taking damage from an enemy:[/outline_size] Lose [outline_size=10][1][/outline_size] max health."
 
 msgid "burning_hours_title"
 msgstr "[outline_color=#666666]Challenge: Burning Hours[/outline_color]"
@@ -422,7 +422,7 @@ msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Polymastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] damage."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"

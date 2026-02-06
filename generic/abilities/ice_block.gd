@@ -25,7 +25,7 @@ func day_start(_day: int) -> void:
 	charges = level
 	sprite_instance.visible = true
 
-func damage_taken(_source, _damage) -> void:
+func damage_taken(_damage) -> void:
 	if charges > 0:
 		get_node("/root/Main").spawn_particles(particle_scene, global_position, 2, Config.get_team_color(ability_handler.owner.group, "secondary"))
 		charges -= 1

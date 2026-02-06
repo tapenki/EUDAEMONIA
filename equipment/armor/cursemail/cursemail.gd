@@ -14,7 +14,7 @@ func _ready() -> void:
 func damage_taken_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= 0.5
 
-func damage_taken(_source, _damage) -> void:
+func damage_taken(_damage) -> void:
 	ability_handler.owner.health = min(ability_handler.owner.health+1, ability_handler.owner.max_health)
 	ability_handler.upgrade("dark_price", 1)
 

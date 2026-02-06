@@ -14,7 +14,7 @@ func _ready() -> void:
 	ability_handler.before_self_death.connect(before_self_death)
 	ability_handler.death_effects.connect(death_effects)
 
-func damage_taken(_source, damage) -> void:
+func damage_taken(damage) -> void:
 	stored_damage += damage["final"]
 
 func before_self_death(modifiers) -> void:

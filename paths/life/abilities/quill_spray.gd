@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	if pressurized_quills:
 		pressure_multiplier = min(2.0, pressure_multiplier + 0.2 * delta * ability_handler.speed_scale)
 
-func damage_taken(_source, _damage) -> void:
+func damage_taken(_damage) -> void:
 	var attack_scale = ability_handler.get_attack_scale({"source" : 0, "multiplier" : 1.5 * pressure_multiplier})
 	var reach = 80 * attack_scale
 	for entity in ability_handler.area_targets(global_position, reach):

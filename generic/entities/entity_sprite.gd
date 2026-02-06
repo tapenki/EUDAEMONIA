@@ -8,6 +8,6 @@ class_name EntitySprite extends Sprite2D
 func _on_hurt_timeout() -> void:
 	texture = base_texture
 
-func _on_damage_taken(_source, _damage) -> void:
+func _on_damage_taken(_damage) -> void:
 	texture = hurt_texture
 	hurt_timer.start()

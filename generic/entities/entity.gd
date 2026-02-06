@@ -17,6 +17,7 @@ var immune_timer = ScaledTimer.new()
 @export_category("tags")
 @export var group: int
 @export var summoned: bool
+@export var unchaseable: bool
 var target
 
 var alive = true
@@ -50,7 +51,7 @@ func immune(duration: float):
 	if immune_timer.time_left < duration:
 		immune_timer.start(duration)
 
-func take_damage(source, damage, immune_affected = true):
+func take_damage(damage, immune_affected = true):
 	if immune_affected:
 		if immune_timer.running:
 			return false
@@ -59,7 +60,7 @@ func take_damage(source, damage, immune_affected = true):
 	
 	get_node("/root/Main").play_sound(hurt_sound)
 	health = health - damage["final"]
-	ability_handler.damage_taken.emit(source, damage)
+	ability_handler.damage_taken.emit(damage)
 	if ability_handler.get_health(health, max_health)["health"] <= 0:
 		kill.call_deferred(damage) ## delay to apply all effects before proceeding to kill
 	return true

@@ -23,7 +23,7 @@ func _ready() -> void:
 		particle_instances.append(particle_instance)
 		sprite["node"].add_child(particle_instance)
 
-func damage_taken(_source, damage) -> void:
+func damage_taken(damage) -> void:
 	stored_damage += damage["final"]
 
 func timeout():

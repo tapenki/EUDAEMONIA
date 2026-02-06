@@ -33,8 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_released("attack") and event.is_action("attack"):
 		attacking = false
 
-func take_damage(source, damage, immune_affected = true):
-	var took_damage = super(source, damage, immune_affected)
+func take_damage(damage, immune_affected = true):
+	var took_damage = super(damage, immune_affected)
 	if took_damage and immune_affected:
 		get_node("/root/Main").screenshake.emit(0.2)
 	return took_damage

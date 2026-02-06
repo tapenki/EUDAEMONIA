@@ -21,7 +21,7 @@ func update() -> void:
 	damage_bar.value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 
-func damage_taken(_source, _damage) -> void:
+func damage_taken(_damage) -> void:
 	var health_values = ability_handler.get_health(player.health, player.max_health)
 	value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]

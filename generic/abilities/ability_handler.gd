@@ -9,6 +9,8 @@ extends Node
 @export var is_entity: bool
 @export var is_projectile: bool
 
+var entity_source: Node
+
 var speed_scale = 1.0
 
 ### signals
@@ -39,7 +41,7 @@ signal summon_damage_modifiers(modifiers: Dictionary)
 ## damage taken signals
 signal damage_taken_modifiers(modifiers: Dictionary)
 signal immune_duration_modifiers(modifiers: Dictionary)
-signal damage_taken(source: Node, damage: Dictionary)
+signal damage_taken(damage: Dictionary)
 signal before_self_death(modifiers: Dictionary)
 signal death_effects()
 signal self_death()
@@ -56,6 +58,10 @@ func _physics_process(_delta: float) -> void:
 	var modifiers = {"source" : 0, "multiplier" : 1}
 	inh_speed_scale_modifiers.emit(modifiers)
 	speed_scale = (inherited_speed_scale["source"] + modifiers["source"]) * inherited_speed_scale["multiplier"] * modifiers["multiplier"]
+
+func _ready() -> void:
+	if not entity_source and is_entity:
+		entity_source = owner
 
 ## stat getters
 func get_health(health = owner.health, max_health = owner.max_health):
@@ -107,12 +113,13 @@ func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "mu
 	return crits
 
 func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1, "direction" : Vector2()}, outgoing_modifiers = true, incoming_modifiers = true, damage_color = Config.get_team_color(owner.group, "secondary")):
+	damage["entity_source"] = entity_source
 	if entity.health == entity.max_health:
 		damage["first_blood"] = true
 	var crits = get_crits(entity, {"source" : 0, "multiplier" : 1}, outgoing_modifiers)
 	damage["crits"] = crits
 	get_damage_dealt(entity, damage, outgoing_modifiers, incoming_modifiers)
-	var damaged = entity.take_damage(self, damage)
+	var damaged = entity.take_damage(damage)
 	if damaged:
 		damage_dealt.emit(entity, damage)
 		var damage_text = str(int(damage["final"]))
@@ -168,7 +175,7 @@ func area_targets(position: Vector2, radius = 9999, mask = enemies_mask()):
 func find_target(position = owner.global_position, reach = 9999, exclude = {}):
 	var found
 	for entity in area_targets(position, reach):
-		if entity != owner and not exclude.has(entity):
+		if entity != owner and not exclude.has(entity) and not entity.unchaseable:
 			var distance = position.distance_to(entity.global_position)
 			if distance < reach:
 				reach = distance
@@ -182,6 +189,11 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	projectile_instance.velocity = velocity
 	
 	get_node("/root/Main/").assign_projectile_group(projectile_instance, projectile_group)
+	
+	if is_entity:
+		projectile_instance.ability_handler.entity_source = owner
+	else:
+		projectile_instance.ability_handler.entity_source = entity_source
 	
 	var scale = inherited_scale.duplicate()
 	projectile_instance.ability_handler.inherited_scale = scale
@@ -207,6 +219,11 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	
 	get_node("/root/Main/").assign_entity_group(summon_instance, summon_group)
 	summon_instance.summoned = true
+	
+	if is_entity:
+		summon_instance.ability_handler.entity_source = owner
+	else:
+		summon_instance.ability_handler.entity_source = entity_source
 	
 	if health > -1:
 		summon_instance.max_health = health

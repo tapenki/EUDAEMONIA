@@ -82,6 +82,7 @@ hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 30
 health = 30.0
+unchaseable = true
 
 [node name="AbilityHandler" type="Node2D" parent="."]
 script = ExtResource("2_jwabc")
