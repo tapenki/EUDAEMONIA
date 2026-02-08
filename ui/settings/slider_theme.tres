@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dmwaa3dp74vat"]
+[gd_resource type="Theme" format=3 uid="uid://dmwaa3dp74vat"]
 
 [ext_resource type="Texture2D" uid="uid://dmqs33kffhpbl" path="res://ui/settings/grabber.png" id="1_q5ep0"]
 

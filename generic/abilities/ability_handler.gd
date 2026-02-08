@@ -192,7 +192,7 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	
 	if is_entity:
 		projectile_instance.ability_handler.entity_source = owner
-	else:
+	elif is_instance_valid(entity_source):
 		projectile_instance.ability_handler.entity_source = entity_source
 	
 	var scale = inherited_scale.duplicate()
@@ -222,7 +222,7 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	
 	if is_entity:
 		summon_instance.ability_handler.entity_source = owner
-	else:
+	elif is_instance_valid(entity_source):
 		summon_instance.ability_handler.entity_source = entity_source
 	
 	if health > -1:
