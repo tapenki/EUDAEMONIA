@@ -2,7 +2,7 @@ extends Ability
 
 @export var summon_scene = preload("res://paths/death/bone_shield/bone_shield.tscn")
 
-var bone_spear: bool
+var osteophalanx: bool
 
 func _ready() -> void:
 	get_node("/root/Main").day_start.connect(day_start)
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func day_start(_day: int) -> void:
 	var count = 1
-	if bone_spear:
+	if osteophalanx:
 		count = 4
 	for i in count:
 		var summon_instance = ability_handler.make_summon(summon_scene, 

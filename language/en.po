@@ -357,17 +357,23 @@ msgstr "[outline_color=#a87e00]Ability: Thunderstep[/outline_color]"
 msgid "thunderstep_description"
 msgstr "You gain [outline_size=10]+[40xLEVEL][/outline_size] move speed and [outline_size=10]+[0.2xLEVEL][/outline_size] seconds of immunity when hit."
 
+msgid "storm_weave_title"
+msgstr "[outline_color=#a87e00]Mastery: Storm Weave[/outline_color]"
+
+msgid "storm_weave_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Chain Bolt[/outline_color][br][outline_color=#a87e00]Chain Bolt[/outline_color] can chain [outline_size=10]+[1][/outline_size] time."
+
 msgid "shocking_grasp_title"
 msgstr "[outline_color=#a87e00]Mastery: Shocking Grasp[/outline_color]"
 
 msgid "shocking_grasp_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_color=#a87e00]Mortal Shock's[/outline_color] crit chance bonus persists for [outline_size=10][2.5][/outline_size] seconds"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_color=#a87e00]Mortal Shock's[/outline_color] crit chance bonus persists for [outline_size=10][2.5][/outline_size] seconds."
 
-msgid "dynamo_title"
-msgstr "[outline_color=#a87e00]Mastery: Dynamo[/outline_color]"
+msgid "close_orbit_title"
+msgstr "[outline_color=#a87e00]Mastery: Close Orbit[/outline_color]"
 
-msgid "dynamo_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Manifest [outline_size=10]+[2][/outline_size] ball lightnings"
+msgid "close_orbit_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br]Ball lightnings gain [outline_size=10]x[0.5][/outline_size] orbit distance and [outline_size=10]x[2][/outline_size] orbit speed."
 
 msgid "repulsar_title"
 msgstr "[outline_color=#a87e00]Polymastery: Repulsar[/outline_color]"
@@ -422,7 +428,7 @@ msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Polymastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
@@ -485,10 +491,10 @@ msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"
 msgid "starvation_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon an entity dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] bonus damage."
 
-msgid "bone_spear_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Bone Spear[/outline_color]"
+msgid "osteophalanx_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Osteophalanx[/outline_color]"
 
-msgid "bone_spear_description"
+msgid "osteophalanx_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
 
 msgid "doom_title"

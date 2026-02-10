@@ -2,6 +2,8 @@ extends Ability
 
 var chain = {}
 
+var storm_weave: bool
+
 func _ready() -> void:
 	ability_handler.crit_chance_modifiers.connect(crit_chance_modifiers)
 	ability_handler.damage_dealt.connect(damage_dealt)
@@ -10,7 +12,10 @@ func crit_chance_modifiers(_entity, modifiers) -> void:
 	modifiers["source"] += 5 * level
 
 func damage_dealt(entity, damage) -> void:
-	if chain.size() < 2 and damage.get("crits", 0) > 0:
+	var max_chains = 2
+	if storm_weave:
+		max_chains = 3
+	if chain.size() < max_chains and damage.get("crits", 0) > 0:
 		chain[entity] = true
 		var target = ability_handler.find_target(entity.global_position, 9999, chain)
 		if target:

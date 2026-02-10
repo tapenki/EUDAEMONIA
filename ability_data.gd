@@ -174,6 +174,10 @@ var ability_data = {
 		"script" : preload("res://paths/lightning/abilities/thunderstep.gd"),
 		"type" : "upgrade"
 	},
+	"storm_weave" : {
+		"script" : preload("res://paths/lightning/abilities/storm_weave.gd"),
+		"type" : "mastery"
+	},
 	"shocking_grasp" : {
 		"script" : preload("res://paths/lightning/abilities/shocking_grasp.gd"),
 		"type" : "mastery"
@@ -182,8 +186,8 @@ var ability_data = {
 		"script" : preload("res://paths/lightning/shock.gd"),
 		"type" : "status"
 	},
-	"dynamo" : {
-		"script" : preload("res://paths/lightning/abilities/dynamo.gd"),
+	"close_orbit" : {
+		"script" : preload("res://paths/lightning/abilities/close_orbit.gd"),
 		"type" : "mastery"
 	},
 	"repulsar" : {
@@ -258,8 +262,8 @@ var ability_data = {
 		"script" : preload("res://paths/death/abilities/starvation.gd"),
 		"type" : "mastery"
 	},
-	"bone_spear" : {
-		"script" : preload("res://paths/death/abilities/bone_spear.gd"),
+	"osteophalanx" : {
+		"script" : preload("res://paths/death/abilities/osteophalanx.gd"),
 		"type" : "mastery"
 	},
 	#endregion

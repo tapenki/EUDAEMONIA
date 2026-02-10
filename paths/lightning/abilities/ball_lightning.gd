@@ -5,7 +5,7 @@ var anchor_node
 var hurtbox_one
 var hurtbox_two
 
-var dynamo: bool
+var close_orbit: bool
 
 func _ready() -> void:
 	anchor_node = Node2D.new()
@@ -14,15 +14,19 @@ func _ready() -> void:
 	get_node("/root/Main").intermission.connect(intermission)
 
 func _physics_process(delta: float) -> void:
-	anchor_node.rotation += delta * PI * ability_handler.speed_scale
+	var orbit_speed = 1
+	if close_orbit:
+		orbit_speed = 2
+	anchor_node.rotation += delta * PI * orbit_speed * ability_handler.speed_scale
 
 func day_start(_day: int) -> void:
+	var distance = 150
+	if close_orbit:
+		distance = 75
 	var total = 2
-	if dynamo:
-		total += 2
 	for repeat in total:
 		var projectile_instance = ability_handler.make_projectile(projectile_scene, 
-		Vector2.from_angle(TAU / total * repeat) * 150,
+		Vector2.from_angle(TAU / total * repeat) * distance,
 		2,
 		Vector2())
 		projectile_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 * level

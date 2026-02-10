@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dovdyljqfid6t"]
+[gd_scene format=3 uid="uid://dovdyljqfid6t"]
 
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="1_ijwcu"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_mva7w"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_1d61d"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3rk0q"]
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="5_wnqbv"]
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_eepm7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pmft3"]
@@ -13,14 +12,14 @@ font_size = 30
 outline_size = 8
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[node name="Lightning" type="Control"]
+[node name="Lightning" type="Control" unique_id=1437384824]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="." unique_id=2095093976]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -39,7 +38,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1879743253]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -60,7 +59,7 @@ horizontal_alignment = 1
 script = ExtResource("3_1d61d")
 subject = "lightning"
 
-[node name="Crit" type="NinePatchRect" parent="."]
+[node name="Crit" type="NinePatchRect" parent="." unique_id=723724531]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -84,7 +83,7 @@ patch_margin_bottom = 16
 script = ExtResource("3_1d61d")
 subject = "crit"
 
-[node name="Symbol" type="Label" parent="Crit"]
+[node name="Symbol" type="Label" parent="Crit" unique_id=969326082]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -94,7 +93,7 @@ label_settings = SubResource("LabelSettings_pmft3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Abilities1" type="HBoxContainer" parent="."]
+[node name="Abilities1" type="HBoxContainer" parent="." unique_id=1748389468]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -106,25 +105,25 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ChainBolt" parent="Abilities1" instance=ExtResource("4_3rk0q")]
+[node name="ChainBolt" parent="Abilities1" unique_id=1702264514 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "chain_bolt"
 extras = ["crit"]
 
-[node name="MortalShock" parent="Abilities1" instance=ExtResource("4_3rk0q")]
+[node name="MortalShock" parent="Abilities1" unique_id=431656401 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "mortal_shock"
 extras = ["crit"]
 
-[node name="BallLightning" parent="Abilities1" instance=ExtResource("4_3rk0q")]
+[node name="BallLightning" parent="Abilities1" unique_id=262058008 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "ball_lightning"
 extras = ["crit"]
 
-[node name="Abilities2" type="HBoxContainer" parent="."]
+[node name="Abilities2" type="HBoxContainer" parent="." unique_id=1157839179]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -136,17 +135,17 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Electromagnetism" parent="Abilities2" instance=ExtResource("4_3rk0q")]
+[node name="Electromagnetism" parent="Abilities2" unique_id=975056362 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "electromagnetism"
 
-[node name="Thunderstep" parent="Abilities2" instance=ExtResource("4_3rk0q")]
+[node name="Thunderstep" parent="Abilities2" unique_id=1373121206 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "thunderstep"
 
-[node name="Masteries1" type="HBoxContainer" parent="."]
+[node name="Masteries1" type="HBoxContainer" parent="." unique_id=1412215670]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -159,32 +158,15 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank1" type="Control" parent="Masteries1"]
-custom_minimum_size = Vector2(60, 60)
+[node name="StormWeave" parent="Masteries1" unique_id=1774960858 instance=ExtResource("6_eepm7")]
 layout_mode = 2
-mouse_filter = 2
+accessible_texture = ExtResource("1_ijwcu")
+requires = {
+"chain_bolt": 5
+}
+subject = "storm_weave"
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_wnqbv")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="ShockingGrasp" parent="Masteries1" instance=ExtResource("6_eepm7")]
+[node name="ShockingGrasp" parent="Masteries1" unique_id=1405145588 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
@@ -193,15 +175,15 @@ requires = {
 subject = "shocking_grasp"
 extras = ["crit"]
 
-[node name="Dynamo" parent="Masteries1" instance=ExtResource("6_eepm7")]
+[node name="CloseOrbit" parent="Masteries1" unique_id=1793056073 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
 "ball_lightning": 5
 }
-subject = "dynamo"
+subject = "close_orbit"
 
-[node name="Masteries2" type="HBoxContainer" parent="."]
+[node name="Masteries2" type="HBoxContainer" parent="." unique_id=1956728656]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -214,7 +196,7 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Repulsar" parent="Masteries2" instance=ExtResource("6_eepm7")]
+[node name="Repulsar" parent="Masteries2" unique_id=1028252816 instance=ExtResource("6_eepm7")]
 custom_minimum_size = Vector2(124, 60)
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")

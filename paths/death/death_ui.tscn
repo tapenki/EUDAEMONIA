@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvqgjf3aefht7"]
+[gd_scene format=3 uid="uid://dvqgjf3aefht7"]
 
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_satne"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="2_4f4ow"]
@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://d3wex0msyo1yg" path="res://paths/ui/dark_mastery_button.tscn" id="6_x8qv0"]
 [ext_resource type="Texture2D" uid="uid://cell330b8j08n" path="res://paths/death/dark_black.png" id="7_4llcc"]
 
-[node name="Death" type="Control"]
+[node name="Death" type="Control" unique_id=1221822544]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="." unique_id=121494154]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -35,7 +35,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1838628158]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -56,7 +56,7 @@ horizontal_alignment = 1
 script = ExtResource("2_4f4ow")
 subject = "death"
 
-[node name="Abilities1" type="HBoxContainer" parent="."]
+[node name="Abilities1" type="HBoxContainer" parent="." unique_id=1122338486]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -68,23 +68,23 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ArmyOfTheDead" parent="Abilities1" instance=ExtResource("3_vlamy")]
+[node name="ArmyOfTheDead" parent="Abilities1" unique_id=2082684325 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "army_of_the_dead"
 
-[node name="FatedEnd" parent="Abilities1" instance=ExtResource("3_vlamy")]
+[node name="FatedEnd" parent="Abilities1" unique_id=2038194257 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "fated_end"
 extras = ["doom"]
 
-[node name="Hunger" parent="Abilities1" instance=ExtResource("3_vlamy")]
+[node name="Hunger" parent="Abilities1" unique_id=111728649 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "hunger"
 
-[node name="Abilities2" type="HBoxContainer" parent="."]
+[node name="Abilities2" type="HBoxContainer" parent="." unique_id=949019680]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -96,17 +96,17 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="BoneShield" parent="Abilities2" instance=ExtResource("3_vlamy")]
+[node name="BoneShield" parent="Abilities2" unique_id=2010099927 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "bone_shield"
 
-[node name="DarkHarvest" parent="Abilities2" instance=ExtResource("5_4llcc")]
+[node name="DarkHarvest" parent="Abilities2" unique_id=1890856360 instance=ExtResource("5_4llcc")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "dark_harvest"
 
-[node name="Masteries1" type="HBoxContainer" parent="."]
+[node name="Masteries1" type="HBoxContainer" parent="." unique_id=1753396738]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -119,12 +119,12 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank1" type="Control" parent="Masteries1"]
+[node name="Blank1" type="Control" parent="Masteries1" unique_id=1991190207]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1" unique_id=1202547849]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -144,7 +144,7 @@ patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
 
-[node name="SwiftFate" parent="Masteries1" instance=ExtResource("6_x8qv0")]
+[node name="SwiftFate" parent="Masteries1" unique_id=836903578 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -153,7 +153,7 @@ requires = {
 subject = "swift_fate"
 extras = ["doom"]
 
-[node name="Starvation" parent="Masteries1" instance=ExtResource("6_x8qv0")]
+[node name="Starvation" parent="Masteries1" unique_id=1208735487 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -161,7 +161,7 @@ requires = {
 }
 subject = "starvation"
 
-[node name="Masteries2" type="HBoxContainer" parent="."]
+[node name="Masteries2" type="HBoxContainer" parent="." unique_id=1966469170]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -174,20 +174,20 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="BoneSpear" parent="Masteries2" instance=ExtResource("6_x8qv0")]
+[node name="Osteophalanx" parent="Masteries2" unique_id=1584237372 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
 "bone_shield": 5
 }
-subject = "bone_spear"
+subject = "osteophalanx"
 
-[node name="Blank3" type="Control" parent="Masteries2"]
+[node name="Blank3" type="Control" parent="Masteries2" unique_id=1983955406]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank3"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank3" unique_id=1325785667]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
