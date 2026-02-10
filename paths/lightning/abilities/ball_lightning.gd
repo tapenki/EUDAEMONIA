@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 func day_start(_day: int) -> void:
 	var distance = 150
 	if close_orbit:
-		distance = 75
+		distance = 90
 	var total = 2
 	for repeat in total:
 		var projectile_instance = ability_handler.make_projectile(projectile_scene, 

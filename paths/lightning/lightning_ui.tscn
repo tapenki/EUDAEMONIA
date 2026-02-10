@@ -197,14 +197,20 @@ grow_horizontal = 2
 alignment = 1
 
 [node name="Repulsar" parent="Masteries2" unique_id=1028252816 instance=ExtResource("6_eepm7")]
-custom_minimum_size = Vector2(124, 60)
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
-"electromagnetism": 3,
-"thunderstep": 3
+"electromagnetism": 5
 }
 subject = "repulsar"
+
+[node name="ArcShield" parent="Masteries2" unique_id=556702490 instance=ExtResource("6_eepm7")]
+layout_mode = 2
+accessible_texture = ExtResource("1_ijwcu")
+requires = {
+"thunderstep": 5
+}
+subject = "arc_shield"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

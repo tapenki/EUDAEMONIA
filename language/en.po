@@ -373,13 +373,19 @@ msgid "close_orbit_title"
 msgstr "[outline_color=#a87e00]Mastery: Close Orbit[/outline_color]"
 
 msgid "close_orbit_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br]Ball lightnings gain [outline_size=10]x[0.5][/outline_size] orbit distance and [outline_size=10]x[2][/outline_size] orbit speed."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br]Ball lightnings gain [outline_size=10]x[0.6][/outline_size] orbit distance and [outline_size=10]x[2][/outline_size] orbit speed."
 
 msgid "repulsar_title"
-msgstr "[outline_color=#a87e00]Polymastery: Repulsar[/outline_color]"
+msgstr "[outline_color=#a87e00]Mastery: Repulsar[/outline_color]"
 
 msgid "repulsar_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#a87e00]Electromagnetism[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#a87e00]Thunderstep[/outline_color][br]You divert nearby enemy projectiles."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Electromagnetism[/outline_color][br]You divert nearby enemy projectiles."
+
+msgid "arc_shield_title"
+msgstr "[outline_color=#a87e00]Mastery: Arc Shield[/outline_color]"
+
+msgid "arc_shield_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Thunderstep[/outline_color][br]You have [outline_size=10][20]%[/outline_size] chance to reduce damage taken to [outline_size=10][0][/outline_size]."
 
 msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
@@ -428,7 +434,7 @@ msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Polymastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] piercing damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] pure damage."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"

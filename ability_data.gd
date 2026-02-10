@@ -194,6 +194,10 @@ var ability_data = {
 		"script" : preload("res://paths/lightning/abilities/repulsar.gd"),
 		"type" : "mastery"
 	},
+	"arc_shield" : {
+		"script" : preload("res://paths/lightning/abilities/arc_shield.gd"),
+		"type" : "mastery"
+	},
 	#endregion
 	#region life
 	"primal_casting" : {
