@@ -66,6 +66,9 @@ func take_damage(damage, immune_affected = true):
 	return true
 
 func heal(amount):
+	var modifiers = {"source" : amount, "multiplier": 1.0}
+	ability_handler.heal_modifiers.emit(modifiers)
+	amount = modifiers["source"] * modifiers["multiplier"]
 	health = min(max_health, health + amount)
 	ability_handler.healed.emit(amount)
 

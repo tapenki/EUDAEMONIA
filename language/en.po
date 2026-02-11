@@ -385,7 +385,7 @@ msgid "arc_shield_title"
 msgstr "[outline_color=#a87e00]Mastery: Arc Shield[/outline_color]"
 
 msgid "arc_shield_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Thunderstep[/outline_color][br]You have [outline_size=10][20]%[/outline_size] chance to reduce damage taken to [outline_size=10][0][/outline_size]."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Thunderstep[/outline_color][br]You have [outline_size=10][20]%[/outline_size] chance to take [outline_size=10]x[0][/outline_size]."
 
 msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
@@ -430,11 +430,17 @@ msgstr "[outline_color=#0f9936]Parability: Animated Clay[/outline_color]"
 msgid "animated_clay_description"
 msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities."
 
+msgid "vitalism_title"
+msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
+
+msgid "vitalism_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color][br]You gain [outline_size=10]x[2][/outline_size] health recovery."
+
 msgid "pain_walk_title"
-msgstr "[outline_color=#0f9936]Polymastery: Pain Walk[/outline_color]"
+msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] pure damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] pure damage."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"

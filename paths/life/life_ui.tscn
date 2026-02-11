@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyap2b0glco33"]
+[gd_scene format=3 uid="uid://cyap2b0glco33"]
 
 [ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/life/green.png" id="1_hlnos"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_u0bgk"]
@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="5_iuj8c"]
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_6nwk6"]
 
-[node name="Life" type="Control"]
+[node name="Life" type="Control" unique_id=1421207014]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="." unique_id=2104290797]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -33,7 +33,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=191153517]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -54,7 +54,7 @@ horizontal_alignment = 1
 script = ExtResource("3_daaj7")
 subject = "life"
 
-[node name="Abilities1" type="HBoxContainer" parent="."]
+[node name="Abilities1" type="HBoxContainer" parent="." unique_id=752407709]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -66,22 +66,22 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="PrimalCasting" parent="Abilities1" instance=ExtResource("4_owrg1")]
+[node name="PrimalCasting" parent="Abilities1" unique_id=390432807 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "primal_casting"
 
-[node name="WroughtFlesh" parent="Abilities1" instance=ExtResource("4_owrg1")]
+[node name="WroughtFlesh" parent="Abilities1" unique_id=828295592 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "wrought_flesh"
 
-[node name="TrailOfThorns" parent="Abilities1" instance=ExtResource("4_owrg1")]
+[node name="TrailOfThorns" parent="Abilities1" unique_id=306681367 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "trail_of_thorns"
 
-[node name="Abilities2" type="HBoxContainer" parent="."]
+[node name="Abilities2" type="HBoxContainer" parent="." unique_id=40253273]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -93,19 +93,19 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="QuillSpray" parent="Abilities2" instance=ExtResource("4_owrg1")]
+[node name="QuillSpray" parent="Abilities2" unique_id=385153559 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "quill_spray"
 
-[node name="AnimatedClay" parent="Abilities2" instance=ExtResource("4_owrg1")]
+[node name="AnimatedClay" parent="Abilities2" unique_id=1592879944 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 cost = 2
 subject = "animated_clay"
 tag = "greater_upgrade_cost"
 
-[node name="Masteries1" type="HBoxContainer" parent="."]
+[node name="Masteries1" type="HBoxContainer" parent="." unique_id=100399297]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -118,12 +118,12 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank1" type="Control" parent="Masteries1"]
+[node name="Blank1" type="Control" parent="Masteries1" unique_id=962650187]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1" unique_id=1871811951]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -143,17 +143,23 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="PainWalk" parent="Masteries1" instance=ExtResource("6_6nwk6")]
-custom_minimum_size = Vector2(124, 60)
+[node name="Vitalism" parent="Masteries1" unique_id=1995710512 instance=ExtResource("6_6nwk6")]
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {
-"trail_of_thorns": 3,
-"wrought_flesh": 3
+"wrought_flesh": 5
+}
+subject = "vitalism"
+
+[node name="PainWalk" parent="Masteries1" unique_id=1772285392 instance=ExtResource("6_6nwk6")]
+layout_mode = 2
+accessible_texture = ExtResource("1_hlnos")
+requires = {
+"trail_of_thorns": 5
 }
 subject = "pain_walk"
 
-[node name="Masteries2" type="HBoxContainer" parent="."]
+[node name="Masteries2" type="HBoxContainer" parent="." unique_id=2140592433]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -166,7 +172,7 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="PressurizedQuills" parent="Masteries2" instance=ExtResource("6_6nwk6")]
+[node name="PressurizedQuills" parent="Masteries2" unique_id=604151072 instance=ExtResource("6_6nwk6")]
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {
@@ -174,7 +180,7 @@ requires = {
 }
 subject = "pressurized_quills"
 
-[node name="Multimold" parent="Masteries2" instance=ExtResource("6_6nwk6")]
+[node name="Multimold" parent="Masteries2" unique_id=420863793 instance=ExtResource("6_6nwk6")]
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {

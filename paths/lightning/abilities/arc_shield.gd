@@ -7,5 +7,7 @@ func damage_taken_modifiers(modifiers) -> void:
 	if randi() % 5 == 0:
 		modifiers["multiplier"] *= 0
 
-func inherit(_handler, _tier):
-	return
+func inherit(handler, tier):
+	if tier < 3:
+		return
+	super(handler, tier)

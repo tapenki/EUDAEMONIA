@@ -16,6 +16,7 @@ var speed_scale = 1.0
 ### signals
 ## health signals
 signal max_health_modifiers(modifiers: Dictionary)
+signal heal_modifiers(modifiers: Dictionary)
 signal healed(amount: float)
 
 ## status signals
