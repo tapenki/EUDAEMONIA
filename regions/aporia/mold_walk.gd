@@ -9,7 +9,9 @@ var direction = 1
 var walking_from: Vector2
 var walk_target: Vector2
 
-@export var total_cycles = 5
+@export var min_cycles = 4
+@export var max_cycles = 6
+var total_cycles: int
 var cycle: int
 
 @export var next: State
@@ -24,12 +26,7 @@ func walk(): ## im bad at math so i just sorta guessed how to make it work
 			user.animation_player.stop()
 		user.animation_player.play(anim)
 	
-	var tiles = {
-		Vector2i(1, 1): false, 
-		Vector2i(1, -1): false, 
-		Vector2i(-1, 1): false, 
-		Vector2i(-1, -1): false
-	}
+	var tiles = [Vector2i(1, 1), Vector2i(1, -1), Vector2i(-1, 1), Vector2i(-1, -1)]
 	
 	var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
 	var movement_x = 0
@@ -40,14 +37,10 @@ func walk(): ## im bad at math so i just sorta guessed how to make it work
 			(user.global_position.x + tilemap.tile_set.tile_size.x * 0.5 * i.x) / tilemap.tile_set.tile_size.x,
 			(user.global_position.y + tilemap.tile_set.tile_size.y * 0.5 * i.y) / tilemap.tile_set.tile_size.y
 		)
-		tiles[i] = tilemap.get_cell_source_id(tileposition) == 0
 		if tilemap.get_cell_source_id(tileposition) == 0:
 			wallcount += 1
 			movement_x += i.x
 			movement_y += i.y
-		else:
-			movement_x -= i.x
-			movement_y -= i.y
 	
 	if wallcount == 1:
 		var temp_x = movement_x
@@ -87,6 +80,7 @@ func on_enter() -> void:
 	else:
 		direction = -1
 	
+	total_cycles = randi_range(min_cycles, max_cycles)
 	cycle = 1
 	walk()
 

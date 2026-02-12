@@ -5,10 +5,10 @@ func _ready() -> void:
 	ability_handler.immune_duration_modifiers.connect(immune_duration_modifiers)
 
 func move_speed_modifiers(modifiers) -> void:
-	modifiers["source"] += 40 * level
+	modifiers["base"] += 40 * level
 
 func immune_duration_modifiers(modifiers) -> void:
-	modifiers["source"] += 0.2 * level
+	modifiers["base"] += 0.2 * level
 
 func inherit(handler, tier):
 	if tier < 3:

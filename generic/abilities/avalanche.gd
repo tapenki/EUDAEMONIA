@@ -25,5 +25,5 @@
 	#rain_position, 
 	#3,
 	#Vector2(),
-	#{"source" : 0, "multiplier" : level})
+	#{"base" : 0, "multiplier" : level})
 	#get_node("/root/Main/Projectiles").add_child(bullet_instance)

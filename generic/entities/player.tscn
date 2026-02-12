@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chjju7v5k68xm"]
+[gd_scene format=3 uid="uid://chjju7v5k68xm"]
 
 [ext_resource type="Script" uid="uid://c1x0f286v1m8v" path="res://generic/entities/player.gd" id="1_bmx6j"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_m6exy"]
@@ -68,7 +68,7 @@ _data = {
 &"WALK": SubResource("Animation_icb8a")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "animation_player")]
+[node name="Player" type="CharacterBody2D" unique_id=210607529 node_paths=PackedStringArray("ability_handler", "animation_player")]
 collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_bmx6j")
@@ -79,15 +79,15 @@ max_health = 75
 health = 75.0
 immune_duration = 0.2
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=636127818]
 script = ExtResource("2_m6exy")
 inherited_crit_chance = {
-"multiplier": 1.0,
-"source": 5.0
+"base": 5.0,
+"multiplier": 1.0
 }
 is_entity = true
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=161096714]
 material = ExtResource("3_prmdv")
 position = Vector2(0, 20)
 texture = ExtResource("3_8dav1")
@@ -96,27 +96,25 @@ script = ExtResource("4_5wsru")
 base_texture = ExtResource("3_8dav1")
 hurt_texture = ExtResource("5_lsmwm")
 
-[node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=338545400 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("8_3wbf3")
 wait_time = 0.2
 ability_handler = NodePath("../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=227280131]
 z_index = -3
 position = Vector2(0, -20)
 texture = ExtResource("3_s1j76")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=53494710]
 shape = SubResource("CircleShape2D_cbvv7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=615880321]
 deterministic = true
-libraries = {
-&"": SubResource("AnimationLibrary_v1kwl")
-}
+libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1667160138]
 limit_enabled = false
 script = ExtResource("9_iyjkv")
 

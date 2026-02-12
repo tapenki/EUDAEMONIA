@@ -8,4 +8,4 @@ func damage_dealt_modifiers(entity, modifiers) -> void:
 		return
 	var burn = entity.ability_handler.get_node_or_null("burn")
 	if burn:
-		modifiers["source"] += burn.level * 0.25 * level
+		modifiers["base"] += burn.level * 0.25 * level

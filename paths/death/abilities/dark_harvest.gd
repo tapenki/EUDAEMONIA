@@ -17,7 +17,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			target.global_position, ## position
 			2, ## inheritance
 			Vector2()) ## velocity
-			explosion_instance.ability_handler.inherited_damage["source"] += target.ability_handler.get_health().max_health * 0.2
+			explosion_instance.ability_handler.inherited_damage["base"] += target.ability_handler.get_health().max_health * 0.2
 			explosion_instance.ability_handler.inherited_damage["multiplier"] *= level
 			explosion_instance.scale_multiplier = 4
 			get_node("/root/Main/Projectiles").add_child(explosion_instance)

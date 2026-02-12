@@ -37,7 +37,7 @@ func entity_collision():
 	for body in get_overlapping_bodies():
 		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
 			exclude[body] = hit_delay
-			var damage = ability_handler.deal_damage(body, {"source" : 0, "multiplier" : 1, "direction" : get_knockback_direction(body)})
+			var damage = ability_handler.deal_damage(body, {"base" : 0, "multiplier" : 1, "direction" : get_knockback_direction(body)})
 			on_hit(damage["crits"])
 
 func tick_exclusion(delta):

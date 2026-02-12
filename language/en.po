@@ -331,7 +331,7 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance. Critical damage chains to the closest foe up to [outline_size=10][2][/outline_size] times."
+msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest foe up to [outline_size=10][2][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#a87e00]Ability: Mortal Shock[/outline_color]"
@@ -391,7 +391,7 @@ msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
-msgstr "When dealing damage, roll for crits. Damage is increased by [outline_size=10]x[1+CRITCOUNT][/outline_size]. Crit chance over [outline_size=10][100]%[/outline_size] is converted into extra crits."
+msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[1+CRITCOUNT][/outline_size] damage and [outline_size=10]+[1][/outline_size] effect chance reroll on crit.[br]Crit chance over [outline_size=10][100]%[/outline_size] is converted into extra crits."
 
 # life
 msgid "life_title"
@@ -608,13 +608,13 @@ msgid "qualia_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"
 
 msgid "qualia_reward_description"
-msgstr "The what it is like."
+msgstr "Use to improve abilities."
 
 msgid "nous_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Nous[/outline_color]"
 
 msgid "nous_reward_description"
-msgstr "Your minds."
+msgstr "Use to unlock paths."
 
 # inputstrings
 

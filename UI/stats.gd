@@ -24,10 +24,10 @@ func update_stattext():
 Crit chance: [outline_size=10]+[{crit_chance}]%[/outline_size]
 Attack size: [outline_size=10]x[{attack_scale}][/outline_size]
 Move speed: [outline_size=10]+[{move_speed}][/outline_size]".format({
-"attack_damage_source": int(attack_damage["source"]),
+"attack_damage_source": int(attack_damage["base"]),
 "attack_damage_multiplier": attack_damage["multiplier"],
-"crit_chance": int(crit_chance["source"] * crit_chance["multiplier"]),
-"attack_scale": (1 + attack_scale["source"]) * attack_scale["multiplier"],
+"crit_chance": int(crit_chance["base"] * crit_chance["multiplier"]),
+"attack_scale": (1 + attack_scale["base"]) * attack_scale["multiplier"],
 "move_speed": int(move_speed),})
 
 func _on_mouse_entered() -> void:

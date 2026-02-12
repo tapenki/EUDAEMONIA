@@ -6,7 +6,7 @@ func _ready() -> void:
 	ability_handler.death_effects.connect(death_effects)
 	
 func death_effects():
-	var attack_scale = ability_handler.get_attack_scale({"source" : 0, "multiplier" : 1})
+	var attack_scale = ability_handler.get_attack_scale({"base" : 0, "multiplier" : 1})
 	var reach = 150 * attack_scale
 	for entity in ability_handler.area_targets(global_position, reach):
 		ability_handler.apply_status(entity.ability_handler, "burn", level * 10)

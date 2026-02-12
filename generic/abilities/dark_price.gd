@@ -5,7 +5,7 @@ func _ready() -> void:
 		ability_handler.max_health_modifiers.connect(max_health_modifiers)
 
 func max_health_modifiers(modifiers) -> void:
-	modifiers["source"] -= level
+	modifiers["base"] -= level
 
 func inherit(_handler, _tier):
 	return

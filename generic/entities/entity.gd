@@ -56,7 +56,7 @@ func take_damage(damage, immune_affected = true):
 		if immune_timer.running:
 			return false
 		else:
-			immune(ability_handler.get_immune_duration({"source" : immune_duration, "multiplier" : 1}))
+			immune(ability_handler.get_immune_duration({"base" : immune_duration, "multiplier" : 1}))
 	
 	get_node("/root/Main").play_sound(hurt_sound)
 	health = health - damage["final"]
@@ -66,9 +66,9 @@ func take_damage(damage, immune_affected = true):
 	return true
 
 func heal(amount):
-	var modifiers = {"source" : amount, "multiplier": 1.0}
+	var modifiers = {"base" : amount, "multiplier": 1.0}
 	ability_handler.heal_modifiers.emit(modifiers)
-	amount = modifiers["source"] * modifiers["multiplier"]
+	amount = modifiers["base"] * modifiers["multiplier"]
 	health = min(max_health, health + amount)
 	ability_handler.healed.emit(amount)
 

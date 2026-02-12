@@ -24,7 +24,7 @@ func _ready() -> void:
 		sprite["node"].add_child(particle_instance)
 
 func tick():
-	ability_handler.deal_damage(ability_handler.owner, {"source" : level, "multiplier" : 1.0}, false, true, Config.get_team_color(1, "secondary"))
+	ability_handler.deal_damage(ability_handler.owner, {"base" : level, "multiplier" : 1.0}, false, true, Config.get_team_color(1, "secondary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

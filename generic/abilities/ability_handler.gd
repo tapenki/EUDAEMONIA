@@ -1,10 +1,10 @@
 extends Node
 
-@export var inherited_scale = {"source" : 0.0, "multiplier" : 1.0}
-@export var inherited_damage = {"source" : 10.0, "multiplier" : 1.0}
-@export var inherited_summon_damage = {"source" : 10.0, "multiplier" : 1.0}
-@export var inherited_crit_chance = {"source" : 0.0, "multiplier" : 1.0}
-@export var inherited_speed_scale = {"source" : 1.0, "multiplier" : 1.0}
+@export var inherited_scale = {"base" : 0.0, "multiplier" : 1.0}
+@export var inherited_damage = {"base" : 10.0, "multiplier" : 1.0}
+@export var inherited_summon_damage = {"base" : 10.0, "multiplier" : 1.0}
+@export var inherited_crit_chance = {"base" : 0.0, "multiplier" : 1.0}
+@export var inherited_speed_scale = {"base" : 1.0, "multiplier" : 1.0}
 
 @export var is_entity: bool
 @export var is_projectile: bool
@@ -56,9 +56,9 @@ signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ### methods
 func _physics_process(_delta: float) -> void:
-	var modifiers = {"source" : 0, "multiplier" : 1}
+	var modifiers = {"base" : 0, "multiplier" : 1}
 	inh_speed_scale_modifiers.emit(modifiers)
-	speed_scale = (inherited_speed_scale["source"] + modifiers["source"]) * inherited_speed_scale["multiplier"] * modifiers["multiplier"]
+	speed_scale = (inherited_speed_scale["base"] + modifiers["base"]) * inherited_speed_scale["multiplier"] * modifiers["multiplier"]
 
 func _ready() -> void:
 	if not entity_source and is_entity:
@@ -66,58 +66,58 @@ func _ready() -> void:
 
 ## stat getters
 func get_health(health = owner.health, max_health = owner.max_health):
-	var modifiers = {"source" : max_health, "multiplier" : 1}
+	var modifiers = {"base" : max_health, "multiplier" : 1}
 	max_health_modifiers.emit(modifiers)
-	var final_max_health = modifiers["source"] * modifiers["multiplier"]
+	var final_max_health = modifiers["base"] * modifiers["multiplier"]
 	var final_health = final_max_health - max_health + health
 	return {"health" : final_health, "max_health" : final_max_health}
 
-func get_immune_duration(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+func get_immune_duration(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
 	immune_duration_modifiers.emit(modifiers)
-	return modifiers["source"] * modifiers["multiplier"]
+	return modifiers["base"] * modifiers["multiplier"]
 
 func get_move_speed(source: float):
-	var modifiers = {"source" : source, "multiplier" : 1}
+	var modifiers = {"base" : source, "multiplier" : 1}
 	move_speed_modifiers.emit(modifiers)
-	return max(modifiers["source"] * modifiers["multiplier"], 0)
+	return max(modifiers["base"] * modifiers["multiplier"], 0)
 
 #func get_attack_rate(source: float):
-#	var modifiers = {"source" : source, "multiplier" : 1}
+#	var modifiers = {"base" : source, "multiplier" : 1}
 #	attack_rate_modifiers.emit(modifiers)
-#	return modifiers["source"] * modifiers["multiplier"]
+#	return modifiers["base"] * modifiers["multiplier"]
 
-func get_attack_scale(modifiers: Dictionary = {"source" : 0, "multiplier" : 1}):
+func get_attack_scale(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
 	attack_scale_modifiers.emit(modifiers)
-	return (1 + inherited_scale["source"] + modifiers["source"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
+	return (1 + inherited_scale["base"] + modifiers["base"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
-func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, outgoing_modifiers = true, incoming_modifiers = true):
+func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "multiplier" : 1}, outgoing_modifiers = true, incoming_modifiers = true):
 	if outgoing_modifiers:
-		modifiers["source"] += inherited_damage["source"]
+		modifiers["base"] += inherited_damage["base"]
 		modifiers["multiplier"] *= inherited_damage["multiplier"]
 		damage_dealt_modifiers.emit(entity, modifiers)
 	if entity and incoming_modifiers:
 		entity.ability_handler.damage_taken_modifiers.emit(modifiers)
-	modifiers["final"] = modifiers["source"] * modifiers["multiplier"]
+	modifiers["final"] = modifiers["base"] * modifiers["multiplier"]
 	if modifiers.has("crits"):
 		modifiers["final"] *= (1 + modifiers["crits"])
 
-func get_crits(entity: Entity = null, modifiers: Dictionary = {"source" : 0, "multiplier" : 1}, outgoing_modifiers = true):
+func get_crits(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "multiplier" : 1}, outgoing_modifiers = true):
 	if outgoing_modifiers:
-		modifiers["source"] += inherited_crit_chance["source"]
+		modifiers["base"] += inherited_crit_chance["base"]
 		modifiers["multiplier"] *= inherited_crit_chance["multiplier"]
 		crit_chance_modifiers.emit(entity, modifiers)
-	var crit_chance = int(modifiers["source"] * modifiers["multiplier"])
+	var crit_chance = int(modifiers["base"] * modifiers["multiplier"])
 	var leftover = crit_chance % 100
 	var crits = (int)((crit_chance - leftover) * 0.01)
-	if randi_range(1, 101) <= leftover:
+	if randi() % 100 < leftover:
 		crits += 1
 	return crits
 
-func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier" : 1, "direction" : Vector2()}, outgoing_modifiers = true, incoming_modifiers = true, damage_color = Config.get_team_color(owner.group, "secondary")):
+func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" : 1, "direction" : Vector2()}, outgoing_modifiers = true, incoming_modifiers = true, damage_color = Config.get_team_color(owner.group, "secondary")):
 	damage["entity_source"] = entity_source
 	if entity.health == entity.max_health:
 		damage["first_blood"] = true
-	var crits = get_crits(entity, {"source" : 0, "multiplier" : 1}, outgoing_modifiers)
+	var crits = get_crits(entity, {"base" : 0, "multiplier" : 1}, outgoing_modifiers)
 	damage["crits"] = crits
 	get_damage_dealt(entity, damage, outgoing_modifiers, incoming_modifiers)
 	var damaged = entity.take_damage(damage)
@@ -141,6 +141,21 @@ func deal_damage(entity: Entity, damage: Dictionary = {"source" : 0, "multiplier
 	#var knockback_velocity = direction * 900 * (1 - pow(0.5, intensity))
 	#var max_length = max(knockback_velocity.length(), entity.velocity.length())
 	#entity.velocity += knockback_velocity * (entity.velocity - knockback_velocity).limit_length(max_length).length()/max_length
+
+func roll_chance(odds: Dictionary):
+	var final_chance = odds["base"] * odds["multiplier"]
+	var result = false
+	var rolls = 1
+	if odds.get("crits", 0) > 0:
+		rolls += 1
+	for i in rolls:
+		if not result:
+			result = randi() % 100 < final_chance
+			if result:
+				break
+		else:
+			break
+	return result
 
 ## targeting
 func get_enemy_group():
@@ -251,9 +266,9 @@ func apply_ability(ability: String, levels: float):
 	return ability_node
 
 func apply_status(handler: Node, ability: String, levels: float):
-	var modifiers = {"source" : levels, "multiplier" : 1}
+	var modifiers = {"base" : levels, "multiplier" : 1}
 	status_level_modifiers.emit(ability, modifiers)
-	levels = modifiers["source"] * modifiers["multiplier"]
+	levels = modifiers["base"] * modifiers["multiplier"]
 	var status = handler.apply_ability(ability, levels)
 	status_applied.emit(status, levels)
 	return status

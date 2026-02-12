@@ -12,7 +12,7 @@ func get_modifier():
 	return inherited_damage
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
-	modifiers["source"] += get_modifier()
+	modifiers["base"] += get_modifier()
 
 func inherit(handler, tier):
 	var ability_node = super(handler, tier)

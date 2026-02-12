@@ -6,8 +6,10 @@ func _ready() -> void:
 	ability_handler.death_effects.connect(death_effects)
 	
 func death_effects() -> void:
-	if ability_handler.is_projectile and randi() % 2 == 0:
-		return
+	if ability_handler.is_projectile:
+		var odds = {"base": 50, "multiplier": 1.0}
+		if not ability_handler.roll_chance(odds):
+			return
 	var bullet_instance = ability_handler.make_projectile(bullet, 
 	global_position, 
 	1,

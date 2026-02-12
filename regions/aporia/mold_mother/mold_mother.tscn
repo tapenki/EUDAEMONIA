@@ -74,7 +74,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ieikq"]
 resource_name = "WALK"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,7 +82,7 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999),
+"times": PackedFloat32Array(0, 0.033333335, 0.1),
 "transitions": PackedFloat32Array(5, 0.5, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.2, 0.8), Vector2(1, 1)]
@@ -200,12 +200,13 @@ next = NodePath("../Moldwalk")
 process_mode = 4
 script = ExtResource("10_lokmr")
 anim = "WALK"
-total_cycles = 12
+min_cycles = 12
+max_cycles = 18
 next = NodePath("../Walklag")
 
 [node name="Timer" type="Node" parent="StateHandler/Moldwalk" unique_id=2018735305 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("5_hciqw")
-wait_time = 0.2
+wait_time = 0.1
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

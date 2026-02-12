@@ -22,7 +22,7 @@ func before_self_death(modifiers) -> void:
 		recovery_timer.start(5)
 		var health_values = ability_handler.get_health(ability_handler.owner.health, ability_handler.owner.max_health)
 		ability_handler.owner.health = max(ability_handler.owner.health, ability_handler.owner.max_health - health_values["max_health"])
-		ability_handler.owner.immune(ability_handler.get_immune_duration({"source" : ability_handler.owner.immune_duration, "multiplier" : 4}))
+		ability_handler.owner.immune(ability_handler.get_immune_duration({"base" : ability_handler.owner.immune_duration, "multiplier" : 4}))
 		if fiery_rebirth:
 			for target in ability_handler.area_targets(global_position):
 				var burn = ability_handler.apply_status(target.ability_handler, "burn", level * 10)

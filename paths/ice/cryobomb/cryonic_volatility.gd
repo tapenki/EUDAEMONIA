@@ -29,7 +29,7 @@ func death_effects():
 	2, ## inheritance
 	Vector2()) ## velocity
 	explosion_instance.exclude[ability_handler.owner] = INF
-	explosion_instance.ability_handler.inherited_damage["source"] += stored_damage
+	explosion_instance.ability_handler.inherited_damage["base"] += stored_damage
 	explosion_instance.scale_multiplier = 8
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)
 	get_node("/root/Main").play_sound("Explosion")

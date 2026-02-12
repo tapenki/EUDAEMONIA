@@ -8,10 +8,10 @@ func _ready() -> void:
 
 func crit_chance_modifiers(entity, modifiers) -> void:
 	if entity and (entity.health == entity.max_health or entity.ability_handler.has_node("shock")):
-		modifiers["source"] += 20 * level
+		modifiers["base"] += 20 * level
 		if shocking_grasp and entity.health == entity.max_health:
 			ability_handler.apply_status(entity.ability_handler, "shock", 1)
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	if modifiers.get("crits", 0) > 0:
-		modifiers["source"] += 2 * level
+		modifiers["base"] += 2 * level
