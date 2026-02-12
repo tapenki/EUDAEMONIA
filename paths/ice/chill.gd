@@ -7,7 +7,7 @@ var duration_timer = Timer.new()
 func _ready() -> void:
 	duration_timer.timeout.connect(clear)
 	add_child(duration_timer)
-	duration_timer.start(0.75 * level)
+	duration_timer.start(level)
 	for sprite in ability_handler.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
 		particle_instance.modulate = Config.get_team_color(1, "secondary")
@@ -20,13 +20,13 @@ func _ready() -> void:
 	ability_handler.inh_speed_scale_modifiers.connect(inh_speed_scale_modifiers)
 
 func inh_speed_scale_modifiers(modifiers) -> void:
-	modifiers["multiplier"] *= 0.8
+	modifiers["multiplier"] *= 0.5
 
 func add_level(value):
 	if value > 0:
-		if 0.75 * value > duration_timer.time_left:
+		if value > duration_timer.time_left:
 			level_offset = value - level
-			duration_timer.start(0.75 * value)
+			duration_timer.start(value)
 	else:
 		clear()
 	if not offsetting:
