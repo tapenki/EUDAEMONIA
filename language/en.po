@@ -263,7 +263,7 @@ msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
 
 msgid "burn_description"
-msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second. Expires after dealing damage [outline_size=10][5][/outline_size] times. Reapplying burn resets expiration."
+msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second.[br]Expires after dealing damage [outline_size=10][5][/outline_size] times.[br]Reapplying burn resets expiration."
 
 # ice
 msgid "ice_title"
@@ -288,7 +288,7 @@ msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
 
 msgid "frostbite_description"
-msgstr "[outline_size=10][33]% upon dealing damage:[/outline_size] Apply a [outline_size=10]x[0.5][/outline_size] speed chill for [outline_size=10]+[0.75xLEVEL][/outline_size] seconds."
+msgstr "[outline_size=10][33]% upon dealing damage:[/outline_size] Apply chill for [outline_size=10][0.75xLEVEL][/outline_size] seconds."
 
 msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ability: Shatter[/outline_color]"
@@ -318,13 +318,25 @@ msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply a [outline_size=10]x[0][/outline_size] speed freeze for [outline_size=10]+[0.15xFROSTBITELEVEL][/outline_size] seconds."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply freeze for [outline_size=10][0.15xFROSTBITELEVEL][/outline_size] seconds."
 
 msgid "shard_blast_title"
 msgstr "[outline_color=#0000ff]Polymastery: Shard Blast[/outline_color]"
 
 msgid "shard_blast_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] projectiles with [outline_size=10]x[2][/outline_size] damage upon exploding."
+
+msgid "chill_title"
+msgstr "[outline_color=#0000ff]Notes: Chill[/outline_color]"
+
+msgid "chill_description"
+msgstr "Reduces speed to [outline_size=10]x[0.5][/outline_size].[br]Reapplying uses the longer duration value."
+
+msgid "freeze_title"
+msgstr "[outline_color=#0000ff]Notes: Freeze[/outline_color]"
+
+msgid "freeze_description"
+msgstr "Reduces speed to [outline_size=10]x[0][/outline_size].[br]Reapplying uses the longer duration value."
 
 # lightning
 msgid "lightning_title"

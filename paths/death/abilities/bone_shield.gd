@@ -9,19 +9,47 @@ func _ready() -> void:
 	get_node("/root/Main").intermission.connect(intermission)
 
 func day_start(_day: int) -> void:
-	var count = 1
 	if osteophalanx:
-		count = 4
-	for i in count:
+		var summon_instance1 = ability_handler.make_summon(summon_scene, 
+		Vector2(),
+		2,
+		60 * level)
+		summon_instance1.distance = 75
+		summon_instance1.ability_handler.inherited_damage["multiplier"] *= level
+		add_child(summon_instance1)
+		var summon_instance2 = ability_handler.make_summon(summon_scene, 
+		Vector2(),
+		2,
+		60 * level)
+		summon_instance2.distance = 50
+		summon_instance2.angle = PI * 0.25
+		summon_instance2.ability_handler.inherited_damage["multiplier"] *= level
+		add_child(summon_instance2)
+		var summon_instance3 = ability_handler.make_summon(summon_scene, 
+		Vector2(),
+		2,
+		60 * level)
+		summon_instance3.distance = 50
+		summon_instance3.angle = -PI * 0.25
+		summon_instance3.ability_handler.inherited_damage["multiplier"] *= level
+		add_child(summon_instance3)
+		var summon_instance4 = ability_handler.make_summon(summon_scene, 
+		Vector2(),
+		2,
+		60 * level)
+		summon_instance4.distance = 50
+		summon_instance4.scale *= 1.5
+		summon_instance4.ability_handler.inherited_damage["multiplier"] *= level
+		add_child(summon_instance4)
+	else:
 		var summon_instance = ability_handler.make_summon(summon_scene, 
 		Vector2(),
 		2,
 		60 * level)
-		summon_instance.distance = 50*(i+1)
-		summon_instance.scale *= 1 + (count - i) * 0.2
+		summon_instance.distance = 50
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= level
 		add_child(summon_instance)
-
+		
 func intermission(_day: int) -> void:
 	for shield in get_children():
 		shield.queue_free()

@@ -81,6 +81,7 @@ subject = "snowball"
 layout_mode = 2
 texture_normal = ExtResource("1_0h8wn")
 subject = "frostbite"
+extras = ["chill"]
 
 [node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291390336]
 layout_mode = 1
@@ -140,6 +141,7 @@ requires = {
 "frostbite": 5
 }
 subject = "snap_freeze"
+extras = ["freeze"]
 
 [node name="Masteries2" type="HBoxContainer" parent="." unique_id=1992994092]
 layout_direction = 2
