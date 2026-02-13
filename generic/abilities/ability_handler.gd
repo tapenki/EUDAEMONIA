@@ -4,7 +4,7 @@ extends Node
 @export var inherited_damage = {"base" : 10.0, "multiplier" : 1.0}
 @export var inherited_summon_damage = {"base" : 10.0, "multiplier" : 1.0}
 @export var inherited_crit_chance = {"base" : 0.0, "multiplier" : 1.0}
-@export var inherited_speed_scale = {"base" : 1.0, "multiplier" : 1.0}
+#@export var inherited_speed_scale = {"base" : 1.0, "multiplier" : 1.0}
 
 @export var is_entity: bool
 @export var is_projectile: bool
@@ -25,7 +25,7 @@ signal status_applied(status: Node, levels: int)
 #signal update_status(status: Node)
 
 ## movement & speed signals
-signal inh_speed_scale_modifiers(modifiers: Dictionary)
+signal speed_scale_modifiers(modifiers: Dictionary)
 signal move_speed_modifiers(modifiers: Dictionary)
 signal movement(distance: float)
 
@@ -56,9 +56,9 @@ signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ### methods
 func _physics_process(_delta: float) -> void:
-	var modifiers = {"base" : 0, "multiplier" : 1}
-	inh_speed_scale_modifiers.emit(modifiers)
-	speed_scale = (inherited_speed_scale["base"] + modifiers["base"]) * inherited_speed_scale["multiplier"] * modifiers["multiplier"]
+	var modifiers = {"base" : 1, "multiplier" : 1.0}
+	speed_scale_modifiers.emit(modifiers)
+	speed_scale = modifiers["base"] * modifiers["multiplier"]
 
 func _ready() -> void:
 	if not entity_source and is_entity:
@@ -220,10 +220,6 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	var crit_chance = inherited_crit_chance.duplicate()
 	#inh_crit_chance_modifiers.emit(crit_chance)
 	projectile_instance.ability_handler.inherited_crit_chance = crit_chance
-	
-	var speed = inherited_speed_scale.duplicate()
-	inh_speed_scale_modifiers.emit(speed)
-	projectile_instance.ability_handler.inherited_speed_scale = speed
 	
 	inherit(projectile_instance.ability_handler, inheritance)
 	#projectile_created.emit(projectile_instance)

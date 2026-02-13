@@ -98,6 +98,10 @@ var ability_data = {
 		"script" : preload("res://paths/fire/abilities/undying_flames.gd"),
 		"type" : "mastery"
 	},
+	"white_hot" : {
+		"script" : preload("res://paths/fire/abilities/white_hot.gd"),
+		"type" : "mastery"
+	},
 	"fiery_rebirth" : {
 		"script" : preload("res://paths/fire/abilities/fiery_rebirth.gd"),
 		"type" : "mastery"

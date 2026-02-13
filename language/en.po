@@ -221,13 +221,13 @@ msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][35xLEVEL][/outline_size] health, [outline_size=10]x[0.5xLEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby foes when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][35xLEVEL][/outline_size] health, [outline_size=10]x[0.5xLEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby enemies when killed."
 
 msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ability: Melt[/outline_color]"
 
 msgid "melt_description"
-msgstr "Gain [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning foes."
+msgstr "Gain [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning enemies."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
@@ -245,13 +245,19 @@ msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
 
 msgid "conflagration_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br][outline_size=10]Upon a burning entity dying:[/outline_size] Spread its burn to the nearest foe."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br][outline_size=10]Upon a burning entity dying:[/outline_size] Spread its burn to the nearest enemy."
 
 msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
 
 msgid "undying_flames_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Reconstitute it."
+
+msgid "white_hot_title"
+msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"
+
+msgid "white_hot_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against enemies with [outline_size=10][50][/outline_size] or more burn stacks."
 
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
@@ -349,13 +355,13 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest foe up to [outline_size=10][2][/outline_size] times."
+msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][2][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#a87e00]Ability: Mortal Shock[/outline_color]"
 
 msgid "mortal_shock_description"
-msgstr "Gain [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged foes and [outline_size=10]+[2xLEVEL][/outline_size] damage on crit."
+msgstr "Gain [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[2xLEVEL][/outline_size] damage on crit."
 
 msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
@@ -440,7 +446,7 @@ msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] You deal [outline_size=10]x[LEVEL][/outline_size] damage to nearby foes."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] You deal [outline_size=10]x[LEVEL][/outline_size] damage to nearby enemies."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Parability: Animated Clay[/outline_color]"
@@ -483,7 +489,7 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned foe:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.4+0.4xLEVEL][/outline_size] of its base health and damage."
+msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.4+0.4xLEVEL][/outline_size] of its base health and damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"

@@ -17,9 +17,9 @@ func _ready() -> void:
 		particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
 		particle_instances.append(particle_instance)
 		sprite["node"].add_child(particle_instance)
-	ability_handler.inh_speed_scale_modifiers.connect(inh_speed_scale_modifiers)
+	ability_handler.speed_scale_modifiers.connect(speed_scale_modifiers)
 
-func inh_speed_scale_modifiers(modifiers) -> void:
+func speed_scale_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= 0
 
 func add_level(value):

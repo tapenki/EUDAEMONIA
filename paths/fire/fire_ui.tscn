@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh6uwpkbehlt4"]
+[gd_scene format=3 uid="uid://bh6uwpkbehlt4"]
 
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_y46ig"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_lgc5t"]
@@ -7,14 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_2ix0u"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="6_ya0lw"]
 
-[node name="Fire" type="Control"]
+[node name="Fire" type="Control" unique_id=2075288889]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="." unique_id=144110366]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -33,7 +33,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1276867798]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -54,7 +54,7 @@ horizontal_alignment = 1
 script = ExtResource("3_8hyeq")
 subject = "fire"
 
-[node name="Abilities1" type="HBoxContainer" parent="."]
+[node name="Abilities1" type="HBoxContainer" parent="." unique_id=2141398342]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -66,24 +66,24 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Ignition" parent="Abilities1" instance=ExtResource("4_la5fy")]
+[node name="Ignition" parent="Abilities1" unique_id=38969323 instance=ExtResource("4_la5fy")]
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "ignition"
 extras = ["burn"]
 
-[node name="Firespawning" parent="Abilities1" instance=ExtResource("4_la5fy")]
+[node name="Firespawning" parent="Abilities1" unique_id=1239380423 instance=ExtResource("4_la5fy")]
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "firespawning"
 extras = ["burn"]
 
-[node name="Melt" parent="Abilities1" instance=ExtResource("4_la5fy")]
+[node name="Melt" parent="Abilities1" unique_id=1307101254 instance=ExtResource("4_la5fy")]
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "melt"
 
-[node name="Abilities2" type="HBoxContainer" parent="."]
+[node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291601244]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -95,17 +95,17 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ScorchedEarth" parent="Abilities2" instance=ExtResource("4_la5fy")]
+[node name="ScorchedEarth" parent="Abilities2" unique_id=799314877 instance=ExtResource("4_la5fy")]
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "scorched_earth"
 
-[node name="FromAshes" parent="Abilities2" instance=ExtResource("4_la5fy")]
+[node name="FromAshes" parent="Abilities2" unique_id=1303334605 instance=ExtResource("4_la5fy")]
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "from_ashes"
 
-[node name="Masteries1" type="HBoxContainer" parent="."]
+[node name="Masteries1" type="HBoxContainer" parent="." unique_id=1076665176]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -118,7 +118,7 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Conflagration" parent="Masteries1" instance=ExtResource("5_2ix0u")]
+[node name="Conflagration" parent="Masteries1" unique_id=1000262055 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
@@ -127,7 +127,7 @@ requires = {
 subject = "conflagration"
 extras = ["burn"]
 
-[node name="UndyingFlames" parent="Masteries1" instance=ExtResource("5_2ix0u")]
+[node name="UndyingFlames" parent="Masteries1" unique_id=423107617 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
@@ -135,32 +135,15 @@ requires = {
 }
 subject = "undying_flames"
 
-[node name="Blank1" type="Control" parent="Masteries1"]
-custom_minimum_size = Vector2(60, 60)
+[node name="WhiteHot" parent="Masteries1" unique_id=408650081 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
-mouse_filter = 2
+accessible_texture = ExtResource("1_y46ig")
+requires = {
+"melt": 5
+}
+subject = "white_hot"
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1"]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_ya0lw")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="Masteries2" type="HBoxContainer" parent="."]
+[node name="Masteries2" type="HBoxContainer" parent="." unique_id=1667646860]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -173,13 +156,13 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank2" type="Control" parent="Masteries2"]
+[node name="Blank2" type="Control" parent="Masteries2" unique_id=728131305]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank2"]
+[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank2" unique_id=1814365808]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -199,7 +182,7 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="FieryRebirth" parent="Masteries2" instance=ExtResource("5_2ix0u")]
+[node name="FieryRebirth" parent="Masteries2" unique_id=1132520690 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
