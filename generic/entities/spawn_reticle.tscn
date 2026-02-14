@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://imit0udlq3wc"]
+[gd_scene format=3 uid="uid://imit0udlq3wc"]
 
 [ext_resource type="Script" uid="uid://df3s5gmiyrr4p" path="res://generic/entities/spawn_reticle.gd" id="3_liw71"]
 
-[node name="SpawnReticle" type="Node2D"]
+[node name="SpawnReticle" type="Node2D" unique_id=1467143766]
 visibility_layer = 129
 script = ExtResource("3_liw71")
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1215727399]
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

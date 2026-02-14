@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cv5nksivfg1qo"]
+[gd_scene format=3 uid="uid://cv5nksivfg1qo"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_kmxvn"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_oyhwu"]
@@ -19,21 +19,6 @@
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_ate26"]
-curve = SubResource("Curve_mtknr")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c27jy"]
-resource_local_to_scene = true
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 32.0
-direction = Vector3(0, -1, 0)
-spread = 0.0
-initial_velocity_min = 20.0
-initial_velocity_max = 60.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_ate26")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 20.0
@@ -149,7 +134,7 @@ _data = {
 &"WINDUP": SubResource("Animation_hwbj6")
 }
 
-[node name="FlamingSkull" type="CharacterBody2D" node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="FlamingSkull" type="CharacterBody2D" unique_id=1120874738 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
@@ -161,59 +146,59 @@ hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=38127409]
 script = ExtResource("2_oyhwu")
 is_entity = true
 
-[node name="StateHandler" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateHandler" type="Node" parent="." unique_id=895399190 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_h3b6x")
 initial_state = NodePath("PrepareAttack")
 
-[node name="Chase" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="Chase" type="Node" parent="StateHandler" unique_id=426020864 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_div0h")
 speed = 300
 distance_margin = 100
 next = NodePath("../PrepareAttack")
 
-[node name="PrepareAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="PrepareAttack" type="Node" parent="StateHandler" unique_id=1272582918 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_wloi5")
 anim = "WINDUP"
 next = NodePath("../DashAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=781851643 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_oyhwu")
 wait_time = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="DashAttack" type="Node" parent="StateHandler" unique_id=1384106293 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_h3b6x")
 speed = 600
 sound = "ShootLight"
 next = NodePath("../PrepareAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=1012769263 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("8_div0h")
 wait_time = 0.24
 deviation = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
-[node name="Endlag" type="Node" parent="StateHandler" node_paths=PackedStringArray("next")]
+[node name="Endlag" type="Node" parent="StateHandler" unique_id=121387545 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_wloi5")
 next = NodePath("../PrepareAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=1158204604 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_oyhwu")
 wait_time = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=113618084]
 material = ExtResource("7_msdoi")
 position = Vector2(0, 19)
 texture = ExtResource("8_5iypb")
@@ -222,44 +207,50 @@ script = ExtResource("9_ws2h1")
 base_texture = ExtResource("8_5iypb")
 hurt_texture = ExtResource("10_qvixt")
 
-[node name="Hurt" type="Node" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=340064928 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_oyhwu")
 wait_time = 0.2
 ability_handler = NodePath("../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=800656325]
 z_index = -3
 position = Vector2(0, -19)
 texture = ExtResource("11_26aru")
 
-[node name="Burn" type="GPUParticles2D" parent="Sprite"]
+[node name="Burn" type="CPUParticles2D" parent="Sprite" unique_id=1403551847]
 z_index = -1
 material = ExtResource("7_msdoi")
 position = Vector2(0, -19)
 amount = 16
 texture = ExtResource("13_h3b6x")
 lifetime = 0.5
-visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
-process_material = SubResource("ParticleProcessMaterial_c27jy")
+fixed_fps = 30
+draw_order = 1
+emission_shape = 1
+emission_sphere_radius = 32.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+scale_amount_curve = SubResource("Curve_mtknr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606621772]
 shape = SubResource("CircleShape2D_bhp25")
 
-[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1006370117 node_paths=PackedStringArray("ability_handler")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_crknv")
 ability_handler = NodePath("../AbilityHandler")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=2068037934]
 shape = SubResource("CircleShape2D_jpw2x")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1319309128]
 deterministic = true
-libraries = {
-&"": SubResource("AnimationLibrary_v1kwl")
-}
+libraries/ = SubResource("AnimationLibrary_v1kwl")
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]

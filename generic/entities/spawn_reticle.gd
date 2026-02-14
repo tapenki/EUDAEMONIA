@@ -1,6 +1,6 @@
 extends Node2D
 
-var particle_scene = preload("res://generic/particles/heptagram.tscn")
+var particle_scene = preload("res://generic/particles/cpu_heptagram.tscn")
 var particle_instances: Array
 
 var entity: Node
