@@ -102,6 +102,10 @@ var ability_data = {
 		"script" : preload("res://paths/fire/abilities/white_hot.gd"),
 		"type" : "mastery"
 	},
+	"ring_of_fire" : {
+		"script" : preload("res://paths/fire/abilities/ring_of_fire.gd"),
+		"type" : "mastery"
+	},
 	"fiery_rebirth" : {
 		"script" : preload("res://paths/fire/abilities/fiery_rebirth.gd"),
 		"type" : "mastery"

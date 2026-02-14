@@ -1,6 +1,6 @@
 extends Ability
 
-var bullet = preload("res://paths/fire/scorched_earth.tscn")
+var bullet = preload("res://paths/fire/scorched_earth/scorched_earth.tscn")
 
 func _ready() -> void:
 	ability_handler.death_effects.connect(death_effects)

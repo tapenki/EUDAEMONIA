@@ -1,4 +1,4 @@
-extends Projectile
+extends ParticleSpriteProjectile
 
 var bullet = preload("res://regions/anapnoi/anapnoi_thorn.tscn")
 
@@ -14,7 +14,3 @@ func death_effects() -> void:
 		2,
 		Vector2())
 		get_node("/root/Main/Projectiles").add_child(projectile_instance)
-
-func get_sprites():
-	var sprite = get_node("Sprite")
-	return [{"node" : sprite, "size" : sprite.texture.get_size(), "position" : sprite.position, "offset" : Vector2()}]

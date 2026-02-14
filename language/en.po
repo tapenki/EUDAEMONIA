@@ -259,11 +259,17 @@ msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"
 msgid "white_hot_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against enemies with [outline_size=10][50][/outline_size] or more burn stacks."
 
+msgid "ring_of_fire_title"
+msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
+
+msgid "ring_of_fire_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Manifest a ring of fire around you. It has [outline_size=10]x[0.25xLEVEL][/outline_size] damage."
+
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
 
 msgid "fiery_rebirth_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[10xFROMASHESLEVEL][/outline_size] burn to all enemies then double their burn."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] burn to all enemies then double their burn."
 
 msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
@@ -318,13 +324,13 @@ msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.25xSNOWBALLLEVEL][/outline_size] bonus crit chance and status applied per second."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]x[0.25xLEVEL][/outline_size] bonus crit chance and status applied per second."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply freeze for [outline_size=10][0.15xFROSTBITELEVEL][/outline_size] seconds."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply freeze for [outline_size=10][0.15xLEVEL][/outline_size] seconds."
 
 msgid "shard_blast_title"
 msgstr "[outline_color=#0000ff]Polymastery: Shard Blast[/outline_color]"
@@ -525,7 +531,7 @@ msgid "starvation_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"
 
 msgid "starvation_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon an entity dying:[/outline_size] Summons gain [outline_size=10]x[0.04xHUNGERLEVEL][/outline_size] bonus damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon an entity dying:[/outline_size] Summons gain [outline_size=10]x[0.04xLEVEL][/outline_size] bonus damage."
 
 msgid "osteophalanx_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Osteophalanx[/outline_color]"

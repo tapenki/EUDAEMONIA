@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tdh2o3sopuf"
-path="res://.godot/imported/scorched_earth.png-ae62270fabac354ef409d7f928113dd1.ctex"
+uid="uid://cipa5588g3sbr"
+path="res://.godot/imported/ring_of_fire.png-ff00e691f1aefa352c2bac4b4d902e03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/fire/scorched_earth.png"
-dest_files=["res://.godot/imported/scorched_earth.png-ae62270fabac354ef409d7f928113dd1.ctex"]
+source_file="res://paths/fire/ring_of_fire/ring_of_fire.png"
+dest_files=["res://.godot/imported/ring_of_fire.png-ff00e691f1aefa352c2bac4b4d902e03.ctex"]
 
 [params]
 

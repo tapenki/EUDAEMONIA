@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_8hyeq"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_la5fy"]
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_2ix0u"]
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="6_ya0lw"]
 
 [node name="Fire" type="Control" unique_id=2075288889]
 layout_mode = 3
@@ -156,31 +155,13 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank2" type="Control" parent="Masteries2" unique_id=728131305]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-custom_minimum_size = Vector2(60, 60)
+[node name="RingOfFire" parent="Masteries2" unique_id=160881786 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank2" unique_id=1814365808]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_ya0lw")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
+accessible_texture = ExtResource("1_y46ig")
+requires = {
+"scorched_earth": 5
+}
+subject = "ring_of_fire"
 
 [node name="FieryRebirth" parent="Masteries2" unique_id=1132520690 instance=ExtResource("5_2ix0u")]
 layout_mode = 2

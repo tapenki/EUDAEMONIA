@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp8slcxx2cl7q"]
+[gd_scene format=3 uid="uid://cp8slcxx2cl7q"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_0owue"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_3eyo0"]
@@ -28,25 +28,25 @@ scale_curve = SubResource("CurveTexture_ate26")
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxnif"]
 radius = 20.0
 
-[node name="BallLightning" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+[node name="BallLightning" type="Area2D" unique_id=2072656203 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("1_0owue")
 ability_handler = NodePath("AbilityHandler")
 hits_left = -1
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=1597376643]
 script = ExtResource("3_r00uu")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=937506223]
 material = ExtResource("2_3eyo0")
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_0owue")
 
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1134808536]
 z_index = -3
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_r00uu")
 
-[node name="Charge" type="GPUParticles2D" parent="Sprite" node_paths=PackedStringArray("ability_handler")]
+[node name="Particles" type="GPUParticles2D" parent="Sprite" unique_id=1484520933 node_paths=PackedStringArray("ability_handler")]
 z_index = -1
 material = ExtResource("2_3eyo0")
 scale = Vector2(0.666667, 0.666667)
@@ -58,15 +58,15 @@ process_material = SubResource("ParticleProcessMaterial_xxnif")
 script = ExtResource("6_2yt2x")
 ability_handler = NodePath("../../AbilityHandler")
 
-[node name="Lifetime" type="Timer" parent="Sprite/Charge"]
+[node name="Lifetime" type="Timer" parent="Sprite/Particles" unique_id=2023989320]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746247623]
 shape = SubResource("CircleShape2D_xxnif")
 
-[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=219089524 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("7_ycxlx")
 ability_handler = NodePath("../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[connection signal="timeout" from="Sprite/Charge/Lifetime" to="Sprite/Charge" method="_on_lifetime_timeout"]
+[connection signal="timeout" from="Sprite/Particles/Lifetime" to="Sprite/Particles" method="_on_lifetime_timeout"]
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
