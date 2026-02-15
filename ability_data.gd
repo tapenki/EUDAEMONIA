@@ -156,13 +156,17 @@ var ability_data = {
 		"script" : preload("res://paths/ice/abilities/snap_freeze.gd"),
 		"type" : "mastery"
 	},
+	"brittle_cold" : {
+		"script" : preload("res://paths/ice/abilities/brittle_cold.gd"),
+		"type" : "mastery"
+	},
+	"freeze_blast" : {
+		"script" : preload("res://paths/ice/abilities/freeze_blast.gd"),
+		"type" : "mastery"
+	},
 	"freeze" : {
 		"script" : preload("res://paths/ice/freeze.gd"),
 		"type" : "status"
-	},
-	"shard_blast" : {
-		"script" : preload("res://paths/ice/abilities/shard_blast.gd"),
-		"type" : "mastery"
 	},
 	#endregion
 	#region lightning

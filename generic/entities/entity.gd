@@ -61,7 +61,7 @@ func take_damage(damage, immune_affected = true):
 	get_node("/root/Main").play_sound(hurt_sound)
 	health = health - damage["final"]
 	ability_handler.damage_taken.emit(damage)
-	if ability_handler.get_health(health, max_health)["health"] <= 0:
+	if ability_handler.get_health()["health"] <= 0:
 		kill.call_deferred(damage) ## delay to apply all effects before proceeding to kill
 	return true
 

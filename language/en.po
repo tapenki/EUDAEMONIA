@@ -257,7 +257,7 @@ msgid "white_hot_title"
 msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"
 
 msgid "white_hot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against enemies with [outline_size=10][50][/outline_size] or more burn stacks."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against enemies with [outline_size=10]>=[50][/outline_size] burn stacks."
 
 msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
@@ -332,11 +332,17 @@ msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 msgid "snap_freeze_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply freeze for [outline_size=10][0.15xLEVEL][/outline_size] seconds."
 
-msgid "shard_blast_title"
-msgstr "[outline_color=#0000ff]Polymastery: Shard Blast[/outline_color]"
+msgid "brittle_cold_title"
+msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
 
-msgid "shard_blast_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] and level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs realease [outline_size=10][12][/outline_size] [outline_color=#0000ff]Shatter[/outline_color] projectiles with [outline_size=10]x[2][/outline_size] damage upon exploding."
+msgid "brittle_cold_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color][br]Gain [outline_size=10]x[3][/outline_size] damage against entities with [outline_size=10]<=[33]%[/outline_size] health."
+
+msgid "freeze_blast_title"
+msgstr "[outline_color=#0000ff]Mastery: Freeze Blast[/outline_color]"
+
+msgid "freeze_blast_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs apply freeze for [outline_size=10][1.5][/outline_size] seconds upon dealing damage."
 
 msgid "chill_title"
 msgstr "[outline_color=#0000ff]Notes: Chill[/outline_color]"

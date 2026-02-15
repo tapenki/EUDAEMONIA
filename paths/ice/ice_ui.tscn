@@ -156,15 +156,22 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ShardBlast" parent="Masteries2" unique_id=1166178441 instance=ExtResource("6_1qfmk")]
-custom_minimum_size = Vector2(124, 60)
+[node name="BrittleCold" parent="Masteries2" unique_id=1593561668 instance=ExtResource("6_1qfmk")]
 layout_mode = 2
 accessible_texture = ExtResource("1_0h8wn")
 requires = {
-"cryobombs": 3,
-"shatter": 3
+"shatter": 5
 }
-subject = "shard_blast"
+subject = "brittle_cold"
+
+[node name="FreezeBlast" parent="Masteries2" unique_id=308098669 instance=ExtResource("6_1qfmk")]
+layout_mode = 2
+accessible_texture = ExtResource("1_0h8wn")
+requires = {
+"cryobombs": 5
+}
+subject = "freeze_blast"
+extras = ["freeze"]
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
