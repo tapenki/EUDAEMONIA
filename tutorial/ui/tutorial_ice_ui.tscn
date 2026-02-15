@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://kgg0o211aihr"]
+[gd_scene format=3 uid="uid://cei8lkcmlr48l"]
 
-[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/ice/blue.png" id="1_0h8wn"]
-[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_q1lfv"]
-[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_8hxpt"]
-[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3dvcy"]
-[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_1qfmk"]
+[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/ice/blue.png" id="1_vncsi"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_vrmiu"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_2n0lu"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_8hwo8"]
+[ext_resource type="PackedScene" uid="uid://dvbrmwjjvlalf" path="res://tutorial/ui/restricted_upgrade_button.tscn" id="5_c2784"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_libmw"]
 
 [node name="Ice" type="Control" unique_id=2118698369]
 layout_mode = 3
@@ -25,7 +26,7 @@ offset_right = -4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_0h8wn")
+texture = ExtResource("1_vncsi")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
 patch_margin_top = 14
@@ -43,14 +44,14 @@ offset_right = 62.5
 offset_bottom = 25.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("2_q1lfv")
+theme = ExtResource("2_vrmiu")
 bbcode_enabled = true
 text = "ice_title"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
-script = ExtResource("3_8hxpt")
+script = ExtResource("3_2n0lu")
 subject = "ice"
 
 [node name="Abilities1" type="HBoxContainer" parent="." unique_id=2092258762]
@@ -65,19 +66,19 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Snowball" parent="Abilities1" unique_id=452593380 instance=ExtResource("4_3dvcy")]
+[node name="Snowball" parent="Abilities1" unique_id=452593380 instance=ExtResource("4_8hwo8")]
 layout_mode = 2
-texture_normal = ExtResource("1_0h8wn")
+texture_normal = ExtResource("1_vncsi")
 subject = "snowball"
 
-[node name="Shatter" parent="Abilities1" unique_id=1440218836 instance=ExtResource("4_3dvcy")]
+[node name="Shatter" parent="Abilities1" unique_id=1440218836 instance=ExtResource("4_8hwo8")]
 layout_mode = 2
-texture_normal = ExtResource("1_0h8wn")
+texture_normal = ExtResource("1_vncsi")
 subject = "shatter"
 
-[node name="Frostbite" parent="Abilities1" unique_id=755603844 instance=ExtResource("4_3dvcy")]
+[node name="Frostbite" parent="Abilities1" unique_id=755603844 instance=ExtResource("4_8hwo8")]
 layout_mode = 2
-texture_normal = ExtResource("1_0h8wn")
+texture_normal = ExtResource("1_vncsi")
 subject = "frostbite"
 extras = ["chill"]
 
@@ -93,17 +94,11 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="BlueNeedle" parent="Abilities2" unique_id=244962004 instance=ExtResource("4_3dvcy")]
+[node name="BlueNeedle" parent="Abilities2" unique_id=269160871 instance=ExtResource("5_c2784")]
 layout_mode = 2
-texture_normal = ExtResource("1_0h8wn")
-cost = 2
-subject = "blue_needle"
-tag = "greater_upgrade_cost"
 
-[node name="Cryobombs" parent="Abilities2" unique_id=1950595630 instance=ExtResource("4_3dvcy")]
+[node name="Cryobombs" parent="Abilities2" unique_id=712672989 instance=ExtResource("5_c2784")]
 layout_mode = 2
-texture_normal = ExtResource("1_0h8wn")
-subject = "cryobombs"
 
 [node name="Masteries1" type="HBoxContainer" parent="." unique_id=2131887875]
 layout_direction = 2
@@ -118,25 +113,25 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="SnowballII" parent="Masteries1" unique_id=664334916 instance=ExtResource("6_1qfmk")]
+[node name="SnowballII" parent="Masteries1" unique_id=664334916 instance=ExtResource("5_libmw")]
 layout_mode = 2
-accessible_texture = ExtResource("1_0h8wn")
+accessible_texture = ExtResource("1_vncsi")
 requires = {
 "snowball": 5
 }
 subject = "snowball_ii"
 
-[node name="BrittleCold" parent="Masteries1" unique_id=1593561668 instance=ExtResource("6_1qfmk")]
+[node name="BrittleCold" parent="Masteries1" unique_id=1593561668 instance=ExtResource("5_libmw")]
 layout_mode = 2
-accessible_texture = ExtResource("1_0h8wn")
+accessible_texture = ExtResource("1_vncsi")
 requires = {
 "shatter": 5
 }
 subject = "brittle_cold"
 
-[node name="SnapFreeze" parent="Masteries1" unique_id=2138347233 instance=ExtResource("6_1qfmk")]
+[node name="SnapFreeze" parent="Masteries1" unique_id=2138347233 instance=ExtResource("5_libmw")]
 layout_mode = 2
-accessible_texture = ExtResource("1_0h8wn")
+accessible_texture = ExtResource("1_vncsi")
 requires = {
 "frostbite": 5
 }
@@ -156,17 +151,17 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="GlacialRail" parent="Masteries2" unique_id=2142911702 instance=ExtResource("6_1qfmk")]
+[node name="GlacialRail" parent="Masteries2" unique_id=2142911702 instance=ExtResource("5_libmw")]
 layout_mode = 2
-accessible_texture = ExtResource("1_0h8wn")
+accessible_texture = ExtResource("1_vncsi")
 requires = {
 "blue_needle": 3
 }
 subject = "glacial_rail"
 
-[node name="FreezeBlast" parent="Masteries2" unique_id=308098669 instance=ExtResource("6_1qfmk")]
+[node name="FreezeBlast" parent="Masteries2" unique_id=308098669 instance=ExtResource("5_libmw")]
 layout_mode = 2
-accessible_texture = ExtResource("1_0h8wn")
+accessible_texture = ExtResource("1_vncsi")
 requires = {
 "cryobombs": 5
 }

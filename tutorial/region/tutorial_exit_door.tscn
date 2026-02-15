@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://r1rn63ji0xx1"]
 
 [ext_resource type="Texture2D" uid="uid://cf4xdwdge0pxg" path="res://regions/environment/doors/sphere_door.png" id="1_ve1lo"]
-[ext_resource type="Script" uid="uid://6vhd80owhrf0" path="res://tutorial/tutorial_exit_door.gd" id="2_7buts"]
+[ext_resource type="Script" uid="uid://6vhd80owhrf0" path="res://tutorial/region/tutorial_exit_door.gd" id="2_7buts"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_kae70"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_bdmps"]
 

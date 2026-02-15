@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://dovdyljqfid6t"]
+[gd_scene format=3 uid="uid://lpgy13fr40m3"]
 
-[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="1_ijwcu"]
-[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_mva7w"]
-[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_1d61d"]
-[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3rk0q"]
-[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_eepm7"]
+[ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="1_yt6hy"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_6qer8"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_68jjx"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_dacg1"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_r55n3"]
+[ext_resource type="PackedScene" uid="uid://dvbrmwjjvlalf" path="res://tutorial/ui/restricted_upgrade_button.tscn" id="5_vgdws"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pmft3"]
 resource_local_to_scene = true
@@ -31,7 +32,7 @@ offset_right = -4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ijwcu")
+texture = ExtResource("1_yt6hy")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
 patch_margin_top = 14
@@ -49,14 +50,14 @@ offset_right = 67.0
 offset_bottom = 25.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("2_mva7w")
+theme = ExtResource("2_6qer8")
 bbcode_enabled = true
 text = "lightning_title"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
-script = ExtResource("3_1d61d")
+script = ExtResource("3_68jjx")
 subject = "lightning"
 
 [node name="Crit" type="NinePatchRect" parent="." unique_id=723724531]
@@ -75,12 +76,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 2
-texture = ExtResource("1_ijwcu")
+texture = ExtResource("1_yt6hy")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
-script = ExtResource("3_1d61d")
+script = ExtResource("3_68jjx")
 subject = "crit"
 
 [node name="Symbol" type="Label" parent="Crit" unique_id=969326082]
@@ -105,21 +106,21 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ChainBolt" parent="Abilities1" unique_id=1702264514 instance=ExtResource("4_3rk0q")]
+[node name="ChainBolt" parent="Abilities1" unique_id=1702264514 instance=ExtResource("4_dacg1")]
 layout_mode = 2
-texture_normal = ExtResource("1_ijwcu")
+texture_normal = ExtResource("1_yt6hy")
 subject = "chain_bolt"
 extras = ["crit"]
 
-[node name="BallLightning" parent="Abilities1" unique_id=262058008 instance=ExtResource("4_3rk0q")]
+[node name="BallLightning" parent="Abilities1" unique_id=262058008 instance=ExtResource("4_dacg1")]
 layout_mode = 2
-texture_normal = ExtResource("1_ijwcu")
+texture_normal = ExtResource("1_yt6hy")
 subject = "ball_lightning"
 extras = ["crit"]
 
-[node name="Thunderstep" parent="Abilities1" unique_id=1373121206 instance=ExtResource("4_3rk0q")]
+[node name="Thunderstep" parent="Abilities1" unique_id=1373121206 instance=ExtResource("4_dacg1")]
 layout_mode = 2
-texture_normal = ExtResource("1_ijwcu")
+texture_normal = ExtResource("1_yt6hy")
 subject = "thunderstep"
 
 [node name="Abilities2" type="HBoxContainer" parent="." unique_id=1157839179]
@@ -134,16 +135,11 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="MortalShock" parent="Abilities2" unique_id=431656401 instance=ExtResource("4_3rk0q")]
+[node name="MortalShock" parent="Abilities2" unique_id=269160871 instance=ExtResource("5_vgdws")]
 layout_mode = 2
-texture_normal = ExtResource("1_ijwcu")
-subject = "mortal_shock"
-extras = ["crit"]
 
-[node name="Electromagnetism" parent="Abilities2" unique_id=975056362 instance=ExtResource("4_3rk0q")]
+[node name="Electromagnetism" parent="Abilities2" unique_id=449963763 instance=ExtResource("5_vgdws")]
 layout_mode = 2
-texture_normal = ExtResource("1_ijwcu")
-subject = "electromagnetism"
 
 [node name="Masteries1" type="HBoxContainer" parent="." unique_id=1412215670]
 layout_direction = 2
@@ -158,25 +154,25 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="StormWeave" parent="Masteries1" unique_id=1774960858 instance=ExtResource("6_eepm7")]
+[node name="StormWeave" parent="Masteries1" unique_id=1774960858 instance=ExtResource("5_r55n3")]
 layout_mode = 2
-accessible_texture = ExtResource("1_ijwcu")
+accessible_texture = ExtResource("1_yt6hy")
 requires = {
 "chain_bolt": 5
 }
 subject = "storm_weave"
 
-[node name="CloseOrbit" parent="Masteries1" unique_id=1793056073 instance=ExtResource("6_eepm7")]
+[node name="CloseOrbit" parent="Masteries1" unique_id=1793056073 instance=ExtResource("5_r55n3")]
 layout_mode = 2
-accessible_texture = ExtResource("1_ijwcu")
+accessible_texture = ExtResource("1_yt6hy")
 requires = {
 "ball_lightning": 5
 }
 subject = "close_orbit"
 
-[node name="ArcShield" parent="Masteries1" unique_id=556702490 instance=ExtResource("6_eepm7")]
+[node name="ArcShield" parent="Masteries1" unique_id=556702490 instance=ExtResource("5_r55n3")]
 layout_mode = 2
-accessible_texture = ExtResource("1_ijwcu")
+accessible_texture = ExtResource("1_yt6hy")
 requires = {
 "thunderstep": 5
 }
@@ -195,18 +191,18 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ShockingGrasp" parent="Masteries2" unique_id=1405145588 instance=ExtResource("6_eepm7")]
+[node name="ShockingGrasp" parent="Masteries2" unique_id=1405145588 instance=ExtResource("5_r55n3")]
 layout_mode = 2
-accessible_texture = ExtResource("1_ijwcu")
+accessible_texture = ExtResource("1_yt6hy")
 requires = {
 "mortal_shock": 5
 }
 subject = "shocking_grasp"
 extras = ["crit"]
 
-[node name="Repulsar" parent="Masteries2" unique_id=1028252816 instance=ExtResource("6_eepm7")]
+[node name="Repulsar" parent="Masteries2" unique_id=1028252816 instance=ExtResource("5_r55n3")]
 layout_mode = 2
-accessible_texture = ExtResource("1_ijwcu")
+accessible_texture = ExtResource("1_yt6hy")
 requires = {
 "electromagnetism": 5
 }

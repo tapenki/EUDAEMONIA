@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://c5vmi0p3qjfv4"]
+[gd_scene format=4 uid="uid://c5vmi0p3qjfv4"]
 
 [ext_resource type="TileSet" uid="uid://c4kyki7ku4aqj" path="res://tutorial/region/rooms/tutorial_wall_tileset.tres" id="1_ivawd"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_621cv"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_42tcs"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_m1lvw"]
-[ext_resource type="PackedScene" uid="uid://r1rn63ji0xx1" path="res://tutorial/tutorial_exit_door.tscn" id="5_h8ay6"]
+[ext_resource type="PackedScene" uid="uid://r1rn63ji0xx1" path="res://tutorial/region/tutorial_exit_door.tscn" id="5_h8ay6"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_h8ay6"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_272hh"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_a3yxu"]
-[ext_resource type="PackedScene" uid="uid://vr564xplmf1r" path="res://tutorial/ascension_diploma_reward.tscn" id="9_272hh"]
+[ext_resource type="PackedScene" uid="uid://vr564xplmf1r" path="res://tutorial/region/ascension_diploma_reward.tscn" id="9_272hh"]
 
 [node name="TutorialThroneRoom" type="Node2D"]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vr564xplmf1r"]
 
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="1_v4c5t"]
-[ext_resource type="Script" uid="uid://peockj458dhx" path="res://tutorial/ascension_diploma_reward.gd" id="2_rf0gv"]
+[ext_resource type="Script" uid="uid://peockj458dhx" path="res://tutorial/region/ascension_diploma_reward.gd" id="2_rf0gv"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_kqm0h"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_bjlt7"]
 

@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://bh6uwpkbehlt4"]
+[gd_scene format=3 uid="uid://dbvlub08cxuks"]
 
-[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_y46ig"]
-[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_lgc5t"]
-[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_8hyeq"]
-[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_la5fy"]
-[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_2ix0u"]
+[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_3c07l"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_muc1t"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_gohqs"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_xmg6a"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_10p88"]
+[ext_resource type="PackedScene" uid="uid://dvbrmwjjvlalf" path="res://tutorial/ui/restricted_upgrade_button.tscn" id="5_fa5ig"]
 
 [node name="Fire" type="Control" unique_id=2075288889]
 layout_mode = 3
@@ -25,7 +26,7 @@ offset_right = -4.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_y46ig")
+texture = ExtResource("1_3c07l")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
 patch_margin_top = 14
@@ -43,14 +44,14 @@ offset_right = 58.5
 offset_bottom = 25.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("2_lgc5t")
+theme = ExtResource("2_muc1t")
 bbcode_enabled = true
 text = "fire_title"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
-script = ExtResource("3_8hyeq")
+script = ExtResource("3_gohqs")
 subject = "fire"
 
 [node name="Abilities1" type="HBoxContainer" parent="." unique_id=2141398342]
@@ -65,20 +66,20 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Ignition" parent="Abilities1" unique_id=38969323 instance=ExtResource("4_la5fy")]
+[node name="Ignition" parent="Abilities1" unique_id=38969323 instance=ExtResource("4_xmg6a")]
 layout_mode = 2
-texture_normal = ExtResource("1_y46ig")
+texture_normal = ExtResource("1_3c07l")
 subject = "ignition"
 extras = ["burn"]
 
-[node name="ScorchedEarth" parent="Abilities1" unique_id=799314877 instance=ExtResource("4_la5fy")]
+[node name="ScorchedEarth" parent="Abilities1" unique_id=799314877 instance=ExtResource("4_xmg6a")]
 layout_mode = 2
-texture_normal = ExtResource("1_y46ig")
+texture_normal = ExtResource("1_3c07l")
 subject = "scorched_earth"
 
-[node name="FromAshes" parent="Abilities1" unique_id=1303334605 instance=ExtResource("4_la5fy")]
+[node name="FromAshes" parent="Abilities1" unique_id=1303334605 instance=ExtResource("4_xmg6a")]
 layout_mode = 2
-texture_normal = ExtResource("1_y46ig")
+texture_normal = ExtResource("1_3c07l")
 subject = "from_ashes"
 
 [node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291601244]
@@ -93,16 +94,11 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Melt" parent="Abilities2" unique_id=1307101254 instance=ExtResource("4_la5fy")]
+[node name="Melt" parent="Abilities2" unique_id=269160871 instance=ExtResource("5_fa5ig")]
 layout_mode = 2
-texture_normal = ExtResource("1_y46ig")
-subject = "melt"
 
-[node name="Firespawning" parent="Abilities2" unique_id=1239380423 instance=ExtResource("4_la5fy")]
+[node name="FromAshes" parent="Abilities2" unique_id=1881715234 instance=ExtResource("5_fa5ig")]
 layout_mode = 2
-texture_normal = ExtResource("1_y46ig")
-subject = "firespawning"
-extras = ["burn"]
 
 [node name="Masteries1" type="HBoxContainer" parent="." unique_id=1076665176]
 layout_direction = 2
@@ -117,26 +113,26 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Conflagration" parent="Masteries1" unique_id=1000262055 instance=ExtResource("5_2ix0u")]
+[node name="Conflagration" parent="Masteries1" unique_id=1000262055 instance=ExtResource("5_10p88")]
 layout_mode = 2
-accessible_texture = ExtResource("1_y46ig")
+accessible_texture = ExtResource("1_3c07l")
 requires = {
 "ignition": 5
 }
 subject = "conflagration"
 extras = ["burn"]
 
-[node name="RingOfFire" parent="Masteries1" unique_id=160881786 instance=ExtResource("5_2ix0u")]
+[node name="RingOfFire" parent="Masteries1" unique_id=160881786 instance=ExtResource("5_10p88")]
 layout_mode = 2
-accessible_texture = ExtResource("1_y46ig")
+accessible_texture = ExtResource("1_3c07l")
 requires = {
 "scorched_earth": 5
 }
 subject = "ring_of_fire"
 
-[node name="FieryRebirth" parent="Masteries1" unique_id=1132520690 instance=ExtResource("5_2ix0u")]
+[node name="FieryRebirth" parent="Masteries1" unique_id=1132520690 instance=ExtResource("5_10p88")]
 layout_mode = 2
-accessible_texture = ExtResource("1_y46ig")
+accessible_texture = ExtResource("1_3c07l")
 requires = {
 "from_ashes": 5
 }
@@ -156,17 +152,17 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="WhiteHot" parent="Masteries2" unique_id=408650081 instance=ExtResource("5_2ix0u")]
+[node name="WhiteHot" parent="Masteries2" unique_id=408650081 instance=ExtResource("5_10p88")]
 layout_mode = 2
-accessible_texture = ExtResource("1_y46ig")
+accessible_texture = ExtResource("1_3c07l")
 requires = {
 "melt": 5
 }
 subject = "white_hot"
 
-[node name="UndyingFlames" parent="Masteries2" unique_id=423107617 instance=ExtResource("5_2ix0u")]
+[node name="UndyingFlames" parent="Masteries2" unique_id=423107617 instance=ExtResource("5_10p88")]
 layout_mode = 2
-accessible_texture = ExtResource("1_y46ig")
+accessible_texture = ExtResource("1_3c07l")
 requires = {
 "firespawning": 5
 }

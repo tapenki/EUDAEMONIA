@@ -227,7 +227,7 @@ msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ability: Melt[/outline_color]"
 
 msgid "melt_description"
-msgstr "Gain [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning enemies."
+msgstr "Gain [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning entities."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
@@ -257,7 +257,7 @@ msgid "white_hot_title"
 msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"
 
 msgid "white_hot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against enemies with [outline_size=10]>=[50][/outline_size] burn stacks."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]>=[50][/outline_size] burn stacks."
 
 msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
@@ -336,7 +336,7 @@ msgid "brittle_cold_title"
 msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
 
 msgid "brittle_cold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color][br]Gain [outline_size=10]x[3][/outline_size] damage against entities with [outline_size=10]<=[33]%[/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]<=[33]%[/outline_size] health."
 
 msgid "freeze_blast_title"
 msgstr "[outline_color=#0000ff]Mastery: Freeze Blast[/outline_color]"

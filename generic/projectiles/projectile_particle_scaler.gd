@@ -23,7 +23,8 @@ func _physics_process(delta: float) -> void:
 		if scaler <= 0:
 			queue_free()
 	scale = base_scale * scaler
-	particles.process_material.scale = global_scale
+	particles.scale_amount_min = global_scale.x
+	particles.scale_amount_max = global_scale.x
 
 func parent_died():
 	base_scale = get_parent().global_scale

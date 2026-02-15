@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dgnmcjqbr70jb"]
+[gd_scene format=3 uid="uid://dvbrmwjjvlalf"]
 
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="1_slgqf"]
-[ext_resource type="Script" uid="uid://b4jrqlqj62mpk" path="res://paths/ui/upgrade_button.gd" id="1_xh7g6"]
+[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="1_fj5ga"]
+[ext_resource type="Script" uid="uid://c701he4b1pw2" path="res://tutorial/ui/restricted_upgrade_button.gd" id="2_6fmwm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_muabv"]
 resource_local_to_scene = true
@@ -13,7 +13,7 @@ outline_color = Color(1, 1, 1, 0.2509804)
 outline_size = 5
 outline_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
 
-[node name="Button" type="TextureButton"]
+[node name="Button" type="TextureButton" unique_id=269160871]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 custom_minimum_size = Vector2(60, 60)
 anchors_preset = 8
@@ -29,13 +29,12 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(30, 30)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_slgqf")
+texture_normal = ExtResource("1_fj5ga")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("1_xh7g6")
-tag = "upgrade_cost"
+script = ExtResource("2_6fmwm")
 
-[node name="Symbol" type="Label" parent="."]
+[node name="Symbol" type="Label" parent="." unique_id=1406661085]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 z_index = 1
 layout_mode = 1
@@ -48,7 +47,7 @@ label_settings = SubResource("LabelSettings_muabv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Level" type="Label" parent="."]
+[node name="Level" type="Label" parent="." unique_id=880757058]
 z_index = 1
 layout_mode = 1
 anchors_preset = 5

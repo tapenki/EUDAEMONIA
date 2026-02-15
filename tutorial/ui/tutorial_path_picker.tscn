@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgpscaxywuyn6"]
+[gd_scene format=3 uid="uid://bgpscaxywuyn6"]
 
-[ext_resource type="Script" uid="uid://d2nbwwug3j2og" path="res://tutorial/tutorial_path_picker.gd" id="1_1hvll"]
+[ext_resource type="Script" uid="uid://d2nbwwug3j2og" path="res://tutorial/ui/tutorial_path_picker.gd" id="1_1hvll"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="2_575kd"]
 [ext_resource type="PackedScene" uid="uid://de6a2lvhayf3v" path="res://paths/ui/unlock_magic_button.tscn" id="3_715gr"]
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="4_k0bwj"]

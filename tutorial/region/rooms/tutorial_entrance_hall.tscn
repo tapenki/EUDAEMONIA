@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_jp6cj"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_dcxaw"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="6_ivgmi"]
-[ext_resource type="Script" uid="uid://5uawsuo0rmkx" path="res://tutorial/tutorial_controls.gd" id="6_vyqfd"]
+[ext_resource type="Script" uid="uid://5uawsuo0rmkx" path="res://tutorial/region/tutorial_controls.gd" id="6_vyqfd"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_ivgmi"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_vyqfd"]
 
