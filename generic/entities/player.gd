@@ -17,6 +17,8 @@ func _physics_process(_delta):
 	if direction: #and not knockback_timer.running:
 		still = false
 		var speed = ability_handler.get_move_speed(360)
+		if Input.is_action_pressed("precision_movement"):
+			speed = min(speed, 200 / ability_handler.speed_scale)
 		velocity = lerp(velocity, direction * speed, 0.2)
 		sprite.rotation = lerp(sprite.rotation, velocity.normalized().x * 0.2, 0.2)
 		animation_player.play("WALK")

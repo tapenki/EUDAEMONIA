@@ -68,6 +68,10 @@ right={
 "deadzone": 0.2,
 "events": []
 }
+precision_movement={
+"deadzone": 0.2,
+"events": []
+}
 pause={
 "deadzone": 0.2,
 "events": []

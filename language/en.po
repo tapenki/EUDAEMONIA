@@ -59,6 +59,9 @@ msgstr "Move down:"
 msgid "right_keybind"
 msgstr "Move right:"
 
+msgid "precision_movement_keybind"
+msgstr "Precision movement:"
+
 msgid "pause_keybind"
 msgstr "Pause/Proceed:"
 
