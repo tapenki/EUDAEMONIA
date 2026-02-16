@@ -65,7 +65,7 @@ func scale_enemy_health(health: float):
 	return health * (1 + 0.035 * pow(day-1, 2))
 
 func scale_enemy_damage():
-	return 0.8 + (day * 0.2)
+	return 0.75 + (day * 0.25)
 
 func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()

@@ -300,7 +300,7 @@ msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
 
 msgid "frostbite_description"
-msgstr "[outline_size=10][33]% upon dealing damage:[/outline_size] Apply chill for [outline_size=10][0.75xLEVEL][/outline_size] seconds."
+msgstr "[outline_size=10][33]% upon dealing damage:[/outline_size] Apply chill for [outline_size=10][0.5xLEVEL][/outline_size] seconds."
 
 msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ability: Shatter[/outline_color]"
@@ -638,7 +638,13 @@ msgid "health_reward_title"
 msgstr "[outline_color=#dd0000]Reward: Health[/outline_color]"
 
 msgid "health_reward_description"
-msgstr "Gain +[outline_size=10][5][/outline_size] max health and fully recover."
+msgstr "Gain +[outline_size=10][10][/outline_size] max health and fully recover."
+
+msgid "greater_health_reward_title"
+msgstr "[outline_color=#dd0000]Reward: Greater Health[/outline_color]"
+
+msgid "greater_health_reward_description"
+msgstr "Gain +[outline_size=10][50][/outline_size] max health and fully recover."
 
 msgid "qualia_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"

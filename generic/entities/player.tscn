@@ -75,8 +75,8 @@ script = ExtResource("1_bmx6j")
 ability_handler = NodePath("AbilityHandler")
 hurt_sound = "HurtHeavy"
 animation_player = NodePath("AnimationPlayer")
-max_health = 75
-health = 75.0
+max_health = 40
+health = 40.0
 immune_duration = 0.2
 
 [node name="AbilityHandler" type="Node2D" parent="." unique_id=636127818]

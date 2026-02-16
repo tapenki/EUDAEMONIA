@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bu3jk0yrnh38t"]
+[gd_scene format=3 uid="uid://bu3jk0yrnh38t"]
 
 [ext_resource type="Script" uid="uid://cd3ridfw6k6lk" path="res://regions/aporia/mold_bullet.gd" id="1_th00q"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_hyqsw"]
@@ -6,36 +6,54 @@
 [ext_resource type="Texture2D" uid="uid://cmwxts226muwa" path="res://regions/aporia/mold_bullet.png" id="5_th00q"]
 [ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="6_niuon"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="7_8lcda"]
+[ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="7_iwthg"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="8_pn3ns"]
+
+[sub_resource type="Curve" id="Curve_kqxms"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 12.0
 
-[node name="MoldBullet" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+[node name="MoldBullet" type="Area2D" unique_id=827960706 node_paths=PackedStringArray("ability_handler")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_th00q")
 ability_handler = NodePath("AbilityHandler")
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=42551785]
 script = ExtResource("3_hyqsw")
 is_projectile = true
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=110245362]
 material = ExtResource("4_ks5w7")
 texture = ExtResource("5_th00q")
 script = ExtResource("6_niuon")
 
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=2049599488]
 z_index = -3
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_8lcda")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Particles" type="CPUParticles2D" parent="Sprite" unique_id=774162146 node_paths=PackedStringArray("ability_handler")]
+show_behind_parent = true
+material = ExtResource("4_ks5w7")
+amount = 6
+texture = ExtResource("5_th00q")
+lifetime = 0.3
+draw_order = 1
+spread = 0.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_kqxms")
+script = ExtResource("7_iwthg")
+ability_handler = NodePath("../../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946339231]
 shape = SubResource("CircleShape2D_nofi0")
 
-[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=617110797 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("8_pn3ns")
 wait_time = 2.0
 running = true
