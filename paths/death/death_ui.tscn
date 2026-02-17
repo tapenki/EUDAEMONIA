@@ -119,30 +119,14 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank1" type="Control" parent="Masteries1" unique_id=1991190207]
-custom_minimum_size = Vector2(60, 60)
+[node name="SoulPreservation" parent="Masteries1" unique_id=182688108 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1" unique_id=1202547849]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_g1eiv")
-patch_margin_left = 18
-patch_margin_top = 18
-patch_margin_right = 18
-patch_margin_bottom = 18
+accessible_texture = ExtResource("7_4llcc")
+requires = {
+"army_of_the_dead": 5
+}
+subject = "soul_preservation"
+extras = ["doom"]
 
 [node name="SwiftFate" parent="Masteries1" unique_id=836903578 instance=ExtResource("6_x8qv0")]
 layout_mode = 2

@@ -95,6 +95,10 @@ func movement(_delta):
 	velocity = old_velocity
 	ability_handler.movement.emit(old_position.distance_to(global_position))
 
+func random_valid_position(tilemap):
+	var cell = tilemap.get_used_cells_by_id(2).pick_random()
+	return Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
+
 func animation_finished(anim_name: StringName) -> void:
 	if anim_name == "DEATH":
 		queue_free()

@@ -225,7 +225,7 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	#projectile_created.emit(projectile_instance)
 	return projectile_instance
 
-func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int, health: int, summon_group = owner.group):
+func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int, summon_group = owner.group):
 	var summon_instance = summon_scene.instantiate()
 	summon_instance.global_position = position
 	
@@ -236,10 +236,6 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 		summon_instance.ability_handler.entity_source = owner
 	elif is_instance_valid(entity_source):
 		summon_instance.ability_handler.entity_source = entity_source
-	
-	if health > -1:
-		summon_instance.max_health = health
-	summon_instance.health = summon_instance.max_health
 	
 	var summon_damage = inherited_summon_damage.duplicate()
 	summon_damage_modifiers.emit(summon_damage)

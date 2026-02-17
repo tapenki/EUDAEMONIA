@@ -278,6 +278,10 @@ var ability_data = {
 		"script" : preload("res://paths/death/abilities/dark_harvest.gd"),
 		"type" : "upgrade"
 	},
+	"soul_preservation" : {
+		"script" : preload("res://paths/death/abilities/soul_preservation.gd"),
+		"type" : "mastery"
+	},
 	"swift_fate" : {
 		"script" : preload("res://paths/death/abilities/swift_fate.gd"),
 		"type" : "mastery"

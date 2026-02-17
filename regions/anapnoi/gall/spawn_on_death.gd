@@ -11,8 +11,9 @@ func _ready() -> void:
 func death_effects():
 	var summon_instance = ability_handler.make_summon(summon, 
 	global_position, 
-	2,
-	ability_handler.owner.max_health * summon_health)
+	2)
+	summon_instance.max_health = ability_handler.owner.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
+	summon_instance.health = summon_instance.max_health
 	summon_instance.ability_handler.inherited_damage = ability_handler.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
 	summon_instance.summoned = ability_handler.owner.summoned
 	get_node("/root/Main/Entities").add_child(summon_instance)

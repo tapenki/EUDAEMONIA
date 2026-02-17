@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gupaoxkbqq1e"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_mdyec"]
+[ext_resource type="Script" uid="uid://0wnfof1v0cti" path="res://regions/aporia/wall_entity.gd" id="1_lokmr"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_2ntoc"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_5jmcu"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_hg44d"]
@@ -119,7 +119,7 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_mdyec")
+script = ExtResource("1_lokmr")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")

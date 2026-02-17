@@ -202,7 +202,7 @@ msgid "unlock_cost"
 msgstr "Price: [1] Nous"
 
 msgid "dark_unlock_cost"
-msgstr "Dark Price: [25] Max Health"
+msgstr "Dark Price: [40] Max Health"
 
 msgid "learned"
 msgstr "Learned"
@@ -530,6 +530,12 @@ msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 msgid "dark_harvest_description"
 msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes dealing [outline_size=10]+[0.2xALLYMAXHP]x[LEVEL][/outline_size] damage."
 
+msgid "soul_preservation_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Soul Preservation[/outline_color]"
+
+msgid "soul_preservation_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Army of the Dead[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Last elite entity reconstituted by [outline_color=#cc00cc]Army of the Dead[/outline_color] is reconstituted once more."
+
 msgid "swift_fate_title"
 msgstr "[outline_color=#cc00cc]Dark Mastery: Swift Fate[/outline_color]"
 
@@ -647,7 +653,7 @@ msgid "greater_health_reward_title"
 msgstr "[outline_color=#dd0000]Reward: Greater Health[/outline_color]"
 
 msgid "greater_health_reward_description"
-msgstr "Gain +[outline_size=10][50][/outline_size] max health and fully recover."
+msgstr "Gain +[outline_size=10][40][/outline_size] max health and fully recover."
 
 msgid "qualia_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"

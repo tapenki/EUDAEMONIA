@@ -7,6 +7,9 @@ extends TextureProgressBar
 @onready var player = $"../../".player
 @onready var ability_handler = player.ability_handler
 
+var button_red = preload("res://ui/button_red.png")
+var button_blue = preload("res://ui/button_blue.png")
+
 func _ready() -> void:
 	ability_handler.damage_taken.connect(damage_taken)
 	ability_handler.healed.connect(healed)
@@ -15,6 +18,10 @@ func _ready() -> void:
 
 func update() -> void:
 	var health_values = ability_handler.get_health(player.health, player.max_health)
+	if max_value <= 0:
+		texture_progress = button_blue
+	else:
+		texture_progress = button_red
 	max_value = health_values["max_health"]
 	value = health_values["health"]
 	damage_bar.max_value = health_values["max_health"]

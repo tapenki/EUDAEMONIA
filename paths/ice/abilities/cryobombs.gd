@@ -12,8 +12,7 @@ func day_start(_day: int) -> void:
 		var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 		var summon_instance = ability_handler.make_summon(bomb, 
 		spawn_position,
-		2,  ## inheritance
-		0) ## health
+		2)  ## inheritance
 		for layer in range(1, 3):
 			summon_instance.set_collision_layer_value(layer, layer != ability_handler.owner.group)
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.2*level

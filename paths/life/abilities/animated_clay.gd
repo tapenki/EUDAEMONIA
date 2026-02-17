@@ -16,8 +16,9 @@ func day_start(_day: int) -> void:
 		var summon_position = entrance_door.global_position + summon_offset.rotated(entrance_door.rotation)
 		var summon_instance = ability_handler.make_summon(summon, 
 		summon_position, 
-		3,  ## inheritance
-		60 * level) ## health
+		3)  ## inheritance
+		summon_instance.max_health *= level
+		summon_instance.health = summon_instance.max_health
 		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.75 + 0.25 * level
 		get_node("/root/Main").spawn_entity(summon_instance)
 

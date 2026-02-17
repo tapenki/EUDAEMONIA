@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://30xuvt24wxqo"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_fhpr0"]
+[ext_resource type="Script" uid="uid://0wnfof1v0cti" path="res://regions/aporia/wall_entity.gd" id="1_3c0bq"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_h6ah0"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_w7v51"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_cqhco"]
@@ -116,12 +116,11 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_fhpr0")
+script = ExtResource("1_3c0bq")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
-health = 40
 
 [node name="AbilityHandler" type="Node2D" parent="." unique_id=2142085385]
 script = ExtResource("2_h6ah0")

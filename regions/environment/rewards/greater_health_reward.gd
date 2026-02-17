@@ -9,7 +9,7 @@ func _on_pressed() -> void:
 		return
 	visible = false
 	var player = get_node("/root/Main/UI").player
-	player.ability_handler.upgrade("bonus_health", 50)
+	player.ability_handler.upgrade("bonus_health", 40)
 	player.recover()
 	get_node("/root/Main").play_sound("Click")
 	get_node("../Particles").emitting = false
