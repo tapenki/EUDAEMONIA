@@ -84,6 +84,10 @@ dark_harvest={
 "deadzone": 0.2,
 "events": []
 }
+bramble_shot={
+"deadzone": 0.2,
+"events": []
+}
 
 [internationalization]
 

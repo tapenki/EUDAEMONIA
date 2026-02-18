@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_u0bgk"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_daaj7"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_owrg1"]
-[ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="5_iuj8c"]
+[ext_resource type="PackedScene" uid="uid://b84j2ldvpmk6t" path="res://paths/ui/trick_mastery_button.tscn" id="5_hlnos"]
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_6nwk6"]
 
 [node name="Life" type="Control" unique_id=1421207014]
@@ -71,15 +71,15 @@ layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "primal_casting"
 
-[node name="WroughtFlesh" parent="Abilities1" unique_id=828295592 instance=ExtResource("4_owrg1")]
-layout_mode = 2
-texture_normal = ExtResource("1_hlnos")
-subject = "wrought_flesh"
-
 [node name="TrailOfThorns" parent="Abilities1" unique_id=306681367 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "trail_of_thorns"
+
+[node name="WroughtFlesh" parent="Abilities1" unique_id=828295592 instance=ExtResource("4_owrg1")]
+layout_mode = 2
+texture_normal = ExtResource("1_hlnos")
+subject = "wrought_flesh"
 
 [node name="Abilities2" type="HBoxContainer" parent="." unique_id=40253273]
 layout_mode = 1
@@ -118,38 +118,13 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Blank1" type="Control" parent="Masteries1" unique_id=962650187]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries1/Blank1" unique_id=1871811951]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_iuj8c")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="Vitalism" parent="Masteries1" unique_id=1995710512 instance=ExtResource("6_6nwk6")]
+[node name="BrambleShot" parent="Masteries1" unique_id=1701464479 instance=ExtResource("5_hlnos")]
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {
-"wrought_flesh": 5
+"primal_casting": 5
 }
-subject = "vitalism"
+subject = "bramble_shot"
 
 [node name="PainWalk" parent="Masteries1" unique_id=1772285392 instance=ExtResource("6_6nwk6")]
 layout_mode = 2
@@ -158,6 +133,14 @@ requires = {
 "trail_of_thorns": 5
 }
 subject = "pain_walk"
+
+[node name="Vitalism" parent="Masteries1" unique_id=1995710512 instance=ExtResource("6_6nwk6")]
+layout_mode = 2
+accessible_texture = ExtResource("1_hlnos")
+requires = {
+"wrought_flesh": 5
+}
+subject = "vitalism"
 
 [node name="Masteries2" type="HBoxContainer" parent="." unique_id=2140592433]
 layout_direction = 2

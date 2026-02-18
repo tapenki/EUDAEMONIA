@@ -120,7 +120,7 @@ func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" 
 	var crits = get_crits(entity, {"base" : 0, "multiplier" : 1}, outgoing_modifiers)
 	damage["crits"] = crits
 	get_damage_dealt(entity, damage, outgoing_modifiers, incoming_modifiers)
-	var damaged = entity.take_damage(damage)
+	var damaged = entity.take_damage(damage, incoming_modifiers)
 	if damaged:
 		damage_dealt.emit(entity, damage)
 		var damage_text = str(int(damage["final"]))

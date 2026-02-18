@@ -437,7 +437,7 @@ msgid "life_title"
 msgstr "[outline_color=#0f9936]Life[/outline_color]"
 
 msgid "life_description"
-msgstr "I'm alive."
+msgstr "Life is a downwards spiral.[br]Smile through the pain."
 
 msgid "primal_casting_title"
 msgstr "[outline_color=#0f9936]Ability: Primal Casting[/outline_color]"
@@ -469,17 +469,23 @@ msgstr "[outline_color=#0f9936]Parability: Animated Clay[/outline_color]"
 msgid "animated_clay_description"
 msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities."
 
-msgid "vitalism_title"
-msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
+msgid "bramble_shot_title"
+msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"
 
-msgid "vitalism_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color][br]You gain [outline_size=10]x[2][/outline_size] health recovery."
+msgid "bramble_shot_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Primal Casting[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] Take [outline_size=10][25][/outline_size] pure damage. Shoot a bramble with [outline_size=10]x[3][/outline_size] damage."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][2][/outline_size] pure damage."
+
+msgid "vitalism_title"
+msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
+
+msgid "vitalism_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color][br]You gain [outline_size=10]x[2][/outline_size] health recovery."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"

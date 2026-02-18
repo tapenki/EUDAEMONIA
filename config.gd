@@ -32,6 +32,7 @@ var base_values = {
 		"precision_movement" : [0, KEY_SHIFT],
 		"pause" : [0, KEY_ESCAPE],
 		"dark_harvest" : [0, KEY_E],
+		"bramble_shot" : [0, KEY_Q],
 	}
 }
 

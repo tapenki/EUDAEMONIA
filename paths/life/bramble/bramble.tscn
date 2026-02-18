@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cbe5ffkla7aw"]
+
+[ext_resource type="Script" uid="uid://cp58ndweda070" path="res://paths/life/bramble/bramble.gd" id="1_c1qbk"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_oahip"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_fqisw"]
+[ext_resource type="Texture2D" uid="uid://dnbbqhbxt3tif" path="res://equipment/weapons/star_blaze/star_bomb.png" id="4_0epdr"]
+[ext_resource type="Script" uid="uid://g3ciujifhff6" path="res://generic/misc/sprite_spin.gd" id="5_qydyc"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_5c2xh"]
+[ext_resource type="Texture2D" uid="uid://hqi8ax5pnxj6" path="res://paths/life/spike.png" id="7_h1icc"]
+[ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="8_rdpve"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="9_23jor"]
+
+[sub_resource type="Curve" id="Curve_p6edf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 20.0
+
+[node name="Bramble" type="Area2D" unique_id=259464798 node_paths=PackedStringArray("ability_handler")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_c1qbk")
+ability_handler = NodePath("AbilityHandler")
+hit_sound = "HurtLight"
+hit_particles = "Quills"
+hit_walls = true
+
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=312084464]
+script = ExtResource("2_oahip")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=815032055 node_paths=PackedStringArray("ability_handler")]
+material = ExtResource("3_fqisw")
+texture = ExtResource("4_0epdr")
+script = ExtResource("5_qydyc")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1029205823]
+z_index = -3
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_5c2xh")
+
+[node name="Particles" type="CPUParticles2D" parent="Sprite" unique_id=1573869171 node_paths=PackedStringArray("ability_handler")]
+show_behind_parent = true
+material = ExtResource("3_fqisw")
+amount = 18
+texture = ExtResource("7_h1icc")
+lifetime = 0.3
+draw_order = 1
+emission_shape = 3
+emission_rect_extents = Vector2(8, 8)
+spread = 0.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_p6edf")
+script = ExtResource("8_rdpve")
+ability_handler = NodePath("../../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=314095168]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." unique_id=1819829524 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("9_23jor")
+wait_time = 2.0
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

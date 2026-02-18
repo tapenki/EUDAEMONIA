@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnbavptfcuftr"]
+[gd_scene format=3 uid="uid://bnbavptfcuftr"]
 
 [ext_resource type="Script" uid="uid://c2qd83mfpa1mv" path="res://equipment/weapons/star_blaze/star_bomb.gd" id="1_17g2o"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_lg4ig"]

@@ -236,12 +236,16 @@ var ability_data = {
 		"script" : preload("res://paths/life/abilities/animated_clay.gd"),
 		"type" : "upgrade"
 	},
-	"vitalism" : {
-		"script" : preload("res://paths/life/abilities/vitalism.gd"),
+	"bramble_shot" : {
+		"script" : preload("res://paths/life/abilities/bramble_shot.gd"),
 		"type" : "mastery"
 	},
 	"pain_walk" : {
 		"script" : preload("res://paths/life/abilities/pain_walk.gd"),
+		"type" : "mastery"
+	},
+	"vitalism" : {
+		"script" : preload("res://paths/life/abilities/vitalism.gd"),
 		"type" : "mastery"
 	},
 	"pressurized_quills" : {
