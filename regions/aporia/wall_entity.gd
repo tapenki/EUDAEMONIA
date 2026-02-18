@@ -1,5 +1,6 @@
 extends Entity
 
+##TODO can spawn inside walls?
 func random_valid_position(tilemap):
 	var cell = tilemap.get_used_cells_by_id(0).pick_random()
 	var offsets = {Vector2i(1, 1) : false, Vector2i(1, 0): false, Vector2i(0, 1): false, Vector2i(0, 0): false}

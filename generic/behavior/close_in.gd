@@ -34,42 +34,48 @@ func _physics_process(_delta):
 			user.animation_player.stop()
 		return
 	
-	## shapecast to proceed to next state
-	var distance = user.global_position.distance_to(state_handler.target.global_position)
-	if distance < distance_margin:
-		var perpendicular = user.global_position.direction_to(state_handler.target.global_position).rotated(PI/2)
+	state_handler.target.set_collision_layer_value(16, true)
+	var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, state_handler.target.global_position)
+	ray_query.collision_mask = 32768
+	var ray_intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
+	state_handler.target.set_collision_layer_value(16, false)
+	
+	var shape_intersections = true
+	
+	if ray_intersection:
+		var perpendicular = user.global_position.direction_to(ray_intersection.position).rotated(PI/2)
 		var cloud = PackedVector2Array([
 			user.global_position + perpendicular * shapecast_radius,
 			user.global_position - perpendicular * shapecast_radius,
-			state_handler.target.global_position + perpendicular * shapecast_radius,
-			state_handler.target.global_position - perpendicular * shapecast_radius,
+			ray_intersection.position + perpendicular * shapecast_radius,
+			ray_intersection.position - perpendicular * shapecast_radius,
 		])
 		var shape_query = PhysicsShapeQueryParameters2D.new()
 		shape_query.shape = ConvexPolygonShape2D.new()
 		shape_query.shape.set_point_cloud(cloud)
 		shape_query.collision_mask = 128
-		var intersections = get_node("/root/Main").physics_space.intersect_shape(shape_query, 1)
-		if not intersections:
-			state_handler.change_state(next)
-			return
+		shape_intersections = get_node("/root/Main").physics_space.intersect_shape(shape_query, 1)
 	
-	## follow path
 	var direction: Vector2
-	
-	var path = get_node("/root/Main").pathfind(user.global_position, state_handler.target.global_position)
-	
-	if path.size() == 0:
-		if user.animation_player.current_animation == "WALK":
-			user.animation_player.stop()
-		return
-	
-	#for i in path:
+	if shape_intersections: ## obstacles in the way, pathfind around them
+		var path = get_node("/root/Main").pathfind(user.global_position, state_handler.target.global_position)
+		if path.size() == 0:
+			if user.animation_player.current_animation == "WALK":
+				user.animation_player.stop()
+			return
+		#for i in path:
 		#var rect = ColorRect.new()
 		#rect.position = i
 		#rect.size = Vector2(4, 4)
 		#node2d.add_child(rect)
-	
-	direction = user.global_position.direction_to(path[0])
+		direction = user.global_position.direction_to(path[0])
+	else: ## no obstacles in the way
+		var distance = user.global_position.distance_to(ray_intersection.position)
+		if distance > distance_margin: ## go towards target
+			direction = user.global_position.direction_to(ray_intersection.position)
+		else: ## proceed to next state
+			state_handler.change_state(next)
+			return
 	
 	var final_speed = user.ability_handler.get_move_speed(speed)
 	var final_velocity = direction * final_speed
