@@ -37,6 +37,7 @@ func _physics_process(_delta):
 	state_handler.target.set_collision_layer_value(16, true)
 	var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, state_handler.target.global_position)
 	ray_query.collision_mask = 32768
+	ray_query.hit_from_inside = true
 	var ray_intersection = get_node("/root/Main").physics_space.intersect_ray(ray_query)
 	state_handler.target.set_collision_layer_value(16, false)
 	
