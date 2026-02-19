@@ -90,19 +90,19 @@ func get_attack_scale(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
 	attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["base"] + modifiers["base"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
-func get_damage_dealt(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "multiplier" : 1}, outgoing_modifiers = true, incoming_modifiers = true):
-	if outgoing_modifiers:
-		modifiers["base"] += inherited_damage["base"]
-		modifiers["multiplier"] *= inherited_damage["multiplier"]
-		damage_dealt_modifiers.emit(entity, modifiers)
-	if entity and incoming_modifiers:
-		entity.ability_handler.damage_taken_modifiers.emit(modifiers)
-	modifiers["final"] = modifiers["base"] * modifiers["multiplier"]
-	if modifiers.has("crits"):
-		modifiers["final"] *= (1 + modifiers["crits"])
+func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "multiplier" : 1}):
+	if not damage.has("skip_output_modifiers"):
+		damage["base"] += inherited_damage["base"]
+		damage["multiplier"] *= inherited_damage["multiplier"]
+		damage_dealt_modifiers.emit(entity, damage)
+	if entity and not damage.has("skip_input_modifiers"):
+		entity.ability_handler.damage_taken_modifiers.emit(damage)
+	damage["final"] = damage["base"] * damage["multiplier"]
+	if damage.has("crits"):
+		damage["final"] *= (1 + damage["crits"])
 
-func get_crits(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "multiplier" : 1}, outgoing_modifiers = true):
-	if outgoing_modifiers:
+func get_crits(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "multiplier" : 1}, skip_output_modifiers = true):
+	if not skip_output_modifiers:
 		modifiers["base"] += inherited_crit_chance["base"]
 		modifiers["multiplier"] *= inherited_crit_chance["multiplier"]
 		crit_chance_modifiers.emit(entity, modifiers)
@@ -113,16 +113,17 @@ func get_crits(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "mult
 		crits += 1
 	return crits
 
-func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" : 1, "direction" : Vector2()}, outgoing_modifiers = true, incoming_modifiers = true, damage_color = Config.get_team_color(owner.group, "secondary")):
+func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" : 1, "direction" : Vector2()}, damage_color = Config.get_team_color(owner.group, "secondary")):
 	damage["entity_source"] = entity_source
 	if entity.health == entity.max_health:
 		damage["first_blood"] = true
-	var crits = get_crits(entity, {"base" : 0, "multiplier" : 1}, outgoing_modifiers)
+	var crits = get_crits(entity, {"base" : 0, "multiplier" : 1}, damage.has("skip_output_modifiers"))
 	damage["crits"] = crits
-	get_damage_dealt(entity, damage, outgoing_modifiers, incoming_modifiers)
-	var damaged = entity.take_damage(damage, incoming_modifiers)
+	get_damage_dealt(entity, damage)
+	var damaged = entity.take_damage(damage)
 	if damaged:
-		damage_dealt.emit(entity, damage)
+		if not damage.has("skip_output_modifiers"):
+			damage_dealt.emit(entity, damage)
 		var damage_text = str(int(damage["final"]))
 		if crits > 0:
 			damage_text += "!"

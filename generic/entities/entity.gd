@@ -51,8 +51,8 @@ func immune(duration: float):
 	if immune_timer.time_left < duration:
 		immune_timer.start(duration)
 
-func take_damage(damage, immune_affected = true):
-	if immune_affected:
+func take_damage(damage):
+	if not damage.has("skip_immunity"):
 		if immune_timer.running:
 			return false
 		else:

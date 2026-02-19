@@ -86,7 +86,6 @@ inherited_crit_chance = {
 "multiplier": 1.0
 }
 is_entity = true
-is_projectile = null
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=161096714]
 material = ExtResource("3_prmdv")

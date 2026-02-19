@@ -4,7 +4,7 @@ var bramble = preload("res://paths/life/bramble/bramble.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("bramble_shot") and event.is_action("bramble_shot"):
-		ability_handler.deal_damage(ability_handler.owner, {"base" : 25, "multiplier" : 1.0}, false, false, Config.get_team_color(1, "tertiary"))
+		ability_handler.deal_damage(ability_handler.owner, {"base" : 25, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		var bullet_instance = ability_handler.make_projectile(bramble, 
 		global_position + direction * 25, 

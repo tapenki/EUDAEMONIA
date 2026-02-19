@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-@export var room = "aporia_entrance_hall"
+@export var room = "vasis_entrance_hall"
 var door = "Entrance0"
 
 var day = 1
@@ -62,7 +62,7 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 
 ## entity spawning
 func scale_enemy_health(health: float):
-	return health * (1 + 0.035 * pow(day-1, 2))
+	return health * (1 + 0.0025 * pow(day-1, 3))
 
 func scale_enemy_damage():
 	return 0.75 + (day * 0.25)

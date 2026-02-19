@@ -13,8 +13,8 @@ var button_gray = preload("res://ui/button.png")
 @onready var reset_button = $"GameMenu/Reset"
 @onready var hud = $"HUD"
 
-var upgrade_points = 100
-var unlock_points = 100
+var upgrade_points = 1
+var unlock_points = 1
 var paths: Array
 
 var challenges: Array

@@ -27,10 +27,10 @@ func damage_taken(damage) -> void:
 	stored_damage += damage["final"]
 
 func timeout():
-	var damage = {"base" : stored_damage, "multiplier" : level*0.1}
+	var damage = {"base" : stored_damage, "multiplier" : level*0.1, "skip_output_modifiers": true, "skip_immunity": true}
 	if swift_fate:
 		damage["multiplier"] *= 1.5
-	ability_handler.deal_damage(ability_handler.owner, damage, false, true, Config.get_team_color(1, "secondary"))
+	ability_handler.deal_damage(ability_handler.owner, damage, Config.get_team_color(1, "secondary"))
 	clear()
 
 func add_level(value):

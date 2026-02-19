@@ -224,7 +224,7 @@ msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][35xLEVEL][/outline_size] health, [outline_size=10]x[0.5xLEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby enemies when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][40xLEVEL][/outline_size] health, [outline_size=10]x[0.5xLEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby enemies when killed."
 
 msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ability: Melt[/outline_color]"
@@ -467,7 +467,7 @@ msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Parability: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[80xLEVEL][/outline_size] health, [outline_size=10]x[0.75+0.25xLEVEL][/outline_size] damage, and your abilities."
 
 msgid "bramble_shot_title"
 msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"

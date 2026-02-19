@@ -1,39 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://wmp0gjc61rqi"]
+[gd_scene format=3 uid="uid://wmp0gjc61rqi"]
 
 [ext_resource type="Script" uid="uid://e36a7r84wcf8" path="res://regions/anapnoi/spike_reticle.gd" id="1_u546l"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_blg4x"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_ftt11"]
 [ext_resource type="Texture2D" uid="uid://d1ks80pffpgtn" path="res://regions/anapnoi/spike_indicator.png" id="3_u546l"]
-[ext_resource type="Script" uid="uid://dy7ist73q37ws" path="res://generic/particles/glow_particles.gd" id="4_blg4x"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_jpvjx"]
-
-[sub_resource type="Curve" id="Curve_0ggbd"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.502092, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_cidvn"]
-curve = SubResource("Curve_0ggbd")
+[ext_resource type="Script" uid="uid://vutmspvyqbkx" path="res://generic/particles/cpu_glow_particles.gd" id="5_u546l"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
 _data = [Vector2(0, 0.6516854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_ate26"]
-curve = SubResource("Curve_mtknr")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jhupx"]
-resource_local_to_scene = true
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_ate26")
-alpha_curve = SubResource("CurveTexture_cidvn")
+[sub_resource type="Gradient" id="Gradient_aeo5i"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpvjx"]
 radius = 12.0
 
-[node name="SpikeReticle" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+[node name="SpikeReticle" type="Area2D" unique_id=1670959010 node_paths=PackedStringArray("ability_handler")]
 visibility_layer = 129
 script = ExtResource("1_u546l")
 ability_handler = NodePath("AbilityHandler")
@@ -42,33 +27,32 @@ hit_particles = ""
 crit_particles = ""
 hit_enabled = false
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=650856352]
 script = ExtResource("2_blg4x")
 is_projectile = true
 
-[node name="Sprite" type="GPUParticles2D" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1170847227 node_paths=PackedStringArray("ability_handler")]
+z_index = -1
 material = ExtResource("2_ftt11")
 amount = 6
 texture = ExtResource("3_u546l")
 lifetime = 0.5
-visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_jhupx")
-script = ExtResource("4_blg4x")
+draw_order = 1
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_mtknr")
+color_ramp = SubResource("Gradient_aeo5i")
+script = ExtResource("5_u546l")
 ability_handler = NodePath("../AbilityHandler")
 
-[node name="Lifetime" type="Timer" parent="Sprite"]
-wait_time = 0.7
-
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=628055892]
 z_index = -3
 texture = ExtResource("5_jpvjx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1159327079]
 shape = SubResource("CircleShape2D_jpvjx")
 
-[node name="Lifetime" type="Timer" parent="."]
+[node name="Lifetime" type="Timer" parent="." unique_id=958342644]
 autostart = true
 
-[connection signal="timeout" from="Sprite/Lifetime" to="Sprite" method="_on_lifetime_timeout"]
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
