@@ -9,7 +9,7 @@ func _ready() -> void:
 	ability_handler.damage_dealt.connect(damage_dealt)
 
 func crit_chance_modifiers(_entity, modifiers) -> void:
-	modifiers["base"] += 5 * level
+	modifiers["base"] += 10 * level
 
 func damage_dealt(entity, damage) -> void:
 	var max_chains = 2

@@ -116,7 +116,7 @@ hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 80
 health = 80.0
-immune_duration = 0.2
+immune_duration = 0.25
 
 [node name="AbilityHandler" type="Node2D" parent="." unique_id=1423322263]
 script = ExtResource("2_d1k6k")

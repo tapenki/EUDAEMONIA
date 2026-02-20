@@ -19,7 +19,7 @@ func day_start(_day: int) -> void:
 		3)  ## inheritance
 		summon_instance.max_health *= level
 		summon_instance.health = summon_instance.max_health
-		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.75 + 0.25 * level
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 + 0.5 * level
 		get_node("/root/Main").spawn_entity(summon_instance)
 
 func inherit(_handler, _tier):

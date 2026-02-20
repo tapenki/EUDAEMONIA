@@ -101,9 +101,7 @@ subject = "quill_spray"
 [node name="AnimatedClay" parent="Abilities2" unique_id=1592879944 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
-cost = 2
 subject = "animated_clay"
-tag = "greater_upgrade_cost"
 
 [node name="Masteries1" type="HBoxContainer" parent="." unique_id=100399297]
 layout_direction = 2

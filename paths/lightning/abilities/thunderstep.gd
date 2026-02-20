@@ -8,7 +8,7 @@ func move_speed_modifiers(modifiers) -> void:
 	modifiers["base"] += 40 * level
 
 func immune_duration_modifiers(modifiers) -> void:
-	modifiers["base"] += 0.2 * level
+	modifiers["base"] += 0.25 * level
 
 func inherit(handler, tier):
 	if tier < 3:

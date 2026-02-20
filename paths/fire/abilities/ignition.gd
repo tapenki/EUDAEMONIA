@@ -7,4 +7,4 @@ func damage_dealt(entity, damage) -> void:
 	var odds = {"base": 33, "multiplier": 1.0}
 	odds["crits"] = damage["crits"]
 	if ability_handler.roll_chance(odds):
-		ability_handler.apply_status(entity.ability_handler, "burn", level * 2)
+		ability_handler.apply_status(entity.ability_handler, "burn", level * 3)

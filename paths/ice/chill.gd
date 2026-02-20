@@ -20,7 +20,7 @@ func _ready() -> void:
 	ability_handler.speed_scale_modifiers.connect(speed_scale_modifiers)
 
 func speed_scale_modifiers(modifiers) -> void:
-	modifiers["multiplier"] *= 0.5
+	modifiers["multiplier"] *= 0.75
 
 func add_level(value):
 	if value > 0:

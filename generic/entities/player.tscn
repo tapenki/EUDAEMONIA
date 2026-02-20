@@ -77,7 +77,7 @@ hurt_sound = "HurtHeavy"
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
 health = 40.0
-immune_duration = 0.2
+immune_duration = 0.25
 
 [node name="AbilityHandler" type="Node2D" parent="." unique_id=636127818]
 script = ExtResource("2_m6exy")

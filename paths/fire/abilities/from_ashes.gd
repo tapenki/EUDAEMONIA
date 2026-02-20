@@ -25,7 +25,7 @@ func before_self_death(modifiers) -> void:
 		ability_handler.owner.immune(ability_handler.get_immune_duration({"base" : ability_handler.owner.immune_duration, "multiplier" : 4}))
 		if fiery_rebirth:
 			for target in ability_handler.area_targets(global_position):
-				var burn = ability_handler.apply_status(target.ability_handler, "burn", level * 5)
+				var burn = ability_handler.apply_status(target.ability_handler, "burn", level * 10)
 				if burn:
 					burn.mult_level(2)
 			get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Fire"), 16, global_position, 4, Config.get_team_color(ability_handler.owner.group, "secondary"))

@@ -96,9 +96,7 @@ alignment = 1
 [node name="BlueNeedle" parent="Abilities2" unique_id=244962004 instance=ExtResource("4_3dvcy")]
 layout_mode = 2
 texture_normal = ExtResource("1_0h8wn")
-cost = 2
 subject = "blue_needle"
-tag = "greater_upgrade_cost"
 
 [node name="Cryobombs" parent="Abilities2" unique_id=1950595630 instance=ExtResource("4_3dvcy")]
 layout_mode = 2

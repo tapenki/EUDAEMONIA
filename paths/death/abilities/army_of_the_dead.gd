@@ -14,9 +14,9 @@ func entity_death(dying_entity: Entity):
 		2)  ## inheritance
 		if summon_instance.max_health > 100:
 			preserved_elite = dying_entity.scene_file_path
-		summon_instance.max_health *= 0.4 + 0.4 * level
+		summon_instance.max_health *= 0.5 + 0.5 * level
 		summon_instance.health = summon_instance.max_health
-		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.4 + 0.4 * level
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 + 0.5 * level
 		get_node("/root/Main").spawn_entity(summon_instance)
 
 func day_start(_day: int) -> void:
@@ -25,9 +25,9 @@ func day_start(_day: int) -> void:
 		global_position,
 		2)  ## inheritance
 		summon_instance.global_position = summon_instance.random_valid_position(get_node("/root/Main").room_node.get_node("TileMap"))
-		summon_instance.max_health *= 0.4 + 0.4 * level
+		summon_instance.max_health *= 0.5 + 0.5 * level
 		summon_instance.health = summon_instance.max_health
-		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.4 + 0.4 * level
+		summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 + 0.5 * level
 		get_node("/root/Main").spawn_entity(summon_instance)
 
 func inherit(_handler, _tier):

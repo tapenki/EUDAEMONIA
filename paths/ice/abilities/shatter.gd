@@ -6,7 +6,7 @@ func _ready() -> void:
 	get_node("/root/Main").entity_death.connect(entity_death)
 	
 func entity_death(dying_entity: Entity):
-	var damage_mult = 0.5 * level
+	var damage_mult = level
 	var total = 3
 	if dying_entity.summoned:
 		total = 1
