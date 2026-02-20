@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bj4okui2tg38g"]
+[gd_scene format=3 uid="uid://bj4okui2tg38g"]
 
 [ext_resource type="Script" uid="uid://gogirhfnitr1" path="res://menu_handler.gd" id="1_saq78"]
 [ext_resource type="Script" uid="uid://c3jb3y5t7oy78" path="res://saver_menu.gd" id="2_8uw0o"]
@@ -36,18 +36,18 @@ shadow_offset = Vector2(3, 3)
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=380431331]
 process_mode = 1
 script = ExtResource("1_saq78")
 
-[node name="Saver" type="Node" parent="."]
+[node name="Saver" type="Node" parent="." unique_id=1865676760]
 script = ExtResource("2_8uw0o")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=286808327]
 process_mode = 3
 script = ExtResource("2_saq78")
 
-[node name="Backdrop" type="ColorRect" parent="UI"]
+[node name="Backdrop" type="ColorRect" parent="UI" unique_id=1008107848]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -56,7 +56,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TransitionFade" type="ColorRect" parent="UI"]
+[node name="TransitionFade" type="ColorRect" parent="UI" unique_id=759904948]
 z_index = 25
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,7 +66,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="MainMenu" type="Control" parent="UI"]
+[node name="MainMenu" type="Control" parent="UI" unique_id=218847664]
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -83,7 +83,7 @@ grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="UI/MainMenu"]
+[node name="Title" type="Label" parent="UI/MainMenu" unique_id=530360623]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -97,7 +97,7 @@ text = "EUDAEMONIA"
 label_settings = SubResource("LabelSettings_c3fg2")
 horizontal_alignment = 1
 
-[node name="Gear1" type="TextureRect" parent="UI/MainMenu/Title"]
+[node name="Gear1" type="TextureRect" parent="UI/MainMenu/Title" unique_id=475036267]
 modulate = Color(0, 0, 0.09803922, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -117,7 +117,7 @@ texture = ExtResource("3_ai24q")
 script = ExtResource("4_qby1g")
 rotation_speed = -0.5
 
-[node name="Gear2" type="TextureRect" parent="UI/MainMenu/Title"]
+[node name="Gear2" type="TextureRect" parent="UI/MainMenu/Title" unique_id=1854470123]
 modulate = Color(0, 0, 0.39215687, 1)
 show_behind_parent = true
 layout_mode = 1
@@ -137,7 +137,7 @@ texture = ExtResource("3_ai24q")
 script = ExtResource("4_qby1g")
 rotation_speed = 0.5
 
-[node name="WordWheel1" type="Control" parent="UI/MainMenu/Title"]
+[node name="WordWheel1" type="Control" parent="UI/MainMenu/Title" unique_id=2075690124]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -154,7 +154,7 @@ text = "MAYTHEWORLDSEEABETTERFATE"
 text_color = Color(0, 0, 0.5882353, 1)
 outline_color = Color(0, 0, 0.19607843, 1)
 
-[node name="WordWheel2" type="Control" parent="UI/MainMenu/Title"]
+[node name="WordWheel2" type="Control" parent="UI/MainMenu/Title" unique_id=920049171]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 8
@@ -169,7 +169,7 @@ text = "MAYETERNITYBEJOYOUS"
 text_color = Color(0, 0.29411766, 1, 1)
 outline_color = Color(0, 0, 0.5882353, 1)
 
-[node name="Version" type="Label" parent="UI/MainMenu"]
+[node name="Version" type="Label" parent="UI/MainMenu" unique_id=860075322]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -183,7 +183,7 @@ text = "ver"
 label_settings = SubResource("LabelSettings_4xnvd")
 script = ExtResource("6_u6vjd")
 
-[node name="Settings" type="Button" parent="UI/MainMenu"]
+[node name="Settings" type="Button" parent="UI/MainMenu" unique_id=1035941010]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -203,7 +203,7 @@ theme = ExtResource("7_swr0i")
 text = "settings"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Settings"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Settings" unique_id=1482164808]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -219,7 +219,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Start" type="Button" parent="UI/MainMenu"]
+[node name="Start" type="Button" parent="UI/MainMenu" unique_id=658864939]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -239,7 +239,7 @@ theme = ExtResource("7_swr0i")
 text = "start_game"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Start"]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Start" unique_id=1882782894]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -255,7 +255,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Challenges" type="Control" parent="UI/MainMenu"]
+[node name="Challenges" type="Control" parent="UI/MainMenu" unique_id=635966473]
 anchors_preset = 0
 offset_left = 525.0
 offset_top = 465.0
@@ -263,7 +263,7 @@ offset_right = 750.0
 offset_bottom = 590.0
 mouse_filter = 2
 
-[node name="Background" type="NinePatchRect" parent="UI/MainMenu/Challenges"]
+[node name="Background" type="NinePatchRect" parent="UI/MainMenu/Challenges" unique_id=134659274]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -282,7 +282,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="UI/MainMenu/Challenges"]
+[node name="Label" type="RichTextLabel" parent="UI/MainMenu/Challenges" unique_id=2120573025]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -301,7 +301,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Container" type="HBoxContainer" parent="UI/MainMenu/Challenges"]
+[node name="Container" type="HBoxContainer" parent="UI/MainMenu/Challenges" unique_id=1395886151]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -316,68 +316,68 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="LastingWounds" parent="UI/MainMenu/Challenges/Container" instance=ExtResource("12_h1gbt")]
+[node name="LastingWounds" parent="UI/MainMenu/Challenges/Container" unique_id=935283388 instance=ExtResource("12_h1gbt")]
 layout_mode = 2
 subject = "lasting_wounds"
 
-[node name="BurningHours" parent="UI/MainMenu/Challenges/Container" instance=ExtResource("12_h1gbt")]
+[node name="BurningHours" parent="UI/MainMenu/Challenges/Container" unique_id=1069382427 instance=ExtResource("12_h1gbt")]
 layout_mode = 2
 subject = "burning_hours"
 
-[node name="EraWink" parent="UI/MainMenu/Challenges/Container" instance=ExtResource("12_h1gbt")]
+[node name="EraWince" parent="UI/MainMenu/Challenges/Container" unique_id=727060304 instance=ExtResource("12_h1gbt")]
 layout_mode = 2
-subject = "era_wink"
+subject = "era_wince"
 
-[node name="Settings" parent="UI" instance=ExtResource("13_km3bq")]
+[node name="Settings" parent="UI" unique_id=1701143465 instance=ExtResource("13_km3bq")]
 
-[node name="Audio" type="Node" parent="."]
+[node name="Audio" type="Node" parent="." unique_id=1072441119]
 process_mode = 3
 
-[node name="ShootLight" type="AudioStreamPlayer" parent="Audio"]
+[node name="ShootLight" type="AudioStreamPlayer" parent="Audio" unique_id=1295125967]
 stream = ExtResource("8_m2y5l")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="DeathLight" type="AudioStreamPlayer" parent="Audio"]
+[node name="DeathLight" type="AudioStreamPlayer" parent="Audio" unique_id=1232316417]
 stream = ExtResource("9_imjy1")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="HitLight" type="AudioStreamPlayer" parent="Audio"]
+[node name="HitLight" type="AudioStreamPlayer" parent="Audio" unique_id=1656805347]
 stream = ExtResource("10_u5051")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="HurtLight" type="AudioStreamPlayer" parent="Audio"]
+[node name="HurtLight" type="AudioStreamPlayer" parent="Audio" unique_id=807833582]
 stream = ExtResource("11_v2sba")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="HurtHeavy" type="AudioStreamPlayer" parent="Audio"]
+[node name="HurtHeavy" type="AudioStreamPlayer" parent="Audio" unique_id=1457100498]
 stream = ExtResource("12_ai24q")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="Leap" type="AudioStreamPlayer" parent="Audio"]
+[node name="Leap" type="AudioStreamPlayer" parent="Audio" unique_id=380586970]
 stream = ExtResource("13_qby1g")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="Explosion" type="AudioStreamPlayer" parent="Audio"]
+[node name="Explosion" type="AudioStreamPlayer" parent="Audio" unique_id=1280380007]
 stream = ExtResource("14_04soa")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="Completion" type="AudioStreamPlayer" parent="Audio"]
+[node name="Completion" type="AudioStreamPlayer" parent="Audio" unique_id=986225921]
 stream = ExtResource("21_saq78")
 volume_db = -5.0
 bus = &"SFX"
 
-[node name="Click" type="AudioStreamPlayer" parent="Audio"]
+[node name="Click" type="AudioStreamPlayer" parent="Audio" unique_id=344612684]
 stream = ExtResource("22_8uw0o")
 bus = &"SFX"
 
-[node name="Error" type="AudioStreamPlayer" parent="Audio"]
+[node name="Error" type="AudioStreamPlayer" parent="Audio" unique_id=1615831223]
 stream = ExtResource("23_ql5ya")
 bus = &"SFX"
 

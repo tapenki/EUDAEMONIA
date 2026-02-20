@@ -165,7 +165,7 @@ subject = "pressurized_quills"
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {
-"animated_clay": 3
+"animated_clay": 5
 }
 subject = "multimold"
 

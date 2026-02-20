@@ -176,10 +176,10 @@ msgstr "[outline_color=#666666]Challenge: Burning Hours[/outline_color]"
 msgid "burning_hours_description"
 msgstr "[outline_size=10]Every [60] seconds:[/outline_size] A day passes."
 
-msgid "era_wink_title"
-msgstr "[outline_color=#666666]Challenge: Era Wink[/outline_color]"
+msgid "era_wince_title"
+msgstr "[outline_color=#666666]Challenge: Era Wince[/outline_color]"
 
-msgid "era_wink_description"
+msgid "era_wince_description"
 msgstr "Time is [outline_size=10]x[1.25][/outline_size] faster."
 
 # paths
@@ -321,7 +321,7 @@ msgid "glacial_rail_title"
 msgstr "[outline_color=#0000ff]Mastery: Glacial Rail[/outline_color]"
 
 msgid "glacial_rail_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color][br]Projectiles gain [outline_size=10]x[1.5][/outline_size] speed."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color][br]Projectiles gain [outline_size=10]x[1.5][/outline_size] speed."
 
 msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
@@ -497,7 +497,7 @@ msgid "multimold_title"
 msgstr "[outline_color=#0f9936]Mastery: Multimold[/outline_color]"
 
 msgid "multimold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][3][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
 
 # death
 msgid "death_title"
@@ -559,6 +559,12 @@ msgstr "[outline_color=#cc00cc]Dark Mastery: Osteophalanx[/outline_color]"
 
 msgid "osteophalanx_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
+
+msgid "bad_crop_title"
+msgstr "[outline_color=#cc00cc]Dark Mastery: Bad Crop[/outline_color]"
+
+msgid "bad_crop_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Dark Harvest[/outline_color][br][outline_color=#cc00cc]Dark Harvest[/outline_color] explosion applies [outline_size=10][6][/outline_size] doom."
 
 msgid "doom_title"
 msgstr "[outline_color=#cc00cc]Notes: Doom[/outline_color]"

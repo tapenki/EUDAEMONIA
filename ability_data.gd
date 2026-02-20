@@ -60,8 +60,8 @@ var ability_data = {
 		"script" : preload("res://challenges/burning_hours.gd"),
 		"type" : "challenge"
 	},
-	"era_wink" : {
-		"script" : preload("res://challenges/era_wink.gd"),
+	"era_wince" : {
+		"script" : preload("res://challenges/era_wince.gd"),
 		"type" : "challenge"
 	},
 	#endregion
@@ -296,6 +296,10 @@ var ability_data = {
 	},
 	"osteophalanx" : {
 		"script" : preload("res://paths/death/abilities/osteophalanx.gd"),
+		"type" : "mastery"
+	},
+	"bad_crop" : {
+		"script" : preload("res://paths/death/abilities/bad_crop.gd"),
 		"type" : "mastery"
 	},
 	#endregion

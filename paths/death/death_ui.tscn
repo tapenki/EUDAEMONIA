@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="3_vlamy"]
 [ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/death/black.png" id="4_xpvhb"]
 [ext_resource type="PackedScene" uid="uid://bmsbb262j11w7" path="res://paths/ui/trick_upgrade_button.tscn" id="5_4llcc"]
-[ext_resource type="Texture2D" uid="uid://cgujkskmg6j61" path="res://paths/ui/dark_blank.png" id="5_g1eiv"]
 [ext_resource type="PackedScene" uid="uid://d3wex0msyo1yg" path="res://paths/ui/dark_mastery_button.tscn" id="6_x8qv0"]
 [ext_resource type="Texture2D" uid="uid://cell330b8j08n" path="res://paths/death/dark_black.png" id="7_4llcc"]
 
@@ -166,30 +165,14 @@ requires = {
 }
 subject = "osteophalanx"
 
-[node name="Blank3" type="Control" parent="Masteries2" unique_id=1983955406]
-custom_minimum_size = Vector2(60, 60)
+[node name="BadCrop" parent="Masteries2" unique_id=1818882751 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
-mouse_filter = 2
-
-[node name="Blanksprite" type="NinePatchRect" parent="Masteries2/Blank3" unique_id=1325785667]
-self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_g1eiv")
-patch_margin_left = 18
-patch_margin_top = 18
-patch_margin_right = 18
-patch_margin_bottom = 18
+accessible_texture = ExtResource("7_4llcc")
+requires = {
+"dark_harvest": 5
+}
+subject = "bad_crop"
+extras = ["doom"]
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
