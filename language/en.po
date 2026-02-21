@@ -467,7 +467,7 @@ msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[80xLEVEL][/outline_size] health, [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] damage, and your abilities."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] damage, and your abilities."
 
 msgid "bramble_shot_title"
 msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"

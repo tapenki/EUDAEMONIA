@@ -114,8 +114,8 @@ script = ExtResource("1_wxecl")
 ability_handler = NodePath("AbilityHandler")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 80
-health = 80.0
+max_health = 60
+health = 60.0
 immune_duration = 0.25
 
 [node name="AbilityHandler" type="Node2D" parent="." unique_id=1423322263]
