@@ -212,7 +212,7 @@ msgid "fire_title"
 msgstr "[outline_color=#ff0000]Fire[/outline_color]"
 
 msgid "fire_description"
-msgstr "Set people on fire yay !!!"
+msgstr "The very hungry fire.[br]Unexpired phenomena."
 
 msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ability: Ignition[/outline_color]"
@@ -364,7 +364,7 @@ msgid "lightning_title"
 msgstr "[outline_color=#a87e00]Lightning[/outline_color]"
 
 msgid "lightning_description"
-msgstr "i love electricity."
+msgstr "Unexplained phenomena.[br]Lightning tastes better than key."
 
 msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
@@ -437,7 +437,7 @@ msgid "life_title"
 msgstr "[outline_color=#0f9936]Life[/outline_color]"
 
 msgid "life_description"
-msgstr "Life is a downwards spiral.[br]Smile through the pain."
+msgstr "As the years go by life will never die.[br]Smile through the pain."
 
 msgid "primal_casting_title"
 msgstr "[outline_color=#0f9936]Ability: Primal Casting[/outline_color]"
@@ -504,7 +504,7 @@ msgid "death_title"
 msgstr "[outline_color=#cc00cc]Death[/outline_color]"
 
 msgid "death_description"
-msgstr "I'm dead."
+msgstr "It's time to die your life.[br] It's time for life to die."
 
 msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
