@@ -87,7 +87,7 @@ msgid "stats_title"
 msgstr "Base Stats"
 
 msgid "stats_description"
-msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[360][/outline_size].""
+msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[320][/outline_size].""
 
 msgid "defeated"
 msgstr "died :("
@@ -102,6 +102,24 @@ msgstr "{attack} to attack."
 
 msgid "challenges"
 msgstr "Challenges"
+
+msgid "lasting_wounds_title"
+msgstr "[outline_color=#666666]Challenge: Lasting Wounds[/outline_color]"
+
+msgid "lasting_wounds_description"
+msgstr "[outline_size=10]Upon taking damage from an enemy:[/outline_size] Lose [outline_size=10][5][/outline_size] max health."
+
+msgid "burning_hours_title"
+msgstr "[outline_color=#666666]Challenge: Burning Hours[/outline_color]"
+
+msgid "burning_hours_description"
+msgstr "[outline_size=10]Every [30] seconds:[/outline_size] A day passes."
+
+msgid "era_wince_title"
+msgstr "[outline_color=#666666]Challenge: Era Wince[/outline_color]"
+
+msgid "era_wince_description"
+msgstr "Time is [outline_size=10]x[1.3][/outline_size] faster."
 
 # equipment
 
@@ -161,26 +179,6 @@ msgid "cursemail_description"
 msgstr "Damage taken reduced to [outline_size=10]x[0.5][/outline_size].[br][outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
 
 # tricks
-
-# challenges
-
-msgid "lasting_wounds_title"
-msgstr "[outline_color=#666666]Challenge: Lasting Wounds[/outline_color]"
-
-msgid "lasting_wounds_description"
-msgstr "[outline_size=10]Upon taking damage from an enemy:[/outline_size] Lose [outline_size=10][1][/outline_size] max health."
-
-msgid "burning_hours_title"
-msgstr "[outline_color=#666666]Challenge: Burning Hours[/outline_color]"
-
-msgid "burning_hours_description"
-msgstr "[outline_size=10]Every [60] seconds:[/outline_size] A day passes."
-
-msgid "era_wince_title"
-msgstr "[outline_color=#666666]Challenge: Era Wince[/outline_color]"
-
-msgid "era_wince_description"
-msgstr "Time is [outline_size=10]x[1.25][/outline_size] faster."
 
 # paths
 msgid "upgrade_point_counter"

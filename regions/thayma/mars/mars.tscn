@@ -149,12 +149,12 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack" type="Node" parent="StateHandler" unique_id=700393318 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_a5mce")
-speed = 500
+speed = 450
 next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=1581309372 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_77vvh")
-wait_time = 0.45
+wait_time = 0.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

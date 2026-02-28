@@ -16,7 +16,7 @@ func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	if direction: #and not knockback_timer.running:
 		still = false
-		var speed = ability_handler.get_move_speed(360)
+		var speed = ability_handler.get_move_speed(320)
 		if Input.is_action_pressed("precision_movement"):
 			speed = min(speed, 200 / ability_handler.speed_scale)
 		velocity = lerp(velocity, direction * speed, 0.2)

@@ -148,7 +148,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack1" type="Node" parent="StateHandler" unique_id=2043866931 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_1qawn")
-speed = 500
+speed = 450
 next = NodePath("../PrepareAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack1" unique_id=2074946102 node_paths=PackedStringArray("ability_handler")]
@@ -172,7 +172,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="DashAttack2" type="Node" parent="StateHandler" unique_id=35770393 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_1qawn")
-speed = 500
+speed = 450
 next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack2" unique_id=1316451821 node_paths=PackedStringArray("ability_handler")]

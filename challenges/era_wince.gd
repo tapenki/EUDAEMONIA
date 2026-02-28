@@ -1,7 +1,7 @@
 extends Ability
 
 func _ready() -> void:
-	Engine.time_scale = 1.25
+	Engine.time_scale = 1.3
 
 func inherit(_handler, _tier):
 	return
