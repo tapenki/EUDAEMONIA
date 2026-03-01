@@ -252,7 +252,7 @@ msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
 
 msgid "undying_flames_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Reconstitute it."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][LEVEL][/outline_size] pure damage and reconstitute it."
 
 msgid "white_hot_title"
 msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"

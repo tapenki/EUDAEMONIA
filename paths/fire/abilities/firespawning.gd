@@ -27,6 +27,7 @@ func day_start(_day: int) -> void:
 
 func entity_death(dying_entity: Entity):
 	if undying_flames and dying_entity.scene_file_path == "res://paths/fire/flaming_skull/flaming_skull.tscn":
+		ability_handler.deal_damage(ability_handler.owner, {"base" : level, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 		spawn(dying_entity.global_position, 1)
 
 func inherit(_handler, _tier):
