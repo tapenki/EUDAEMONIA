@@ -19,6 +19,8 @@ var door = "Entrance0"
 var day = 1
 var day_started = false
 
+var loop = 0
+
 var enemy_queue: Array
 
 var game_over: bool
@@ -62,7 +64,7 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 
 ## entity spawning
 func scale_enemy_health(health: float):
-	return health * (1 + 0.05 * pow(day-1, 2))
+	return health * (1 + 0.04 * pow(day-1, 2 + loop))
 
 func scale_enemy_damage():
 	return 0.75 + (day * 0.25)

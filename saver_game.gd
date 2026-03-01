@@ -36,6 +36,7 @@ func write_run():
 	var save_data = {
 		"version" : ProjectSettings.get_setting("application/config/version"),
 		"day" : get_node("/root/Main").day,
+		"loop" : get_node("/root/Main").loop,
 		"room" : get_node("/root/Main").room,
 		"door" : get_node("/root/Main").door,
 		"unlock_points" : get_node("/root/Main/UI").unlock_points,
@@ -58,6 +59,7 @@ func read_run():
 	if save_data["version"] != ProjectSettings.get_setting("application/config/version"):
 		return false
 	get_node("/root/Main").day = save_data["day"]
+	get_node("/root/Main").loop = save_data["loop"]
 	get_node("/root/Main").room = save_data["room"]
 	get_node("/root/Main").door = save_data["door"]
 	#get_node("/root/Main/UI").toggle_main_menu()
