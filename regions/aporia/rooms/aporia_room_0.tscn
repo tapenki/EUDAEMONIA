@@ -24,7 +24,7 @@ autostart = true
 next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1891663195]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave1" unique_id=767726727]
@@ -46,7 +46,7 @@ entity = "breaker"
 script = ExtResource("2_pmpjp")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1258467060]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave2" unique_id=1156313984]

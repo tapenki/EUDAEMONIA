@@ -24,7 +24,7 @@ autostart = true
 next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1770489961]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnSpitball1" type="Node2D" parent="Waves/Wave1" unique_id=185000223]
@@ -41,7 +41,7 @@ entity = "spitball"
 script = ExtResource("2_8gnxx")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=2046399850]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnSpitball1" type="Node2D" parent="Waves/Wave2" unique_id=2074149808]

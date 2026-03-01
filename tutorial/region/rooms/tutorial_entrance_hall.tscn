@@ -34,7 +34,7 @@ script = ExtResource("2_6pugm")
 next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=2014975885]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnLeaper1" type="Node2D" parent="Waves/Wave1" unique_id=2094261148]
@@ -61,7 +61,7 @@ entity = "leaper"
 script = ExtResource("2_6pugm")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=763816770]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnLeaper1" type="Node2D" parent="Waves/Wave2" unique_id=266318826]

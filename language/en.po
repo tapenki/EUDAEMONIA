@@ -648,7 +648,7 @@ msgstr "grrgghn >:("
 # rewards
 
 msgid "ascension_diploma_title"
-msgstr "[outline_color=#aa7711]Ascension Diploma[/outline_color]"
+msgstr "[outline_color=#11dd11]Ascension Diploma[/outline_color]"
 
 msgid "ascension_diploma_description"
 msgstr "Tutorial complete."

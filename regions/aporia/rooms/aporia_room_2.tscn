@@ -24,7 +24,7 @@ autostart = true
 next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1056552162]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnBreaker1" type="Node2D" parent="Waves/Wave1" unique_id=2046168363]
@@ -42,7 +42,7 @@ script = ExtResource("2_fkx88")
 next = NodePath("../Wave3")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1040031927]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave2" unique_id=481874978]
@@ -69,7 +69,7 @@ entity = "mold"
 script = ExtResource("2_fkx88")
 
 [node name="Timer" type="Timer" parent="Waves/Wave3" unique_id=990939196]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnLeaker1" type="Node2D" parent="Waves/Wave3" unique_id=644878501]

@@ -17,7 +17,8 @@ func start():
 
 func proceed():
 	get_node("/root/Main").wave_cleared.disconnect(wave_cleared)
-	next.start()
+	if next:
+		next.start()
 
 func wave_cleared():
 	if not next:

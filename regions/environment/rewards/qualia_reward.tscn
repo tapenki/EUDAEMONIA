@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bu475fp0w7g3"]
 
-[ext_resource type="Texture2D" uid="uid://dgs40kj138avg" path="res://paths/ice/blue.png" id="1_j5yxn"]
+[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://regions/environment/rewards/blue_reward.png" id="1_j5yxn"]
 [ext_resource type="Script" uid="uid://cowdul41mjeix" path="res://regions/environment/rewards/qualia_reward.gd" id="2_j5yxn"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_isuvw"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_mxami"]

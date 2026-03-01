@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjq1vw8jim0k5"]
 
-[ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_1kdyn"]
+[ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://regions/environment/rewards/red_reward.png" id="1_1kdyn"]
 [ext_resource type="Script" uid="uid://de7ou8e61qc8e" path="res://regions/environment/rewards/greater_health_reward.gd" id="2_1kdyn"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_w5mxd"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_4a4t6"]

@@ -24,7 +24,7 @@ autostart = true
 next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=601017480]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnLeaker1" type="Node2D" parent="Waves/Wave1" unique_id=294181291]
@@ -51,7 +51,7 @@ entity = "mold"
 script = ExtResource("2_hbpaf")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1478149031]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnLeaker1" type="Node2D" parent="Waves/Wave2" unique_id=1402957166]

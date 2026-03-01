@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://7gmj80sawoef"]
 
 [ext_resource type="TileSet" uid="uid://bgy68txdpxat8" path="res://regions/olethros/rooms/olethros_wall_tileset.tres" id="1_op0v8"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_bieg0"]
+[ext_resource type="Script" uid="uid://c1tyo5jsp5bvj" path="res://regions/environment/encounters/boss_wave.gd" id="2_kxdll"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="2_vrt6i"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_oqujk"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_hy2kp"]
@@ -20,12 +20,12 @@ navigation_enabled = false
 [node name="Waves" type="Node2D" parent="." unique_id=908114306]
 
 [node name="Wave1" type="Node2D" parent="Waves" unique_id=158199357 node_paths=PackedStringArray("next")]
-script = ExtResource("2_bieg0")
+script = ExtResource("2_kxdll")
 autostart = true
 next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1049584887]
-wait_time = 5.0
+wait_time = 7.5
 one_shot = true
 
 [node name="SpawnHarbinger" type="Node2D" parent="Waves/Wave1" unique_id=323051399]
@@ -34,7 +34,7 @@ script = ExtResource("3_oqujk")
 entity = "harbinger"
 
 [node name="Wave2" type="Node2D" parent="Waves" unique_id=1923284871 node_paths=PackedStringArray("next")]
-script = ExtResource("2_bieg0")
+script = ExtResource("2_kxdll")
 next = NodePath("../Wave3")
 
 [node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1508864988]
@@ -57,7 +57,7 @@ script = ExtResource("3_oqujk")
 entity = "rocketjumper"
 
 [node name="Wave3" type="Node2D" parent="Waves" unique_id=800614481]
-script = ExtResource("2_bieg0")
+script = ExtResource("2_kxdll")
 
 [node name="Timer" type="Timer" parent="Waves/Wave3" unique_id=2091164762]
 wait_time = 7.5

@@ -68,6 +68,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"region" : "thayma",
 	},
+	"thayma_qualia_reward_room" : {
+		"scene" : preload("res://regions/thayma/rooms/thayma_qualia_reward_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "thayma",
+	},
 	"thayma_room_1" : {
 		"scene" : preload("res://regions/thayma/rooms/thayma_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
