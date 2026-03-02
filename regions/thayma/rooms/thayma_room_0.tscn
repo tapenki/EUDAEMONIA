@@ -86,16 +86,18 @@ door = "Entrance0"
 
 [node name="Exit1" parent="Doors" unique_id=148837754 instance=ExtResource("3_c574q")]
 position = Vector2(960, 30)
-room = "thayma_qualia_reward_room"
+room = "thayma_health_treasury"
 door = "Entrance0"
 
-[node name="Exit2" parent="Doors" unique_id=1022082770 instance=ExtResource("2_b1jr0")]
+[node name="Exit2" parent="Doors" unique_id=1919157672 instance=ExtResource("3_c574q")]
 position = Vector2(960, 570)
 rotation = 3.1415927
+room = "thayma_qualia_treasury"
+door = "Entrance0"
 
 [node name="HealthSign" type="Sprite2D" parent="." unique_id=1975421848]
 self_modulate = Color(1, 1, 1, 0.49803922)
-position = Vector2(900, 570)
+position = Vector2(900, 30)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_xv5l5")
 
@@ -116,7 +118,7 @@ vertical_alignment = 1
 
 [node name="QualiaSign" type="Sprite2D" parent="." unique_id=1200556772]
 self_modulate = Color(1, 1, 1, 0.49803922)
-position = Vector2(900, 30)
+position = Vector2(900, 570)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_wq500")
 

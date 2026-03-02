@@ -68,8 +68,13 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"region" : "thayma",
 	},
-	"thayma_qualia_reward_room" : {
-		"scene" : preload("res://regions/thayma/rooms/thayma_qualia_reward_room.tscn"), 
+	"thayma_health_treasury" : {
+		"scene" : preload("res://regions/thayma/rooms/thayma_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "thayma",
+	},
+	"thayma_qualia_treasury" : {
+		"scene" : preload("res://regions/thayma/rooms/thayma_qualia_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
 		"region" : "thayma",
 	},

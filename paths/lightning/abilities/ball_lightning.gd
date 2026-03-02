@@ -28,7 +28,7 @@ func day_start(_day: int) -> void:
 		Vector2())
 		projectile_instance.ability_handler.inherited_damage["multiplier"] *= level
 		projectile_instance.ability_handler.inherited_crit_chance["multiplier"] *= 2
-		projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat)) * 150).angle()
+		projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat))).angle()
 		projectile_instance.get_node("Sprite/Particles").ability_handler = ability_handler
 		anchor_node.add_child(projectile_instance)
 
