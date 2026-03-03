@@ -76,11 +76,7 @@ entity = "mold"
 
 [node name="Doors" type="Node2D" parent="." unique_id=257661610]
 
-[node name="Entrance0" parent="Doors" unique_id=1640271444 instance=ExtResource("4_bfhe1")]
-position = Vector2(990, 510)
-rotation = 1.5707964
-
-[node name="Entrance1" parent="Doors" unique_id=1086758083 instance=ExtResource("4_bfhe1")]
+[node name="Entrance0" parent="Doors" unique_id=1086758083 instance=ExtResource("4_bfhe1")]
 position = Vector2(30, 510)
 rotation = 4.712389
 

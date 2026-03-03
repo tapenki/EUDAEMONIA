@@ -106,6 +106,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"region" : "aporia",
 	},
+	"aporia_health_treasury" : {
+		"scene" : preload("res://regions/aporia/rooms/aporia_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "aporia",
+	},
+	"aporia_qualia_treasury" : {
+		"scene" : preload("res://regions/aporia/rooms/aporia_qualia_treasury.tscn"), 
+		"zoom_scale" : 0.8, 
+		"region" : "aporia",
+	},
 	"aporia_room_1" : {
 		"scene" : preload("res://regions/aporia/rooms/aporia_room_1.tscn"), 
 		"zoom_scale" : 0.9, 

@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-@export var room = "thayma_entrance_hall"
+@export var room = "aporia_entrance_hall"
 var door = "Entrance0"
 
 var day = 1
@@ -64,10 +64,10 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 
 ## entity spawning
 func scale_enemy_health(health: float):
-	return health * (1 + 0.04 * pow(day-1, 2 + loop))
+	return health * (1 + 0.04 * pow(day - 1, 2 + 0.2 * loop))
 
 func scale_enemy_damage():
-	return 0.75 + (day * 0.25)
+	return 1 + (day - 1) * (0.25 + 0.025 * loop)
 
 func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()
@@ -116,7 +116,10 @@ func setup_astar():
 				for k in range(-2, 3):
 					for l in range(-2, 3):
 						if astar.is_in_boundsv(pos + Vector2i(k, l)):
-							astar.set_point_weight_scale(pos + Vector2i(k, l), 4)
+							if abs(k) == 2 or abs(l) == 2:
+								astar.set_point_weight_scale(pos + Vector2i(k, l), 4)
+							else:
+								astar.set_point_weight_scale(pos + Vector2i(k, l), 16)
 
 func pathfind(start, end):
 	var tilemap = room_node.get_node("TileMap")
