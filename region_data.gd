@@ -144,6 +144,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"region" : "olethros",
 	},
+	"olethros_health_treasury" : {
+		"scene" : preload("res://regions/olethros/rooms/olethros_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "olethros",
+	},
+	"olethros_qualia_treasury" : {
+		"scene" : preload("res://regions/olethros/rooms/olethros_qualia_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "olethros",
+	},
 	"olethros_room_1" : {
 		"scene" : preload("res://regions/olethros/rooms/olethros_room_1.tscn"), 
 		"zoom_scale" : 0.9, 

@@ -96,7 +96,13 @@ func movement(_delta):
 	ability_handler.movement.emit(old_position.distance_to(global_position))
 
 func random_valid_position(tilemap):
-	var cell = tilemap.get_used_cells_by_id(2).pick_random()
+	var wall_cells = tilemap.get_used_cells_by_id(0)
+	var floor_cells = tilemap.get_used_cells_by_id(2)
+	for i in wall_cells:
+		for j in range(-1, 2):
+			for k in range(-1, 2):
+				floor_cells.erase(Vector2i(i.x + j, i.y + k))
+	var cell = floor_cells.pick_random()
 	return Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 
 func animation_finished(anim_name: StringName) -> void:
