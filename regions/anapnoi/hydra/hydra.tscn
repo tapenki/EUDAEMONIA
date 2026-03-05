@@ -131,6 +131,7 @@ process_mode = 4
 script = ExtResource("4_kkre4")
 speed = 300
 distance_margin = 200
+shapecast_radius = 24
 next = NodePath("../PrepareAttack")
 
 [node name="PrepareAttack" type="Node" parent="StateHandler" unique_id=115795457 node_paths=PackedStringArray("next")]

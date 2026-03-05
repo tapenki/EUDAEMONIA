@@ -182,6 +182,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"region" : "anapnoi",
 	},
+	"anapnoi_health_treasury" : {
+		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"region" : "anapnoi",
+	},
+	"anapnoi_qualia_treasury" : {
+		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_qualia_treasury.tscn"), 
+		"zoom_scale" : 1, 
+		"region" : "anapnoi",
+	},
 	"anapnoi_room_1" : {
 		"scene" : preload("res://regions/anapnoi/rooms/anapnoi_room_1.tscn"), 
 		"zoom_scale" : 0.9, 

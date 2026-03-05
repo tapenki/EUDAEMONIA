@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcr1xtwtfnmdx"]
 
 [ext_resource type="Texture2D" uid="uid://41g420q0nn3q" path="res://regions/environment/doors/loop_door.png" id="1_188np"]
-[ext_resource type="Script" uid="uid://2fu53neukijg" path="res://regions/environment/doors/door.gd" id="2_upk3m"]
+[ext_resource type="Script" uid="uid://ci42n1ru8yqdp" path="res://regions/environment/doors/loop_door.gd" id="2_188np"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_3bb6c"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="4_ysbpe"]
 
@@ -12,7 +12,7 @@ point_count = 3
 [node name="Door" type="Sprite2D" unique_id=1977797072]
 self_modulate = Color(1, 0.19607843, 0, 1)
 texture = ExtResource("1_188np")
-script = ExtResource("2_upk3m")
+script = ExtResource("2_188np")
 travel_time = 3
 
 [node name="Button" type="TextureButton" parent="." unique_id=250780360]

@@ -8,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_tiyom"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_sydwf"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_hocev"]
+[ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://regions/environment/rewards/red_reward.png" id="9_hocev"]
+[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://regions/environment/rewards/blue_reward.png" id="10_bh0yq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_btvcu"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [node name="AnapnoiRoom0" type="Node2D" unique_id=647591813]
 
@@ -81,11 +89,64 @@ rotation = 4.712389
 room = "anapnoi_room_1"
 door = "Entrance0"
 
+[node name="Exit1" parent="Doors" unique_id=248772373 instance=ExtResource("5_sydwf")]
+position = Vector2(840, 30)
+room = "anapnoi_health_treasury"
+door = "Entrance0"
+
+[node name="Exit2" parent="Doors" unique_id=385254145 instance=ExtResource("5_sydwf")]
+position = Vector2(630, 570)
+rotation = 3.1415927
+room = "anapnoi_qualia_treasury"
+door = "Entrance0"
+
 [node name="HealthRewardGiver" parent="." unique_id=1833477915 instance=ExtResource("6_tiyom")]
 reward = ExtResource("7_sydwf")
 
 [node name="QualiaRewardGiver" parent="." unique_id=514940611 instance=ExtResource("6_tiyom")]
 reward = ExtResource("8_hocev")
+
+[node name="HealthSign" type="Sprite2D" parent="." unique_id=1643044212]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(900, 30)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_hocev")
+
+[node name="Symbol" type="Label" parent="HealthSign" unique_id=1959771542]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hp"
+label_settings = SubResource("LabelSettings_btvcu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QualiaSign" type="Sprite2D" parent="." unique_id=1461957451]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(690, 570)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_bh0yq")
+
+[node name="Symbol" type="Label" parent="QualiaSign" unique_id=853220870]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Qu"
+label_settings = SubResource("LabelSettings_btvcu")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]
