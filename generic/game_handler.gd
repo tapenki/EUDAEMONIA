@@ -88,7 +88,7 @@ func instantiate_enemy(scene: PackedScene):
 func generate_map():
 	if room_node != null:
 		room_node.queue_free()
-	var room_data = RegionData.room_data[room]#region_data[region]["layouts"][layout_id]
+	var room_data = SphereData.room_data[room]#region_data[region]["layouts"][layout_id]
 	room_node = room_data["scene"].instantiate()
 	add_child(room_node)
 	#generate_nav_polygon()

@@ -684,3 +684,6 @@ msgstr "[RMB]"
 
 msgid "[Left Mouse Button]"
 msgstr "[LMB]"
+
+msgid "[Middle Mouse Button]"
+msgstr "[MMB]"

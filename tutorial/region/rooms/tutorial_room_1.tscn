@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://dqodei5cbee76"]
 
 [ext_resource type="TileSet" uid="uid://c4kyki7ku4aqj" path="res://tutorial/region/rooms/tutorial_wall_tileset.tres" id="1_3if3l"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://regions/environment/encounters/wave.gd" id="2_wapwp"]
-[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://regions/environment/encounters/wave_spawn.gd" id="3_6uebp"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://regions/environment/doors/broken_door.tscn" id="4_450q7"]
-[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://regions/environment/doors/door.tscn" id="5_0poo3"]
-[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://regions/environment/rewards/reward_giver.tscn" id="6_1whkl"]
-[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://regions/environment/rewards/health_reward.tscn" id="7_hls5n"]
-[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://regions/environment/rewards/qualia_reward.tscn" id="8_5hw5t"]
+[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://spheres/environment/encounters/wave.gd" id="2_wapwp"]
+[ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_6uebp"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="4_450q7"]
+[ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://spheres/environment/doors/door.tscn" id="5_0poo3"]
+[ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_1whkl"]
+[ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_hls5n"]
+[ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_5hw5t"]
 
 [node name="TutorialRoom1" type="Node2D" unique_id=543946034]
 
