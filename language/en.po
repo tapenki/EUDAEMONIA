@@ -574,6 +574,9 @@ msgstr "Stores damage taken and deals [outline_size=10][STOREDDAMAGExSTACKSx0.1]
 msgid "day_counter"
 msgstr "Day [%s]"
 
+msgid "loop_counter"
+msgstr "Loop [%s]"
+
 msgid "vasis_title"
 msgstr "Sphere [1]: Vasis"
 

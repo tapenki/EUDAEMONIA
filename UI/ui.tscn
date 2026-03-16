@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bmqfb01e1pny7"]
+[gd_scene format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui_game.gd" id="1_7hxr3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
@@ -42,11 +42,11 @@ outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 outline_size = 5
 outline_color = Color(1, 0, 0, 1)
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" unique_id=1408212827]
 process_mode = 3
 script = ExtResource("1_7hxr3")
 
-[node name="Backdrop" type="ColorRect" parent="."]
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1653410776]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,7 +55,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TransitionFade" type="ColorRect" parent="."]
+[node name="TransitionFade" type="ColorRect" parent="." unique_id=45799239]
 z_index = 25
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="HUD" type="Control" parent="."]
+[node name="HUD" type="Control" parent="." unique_id=992551759]
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -82,7 +82,7 @@ grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
 
-[node name="HealthBar" type="TextureProgressBar" parent="HUD"]
+[node name="HealthBar" type="TextureProgressBar" parent="HUD" unique_id=71381973]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -98,7 +98,7 @@ stretch_margin_bottom = 8
 texture_progress = ExtResource("12_2qbci")
 script = ExtResource("5_r6g2f")
 
-[node name="DamageBar" type="TextureProgressBar" parent="HUD/HealthBar"]
+[node name="DamageBar" type="TextureProgressBar" parent="HUD/HealthBar" unique_id=1320198418]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -116,7 +116,7 @@ stretch_margin_bottom = 8
 texture_under = ExtResource("12_o2jkc")
 texture_progress = ExtResource("19_0tr35")
 
-[node name="Label" type="Label" parent="HUD/HealthBar"]
+[node name="Label" type="Label" parent="HUD/HealthBar" unique_id=2136870075]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,10 +129,10 @@ text = "50/100"
 label_settings = SubResource("LabelSettings_iknsa")
 horizontal_alignment = 1
 
-[node name="DamageTimer" type="Timer" parent="HUD/HealthBar"]
+[node name="DamageTimer" type="Timer" parent="HUD/HealthBar" unique_id=2130152475]
 one_shot = true
 
-[node name="FloorNumber" type="Label" parent="HUD"]
+[node name="FloorNumber" type="Label" parent="HUD" unique_id=1149464976]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -146,7 +146,7 @@ label_settings = SubResource("LabelSettings_o2jkc")
 horizontal_alignment = 1
 script = ExtResource("3_g7pr5")
 
-[node name="Defeated" type="Label" parent="HUD"]
+[node name="Defeated" type="Label" parent="HUD" unique_id=1510467001]
 visible = false
 z_index = -2
 layout_mode = 1
@@ -162,7 +162,7 @@ text = "defeated"
 label_settings = SubResource("LabelSettings_qmobw")
 horizontal_alignment = 1
 
-[node name="Proceed" type="Button" parent="HUD"]
+[node name="Proceed" type="Button" parent="HUD" unique_id=868086650]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
@@ -179,7 +179,7 @@ theme = ExtResource("9_7j5ik")
 text = "start_day"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="HUD/Proceed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD/Proceed" unique_id=567309395]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -195,7 +195,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="GameMenu" type="Control" parent="."]
+[node name="GameMenu" type="Control" parent="." unique_id=38269991]
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -212,7 +212,7 @@ grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
 
-[node name="UpgradePoints" type="Label" parent="GameMenu"]
+[node name="UpgradePoints" type="Label" parent="GameMenu" unique_id=1435138176]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.29200003
@@ -229,7 +229,7 @@ label_settings = SubResource("LabelSettings_4xnvd")
 horizontal_alignment = 1
 script = ExtResource("3_mom20")
 
-[node name="Version" type="Label" parent="GameMenu"]
+[node name="Version" type="Label" parent="GameMenu" unique_id=619836749]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -243,7 +243,7 @@ text = "ver"
 label_settings = SubResource("LabelSettings_4xnvd")
 script = ExtResource("10_0w6e5")
 
-[node name="Gear1" type="TextureRect" parent="GameMenu"]
+[node name="Gear1" type="TextureRect" parent="GameMenu" unique_id=945869680]
 modulate = Color(0, 0, 0.047058824, 1)
 show_behind_parent = true
 z_index = -1
@@ -257,7 +257,7 @@ texture = ExtResource("17_bw7v0")
 script = ExtResource("18_rkf1o")
 rotation_speed = 0.1
 
-[node name="Gear2" type="TextureRect" parent="GameMenu"]
+[node name="Gear2" type="TextureRect" parent="GameMenu" unique_id=1548134467]
 modulate = Color(0, 0, 0.09803922, 1)
 show_behind_parent = true
 z_index = -1
@@ -271,7 +271,7 @@ texture = ExtResource("17_bw7v0")
 script = ExtResource("18_rkf1o")
 rotation_speed = -0.1
 
-[node name="Background1" type="NinePatchRect" parent="GameMenu"]
+[node name="Background1" type="NinePatchRect" parent="GameMenu" unique_id=302963193]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 4.0
@@ -285,7 +285,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background2" type="NinePatchRect" parent="GameMenu"]
+[node name="Background2" type="NinePatchRect" parent="GameMenu" unique_id=1275125340]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 229.0
@@ -299,7 +299,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background3" type="NinePatchRect" parent="GameMenu"]
+[node name="Background3" type="NinePatchRect" parent="GameMenu" unique_id=943374326]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 454.0
@@ -313,7 +313,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background4" type="NinePatchRect" parent="GameMenu"]
+[node name="Background4" type="NinePatchRect" parent="GameMenu" unique_id=1361050124]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 679.0
@@ -327,14 +327,14 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="MagicPicker1" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker1" parent="GameMenu" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 layout_mode = 0
 offset_top = 75.0
 offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker2")
 
-[node name="MagicPicker2" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker2" parent="GameMenu" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 225.0
@@ -344,7 +344,7 @@ offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="GameMenu" node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker3" parent="GameMenu" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 450.0
@@ -354,7 +354,7 @@ offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker4")
 
-[node name="MagicPicker4" parent="GameMenu" instance=ExtResource("6_6rr40")]
+[node name="MagicPicker4" parent="GameMenu" unique_id=1650941343 instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 675.0
@@ -363,7 +363,7 @@ offset_right = 900.0
 offset_bottom = 375.0
 mouse_filter = 2
 
-[node name="Reset" type="Button" parent="GameMenu"]
+[node name="Reset" type="Button" parent="GameMenu" unique_id=1520013231]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -384,7 +384,7 @@ text = "reset"
 flat = true
 script = ExtResource("9_ow1yt")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Reset"]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Reset" unique_id=1258880797]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -400,7 +400,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Hint" type="Label" parent="GameMenu/Reset"]
+[node name="Hint" type="Label" parent="GameMenu/Reset" unique_id=1818452429]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -414,7 +414,7 @@ grow_vertical = 2
 text = "click and hold ->"
 label_settings = SubResource("LabelSettings_c44sx")
 
-[node name="Settings" type="Button" parent="GameMenu"]
+[node name="Settings" type="Button" parent="GameMenu" unique_id=407825510]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -434,7 +434,7 @@ theme = ExtResource("9_7j5ik")
 text = "settings"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Settings"]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Settings" unique_id=1726568209]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -450,7 +450,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Stats" type="Button" parent="GameMenu"]
+[node name="Stats" type="Button" parent="GameMenu" unique_id=257144760]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -471,7 +471,7 @@ flat = true
 script = ExtResource("16_j5i65")
 subject = "stats"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Stats"]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Stats" unique_id=997054225]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -487,7 +487,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Challenges" type="Control" parent="GameMenu"]
+[node name="Challenges" type="Control" parent="GameMenu" unique_id=1621222349]
 anchors_preset = 0
 offset_left = 525.0
 offset_top = 500.0
@@ -496,7 +496,7 @@ offset_bottom = 590.0
 mouse_filter = 2
 script = ExtResource("17_rkf1o")
 
-[node name="Background" type="NinePatchRect" parent="GameMenu/Challenges"]
+[node name="Background" type="NinePatchRect" parent="GameMenu/Challenges" unique_id=173305492]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -515,7 +515,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="RichTextLabel" parent="GameMenu/Challenges"]
+[node name="Label" type="RichTextLabel" parent="GameMenu/Challenges" unique_id=1081156276]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -535,7 +535,7 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Container" type="HBoxContainer" parent="GameMenu/Challenges"]
+[node name="Container" type="HBoxContainer" parent="GameMenu/Challenges" unique_id=1314630544]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -550,7 +550,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Settings" parent="." instance=ExtResource("21_3lbto")]
+[node name="Settings" parent="." unique_id=1586582074 instance=ExtResource("21_3lbto")]
 
 [connection signal="pressed" from="HUD/Proceed" to="." method="toggle_game_menu"]
 [connection signal="button_down" from="GameMenu/Reset" to="GameMenu/Reset" method="down"]

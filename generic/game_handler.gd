@@ -64,7 +64,7 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 
 ## entity spawning
 func scale_enemy_health(health: float):
-	return health * (1 + 0.04 * pow(day - 1, 2 + 0.2 * loop))
+	return health * (1 + 0.05 * pow(day - 1, 1.75 + 0.25 * loop))
 
 func scale_enemy_damage():
 	return 1 + (day - 1) * (0.25 + 0.025 * loop)
