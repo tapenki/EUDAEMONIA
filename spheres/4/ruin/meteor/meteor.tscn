@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://c8dtaqmm82y8x"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_5dxxv"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_tj0jb"]
+[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://spheres/3/wonder/debree_shield.gd" id="3_irfvx"]
+[ext_resource type="PackedScene" uid="uid://c511sypv8nipf" path="res://spheres/4/ruin/bomb_debree/bomb_debree.tscn" id="4_6lqvu"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="4_fnkkn"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_pj6vt"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_spe3e"]
+[ext_resource type="Script" uid="uid://c6b6v8sr70sib" path="res://generic/behavior/pathing_dash.gd" id="7_1qawn"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_jwdqo"]
+[ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="9_dycxl"]
+[ext_resource type="Texture2D" uid="uid://c8scgoik5p153" path="res://spheres/4/ruin/meteor/meteor.png" id="9_t8eg7"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_olt0q"]
+[ext_resource type="Texture2D" uid="uid://ce4wppcs772wc" path="res://spheres/4/ruin/meteor/meteor_hurt.png" id="11_5du8u"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_x0p1f"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_ywl2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 28.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_icb8a"]
+resource_name = "IDLE"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_14oqu"]
+resource_name = "WINDUP"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"IDLE": SubResource("Animation_icb8a"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WINDUP": SubResource("Animation_14oqu")
+}
+
+[node name="Meteor" type="CharacterBody2D" unique_id=1588394485 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_5dxxv")
+ability_handler = NodePath("AbilityHandler")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 60
+
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=802578382]
+script = ExtResource("2_tj0jb")
+is_entity = true
+
+[node name="debree_shield" type="Node2D" parent="." unique_id=818849719 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("3_irfvx")
+ability_handler = NodePath("../AbilityHandler")
+entity_scene = ExtResource("4_6lqvu")
+count = 3
+summon_health = 0.0
+
+[node name="StateHandler" type="Node" parent="." unique_id=639463105 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_fnkkn")
+initial_state = NodePath("Endlag")
+
+[node name="PrepareAttack1" type="Node" parent="StateHandler" unique_id=1264311688 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_pj6vt")
+anim = "WINDUP"
+next = NodePath("../DashAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1132722923 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.3
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack1" type="Node" parent="StateHandler" unique_id=2043866931 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_1qawn")
+speed = 450
+next = NodePath("../PrepareAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack1" unique_id=2074946102 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.4
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareAttack2" type="Node" parent="StateHandler" unique_id=817615073 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_pj6vt")
+anim = "WINDUP"
+next = NodePath("../DashAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" unique_id=1157287708 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.35
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="DashAttack2" type="Node" parent="StateHandler" unique_id=35770393 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_1qawn")
+speed = 450
+next = NodePath("../Endlag")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack2" unique_id=1316451821 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.4
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Endlag" type="Node" parent="StateHandler" unique_id=307548739 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_pj6vt")
+next = NodePath("../PrepareAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=1284048760 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("9_dycxl")
+wait_time = 0.5
+deviation = 0.25
+ability_handler = NodePath("../../../AbilityHandler")
+metadata/_custom_type_script = "uid://dvr6gecg7swmt"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1060061448]
+material = ExtResource("8_jwdqo")
+position = Vector2(0, 28)
+texture = ExtResource("9_t8eg7")
+offset = Vector2(0, -28)
+script = ExtResource("10_olt0q")
+base_texture = ExtResource("9_t8eg7")
+hurt_texture = ExtResource("11_5du8u")
+
+[node name="Hurt" type="Node" parent="Sprite" unique_id=1504473167 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("6_spe3e")
+wait_time = 0.2
+ability_handler = NodePath("../../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1785831943]
+z_index = -3
+position = Vector2(0, -28)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_x0p1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1898148983]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=380330976 node_paths=PackedStringArray("ability_handler")]
+collision_layer = 0
+script = ExtResource("13_ywl2w")
+ability_handler = NodePath("../AbilityHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=332145377]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=799426577]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_v1kwl")
+autoplay = &"IDLE"
+next/WINDUP = &"IDLE"
+
+[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

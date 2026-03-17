@@ -577,20 +577,26 @@ msgstr "Day [%s]"
 msgid "loop_counter"
 msgstr "Loop [%s]"
 
-msgid "vasis_title"
-msgstr "Sphere [1]: Vasis"
+msgid "land_of_steps_title"
+msgstr "Sphere [1]: Land of Steps"
 
-msgid "thayma_title"
-msgstr "Sphere [2]: Thayma"
+msgid "land_of_depths_title"
+msgstr "Sphere [2]: Land of Depths"
 
-msgid "aporia_title"
-msgstr "Sphere [3]: Aporia"
+msgid "land_of_wonder_title"
+msgstr "Sphere [3]: Land of Wonder"
 
-msgid "olethros_title"
-msgstr "Sphere [4]: Olethros"
+msgid "land_of_doubt_title"
+msgstr "Sphere [3]: Land of Doubt"
 
-msgid "anapnoi_title"
-msgstr "Sphere [5]: Anapnoi"
+msgid "land_of_ruin_title"
+msgstr "Sphere [4]: Land of Ruin"
+
+msgid "land_of_breath_title"
+msgstr "Sphere [5]: Land of Breath"
+
+msgid "his_throne_title"
+msgstr "Sphere [8]: His Throne"
 
 msgid "pandemonium_title"
 msgstr "Sphere [??]: Pandemonium"

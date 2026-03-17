@@ -3,209 +3,209 @@ extends Node
 var room_data = {
 	#region tutorial
 	"tutorial_entrance_hall" : {
-		"scene" : preload("res://tutorial/region/rooms/tutorial_entrance_hall.tscn"), 
+		"scene" : preload("res://tutorial/land/rooms/tutorial_entrance_hall.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
 	"tutorial_room_0" : {
-		"scene" : preload("res://tutorial/region/rooms/tutorial_room_0.tscn"), 
+		"scene" : preload("res://tutorial/land/rooms/tutorial_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
 	"tutorial_room_1" : {
-		"scene" : preload("res://tutorial/region/rooms/tutorial_room_1.tscn"), 
+		"scene" : preload("res://tutorial/land/rooms/tutorial_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
 	"tutorial_room_2" : {
-		"scene" : preload("res://tutorial/region/rooms/tutorial_room_2.tscn"), 
+		"scene" : preload("res://tutorial/land/rooms/tutorial_room_2.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
 	"tutorial_throne_room" : {
-		"scene" : preload("res://tutorial/region/rooms/tutorial_throne_room.tscn"), 
+		"scene" : preload("res://tutorial/land/rooms/tutorial_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 		"challenge" : true,
 	},
 	#endregion
-	#region vasis
-	"vasis_entrance_hall" : {
-		"scene" : preload("res://spheres/1/vasis/rooms/vasis_entrance_hall.tscn"), 
+	#region steps
+	"steps_entrance_hall" : {
+		"scene" : preload("res://spheres/1/steps/rooms/steps_entrance_hall.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
-	"vasis_room_0" : {
-		"scene" : preload("res://spheres/1/vasis/rooms/vasis_room_0.tscn"), 
+	"steps_room_0" : {
+		"scene" : preload("res://spheres/1/steps/rooms/steps_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
-	"vasis_room_1" : {
-		"scene" : preload("res://spheres/1/vasis/rooms/vasis_room_1.tscn"), 
+	"steps_room_1" : {
+		"scene" : preload("res://spheres/1/steps/rooms/steps_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
-	"vasis_room_2" : {
-		"scene" : preload("res://spheres/1/vasis/rooms/vasis_room_2.tscn"), 
+	"steps_room_2" : {
+		"scene" : preload("res://spheres/1/steps/rooms/steps_room_2.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 	},
-	"vasis_throne_room" : {
-		"scene" : preload("res://spheres/1/vasis/rooms/vasis_throne_room.tscn"), 
+	"steps_throne_room" : {
+		"scene" : preload("res://spheres/1/steps/rooms/steps_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "vasis",
+		"land" : "steps",
 		"challenge" : true,
 	},
 	#endregion
-	#region thayma
-	"thayma_entrance_hall" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_entrance_hall.tscn"), 
+	#region wonder
+	"wonder_entrance_hall" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_entrance_hall.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 	},
-	"thayma_room_0" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_room_0.tscn"), 
+	"wonder_room_0" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 	},
-	"thayma_health_treasury" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_health_treasury.tscn"), 
+	"wonder_health_treasury" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_health_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 	},
-	"thayma_qualia_treasury" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_qualia_treasury.tscn"), 
+	"wonder_qualia_treasury" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_qualia_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 	},
-	"thayma_room_1" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_room_1.tscn"), 
+	"wonder_room_1" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 	},
-	"thayma_room_2" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_room_2.tscn"), 
+	"wonder_room_2" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_room_2.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 	},
-	"thayma_throne_room" : {
-		"scene" : preload("res://spheres/2/thayma/rooms/thayma_throne_room.tscn"), 
+	"wonder_throne_room" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "thayma",
+		"land" : "wonder",
 		"challenge" : true,
 	},
 	#endregion
-	#region aporia
-	"aporia_entrance_hall" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_entrance_hall.tscn"), 
+	#region doubt
+	"doubt_entrance_hall" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_entrance_hall.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "aporia",
+		"land" : "doubt",
 	},
-	"aporia_room_0" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_room_0.tscn"), 
+	"doubt_room_0" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "aporia",
+		"land" : "doubt",
 	},
-	"aporia_health_treasury" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_health_treasury.tscn"), 
+	"doubt_health_treasury" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_health_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "aporia",
+		"land" : "doubt",
 	},
-	"aporia_qualia_treasury" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_qualia_treasury.tscn"), 
+	"doubt_qualia_treasury" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_qualia_treasury.tscn"), 
 		"zoom_scale" : 0.8, 
-		"region" : "aporia",
+		"land" : "doubt",
 	},
-	"aporia_room_1" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_room_1.tscn"), 
+	"doubt_room_1" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "aporia",
+		"land" : "doubt",
 	},
-	"aporia_room_2" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_room_2.tscn"), 
+	"doubt_room_2" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_room_2.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "aporia",
+		"land" : "doubt",
 	},
-	"aporia_throne_room" : {
-		"scene" : preload("res://spheres/3/aporia/rooms/aporia_throne_room.tscn"), 
+	"doubt_throne_room" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "aporia",
+		"land" : "doubt",
 		"challenge" : true,
 	},
 	#endregion
-	#region olethros
-	"olethros_entrance_hall" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_entrance_hall.tscn"), 
+	#region ruin
+	"ruin_entrance_hall" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_entrance_hall.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 	},
-	"olethros_room_0" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_room_0.tscn"), 
+	"ruin_room_0" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 	},
-	"olethros_health_treasury" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_health_treasury.tscn"), 
+	"ruin_health_treasury" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_health_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 	},
-	"olethros_qualia_treasury" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_qualia_treasury.tscn"), 
+	"ruin_qualia_treasury" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_qualia_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 	},
-	"olethros_room_1" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_room_1.tscn"), 
+	"ruin_room_1" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 	},
-	"olethros_room_2" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_room_2.tscn"), 
+	"ruin_room_2" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_room_2.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 	},
-	"olethros_throne_room" : {
-		"scene" : preload("res://spheres/4/olethros/rooms/olethros_throne_room.tscn"), 
+	"ruin_throne_room" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "olethros",
+		"land" : "ruin",
 		"challenge" : true,
 	},
 	#endregion
-	#region anapnoi
-	"anapnoi_entrance_hall" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_entrance_hall.tscn"), 
+	#region breath
+	"breath_entrance_hall" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_entrance_hall.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "anapnoi",
+		"land" : "breath",
 	},
-	"anapnoi_room_0" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_room_0.tscn"), 
+	"breath_room_0" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "anapnoi",
+		"land" : "breath",
 	},
-	"anapnoi_health_treasury" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_health_treasury.tscn"), 
+	"breath_health_treasury" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_health_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "anapnoi",
+		"land" : "breath",
 	},
-	"anapnoi_qualia_treasury" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_qualia_treasury.tscn"), 
+	"breath_qualia_treasury" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_qualia_treasury.tscn"), 
 		"zoom_scale" : 1, 
-		"region" : "anapnoi",
+		"land" : "breath",
 	},
-	"anapnoi_room_1" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_room_1.tscn"), 
+	"breath_room_1" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "anapnoi",
+		"land" : "breath",
 	},
-	"anapnoi_room_2" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_room_2.tscn"), 
+	"breath_room_2" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_room_2.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "anapnoi",
+		"land" : "breath",
 	},
-	"anapnoi_throne_room" : {
-		"scene" : preload("res://spheres/5/anapnoi/rooms/anapnoi_throne_room.tscn"), 
+	"breath_throne_room" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_throne_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "anapnoi",
+		"land" : "breath",
 		"challenge" : true,
 	},
 	#endregion
@@ -213,84 +213,84 @@ var room_data = {
 	"debug_room" : {
 		"scene" : preload("res://spheres/debug_room.tscn"), 
 		"zoom_scale" : 0.9, 
-		"region" : "pandemonium",
+		"land" : "pandemonium",
 		"challenge" : true,
 	},
 	#endregion
 }
 
 var entity_data = {
-	#region vasis
+	#region steps
 	"leaper" : {
-		"scene" : preload("res://spheres/1/vasis/leaper/leaper.tscn")
+		"scene" : preload("res://spheres/1/steps/leaper/leaper.tscn")
 	},
 	"spitter" : {
-		"scene" : preload("res://spheres/1/vasis/spitter/spitter.tscn")
+		"scene" : preload("res://spheres/1/steps/spitter/spitter.tscn")
 	},
 	"giga_leaper" : {
-		"scene" : preload("res://spheres/1/vasis/giga_leaper/giga_leaper.tscn")
+		"scene" : preload("res://spheres/1/steps/giga_leaper/giga_leaper.tscn")
 	},
 	"giga_spitter" : {
-		"scene" : preload("res://spheres/1/vasis/giga_spitter/giga_spitter.tscn")
+		"scene" : preload("res://spheres/1/steps/giga_spitter/giga_spitter.tscn")
 	},
 	#endregion
-	#region thayma
+	#region wonder
 	"spitball" : {
-		"scene" : preload("res://spheres/2/thayma/spitball/spitball.tscn")
+		"scene" : preload("res://spheres/3/wonder/spitball/spitball.tscn")
 	},
 	"mars" : {
-		"scene" : preload("res://spheres/2/thayma/mars/mars.tscn")
+		"scene" : preload("res://spheres/3/wonder/mars/mars.tscn")
 	},
 	"trispitter" : {
-		"scene" : preload("res://spheres/2/thayma/trispitter/trispitter.tscn")
+		"scene" : preload("res://spheres/3/wonder/trispitter/trispitter.tscn")
 	},
 	"saturn" : {
-		"scene" : preload("res://spheres/2/thayma/saturn/saturn.tscn")
+		"scene" : preload("res://spheres/3/wonder/saturn/saturn.tscn")
 	},
 	#endregion
-	#region aporia
+	#region doubt
 	"mold" : {
-		"scene" : preload("res://spheres/3/aporia/mold/mold.tscn")
+		"scene" : preload("res://spheres/3/doubt/mold/mold.tscn")
 	},
 	"leaker" : {
-		"scene" : preload("res://spheres/3/aporia/leaker/leaker.tscn")
+		"scene" : preload("res://spheres/3/doubt/leaker/leaker.tscn")
 	},
 	"breaker" : {
-		"scene" : preload("res://spheres/3/aporia/breaker/breaker.tscn")
+		"scene" : preload("res://spheres/3/doubt/breaker/breaker.tscn")
 	},
 	"mold_mother" : {
-		"scene" : preload("res://spheres/3/aporia/mold_mother/mold_mother.tscn")
+		"scene" : preload("res://spheres/3/doubt/mold_mother/mold_mother.tscn")
 	},
 	#endregion
-	#region olethros
+	#region ruin
 	"griefer" : {
-		"scene" : preload("res://spheres/4/olethros/griefer/griefer.tscn")
+		"scene" : preload("res://spheres/4/ruin/griefer/griefer.tscn")
 	},
 	"rocketjumper" : {
-		"scene" : preload("res://spheres/4/olethros/rocketjumper/rocketjumper.tscn")
+		"scene" : preload("res://spheres/4/ruin/rocketjumper/rocketjumper.tscn")
 	},
 	"meteor" : {
-		"scene" : preload("res://spheres/4/olethros/meteor/meteor.tscn")
+		"scene" : preload("res://spheres/4/ruin/meteor/meteor.tscn")
 	},
 	"harbinger" : {
-		"scene" : preload("res://spheres/4/olethros/harbinger/harbinger.tscn")
+		"scene" : preload("res://spheres/4/ruin/harbinger/harbinger.tscn")
 	},
 	#endregion
-	#region anapnoi
+	#region breath
 	"sprout" : {
-		"scene" : preload("res://spheres/5/anapnoi/sprout/sprout.tscn")
+		"scene" : preload("res://spheres/5/breath/sprout/sprout.tscn")
 	},
 	"stalk" : {
-		"scene" : preload("res://spheres/5/anapnoi/stalk/stalk.tscn")
+		"scene" : preload("res://spheres/5/breath/stalk/stalk.tscn")
 	},
 	"hydra" : {
-		"scene" : preload("res://spheres/5/anapnoi/hydra/hydra.tscn")
+		"scene" : preload("res://spheres/5/breath/hydra/hydra.tscn")
 	},
 	"gall" : {
-		"scene" : preload("res://spheres/5/anapnoi/gall/gall.tscn")
+		"scene" : preload("res://spheres/5/breath/gall/gall.tscn")
 	},
 	"giga_sprout" : {
-		"scene" : preload("res://spheres/5/anapnoi/giga_sprout/giga_sprout.tscn")
+		"scene" : preload("res://spheres/5/breath/giga_sprout/giga_sprout.tscn")
 	},
 	#endregion
 }
