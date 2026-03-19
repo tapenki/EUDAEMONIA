@@ -234,6 +234,11 @@ var entity_data = {
 		"scene" : preload("res://spheres/1/steps/giga_spitter/giga_spitter.tscn")
 	},
 	#endregion
+	#region depths
+	"sentry" : {
+		"scene" : preload("res://spheres/2/depths/sentry/sentry.tscn")
+	},
+	#endregion
 	#region wonder
 	"spitball" : {
 		"scene" : preload("res://spheres/3/wonder/spitball/spitball.tscn")
