@@ -154,7 +154,7 @@ next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=1048063217 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_33os3")
-wait_time = 0.4
+wait_time = 0.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
