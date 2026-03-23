@@ -6,6 +6,7 @@ extends State
 @export var sound = "Leap"
 
 @export var bullet: PackedScene
+@export var shoot_delay = 0.1
 
 @export var next: State
 
@@ -43,7 +44,7 @@ func on_enter() -> void:
 
 func _physics_process(delta):
 	var final_speed = user.ability_handler.get_move_speed(speed)
-	user.velocity = lerp(user.velocity, direction * final_speed, 0.2)
+	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
 	user.still = false
 	if user.is_on_wall():
 		for i in user.get_slide_collision_count():
@@ -57,14 +58,15 @@ func _physics_process(delta):
 		user.wall_min_slide_angle = 180
 		stick = false
 	bullet_counter += delta * user.ability_handler.speed_scale
-	if bullet_counter >= 0.1:
-		bullet_counter -= 0.1
-		for i in 2:
-			var bullet_instance = user.ability_handler.make_projectile(bullet, 
-			user.global_position, 
-			2,
-			direction.rotated(randf_range(-1, 1)) * -250 * randf_range(1, 2))
-			get_node("/root/Main/Projectiles").add_child(bullet_instance)
+	if bullet_counter >= shoot_delay:
+		bullet_counter -= shoot_delay
+		#for i in 2:
+		var bullet_instance = user.ability_handler.make_projectile(bullet, 
+		user.global_position, 
+		2,
+		direction.rotated(randf_range(-0.5, 0.5)) * -150 * randf_range(1, 2))
+		bullet_instance.get_node("Lifetime").start(1)
+		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 		get_node("/root/Main").play_sound("ShootLight")
 
 func _on_timer_timeout() -> void:

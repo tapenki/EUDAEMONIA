@@ -235,8 +235,14 @@ var entity_data = {
 	},
 	#endregion
 	#region depths
+	"diver" : {
+		"scene" : preload("res://spheres/2/depths/diver/diver.tscn")
+	},
 	"sentry" : {
 		"scene" : preload("res://spheres/2/depths/sentry/sentry.tscn")
+	},
+	"repeater" : {
+		"scene" : preload("res://spheres/2/depths/repeater/repeater.tscn")
 	},
 	#endregion
 	#region wonder

@@ -6,12 +6,16 @@
 [ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_ykogm"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_lym68"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_jn0si"]
-[ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="7_08bvh"]
+[ext_resource type="Script" uid="uid://cx2fhjv71jw2o" path="res://spheres/2/depths/dive_attack.gd" id="7_2xbth"]
+[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="8_lhotu"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_rynlx"]
 [ext_resource type="Texture2D" uid="uid://dlu6rpiegao4c" path="res://spheres/2/depths/diver/diver.png" id="8_s4f4n"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_y3w6m"]
 [ext_resource type="Texture2D" uid="uid://cb0c8kh4sxc3a" path="res://spheres/2/depths/diver/diver_hurt.png" id="10_dtj7i"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_hotfb"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_u0fjb"]
+[ext_resource type="Texture2D" uid="uid://bsr832l3d1ck5" path="res://spheres/2/depths/bubble.png" id="13_2xbth"]
+[ext_resource type="Script" uid="uid://l50n4swkjtpv" path="res://spheres/2/depths/bubble.gd" id="14_2xbth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 20.0
@@ -103,7 +107,7 @@ _data = {
 &"WINDUP": SubResource("Animation_14oqu")
 }
 
-[node name="Leaper" type="CharacterBody2D" unique_id=1581989082 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Diver" type="CharacterBody2D" unique_id=1581989082 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
@@ -135,7 +139,7 @@ next = NodePath("../PrepareAttack")
 process_mode = 4
 script = ExtResource("5_lym68")
 anim = "WINDUP"
-next = NodePath("../DashAttack")
+next = NodePath("../DiveAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=2034450092 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_jn0si")
@@ -143,15 +147,17 @@ wait_time = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack" type="Node" parent="StateHandler" unique_id=1475567560 node_paths=PackedStringArray("next")]
+[node name="DiveAttack" type="Node" parent="StateHandler" unique_id=1475567560 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("7_08bvh")
-speed = 500
+script = ExtResource("7_2xbth")
+speed = 400
+bullet = ExtResource("8_lhotu")
+shoot_delay = 0.15
 next = NodePath("../Endlag")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=253487977 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/DiveAttack" unique_id=253487977 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_jn0si")
-wait_time = 0.4
+wait_time = 0.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -167,6 +173,7 @@ ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1635633884]
+material = ExtResource("8_rynlx")
 position = Vector2(0, 21)
 texture = ExtResource("8_s4f4n")
 offset = Vector2(0, -21)
@@ -185,6 +192,13 @@ z_index = -3
 position = Vector2(0, -21)
 texture = ExtResource("11_hotfb")
 
+[node name="Bubble" type="Sprite2D" parent="Sprite" unique_id=598869899]
+material = ExtResource("8_rynlx")
+position = Vector2(0, -21)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_2xbth")
+script = ExtResource("14_2xbth")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417005274]
 shape = SubResource("CircleShape2D_bhp25")
 
@@ -202,7 +216,7 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DiveAttack/Timer" to="StateHandler/DiveAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

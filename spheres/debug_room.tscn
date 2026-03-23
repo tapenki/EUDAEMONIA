@@ -26,7 +26,7 @@ one_shot = true
 [node name="Spawn" type="Node2D" parent="Waves/Wave1" unique_id=1234642187]
 position = Vector2(480, 330)
 script = ExtResource("3_5mi7c")
-entity = "sentry"
+entity = "diver"
 
 [node name="Doors" type="Node2D" parent="." unique_id=1815348899]
 

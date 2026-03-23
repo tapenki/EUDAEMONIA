@@ -72,9 +72,9 @@ func _physics_process(_delta):
 		direction = user.global_position.direction_to(path[0])
 	else: ## no obstacles in the way
 		var distance = user.global_position.distance_to(ray_intersection.position)
-		if distance > distance_margin: ## go towards target
-			direction = user.global_position.direction_to(ray_intersection.position)
-		else: ## proceed to next state
+		direction = user.global_position.direction_to(ray_intersection.position)
+		if distance < distance_margin: ## proceed to next state
+			state_handler.data["direction"] = direction
 			state_handler.change_state(next)
 			return
 	
