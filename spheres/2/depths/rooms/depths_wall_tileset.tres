@@ -1,11 +1,11 @@
 [gd_resource type="TileSet" format=3 uid="uid://4ptldjx8ftu7"]
 
-[ext_resource type="Texture2D" uid="uid://dib3w7n6it004" path="res://spheres/3/wonder/rooms/tilemap_walls.png" id="1_jvycf"]
-[ext_resource type="Texture2D" uid="uid://dx4rtjrd7dih2" path="res://spheres/3/wonder/rooms/tilemap_floor.png" id="2_r8ajy"]
+[ext_resource type="Texture2D" uid="uid://b3jk176c53a7i" path="res://spheres/2/depths/rooms/tilemap_walls.png" id="1_c3hkk"]
+[ext_resource type="Texture2D" uid="uid://carnli8c3vw05" path="res://spheres/2/depths/rooms/tilemap_floor.png" id="2_vth7k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_di1wc"]
 resource_name = "inner"
-texture = ExtResource("1_jvycf")
+texture = ExtResource("1_c3hkk")
 texture_region_size = Vector2i(30, 30)
 0:0/next_alternative_id = 3
 0:0/0 = 0
@@ -20,7 +20,7 @@ texture_region_size = Vector2i(30, 30)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xypp"]
 resource_name = "outer"
-texture = ExtResource("1_jvycf")
+texture = ExtResource("1_c3hkk")
 texture_region_size = Vector2i(30, 30)
 0:0/0 = 0
 0:0/0/modulate = Color(0.2509804, 0.2509804, 0.2509804, 1)
@@ -37,7 +37,7 @@ texture_region_size = Vector2i(30, 30)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gh4c"]
 resource_name = "floor"
-texture = ExtResource("2_r8ajy")
+texture = ExtResource("2_vth7k")
 texture_region_size = Vector2i(30, 30)
 0:0/0 = 0
 0:0/0/z_index = -5

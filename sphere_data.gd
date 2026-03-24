@@ -57,6 +57,13 @@ var room_data = {
 		"challenge" : true,
 	},
 	#endregion
+	#region depths
+	"depths_entrance_hall" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "depths",
+	},
+	#endregion
 	#region wonder
 	"wonder_entrance_hall" : {
 		"scene" : preload("res://spheres/3/wonder/rooms/wonder_entrance_hall.tscn"), 

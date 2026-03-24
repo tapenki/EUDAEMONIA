@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_hotfb"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_u0fjb"]
 [ext_resource type="Texture2D" uid="uid://bsr832l3d1ck5" path="res://spheres/2/depths/bubble.png" id="13_2xbth"]
-[ext_resource type="Script" uid="uid://l50n4swkjtpv" path="res://spheres/2/depths/bubble.gd" id="14_2xbth"]
+[ext_resource type="Script" uid="uid://l50n4swkjtpv" path="res://spheres/2/depths/burst_bubble.gd" id="14_2xbth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 20.0
