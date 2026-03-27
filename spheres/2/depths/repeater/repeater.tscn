@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_h52yw"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_kyb7t"]
 [ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="7_0xil2"]
-[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="8_vphhu"]
+[ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="8_x0lce"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_efqn2"]
 [ext_resource type="Texture2D" uid="uid://c11hm0d3nbhqq" path="res://spheres/2/depths/repeater/repeater.png" id="10_jmbjq"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_lngt2"]
@@ -160,9 +160,9 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="ShootAttack1" type="Node" parent="StateHandler" unique_id=1613964652 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_0xil2")
-bullet = ExtResource("8_vphhu")
+bullet = ExtResource("8_x0lce")
 bullet_lifetime = 2.75
-bullet_speed = 300
+bullet_speed = 250
 next = NodePath("../PrepareAttack2")
 
 [node name="PrepareAttack2" type="Node" parent="StateHandler" unique_id=2116552989 node_paths=PackedStringArray("next")]
@@ -180,9 +180,9 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="ShootAttack2" type="Node" parent="StateHandler" unique_id=1810708892 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_0xil2")
-bullet = ExtResource("8_vphhu")
+bullet = ExtResource("8_x0lce")
 bullet_lifetime = 2.75
-bullet_speed = 300
+bullet_speed = 250
 recalc_direction = false
 next = NodePath("../Endlag")
 

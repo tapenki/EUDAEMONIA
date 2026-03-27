@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_lym68"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_jn0si"]
 [ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="7_2xbth"]
-[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="8_lhotu"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_rynlx"]
 [ext_resource type="Texture2D" uid="uid://dlu6rpiegao4c" path="res://spheres/2/depths/diver/diver.png" id="8_s4f4n"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_y3w6m"]
@@ -16,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_u0fjb"]
 [ext_resource type="Texture2D" uid="uid://bsr832l3d1ck5" path="res://spheres/2/depths/bubble.png" id="13_2xbth"]
 [ext_resource type="Script" uid="uid://l50n4swkjtpv" path="res://spheres/2/depths/burst_bubble.gd" id="14_2xbth"]
+[ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="15_lhotu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 20.0
@@ -197,7 +197,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("13_2xbth")
 script = ExtResource("14_2xbth")
 ability_handler = NodePath("../../AbilityHandler")
-bullet = ExtResource("8_lhotu")
+bullet = ExtResource("15_lhotu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417005274]
 shape = SubResource("CircleShape2D_bhp25")

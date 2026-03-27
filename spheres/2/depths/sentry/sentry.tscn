@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_lfdh4"]
 [ext_resource type="Script" uid="uid://bdo0vp3t3wm80" path="res://generic/behavior/radialshot_attack.gd" id="6_q1ut4"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_qjp0b"]
-[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="8_175uk"]
+[ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="7_q1ut4"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_ciyrk"]
 [ext_resource type="Texture2D" uid="uid://sraqbdu3oh3l" path="res://spheres/2/depths/sentry/sentry.png" id="10_fxj1d"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_22lid"]
@@ -156,10 +156,10 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="ShootAttack1" type="Node" parent="StateHandler" unique_id=1613964652 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_q1ut4")
-bullet = ExtResource("8_175uk")
+bullet = ExtResource("7_q1ut4")
 bullet_lifetime = 2.75
 bullet_count = 8
-bullet_speed = 300
+bullet_speed = 250
 next = NodePath("../Endlag1")
 
 [node name="Endlag1" type="Node" parent="StateHandler" unique_id=81129476 node_paths=PackedStringArray("next")]
@@ -169,7 +169,7 @@ next = NodePath("../PrepareAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag1" unique_id=1404294775 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_qjp0b")
-wait_time = 0.75
+wait_time = 1.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -188,11 +188,11 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="ShootAttack2" type="Node" parent="StateHandler" unique_id=880282453 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_q1ut4")
-bullet = ExtResource("8_175uk")
+bullet = ExtResource("7_q1ut4")
 bullet_lifetime = 2.75
 bullet_count = 8
 angle = 22.5
-bullet_speed = 300
+bullet_speed = 250
 next = NodePath("../Endlag2")
 
 [node name="Endlag2" type="Node" parent="StateHandler" unique_id=597537159 node_paths=PackedStringArray("next")]
@@ -202,7 +202,7 @@ next = NodePath("../PrepareAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag2" unique_id=1777134604 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_qjp0b")
-wait_time = 0.75
+wait_time = 1.5
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ba60m2btsfh1r"]
+
+[ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_aq2sj"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_iqef2"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_gbvdp"]
+[ext_resource type="Texture2D" uid="uid://cs2dp6o80kwxd" path="res://spheres/2/depths/bubble_bullet.png" id="4_2b06g"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_5w288"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_7fahv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 12.0
+
+[node name="BubbleBullet" type="Area2D" unique_id=292500491 node_paths=PackedStringArray("ability_handler")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_aq2sj")
+ability_handler = NodePath("AbilityHandler")
+hit_walls = true
+
+[node name="AbilityHandler" type="Node2D" parent="." unique_id=1930683418]
+script = ExtResource("2_iqef2")
+is_projectile = true
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=16750311]
+material = ExtResource("3_gbvdp")
+texture = ExtResource("4_2b06g")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=858710302]
+z_index = -3
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_5w288")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1303587609]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." unique_id=118110452 node_paths=PackedStringArray("ability_handler")]
+script = ExtResource("7_7fahv")
+wait_time = 2.0
+running = true
+ability_handler = NodePath("../AbilityHandler")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
