@@ -141,8 +141,8 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" unique_id=354024229 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_2od1x")
-speed = 200
-distance_margin = 300
+speed = 300
+distance_margin = 160
 next = NodePath("../PrepareAttack1")
 
 [node name="PrepareAttack1" type="Node" parent="StateHandler" unique_id=385334432 node_paths=PackedStringArray("next")]
@@ -162,7 +162,7 @@ process_mode = 4
 script = ExtResource("7_0xil2")
 bullet = ExtResource("8_x0lce")
 bullet_lifetime = 2.75
-bullet_speed = 250
+bullet_speed = 300
 next = NodePath("../PrepareAttack2")
 
 [node name="PrepareAttack2" type="Node" parent="StateHandler" unique_id=2116552989 node_paths=PackedStringArray("next")]
@@ -173,7 +173,7 @@ next = NodePath("../ShootAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" unique_id=1470376567 node_paths=PackedStringArray("ability_handler")]
 script = ExtResource("6_kyb7t")
-wait_time = 0.3
+wait_time = 0.2
 ability_handler = NodePath("../../../AbilityHandler")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -182,8 +182,7 @@ process_mode = 4
 script = ExtResource("7_0xil2")
 bullet = ExtResource("8_x0lce")
 bullet_lifetime = 2.75
-bullet_speed = 250
-recalc_direction = false
+bullet_speed = 300
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" unique_id=81129476 node_paths=PackedStringArray("next")]

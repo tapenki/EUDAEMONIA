@@ -18,7 +18,7 @@ func damage_taken(_damage) -> void:
 			var bullet_instance = ability_handler.make_projectile(bullet, 
 			global_position, 
 			2,
-			Vector2.from_angle(angle + (TAU / count * repeat)) * 250)
+			Vector2.from_angle(angle + (TAU / count * repeat)) * 300)
 			bullet_instance.get_node("Lifetime").start(0.75)
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
 		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Impact"), 5, global_position, 3, Config.get_team_color(ability_handler.owner.group, "secondary"))

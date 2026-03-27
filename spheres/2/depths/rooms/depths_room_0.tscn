@@ -85,19 +85,19 @@ position = Vector2(690, 30)
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("5_yggkk")]
 position = Vector2(660, 870)
 rotation = 3.1415927
-room = "steps_room_0"
+room = "depths_room_1"
 door = "Entrance0"
 
 [node name="Exit1" parent="Doors" unique_id=248772373 instance=ExtResource("5_yggkk")]
 position = Vector2(30, 382.5)
 rotation = 4.712389
-room = "steps_room_0"
+room = "depths_room_1"
 door = "Entrance0"
 
 [node name="Exit2" parent="Doors" unique_id=1945921795 instance=ExtResource("5_yggkk")]
 position = Vector2(870, 690)
 rotation = 1.5707964
-room = "steps_room_0"
+room = "depths_room_1"
 door = "Entrance0"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_jrd5f")]

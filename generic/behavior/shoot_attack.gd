@@ -15,6 +15,7 @@ func on_enter() -> void:
 			state_handler.target = user.ability_handler.find_target()
 		if not is_instance_valid(state_handler.target):
 			state_handler.change_state(next)
+			return
 		state_handler.data["direction"] = user.global_position.direction_to(state_handler.target.global_position)
 	
 	var bullet_instance = user.ability_handler.make_projectile(bullet, 

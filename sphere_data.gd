@@ -68,6 +68,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
+	"depths_room_1" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "depths",
+	},
 	#endregion
 	#region wonder
 	"wonder_entrance_hall" : {

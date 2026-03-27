@@ -159,7 +159,7 @@ script = ExtResource("6_q1ut4")
 bullet = ExtResource("7_q1ut4")
 bullet_lifetime = 2.75
 bullet_count = 8
-bullet_speed = 250
+bullet_speed = 300
 next = NodePath("../Endlag1")
 
 [node name="Endlag1" type="Node" parent="StateHandler" unique_id=81129476 node_paths=PackedStringArray("next")]
@@ -192,7 +192,7 @@ bullet = ExtResource("7_q1ut4")
 bullet_lifetime = 2.75
 bullet_count = 8
 angle = 22.5
-bullet_speed = 250
+bullet_speed = 300
 next = NodePath("../Endlag2")
 
 [node name="Endlag2" type="Node" parent="StateHandler" unique_id=597537159 node_paths=PackedStringArray("next")]
