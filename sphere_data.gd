@@ -68,6 +68,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
+	"depths_qualia_treasury" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_qualia_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "depths",
+	},
 	"depths_room_1" : {
 		"scene" : preload("res://spheres/2/depths/rooms/depths_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
@@ -259,6 +264,9 @@ var entity_data = {
 	#region depths
 	"diver" : {
 		"scene" : preload("res://spheres/2/depths/diver/diver.tscn")
+	},
+	"stray_bubble" : {
+		"scene" : preload("res://spheres/2/depths/stray_bubble/stray_bubble.tscn")
 	},
 	"sentry" : {
 		"scene" : preload("res://spheres/2/depths/sentry/sentry.tscn")

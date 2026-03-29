@@ -91,14 +91,16 @@ door = "Entrance0"
 [node name="Exit1" parent="Doors" unique_id=248772373 instance=ExtResource("5_yggkk")]
 position = Vector2(30, 382.5)
 rotation = 4.712389
-room = "depths_room_1"
+room = "depths_health_treasury"
 door = "Entrance0"
+travel_time = 0
 
 [node name="Exit2" parent="Doors" unique_id=1945921795 instance=ExtResource("5_yggkk")]
 position = Vector2(870, 690)
 rotation = 1.5707964
-room = "depths_room_1"
+room = "depths_qualia_treasury"
 door = "Entrance0"
+travel_time = 0
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_jrd5f")]
 reward = ExtResource("7_4yix7")
