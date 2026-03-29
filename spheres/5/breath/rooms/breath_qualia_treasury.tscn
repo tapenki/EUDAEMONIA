@@ -27,15 +27,15 @@ next = NodePath("../Wave2")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave1" unique_id=358308453]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave1" unique_id=358308453]
 position = Vector2(180, 390)
 script = ExtResource("3_2otwp")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave1" unique_id=228081953]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave1" unique_id=228081953]
 position = Vector2(330, 450)
 script = ExtResource("3_2otwp")
-entity = "sprout"
+entity = "leafer"
 
 [node name="SpawnStalk" type="Node2D" parent="Waves/Wave1" unique_id=1901013959]
 position = Vector2(240, 480)
@@ -50,15 +50,15 @@ next = NodePath("../Wave3")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave2" unique_id=1271724232]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave2" unique_id=1271724232]
 position = Vector2(480, 360)
 script = ExtResource("3_2otwp")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave2" unique_id=999421085]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave2" unique_id=999421085]
 position = Vector2(480, 210)
 script = ExtResource("3_2otwp")
-entity = "sprout"
+entity = "leafer"
 
 [node name="SpawnStalk" type="Node2D" parent="Waves/Wave2" unique_id=649868972]
 position = Vector2(540, 300)
@@ -72,15 +72,15 @@ script = ExtResource("2_r7mfo")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave3" unique_id=1824948146]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave3" unique_id=1824948146]
 position = Vector2(150, 240)
 script = ExtResource("3_2otwp")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave3" unique_id=1167788266]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave3" unique_id=1167788266]
 position = Vector2(300, 150)
 script = ExtResource("3_2otwp")
-entity = "sprout"
+entity = "leafer"
 
 [node name="SpawnStalk" type="Node2D" parent="Waves/Wave3" unique_id=1018012058]
 position = Vector2(210, 150)

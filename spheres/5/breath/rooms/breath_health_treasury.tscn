@@ -50,25 +50,25 @@ next = NodePath("../Wave3")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave2" unique_id=293564818]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave2" unique_id=293564818]
 position = Vector2(960, 210)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave2" unique_id=1441973909]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave2" unique_id=1441973909]
 position = Vector2(1230, 270)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout3" type="Node2D" parent="Waves/Wave2" unique_id=144501602]
+[node name="SpawnLeafer3" type="Node2D" parent="Waves/Wave2" unique_id=144501602]
 position = Vector2(1290, 480)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout4" type="Node2D" parent="Waves/Wave2" unique_id=94373580]
+[node name="SpawnLeafer4" type="Node2D" parent="Waves/Wave2" unique_id=94373580]
 position = Vector2(990, 630)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
 [node name="Wave3" type="Node2D" parent="Waves" unique_id=2087672965 node_paths=PackedStringArray("next")]
 script = ExtResource("2_whfnj")

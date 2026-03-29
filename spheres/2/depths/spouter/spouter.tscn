@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="7_0xil2"]
 [ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="8_x0lce"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_efqn2"]
-[ext_resource type="Texture2D" uid="uid://c11hm0d3nbhqq" path="res://spheres/2/depths/repeater/repeater.png" id="10_jmbjq"]
+[ext_resource type="Texture2D" uid="uid://c11hm0d3nbhqq" path="res://spheres/2/depths/spouter/spouter.png" id="10_jmbjq"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_lngt2"]
-[ext_resource type="Texture2D" uid="uid://dtlr442hmu86y" path="res://spheres/2/depths/repeater/repeater_hurt.png" id="12_m3a0w"]
+[ext_resource type="Texture2D" uid="uid://dtlr442hmu86y" path="res://spheres/2/depths/spouter/spouter_hurt.png" id="12_m3a0w"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_shaoq"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_acgrj"]
 

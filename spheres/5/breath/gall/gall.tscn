@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_ps0y5"]
 [ext_resource type="Script" uid="uid://yvjvsxb3a557" path="res://spheres/5/breath/gall/spawn_on_death.gd" id="3_8sugv"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_tdhm5"]
-[ext_resource type="PackedScene" uid="uid://bdvfiw08c6nnb" path="res://spheres/5/breath/giga_sprout/giga_sprout.tscn" id="4_a1dje"]
+[ext_resource type="PackedScene" uid="uid://bdvfiw08c6nnb" path="res://spheres/5/breath/giga_leafer/giga_leafer.tscn" id="4_a1dje"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_dvfoy"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_tucyj"]
 [ext_resource type="Script" uid="uid://bnig2aoryu6ex" path="res://spheres/5/breath/indicator_attack_x.gd" id="6_xgelm"]

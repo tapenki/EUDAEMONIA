@@ -73,6 +73,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
+	"depths_room_2" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "depths",
+	},
 	#endregion
 	#region wonder
 	"wonder_entrance_hall" : {
@@ -258,8 +263,8 @@ var entity_data = {
 	"sentry" : {
 		"scene" : preload("res://spheres/2/depths/sentry/sentry.tscn")
 	},
-	"repeater" : {
-		"scene" : preload("res://spheres/2/depths/repeater/repeater.tscn")
+	"spouter" : {
+		"scene" : preload("res://spheres/2/depths/spouter/spouter.tscn")
 	},
 	#endregion
 	#region wonder
@@ -305,8 +310,8 @@ var entity_data = {
 	},
 	#endregion
 	#region breath
-	"sprout" : {
-		"scene" : preload("res://spheres/5/breath/sprout/sprout.tscn")
+	"leafer" : {
+		"scene" : preload("res://spheres/5/breath/leafer/leafer.tscn")
 	},
 	"stalk" : {
 		"scene" : preload("res://spheres/5/breath/stalk/stalk.tscn")
@@ -317,8 +322,8 @@ var entity_data = {
 	"gall" : {
 		"scene" : preload("res://spheres/5/breath/gall/gall.tscn")
 	},
-	"giga_sprout" : {
-		"scene" : preload("res://spheres/5/breath/giga_sprout/giga_sprout.tscn")
+	"giga_leafer" : {
+		"scene" : preload("res://spheres/5/breath/giga_leafer/giga_leafer.tscn")
 	},
 	#endregion
 }

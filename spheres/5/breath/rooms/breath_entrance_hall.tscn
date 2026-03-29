@@ -27,25 +27,25 @@ next = NodePath("../Wave2")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave1" unique_id=358308453]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave1" unique_id=358308453]
 position = Vector2(150, 180)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave1" unique_id=228081953]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave1" unique_id=228081953]
 position = Vector2(120, 300)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout3" type="Node2D" parent="Waves/Wave1" unique_id=1901013959]
+[node name="SpawnLeafer3" type="Node2D" parent="Waves/Wave1" unique_id=1901013959]
 position = Vector2(270, 150)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout4" type="Node2D" parent="Waves/Wave1" unique_id=2062090062]
+[node name="SpawnLeafer4" type="Node2D" parent="Waves/Wave1" unique_id=2062090062]
 position = Vector2(240, 270)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
 [node name="Wave2" type="Node2D" parent="Waves" unique_id=583739388]
 script = ExtResource("2_oxlrp")
@@ -54,25 +54,25 @@ script = ExtResource("2_oxlrp")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave2" unique_id=293564818]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave2" unique_id=293564818]
 position = Vector2(480, 510)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave2" unique_id=1565797405]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave2" unique_id=1565797405]
 position = Vector2(570, 450)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout3" type="Node2D" parent="Waves/Wave2" unique_id=1789400504]
+[node name="SpawnLeafer3" type="Node2D" parent="Waves/Wave2" unique_id=1789400504]
 position = Vector2(630, 510)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout4" type="Node2D" parent="Waves/Wave2" unique_id=140279840]
+[node name="SpawnLeafer4" type="Node2D" parent="Waves/Wave2" unique_id=140279840]
 position = Vector2(540, 570)
 script = ExtResource("3_8nvlk")
-entity = "sprout"
+entity = "leafer"
 
 [node name="Doors" type="Node2D" parent="." unique_id=1437250209]
 

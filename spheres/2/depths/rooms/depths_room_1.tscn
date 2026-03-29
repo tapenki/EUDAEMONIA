@@ -27,15 +27,15 @@ next = NodePath("../Wave2")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnRepeater1" type="Node2D" parent="Waves/Wave1" unique_id=200022765]
+[node name="SpawnSpouter1" type="Node2D" parent="Waves/Wave1" unique_id=200022765]
 position = Vector2(240, 540)
 script = ExtResource("3_4cdi1")
-entity = "repeater"
+entity = "spouter"
 
-[node name="SpawnRepeater2" type="Node2D" parent="Waves/Wave1" unique_id=2071305083]
+[node name="SpawnSpouter2" type="Node2D" parent="Waves/Wave1" unique_id=2071305083]
 position = Vector2(630, 540)
 script = ExtResource("3_4cdi1")
-entity = "repeater"
+entity = "spouter"
 
 [node name="SpawnSentry" type="Node2D" parent="Waves/Wave1" unique_id=1258478408]
 position = Vector2(420, 420)
@@ -49,25 +49,25 @@ script = ExtResource("2_37pg5")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnRepeater1" type="Node2D" parent="Waves/Wave2" unique_id=1353859618]
+[node name="SpawnSpouter1" type="Node2D" parent="Waves/Wave2" unique_id=1353859618]
 position = Vector2(150, 480)
 script = ExtResource("3_4cdi1")
-entity = "repeater"
+entity = "spouter"
 
-[node name="SpawnRepeater2" type="Node2D" parent="Waves/Wave2" unique_id=77877569]
+[node name="SpawnSpouter2" type="Node2D" parent="Waves/Wave2" unique_id=77877569]
 position = Vector2(300, 660)
 script = ExtResource("3_4cdi1")
-entity = "repeater"
+entity = "spouter"
 
-[node name="SpawnRepeater3" type="Node2D" parent="Waves/Wave2" unique_id=1380882876]
+[node name="SpawnSpouter3" type="Node2D" parent="Waves/Wave2" unique_id=1380882876]
 position = Vector2(720, 480)
 script = ExtResource("3_4cdi1")
-entity = "repeater"
+entity = "spouter"
 
-[node name="SpawnRepeater4" type="Node2D" parent="Waves/Wave2" unique_id=1878419447]
+[node name="SpawnSpouter4" type="Node2D" parent="Waves/Wave2" unique_id=1878419447]
 position = Vector2(570, 660)
 script = ExtResource("3_4cdi1")
-entity = "repeater"
+entity = "spouter"
 
 [node name="Doors" type="Node2D" parent="." unique_id=2016811140]
 
@@ -77,7 +77,7 @@ position = Vector2(450, 30)
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("5_jmme4")]
 position = Vector2(840, 420)
 rotation = 1.5707964
-room = "steps_room_0"
+room = "steps_room_2"
 door = "Entrance0"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_rhekj")]

@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_a24i7"]
 [ext_resource type="Script" uid="uid://b03xje6de2ajy" path="res://spheres/5/breath/spike_dash_attack.gd" id="7_u7mec"]
 [ext_resource type="PackedScene" uid="uid://be5p70xoowmvb" path="res://spheres/5/breath/anapnoi_thorn.tscn" id="8_a0dhh"]
-[ext_resource type="Texture2D" uid="uid://bwdseiwrah7ki" path="res://spheres/5/breath/giga_sprout/giga_sprout.png" id="9_2gv3r"]
+[ext_resource type="Texture2D" uid="uid://bwdseiwrah7ki" path="res://spheres/5/breath/giga_leafer/giga_leafer.png" id="9_2gv3r"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="9_76xpw"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_cys4q"]
-[ext_resource type="Texture2D" uid="uid://b7gsxtvvflfek" path="res://spheres/5/breath/giga_sprout/giga_sprout_hurt.png" id="11_313mo"]
+[ext_resource type="Texture2D" uid="uid://b7gsxtvvflfek" path="res://spheres/5/breath/giga_leafer/giga_leafer_hurt.png" id="11_313mo"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_wgu50"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_8jfyq"]
 [ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="15_41ets"]
@@ -106,7 +106,7 @@ _data = {
 &"WINDUP": SubResource("Animation_14oqu")
 }
 
-[node name="GigaSprout" type="CharacterBody2D" unique_id=1688104336 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="GigaLeafer" type="CharacterBody2D" unique_id=1688104336 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128

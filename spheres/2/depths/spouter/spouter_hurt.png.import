@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwdseiwrah7ki"
-path="res://.godot/imported/giga_sprout.png-aab76c9054a38421c8fdaccbb0cbf955.ctex"
+uid="uid://dtlr442hmu86y"
+path="res://.godot/imported/spouter_hurt.png-0297b44b45ede241ca5295dc3b9aecef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/5/breath/giga_sprout/giga_sprout.png"
-dest_files=["res://.godot/imported/giga_sprout.png-aab76c9054a38421c8fdaccbb0cbf955.ctex"]
+source_file="res://spheres/2/depths/spouter/spouter_hurt.png"
+dest_files=["res://.godot/imported/spouter_hurt.png-0297b44b45ede241ca5295dc3b9aecef.ctex"]
 
 [params]
 

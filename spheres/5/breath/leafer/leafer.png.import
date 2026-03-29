@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfpr2cn2bm1j"
-path="res://.godot/imported/sprout.png-e8539513d36513b265112006ac1e3c3a.ctex"
+path="res://.godot/imported/leafer.png-5fc62f2774631fcaec6b7fe4a55651d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/5/breath/sprout/sprout.png"
-dest_files=["res://.godot/imported/sprout.png-e8539513d36513b265112006ac1e3c3a.ctex"]
+source_file="res://spheres/5/breath/leafer/leafer.png"
+dest_files=["res://.godot/imported/leafer.png-5fc62f2774631fcaec6b7fe4a55651d6.ctex"]
 
 [params]
 

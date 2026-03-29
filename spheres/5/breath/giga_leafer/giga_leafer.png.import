@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtlr442hmu86y"
-path="res://.godot/imported/repeater_hurt.png-aff8d90ba71b697036fe1336c8d7ebf2.ctex"
+uid="uid://bwdseiwrah7ki"
+path="res://.godot/imported/giga_leafer.png-53eba679cabf5628942ec05802414629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/2/depths/repeater/repeater_hurt.png"
-dest_files=["res://.godot/imported/repeater_hurt.png-aff8d90ba71b697036fe1336c8d7ebf2.ctex"]
+source_file="res://spheres/5/breath/giga_leafer/giga_leafer.png"
+dest_files=["res://.godot/imported/giga_leafer.png-53eba679cabf5628942ec05802414629.ctex"]
 
 [params]
 

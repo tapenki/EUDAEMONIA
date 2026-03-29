@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7gsxtvvflfek"
-path="res://.godot/imported/giga_sprout_hurt.png-aa08e75f8a539a3f27a47deb0b04213d.ctex"
+uid="uid://bl4uh2dc3u2dn"
+path="res://.godot/imported/leafer_hurt.png-b8cb16bc27cb5ff29c61e6bc995cea3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/5/breath/giga_sprout/giga_sprout_hurt.png"
-dest_files=["res://.godot/imported/giga_sprout_hurt.png-aa08e75f8a539a3f27a47deb0b04213d.ctex"]
+source_file="res://spheres/5/breath/leafer/leafer_hurt.png"
+dest_files=["res://.godot/imported/leafer_hurt.png-b8cb16bc27cb5ff29c61e6bc995cea3e.ctex"]
 
 [params]
 

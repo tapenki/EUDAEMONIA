@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_lfdh4"]
 [ext_resource type="Script" uid="uid://bdo0vp3t3wm80" path="res://generic/behavior/radialshot_attack.gd" id="6_q1ut4"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_qjp0b"]
-[ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="7_q1ut4"]
+[ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="7_q1ut4"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_ciyrk"]
 [ext_resource type="Texture2D" uid="uid://sraqbdu3oh3l" path="res://spheres/2/depths/sentry/sentry.png" id="10_fxj1d"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_22lid"]
