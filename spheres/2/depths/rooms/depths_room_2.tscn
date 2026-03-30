@@ -75,12 +75,12 @@ one_shot = true
 [node name="SpawnDiver1" type="Node2D" parent="Waves/Wave3" unique_id=1353859618]
 position = Vector2(240, 840)
 script = ExtResource("3_00t80")
-entity = "repeater"
+entity = "diver"
 
 [node name="SpawnDiver2" type="Node2D" parent="Waves/Wave3" unique_id=77877569]
 position = Vector2(480, 840)
 script = ExtResource("3_00t80")
-entity = "repeater"
+entity = "diver"
 
 [node name="SpawnSpouter1" type="Node2D" parent="Waves/Wave3" unique_id=977890670]
 position = Vector2(270, 210)

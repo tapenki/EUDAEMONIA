@@ -68,6 +68,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
+	"depths_health_treasury" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "depths",
+	},
 	"depths_qualia_treasury" : {
 		"scene" : preload("res://spheres/2/depths/rooms/depths_qualia_treasury.tscn"), 
 		"zoom_scale" : 0.9, 

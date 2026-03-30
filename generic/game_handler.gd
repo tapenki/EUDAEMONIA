@@ -78,7 +78,10 @@ func spawn_entity(entity: Entity, delay = 0.5):
 
 func instantiate_enemy(scene: PackedScene):
 	var entity_instance = scene.instantiate()
-	assign_entity_group(entity_instance, 2, "primary")
+	var color = "primary"
+	if entity_instance.summoned:
+		color = "secondary"
+	assign_entity_group(entity_instance, 2, color)
 	entity_instance.max_health = scale_enemy_health(entity_instance.max_health)
 	entity_instance.health = entity_instance.max_health
 	entity_instance.ability_handler.inherited_damage["multiplier"] = scale_enemy_damage()

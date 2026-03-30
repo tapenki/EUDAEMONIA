@@ -77,7 +77,7 @@ position = Vector2(450, 30)
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("5_jmme4")]
 position = Vector2(840, 420)
 rotation = 1.5707964
-room = "steps_room_2"
+room = "depths_room_2"
 door = "Entrance0"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_rhekj")]
