@@ -88,6 +88,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
+	"depths_throne_room" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "depths",
+	},
 	#endregion
 	#region wonder
 	"wonder_entrance_hall" : {
@@ -278,6 +283,9 @@ var entity_data = {
 	},
 	"spouter" : {
 		"scene" : preload("res://spheres/2/depths/spouter/spouter.tscn")
+	},
+	"warden" : {
+		"scene" : preload("res://spheres/2/depths/warden/warden.tscn")
 	},
 	#endregion
 	#region wonder

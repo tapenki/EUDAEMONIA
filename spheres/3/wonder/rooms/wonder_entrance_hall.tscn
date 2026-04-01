@@ -28,12 +28,12 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnSpitball1" type="Node2D" parent="Waves/Wave1" unique_id=185000223]
-position = Vector2(210, 180)
+position = Vector2(630, 180)
 script = ExtResource("3_gh6y3")
 entity = "spitball"
 
 [node name="SpawnSpitball2" type="Node2D" parent="Waves/Wave1" unique_id=268758512]
-position = Vector2(210, 480)
+position = Vector2(630, 480)
 script = ExtResource("3_gh6y3")
 entity = "spitball"
 
@@ -45,20 +45,20 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnSpitball1" type="Node2D" parent="Waves/Wave2" unique_id=2074149808]
-position = Vector2(270, 240)
+position = Vector2(570, 240)
 script = ExtResource("3_gh6y3")
 entity = "spitball"
 
 [node name="SpawnSpitball2" type="Node2D" parent="Waves/Wave2" unique_id=1465298687]
-position = Vector2(270, 420)
+position = Vector2(570, 420)
 script = ExtResource("3_gh6y3")
 entity = "spitball"
 
 [node name="Doors" type="Node2D" parent="." unique_id=594482437]
 
 [node name="Entrance0" parent="Doors" unique_id=548145362 instance=ExtResource("2_e1u8p")]
-position = Vector2(810, 330)
-rotation = 1.5707964
+position = Vector2(30, 330)
+rotation = 4.712389
 
 [node name="Exit0" parent="Doors" unique_id=258520275 instance=ExtResource("3_v2os6")]
 position = Vector2(300, 30)
