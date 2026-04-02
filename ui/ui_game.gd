@@ -64,15 +64,18 @@ func toggle_game_menu():
 			proceed.visible = false
 		if not main.day_started:
 			main.start_day()
+		hud.get_node("Chat").visible = true
 		toggle_pause(false)
 	else:
 		game_menu.visible = true
 		backdrop.visible = true
 		proceed.visible = true
+		
 		if not main.day_started:
 			proceed.text = "start_day"
 		elif not main.game_over:
 			proceed.text = "continue"
+		hud.get_node("Chat").visible = false
 		toggle_pause(true)
 	get_node("/root/Main").play_sound("Click")
 	fade.color = Color(0,0,0)

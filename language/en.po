@@ -604,55 +604,55 @@ msgstr "Sphere [??]: Pandemonium"
 # quotes
 
 msgid "giga_leaper_spawn_1"
-msgstr "here i come >:)"
+msgstr "[Giga Leaper]: here i come >:)"
 
 msgid "giga_leaper_spawn_2"
-msgstr "i will kill u >:)"
+msgstr "[Giga Leaper]: i will kill u >:)"
 
 msgid "giga_leaper_death_1"
-msgstr "ahh i lose !!!"
+msgstr "[Giga Leaper]: ahh i lose !!!"
 
 msgid "giga_leaper_death_2"
-msgstr "grrgghn >:("
+msgstr "[Giga Leaper]: grrgghn >:("
 
 msgid "giga_spitter_spawn_1"
-msgstr "here i come >:)"
+msgstr "[Giga Spitter]: here i come >:)"
 
 msgid "giga_spitter_spawn_2"
-msgstr "u will die >:)"
+msgstr "[Giga Spitter]: u will die >:)"
 
 msgid "giga_spitter_death_1"
-msgstr "ahh u win !!!"
+msgstr "[Giga Spitter]: ahh u win !!!"
 
 msgid "giga_spitter_death_2"
-msgstr "adfsfds >:("
+msgstr "[Giga Spitter]: adfsfds >:("
 
 msgid "saturn_spawn_1"
-msgstr "YYuummmmeerrss"
+msgstr "[Saturn]: YYuummmmeerrss"
 
 msgid "saturn_death_1"
-msgstr "OOwwiiee"
+msgstr "[Saturn]: OOwwiiee"
 
 msgid "mold_mother_spawn_1"
-msgstr "HEE HOO"
+msgstr "[Mold Mother]: HEE HOO"
 
 msgid "mold_mother_death_1"
-msgstr "WOMP WOMP"
+msgstr "[Mold Mother]: WOMP WOMP"
 
 msgid "harbinger_spawn_1"
-msgstr "*You shall perish*"
+msgstr "[Harbinger]: *You shall perish*"
 
 msgid "harbinger_death_1"
-msgstr "*Woe is me*"
+msgstr "[Harbinger]: *Woe is me*"
 
 msgid "gall_spawn_1"
-msgstr "Wise Mystical Tree"
+msgstr "[Gall]: Wise Mystical Tree"
 
-msgid "giga_sprout_spawn_1"
-msgstr "fool fool fool !!!"
+msgid "giga_leafer_spawn_1"
+msgstr "[Giga Leafer]: fool fool fool !!!"
 
-msgid "giga_sprout_death_1"
-msgstr "grrgghn >:("
+msgid "giga_leafer_death_1"
+msgstr "[Giga Leafer]: grrgghn >:("
 
 # rewards
 

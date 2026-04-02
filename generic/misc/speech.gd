@@ -1,6 +1,6 @@
 extends Node2D
 
-var label_scene = preload("res://generic/misc/speech_label.tscn")
+#var label_scene = preload("res://generic/misc/speech_label.tscn")
 
 @export var spawn_quotes: Array
 @export var death_quotes: Array
@@ -8,9 +8,11 @@ var label_scene = preload("res://generic/misc/speech_label.tscn")
 var cleanup = false
 
 func say(text: String):
-	var label_instance = label_scene.instantiate()
-	label_instance.text = tr(text)
-	add_child(label_instance)
+	#var label_instance = label_scene.instantiate()
+	#label_instance.text = tr(text)
+	#add_child(label_instance)
+	var time = "["+str(Time.get_time_dict_from_system().hour)+":"+str(Time.get_time_dict_from_system().minute)+"]"
+	get_node("/root/Main/UI/HUD/Chat").print_message(time+"[outline_color=#ff0000]"+tr(text)+"[/outline_color]")
 
 func _ready() -> void:
 	if owner.group != 2:

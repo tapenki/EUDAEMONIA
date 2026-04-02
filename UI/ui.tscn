@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/ui/upgrade_points.gd" id="3_mom20"]
 [ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://ui/health_bar.gd" id="5_r6g2f"]
 [ext_resource type="PackedScene" uid="uid://2hguf1pilgru" path="res://paths/ui/magic_picker.tscn" id="6_6rr40"]
+[ext_resource type="Script" uid="uid://bph10ww728rkd" path="res://ui/misc/chat.gd" id="8_co7pv"]
 [ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="9_7j5ik"]
 [ext_resource type="Script" uid="uid://vh8xivmipwsn" path="res://ui/reset.gd" id="9_ow1yt"]
 [ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://ui/misc/version.gd" id="10_0w6e5"]
@@ -194,6 +195,21 @@ patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
+
+[node name="Chat" type="BoxContainer" parent="HUD" unique_id=1923956970]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -104.0
+offset_right = 191.0
+offset_bottom = -4.0
+grow_vertical = 0
+alignment = 2
+vertical = true
+script = ExtResource("8_co7pv")
 
 [node name="GameMenu" type="Control" parent="." unique_id=38269991]
 z_index = 1

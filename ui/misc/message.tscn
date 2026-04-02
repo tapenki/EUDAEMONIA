@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bphtt41sk33ql"]
+
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_xfo71"]
+
+[node name="Message" type="RichTextLabel" unique_id=1757926815]
+offset_right = 191.0
+offset_bottom = 23.0
+theme = ExtResource("1_xfo71")
+bbcode_enabled = true
+text = "textextext"
+fit_content = true
+autowrap_mode = 0
