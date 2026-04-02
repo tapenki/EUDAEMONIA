@@ -335,8 +335,8 @@ next/WINDUP = &"IDLE"
 [node name="Speech" type="Node2D" parent="." unique_id=50764440]
 position = Vector2(0, -25)
 script = ExtResource("17_nc6hc")
-spawn_quotes = ["saturn_spawn_1"]
-death_quotes = ["saturn_death_1"]
+spawn_quotes = ["saturn_spawn_1", "saturn_spawn_2"]
+death_quotes = ["saturn_death_1", "saturn_death_2"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareDash1/Timer" to="StateHandler/PrepareDash1" method="_on_timer_timeout"]

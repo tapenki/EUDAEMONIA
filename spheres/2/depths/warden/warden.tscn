@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dkg8x150s4mnm" path="res://spheres/2/depths/warden/warden_hurt.png" id="11_2okfs"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_lssfr"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_40ygs"]
+[ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="17_pssg1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 45.0
@@ -379,6 +380,12 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 autoplay = &"IDLE"
 next/WINDUP = &"IDLE"
+
+[node name="Speech" type="Node2D" parent="." unique_id=433933247]
+position = Vector2(0, -25)
+script = ExtResource("17_pssg1")
+spawn_quotes = ["warden_spawn_1"]
+death_quotes = ["warden_death_1"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareVacuumAttack/Timer" to="StateHandler/PrepareVacuumAttack" method="_on_timer_timeout"]

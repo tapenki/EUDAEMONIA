@@ -319,7 +319,7 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 position = Vector2(0, -25)
 script = ExtResource("15_i12jv")
 spawn_quotes = ["harbinger_spawn_1"]
-death_quotes = ["harbinger_death_1"]
+death_quotes = ["harbinger_death_1", "harbinger_death_2"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]

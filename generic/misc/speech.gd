@@ -11,8 +11,10 @@ func say(text: String):
 	#var label_instance = label_scene.instantiate()
 	#label_instance.text = tr(text)
 	#add_child(label_instance)
+	var color = Config.config.get_value("palette", "2/primary", "ffffff")
+	get_node("/root/Main").floating_text(global_position, "[!]", Color(color))
 	var time = "["+str(Time.get_time_dict_from_system().hour)+":"+str(Time.get_time_dict_from_system().minute)+"]"
-	get_node("/root/Main/UI/HUD/Chat").print_message(time+"[outline_color=#ff0000]"+tr(text)+"[/outline_color]")
+	get_node("/root/Main/UI/HUD/Chat").print_message(time+"[outline_color=#"+color+"]"+tr(text)+"[/outline_color]")
 
 func _ready() -> void:
 	if owner.group != 2:

@@ -8,7 +8,7 @@ func _ready() -> void:
 	var grow_tween = create_tween()
 	grow_tween.tween_property(self, "scale", Vector2(1, 2), 0.2)
 	grow_tween.tween_property(self, "scale", Vector2(1, 1), 0.2)
-	await get_tree().create_timer(0.5).timeout
+	await rise_tween.finished
 	var shrink_tween = create_tween()
 	shrink_tween.tween_property(self, "scale", Vector2(1, 0), 0.2)
 	await shrink_tween.finished

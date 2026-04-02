@@ -627,11 +627,23 @@ msgstr "[Giga Spitter]: ahh u win !!!"
 msgid "giga_spitter_death_2"
 msgstr "[Giga Spitter]: adfsfds >:("
 
+msgid "warden_spawn_1"
+msgstr "[Warden]: you will become iNside"
+
+msgid "warden_death_1"
+msgstr "[Warden]: qu888 bOunty on your hEad"
+
 msgid "saturn_spawn_1"
 msgstr "[Saturn]: YYuummmmeerrss"
 
+msgid "saturn_spawn_2"
+msgstr "[Saturn]: NNiiccee ttoo eeaatt yyoouu"
+
 msgid "saturn_death_1"
 msgstr "[Saturn]: OOwwiiee"
+
+msgid "saturn_death_2"
+msgstr "[Saturn]: YYuucckk"
 
 msgid "mold_mother_spawn_1"
 msgstr "[Mold Mother]: HEE HOO"
@@ -645,11 +657,17 @@ msgstr "[Harbinger]: *You shall perish*"
 msgid "harbinger_death_1"
 msgstr "[Harbinger]: *Woe is me*"
 
+msgid "harbinger_death_2"
+msgstr "[Harbinger]: *Very unwise*"
+
 msgid "gall_spawn_1"
 msgstr "[Gall]: Wise Mystical Tree"
 
 msgid "giga_leafer_spawn_1"
 msgstr "[Giga Leafer]: fool fool fool !!!"
+
+msgid "giga_leafer_spawn_2"
+msgstr "[Giga Leafer]: come here you >:("
 
 msgid "giga_leafer_death_1"
 msgstr "[Giga Leafer]: grrgghn >:("

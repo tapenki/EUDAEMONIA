@@ -10,3 +10,7 @@ bbcode_enabled = true
 text = "textextext"
 fit_content = true
 autowrap_mode = 0
+
+[node name="Lifetime" type="Timer" parent="." unique_id=748745873]
+wait_time = 4.4
+autostart = true

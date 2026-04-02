@@ -216,7 +216,7 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 [node name="Speech" type="Node2D" parent="." unique_id=923893716]
 position = Vector2(0, -25)
 script = ExtResource("15_41ets")
-spawn_quotes = ["giga_leafer_spawn_1"]
+spawn_quotes = ["giga_leafer_spawn_1", "giga_leafer_spawn_2"]
 death_quotes = ["giga_leafer_death_1"]
 
 [connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]

@@ -197,6 +197,7 @@ patch_margin_right = 10
 patch_margin_bottom = 10
 
 [node name="Chat" type="BoxContainer" parent="HUD" unique_id=1923956970]
+process_mode = 1
 visible = false
 layout_mode = 1
 anchors_preset = -1
