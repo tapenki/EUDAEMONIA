@@ -16,7 +16,7 @@ func avoidance():
 	var found
 	var distance = 0
 	for entity in get_node("/root/Main/Entities").get_children():
-		if entity != user and entity.scene_file_path == user.scene_file_path and not user.ability_handler.can_hit(entity):
+		if entity != user and entity.scene_file_path == user.scene_file_path and not user.ability_relay.can_hit(entity):
 			distance = user.global_position.distance_to(entity.global_position)
 			if distance < reach:
 				reach = distance
@@ -28,7 +28,7 @@ func _physics_process(_delta):
 	#for i in node2d.get_children():
 		#i.queue_free()
 	if not is_instance_valid(state_handler.target):
-		state_handler.target = user.ability_handler.find_target()
+		state_handler.target = user.ability_relay.find_target()
 	if not is_instance_valid(state_handler.target):# or user.knockback_timer.running:
 		if user.animation_player.current_animation == "WALK":
 			user.animation_player.stop()
@@ -78,7 +78,7 @@ func _physics_process(_delta):
 			state_handler.change_state(next)
 			return
 	
-	var final_speed = user.ability_handler.get_move_speed(speed)
+	var final_speed = user.ability_relay.get_move_speed(speed)
 	var final_velocity = direction * final_speed
 	
 	var avoid = avoidance()

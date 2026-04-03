@@ -4,13 +4,13 @@ var starvation: bool
 var inherited_damage: float
 
 func _ready() -> void:
-	if ability_handler.is_entity and not ability_handler.owner is Player:
+	if ability_relay.is_entity and not ability_relay.owner is Player:
 		get_node("/root/Main").entity_death.connect(entity_death)
-	ability_handler.damage_dealt_modifiers.connect(damage_dealt_modifiers)
+	ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 
 func entity_death(_dying_entity: Entity):
-	ability_handler.apply_status(ability_handler, "haste", 0.5 * level)
-	ability_handler.owner.heal(15*level)
+	ability_relay.apply_status(ability_relay, "haste", 0.5 * level)
+	ability_relay.owner.heal(15*level)
 	if starvation:
 		inherited_damage += 0.04 * level
 

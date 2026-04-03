@@ -11,14 +11,14 @@ extends State
 var direction: Vector2
 
 func _physics_process(_delta):
-	var final_speed = user.ability_handler.get_move_speed(speed) * user.ability_handler.speed_scale
+	var final_speed = user.ability_relay.get_move_speed(speed) * user.ability_relay.speed_scale
 	if user.is_on_wall():
 		direction = direction.bounce(user.get_last_slide_collision().get_normal())
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
 
 func on_enter() -> void:
 	super()
-	state_handler.target = user.ability_handler.find_target()
+	state_handler.target = user.ability_relay.find_target()
 	if is_instance_valid(state_handler.target):
 		var distance = user.global_position.distance_to(state_handler.target.global_position)
 		if distance < back_off_distance:

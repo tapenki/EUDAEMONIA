@@ -1,10 +1,10 @@
 class_name CpuParticles extends CPUParticles2D
 
-@export var ability_handler: Node
+@export var ability_relay: Node
 
 func _ready() -> void:
-	if ability_handler:
-		ability_handler.self_death.connect(self_death)
+	if ability_relay:
+		ability_relay.self_death.connect(self_death)
 
 ## TODO: particles flicker when reparented
 func self_death():

@@ -105,20 +105,20 @@ _data = {
 &"WINDUP": SubResource("Animation_c5gmf")
 }
 
-[node name="Hydra" type="CharacterBody2D" unique_id=883973237 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Hydra" type="CharacterBody2D" unique_id=883973237 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_c5gmf")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
 health = 40
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=1831330198]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1831330198]
 script = ExtResource("2_5aepp")
 is_entity = true
 
@@ -140,10 +140,10 @@ script = ExtResource("7_3hypy")
 anim = "WINDUP"
 next = NodePath("../ShootAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=2120989438 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=2120989438 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_5aepp")
 wait_time = 0.7
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="ShootAttack" type="Node" parent="StateHandler" unique_id=669507392 node_paths=PackedStringArray("next")]
@@ -161,10 +161,10 @@ process_mode = 4
 script = ExtResource("7_3hypy")
 next = NodePath("../CloseIn")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=716924725 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=716924725 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_5aepp")
 wait_time = 0.5
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1536361071]
@@ -176,10 +176,10 @@ script = ExtResource("10_h25ub")
 base_texture = ExtResource("9_idkhh")
 hurt_texture = ExtResource("11_3n20i")
 
-[node name="Hurt" type="Node" parent="Sprite" unique_id=912642752 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=912642752 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_5aepp")
 wait_time = 0.2
-ability_handler = NodePath("../../AbilityHandler")
+ability_relay = NodePath("../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1080712673]
@@ -190,10 +190,10 @@ texture = ExtResource("12_tyrj1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883333337]
 shape = SubResource("CircleShape2D_bhp25")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=1110378941 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1110378941 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
 script = ExtResource("13_346t3")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1509247262]
 shape = SubResource("CircleShape2D_jpw2x")
@@ -202,7 +202,7 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]

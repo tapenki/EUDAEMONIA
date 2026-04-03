@@ -3,11 +3,11 @@ class_name Particles extends GPUParticles2D
 ## particles with infinite visibility rect cause visual issues when rotated
 
 @onready var timer = $Lifetime
-@export var ability_handler: Node
+@export var ability_relay: Node
 
 func _ready() -> void:
-	if ability_handler:
-		ability_handler.self_death.connect(self_death)
+	if ability_relay:
+		ability_relay.self_death.connect(self_death)
 
 func self_death():
 	kill()

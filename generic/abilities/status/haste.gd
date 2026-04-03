@@ -11,7 +11,7 @@ func _ready() -> void:
 	#particle_instance = particle_scene.instantiate()
 	#particle_instance.modulate = Config.get_team_color(1, "secondary")
 	#add_child.call_deferred(particle_instance)
-	ability_handler.speed_scale_modifiers.connect(speed_scale_modifiers)
+	ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
 
 func speed_scale_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= 1.5

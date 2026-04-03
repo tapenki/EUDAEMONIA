@@ -19,7 +19,7 @@ var direction: Vector2
 func on_enter() -> void:
 	super()
 	if not is_instance_valid(state_handler.target):
-		state_handler.target = user.ability_handler.find_target()
+		state_handler.target = user.ability_relay.find_target()
 	
 	user.velocity = Vector2()
 	if is_instance_valid(state_handler.target):
@@ -43,7 +43,7 @@ func on_enter() -> void:
 	state_handler.target = null
 
 func _physics_process(delta):
-	var final_speed = user.ability_handler.get_move_speed(speed)
+	var final_speed = user.ability_relay.get_move_speed(speed)
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
 	user.still = false
 	if user.is_on_wall():
@@ -57,16 +57,16 @@ func _physics_process(delta):
 	elif stick:
 		user.wall_min_slide_angle = 180
 		stick = false
-	bullet_counter += delta * user.ability_handler.speed_scale
+	bullet_counter += delta * user.ability_relay.speed_scale
 	if bullet_counter >= bullet_rate:
 		bullet_counter -= bullet_rate
-		var bullet_instance = user.ability_handler.make_projectile(bullet, 
+		var bullet_instance = user.ability_relay.make_projectile(bullet, 
 		user.global_position, 
 		2)
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 
 func _on_timer_timeout() -> void:
-	#user.ability_handler.attack.emit(direction)
+	#user.ability_relay.attack.emit(direction)
 	state_handler.change_state(next)
 
 func on_exit() -> void:

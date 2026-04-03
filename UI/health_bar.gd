@@ -5,19 +5,19 @@ extends TextureProgressBar
 @onready var health_label = $Label
 
 @onready var player = $"../../".player
-@onready var ability_handler = player.ability_handler
+@onready var ability_relay = player.ability_relay
 
 var button_red = preload("res://ui/button_red.png")
 var button_blue = preload("res://ui/button_blue.png")
 
 func _ready() -> void:
-	ability_handler.damage_taken.connect(damage_taken)
-	ability_handler.healed.connect(healed)
+	ability_relay.damage_taken.connect(damage_taken)
+	ability_relay.healed.connect(healed)
 	get_node("/root/Main/UI").update_abilities.connect(update)
 	update.call_deferred()
 
 func update() -> void:
-	var health_values = ability_handler.get_health(player.health, player.max_health)
+	var health_values = ability_relay.get_health(player.health, player.max_health)
 	if max_value <= 0:
 		texture_progress = button_blue
 	else:
@@ -29,13 +29,13 @@ func update() -> void:
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 
 func damage_taken(_damage) -> void:
-	var health_values = ability_handler.get_health(player.health, player.max_health)
+	var health_values = ability_relay.get_health(player.health, player.max_health)
 	value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 	damage_timer.start()
 
 func healed(_amount) -> void:
-	var health_values = ability_handler.get_health(player.health, player.max_health)
+	var health_values = ability_relay.get_health(player.health, player.max_health)
 	value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 

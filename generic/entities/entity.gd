@@ -1,6 +1,6 @@
 class_name Entity extends CharacterBody2D
 
-@export var ability_handler: Node2D
+@export var ability_relay: Node2D
 
 @export var hurt_sound = "HurtLight"
 @export var death_sound = "DeathLight"
@@ -24,22 +24,22 @@ var alive = true
 var still = true
 
 func _ready() -> void:
-	immune_timer.ability_handler = ability_handler
+	immune_timer.ability_relay = ability_relay
 	add_child(immune_timer)
-	#knockback_timer.ability_handler = ability_handler
+	#knockback_timer.ability_relay = ability_relay
 	#add_child(knockback_timer)
 
 func kill(modifiers = {}):
 	if alive:
-		ability_handler.before_self_death.emit(modifiers)
+		ability_relay.before_self_death.emit(modifiers)
 		if not modifiers.has("prevented") and (not modifiers.has("soft_prevented") or not modifiers.has("final")):
-			ability_handler.death_effects.emit()
+			ability_relay.death_effects.emit()
 			get_node("/root/Main").entity_death.emit(self)
-			ability_handler.self_death.emit()
+			ability_relay.self_death.emit()
 			alive = false
 			animation_player.speed_scale = 1 
 			animation_player.play("DEATH")
-			for ability in ability_handler.get_children():
+			for ability in ability_relay.get_children():
 				ability.kill()
 			if hurtbox:
 				#hurtbox.hit_enabled = false
@@ -56,26 +56,26 @@ func take_damage(damage):
 		if immune_timer.running:
 			return false
 		else:
-			immune(ability_handler.get_immune_duration({"base" : immune_duration, "multiplier" : 1}))
+			immune(ability_relay.get_immune_duration({"base" : immune_duration, "multiplier" : 1}))
 	
 	get_node("/root/Main").play_sound(hurt_sound)
 	health = health - damage["final"]
-	ability_handler.damage_taken.emit(damage)
-	if ability_handler.get_health()["health"] <= 0:
+	ability_relay.damage_taken.emit(damage)
+	if ability_relay.get_health()["health"] <= 0:
 		kill.call_deferred(damage) ## delay to apply all effects before proceeding to kill
 	return true
 
 func heal(amount):
 	var modifiers = {"base" : amount, "multiplier": 1.0}
-	ability_handler.heal_modifiers.emit(modifiers)
+	ability_relay.heal_modifiers.emit(modifiers)
 	amount = modifiers["base"] * modifiers["multiplier"]
 	health = min(max_health, health + amount)
-	ability_handler.healed.emit(amount)
+	ability_relay.healed.emit(amount)
 
 func _physics_process(delta):
 	if not alive:
 		return
-	animation_player.speed_scale = ability_handler.speed_scale
+	animation_player.speed_scale = ability_relay.speed_scale
 	movement(delta)
 
 func movement(_delta):
@@ -90,10 +90,10 @@ func movement(_delta):
 		still = true
 	var old_position = global_position
 	var old_velocity = velocity
-	velocity *= ability_handler.speed_scale
+	velocity *= ability_relay.speed_scale
 	move_and_slide()
 	velocity = old_velocity
-	ability_handler.movement.emit(old_position.distance_to(global_position))
+	ability_relay.movement.emit(old_position.distance_to(global_position))
 
 func random_valid_position(tilemap):
 	var wall_cells = tilemap.get_used_cells_by_id(0)

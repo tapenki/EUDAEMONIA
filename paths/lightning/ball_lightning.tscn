@@ -16,12 +16,12 @@ point_count = 3
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxnif"]
 radius = 20.0
 
-[node name="BallLightning" type="Area2D" unique_id=2072656203 node_paths=PackedStringArray("ability_handler")]
+[node name="BallLightning" type="Area2D" unique_id=2072656203 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("1_0owue")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hits_left = -1
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=1597376643]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1597376643]
 script = ExtResource("3_r00uu")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=937506223]
@@ -34,7 +34,7 @@ z_index = -3
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_r00uu")
 
-[node name="Particles" type="CPUParticles2D" parent="Sprite" unique_id=1281988021 node_paths=PackedStringArray("ability_handler")]
+[node name="Particles" type="CPUParticles2D" parent="Sprite" unique_id=1281988021]
 z_index = -1
 material = ExtResource("2_3eyo0")
 scale = Vector2(0.666667, 0.666667)
@@ -50,14 +50,13 @@ spread = 0.0
 gravity = Vector2(0, 0)
 scale_amount_curve = SubResource("Curve_mtknr")
 script = ExtResource("7_w0uvr")
-ability_handler = NodePath("../../AbilityHandler")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746247623]
 shape = SubResource("CircleShape2D_xxnif")
 
-[node name="Lifetime" type="Node" parent="." unique_id=219089524 node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=219089524 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("7_ycxlx")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

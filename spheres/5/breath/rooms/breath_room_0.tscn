@@ -38,12 +38,12 @@ one_shot = true
 [node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave1" unique_id=1919688371]
 position = Vector2(360, 240)
 script = ExtResource("3_ov5x1")
-entity = "sprout"
+entity = "leafer"
 
 [node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave1" unique_id=1578851067]
 position = Vector2(510, 360)
 script = ExtResource("3_ov5x1")
-entity = "sprout"
+entity = "leafer"
 
 [node name="SpawnStalk" type="Node2D" parent="Waves/Wave1" unique_id=1230617284]
 position = Vector2(210, 240)

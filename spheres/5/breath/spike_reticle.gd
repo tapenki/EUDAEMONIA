@@ -3,13 +3,13 @@ extends ParticleSpriteProjectile
 var bullet = preload("res://spheres/5/breath/anapnoi_thorn.tscn")
 
 func _ready() -> void:
-	ability_handler.death_effects.connect(death_effects)
+	ability_relay.death_effects.connect(death_effects)
 	super()
 
 func death_effects() -> void:
 	var bullet_count = 3
 	for repeat in bullet_count:
-		var projectile_instance = ability_handler.make_projectile(bullet, 
+		var projectile_instance = ability_relay.make_projectile(bullet, 
 		global_position + Vector2.from_angle(TAU / bullet_count * repeat) * 25,
 		2,
 		Vector2())

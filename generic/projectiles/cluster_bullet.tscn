@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xkp8korlpxmc"]
+[gd_scene format=3 uid="uid://xkp8korlpxmc"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_hil1t"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_hkirg"]
@@ -12,41 +12,41 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 20.0
 
-[node name="ClusterBullet" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+[node name="ClusterBullet" type="Area2D" unique_id=538815925 node_paths=PackedStringArray("ability_relay")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_hil1t")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hit_sound = "HurtLight"
 hit_walls = true
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=702888536]
 script = ExtResource("2_hkirg")
 is_projectile = true
 
-[node name="Bulletsplosion" type="Node2D" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Bulletsplosion" type="Node2D" parent="." unique_id=842544513 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("3_rcjvb")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
-[node name="Sprite" type="Sprite2D" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=413940583 node_paths=PackedStringArray("ability_relay")]
 material = ExtResource("4_hil1t")
 texture = ExtResource("5_6hcmq")
 script = ExtResource("6_mhfv3")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1409008266]
 z_index = -3
 texture = ExtResource("7_hkirg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1138399840]
 shape = SubResource("CircleShape2D_nofi0")
 
-[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=1415583779 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("9_3n7ey")
 wait_time = 2.0
 running = true
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

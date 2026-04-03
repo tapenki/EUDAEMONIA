@@ -1,19 +1,19 @@
 extends Node2D
 
-@export var ability_handler: Node
+@export var ability_relay: Node
 
 @export var summon: PackedScene
 @export var summon_health = 1.0
 
 func _ready() -> void:
-	ability_handler.death_effects.connect(death_effects)
+	ability_relay.death_effects.connect(death_effects)
 
 func death_effects():
-	var summon_instance = ability_handler.make_summon(summon, 
+	var summon_instance = ability_relay.make_summon(summon, 
 	global_position, 
 	2)
-	summon_instance.max_health = ability_handler.owner.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
+	summon_instance.max_health = ability_relay.owner.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
 	summon_instance.health = summon_instance.max_health
-	summon_instance.ability_handler.inherited_damage = ability_handler.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
-	summon_instance.summoned = ability_handler.owner.summoned
+	summon_instance.ability_relay.inherited_damage = ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
+	summon_instance.summoned = ability_relay.owner.summoned
 	get_node("/root/Main/Entities").add_child(summon_instance)

@@ -18,10 +18,10 @@
 #
 #func tick():
 	#var rain_position = Vector2(randf_range(100, 800), randf_range(100, 500))
-	#var target = ability_handler.find_target(rain_position, 400)
+	#var target = ability_relay.find_target(rain_position, 400)
 	#if target:
 	#	rain_position = target.global_position
-	#var bullet_instance = ability_handler.make_projectile(bullet, 
+	#var bullet_instance = ability_relay.make_projectile(bullet, 
 	#rain_position, 
 	#3,
 	#Vector2(),

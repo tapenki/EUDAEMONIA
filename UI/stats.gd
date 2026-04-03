@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ability_handler = get_node("/root/Main/UI").player.ability_handler
+@onready var ability_relay = get_node("/root/Main/UI").player.ability_relay
 
 @onready var description = get_node("/root/Main/UI/Description")
 @onready var description_title = description.get_node("Title")
@@ -9,16 +9,16 @@ extends Control
 var stattext: String
 
 func _ready() -> void:
-	ability_handler.self_death.connect(update_stattext)
+	ability_relay.self_death.connect(update_stattext)
 
 func update_stattext():
-	var attack_damage = ability_handler.inherited_damage.duplicate()
-	ability_handler.damage_dealt_modifiers.emit(null, attack_damage)
-	var crit_chance = ability_handler.inherited_crit_chance.duplicate()
-	ability_handler.crit_chance_modifiers.emit(null, crit_chance)
-	var attack_scale = ability_handler.inherited_scale.duplicate()
-	ability_handler.attack_scale_modifiers.emit(attack_scale)
-	var move_speed = ability_handler.get_move_speed(450)
+	var attack_damage = ability_relay.inherited_damage.duplicate()
+	ability_relay.damage_dealt_modifiers.emit(null, attack_damage)
+	var crit_chance = ability_relay.inherited_crit_chance.duplicate()
+	ability_relay.crit_chance_modifiers.emit(null, crit_chance)
+	var attack_scale = ability_relay.inherited_scale.duplicate()
+	ability_relay.attack_scale_modifiers.emit(attack_scale)
+	var move_speed = ability_relay.get_move_speed(450)
 	## yeah
 	stattext = "Attack damage: [outline_size=10]+[{attack_damage_source}]x[{attack_damage_multiplier}][/outline_size]
 Crit chance: [outline_size=10]+[{crit_chance}]%[/outline_size]

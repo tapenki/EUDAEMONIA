@@ -5,7 +5,7 @@ class_name ScaledTimer extends Node
 
 @export var one_shot = true
 @export var running = false
-@export var ability_handler: Node
+@export var ability_relay: Node
 
 signal timeout()
 
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if running:
-		time_left -= delta * ability_handler.speed_scale
+		time_left -= delta * ability_relay.speed_scale
 		if time_left <= 0:
 			if one_shot:
 				running = false

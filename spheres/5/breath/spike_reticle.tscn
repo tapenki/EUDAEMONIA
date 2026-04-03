@@ -18,20 +18,20 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpvjx"]
 radius = 12.0
 
-[node name="SpikeReticle" type="Area2D" unique_id=1670959010 node_paths=PackedStringArray("ability_handler")]
+[node name="SpikeReticle" type="Area2D" unique_id=1670959010 node_paths=PackedStringArray("ability_relay")]
 visibility_layer = 129
 script = ExtResource("1_u546l")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hit_sound = ""
 hit_particles = ""
 crit_particles = ""
 hit_enabled = false
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=650856352]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=650856352]
 script = ExtResource("2_blg4x")
 is_projectile = true
 
-[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1170847227 node_paths=PackedStringArray("ability_handler")]
+[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1170847227 node_paths=PackedStringArray("ability_relay")]
 z_index = -1
 material = ExtResource("2_ftt11")
 amount = 6
@@ -43,7 +43,7 @@ gravity = Vector2(0, 0)
 scale_amount_curve = SubResource("Curve_mtknr")
 color_ramp = SubResource("Gradient_aeo5i")
 script = ExtResource("5_u546l")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=628055892]
 z_index = -3

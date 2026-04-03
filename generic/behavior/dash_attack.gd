@@ -14,7 +14,7 @@ var direction: Vector2
 func on_enter() -> void:
 	super()
 	if not is_instance_valid(state_handler.target):
-		state_handler.target = user.ability_handler.find_target()
+		state_handler.target = user.ability_relay.find_target()
 	
 	user.velocity = Vector2()
 	if is_instance_valid(state_handler.target):
@@ -38,7 +38,7 @@ func on_enter() -> void:
 	state_handler.target = null
 
 func _physics_process(_delta):
-	var final_speed = user.ability_handler.get_move_speed(speed)
+	var final_speed = user.ability_relay.get_move_speed(speed)
 	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
 	user.still = false
 	if user.is_on_wall():
@@ -54,7 +54,7 @@ func _physics_process(_delta):
 		stick = false
 
 func _on_timer_timeout() -> void:
-	#user.ability_handler.attack.emit(direction)
+	#user.ability_relay.attack.emit(direction)
 	state_handler.change_state(next)
 
 func on_exit() -> void:

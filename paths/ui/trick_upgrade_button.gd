@@ -1,7 +1,7 @@
 extends Described
 
 @onready var player = get_node("/root/Main/UI").player
-@onready var ability_handler = player.get_node("AbilityHandler")
+@onready var ability_relay = player.get_node("AbilityRelay")
 
 @onready var point_counter = $"../../../UpgradePoints"
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 	#rotation_degrees = randf_range(-5, 5)
 	symbol_label.text = name.substr(0, 2)
 	keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
-	var ability_node = ability_handler.get_node_or_null(subject)
+	var ability_node = ability_relay.get_node_or_null(subject)
 	if ability_node:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
@@ -27,9 +27,9 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and ui.upgrade_points >= 1:
 		ui.upgrade_points -= 1
-		ability_handler.upgrade(subject, 1)
+		ability_relay.upgrade(subject, 1)
 		point_counter.update()
-		var ability_node = ability_handler.get_node_or_null(subject)
+		var ability_node = ability_relay.get_node_or_null(subject)
 		if ability_node:
 			self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

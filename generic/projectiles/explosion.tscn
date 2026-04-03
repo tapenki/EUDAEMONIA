@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://qlfmnt1urinb"]
+[gd_scene format=3 uid="uid://qlfmnt1urinb"]
 
 [ext_resource type="Script" uid="uid://bauj1wnsvphta" path="res://generic/projectiles/explosion.gd" id="1_i6r65"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_p0y1b"]
@@ -10,37 +10,36 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 50.0
 
-[node name="Explosion" type="Area2D" node_paths=PackedStringArray("ability_handler")]
+[node name="Explosion" type="Area2D" unique_id=771189090 node_paths=PackedStringArray("ability_relay")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_i6r65")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hit_particles = ""
 crit_particles = ""
 hits_left = -1
 
-[node name="AbilityHandler" type="Node2D" parent="."]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1467920456]
 script = ExtResource("3_p0y1b")
-type = "projectile"
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=263788185]
 material = ExtResource("4_vypyj")
 texture = ExtResource("5_sg4bm")
 
-[node name="Glow" type="Sprite2D" parent="Sprite"]
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1908566703]
 z_index = -3
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_8xrbx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=324326939]
 shape = SubResource("CircleShape2D_nofi0")
 
-[node name="Lifetime" type="Node" parent="." node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=296192468 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_i6r65")
 wait_time = 0.4
 running = true
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

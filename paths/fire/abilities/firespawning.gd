@@ -9,13 +9,13 @@ func _ready() -> void:
 	get_node("/root/Main").entity_death.connect(entity_death)
 
 func spawn(spawn_position: Vector2, delay = 0.5):
-	var summon_instance = ability_handler.make_summon(summon, 
+	var summon_instance = ability_relay.make_summon(summon, 
 	spawn_position,
 	2)  ## inheritance
 	summon_instance.max_health *= level
 	summon_instance.health = summon_instance.max_health
-	summon_instance.ability_handler.inherited_damage["multiplier"] *= 0.5 * level
-	summon_instance.ability_handler.apply_ability("fireburst", level)
+	summon_instance.ability_relay.inherited_damage["multiplier"] *= 0.5 * level
+	summon_instance.ability_relay.apply_ability("fireburst", level)
 	get_node("/root/Main").spawn_entity(summon_instance, delay)
 
 func day_start(_day: int) -> void:
@@ -33,7 +33,7 @@ func day_start(_day: int) -> void:
 
 func entity_death(dying_entity: Entity):
 	if undying_flames and dying_entity.scene_file_path == "res://paths/fire/flaming_skull/flaming_skull.tscn":
-		ability_handler.deal_damage(ability_handler.owner, {"base" : level, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+		ability_relay.deal_damage(ability_relay.owner, {"base" : level, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 		spawn(dying_entity.global_position, 1)
 
 func inherit(_handler, _tier):

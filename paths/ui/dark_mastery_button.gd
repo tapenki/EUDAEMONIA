@@ -2,7 +2,7 @@ extends TextureButton
 
 @onready var ui = get_node("/root/Main/UI")
 @onready var player = get_node("/root/Main/UI").player
-@onready var ability_handler = player.get_node("AbilityHandler")
+@onready var ability_relay = player.get_node("AbilityRelay")
 
 @onready var texture_rect1: = $"TextureRect1"
 @onready var texture_rect2: = $"TextureRect2"
@@ -28,7 +28,7 @@ func _ready() -> void:
 func update():
 	var passed = true
 	for ability in requires:
-		var ability_node = ability_handler.get_node_or_null(ability)
+		var ability_node = ability_relay.get_node_or_null(ability)
 		if not ability_node or ability_node.level < requires[ability]:
 			passed = false
 			break
@@ -38,7 +38,7 @@ func update():
 		texture_rect2.texture = accessible_texture
 		symbol_label.text = name.substr(0, 2)
 		accessible = true
-		var ability_node = ability_handler.get_node_or_null(subject)
+		var ability_node = ability_relay.get_node_or_null(subject)
 		if ability_node:
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
@@ -47,10 +47,10 @@ func update():
 
 func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and accessible:
-		var ability_node = ability_handler.get_node_or_null(subject)
+		var ability_node = ability_relay.get_node_or_null(subject)
 		if not ability_node:
-			ability_handler.upgrade("dark_price", 40)
-			ability_handler.upgrade(subject, 1)
+			ability_relay.upgrade("dark_price", 40)
+			ability_relay.upgrade(subject, 1)
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

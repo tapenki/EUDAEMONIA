@@ -126,20 +126,20 @@ _data = {
 &"WINDUP": SubResource("Animation_vajmc")
 }
 
-[node name="Warden" type="CharacterBody2D" unique_id=1948901896 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Warden" type="CharacterBody2D" unique_id=1948901896 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_7ybht")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 400
 health = 400.0
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=2077891043]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=2077891043]
 script = ExtResource("2_f3rbk")
 is_entity = true
 
@@ -153,10 +153,10 @@ script = ExtResource("4_lt4l0")
 anim = "WINDUP"
 next = NodePath("../VacuumAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareVacuumAttack" unique_id=301225554 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareVacuumAttack" unique_id=301225554 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 0.6
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="VacuumAttack" type="Node" parent="StateHandler" unique_id=1059306586 node_paths=PackedStringArray("next")]
@@ -167,10 +167,10 @@ bullet_count = 5
 distance = 600
 next = NodePath("../VacuumAttackEndlag")
 
-[node name="Timer" type="Node" parent="StateHandler/VacuumAttack" unique_id=1121740311 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/VacuumAttack" unique_id=1121740311 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 3.0
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="VacuumAttackEndlag" type="Node" parent="StateHandler" unique_id=81129476 node_paths=PackedStringArray("next")]
@@ -178,9 +178,9 @@ process_mode = 4
 script = ExtResource("4_lt4l0")
 next = NodePath("../PrepareShootAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/VacuumAttackEndlag" unique_id=1404294775 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/VacuumAttackEndlag" unique_id=1404294775 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="PrepareShootAttack1" type="Node" parent="StateHandler" unique_id=1439859427 node_paths=PackedStringArray("next")]
@@ -189,10 +189,10 @@ script = ExtResource("4_lt4l0")
 anim = "WINDUP"
 next = NodePath("../ShootAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack1" unique_id=29506010 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack1" unique_id=29506010 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 0.6
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="ShootAttack1" type="Node" parent="StateHandler" unique_id=400752484 node_paths=PackedStringArray("next")]
@@ -210,10 +210,10 @@ process_mode = 4
 script = ExtResource("4_lt4l0")
 next = NodePath("../ShootAttack2")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack2" unique_id=1572197871 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack2" unique_id=1572197871 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 0.3
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="ShootAttack2" type="Node" parent="StateHandler" unique_id=344415346 node_paths=PackedStringArray("next")]
@@ -232,10 +232,10 @@ process_mode = 4
 script = ExtResource("4_lt4l0")
 next = NodePath("../PrepareRadialAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/ShootAttackEndlag" unique_id=741188095 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/ShootAttackEndlag" unique_id=741188095 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 2.0
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="PrepareRadialAttack1" type="Node" parent="StateHandler" unique_id=1794120285 node_paths=PackedStringArray("next")]
@@ -244,10 +244,10 @@ script = ExtResource("4_lt4l0")
 anim = "WINDUP"
 next = NodePath("../RadialAttack1a")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareRadialAttack1" unique_id=1131661574 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareRadialAttack1" unique_id=1131661574 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 0.6
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="RadialAttack1a" type="Node" parent="StateHandler" unique_id=1613964652 node_paths=PackedStringArray("next")]
@@ -284,10 +284,10 @@ process_mode = 4
 script = ExtResource("4_lt4l0")
 next = NodePath("../PrepareRadialAttack2")
 
-[node name="Timer" type="Node" parent="StateHandler/RadialAttack1Endlag" unique_id=305304039 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/RadialAttack1Endlag" unique_id=305304039 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 1.5
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="PrepareRadialAttack2" type="Node" parent="StateHandler" unique_id=1080359976 node_paths=PackedStringArray("next")]
@@ -296,10 +296,10 @@ script = ExtResource("4_lt4l0")
 anim = "WINDUP"
 next = NodePath("../RadialAttack2a")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareRadialAttack2" unique_id=655774811 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareRadialAttack2" unique_id=655774811 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 0.6
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="RadialAttack2a" type="Node" parent="StateHandler" unique_id=880282453 node_paths=PackedStringArray("next")]
@@ -337,10 +337,10 @@ process_mode = 4
 script = ExtResource("4_lt4l0")
 next = NodePath("../PrepareVacuumAttack")
 
-[node name="Timer" type="Node" parent="StateHandler/RadialAttack2Endlag" unique_id=1777134604 node_paths=PackedStringArray("ability_handler")]
+[node name="Timer" type="Node" parent="StateHandler/RadialAttack2Endlag" unique_id=1777134604 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 1.75
-ability_handler = NodePath("../../../AbilityHandler")
+ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1563565232]
@@ -352,10 +352,10 @@ script = ExtResource("10_vhc8i")
 base_texture = ExtResource("9_pyjhh")
 hurt_texture = ExtResource("11_2okfs")
 
-[node name="Hurt" type="Node" parent="Sprite" unique_id=352123192 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=352123192 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
 wait_time = 0.2
-ability_handler = NodePath("../../AbilityHandler")
+ability_relay = NodePath("../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=627207528]
@@ -367,10 +367,10 @@ texture = ExtResource("12_lssfr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1064312361]
 shape = SubResource("CircleShape2D_bhp25")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=242625050 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=242625050 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
 script = ExtResource("13_40ygs")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=320875735]
 shape = SubResource("CircleShape2D_jpw2x")
@@ -387,7 +387,7 @@ script = ExtResource("17_pssg1")
 spawn_quotes = ["warden_spawn_1"]
 death_quotes = ["warden_death_1"]
 
-[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareVacuumAttack/Timer" to="StateHandler/PrepareVacuumAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/VacuumAttack/Timer" to="StateHandler/VacuumAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/VacuumAttackEndlag/Timer" to="StateHandler/VacuumAttackEndlag" method="_on_timer_timeout"]

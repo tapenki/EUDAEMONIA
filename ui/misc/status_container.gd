@@ -1,12 +1,12 @@
 extends GridContainer
 
 @onready var player = $"../../".player
-@onready var ability_handler = player.ability_handler
+@onready var ability_relay = player.ability_relay
 
 var status_label = preload("res://ui/misc/status_label.tscn")
 
 #func _ready() -> void:
-	#ability_handler.update_status.connect(update)
+	#ability_relay.update_status.connect(update)
 
 func update(status):
 	var label = get_node_or_null(NodePath(status.name))

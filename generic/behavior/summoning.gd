@@ -15,12 +15,12 @@ func on_enter() -> void:
 	super()
 	
 	if summons.size() < max_summons:
-		var summon_instance = user.ability_handler.make_summon(summon, 
+		var summon_instance = user.ability_relay.make_summon(summon, 
 		user.global_position, 
 		2)
 		summon_instance.max_health = user.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
 		summon_instance.health = summon_instance.max_health
-		summon_instance.ability_handler.inherited_damage = user.ability_handler.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
+		summon_instance.ability_relay.inherited_damage = user.ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
 		get_node("/root/Main/Entities").add_child(summon_instance)
 		get_node("/root/Main/Entities").move_child(summon_instance, 0)
 		summons.append(summon_instance)

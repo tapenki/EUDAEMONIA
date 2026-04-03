@@ -1,6 +1,6 @@
 class_name Projectile extends Area2D
 
-@export var ability_handler: Node2D
+@export var ability_relay: Node2D
 @export var hit_sound = "HitLight"
 @export var hit_particles: String = "Impact"
 @export var crit_particles: String = "Zap"
@@ -31,18 +31,18 @@ func _physics_process(delta):
 	movement(new_position)
 
 func calculate_movement(delta):
-	return global_position + velocity * delta * ability_handler.speed_scale
+	return global_position + velocity * delta * ability_relay.speed_scale
 
 func entity_collision():
 	for body in get_overlapping_bodies():
 		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
 			exclude[body] = hit_delay
-			var damage = ability_handler.deal_damage(body, {"base" : 0, "multiplier" : 1, "direction" : get_knockback_direction(body)})
+			var damage = ability_relay.deal_damage(body, {"base" : 0, "multiplier" : 1, "direction" : get_knockback_direction(body)})
 			on_hit(damage["crits"])
 
 func tick_exclusion(delta):
 	for body in exclude.keys():
-		exclude[body] -= delta * ability_handler.speed_scale
+		exclude[body] -= delta * ability_relay.speed_scale
 		if exclude[body] <= 0:
 			exclude.erase(body)
 
@@ -50,14 +50,14 @@ func wall_collision():
 	if hit_walls:
 		for body in get_overlapping_bodies():
 			if body is TileMapLayer:
-				var crits = 0#ability_handler.get_crits()
+				var crits = 0#ability_relay.get_crits()
 				on_collision(crits)
 				kill()
 
 func movement(new_position):
 	var old_position = global_position
 	global_position = new_position
-	ability_handler.movement.emit(old_position.distance_to(global_position))
+	ability_relay.movement.emit(old_position.distance_to(global_position))
 
 func on_collision(crits: int):
 	if hit_particles:
@@ -74,12 +74,12 @@ func on_hit(crits):
 		kill()
 
 func _on_lifetime_timeout() -> void:
-	var crits = 0#ability_handler.get_crits()
+	var crits = 0#ability_relay.get_crits()
 	on_collision(crits)
 	kill()
 
 func adjust_scale():
-	var attack_scale = ability_handler.get_attack_scale()
+	var attack_scale = ability_relay.get_attack_scale()
 	scale = Vector2(attack_scale, attack_scale)
 
 func get_knockback_direction(target):
@@ -90,8 +90,8 @@ func kill():
 		alive = false
 		queue_free()
 		hit_enabled = false
-		ability_handler.death_effects.emit()
-		ability_handler.self_death.emit()
+		ability_relay.death_effects.emit()
+		ability_relay.self_death.emit()
 
 func get_sprites():
 	var sprite = get_node("Sprite")

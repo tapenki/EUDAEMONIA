@@ -66,7 +66,7 @@ _data = {
 &"RESET": SubResource("Animation_fnls8")
 }
 
-[node name="Debree" type="CharacterBody2D" unique_id=1554712091 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="Debree" type="CharacterBody2D" unique_id=1554712091 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
 scale = Vector2(1.2, 1.2)
 collision_layer = 0
 collision_mask = 0
@@ -77,7 +77,7 @@ max_distance = 120.0
 distance_deviation = 0.5
 speed = 250.0
 speed_deviation = 0.5
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 death_sound = "HitLight"
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
@@ -85,7 +85,7 @@ max_health = 60
 health = 60.0
 unchaseable = true
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=414548680]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=414548680]
 script = ExtResource("2_jwabc")
 is_entity = true
 
@@ -96,10 +96,10 @@ script = ExtResource("10_3drak")
 base_texture = ExtResource("9_fdfy0")
 hurt_texture = ExtResource("11_l11l1")
 
-[node name="Hurt" type="Node" parent="Sprite" unique_id=31167637 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=31167637 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_teuop")
 wait_time = 0.2
-ability_handler = NodePath("../../AbilityHandler")
+ability_relay = NodePath("../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=678835937]
@@ -110,10 +110,10 @@ texture = ExtResource("12_pli3q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2101160981]
 shape = SubResource("CircleShape2D_bhp25")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=506689598 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=506689598 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
 script = ExtResource("13_gak2i")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1666410769]
 shape = SubResource("CircleShape2D_jpw2x")
@@ -122,14 +122,14 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[node name="Lifetime" type="Node" parent="." unique_id=1662791256 node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=1662791256 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("7_cgupt")
 wait_time = 2.0
 deviation = 0.3
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
-[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

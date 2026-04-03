@@ -8,12 +8,12 @@ var burn_timer = ScaledTimer.new()
 var ticks_left = 5
 
 func _ready() -> void:
-	burn_timer.ability_handler = ability_handler
+	burn_timer.ability_relay = ability_relay
 	burn_timer.one_shot = false
 	burn_timer.timeout.connect(tick)
 	add_child(burn_timer)
 	burn_timer.start()
-	for sprite in ability_handler.owner.get_sprites():
+	for sprite in ability_relay.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
 		particle_instance.modulate = Config.get_team_color(1, "secondary")
 		particle_instance.position = sprite["offset"]
@@ -24,7 +24,7 @@ func _ready() -> void:
 		sprite["node"].add_child(particle_instance)
 
 func tick():
-	ability_handler.deal_damage(ability_handler.owner, {"base" : level, "multiplier" : 1.0, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "secondary"))
+	ability_relay.deal_damage(ability_relay.owner, {"base" : level, "multiplier" : 1.0, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "secondary"))
 	ticks_left -= 1
 	if ticks_left == 0:
 		clear()

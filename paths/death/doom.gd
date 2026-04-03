@@ -8,12 +8,12 @@ var stored_damage: float
 var swift_fate: bool
 
 func _ready() -> void:
-	ability_handler.damage_taken.connect(damage_taken)
-	doom_timer.ability_handler = ability_handler
+	ability_relay.damage_taken.connect(damage_taken)
+	doom_timer.ability_relay = ability_relay
 	doom_timer.timeout.connect(timeout)
 	add_child(doom_timer)
 	doom_timer.start(5)
-	for sprite in ability_handler.owner.get_sprites():
+	for sprite in ability_relay.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
 		particle_instance.modulate = Config.get_team_color(1, "secondary")
 		particle_instance.position = sprite["offset"]
@@ -30,7 +30,7 @@ func timeout():
 	var damage = {"base" : stored_damage, "multiplier" : level*0.1, "skip_output_modifiers": true, "skip_immunity": true}
 	if swift_fate:
 		damage["multiplier"] *= 1.5
-	ability_handler.deal_damage(ability_handler.owner, damage, Config.get_team_color(1, "secondary"))
+	ability_relay.deal_damage(ability_relay.owner, damage, Config.get_team_color(1, "secondary"))
 	clear()
 
 func add_level(value):

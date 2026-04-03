@@ -5,11 +5,11 @@ const wait_time = 0.35
 var time_left = 0
 
 func _ready() -> void:
-	ability_handler.attack.connect(attack)
+	ability_relay.attack.connect(attack)
 
 func _process(delta: float) -> void:
 	if time_left > 0:
-		time_left -= delta * ability_handler.speed_scale
+		time_left -= delta * ability_relay.speed_scale
 
 func attack(direction):
 	if time_left <= 0:
@@ -17,7 +17,7 @@ func attack(direction):
 		time_left = wait_time
 
 func fire(direction):
-	var bullet_instance = ability_handler.make_projectile(bullet, 
+	var bullet_instance = ability_relay.make_projectile(bullet, 
 	global_position + direction * 25, 
 	2,
 	direction * 600)

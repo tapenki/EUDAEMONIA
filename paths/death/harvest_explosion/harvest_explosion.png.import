@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hqi8ax5pnxj6"
-path="res://.godot/imported/spike.png-da68d0dc9661273b2e0440a73af9bf3c.ctex"
+uid="uid://cynbu06cbbvau"
+path="res://.godot/imported/harvest_explosion.png-f9b9f285332cc34c71231b824937d5d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/life/spike.png"
-dest_files=["res://.godot/imported/spike.png-da68d0dc9661273b2e0440a73af9bf3c.ctex"]
+source_file="res://paths/death/harvest_explosion/harvest_explosion.png"
+dest_files=["res://.godot/imported/harvest_explosion.png-f9b9f285332cc34c71231b824937d5d6.ctex"]
 
 [params]
 

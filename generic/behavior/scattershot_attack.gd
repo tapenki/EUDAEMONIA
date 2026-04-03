@@ -14,7 +14,7 @@ func on_enter() -> void:
 	super()
 	if recalc_direction:
 		if not is_instance_valid(state_handler.target):
-			state_handler.target = user.ability_handler.find_target()
+			state_handler.target = user.ability_relay.find_target()
 		if not is_instance_valid(state_handler.target):
 			state_handler.change_state(next)
 			return
@@ -24,13 +24,13 @@ func on_enter() -> void:
 	var stepsize = deg_to_rad(spread) / (bullet_count - 1)
 	var halfspan = deg_to_rad(spread) * 0.5
 	for i in bullet_count:
-		var bullet_instance = user.ability_handler.make_projectile(bullet, 
+		var bullet_instance = user.ability_relay.make_projectile(bullet, 
 		user.global_position + direction * 25, 
 		2,
 		direction.rotated(halfspan - (stepsize * i)) * bullet_speed)
 		bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
-	#user.ability_handler.attack.emit(direction)
+	#user.ability_relay.attack.emit(direction)
 	get_node("/root/Main").play_sound("ShootLight")
 	state_handler.target = null
 	state_handler.change_state(next)

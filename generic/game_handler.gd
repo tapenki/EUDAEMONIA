@@ -84,7 +84,7 @@ func instantiate_enemy(scene: PackedScene):
 	assign_entity_group(entity_instance, 2, color)
 	entity_instance.max_health = scale_enemy_health(entity_instance.max_health)
 	entity_instance.health = entity_instance.max_health
-	entity_instance.ability_handler.inherited_damage["multiplier"] = scale_enemy_damage()
+	entity_instance.ability_relay.inherited_damage["multiplier"] = scale_enemy_damage()
 	return entity_instance
 
 ## map

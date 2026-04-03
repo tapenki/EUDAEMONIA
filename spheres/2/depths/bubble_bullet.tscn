@@ -10,15 +10,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 12.0
 
-[node name="BubbleBullet" type="Area2D" unique_id=292500491 node_paths=PackedStringArray("ability_handler")]
+[node name="BubbleBullet" type="Area2D" unique_id=292500491 node_paths=PackedStringArray("ability_relay")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_2b06g")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hit_walls = true
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=1930683418]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1930683418]
 script = ExtResource("2_iqef2")
 is_projectile = true
 
@@ -34,11 +34,11 @@ texture = ExtResource("6_5w288")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1303587609]
 shape = SubResource("CircleShape2D_nofi0")
 
-[node name="Lifetime" type="Node" parent="." unique_id=118110452 node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=118110452 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("7_7fahv")
 wait_time = 2.0
 running = true
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

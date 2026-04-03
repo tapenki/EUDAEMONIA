@@ -44,7 +44,7 @@ func write_run():
 		"paths" : get_node("/root/Main/UI").paths,
 		"abilities" : {},
 	}
-	for ability in get_node("/root/Main/Entities/Player/AbilityHandler").get_children():
+	for ability in get_node("/root/Main/Entities/Player/AbilityRelay").get_children():
 		if AbilityData.ability_data[ability.name]["type"] != "status":
 			save_data["abilities"][ability.name] = ability.serialize()
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
@@ -72,7 +72,7 @@ func read_run():
 		ability_node.set_script(AbilityData.ability_data[ability]["script"])
 		ability_node.deserialize(save_data["abilities"][ability])
 		ability_node.name = ability
-		get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
+		get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
 	return true
 
 func _ready():
@@ -83,9 +83,9 @@ func _ready():
 			ability_node.set_script(AbilityData.ability_data[ability]["script"])
 			ability_node.deserialize(starter_abilities[ability])
 			ability_node.name = ability
-			get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
+			get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
 		for challenge in get_node("/root/Main/UI").challenges:
 			var ability_node = Node2D.new()
 			ability_node.set_script(AbilityData.ability_data[challenge]["script"])
 			ability_node.name = challenge
-			get_node("/root/Main/Entities/Player/AbilityHandler").add_child(ability_node)
+			get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)

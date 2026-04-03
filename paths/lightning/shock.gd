@@ -5,11 +5,11 @@ var particle_instances: Array
 var duration_timer = ScaledTimer.new()
 
 func _ready() -> void:
-	duration_timer.ability_handler = ability_handler
+	duration_timer.ability_relay = ability_relay
 	duration_timer.timeout.connect(clear)
 	add_child(duration_timer)
 	duration_timer.start(2.5 * level)
-	for sprite in ability_handler.owner.get_sprites():
+	for sprite in ability_relay.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
 		particle_instance.modulate = Config.get_team_color(1, "secondary")
 		particle_instance.position = sprite["offset"]

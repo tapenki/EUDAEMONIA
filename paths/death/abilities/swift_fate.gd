@@ -1,7 +1,7 @@
 extends Ability
 
 func _ready() -> void:
-	ability_handler.status_applied.connect(status_applied)
+	ability_relay.status_applied.connect(status_applied)
 
 func status_applied(status, _levels):
 	if status.name == "doom" and not status.swift_fate:

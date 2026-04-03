@@ -8,7 +8,7 @@ func _ready() -> void:
 	duration_timer.timeout.connect(clear)
 	add_child(duration_timer)
 	duration_timer.start(level)
-	for sprite in ability_handler.owner.get_sprites():
+	for sprite in ability_relay.owner.get_sprites():
 		var particle_instance = particle_scene.instantiate()
 		particle_instance.modulate = Config.get_team_color(1, "secondary")
 		particle_instance.position = sprite["offset"]
@@ -17,7 +17,7 @@ func _ready() -> void:
 		particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
 		particle_instances.append(particle_instance)
 		sprite["node"].add_child(particle_instance)
-	ability_handler.speed_scale_modifiers.connect(speed_scale_modifiers)
+	ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
 
 func speed_scale_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= 0

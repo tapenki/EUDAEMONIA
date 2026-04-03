@@ -100,20 +100,20 @@ _data = {
 &"WINDUP": SubResource("Animation_2migh")
 }
 
-[node name="BoneShield" type="CharacterBody2D" unique_id=1977283427 node_paths=PackedStringArray("ability_handler", "hurtbox", "animation_player")]
+[node name="BoneShield" type="CharacterBody2D" unique_id=1977283427 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_iecfp")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 60
 health = 60.0
 unchaseable = true
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=395787743]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=395787743]
 script = ExtResource("2_2bgfb")
 is_entity = true
 
@@ -126,10 +126,10 @@ script = ExtResource("10_gyqlo")
 base_texture = ExtResource("7_y2u7u")
 hurt_texture = ExtResource("9_16mca")
 
-[node name="Hurt" type="Node" parent="Sprite" unique_id=1535850846 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=1535850846 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_hyvx1")
 wait_time = 0.2
-ability_handler = NodePath("../../AbilityHandler")
+ability_relay = NodePath("../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1124972599]
@@ -141,11 +141,11 @@ texture = ExtResource("11_hcilj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=329852549]
 shape = SubResource("CircleShape2D_bhp25")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=1879831270 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1879831270 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_t2cif")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1656228937]
 shape = SubResource("CircleShape2D_jpw2x")
@@ -154,6 +154,6 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

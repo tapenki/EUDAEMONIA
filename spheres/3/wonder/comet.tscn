@@ -10,12 +10,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxnif"]
 radius = 26.0
 
-[node name="Comet" type="Area2D" unique_id=2072656203 node_paths=PackedStringArray("ability_handler")]
+[node name="Comet" type="Area2D" unique_id=2072656203 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("1_dks1i")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hits_left = -1
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=1597376643]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1597376643]
 script = ExtResource("2_10geg")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=937506223]
@@ -31,9 +31,9 @@ texture = ExtResource("5_o17tm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746247623]
 shape = SubResource("CircleShape2D_xxnif")
 
-[node name="Lifetime" type="Node" parent="." unique_id=219089524 node_paths=PackedStringArray("ability_handler")]
+[node name="Lifetime" type="Node" parent="." unique_id=219089524 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("8_hprwm")
-ability_handler = NodePath("../AbilityHandler")
+ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

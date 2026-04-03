@@ -1,6 +1,6 @@
 class_name Ability extends Node2D
 
-@onready var ability_handler = $"../"
+@onready var ability_relay = $"../"
 
 @export var level: float
 var level_offset: float

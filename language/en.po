@@ -631,7 +631,7 @@ msgid "warden_spawn_1"
 msgstr "[Warden]: you will become iNside"
 
 msgid "warden_death_1"
-msgstr "[Warden]: qu888 bOunty on your hEad"
+msgstr "[Warden]: qu999 bOunty on your hEad"
 
 msgid "saturn_spawn_1"
 msgstr "[Saturn]: YYuummmmeerrss"

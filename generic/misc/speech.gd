@@ -21,9 +21,9 @@ func _ready() -> void:
 		return
 	if spawn_quotes.size() > 0:
 		say(spawn_quotes.pick_random())
-	var ability_handler = owner.get_node_or_null("AbilityHandler")
-	if ability_handler:
-		ability_handler.self_death.connect(parent_died)
+	var ability_relay = owner.get_node_or_null("AbilityRelay")
+	if ability_relay:
+		ability_relay.self_death.connect(parent_died)
 
 func parent_died():
 	if death_quotes.size() > 0:

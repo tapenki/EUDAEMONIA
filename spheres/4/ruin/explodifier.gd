@@ -19,5 +19,5 @@ func _on_timer_timeout() -> void:
 	get_node("/root/Main").assign_projectile_group(projectile_instance, 2, "secondary")
 	var cell = floor_cells.pick_random()
 	projectile_instance.position =  Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
-	projectile_instance.ability_handler.inherited_damage["multiplier"] = get_node("/root/Main").scale_enemy_damage()
+	projectile_instance.ability_relay.inherited_damage["multiplier"] = get_node("/root/Main").scale_enemy_damage()
 	add_child(projectile_instance)

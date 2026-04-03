@@ -17,11 +17,11 @@ func on_enter() -> void:
 	timer.start()
 
 func _physics_process(delta):
-	bullet_counter += delta * user.ability_handler.speed_scale
+	bullet_counter += delta * user.ability_relay.speed_scale
 	if bullet_counter >= shoot_delay:
 		bullet_counter -= shoot_delay
 		for i in bullet_count:
-			var bullet_instance = user.ability_handler.make_projectile(bullet, 
+			var bullet_instance = user.ability_relay.make_projectile(bullet, 
 			user.global_position + Vector2.UP.rotated(randf() * TAU) * distance, 
 			2)
 			bullet_instance.target = user
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		get_node("/root/Main").play_sound("ShootLight")
 
 func _on_timer_timeout() -> void:
-	#user.ability_handler.attack.emit(direction)
+	#user.ability_relay.attack.emit(direction)
 	state_handler.change_state(next)
 
 func on_exit() -> void:

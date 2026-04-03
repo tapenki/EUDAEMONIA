@@ -12,13 +12,13 @@ func _physics_process(_delta):
 		return
 	if attacking:
 		var attack_direction = (get_global_mouse_position() - global_position).normalized()
-		ability_handler.attack.emit(attack_direction)
+		ability_relay.attack.emit(attack_direction)
 	var direction = Input.get_vector("left", "right", "up", "down")
 	if direction: #and not knockback_timer.running:
 		still = false
-		var speed = ability_handler.get_move_speed(320)
+		var speed = ability_relay.get_move_speed(320)
 		if Input.is_action_pressed("precision_movement"):
-			speed = min(speed, 200 / ability_handler.speed_scale)
+			speed = min(speed, 200 / ability_relay.speed_scale)
 		velocity = lerp(velocity, direction * speed, 0.2)
 		sprite.rotation = lerp(sprite.rotation, velocity.normalized().x * 0.2, 0.2)
 		animation_player.play("WALK")
@@ -43,7 +43,7 @@ func take_damage(damage):
 
 func recover():
 	health = max_health
-	for ability in ability_handler.get_children():
+	for ability in ability_relay.get_children():
 		if AbilityData.ability_data[ability.name]["type"] == "status":
 			ability.clear()
 	get_node("/root/Main/UI").update_abilities.emit()

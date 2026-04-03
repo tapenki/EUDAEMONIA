@@ -68,18 +68,18 @@ _data = {
 &"WALK": SubResource("Animation_icb8a")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=210607529 node_paths=PackedStringArray("ability_handler", "animation_player")]
+[node name="Player" type="CharacterBody2D" unique_id=210607529 node_paths=PackedStringArray("ability_relay", "animation_player")]
 collision_mask = 128
 motion_mode = 1
 script = ExtResource("1_bmx6j")
-ability_handler = NodePath("AbilityHandler")
+ability_relay = NodePath("AbilityRelay")
 hurt_sound = "HurtHeavy"
 animation_player = NodePath("AnimationPlayer")
 max_health = 40
 health = 40.0
 immune_duration = 0.25
 
-[node name="AbilityHandler" type="Node2D" parent="." unique_id=636127818]
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=636127818]
 script = ExtResource("2_m6exy")
 inherited_crit_chance = {
 "base": 5.0,
@@ -96,10 +96,10 @@ script = ExtResource("4_5wsru")
 base_texture = ExtResource("3_8dav1")
 hurt_texture = ExtResource("5_lsmwm")
 
-[node name="Hurt" type="Node" parent="Sprite" unique_id=338545400 node_paths=PackedStringArray("ability_handler")]
+[node name="Hurt" type="Node" parent="Sprite" unique_id=338545400 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("8_3wbf3")
 wait_time = 0.2
-ability_handler = NodePath("../../AbilityHandler")
+ability_relay = NodePath("../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=227280131]
@@ -118,6 +118,6 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 limit_enabled = false
 script = ExtResource("9_iyjkv")
 
-[connection signal="damage_taken" from="AbilityHandler" to="Sprite" method="_on_damage_taken"]
+[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

@@ -30,7 +30,7 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
 	main.intermission.connect(intermission)
-	player.ability_handler.self_death.connect(defeat)
+	player.ability_relay.self_death.connect(defeat)
 	toggle_pause(true)
 
 func _process(_delta: float) -> void:

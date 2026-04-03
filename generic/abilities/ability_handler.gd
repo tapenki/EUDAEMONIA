@@ -96,7 +96,7 @@ func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "
 		damage["multiplier"] *= inherited_damage["multiplier"]
 		damage_dealt_modifiers.emit(entity, damage)
 	if entity and not damage.has("skip_input_modifiers"):
-		entity.ability_handler.damage_taken_modifiers.emit(damage)
+		entity.ability_relay.damage_taken_modifiers.emit(damage)
 	damage["final"] = damage["base"] * damage["multiplier"]
 	if damage.has("crits"):
 		damage["final"] *= (1 + damage["crits"])
@@ -208,21 +208,21 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	get_node("/root/Main/").assign_projectile_group(projectile_instance, projectile_group)
 	
 	if is_entity:
-		projectile_instance.ability_handler.entity_source = owner
+		projectile_instance.ability_relay.entity_source = owner
 	elif is_instance_valid(entity_source):
-		projectile_instance.ability_handler.entity_source = entity_source
+		projectile_instance.ability_relay.entity_source = entity_source
 	
 	var scale = inherited_scale.duplicate()
-	projectile_instance.ability_handler.inherited_scale = scale
+	projectile_instance.ability_relay.inherited_scale = scale
 	
 	var damage = inherited_damage.duplicate()
-	projectile_instance.ability_handler.inherited_damage = damage
+	projectile_instance.ability_relay.inherited_damage = damage
 	
 	var crit_chance = inherited_crit_chance.duplicate()
 	#inh_crit_chance_modifiers.emit(crit_chance)
-	projectile_instance.ability_handler.inherited_crit_chance = crit_chance
+	projectile_instance.ability_relay.inherited_crit_chance = crit_chance
 	
-	inherit(projectile_instance.ability_handler, inheritance)
+	inherit(projectile_instance.ability_relay, inheritance)
 	#projectile_created.emit(projectile_instance)
 	return projectile_instance
 
@@ -234,15 +234,15 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	summon_instance.summoned = true
 	
 	if is_entity:
-		summon_instance.ability_handler.entity_source = owner
+		summon_instance.ability_relay.entity_source = owner
 	elif is_instance_valid(entity_source):
-		summon_instance.ability_handler.entity_source = entity_source
+		summon_instance.ability_relay.entity_source = entity_source
 	
 	var summon_damage = inherited_summon_damage.duplicate()
 	summon_damage_modifiers.emit(summon_damage)
-	summon_instance.ability_handler.inherited_damage = summon_damage
+	summon_instance.ability_relay.inherited_damage = summon_damage
 	
-	inherit(summon_instance.ability_handler, inheritance)
+	inherit(summon_instance.ability_relay, inheritance)
 	return summon_instance
 
 ## ability manipulation

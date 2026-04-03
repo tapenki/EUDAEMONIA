@@ -11,7 +11,7 @@ extends State
 func on_enter() -> void:
 	super()
 	for i in bullet_count:
-		var bullet_instance = user.ability_handler.make_projectile(bullet, 
+		var bullet_instance = user.ability_relay.make_projectile(bullet, 
 		user.global_position, 
 		2,
 		Vector2.from_angle(deg_to_rad(angle) + (TAU / bullet_count * i)) * bullet_speed)
