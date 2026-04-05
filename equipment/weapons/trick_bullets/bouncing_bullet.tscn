@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv6tabsrqw707"]
+[gd_scene format=3 uid="uid://dv6tabsrqw707"]
 
 [ext_resource type="Script" uid="uid://btuudhedln62h" path="res://equipment/weapons/trick_bullets/bouncing_bullet.gd" id="1_kibni"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_5uul4"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_5uul4"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_12tk6"]
 [ext_resource type="Texture2D" uid="uid://c5uuvtybcnhi3" path="res://equipment/weapons/trick_bullets/bouncing_bullet.png" id="4_kibni"]
 [ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_qwrup"]

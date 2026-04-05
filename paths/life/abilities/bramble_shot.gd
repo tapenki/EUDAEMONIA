@@ -1,18 +1,18 @@
-extends Ability
-
-var bramble = preload("res://paths/life/bramble/bramble.tscn")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("bramble_shot") and event.is_action("bramble_shot"):
-		ability_relay.deal_damage(ability_relay.owner, {"base" : 25, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
-		var direction = (get_global_mouse_position() - global_position).normalized()
-		var bullet_instance = ability_relay.make_projectile(bramble, 
-		global_position + direction * 25, 
-		2,
-		direction * 600)
-		bullet_instance.ability_relay.inherited_damage["multiplier"] *= 3
-		get_node("/root/Main/Projectiles").add_child(bullet_instance)
-		get_node("/root/Main").play_sound("ShootLight")
-
-func inherit(_handler, _tier):
-	return
+#extends Ability
+#
+#var bramble = preload("res://paths/life/bramble/bramble.tscn")
+#
+#func _unhandled_input(event: InputEvent) -> void:
+	#if Input.is_action_just_pressed("bramble_shot") and event.is_action("bramble_shot"):
+		#ability_relay.deal_damage(ability_relay.owner, {"base" : 25, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+		#var direction = (get_global_mouse_position() - global_position).normalized()
+		#var bullet_instance = ability_relay.make_projectile(bramble, 
+		#global_position + direction * 25, 
+		#2,
+		#direction * 600)
+		#bullet_instance.ability_relay.inherited_damage["multiplier"] *= 3
+		#get_node("/root/Main/Projectiles").add_child(bullet_instance)
+		#get_node("/root/Main").play_sound("ShootLight")
+#
+#func inherit(_handler, _tier):
+	#return

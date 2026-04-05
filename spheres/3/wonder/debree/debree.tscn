@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hgvkjvw24j7"]
 
 [ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_88hjm"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jwabc"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_jwabc"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_teuop"]
 [ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="7_cgupt"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_yuve4"]

@@ -1,56 +1,21 @@
-class_name Ability extends Node2D
+class_name Ability extends Node
 
-@onready var ability_relay = $"../"
+@onready var ability_handler = $"../"
 
 @export var level: float
-var level_offset: float
-var level_multiplier: float = 1
 
-var offsetting: bool
-var cleared: bool
+var applicants: Dictionary
 
-func kill():
-	call_deferred("free")
+func apply(ability_relay, applicant_data):
+	ability_relay.freed.connect(disapply.bind(ability_relay))
+	ability_relay.applied_abilities[self] = true
+	applicants[ability_relay] = applicant_data
 
-func offset():
-	offsetting = false
-	level += level_offset
-	level *= level_multiplier
-	level_offset = 0
-	level_multiplier = 1
-	cleared = false
-	if level <= 0:
-		kill()
-
-func add_level(value):
-	level_offset += value
-	if not offsetting:
-		offsetting = true
-		call_deferred("offset")
-
-func mult_level(value):
-	level_multiplier *= value
-	if not offsetting:
-		offsetting = true
-		call_deferred("offset")
-
-func clear():
-	if not cleared:
-		cleared = true
-		level_offset -= level
-		if not offsetting:
-			offsetting = true
-			call_deferred("offset")
-
-func inherit(handler, _tier):
-	var ability_node = handler.get_node_or_null(str(name))
-	if not ability_node:
-		ability_node = Node2D.new()
-		ability_node.set_script(get_script())
-		ability_node.name = name
-		handler.add_child(ability_node)
-	ability_node.level += level
-	return ability_node
+func disapply(ability_relay):
+	ability_relay.applied_abilities.erase(self)
+	applicants.erase(ability_relay)
+	if ability_relay.freed.is_connected(disapply):
+		ability_relay.freed.disconnect(disapply)
 
 func serialize():
 	return {"level" : level}

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvyjnbli5ic8g"]
 
 [ext_resource type="Script" uid="uid://ivd4xcthecwr" path="res://paths/death/bone_shield/shield.gd" id="1_iecfp"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_2bgfb"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_2bgfb"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_hyvx1"]
 [ext_resource type="Texture2D" uid="uid://cgxp0ij0vh66r" path="res://paths/death/bone_shield/bone_shield.png" id="7_y2u7u"]
 [ext_resource type="Texture2D" uid="uid://bbqod4g3aoygc" path="res://paths/death/bone_shield/bone_shield_hurt.png" id="9_16mca"]

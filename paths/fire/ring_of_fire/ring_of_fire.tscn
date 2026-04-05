@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxhxn5t0b476j"]
 
 [ext_resource type="Script" uid="uid://w6ad6q8ilnj6" path="res://generic/projectiles/particle_sprite_projectile.gd" id="1_f2ma2"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_r78nq"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_r78nq"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_yt2fy"]
 [ext_resource type="Texture2D" uid="uid://cipa5588g3sbr" path="res://paths/fire/ring_of_fire/ring_of_fire.png" id="4_f2ma2"]
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="6_31opf"]

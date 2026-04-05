@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bu3jk0yrnh38t"]
 
 [ext_resource type="Script" uid="uid://cd3ridfw6k6lk" path="res://spheres/3/doubt/mold_bullet.gd" id="1_th00q"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_hyqsw"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="3_hyqsw"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_ks5w7"]
 [ext_resource type="Texture2D" uid="uid://cmwxts226muwa" path="res://spheres/3/doubt/mold_bullet.png" id="5_th00q"]
 [ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="6_niuon"]

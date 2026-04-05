@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xkp8korlpxmc"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_hil1t"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_hkirg"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_hkirg"]
 [ext_resource type="Script" uid="uid://dwlu53wkadf1b" path="res://generic/projectiles/bulletsplosion.gd" id="3_rcjvb"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_hil1t"]
 [ext_resource type="Texture2D" uid="uid://cgo5td5wvfpg7" path="res://generic/projectiles/cluster_bullet.png" id="5_6hcmq"]

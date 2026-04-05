@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wmp0gjc61rqi"]
 
 [ext_resource type="Script" uid="uid://e36a7r84wcf8" path="res://spheres/5/breath/spike_reticle.gd" id="1_u546l"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_blg4x"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_blg4x"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_ftt11"]
 [ext_resource type="Texture2D" uid="uid://d1ks80pffpgtn" path="res://spheres/5/breath/spike_indicator.png" id="3_u546l"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_jpvjx"]

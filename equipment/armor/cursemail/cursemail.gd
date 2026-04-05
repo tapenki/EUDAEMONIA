@@ -1,22 +1,22 @@
-extends Ability
-
-var base_texture = preload("res://equipment/armor/cursemail/cursemail.png")
-var hurt_texture = preload("res://equipment/armor/cursemail/cursemail_hurt.png")
-
-func _ready() -> void:
-	ability_relay.damage_taken_modifiers.connect(damage_taken_modifiers)
-	ability_relay.damage_taken.connect(damage_taken)
-	if ability_relay.owner is Player:
-		ability_relay.owner.get_node("Sprite").texture = base_texture
-		ability_relay.owner.get_node("Sprite").base_texture = base_texture
-		ability_relay.owner.get_node("Sprite").hurt_texture = hurt_texture
-
-func damage_taken_modifiers(modifiers) -> void:
-	modifiers["multiplier"] *= 0.5
-
-func damage_taken(_damage) -> void:
-	ability_relay.owner.health = min(ability_relay.owner.health+1, ability_relay.owner.max_health)
-	ability_relay.upgrade("dark_price", 1)
-
-func inherit(_handler, _tier):
-	return
+#extends Ability
+#
+#var base_texture = preload("res://equipment/armor/cursemail/cursemail.png")
+#var hurt_texture = preload("res://equipment/armor/cursemail/cursemail_hurt.png")
+#
+#func _ready() -> void:
+#	ability_relay.damage_taken_modifiers.connect(damage_taken_modifiers)
+#	ability_relay.damage_taken.connect(damage_taken)
+#	if ability_relay.owner is Player:
+#		ability_relay.owner.get_node("Sprite").texture = base_texture
+#		ability_relay.owner.get_node("Sprite").base_texture = base_texture
+#		ability_relay.owner.get_node("Sprite").hurt_texture = hurt_texture
+#
+#func damage_taken_modifiers(modifiers) -> void:
+#	modifiers["multiplier"] *= 0.5
+#
+#func damage_taken(_damage) -> void:
+#	ability_relay.owner.health = min(ability_relay.owner.health+1, ability_relay.owner.max_health)
+#	ability_relay.upgrade("dark_price", 1)
+#
+#func inherit(_handler, _tier):
+#	return

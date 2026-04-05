@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqjwjy5rcc8q4"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_cuxw7"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_vql3y"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_vql3y"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_bvwtb"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_fnypg"]
 [ext_resource type="Script" uid="uid://c0gxn2ptvo02n" path="res://spheres/5/breath/indicator_attack.gd" id="6_ht3rl"]

@@ -44,9 +44,8 @@ func write_run():
 		"paths" : get_node("/root/Main/UI").paths,
 		"abilities" : {},
 	}
-	for ability in get_node("/root/Main/Entities/Player/AbilityRelay").get_children():
-		if AbilityData.ability_data[ability.name]["type"] != "status":
-			save_data["abilities"][ability.name] = ability.serialize()
+	for ability in get_node("/root/Main/PlayerAbilityHandler").get_children():
+		save_data["abilities"][ability.name] = ability.serialize()
 	var save_file = FileAccess.open("user://run_save", FileAccess.WRITE)
 	save_file.store_var(save_data)
 
@@ -68,24 +67,29 @@ func read_run():
 	for path in save_data["paths"]:
 		get_node("/root/Main/UI").paths.append(path)
 	for ability in save_data["abilities"]:
-		var ability_node = Node2D.new()
-		ability_node.set_script(AbilityData.ability_data[ability]["script"])
+		var ability_node = get_node("/root/Main/PlayerAbilityHandler").learn(ability)
 		ability_node.deserialize(save_data["abilities"][ability])
-		ability_node.name = ability
-		get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
+		#var ability_node = Node2D.new()
+		#ability_node.set_script(AbilityData.ability_data[ability]["script"])
+		#ability_node.deserialize(save_data["abilities"][ability])
+		#ability_node.name = ability
+		#get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
 	return true
 
 func _ready():
 	read_meta()
 	if not read_run():
 		for ability in starter_abilities:
-			var ability_node = Node2D.new()
-			ability_node.set_script(AbilityData.ability_data[ability]["script"])
+			var ability_node = get_node("/root/Main/PlayerAbilityHandler").learn(ability)
 			ability_node.deserialize(starter_abilities[ability])
-			ability_node.name = ability
-			get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
+			#var ability_node = Node2D.new()
+			#ability_node.set_script(AbilityData.ability_data[ability]["script"])
+			#ability_node.deserialize(starter_abilities[ability])
+			#ability_node.name = ability
+			#get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
 		for challenge in get_node("/root/Main/UI").challenges:
-			var ability_node = Node2D.new()
-			ability_node.set_script(AbilityData.ability_data[challenge]["script"])
-			ability_node.name = challenge
-			get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
+			get_node("/root/Main/PlayerAbilityHandler").learn(challenge, 1)
+			#var ability_node = Node2D.new()
+			#ability_node.set_script(AbilityData.ability_data[challenge]["script"])
+			#ability_node.name = challenge
+			#get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)

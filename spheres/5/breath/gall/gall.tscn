@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7god5qi3in7b"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_urbcv"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_ps0y5"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_ps0y5"]
 [ext_resource type="Script" uid="uid://yvjvsxb3a557" path="res://spheres/5/breath/gall/spawn_on_death.gd" id="3_8sugv"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_tdhm5"]
 [ext_resource type="PackedScene" uid="uid://bdvfiw08c6nnb" path="res://spheres/5/breath/giga_leafer/giga_leafer.tscn" id="4_a1dje"]

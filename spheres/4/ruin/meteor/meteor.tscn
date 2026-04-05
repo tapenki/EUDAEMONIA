@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8dtaqmm82y8x"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_5dxxv"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_tj0jb"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_tj0jb"]
 [ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://spheres/3/wonder/debree_shield.gd" id="3_irfvx"]
 [ext_resource type="PackedScene" uid="uid://c511sypv8nipf" path="res://spheres/4/ruin/bomb_debree/bomb_debree.tscn" id="4_6lqvu"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="4_fnkkn"]

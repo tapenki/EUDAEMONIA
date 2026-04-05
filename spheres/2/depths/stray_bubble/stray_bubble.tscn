@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccxrct2ea7nlc"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_uboir"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_vqdqp"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_vqdqp"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_5avlj"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_0k81l"]
 [ext_resource type="Texture2D" uid="uid://bsr832l3d1ck5" path="res://spheres/2/depths/bubble.png" id="13_7bx1r"]

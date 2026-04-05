@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dre5oi8vnusf3"]
 
 [ext_resource type="Script" uid="uid://bauj1wnsvphta" path="res://generic/projectiles/explosion.gd" id="1_rhm4h"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_8bs8h"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_8bs8h"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_dqch4"]
 [ext_resource type="Texture2D" uid="uid://cynbu06cbbvau" path="res://paths/death/harvest_explosion/harvest_explosion.png" id="4_e07et"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_b34si"]

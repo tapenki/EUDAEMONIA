@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c511sypv8nipf"]
 
 [ext_resource type="Script" uid="uid://exdrobvaiphc" path="res://spheres/4/ruin/bomb_debree/bomb_debree.gd" id="1_311us"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jblvk"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_jblvk"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_pboui"]
 [ext_resource type="Texture2D" uid="uid://d14qxvhr1egdt" path="res://spheres/4/ruin/bomb_debree/bomb_debree.png" id="4_x63fb"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="8_5m6cv"]

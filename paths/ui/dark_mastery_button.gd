@@ -28,7 +28,7 @@ func _ready() -> void:
 func update():
 	var passed = true
 	for ability in requires:
-		var ability_node = ability_relay.get_node_or_null(ability)
+		var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+ability)
 		if not ability_node or ability_node.level < requires[ability]:
 			passed = false
 			break
@@ -38,7 +38,7 @@ func update():
 		texture_rect2.texture = accessible_texture
 		symbol_label.text = name.substr(0, 2)
 		accessible = true
-		var ability_node = ability_relay.get_node_or_null(subject)
+		var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 		if ability_node:
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
@@ -47,10 +47,10 @@ func update():
 
 func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and accessible:
-		var ability_node = ability_relay.get_node_or_null(subject)
+		var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 		if not ability_node:
 			ability_relay.upgrade("dark_price", 40)
-			ability_relay.upgrade(subject, 1)
+			get_node("/root/Main/PlayerAbilityHandler").learn(subject, 1)
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

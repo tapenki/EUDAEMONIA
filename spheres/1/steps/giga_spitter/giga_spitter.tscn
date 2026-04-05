@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmnbik8xpkhu3"]
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_xl1yt"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_3ocmb"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_3ocmb"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_btrd6"]
 [ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_bf8ro"]
 [ext_resource type="Script" uid="uid://dyojb7ffn3scj" path="res://spheres/1/steps/giga_spitter/giga_spitter_shoot_attack.gd" id="5_84jqv"]

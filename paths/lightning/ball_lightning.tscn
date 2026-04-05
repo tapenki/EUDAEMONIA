@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_0owue"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="2_3eyo0"]
 [ext_resource type="Texture2D" uid="uid://csbg4wfwhnl4h" path="res://generic/projectiles/bullet.png" id="3_0owue"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="3_r00uu"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="3_r00uu"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_r00uu"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="7_w0uvr"]
 [ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/lightning/zap.png" id="7_xxnif"]

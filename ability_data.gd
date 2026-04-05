@@ -140,10 +140,6 @@ var ability_data = {
 		"script" : preload("res://paths/ice/abilities/cryobombs.gd"),
 		"type" : "upgrade"
 	},
-	"cryonic_volatility" : {
-		"script" : preload("res://paths/ice/cryobomb/cryonic_volatility.gd"),
-		"type" : "token"
-	},
 	"glacial_rail" : {
 		"script" : preload("res://paths/ice/abilities/glacial_rail.gd"),
 		"type" : "mastery"

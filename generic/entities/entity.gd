@@ -36,11 +36,10 @@ func kill(modifiers = {}):
 			ability_relay.death_effects.emit()
 			get_node("/root/Main").entity_death.emit(self)
 			ability_relay.self_death.emit()
+			ability_relay.freed.emit()
 			alive = false
 			animation_player.speed_scale = 1 
 			animation_player.play("DEATH")
-			for ability in ability_relay.get_children():
-				ability.kill()
 			if hurtbox:
 				#hurtbox.hit_enabled = false
 				hurtbox.queue_free()

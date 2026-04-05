@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://ui/ui.tscn" id="2_kek77"]
+[ext_resource type="Script" uid="uid://nwqubmmn511u" path="res://generic/abilities/ability_handler.gd" id="4_vn0ol"]
 [ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="5_dg77c"]
 [ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="9_efxa6"]
 [ext_resource type="AudioStream" uid="uid://blkcwcunpcgqm" path="res://sounds/death_light.wav" id="11_ycdy4"]
@@ -168,6 +169,9 @@ script = ExtResource("21_getpj")
 
 [node name="UI" parent="." unique_id=1717290089 node_paths=PackedStringArray("player") instance=ExtResource("2_kek77")]
 player = NodePath("../Entities/Player")
+
+[node name="PlayerAbilityHandler" type="Node" parent="." unique_id=280908071]
+script = ExtResource("4_vn0ol")
 
 [node name="Projectiles" type="Node" parent="." unique_id=1379355387]
 

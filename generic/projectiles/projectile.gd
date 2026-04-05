@@ -92,6 +92,7 @@ func kill():
 		hit_enabled = false
 		ability_relay.death_effects.emit()
 		ability_relay.self_death.emit()
+		ability_relay.freed.emit()
 
 func get_sprites():
 	var sprite = get_node("Sprite")

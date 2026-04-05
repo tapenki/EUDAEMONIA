@@ -201,8 +201,10 @@ func full_clear():
 func travel(to_room, to_door):
 	for entity in get_node("/root/Main/Entities").get_children():
 		if not entity is Player:
+			entity.ability_relay.freed.emit()
 			entity.queue_free()
 	for projectile in get_node("/root/Main/Projectiles").get_children():
+		projectile.ability_relay.freed.emit()
 		projectile.queue_free()
 	day_started = false
 	room = to_room

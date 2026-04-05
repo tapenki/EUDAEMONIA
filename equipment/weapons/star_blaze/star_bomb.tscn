@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnbavptfcuftr"]
 
 [ext_resource type="Script" uid="uid://c2qd83mfpa1mv" path="res://equipment/weapons/star_blaze/star_bomb.gd" id="1_17g2o"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_lg4ig"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_lg4ig"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_ihqtc"]
 [ext_resource type="Texture2D" uid="uid://dnbbqhbxt3tif" path="res://equipment/weapons/star_blaze/star_bomb.png" id="4_jg255"]
 [ext_resource type="Script" uid="uid://g3ciujifhff6" path="res://generic/misc/sprite_spin.gd" id="5_e5qto"]

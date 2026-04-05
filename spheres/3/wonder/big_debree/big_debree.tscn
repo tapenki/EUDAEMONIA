@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhqe46kgmupeo"]
 
 [ext_resource type="Script" uid="uid://drph8b0xnejn8" path="res://generic/entities/orbiting_entity.gd" id="1_qga8u"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_jo4yx"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_jo4yx"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_gpefe"]
 [ext_resource type="Texture2D" uid="uid://vr0ka6fey870" path="res://spheres/3/wonder/big_debree/big_debree.png" id="4_rvbot"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="5_tu552"]

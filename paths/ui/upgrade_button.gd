@@ -13,7 +13,7 @@ extends Described
 func _ready() -> void:
 	#rotation_degrees = randf_range(-5, 5)
 	symbol_label.text = name.substr(0, 2)
-	var ability_node = ability_relay.get_node_or_null(subject)
+	var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 	if ability_node:
 		self_modulate = Color.WHITE
 		symbol_label.self_modulate = Color.WHITE
@@ -22,9 +22,9 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and ui.upgrade_points >= cost:
 		ui.upgrade_points -= cost
-		ability_relay.upgrade(subject, 1)
+		get_node("/root/Main/PlayerAbilityHandler").learn(subject, 1)
 		point_counter.update()
-		var ability_node = ability_relay.get_node_or_null(subject)
+		var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 		if ability_node:
 			self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

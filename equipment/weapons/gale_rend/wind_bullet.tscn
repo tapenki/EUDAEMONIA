@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c37msytxwcoye"]
+[gd_scene format=3 uid="uid://c37msytxwcoye"]
 
 [ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_5khav"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_handler.gd" id="2_sk0lo"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_sk0lo"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_25fl6"]
 [ext_resource type="Texture2D" uid="uid://cfsa7fnxns4dp" path="res://equipment/weapons/gale_rend/wind_bullet.png" id="4_l2gon"]
 [ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_x64r6"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_pafch"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_4ijtd"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 12.0
