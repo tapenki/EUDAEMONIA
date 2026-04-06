@@ -1,40 +1,61 @@
-#extends Ability
-#
-#var projectile_scene = preload("res://paths/lightning/ball_lightning.tscn")
-#var anchor_node
-#
-#var close_orbit: bool
-#var orbit_speed = 1
-#
-#func _ready() -> void:
-	#anchor_node = Node2D.new()
-	#add_child(anchor_node)
-	#get_node("/root/Main").day_start.connect(day_start)
-	#get_node("/root/Main").intermission.connect(intermission)
-#
-#func _physics_process(delta: float) -> void:
-	#anchor_node.rotation += delta * PI * orbit_speed * ability_relay.speed_scale
-#
-#func day_start(_day: int) -> void:
-	#var distance = 150
-	#if close_orbit:
-		#distance = 90
-		#orbit_speed = 2
-	#var total = 2
-	#for repeat in total:
-		#var projectile_instance = ability_relay.make_projectile(projectile_scene, 
-		#Vector2.from_angle(TAU / total * repeat) * distance,
-		#2,
-		#Vector2())
-		#projectile_instance.ability_relay.inherited_damage["multiplier"] *= level
-		#projectile_instance.ability_relay.inherited_crit_chance["multiplier"] *= 2
-		#projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat))).angle()
-		#projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
-		#anchor_node.add_child(projectile_instance)
-#
-#func intermission(_day: int) -> void:
-	#for projectile in anchor_node.get_children():
-		#projectile.queue_free()
-#
-#func inherit(_handler, _tier):
-	#return
+extends Ability
+
+var projectile_scene = preload("res://paths/lightning/ball_lightning.tscn")
+
+var close_orbit: bool
+var orbit_speed = 1
+
+func apply(ability_relay, applicant_data):
+	if ability_relay.owner.scene_file_path == "res://paths/lightning/ball_lightning.tscn":
+		applicant_data["ball_power"] = true
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
+		ability_relay.crit_chance_modifiers.connect(crit_chance_modifiers)
+	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("ball_power"):
+		applicant_data["ball_power"] = applicants[ability_relay.source]["ball_power"]
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
+		ability_relay.crit_chance_modifiers.connect(crit_chance_modifiers)
+	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
+		var anchor_node = Node2D.new()
+		ability_relay.add_child(anchor_node)
+		applicant_data["anchor_node"] = anchor_node
+		var orbit_distance = 150
+		if close_orbit:
+			orbit_distance = 90
+		var total = 2
+		for repeat in total:
+			var projectile_instance = ability_relay.make_projectile(projectile_scene, 
+			Vector2.from_angle(TAU / total * repeat) * orbit_distance,
+			2,
+			Vector2())
+			projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat))).angle()
+			projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
+			anchor_node.add_child(projectile_instance)
+	super(ability_relay, applicant_data)
+
+func disapply(ability_relay):
+	if applicants[ability_relay].has("anchor_node"):
+		for i in applicants[ability_relay]["anchor_node"].get_children():
+			i.kill()
+	super(ability_relay)
+	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
+		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
+	if ability_relay.crit_chance_modifiers.is_connected(crit_chance_modifiers):
+		ability_relay.crit_chance_modifiers.disconnect(crit_chance_modifiers)
+
+func _physics_process(delta: float) -> void:
+	for applicant in applicants:
+		if applicants[applicant].has("anchor_node"):
+			applicants[applicant]["anchor_node"].rotation += delta * PI * orbit_speed * applicant.speed_scale
+
+func damage_dealt_modifiers(_entity, modifiers) -> void:
+	modifiers["base"] += 5 * level - 5
+
+func crit_chance_modifiers(_entity, modifiers) -> void:
+	modifiers["multiplier"] *= 2
+
+func apply_close_orbit():
+	orbit_speed = 2
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("anchor_node"):
+			for i in applicants[ability_relay]["anchor_node"].get_children():
+				i.position = i.position.normalized() * 90

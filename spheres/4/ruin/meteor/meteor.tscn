@@ -127,7 +127,6 @@ script = ExtResource("3_irfvx")
 ability_relay = NodePath("../AbilityRelay")
 entity_scene = ExtResource("4_6lqvu")
 count = 3
-summon_health = 0.0
 
 [node name="StateHandler" type="Node" parent="." unique_id=639463105 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_fnkkn")

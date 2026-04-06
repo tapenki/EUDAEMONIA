@@ -165,6 +165,7 @@ requires = {
 "chain_bolt": 5
 }
 subject = "storm_weave"
+extras = ["crit"]
 
 [node name="CloseOrbit" parent="Masteries1" unique_id=1793056073 instance=ExtResource("6_eepm7")]
 layout_mode = 2
@@ -202,7 +203,7 @@ requires = {
 "mortal_shock": 5
 }
 subject = "shocking_grasp"
-extras = ["crit"]
+extras = ["shock", "crit"]
 
 [node name="Repulsar" parent="Masteries2" unique_id=1028252816 instance=ExtResource("6_eepm7")]
 layout_mode = 2

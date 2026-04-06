@@ -49,7 +49,7 @@ func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and accessible:
 		var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 		if not ability_node:
-			ability_relay.upgrade("dark_price", 40)
+			get_node("/root/Main/PlayerAbilityHandler").learn("dark_price", 40)
 			get_node("/root/Main/PlayerAbilityHandler").learn(subject, 1)
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE

@@ -45,6 +45,7 @@ signal summon_damage_modifiers(modifiers: Dictionary)
 
 ## damage taken signals
 signal damage_taken_modifiers(modifiers: Dictionary)
+signal crit_taken_modifiers(modifiers: Dictionary)
 signal immune_duration_modifiers(modifiers: Dictionary)
 signal damage_taken(damage: Dictionary)
 signal before_self_death(modifiers: Dictionary)
@@ -106,17 +107,18 @@ func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "
 		entity.ability_relay.damage_taken_modifiers.emit(damage)
 	damage["final"] = damage["base"] * damage["multiplier"]
 	if damage.has("crits"):
-		damage["final"] *= (1 + damage["crits"])
+		damage["final"] *= pow(2, damage["crits"])
 
-func get_crits(entity: Entity = null, modifiers: Dictionary = {"base" : 0, "multiplier" : 1}, skip_output_modifiers = true):
+func get_crits(entity: Entity = null, crit: Dictionary = {"base" : 0, "multiplier" : 1}, skip_input_modifiers = false, skip_output_modifiers = false):
 	if not skip_output_modifiers:
-		modifiers["base"] += inherited_crit_chance["base"]
-		modifiers["multiplier"] *= inherited_crit_chance["multiplier"]
-		crit_chance_modifiers.emit(entity, modifiers)
-	var crit_chance = int(modifiers["base"] * modifiers["multiplier"])
-	var leftover = crit_chance % 100
-	var crits = (int)((crit_chance - leftover) * 0.01)
-	if randi() % 100 < leftover:
+		crit["base"] += inherited_crit_chance["base"]
+		crit["multiplier"] *= inherited_crit_chance["multiplier"]
+		crit_chance_modifiers.emit(entity, crit)
+	if entity and not skip_input_modifiers:
+		entity.ability_relay.crit_taken_modifiers.emit(crit)
+	var crit_chance = int(crit["base"] * crit["multiplier"])
+	var crits = 0
+	if randi() % 100 < crit_chance:
 		crits += 1
 	return crits
 
@@ -124,7 +126,7 @@ func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" 
 	damage["group"] = owner.group
 	if entity.health == entity.max_health:
 		damage["first_blood"] = true
-	var crits = get_crits(entity, {"base" : 0, "multiplier" : 1}, damage.has("skip_output_modifiers"))
+	var crits = get_crits(entity, {"base" : 0, "multiplier" : 1}, damage.has("skip_input_modifiers"), damage.has("skip_output_modifiers"))
 	damage["crits"] = crits
 	get_damage_dealt(entity, damage)
 	var damaged = entity.take_damage(damage)
@@ -132,8 +134,8 @@ func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" 
 		if not damage.has("skip_output_modifiers"):
 			damage_dealt.emit(entity, damage)
 		var damage_text = str(int(damage["final"]))
-		if crits > 0:
-			damage_text += "!"
+		if damage["crits"] > 0:
+			damage_text += "!".repeat(damage["crits"])
 		get_node("/root/Main").floating_text(entity.global_position + Vector2(randi_range(-16, 16), -16 + randi_range(-16, 16)), damage_text, damage_color)
 	#if damage.has("direction"):
 	#	apply_knockback(entity, damage["direction"])
@@ -154,8 +156,6 @@ func roll_chance(odds: Dictionary):
 	var final_chance = odds["base"] * odds["multiplier"]
 	var result = false
 	var rolls = 1
-	if odds.get("crits", 0) > 0:
-		rolls += 1
 	for i in rolls:
 		if not result:
 			result = randi() % 100 < final_chance
@@ -168,7 +168,7 @@ func roll_chance(odds: Dictionary):
 func accumulate_damage(damage: Dictionary):
 	var accumulated_damage = damage["final"]
 	if damage.has("crits"):
-		accumulated_damage *= pow(2, damage["crits"])
+		accumulated_damage *= pow(1.5, damage["crits"])
 	return accumulated_damage
 
 ## targeting

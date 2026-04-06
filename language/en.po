@@ -368,19 +368,19 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[10xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][2][/outline_size] times."
+msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][LEVEL][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#a87e00]Ability: Mortal Shock[/outline_color]"
 
 msgid "mortal_shock_description"
-msgstr "Gain [outline_size=10]+[25xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[5xLEVEL][/outline_size] damage on crit."
+msgstr "Gain [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[3xLEVEL][/outline_size] damage on crit."
 
 msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]x[LEVEL][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
@@ -398,13 +398,19 @@ msgid "storm_weave_title"
 msgstr "[outline_color=#a87e00]Mastery: Storm Weave[/outline_color]"
 
 msgid "storm_weave_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Chain Bolt[/outline_color][br][outline_color=#a87e00]Chain Bolt[/outline_color] can chain [outline_size=10]+[1][/outline_size] time."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Chain Bolt[/outline_color][br][outline_size=10]When dealing damage:[/outline_size] roll for crits an additional time with [outline_size=10]x[0.1][/outline_size] crit chance."
 
 msgid "shocking_grasp_title"
 msgstr "[outline_color=#a87e00]Mastery: Shocking Grasp[/outline_color]"
 
 msgid "shocking_grasp_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_color=#a87e00]Mortal Shock's[/outline_color] crit chance bonus persists for [outline_size=10][2.5][/outline_size] seconds."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10][10xLEVEL][/outline_size] shock."
+
+msgid "shock_title"
+msgstr "[outline_color=#a87e00]Notes: Shock[/outline_color]"
+
+msgid "shock_description"
+msgstr "[outline_size=10]+[STACKS]%[/outline_size] crit chance for incoming damage.[br]Lasts [outline_size=10][4][/outline_size] seconds."
 
 msgid "close_orbit_title"
 msgstr "[outline_color=#a87e00]Mastery: Close Orbit[/outline_color]"
@@ -428,7 +434,7 @@ msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
-msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[1+CRITCOUNT][/outline_size] damage and [outline_size=10]+[1][/outline_size] effect chance reroll on crit.[br]Crit chance over [outline_size=10][100]%[/outline_size] is converted into extra crits."
+msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[2][/outline_size] damage and [outline_size=10]x[1.5][/outline_size] damage accumulated crit."
 
 # life
 msgid "life_title"

@@ -28,7 +28,7 @@ func learn(ability, levels = 1):
 		ability_node.level = levels
 		ability_node.name = ability
 		add_child(ability_node)
-		for i in subscribers:
+		for i in subscribers.keys():
 			ability_node.apply(i, subscribers[i])
 	get_node("/root/Main/UI").update_abilities.emit()
 	return ability_node
