@@ -2,8 +2,7 @@ extends Ability
 
 var projectile_scene = preload("res://paths/lightning/ball_lightning.tscn")
 
-var close_orbit: bool
-var orbit_speed = 1
+var covalence: bool
 
 func apply(ability_relay, applicant_data):
 	if ability_relay.owner.scene_file_path == "res://paths/lightning/ball_lightning.tscn":
@@ -19,9 +18,11 @@ func apply(ability_relay, applicant_data):
 		ability_relay.add_child(anchor_node)
 		applicant_data["anchor_node"] = anchor_node
 		var orbit_distance = 150
-		if close_orbit:
+		if covalence:
 			orbit_distance = 90
 		var total = 2
+		if covalence:
+			total = 3
 		for repeat in total:
 			var projectile_instance = ability_relay.make_projectile(projectile_scene, 
 			Vector2.from_angle(TAU / total * repeat) * orbit_distance,
@@ -45,7 +46,7 @@ func disapply(ability_relay):
 func _physics_process(delta: float) -> void:
 	for applicant in applicants:
 		if applicants[applicant].has("anchor_node"):
-			applicants[applicant]["anchor_node"].rotation += delta * PI * orbit_speed * applicant.speed_scale
+			applicants[applicant]["anchor_node"].rotation += delta * PI * applicant.speed_scale
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	modifiers["base"] += 5 * level - 5
@@ -53,9 +54,17 @@ func damage_dealt_modifiers(_entity, modifiers) -> void:
 func crit_chance_modifiers(_entity, modifiers) -> void:
 	modifiers["multiplier"] *= 2
 
-func apply_close_orbit():
-	orbit_speed = 2
+func apply_covalence():
+	covalence = true
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("anchor_node"):
 			for i in applicants[ability_relay]["anchor_node"].get_children():
-				i.position = i.position.normalized() * 90
+				i.kill()
+			for repeat in 3:
+				var projectile_instance = ability_relay.make_projectile(projectile_scene, 
+				Vector2.from_angle(TAU / 3 * repeat) * 90,
+				2,
+				Vector2())
+				projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / 3 * repeat))).angle()
+				projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
+				applicants[ability_relay]["anchor_node"].add_child(projectile_instance)

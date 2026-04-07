@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bx5srx3clqiya"]
+
+[ext_resource type="Script" uid="uid://w6ad6q8ilnj6" path="res://generic/projectiles/particle_sprite_projectile.gd" id="1_ujh5x"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_frfv8"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4fe2x"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quill.png" id="4_ujh5x"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_wrpn6"]
+
+[sub_resource type="Curve" id="Curve_t5laq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 80.0
+
+[node name="Quills" type="Area2D" unique_id=678856818 node_paths=PackedStringArray("ability_relay")]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_ujh5x")
+ability_relay = NodePath("AbilityRelay")
+hit_particles = ""
+crit_particles = ""
+hit_delay = 1.0
+hits_left = -1
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=148590914]
+script = ExtResource("2_frfv8")
+
+[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876]
+show_behind_parent = true
+material = ExtResource("3_4fe2x")
+emitting = false
+amount = 18
+texture = ExtResource("4_ujh5x")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+draw_order = 1
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_t5laq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696487460]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." unique_id=1264386971 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("7_wrpn6")
+wait_time = 0.3
+running = true
+ability_relay = NodePath("../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

@@ -83,7 +83,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2migh"]
 resource_name = "WINDUP"
-length = 0.3
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -91,7 +91,7 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
+"times": PackedFloat32Array(0, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 0.5),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
@@ -114,8 +114,8 @@ script = ExtResource("1_wxecl")
 ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 60
-health = 60.0
+max_health = 0
+health = 0.0
 immune_duration = 0.25
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1423322263]
@@ -133,7 +133,7 @@ initial_state = NodePath("CloseIn")
 [node name="CloseIn" type="Node" parent="StateHandler" unique_id=700307258 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_huaky")
-speed = 400
+speed = 300
 distance_margin = 150
 shapecast_radius = 20
 next = NodePath("../PrepareAttack")
@@ -146,14 +146,14 @@ next = NodePath("../DashAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=1583834917 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_tdrsd")
-wait_time = 0.2
+wait_time = 0.4
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="DashAttack" type="Node" parent="StateHandler" unique_id=263597581 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_6ngl6")
-speed = 700
+speed = 500
 next = NodePath("../QuakeAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=2007707841 node_paths=PackedStringArray("ability_relay")]

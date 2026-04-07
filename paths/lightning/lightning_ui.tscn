@@ -167,13 +167,13 @@ requires = {
 subject = "storm_weave"
 extras = ["crit"]
 
-[node name="CloseOrbit" parent="Masteries1" unique_id=1793056073 instance=ExtResource("6_eepm7")]
+[node name="Covalence" parent="Masteries1" unique_id=1793056073 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
 "ball_lightning": 5
 }
-subject = "close_orbit"
+subject = "covalence"
 
 [node name="ArcShield" parent="Masteries1" unique_id=556702490 instance=ExtResource("6_eepm7")]
 layout_mode = 2

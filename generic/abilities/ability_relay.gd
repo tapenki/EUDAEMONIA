@@ -212,13 +212,30 @@ func find_target(position = owner.global_position, reach = 9999, exclude = {}):
 				found = entity
 	return found
 
-## instancing
+## instantiation
+# can't get main from outside the tree
+func assign_projectile_group(projectile: Projectile, group: int, color: String = "secondary"):
+	projectile.group = group
+	for i in range(1, 3):
+			projectile.set_collision_mask_value(i, i != group)
+	projectile.set_collision_layer_value(group, true)
+	projectile.apply_palette(group, color)
+
+func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
+	entity.group = group
+	var hurtbox = entity.get_node_or_null("Hurtbox")
+	if hurtbox:
+		for i in range(1, 3):
+			hurtbox.set_collision_mask_value(i, i != group)
+	entity.set_collision_layer_value(group, true)
+	entity.apply_palette(group, color)
+
 func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritance: int, velocity = Vector2(), projectile_group = owner.group):
 	var projectile_instance = projectile_scene.instantiate()
 	projectile_instance.global_position = position
 	projectile_instance.velocity = velocity
 	
-	get_node("/root/Main/").assign_projectile_group(projectile_instance, projectile_group)
+	assign_projectile_group(projectile_instance, projectile_group)
 	
 	projectile_instance.ability_relay.source = self
 	if is_entity:
@@ -245,7 +262,7 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	var summon_instance = summon_scene.instantiate()
 	summon_instance.global_position = position
 	
-	get_node("/root/Main/").assign_entity_group(summon_instance, summon_group)
+	assign_entity_group(summon_instance, summon_group)
 	summon_instance.summoned = true
 	
 	summon_instance.ability_relay.source = self

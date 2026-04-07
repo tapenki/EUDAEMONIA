@@ -380,7 +380,7 @@ msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
+msgstr "You manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
@@ -412,11 +412,11 @@ msgstr "[outline_color=#a87e00]Notes: Shock[/outline_color]"
 msgid "shock_description"
 msgstr "[outline_size=10]+[STACKS]%[/outline_size] crit chance for incoming damage.[br]Lasts [outline_size=10][4][/outline_size] seconds."
 
-msgid "close_orbit_title"
-msgstr "[outline_color=#a87e00]Mastery: Close Orbit[/outline_color]"
+msgid "covalence_title"
+msgstr "[outline_color=#a87e00]Mastery: Covalence[/outline_color]"
 
-msgid "close_orbit_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br]Ball lightnings gain [outline_size=10]x[0.6][/outline_size] orbit distance and [outline_size=10]x[2][/outline_size] orbit speed."
+msgid "covalence_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br]Manifest [outline_size=10]+[1][/outline_size]Ball lightning.[br]Ball lightnings have [outline_size=10]x[0.6][/outline_size] orbit distance."
 
 msgid "repulsar_title"
 msgstr "[outline_color=#a87e00]Mastery: Repulsar[/outline_color]"
@@ -443,11 +443,11 @@ msgstr "[outline_color=#0f9936]Life[/outline_color]"
 msgid "life_description"
 msgstr "As the years go by life will never die.[br]Smile through the pain."
 
-msgid "primal_casting_title"
-msgstr "[outline_color=#0f9936]Ability: Primal Casting[/outline_color]"
+msgid "enrage_title"
+msgstr "[outline_color=#0f9936]Ability: Enrage[/outline_color]"
 
-msgid "primal_casting_description"
-msgstr "Gain [outline_size=10]+[0.02xMAXHPxLEVEL][/outline_size] damage."
+msgid "enrage_description"
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] You and all allies gain [outline_size=10]+[0.5xLEVEL][/outline_size] damage until the end of encounter up to [outline_size=10]+[5xLEVEL][/outline_size]."
 
 msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
@@ -459,25 +459,25 @@ msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
 
 msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [75]px you move:[/outline_size] Manifest a thorn that deals [outline_size=10]x[LEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Every [75]px you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[LEVEL-1][/outline_size] pierce."
 
 msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] You deal [outline_size=10]x[2xLEVEL][/outline_size] damage to nearby enemies."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]x[0.5+0.5xLEVEL][/outline_size] damage, and your personal abilities."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]+[3xLEVEL-3][/outline_size] damage, and your personal abilities."
 
 msgid "bramble_shot_title"
 msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"
 
 msgid "bramble_shot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Primal Casting[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] Take [outline_size=10][25][/outline_size] pure damage. Shoot a bramble with [outline_size=10]x[3][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][25][/outline_size] pure damage and shoot a bramble with [outline_size=10]x[3][/outline_size] damage."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"

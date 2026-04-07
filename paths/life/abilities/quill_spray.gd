@@ -1,24 +1,57 @@
-#extends Ability
-#
-#var pressurized_quills: bool
-#var pressure_multiplier = 1.0
-#
-#func _ready() -> void:
-	#ability_relay.damage_taken.connect(damage_taken)
-#
-#func _physics_process(delta: float) -> void:
-	#if pressurized_quills:
-		#pressure_multiplier = min(2.0, pressure_multiplier + 0.2 * delta * ability_relay.speed_scale)
-#
-#func damage_taken(_damage) -> void:
-	#var attack_scale = ability_relay.get_attack_scale({"base" : 0, "multiplier" : 1.5 * pressure_multiplier})
-	#var reach = 80 * attack_scale
-	#for entity in ability_relay.area_targets(global_position, reach):
-		#ability_relay.deal_damage(entity, {"base" : 0, "multiplier" : 2 * level * pressure_multiplier, "direction" : global_position.direction_to(entity.global_position)})
-	#pressure_multiplier = 1.0
-	#get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Quills"), 16, global_position, attack_scale, Config.get_team_color(ability_relay.owner.group, "secondary"))
-#
-#func inherit(handler, tier):
-	#if tier < 3:
-		#return
-	#super(handler, tier)
+extends Ability
+
+var quills_scene = preload("res://paths/life/quills/quills.tscn")
+
+var pressurized_quills: bool
+
+func apply(ability_relay, applicant_data):
+	if ability_relay.owner.scene_file_path == "res://paths/life/quills/quills.tscn":
+		if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("pressure_multiplier"):
+			applicant_data["quill_power"] = applicants[ability_relay.source]["pressure_multiplier"]
+		else:
+			applicant_data["quill_power"] = 1.0
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
+		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
+	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("quill_power"):
+		applicant_data["quill_power"] = applicants[ability_relay.source]["quill_power"]
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
+		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
+	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
+		applicant_data["pressure_multiplier"] = 1.0
+		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
+	super(ability_relay, applicant_data)
+
+func disapply(ability_relay):
+	super(ability_relay)
+	if ability_relay.damage_taken.is_connected(damage_taken):
+		ability_relay.damage_taken.disconnect(damage_taken)
+	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
+		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
+	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
+		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
+
+func _physics_process(delta: float) -> void:
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("pressure_multiplier") and pressurized_quills:
+			applicants[ability_relay]["pressure_multiplier"] = min(2.0, applicants[ability_relay]["pressure_multiplier"] + 0.2 * delta * ability_relay.speed_scale)
+
+func spawn(position, ability_relay):
+	var quills_instance = ability_relay.make_projectile(quills_scene, 
+	position, 
+	2,
+	Vector2())
+	quills_instance.get_node("Sprite").emitting = true
+	get_node("/root/Main/Projectiles").add_child(quills_instance)
+	applicants[ability_relay]["pressure_multiplier"] = 1.0
+
+func damage_taken(_damage, ability_relay) -> void:
+	call_deferred("spawn", ability_relay.global_position, ability_relay)
+
+func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
+	modifiers["base"] += 5 * level - 5
+	if applicants[ability_relay].has("quill_power"):
+		modifiers["multiplier"] *= applicants[ability_relay]["quill_power"]
+
+func attack_scale_modifiers(modifiers, ability_relay) -> void:
+	if applicants[ability_relay].has("quill_power"):
+		modifiers["multiplier"] *= applicants[ability_relay]["quill_power"]

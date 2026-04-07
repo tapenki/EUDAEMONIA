@@ -6,11 +6,11 @@ func _ready() -> void:
 	subscribe(get_node("/root/Main/Entities/Player/AbilityRelay"), {"subscription" = 5})
 
 func subscribe(ability_relay, subscription_data):
+	ability_relay.ability_handler = self
 	ability_relay.freed.connect(unsubscribe.bind(ability_relay))
 	subscribers[ability_relay] = subscription_data.duplicate()
 	for ability_node in get_children():
 		ability_node.apply(ability_relay, subscription_data)
-	ability_relay.ability_handler = self
 
 func unsubscribe(ability_relay):
 	subscribers.erase(ability_relay)

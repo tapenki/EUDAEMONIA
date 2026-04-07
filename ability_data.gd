@@ -24,32 +24,32 @@ var ability_data = {
 		"script" : preload("res://equipment/weapons/magic_missile/magic_missile.gd"),
 		"type" : "weapon"
 	},
-	"star_blaze" : {
-		"script" : preload("res://equipment/weapons/star_blaze/star_blaze.gd"),
-		"type" : "weapon"
-	},
-	"gale_rend" : {
-		"script" : preload("res://equipment/weapons/gale_rend/gale_rend.gd"),
-		"type" : "weapon"
-	},
-	"trick_bullets" : {
-		"script" : preload("res://equipment/weapons/trick_bullets/trick_bullets.gd"),
-		"type" : "weapon"
-	},
+	#"star_blaze" : {
+		#"script" : preload("res://equipment/weapons/star_blaze/star_blaze.gd"),
+		#"type" : "weapon"
+	#},
+	#"gale_rend" : {
+		#"script" : preload("res://equipment/weapons/gale_rend/gale_rend.gd"),
+		#"type" : "weapon"
+	#},
+	#"trick_bullets" : {
+		#"script" : preload("res://equipment/weapons/trick_bullets/trick_bullets.gd"),
+		#"type" : "weapon"
+	#},
 	#endregion
 	#region armor
-	"hermits_cloak" : {
-		"script" : preload("res://equipment/armor/hermits_cloak/hermits_cloak.gd"),
-		"type" : "armor"
-	},
-	"mystic_robes" : {
-		"script" : preload("res://equipment/armor/mystic_robes/mystic_robes.gd"),
-		"type" : "armor"
-	},
-	"cursemail" : {
-		"script" : preload("res://equipment/armor/cursemail/cursemail.gd"),
-		"type" : "armor"
-	},
+	#"hermits_cloak" : {
+		#"script" : preload("res://equipment/armor/hermits_cloak/hermits_cloak.gd"),
+		#"type" : "armor"
+	#},
+	#"mystic_robes" : {
+		#"script" : preload("res://equipment/armor/mystic_robes/mystic_robes.gd"),
+		#"type" : "armor"
+	#},
+	#"cursemail" : {
+		#"script" : preload("res://equipment/armor/cursemail/cursemail.gd"),
+		#"type" : "armor"
+	#},
 	#endregion
 	#region challenges
 	"lasting_wounds" : {
@@ -198,8 +198,8 @@ var ability_data = {
 		"script" : preload("res://paths/lightning/shock.gd"),
 		"type" : "status"
 	},
-	"close_orbit" : {
-		"script" : preload("res://paths/lightning/abilities/close_orbit.gd"),
+	"covalence" : {
+		"script" : preload("res://paths/lightning/abilities/covalence.gd"),
 		"type" : "mastery"
 	},
 	"repulsar" : {
@@ -212,8 +212,8 @@ var ability_data = {
 	},
 	#endregion
 	#region life
-	"primal_casting" : {
-		"script" : preload("res://paths/life/abilities/primal_casting.gd"),
+	"enrage" : {
+		"script" : preload("res://paths/life/abilities/enrage.gd"),
 		"type" : "upgrade"
 	},
 	"trail_of_thorns" : {
