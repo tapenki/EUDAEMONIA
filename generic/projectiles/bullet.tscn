@@ -38,7 +38,7 @@ shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Node" parent="." unique_id=1431600111 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("8_tprba")
-wait_time = 2.0
+wait_time = 1.5
 running = true
 ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

@@ -10,7 +10,7 @@ func _ready() -> void:
 	for repeat in count:
 		var entity_instance = ability_relay.make_summon(entity_scene, 
 		Vector2(),
-		2)
+		{"subscription" = 2})
 		entity_instance.max_health = ability_relay.owner.max_health * summon_health
 		entity_instance.health = entity_instance.max_health
 		add_child(entity_instance)

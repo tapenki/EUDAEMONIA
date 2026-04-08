@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdk161oego7b6"
-path="res://.godot/imported/quill.png-d279de8892d6fe297abe4a478e86abbe.ctex"
+path="res://.godot/imported/quill.png-a28fcbfbf94e2b75c59267dbbb0b8b02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/life/quill.png"
-dest_files=["res://.godot/imported/quill.png-d279de8892d6fe297abe4a478e86abbe.ctex"]
+source_file="res://paths/life/quills/quill.png"
+dest_files=["res://.godot/imported/quill.png-a28fcbfbf94e2b75c59267dbbb0b8b02.ctex"]
 
 [params]
 

@@ -1,9 +1,8 @@
-#extends Ability
-#
-#func _ready() -> void:
-	#ability_relay.status_applied.connect(status_applied)
-#
-#func status_applied(status, _levels):
-	#if status.name == "doom" and not status.swift_fate:
-		#status.swift_fate = true
-		#status.doom_timer.start(status.doom_timer.wait_time * 0.5)
+extends Ability
+
+func apply(_ability_relay, _applicant_data):
+	return
+
+func _ready() -> void:
+	var doom = ability_handler.learn("doom", 0)
+	doom.swift_fate = true

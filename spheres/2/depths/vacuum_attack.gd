@@ -23,7 +23,7 @@ func _physics_process(delta):
 		for i in bullet_count:
 			var bullet_instance = user.ability_relay.make_projectile(bullet, 
 			user.global_position + Vector2.UP.rotated(randf() * TAU) * distance, 
-			2)
+			{"subscription" = 2})
 			bullet_instance.target = user
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
 			if bullet_instance.hit_particles:

@@ -13,7 +13,7 @@
 		#return
 	#var bullet_instance = ability_relay.make_projectile(bullet, 
 	#global_position, 
-	#1,
+	#{"subscription" = 1},
 	#Vector2())
 	#bullet_instance.ability_relay.inherited_damage["multiplier"] *= 0.25 * level
 	#get_node("/root/Main/Projectiles").add_child(bullet_instance)

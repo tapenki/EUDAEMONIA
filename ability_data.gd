@@ -65,6 +65,24 @@ var ability_data = {
 		"type" : "challenge"
 	},
 	#endregion
+	#region statuses
+	"chill" : {
+		"script" : preload("res://paths/statuses/chill/chill.gd"),
+		"type" : "status"
+	},
+	"freeze" : {
+		"script" : preload("res://paths/statuses/freeze/freeze.gd"),
+		"type" : "status"
+	},
+	"shock" : {
+		"script" : preload("res://paths/statuses/shock/shock.gd"),
+		"type" : "status"
+	},
+	"doom" : {
+		"script" : preload("res://paths/statuses/doom/doom.gd"),
+		"type" : "status"
+	},
+	#endregion
 	#region fire
 	"ignition" : {
 		"script" : preload("res://paths/fire/abilities/ignition.gd"),
@@ -132,10 +150,7 @@ var ability_data = {
 		"script" : preload("res://paths/ice/abilities/frostbite.gd"),
 		"type" : "upgrade"
 	},
-	"chill" : {
-		"script" : preload("res://paths/ice/chill.gd"),
-		"type" : "status"
-	},
+	
 	"cryobombs" : {
 		"script" : preload("res://paths/ice/abilities/cryobombs.gd"),
 		"type" : "upgrade"
@@ -159,10 +174,6 @@ var ability_data = {
 	"freeze_blast" : {
 		"script" : preload("res://paths/ice/abilities/freeze_blast.gd"),
 		"type" : "mastery"
-	},
-	"freeze" : {
-		"script" : preload("res://paths/ice/freeze.gd"),
-		"type" : "status"
 	},
 	#endregion
 	#region lightning
@@ -193,10 +204,6 @@ var ability_data = {
 	"shocking_grasp" : {
 		"script" : preload("res://paths/lightning/abilities/shocking_grasp.gd"),
 		"type" : "mastery"
-	},
-	"shock" : {
-		"script" : preload("res://paths/lightning/shock.gd"),
-		"type" : "status"
 	},
 	"covalence" : {
 		"script" : preload("res://paths/lightning/abilities/covalence.gd"),
@@ -262,10 +269,6 @@ var ability_data = {
 		"script" : preload("res://paths/death/abilities/fated_end.gd"),
 		"type" : "upgrade"
 	},
-	"doom" : {
-		"script" : preload("res://paths/death/doom.gd"),
-		"type" : "status"
-	},
 	"hunger" : {
 		"script" : preload("res://paths/death/abilities/hunger.gd"),
 		"type" : "upgrade"
@@ -278,8 +281,8 @@ var ability_data = {
 		"script" : preload("res://paths/death/abilities/dark_harvest.gd"),
 		"type" : "upgrade"
 	},
-	"soul_preservation" : {
-		"script" : preload("res://paths/death/abilities/soul_preservation.gd"),
+	"soul_tether" : {
+		"script" : preload("res://paths/death/abilities/soul_tether.gd"),
 		"type" : "mastery"
 	},
 	"swift_fate" : {

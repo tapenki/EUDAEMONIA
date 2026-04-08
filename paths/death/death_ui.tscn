@@ -99,6 +99,7 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "bone_shield"
+extras = ["chill"]
 
 [node name="DarkHarvest" parent="Abilities2" unique_id=1890856360 instance=ExtResource("5_4llcc")]
 layout_mode = 2
@@ -118,14 +119,13 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="SoulPreservation" parent="Masteries1" unique_id=182688108 instance=ExtResource("6_x8qv0")]
+[node name="SoulTether" parent="Masteries1" unique_id=182688108 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
 "army_of_the_dead": 5
 }
-subject = "soul_preservation"
-extras = ["doom"]
+subject = "soul_tether"
 
 [node name="SwiftFate" parent="Masteries1" unique_id=836903578 instance=ExtResource("6_x8qv0")]
 layout_mode = 2

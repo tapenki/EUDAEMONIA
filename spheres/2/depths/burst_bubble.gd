@@ -17,7 +17,7 @@ func damage_taken(_damage) -> void:
 		for repeat in count:
 			var bullet_instance = ability_relay.make_projectile(bullet, 
 			global_position, 
-			2,
+			{"subscription" = 2},
 			Vector2.from_angle(angle + (TAU / count * repeat)) * 300)
 			bullet_instance.get_node("Lifetime").start(0.75)
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)

@@ -25,7 +25,7 @@
 #	for i in bullet_count:
 #		var bullet_instance = ability_relay.make_projectile(bullet, 
 #		global_position + direction * 25, 
-#		2,
+#		{"subscription" = 2},
 #		direction.rotated(halfspan - (stepsize * i)) * bullet_speed)
 #		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 #	

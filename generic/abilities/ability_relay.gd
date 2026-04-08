@@ -230,7 +230,7 @@ func assign_entity_group(entity: Entity, group: int, color: String = "secondary"
 	entity.set_collision_layer_value(group, true)
 	entity.apply_palette(group, color)
 
-func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritance: int, velocity = Vector2(), projectile_group = owner.group):
+func make_projectile(projectile_scene: PackedScene, position: Vector2, applicant_data: Dictionary, velocity = Vector2(), projectile_group = owner.group):
 	var projectile_instance = projectile_scene.instantiate()
 	projectile_instance.global_position = position
 	projectile_instance.velocity = velocity
@@ -254,11 +254,11 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, inheritan
 	projectile_instance.ability_relay.inherited_crit_chance = crit_chance
 	
 	if ability_handler:
-		ability_handler.subscribe(projectile_instance.ability_relay, {"subscription" = inheritance})
+		ability_handler.subscribe(projectile_instance.ability_relay, applicant_data)
 	#projectile_created.emit(projectile_instance)
 	return projectile_instance
 
-func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int, summon_group = owner.group):
+func make_summon(summon_scene: PackedScene, position: Vector2, applicant_data: Dictionary, summon_group = owner.group):
 	var summon_instance = summon_scene.instantiate()
 	summon_instance.global_position = position
 	
@@ -276,5 +276,5 @@ func make_summon(summon_scene: PackedScene, position: Vector2, inheritance: int,
 	summon_instance.ability_relay.inherited_damage = summon_damage
 	
 	if ability_handler:
-		ability_handler.subscribe(summon_instance.ability_relay, {"subscription" = inheritance})
+		ability_handler.subscribe(summon_instance.ability_relay, applicant_data)
 	return summon_instance

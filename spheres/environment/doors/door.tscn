@@ -45,4 +45,6 @@ initial_velocity_min = 20.0
 initial_velocity_max = 60.0
 scale_amount_curve = SubResource("Curve_7dyfo")
 
+[connection signal="mouse_entered" from="Button" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="enter"]

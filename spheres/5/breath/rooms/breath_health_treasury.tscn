@@ -100,25 +100,25 @@ script = ExtResource("2_whfnj")
 wait_time = 7.5
 one_shot = true
 
-[node name="SpawnSprout1" type="Node2D" parent="Waves/Wave4" unique_id=1550697782]
+[node name="SpawnLeafer1" type="Node2D" parent="Waves/Wave4" unique_id=1550697782]
 position = Vector2(210, 300)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout2" type="Node2D" parent="Waves/Wave4" unique_id=837604290]
+[node name="SpawnLeafer2" type="Node2D" parent="Waves/Wave4" unique_id=837604290]
 position = Vector2(390, 240)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout3" type="Node2D" parent="Waves/Wave4" unique_id=1121277570]
+[node name="SpawnLeafer3" type="Node2D" parent="Waves/Wave4" unique_id=1121277570]
 position = Vector2(210, 540)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
-[node name="SpawnSprout4" type="Node2D" parent="Waves/Wave4" unique_id=1918771915]
+[node name="SpawnLeafer4" type="Node2D" parent="Waves/Wave4" unique_id=1918771915]
 position = Vector2(390, 570)
 script = ExtResource("3_vyxgx")
-entity = "sprout"
+entity = "leafer"
 
 [node name="Doors" type="Node2D" parent="." unique_id=1437250209]
 
@@ -131,6 +131,8 @@ position = Vector2(30, 360)
 rotation = 4.712389
 room = "breath_room_1"
 door = "Entrance0"
+subject = "breath_basic_gate"
+tag = "travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=9129693 instance=ExtResource("6_cejwc")]
 reward = ExtResource("7_ke774")

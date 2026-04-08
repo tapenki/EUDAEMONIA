@@ -5,9 +5,7 @@ var damage_boost = 0.0
 func apply(ability_relay, applicant_data):
 	if not applicant_data.has("subscription") or applicant_data["subscription"] >= 3:
 		ability_relay.damage_taken.connect(damage_taken)
-		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-	elif applicants.has(ability_relay.source):
-		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
+	ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
@@ -23,8 +21,8 @@ func _ready() -> void:
 func intermission(_day):
 	damage_boost = 0.0
 
-func damage_taken(_damage) -> void:
-	damage_boost = min(damage_boost + 0.5 * level, 5 * level)
+func damage_taken(damage) -> void:
+	damage_boost = min(damage_boost + damage["final"] * 0.05, 5 * level)
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	modifiers["base"] += damage_boost

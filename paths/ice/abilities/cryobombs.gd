@@ -48,7 +48,7 @@ func day_start(_day: int) -> void:
 			var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 			var summon_instance = applicant.make_summon(bomb, 
 			spawn_position,
-			2)  ## inheritance
+			{"subscription" = 2})  ## inheritance
 			for layer in range(1, 3):
 				summon_instance.set_collision_layer_value(layer, layer != applicant.owner.group)
 			
@@ -60,7 +60,7 @@ func day_start(_day: int) -> void:
 			get_node("/root/Main").spawn_entity(summon_instance)
 
 func damage_taken(damage, ability_relay) -> void:
-	applicants[ability_relay]["accumulated"] = min(40*level, applicants[ability_relay]["accumulated"] + ability_relay.accumulate_damage(damage))
+	applicants[ability_relay]["accumulated"] = min(60*level, applicants[ability_relay]["accumulated"] + ability_relay.accumulate_damage(damage))
 	if not applicants[ability_relay]["bomb_primed"] and ability_relay.owner.alive:
 		applicants[ability_relay]["bomb_primed"] = true
 		ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
@@ -71,7 +71,7 @@ func before_self_death(modifiers) -> void:
 func death_effects(ability_relay):
 	var explosion_instance = ability_relay.make_projectile(explosion_scene, 
 	ability_relay.global_position, ## position
-	2, ## inheritance
+	{"subscription" = 2}, ## inheritance
 	Vector2()) ## velocity
 	explosion_instance.exclude[ability_relay.owner] = INF
 	explosion_instance.scale_multiplier = 8

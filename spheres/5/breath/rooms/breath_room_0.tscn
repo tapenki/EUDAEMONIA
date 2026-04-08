@@ -88,12 +88,16 @@ position = Vector2(30, 240)
 rotation = 4.712389
 room = "breath_room_1"
 door = "Entrance0"
+subject = "breath_basic_gate"
+tag = "travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=248772373 instance=ExtResource("5_sydwf")]
 position = Vector2(840, 30)
 room = "breath_health_treasury"
 door = "Entrance0"
 travel_time = 0
+subject = "health_treasury_gate"
+tag = "lesser_travel_cost"
 
 [node name="Exit2" parent="Doors" unique_id=385254145 instance=ExtResource("5_sydwf")]
 position = Vector2(630, 570)
@@ -101,6 +105,8 @@ rotation = 3.1415927
 room = "breath_qualia_treasury"
 door = "Entrance0"
 travel_time = 0
+subject = "qualia_treasury_gate"
+tag = "lesser_travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1833477915 instance=ExtResource("6_tiyom")]
 reward = ExtResource("7_sydwf")

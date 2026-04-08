@@ -27,7 +27,7 @@ func disapply(ability_relay):
 func spawn(spawn_position, ability_relay):
 	var bullet_instance = ability_relay.make_projectile(bullet, 
 	spawn_position, 
-	2,
+	{"subscription" = 2},
 	Vector2())
 	bullet_instance.hits_left += level - 1
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)

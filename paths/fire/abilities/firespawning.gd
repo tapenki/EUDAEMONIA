@@ -11,7 +11,7 @@
 #func spawn(spawn_position: Vector2, delay = 0.5):
 	#var summon_instance = ability_relay.make_summon(summon, 
 	#spawn_position,
-	#2)  ## inheritance
+	#{"subscription" = 2})  ## inheritance
 	#summon_instance.max_health *= level
 	#summon_instance.health = summon_instance.max_health
 	#summon_instance.ability_relay.inherited_damage["multiplier"] *= 0.5 * level

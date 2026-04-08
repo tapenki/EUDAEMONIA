@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7r3s8ruwumgu"]
+[gd_scene format=3 uid="uid://c7r3s8ruwumgu"]
 
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="1_uu0ib"]
-[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quill.png" id="2_0fqh5"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="2_0fqh5"]
 [ext_resource type="Script" uid="uid://5o1wbrxeu4bd" path="res://generic/particles/particles.gd" id="3_sccy7"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]

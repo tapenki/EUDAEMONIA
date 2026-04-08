@@ -26,7 +26,7 @@ func apply(ability_relay, applicant_data):
 		for repeat in total:
 			var projectile_instance = ability_relay.make_projectile(projectile_scene, 
 			Vector2.from_angle(TAU / total * repeat) * orbit_distance,
-			2,
+			{"subscription" = 2},
 			Vector2())
 			projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / total * repeat))).angle()
 			projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
@@ -63,7 +63,7 @@ func apply_covalence():
 			for repeat in 3:
 				var projectile_instance = ability_relay.make_projectile(projectile_scene, 
 				Vector2.from_angle(TAU / 3 * repeat) * 90,
-				2,
+				{"subscription" = 2},
 				Vector2())
 				projectile_instance.get_node("Sprite").rotation = (Vector2.from_angle(PI * 0.5 + (TAU / 3 * repeat))).angle()
 				projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay

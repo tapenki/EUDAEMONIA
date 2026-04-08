@@ -1,22 +1,22 @@
-#extends Ability
-#
-#var starvation: bool
-#var inherited_damage: float
-#
-#func _ready() -> void:
-	#if ability_relay.is_entity and not ability_relay.owner is Player:
-		#get_node("/root/Main").entity_death.connect(entity_death)
-	#ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-#
-#func entity_death(_dying_entity: Entity):
-	#ability_relay.apply_status(ability_relay, "haste", 0.5 * level)
-	#ability_relay.owner.heal(15*level)
-	#if starvation:
-		#inherited_damage += 0.04 * level
-#
-#func damage_dealt_modifiers(_entity, modifiers) -> void:
-	#modifiers["multiplier"] *= 1 + inherited_damage
-#
-#func inherit(handler, tier):
-	#var ability_node = super(handler, tier)
-	#ability_node.inherited_damage += inherited_damage
+extends Ability
+
+func apply(ability_relay, applicant_data):
+	if ability_relay.is_entity and ability_relay.owner.summoned:
+		ability_relay.max_health_modifiers.connect(max_health_modifiers)
+	super(ability_relay, applicant_data)
+
+func disapply(ability_relay):
+	super(ability_relay)
+	if ability_relay.max_health_modifiers.is_connected(max_health_modifiers):
+		ability_relay.max_health_modifiers.disconnect(max_health_modifiers)
+
+func _ready() -> void:
+	get_node("/root/Main").entity_death.connect(entity_death)
+
+func entity_death(_dying_entity: Entity):
+	for ability_relay in applicants:
+		if ability_relay.is_entity and ability_relay.owner.summoned:
+			ability_relay.owner.heal(20*level)
+
+func max_health_modifiers(modifiers) -> void:
+	modifiers["base"] += 20 * level

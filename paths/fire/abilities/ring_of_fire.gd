@@ -15,7 +15,7 @@
 #func day_start(_day: int) -> void:
 	#var projectile_instance = ability_relay.make_projectile(projectile_scene, 
 	#Vector2(),
-	#2,
+	#{"subscription" = 2},
 	#Vector2())
 	#projectile_instance.ability_relay.inherited_damage["multiplier"] *= 0.25 * scorched_earth.level
 	#projectile_instance.get_node("Sprite").ability_relay = ability_relay

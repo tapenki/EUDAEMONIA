@@ -11,6 +11,6 @@ func death_effects() -> void:
 	for repeat in bullet_count:
 		var projectile_instance = ability_relay.make_projectile(bullet, 
 		global_position + Vector2.from_angle(TAU / bullet_count * repeat) * 25,
-		2,
+		{"subscription" = 2},
 		Vector2())
 		get_node("/root/Main/Projectiles").add_child(projectile_instance)

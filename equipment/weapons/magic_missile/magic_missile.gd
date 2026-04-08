@@ -28,7 +28,7 @@ func attack(direction, ability_relay):
 func fire(direction, ability_relay):
 	var bullet_instance = ability_relay.make_projectile(bullet, 
 	ability_relay.global_position + direction * 25, 
-	2,
+	{"subscription" = 2},
 	direction * 600)
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)
 	get_node("/root/Main").play_sound("ShootLight")

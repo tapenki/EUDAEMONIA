@@ -32,7 +32,7 @@
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="17_8i5ba"]
 [ext_resource type="Shader" uid="uid://drjpyynjqtv52" path="res://shaders/aligned_particle_shader.gdshader" id="17_tln5d"]
 [ext_resource type="Script" uid="uid://bvj8m276etwfq" path="res://challenges/ui/challenge_container.gd" id="18_cwo5d"]
-[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quill.png" id="18_d4f8b"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="18_d4f8b"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="19_jjpt0"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_pmn51"]
 [ext_resource type="PackedScene" uid="uid://djssli0g02cdt" path="res://ui/settings/settings.tscn" id="20_7valt"]

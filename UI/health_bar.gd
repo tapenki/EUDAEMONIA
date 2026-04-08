@@ -18,15 +18,15 @@ func _ready() -> void:
 
 func update() -> void:
 	var health_values = ability_relay.get_health(player.health, player.max_health)
-	if max_value <= 0:
-		texture_progress = button_blue
-	else:
-		texture_progress = button_red
 	max_value = health_values["max_health"]
 	value = health_values["health"]
 	damage_bar.max_value = health_values["max_health"]
 	damage_bar.value = health_values["health"]
 	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
+	if max_value <= 0:
+		texture_progress = button_blue
+	else:
+		texture_progress = button_red
 
 func damage_taken(_damage) -> void:
 	var health_values = ability_relay.get_health(player.health, player.max_health)

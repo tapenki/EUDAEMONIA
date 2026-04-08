@@ -83,12 +83,16 @@ position = Vector2(1230, 300)
 rotation = 1.5707964
 room = "wonder_room_1"
 door = "Entrance0"
+subject = "wonder_basic_gate"
+tag = "travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=148837754 instance=ExtResource("3_c574q")]
 position = Vector2(960, 30)
 room = "wonder_health_treasury"
 door = "Entrance0"
 travel_time = 0
+subject = "health_treasury_gate"
+tag = "lesser_travel_cost"
 
 [node name="Exit2" parent="Doors" unique_id=1919157672 instance=ExtResource("3_c574q")]
 position = Vector2(960, 570)
@@ -96,6 +100,8 @@ rotation = 3.1415927
 room = "wonder_qualia_treasury"
 door = "Entrance0"
 travel_time = 0
+subject = "qualia_treasury_gate"
+tag = "lesser_travel_cost"
 
 [node name="HealthSign" type="Sprite2D" parent="." unique_id=1975421848]
 self_modulate = Color(1, 1, 1, 0.49803922)

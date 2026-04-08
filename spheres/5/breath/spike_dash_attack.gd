@@ -62,7 +62,7 @@ func _physics_process(delta):
 		bullet_counter -= bullet_rate
 		var bullet_instance = user.ability_relay.make_projectile(bullet, 
 		user.global_position, 
-		2)
+		{"subscription" = 2})
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 
 func _on_timer_timeout() -> void:

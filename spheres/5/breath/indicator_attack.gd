@@ -17,7 +17,7 @@ func on_enter() -> void:
 		var raycast_result = get_node("/root/Main").physics_space.intersect_ray(ray_query)
 		var reticle_instance = user.ability_relay.make_projectile(reticle, 
 		raycast_result.get("position", ray_query.to), 
-		2)
+		{"subscription" = 2})
 		reticle_instance.get_node("Lifetime").wait_time = bullet_lifetime
 		get_node("/root/Main/Projectiles").add_child(reticle_instance)
 		#user.ability_relay.attack.emit(direction)

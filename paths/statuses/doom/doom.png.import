@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b32jnf1cmip1h"
-path="res://.godot/imported/doom.png-7ccba0c6ab298b1a4226859cd717784a.ctex"
+path="res://.godot/imported/doom.png-97e287db817c559318d2a75c2f3a6d30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/death/doom.png"
-dest_files=["res://.godot/imported/doom.png-7ccba0c6ab298b1a4226859cd717784a.ctex"]
+source_file="res://paths/statuses/doom/doom.png"
+dest_files=["res://.godot/imported/doom.png-97e287db817c559318d2a75c2f3a6d30.ctex"]
 
 [params]
 

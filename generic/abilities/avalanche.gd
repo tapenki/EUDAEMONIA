@@ -23,7 +23,7 @@
 	#	rain_position = target.global_position
 	#var bullet_instance = ability_relay.make_projectile(bullet, 
 	#rain_position, 
-	#3,
+	#{"subscription" = 2},
 	#Vector2(),
 	#{"base" : 0, "multiplier" : level})
 	#get_node("/root/Main/Projectiles").add_child(bullet_instance)

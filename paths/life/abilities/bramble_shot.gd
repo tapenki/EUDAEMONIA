@@ -15,6 +15,8 @@ func disapply(ability_relay):
 
 func _unhandled_input(event: InputEvent) -> void:
 	for ability_relay in applicants:
+		if not ability_relay.is_inside_tree():
+			return
 		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 3:
 			return
 		if Input.is_action_just_pressed("bramble_shot") and event.is_action("bramble_shot"):
@@ -22,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var direction = (ability_relay.get_global_mouse_position() - ability_relay.global_position).normalized()
 			var bullet_instance = ability_relay.make_projectile(bramble, 
 			ability_relay.global_position + direction * 25, 
-			2,
+			{"subscription" = 2},
 			direction * 600)
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
 			get_node("/root/Main").play_sound("ShootLight")

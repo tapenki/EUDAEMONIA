@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://w6ad6q8ilnj6" path="res://generic/projectiles/particle_sprite_projectile.gd" id="1_ujh5x"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_frfv8"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4fe2x"]
-[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quill.png" id="4_ujh5x"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="4_ujh5x"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_wrpn6"]
 
 [sub_resource type="Curve" id="Curve_t5laq"]
@@ -35,14 +35,15 @@ texture = ExtResource("4_ujh5x")
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
+local_coords = true
 draw_order = 1
 particle_flag_align_y = true
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 200.0
-initial_velocity_max = 400.0
-scale_amount_min = 2.0
-scale_amount_max = 2.0
+initial_velocity_min = 240.0
+initial_velocity_max = 320.0
+scale_amount_min = 1.2
+scale_amount_max = 1.2
 scale_amount_curve = SubResource("Curve_t5laq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696487460]

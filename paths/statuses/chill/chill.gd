@@ -1,13 +1,12 @@
 extends Ability
 
-var particle_scene = preload("res://paths/lightning/shock.tscn")
+var particle_scene = preload("res://paths/statuses/chill/snow.tscn")
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
-	applicant_data["duration"] = 4
 	if applicants.has(ability_relay):
-		applicants[ability_relay]["duration"] = applicant_data["duration"]
+		applicants[ability_relay]["duration"] += applicant_data["duration"]
 	else:
 		var particle_instances: Array
 		for sprite in ability_relay.owner.get_sprites():
@@ -21,14 +20,14 @@ func apply(ability_relay, applicant_data):
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances
 		super(ability_relay, applicant_data)
-		ability_relay.crit_taken_modifiers.connect(crit_taken_modifiers.bind(ability_relay))
+		ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
 
 func disapply(ability_relay):
 	for particles in applicants[ability_relay]["particle_instances"]:
 		particles.self_death()
 	super(ability_relay)
-	if ability_relay.crit_taken_modifiers.is_connected(crit_taken_modifiers):
-		ability_relay.crit_taken_modifiers.disconnect(crit_taken_modifiers)
+	if ability_relay.speed_scale_modifiers.is_connected(speed_scale_modifiers):
+		ability_relay.speed_scale_modifiers.disconnect(speed_scale_modifiers)
 
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants.keys():
@@ -36,5 +35,5 @@ func _physics_process(delta: float) -> void:
 		if applicants[ability_relay]["duration"] <= 0:
 			disapply(ability_relay)
 
-func crit_taken_modifiers(modifiers, ability_relay) -> void:
-	modifiers["base"] += applicants[ability_relay]["stacks"]
+func speed_scale_modifiers(modifiers) -> void:
+	modifiers["multiplier"] *= 0.5

@@ -109,8 +109,8 @@ script = ExtResource("1_iecfp")
 ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 60
-health = 60.0
+max_health = 0
+health = 0.0
 unchaseable = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=395787743]

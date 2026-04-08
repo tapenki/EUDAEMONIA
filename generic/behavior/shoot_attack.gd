@@ -20,7 +20,7 @@ func on_enter() -> void:
 	
 	var bullet_instance = user.ability_relay.make_projectile(bullet, 
 	user.global_position + state_handler.data["direction"] * 25, 
-	2,
+	{"subscription" = 2},
 	state_handler.data["direction"] * bullet_speed)
 	bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)

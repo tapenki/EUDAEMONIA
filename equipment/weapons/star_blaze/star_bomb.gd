@@ -8,7 +8,7 @@ func _ready() -> void:
 func death_effects() -> void:
 	var splosion_instance = ability_relay.make_projectile(splosion, 
 	global_position, 
-	1)
+	{"subscription" = 1})
 	splosion_instance.scale_multiplier += (hits_left-1)*0.5
 	get_node("/root/Main/Projectiles").add_child(splosion_instance)
 

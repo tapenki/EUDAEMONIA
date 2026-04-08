@@ -113,8 +113,10 @@ position = Vector2(510, 30)
 [node name="Exit0" parent="Doors" unique_id=258520275 instance=ExtResource("5_2obnl")]
 position = Vector2(990, 510)
 rotation = 1.5707964
-room = "Wonder_room_1"
+room = "wonder_room_1"
 door = "Entrance0"
+subject = "wonder_basic_gate"
+tag = "travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1980795606 instance=ExtResource("6_3yu51")]
 reward = ExtResource("7_hyx5a")

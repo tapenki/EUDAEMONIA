@@ -70,6 +70,8 @@ position = Vector2(30, 570)
 rotation = -1.5707964
 room = "ruin_entrance_hall"
 door = "Entrance0"
+subject = "ruin_entrance_gate"
+tag = "greater_travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=621960960 instance=ExtResource("4_nelx5")]
 position = Vector2(1050, 150)

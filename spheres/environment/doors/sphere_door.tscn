@@ -14,6 +14,7 @@ self_modulate = Color(1, 0.6666667, 0, 1)
 texture = ExtResource("1_fl1db")
 script = ExtResource("2_mis5t")
 travel_time = 3
+tag = "greater_travel_cost"
 
 [node name="Button" type="TextureButton" parent="." unique_id=250780360]
 visible = false
@@ -46,4 +47,6 @@ initial_velocity_min = 20.0
 initial_velocity_max = 60.0
 scale_amount_curve = SubResource("Curve_fl1db")
 
+[connection signal="mouse_entered" from="Button" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="enter"]

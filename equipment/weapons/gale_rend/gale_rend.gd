@@ -25,7 +25,7 @@
 #		var liferangemult = randf_range(0.7, 1)
 #		var bullet_instance = ability_relay.make_projectile(bullet, 
 #		global_position + direction * 25, 
-#		2,
+#		{"subscription" = 2},
 #		direction.rotated(randf_range(-halfspan, halfspan)) * bullet_speed * liferangemult)
 #		bullet_instance.ability_relay.inherited_damage["multiplier"] *= 0.5
 #		bullet_instance.get_node("Lifetime").wait_time *= liferangemult

@@ -8,7 +8,7 @@ func get_frostbite_level():
 	var frostbite = ability_handler.get_node_or_null("frostbite")
 	if frostbite:
 		return frostbite.level
-	return 0
+	return 1
 
 func _ready() -> void:
 	status = ability_handler.learn("freeze", 0)

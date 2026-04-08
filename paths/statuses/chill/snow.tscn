@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bp3r7ejvjsw15"]
 
-[ext_resource type="Texture2D" uid="uid://isb77unkf83s" path="res://paths/ice/snow.png" id="1_mh31h"]
+[ext_resource type="Texture2D" uid="uid://isb77unkf83s" path="res://paths/statuses/chill/snow.png" id="1_mh31h"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="1_rueob"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="3_cn6jl"]
 

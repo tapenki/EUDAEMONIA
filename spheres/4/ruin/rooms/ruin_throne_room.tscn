@@ -84,6 +84,7 @@ position = Vector2(960, 360)
 rotation = 1.5707964
 room = "breath_entrance_hall"
 door = "Entrance0"
+subject = "breath_entrance_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1733888454 instance=ExtResource("6_hy2kp")]
 reward = ExtResource("7_c6lg1")

@@ -107,12 +107,16 @@ rotation = 4.712389
 position = Vector2(510, 30)
 room = "doubt_entrance_hall"
 door = "Entrance0"
+subject = "doubt_entrance_gate"
+tag = "greater_travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=368457800 instance=ExtResource("6_10ubj")]
 position = Vector2(990, 480)
 rotation = 1.5707964
 room = "wonder_entrance_hall"
 door = "Entrance0"
+subject = "wonder_entrance_gate"
+tag = "greater_travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_kluuj")]
 reward = ExtResource("7_f7baf")

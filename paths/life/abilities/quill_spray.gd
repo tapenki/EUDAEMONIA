@@ -7,13 +7,13 @@ var pressurized_quills: bool
 func apply(ability_relay, applicant_data):
 	if ability_relay.owner.scene_file_path == "res://paths/life/quills/quills.tscn":
 		if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("pressure_multiplier"):
-			applicant_data["quill_power"] = applicants[ability_relay.source]["pressure_multiplier"]
+			applicant_data["quill_spray"] = applicants[ability_relay.source]["pressure_multiplier"]
 		else:
-			applicant_data["quill_power"] = 1.0
+			applicant_data["quill_spray"] = 1.0
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
 		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
-	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("quill_power"):
-		applicant_data["quill_power"] = applicants[ability_relay.source]["quill_power"]
+	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("quill_spray"):
+		applicant_data["quill_spray"] = applicants[ability_relay.source]["quill_spray"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
 		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 func spawn(position, ability_relay):
 	var quills_instance = ability_relay.make_projectile(quills_scene, 
 	position, 
-	2,
+	{"subscription" = 2},
 	Vector2())
 	quills_instance.get_node("Sprite").emitting = true
 	get_node("/root/Main/Projectiles").add_child(quills_instance)
@@ -48,10 +48,11 @@ func damage_taken(_damage, ability_relay) -> void:
 	call_deferred("spawn", ability_relay.global_position, ability_relay)
 
 func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
-	modifiers["base"] += 5 * level - 5
-	if applicants[ability_relay].has("quill_power"):
-		modifiers["multiplier"] *= applicants[ability_relay]["quill_power"]
+	modifiers["multiplier"] *= 2
+	if applicants[ability_relay].has("quill_spray"):
+		modifiers["multiplier"] *= applicants[ability_relay]["quill_spray"]
 
 func attack_scale_modifiers(modifiers, ability_relay) -> void:
-	if applicants[ability_relay].has("quill_power"):
-		modifiers["multiplier"] *= applicants[ability_relay]["quill_power"]
+	modifiers["multiplier"] *= 0.6 + 0.4 * level
+	if applicants[ability_relay].has("quill_spray"):
+		modifiers["multiplier"] *= applicants[ability_relay]["quill_spray"]

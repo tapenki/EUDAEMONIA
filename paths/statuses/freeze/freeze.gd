@@ -1,6 +1,6 @@
 extends Ability
 
-var particle_scene = preload("res://paths/ice/snow.tscn")
+var particle_scene = preload("res://paths/statuses/chill/snow.tscn")
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):

@@ -6,7 +6,7 @@ func get_mortal_shock_level():
 	var mortal_shock = ability_handler.get_node_or_null("mortal_shock")
 	if mortal_shock:
 		return mortal_shock.level
-	return 0
+	return 1
 
 func _ready() -> void:
 	status = ability_handler.learn("shock", 0)

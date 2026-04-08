@@ -16,7 +16,7 @@ func before_self_death(modifiers) -> void:
 func death_effects():
 	var explosion_instance = ability_relay.make_projectile(explosion_scene, 
 	global_position, ## position
-	2, ## inheritance
+	{"subscription" = 2}, ## inheritance
 	Vector2()) ## velocity
 	explosion_instance.exclude[ability_relay.owner] = INF
 	explosion_instance.scale_multiplier = 2

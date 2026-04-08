@@ -11,7 +11,7 @@ func _ready() -> void:
 func death_effects() -> void:
 	var splosion_instance = ability_relay.make_projectile(splosion, 
 	global_position, 
-	2)
+	{"subscription" = 2})
 	get_node("/root/Main/Projectiles").add_child(splosion_instance)
 	var bullet_count = 3
 	var direction = ability_relay.owner.velocity.normalized() * -1
@@ -20,6 +20,6 @@ func death_effects() -> void:
 	for i in bullet_count:
 		var bullet_instance = ability_relay.make_projectile(bullet, 
 		global_position + direction * 25, 
-		2,
+		{"subscription" = 2},
 		direction.rotated(halfspan - (stepsize * i)) * 300)
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)

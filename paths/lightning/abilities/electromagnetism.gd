@@ -1,10 +1,9 @@
 extends Ability
 
-var velocity_decay = false
-
 func apply(ability_relay, applicant_data):
 	if not ability_relay.is_projectile:
 		return
+	applicant_data["velocity_decay"] = false
 	super(ability_relay, applicant_data)
 
 func _physics_process(_delta: float) -> void:
@@ -14,7 +13,7 @@ func _physics_process(_delta: float) -> void:
 		if target:
 			var target_direction = ability_relay.owner.global_position.direction_to(target.global_position)
 			ability_relay.owner.velocity += target_direction * 60
-			if not velocity_decay:
-				velocity_decay = true
-		if velocity_decay:
+			if not applicants[ability_relay]["velocity_decay"]:
+				applicants[ability_relay]["velocity_decay"] = true
+		if applicants[ability_relay]["velocity_decay"]:
 			ability_relay.owner.velocity = ability_relay.owner.velocity.limit_length(pow(ability_relay.owner.velocity.length(), 0.99))

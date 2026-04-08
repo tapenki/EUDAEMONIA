@@ -60,6 +60,7 @@ rotation = 4.712389
 position = Vector2(570, 30)
 room = "ruin_entrance_hall"
 door = "Entrance0"
+subject = "ruin_entrance_gate"
 
 [node name="Exit1" parent="Doors" unique_id=1932742449 instance=ExtResource("2_3k6qr")]
 position = Vector2(570, 1110)

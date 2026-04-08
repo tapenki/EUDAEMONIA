@@ -11,7 +11,7 @@ func _ready() -> void:
 func death_effects():
 	var summon_instance = ability_relay.make_summon(summon, 
 	global_position, 
-	2)
+	{"subscription" = 2})
 	summon_instance.max_health = ability_relay.owner.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
 	summon_instance.health = summon_instance.max_health
 	summon_instance.ability_relay.inherited_damage = ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()

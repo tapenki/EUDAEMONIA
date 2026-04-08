@@ -98,6 +98,8 @@ rotation = 3.1415927
 position = Vector2(630, 30)
 room = "ruin_room_1"
 door = "Entrance0"
+subject = "ruin_basic_gate"
+tag = "travel_cost"
 
 [node name="Explodifier" type="Node" parent="." unique_id=1128145461]
 script = ExtResource("6_8rffi")

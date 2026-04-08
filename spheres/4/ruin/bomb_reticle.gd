@@ -9,7 +9,7 @@ func _ready() -> void:
 func death_effects() -> void:
 	var projectile_instance = ability_relay.make_projectile(projectile_scene, 
 	global_position,
-	2,
+	{"subscription" = 2},
 	Vector2())
 	projectile_instance.scale_multiplier = 3
 	get_node("/root/Main/Projectiles").add_child(projectile_instance)
