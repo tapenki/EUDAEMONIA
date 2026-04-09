@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cp58ndweda070" path="res://paths/life/bramble/bramble.gd" id="1_c1qbk"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_oahip"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_fqisw"]
-[ext_resource type="Texture2D" uid="uid://dnbbqhbxt3tif" path="res://equipment/weapons/star_blaze/star_bomb.png" id="4_0epdr"]
+[ext_resource type="Texture2D" uid="uid://dnbbqhbxt3tif" path="res://affects/equipment/weapons/star_blaze/star_bomb.png" id="4_0epdr"]
 [ext_resource type="Script" uid="uid://g3ciujifhff6" path="res://generic/misc/sprite_spin.gd" id="5_qydyc"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_5c2xh"]
 [ext_resource type="Texture2D" uid="uid://hqi8ax5pnxj6" path="res://paths/life/spike/spike.png" id="7_h1icc"]

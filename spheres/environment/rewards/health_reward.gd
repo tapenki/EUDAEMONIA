@@ -8,7 +8,7 @@ func _on_pressed() -> void:
 		get_node("/root/Main").play_sound("Error")
 		return
 	visible = false
-	get_node("/root/Main/PlayerAbilityHandler").learn("bonus_health", 10)
+	get_node("/root/Main/PlayerAbilityHandler").learn("health_boost", 10)
 	var player = get_node("/root/Main/UI").player
 	player.recover()
 	get_node("/root/Main").play_sound("Click")

@@ -21,48 +21,25 @@ var path_data = {
 var ability_data = {
 	#region weapons
 	"magic_missile" : {
-		"script" : preload("res://equipment/weapons/magic_missile/magic_missile.gd"),
+		"script" : preload("res://affects/equipment/weapons/magic_missile/magic_missile.gd"),
 		"type" : "weapon"
 	},
-	#"star_blaze" : {
-		#"script" : preload("res://equipment/weapons/star_blaze/star_blaze.gd"),
-		#"type" : "weapon"
-	#},
-	#"gale_rend" : {
-		#"script" : preload("res://equipment/weapons/gale_rend/gale_rend.gd"),
-		#"type" : "weapon"
-	#},
-	#"trick_bullets" : {
-		#"script" : preload("res://equipment/weapons/trick_bullets/trick_bullets.gd"),
-		#"type" : "weapon"
-	#},
-	#endregion
-	#region armor
-	#"hermits_cloak" : {
-		#"script" : preload("res://equipment/armor/hermits_cloak/hermits_cloak.gd"),
-		#"type" : "armor"
-	#},
-	#"mystic_robes" : {
-		#"script" : preload("res://equipment/armor/mystic_robes/mystic_robes.gd"),
-		#"type" : "armor"
-	#},
-	#"cursemail" : {
-		#"script" : preload("res://equipment/armor/cursemail/cursemail.gd"),
-		#"type" : "armor"
-	#},
 	#endregion
 	#region challenges
 	"lasting_wounds" : {
-		"script" : preload("res://challenges/lasting_wounds.gd"),
-		"type" : "challenge"
+		"script" : preload("res://affects/challenges/lasting_wounds.gd"),
+		"type" : "challenge",
+		"affect" : preload("res://affects/challenges/ui/challenge_reminder.tscn")
 	},
 	"burning_hours" : {
-		"script" : preload("res://challenges/burning_hours.gd"),
-		"type" : "challenge"
+		"script" : preload("res://affects/challenges/burning_hours.gd"),
+		"type" : "challenge",
+		"affect" : preload("res://affects/challenges/ui/challenge_reminder.tscn")
 	},
 	"era_wince" : {
-		"script" : preload("res://challenges/era_wince.gd"),
-		"type" : "challenge"
+		"script" : preload("res://affects/challenges/era_wince.gd"),
+		"type" : "challenge",
+		"affect" : preload("res://affects/challenges/ui/challenge_reminder.tscn")
 	},
 	#endregion
 	#region statuses
@@ -303,17 +280,15 @@ var ability_data = {
 	},
 	#endregion
 	#region misc
-	"bonus_health" : {
-		"script" : preload("res://generic/abilities/bonus_health.gd"),
-		"type" : "token"
+	"health_boost" : {
+		"script" : preload("res://affects/health_boost.gd"),
+		"type" : "token",
+		"affect" : preload("res://affects/ui/health_boost_reminder.tscn")
 	},
 	"dark_price" : {
-		"script" : preload("res://generic/abilities/dark_price.gd"),
-		"type" : "token"
-	},
-	"haste" : {
-		"script" : preload("res://generic/abilities/status/haste.gd"),
-		"type" : "status"
-	},
+		"script" : preload("res://affects/dark_price.gd"),
+		"type" : "token",
+		"affect" : preload("res://affects/ui/dark_price_reminder.tscn")
+	}
 	#endregion
 }

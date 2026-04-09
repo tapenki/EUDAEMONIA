@@ -3,7 +3,7 @@ extends Described
 @onready var player = get_node("/root/Main/UI").player
 @onready var ability_relay = player.get_node("AbilityRelay")
 
-@onready var point_counter = $"../../../UpgradePoints"
+@onready var point_counter = get_node("/root/Main/UI/GameMenu/UpgradePoints")
 
 @onready var level_label: = $"Level"
 @onready var symbol_label: = $"Symbol"

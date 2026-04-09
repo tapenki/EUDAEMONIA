@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b7diec18eaexb"]
+
+[ext_resource type="PackedScene" uid="uid://cv8ly4s48o2yx" path="res://affects/ui/counting_reminder.tscn" id="1_8iwoo"]
+[ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/death/black.png" id="2_ieb8o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gt5xa"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[node name="Reminder" unique_id=374846769 instance=ExtResource("1_8iwoo")]
+texture_normal = ExtResource("2_ieb8o")
+
+[node name="Symbol" parent="." index="0" unique_id=532623967]
+label_settings = SubResource("LabelSettings_gt5xa")

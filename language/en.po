@@ -83,6 +83,12 @@ msgstr "End Day"
 msgid "reset"
 msgstr "Restart"
 
+msgid "abilities"
+msgstr "Abilities"
+
+msgid "affects"
+msgstr "Affects"
+
 msgid "stats_title"
 msgstr "Base Stats"
 
@@ -97,6 +103,20 @@ msgstr "{up}{left}{down}{right} to move."
 
 msgid "attack_controls"
 msgstr "{attack} to attack."
+
+# affects
+
+msgid "health_boost_title"
+msgstr "[outline_color=#dd0000]Affect: Health Boost[/outline_color]"
+
+msgid "health_boost_description"
+msgstr "You gain [outline_size=10]+[COUNT][/outline_size] max health."
+
+msgid "dark_price_title"
+msgstr "[outline_color=#cc00cc]Affect: Dark Price[/outline_color]"
+
+msgid "dark_price_description"
+msgstr "You gain [outline_size=10]-[COUNT][/outline_size] max health."
 
 # challenges
 

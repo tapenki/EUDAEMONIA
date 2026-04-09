@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cv8ly4s48o2yx"]
+
+[ext_resource type="PackedScene" uid="uid://bbacgjor4wear" path="res://affects/ui/reminder.tscn" id="1_0t3bn"]
+[ext_resource type="Script" uid="uid://bxeg171aikaw0" path="res://affects/ui/counting_reminder.gd" id="2_qx6uc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qx6uc"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ifqy3"]
+outline_size = 5
+outline_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="Reminder" unique_id=374846769 instance=ExtResource("1_0t3bn")]
+script = ExtResource("2_qx6uc")
+
+[node name="Symbol" parent="." index="0" unique_id=532623967]
+label_settings = SubResource("LabelSettings_qx6uc")
+
+[node name="Level" type="Label" parent="." index="1" unique_id=1066677178]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_ifqy3")
+horizontal_alignment = 1

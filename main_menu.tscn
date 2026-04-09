@@ -17,13 +17,14 @@
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="11_kvjq3"]
 [ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="11_v2sba"]
 [ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="12_ai24q"]
-[ext_resource type="PackedScene" uid="uid://m8e1a3uvgf8i" path="res://challenges/ui/challenge_picker.tscn" id="12_h1gbt"]
+[ext_resource type="PackedScene" uid="uid://m8e1a3uvgf8i" path="res://affects/challenges/ui/challenge_picker.tscn" id="12_h1gbt"]
 [ext_resource type="PackedScene" uid="uid://djssli0g02cdt" path="res://ui/settings/settings.tscn" id="13_km3bq"]
 [ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="13_qby1g"]
 [ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="14_04soa"]
 [ext_resource type="AudioStream" uid="uid://cn2883qf8ucnf" path="res://sounds/completion.wav" id="21_saq78"]
 [ext_resource type="AudioStream" uid="uid://ps2ils4552ox" path="res://sounds/click.wav" id="22_8uw0o"]
 [ext_resource type="AudioStream" uid="uid://bwbuvxyk7t5ji" path="res://sounds/error.wav" id="23_ql5ya"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_c3fg2"]
 font_size = 48

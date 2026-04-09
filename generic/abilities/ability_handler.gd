@@ -2,6 +2,8 @@ extends Node
 
 var subscribers: Dictionary
 
+signal ability_added()
+
 func _ready() -> void:
 	subscribe(get_node("/root/Main/Entities/Player/AbilityRelay"), {"subscription" = 5})
 
@@ -30,5 +32,6 @@ func learn(ability, levels = 1):
 		add_child(ability_node)
 		for i in subscribers.keys():
 			ability_node.apply(i, subscribers[i])
+		ability_added.emit(ability)
 	get_node("/root/Main/UI").update_abilities.emit()
 	return ability_node

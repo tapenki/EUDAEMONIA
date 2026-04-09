@@ -1,9 +1,8 @@
 class_name UnlockPathButton extends Described
 
-@onready var upgrades_ui = $"../../../"
 @onready var picker = $"../../"
 
-@onready var point_counter = $"../../../UpgradePoints"
+@onready var point_counter = get_node("/root/Main/UI/GameMenu/UpgradePoints")
 
 @onready var symbol_label: = $"Symbol"
 

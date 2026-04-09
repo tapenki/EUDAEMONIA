@@ -32,6 +32,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	for ability_relay in applicants:
+		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 5:
+			return
 		if Input.is_action_just_pressed("dark_harvest") and event.is_action("dark_harvest"):
 			var target
 			var to_target = INF

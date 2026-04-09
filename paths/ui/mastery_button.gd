@@ -4,7 +4,7 @@ extends TextureButton
 @onready var player = get_node("/root/Main/UI").player
 @onready var ability_relay = player.get_node("AbilityRelay")
 
-@onready var point_counter = $"../../../UpgradePoints"
+@onready var point_counter = get_node("/root/Main/UI/GameMenu/UpgradePoints")
 
 @onready var texture_rect1: = $"TextureRect1"
 @onready var texture_rect2: = $"TextureRect2"

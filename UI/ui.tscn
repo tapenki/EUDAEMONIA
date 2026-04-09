@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bmqfb01e1pny7"]
 
 [ext_resource type="Script" uid="uid://dhfwg5isrfhit" path="res://ui/ui_game.gd" id="1_7hxr3"]
-[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_0w6e5"]
 [ext_resource type="Script" uid="uid://cr7vsr2ht6436" path="res://ui/floor_number.gd" id="3_g7pr5"]
 [ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/ui/upgrade_points.gd" id="3_mom20"]
 [ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://ui/health_bar.gd" id="5_r6g2f"]
@@ -13,9 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="12_2qbci"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="12_o2jkc"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="14_c74r5"]
-[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="16_j5i65"]
+[ext_resource type="PackedScene" uid="uid://bbacgjor4wear" path="res://affects/ui/reminder.tscn" id="15_3lbto"]
+[ext_resource type="Texture2D" uid="uid://wnnqqljt1wfn" path="res://spheres/environment/rewards/green_reward.png" id="16_c3fg2"]
 [ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://ui/misc/gear.png" id="17_bw7v0"]
-[ext_resource type="Script" uid="uid://bvj8m276etwfq" path="res://challenges/ui/challenge_container.gd" id="17_rkf1o"]
+[ext_resource type="Script" uid="uid://bubsvqnj5rnau" path="res://ui/tab_button.gd" id="18_co7pv"]
 [ext_resource type="Script" uid="uid://detflvrwqig8" path="res://ui/misc/control_spin.gd" id="18_rkf1o"]
 [ext_resource type="Texture2D" uid="uid://bvkspbu2chsdx" path="res://ui/button_blue.png" id="19_0tr35"]
 [ext_resource type="PackedScene" uid="uid://djssli0g02cdt" path="res://ui/settings/settings.tscn" id="21_3lbto"]
@@ -38,6 +38,17 @@ shadow_offset = Vector2(3, 3)
 [sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_co7pv"]
+resource_local_to_scene = true
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_74toj"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c44sx"]
 outline_size = 5
@@ -232,9 +243,9 @@ mouse_filter = 2
 [node name="UpgradePoints" type="Label" parent="GameMenu" unique_id=1435138176]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29200003
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.293
+anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -0.3000183
 offset_top = -40.0
@@ -270,6 +281,7 @@ offset_top = -75.0
 offset_right = 750.0
 offset_bottom = 525.0
 pivot_offset = Vector2(300, 300)
+mouse_filter = 2
 texture = ExtResource("17_bw7v0")
 script = ExtResource("18_rkf1o")
 rotation_speed = 0.1
@@ -284,17 +296,24 @@ offset_top = -15.0
 offset_right = 690.0
 offset_bottom = 465.0
 pivot_offset = Vector2(240, 240)
+mouse_filter = 2
 texture = ExtResource("17_bw7v0")
 script = ExtResource("18_rkf1o")
 rotation_speed = -0.1
 
-[node name="Background1" type="NinePatchRect" parent="GameMenu" unique_id=302963193]
+[node name="Abilities" type="Control" parent="GameMenu" unique_id=332492797]
+anchors_preset = 0
+offset_top = 85.0
+offset_right = 900.0
+offset_bottom = 385.0
+
+[node name="Background1" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=302963193]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 4.0
-offset_top = 79.0
+offset_top = 4.0
 offset_right = 221.0
-offset_bottom = 371.0
+offset_bottom = 296.0
 texture = ExtResource("14_c74r5")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
@@ -302,13 +321,13 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background2" type="NinePatchRect" parent="GameMenu" unique_id=1275125340]
+[node name="Background2" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=1275125340]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 229.0
-offset_top = 79.0
+offset_top = 4.0
 offset_right = 446.0
-offset_bottom = 371.0
+offset_bottom = 296.0
 texture = ExtResource("14_c74r5")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
@@ -316,13 +335,13 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background3" type="NinePatchRect" parent="GameMenu" unique_id=943374326]
+[node name="Background3" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=943374326]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 454.0
-offset_top = 79.0
+offset_top = 4.0
 offset_right = 671.0
-offset_bottom = 371.0
+offset_bottom = 296.0
 texture = ExtResource("14_c74r5")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
@@ -330,13 +349,13 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background4" type="NinePatchRect" parent="GameMenu" unique_id=1361050124]
+[node name="Background4" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=1361050124]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 679.0
-offset_top = 79.0
+offset_top = 4.0
 offset_right = 896.0
-offset_bottom = 371.0
+offset_bottom = 296.0
 texture = ExtResource("14_c74r5")
 region_rect = Rect2(0, 0, 60, 60)
 patch_margin_left = 14
@@ -344,41 +363,96 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="MagicPicker1" parent="GameMenu" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker1" parent="GameMenu/Abilities" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 layout_mode = 0
-offset_top = 75.0
-offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker2")
 
-[node name="MagicPicker2" parent="GameMenu" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker2" parent="GameMenu/Abilities" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 225.0
-offset_top = 75.0
 offset_right = 450.0
-offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="GameMenu" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker3" parent="GameMenu/Abilities" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 450.0
-offset_top = 75.0
 offset_right = 675.0
-offset_bottom = 375.0
 mouse_filter = 2
 next = NodePath("../MagicPicker4")
 
-[node name="MagicPicker4" parent="GameMenu" unique_id=1650941343 instance=ExtResource("6_6rr40")]
+[node name="MagicPicker4" parent="GameMenu/Abilities" unique_id=1650941343 instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 675.0
-offset_top = 75.0
 offset_right = 900.0
-offset_bottom = 375.0
 mouse_filter = 2
+
+[node name="Affects" type="Control" parent="GameMenu" unique_id=1013813671]
+visible = false
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 85.0
+offset_right = 885.0
+offset_bottom = 385.0
+
+[node name="Background" type="NinePatchRect" parent="GameMenu/Affects" unique_id=271586179]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="Label" parent="GameMenu/Affects" unique_id=1055659898]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_top = 2.0
+offset_right = 39.5
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "affects"
+label_settings = SubResource("LabelSettings_co7pv")
+horizontal_alignment = 1
+
+[node name="Container" type="HFlowContainer" parent="GameMenu/Affects" unique_id=218071182]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BaseStats" parent="GameMenu/Affects/Container" unique_id=1930712691 instance=ExtResource("15_3lbto")]
+layout_mode = 2
+texture_normal = ExtResource("16_c3fg2")
+subject = "stats"
+
+[node name="Symbol" parent="GameMenu/Affects/Container/BaseStats" index="0" unique_id=532623967]
+text = "St"
+label_settings = SubResource("LabelSettings_74toj")
 
 [node name="Reset" type="Button" parent="GameMenu" unique_id=1520013231]
 z_index = 1
@@ -467,28 +541,52 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Stats" type="Button" parent="GameMenu" unique_id=257144760]
+[node name="TabButtons" type="HFlowContainer" parent="GameMenu" unique_id=677729924]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 900.0
+offset_bottom = 81.0
+alignment = 1
+
+[node name="AbilitiesTabButton" type="Button" parent="GameMenu/TabButtons" unique_id=1518762407 node_paths=PackedStringArray("tab")]
 z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.245
-anchor_top = 1.0
-anchor_right = 0.33800003
-anchor_bottom = 1.0
-offset_top = -80.0
-offset_right = 0.2999878
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_7j5ik")
-text = "stats_title"
+text = "abilities"
 flat = true
-script = ExtResource("16_j5i65")
-subject = "stats"
+script = ExtResource("18_co7pv")
+tab = NodePath("../../Abilities")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Stats" unique_id=997054225]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/TabButtons/AbilitiesTabButton" unique_id=972537794]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_0tr35")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="AffectsTabButton" type="Button" parent="GameMenu/TabButtons" unique_id=1922868383 node_paths=PackedStringArray("tab")]
+z_index = 1
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_7j5ik")
+text = "affects"
+flat = true
+script = ExtResource("18_co7pv")
+tab = NodePath("../../Affects")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/TabButtons/AffectsTabButton" unique_id=1183487405]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -504,69 +602,6 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Challenges" type="Control" parent="GameMenu" unique_id=1621222349]
-anchors_preset = 0
-offset_left = 525.0
-offset_top = 500.0
-offset_right = 750.0
-offset_bottom = 590.0
-mouse_filter = 2
-script = ExtResource("17_rkf1o")
-
-[node name="Background" type="NinePatchRect" parent="GameMenu/Challenges" unique_id=173305492]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_c74r5")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="Label" type="RichTextLabel" parent="GameMenu/Challenges" unique_id=1081156276]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -58.5
-offset_top = 2.0
-offset_right = 58.5
-offset_bottom = 25.0
-grow_horizontal = 2
-mouse_filter = 2
-theme = ExtResource("2_0w6e5")
-bbcode_enabled = true
-text = "challenges"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Container" type="HBoxContainer" parent="GameMenu/Challenges" unique_id=1314630544]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -30.0
-offset_right = 158.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
 [node name="Settings" parent="." unique_id=1586582074 instance=ExtResource("21_3lbto")]
 
 [connection signal="pressed" from="HUD/Proceed" to="." method="toggle_game_menu"]
@@ -575,5 +610,7 @@ alignment = 1
 [connection signal="mouse_entered" from="GameMenu/Reset" to="GameMenu/Reset" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GameMenu/Reset" to="GameMenu/Reset" method="up"]
 [connection signal="pressed" from="GameMenu/Settings" to="." method="toggle_settings"]
-[connection signal="mouse_entered" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GameMenu/Stats" to="GameMenu/Stats" method="_on_mouse_exited"]
+[connection signal="pressed" from="GameMenu/TabButtons/AbilitiesTabButton" to="GameMenu/TabButtons/AbilitiesTabButton" method="_on_pressed"]
+[connection signal="pressed" from="GameMenu/TabButtons/AffectsTabButton" to="GameMenu/TabButtons/AffectsTabButton" method="_on_pressed"]
+
+[editable path="GameMenu/Affects/Container/BaseStats"]

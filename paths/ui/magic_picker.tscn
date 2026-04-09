@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://2hguf1pilgru"]
+[gd_scene format=3 uid="uid://2hguf1pilgru"]
 
 [ext_resource type="Script" uid="uid://qo4sogrpdqm5" path="res://paths/ui/magic_picker.gd" id="1_rnk8j"]
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="2_rmcok"]
@@ -14,14 +14,14 @@ resource_local_to_scene = true
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[node name="MagicPicker" type="Control"]
+[node name="MagicPicker" type="Control" unique_id=810166187]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 script = ExtResource("1_rnk8j")
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="." unique_id=1727659500]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -40,7 +40,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=158414299]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -52,8 +52,9 @@ offset_bottom = 25.0
 grow_horizontal = 2
 text = "path_picker"
 label_settings = SubResource("LabelSettings_wf76l")
+horizontal_alignment = 1
 
-[node name="Paths1" type="HBoxContainer" parent="."]
+[node name="Paths1" type="HBoxContainer" parent="." unique_id=2031730292]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -65,22 +66,22 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Fire" parent="Paths1" instance=ExtResource("2_yj67j")]
+[node name="Fire" parent="Paths1" unique_id=369977194 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("3_rnk8j")
 subject = "fire"
 
-[node name="Ice" parent="Paths1" instance=ExtResource("2_yj67j")]
+[node name="Ice" parent="Paths1" unique_id=2120552981 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("5_t4f8r")
 subject = "ice"
 
-[node name="Lightning" parent="Paths1" instance=ExtResource("2_yj67j")]
+[node name="Lightning" parent="Paths1" unique_id=810333865 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("7_bj4g6")
 subject = "lightning"
 
-[node name="Paths2" type="HBoxContainer" parent="."]
+[node name="Paths2" type="HBoxContainer" parent="." unique_id=2024068296]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -92,12 +93,12 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Life" parent="Paths2" instance=ExtResource("2_yj67j")]
+[node name="Life" parent="Paths2" unique_id=1781352977 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("6_j1tjt")
 subject = "life"
 
-[node name="Death" parent="Paths2" instance=ExtResource("2_yj67j")]
+[node name="Death" parent="Paths2" unique_id=1088663724 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("8_vx3qw")
 subject = "death"
