@@ -73,8 +73,8 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
-	"depths_qualia_treasury" : {
-		"scene" : preload("res://spheres/2/depths/rooms/depths_qualia_treasury.tscn"), 
+	"depths_damage_treasury" : {
+		"scene" : preload("res://spheres/2/depths/rooms/depths_damage_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
 		"land" : "depths",
 	},
@@ -110,8 +110,8 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "wonder",
 	},
-	"wonder_qualia_treasury" : {
-		"scene" : preload("res://spheres/3/wonder/rooms/wonder_qualia_treasury.tscn"), 
+	"wonder_damage_treasury" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_damage_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
 		"land" : "wonder",
 	},
@@ -148,8 +148,8 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "doubt",
 	},
-	"doubt_qualia_treasury" : {
-		"scene" : preload("res://spheres/3/doubt/rooms/doubt_qualia_treasury.tscn"), 
+	"doubt_damage_treasury" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_damage_treasury.tscn"), 
 		"zoom_scale" : 0.8, 
 		"land" : "doubt",
 	},
@@ -186,8 +186,8 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "ruin",
 	},
-	"ruin_qualia_treasury" : {
-		"scene" : preload("res://spheres/4/ruin/rooms/ruin_qualia_treasury.tscn"), 
+	"ruin_damage_treasury" : {
+		"scene" : preload("res://spheres/4/ruin/rooms/ruin_damage_treasury.tscn"), 
 		"zoom_scale" : 0.9, 
 		"land" : "ruin",
 	},
@@ -224,8 +224,8 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "breath",
 	},
-	"breath_qualia_treasury" : {
-		"scene" : preload("res://spheres/5/breath/rooms/breath_qualia_treasury.tscn"), 
+	"breath_damage_treasury" : {
+		"scene" : preload("res://spheres/5/breath/rooms/breath_damage_treasury.tscn"), 
 		"zoom_scale" : 1, 
 		"land" : "breath",
 	},

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dpehqklb7akqy"]
+
+[ext_resource type="PackedScene" uid="uid://cv8ly4s48o2yx" path="res://affects/ui/counting_reminder.tscn" id="1_a2l57"]
+[ext_resource type="Texture2D" uid="uid://wnnqqljt1wfn" path="res://spheres/environment/rewards/green_reward.png" id="2_dvjkg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pv3p"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[node name="Reminder" unique_id=374846769 instance=ExtResource("1_a2l57")]
+texture_normal = ExtResource("2_dvjkg")
+
+[node name="Symbol" parent="." index="0" unique_id=532623967]
+label_settings = SubResource("LabelSettings_2pv3p")

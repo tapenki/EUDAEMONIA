@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_u88pv"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_e8i4y"]
 [ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://spheres/environment/rewards/red_reward.png" id="6_l07t5"]
-[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="7_belwx"]
+[ext_resource type="Texture2D" uid="uid://wnnqqljt1wfn" path="res://spheres/environment/rewards/green_reward.png" id="7_1qtr7"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_yghwt"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_l07t5"]
 
@@ -98,10 +98,10 @@ tag = "lesser_travel_cost"
 [node name="Exit2" parent="Doors" unique_id=248772373 instance=ExtResource("3_p7vv1")]
 position = Vector2(30, 510)
 rotation = -1.5707964
-room = "doubt_qualia_treasury"
+room = "doubt_damage_treasury"
 door = "Entrance0"
 travel_time = 0
-subject = "qualia_treasury_gate"
+subject = "damage_treasury_gate"
 tag = "lesser_travel_cost"
 
 [node name="HealthSign" type="Sprite2D" parent="." unique_id=1711372950]
@@ -120,18 +120,18 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hp"
+text = "He"
 label_settings = SubResource("LabelSettings_f1csp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QualiaSign" type="Sprite2D" parent="." unique_id=1742954946]
+[node name="DamageSign" type="Sprite2D" parent="." unique_id=1742954946]
 self_modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(30, 450)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_belwx")
+texture = ExtResource("7_1qtr7")
 
-[node name="Symbol" type="Label" parent="QualiaSign" unique_id=1294324366]
+[node name="Symbol" type="Label" parent="DamageSign" unique_id=1294324366]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -141,7 +141,7 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Qu"
+text = "Da"
 label_settings = SubResource("LabelSettings_f1csp")
 horizontal_alignment = 1
 vertical_alignment = 1

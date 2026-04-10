@@ -90,7 +90,7 @@ msgid "affects"
 msgstr "Affects"
 
 msgid "stats_title"
-msgstr "Base Stats"
+msgstr "[outline_size=10]Base Stats[/outline_size]"
 
 msgid "stats_description"
 msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[320][/outline_size].""
@@ -110,13 +110,19 @@ msgid "health_boost_title"
 msgstr "[outline_color=#dd0000]Affect: Health Boost[/outline_color]"
 
 msgid "health_boost_description"
-msgstr "You gain [outline_size=10]+[COUNT][/outline_size] max health."
+msgstr "You have [outline_size=10]+[COUNT][/outline_size] max health."
+
+msgid "damage_boost_title"
+msgstr "[outline_color=#00aa00]Affect: Damage Boost[/outline_color]"
+
+msgid "damage_boost_description"
+msgstr "You have [outline_size=10]+[COUNT][/outline_size] damage."
 
 msgid "dark_price_title"
 msgstr "[outline_color=#cc00cc]Affect: Dark Price[/outline_color]"
 
 msgid "dark_price_description"
-msgstr "You gain [outline_size=10]-[COUNT][/outline_size] max health."
+msgstr "You have [outline_size=10]-[COUNT][/outline_size] max health."
 
 # challenges
 
@@ -124,19 +130,19 @@ msgid "challenges"
 msgstr "Challenges"
 
 msgid "lasting_wounds_title"
-msgstr "[outline_color=#666666]Challenge: Lasting Wounds[/outline_color]"
+msgstr "[outline_size=10]Challenge: Lasting Wounds[/outline_size]"
 
 msgid "lasting_wounds_description"
-msgstr "[outline_size=10]Upon taking damage from an enemy:[/outline_size] Lose [outline_size=10][5][/outline_size] max health."
+msgstr "[outline_size=10]Upon taking damage from an enemy:[/outline_size] You lose [outline_size=10]+[5][/outline_size] max health."
 
 msgid "burning_hours_title"
-msgstr "[outline_color=#666666]Challenge: Burning Hours[/outline_color]"
+msgstr "[outline_size=10]Challenge: Burning Hours[/outline_size]"
 
 msgid "burning_hours_description"
 msgstr "[outline_size=10]Every [30] seconds:[/outline_size] A day passes."
 
 msgid "era_wince_title"
-msgstr "[outline_color=#666666]Challenge: Era Wince[/outline_color]"
+msgstr "[outline_size=10]Challenge: Era Wince[/outline_size]"
 
 msgid "era_wince_description"
 msgstr "Time is [outline_size=10]x[1.3][/outline_size] faster."
@@ -184,7 +190,7 @@ msgid "hermits_cloak_title"
 msgstr "[outline_color=#287828]Armor: Hermit's Cloak[/outline_color]"
 
 msgid "hermits_cloak_description"
-msgstr "Gain [outline_size=10]x[1.25][/outline_size] health."
+msgstr "You have [outline_size=10]x[1.25][/outline_size] health."
 
 msgid "mystic_robes_title"
 msgstr "[outline_color=#287828]Armor: Mystic Robes[/outline_color]"
@@ -196,7 +202,7 @@ msgid "cursemail_title"
 msgstr "[outline_color=#287828]Armor: Cursemail[/outline_color]"
 
 msgid "cursemail_description"
-msgstr "Damage taken reduced to [outline_size=10]x[0.5][/outline_size].[br][outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]-[1][/outline_size] max health."
+msgstr "Damage taken reduced to [outline_size=10]x[0.5][/outline_size].[br][outline_size=10]Upon taking damage:[/outline_size] You lose [outline_size=10]+[1][/outline_size] max health."
 
 # tricks
 
@@ -280,7 +286,7 @@ msgid "melt_title"
 msgstr "[outline_color=#ff0000]Ability: Melt[/outline_color]"
 
 msgid "melt_description"
-msgstr "Gain [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning entities."
+msgstr "You have [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning entities."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
@@ -310,7 +316,7 @@ msgid "white_hot_title"
 msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"
 
 msgid "white_hot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]>=[50][/outline_size] burn stacks."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]>=[50][/outline_size] burn stacks."
 
 msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
@@ -335,7 +341,7 @@ msgid "blue_needle_title"
 msgstr "[outline_color=#0000ff]Ability: Blue Needle[/outline_color]"
 
 msgid "blue_needle_description"
-msgstr "Projectiles gain [outline_size=10]+[LEVEL][/outline_size] pierce."
+msgstr "Projectiles have [outline_size=10]+[LEVEL][/outline_size] pierce."
 
 msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ability: Snowball[/outline_color]"
@@ -365,7 +371,7 @@ msgid "glacial_rail_title"
 msgstr "[outline_color=#0000ff]Mastery: Glacial Rail[/outline_color]"
 
 msgid "glacial_rail_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color][br]Projectiles gain [outline_size=10]x[1.5][/outline_size] speed."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color][br]Projectiles have [outline_size=10]x[1.5][/outline_size] speed."
 
 msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
@@ -383,7 +389,7 @@ msgid "brittle_cold_title"
 msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
 
 msgid "brittle_cold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color][br]Gain [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]<=[33%MAXHP][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color][br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]<=[33%MAXHP][/outline_size] health."
 
 msgid "freeze_blast_title"
 msgstr "[outline_color=#0000ff]Mastery: Freeze Blast[/outline_color]"
@@ -402,13 +408,13 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "Gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][LEVEL][/outline_size] times."
+msgstr "You have [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][LEVEL][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#a87e00]Ability: Mortal Shock[/outline_color]"
 
 msgid "mortal_shock_description"
-msgstr "Gain [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[3xLEVEL][/outline_size] damage on crit."
+msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[3xLEVEL][/outline_size] damage on crit."
 
 msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
@@ -426,7 +432,7 @@ msgid "thunderstep_title"
 msgstr "[outline_color=#a87e00]Ability: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
-msgstr "You gain [outline_size=10]+[40xLEVEL][/outline_size] move speed and [outline_size=10]+[0.25xLEVEL][/outline_size] seconds of immunity when hit."
+msgstr "You have [outline_size=10]+[40xLEVEL][/outline_size] move speed and [outline_size=10]+[0.25xLEVEL][/outline_size] seconds of immunity when hit."
 
 msgid "storm_weave_title"
 msgstr "[outline_color=#a87e00]Mastery: Storm Weave[/outline_color]"
@@ -462,7 +468,7 @@ msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
-msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[2][/outline_size] damage and [outline_size=10]x[1.5][/outline_size] damage accumulated crit."
+msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[2][/outline_size] damage and [outline_size=10]x[1.5][/outline_size] damage accumulated on crit."
 
 # life
 msgid "life_title"
@@ -481,7 +487,7 @@ msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
 
 msgid "wrought_flesh_description"
-msgstr "You gain [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
+msgstr "You have [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
 
 msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
@@ -517,7 +523,7 @@ msgid "vitalism_title"
 msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
 
 msgid "vitalism_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color][br]You gain [outline_size=10]x[2][/outline_size] health recovery."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color][br]You have [outline_size=10]x[2][/outline_size] health recovery."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
@@ -554,7 +560,7 @@ msgid "hunger_title"
 msgstr "[outline_color=#cc00cc]Ability: Hunger[/outline_color]"
 
 msgid "hunger_description"
-msgstr "Summoned allies gain [outline_size=10]+[20xLEVEL][/outline_size] health.[br][outline_size=10]Upon an entity dying:[/outline_size] Summoned allies recover [outline_size=10]+[20xLEVEL][/outline_size] health."
+msgstr "Summoned allies have [outline_size=10]+[20xLEVEL][/outline_size] max health.[br][outline_size=10]Upon an entity dying:[/outline_size] Summoned allies recover [outline_size=10]+[20xLEVEL][/outline_size] health."
 
 msgid "bone_shield_title"
 msgstr "[outline_color=#cc00cc]Ability: Bone Shield[/outline_color]"
@@ -569,31 +575,31 @@ msgid "dark_harvest_description"
 msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]x[2][/outline_size] of its damage and [outline_size=10]+[0.6+0.4xLEVEL][/outline_size] size."
 
 msgid "soul_tether_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Soul Tether[/outline_color]"
+msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"
 
 msgid "soul_tether_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Army of the Dead[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Last elite entity reconstituted by [outline_color=#cc00cc]Army of the Dead[/outline_color] is reconstituted once more."
 
 msgid "swift_fate_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Swift Fate[/outline_color]"
+msgstr "[outline_color=#cc00cc]Mastery: Swift Fate[/outline_color]"
 
 msgid "swift_fate_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Fated End[/outline_color][br]Doom you apply has [outline_size=10]x[0.5][/outline_size] duration and [outline_size=10]x[1.5][/outline_size] damage."
 
 msgid "starvation_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Starvation[/outline_color]"
+msgstr "[outline_color=#cc00cc]Mastery: Starvation[/outline_color]"
 
 msgid "starvation_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon an entity dying:[/outline_size] Summoned allies gain [outline_size=10]+[0.4xLEVEL][/outline_size] bonus damage."
 
 msgid "osteophalanx_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Osteophalanx[/outline_color]"
+msgstr "[outline_color=#cc00cc]Mastery: Osteophalanx[/outline_color]"
 
 msgid "osteophalanx_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
 
 msgid "bad_crop_title"
-msgstr "[outline_color=#cc00cc]Dark Mastery: Bad Crop[/outline_color]"
+msgstr "[outline_color=#cc00cc]Mastery: Bad Crop[/outline_color]"
 
 msgid "bad_crop_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Dark Harvest[/outline_color][br][outline_color=#cc00cc]Dark Harvest[/outline_color] explosion applies [outline_size=10][0.05xALLYMAXHP][/outline_size] doom."
@@ -615,25 +621,31 @@ msgid "lesser_travel_cost"
 msgstr "Travel Time: [0] Days"
 
 msgid "health_treasury_gate_title"
-msgstr "[outline_color=#666666]Gate: Health Treasury[/outline_color]"
+msgstr "[outline_size=10]Gate: Health Treasury[/outline_size]"
 
 msgid "health_treasury_gate_description"
 msgstr "Vitality storehouse."
 
+msgid "damage_treasury_gate_title"
+msgstr "[outline_size=10]Gate: Damage Treasury[/outline_size]"
+
+msgid "damage_treasury_gate_description"
+msgstr "Destruction silo."
+
 msgid "qualia_treasury_gate_title"
-msgstr "[outline_color=#666666]Gate: Qualia Treasury[/outline_color]"
+msgstr "[outline_size=10]Gate: Qualia Treasury[/outline_size]"
 
 msgid "qualia_treasury_gate_description"
 msgstr "Experience repository."
 
 msgid "throne_room_gate_title"
-msgstr "[outline_color=#666666]Gate: Throne Room[/outline_color]"
+msgstr "[outline_size=10]Gate: Throne Room[/outline_size]"
 
 msgid "throne_room_gate_description"
 msgstr "The way forward."
 
 msgid "loop_gate_title"
-msgstr "[outline_color=#666666]Gate: Spiral to Madness[/outline_color]"
+msgstr "[outline_size=10]Gate: Spiral to Madness[/outline_size]"
 
 msgid "loop_gate_description"
 msgstr "The way nowhere."
@@ -642,13 +654,13 @@ msgid "land_of_steps_title"
 msgstr "Sphere [1]: Land of Steps"
 
 msgid "steps_entrance_gate_title"
-msgstr "[outline_color=#666666]Gate: Land of Steps[/outline_color]"
+msgstr "[outline_size=10]Gate: Land of Steps[/outline_size]"
 
 msgid "steps_entrance_gate_description"
 msgstr "The way forward."
 
 msgid "steps_basic_gate_title"
-msgstr "[outline_color=#666666]Gate: Outpost[/outline_color]"
+msgstr "[outline_size=10]Gate: Outpost[/outline_size]"
 
 msgid "steps_basic_gate_description"
 msgstr "The way forward."
@@ -657,13 +669,13 @@ msgid "land_of_depths_title"
 msgstr "Sphere [2]: Land of Depths"
 
 msgid "depths_entrance_gate_title"
-msgstr "[outline_color=#666666]Gate: Land of Depths[/outline_color]"
+msgstr "[outline_size=10]Gate: Land of Depths[/outline_size]"
 
 msgid "depths_entrance_gate_description"
 msgstr "The way forward."
 
 msgid "depths_basic_gate_title"
-msgstr "[outline_color=#666666]Gate: Loch[/outline_color]"
+msgstr "[outline_size=10]Gate: Loch[/outline_size]"
 
 msgid "depths_basic_gate_description"
 msgstr "The way forward."
@@ -672,13 +684,13 @@ msgid "land_of_wonder_title"
 msgstr "Sphere [3]: Land of Wonder"
 
 msgid "wonder_entrance_gate_title"
-msgstr "[outline_color=#666666]Gate: Land of Wonder[/outline_color]"
+msgstr "[outline_size=10]Gate: Land of Wonder[/outline_size]"
 
 msgid "wonder_entrance_gate_description"
 msgstr "The way forward."
 
 msgid "wonder_basic_gate_title"
-msgstr "[outline_color=#666666]Gate: Observatory[/outline_color]"
+msgstr "[outline_size=10]Gate: Observatory[/outline_size]"
 
 msgid "wonder_basic_gate_description"
 msgstr "The way forward."
@@ -687,13 +699,13 @@ msgid "land_of_doubt_title"
 msgstr "Sphere [3]: Land of Doubt"
 
 msgid "doubt_entrance_gate_title"
-msgstr "[outline_color=#666666]Gate: Land of Doubt[/outline_color]"
+msgstr "[outline_size=10]Gate: Land of Doubt[/outline_size]"
 
 msgid "doubt_entrance_gate_description"
 msgstr "The way forward."
 
 msgid "doubt_basic_gate_title"
-msgstr "[outline_color=#666666]Gate: Crawlspace[/outline_color]"
+msgstr "[outline_size=10]Gate: Crawlspace[/outline_size]"
 
 msgid "doubt_basic_gate_description"
 msgstr "The way forward."
@@ -702,13 +714,13 @@ msgid "land_of_ruin_title"
 msgstr "Sphere [4]: Land of Ruin"
 
 msgid "ruin_entrance_gate_title"
-msgstr "[outline_color=#666666]Gate: Land of Ruin[/outline_color]"
+msgstr "[outline_size=10]Gate: Land of Ruin[/outline_size]"
 
 msgid "ruin_entrance_gate_description"
 msgstr "The way forward."
 
 msgid "ruin_basic_gate_title"
-msgstr "[outline_color=#666666]Gate: Ruins[/outline_color]"
+msgstr "[outline_size=10]Gate: Ruins[/outline_size]"
 
 msgid "ruin_basic_gate_description"
 msgstr "The way forward."
@@ -717,13 +729,13 @@ msgid "land_of_breath_title"
 msgstr "Sphere [5]: Land of Breath"
 
 msgid "breath_entrance_gate_title"
-msgstr "[outline_color=#666666]Gate: Land of Breath[/outline_color]"
+msgstr "[outline_size=10]Gate: Land of Breath[/outline_size]"
 
 msgid "breath_entrance_gate_description"
 msgstr "The way forward."
 
 msgid "breath_basic_gate_title"
-msgstr "[outline_color=#666666]Gate: Garden[/outline_color]"
+msgstr "[outline_size=10]Gate: Garden[/outline_size]"
 
 msgid "breath_basic_gate_description"
 msgstr "The way forward."
@@ -808,7 +820,7 @@ msgstr "[Giga Leafer]: grrgghn >:("
 # rewards
 
 msgid "ascension_diploma_title"
-msgstr "[outline_color=#11dd11]Ascension Diploma[/outline_color]"
+msgstr "[outline_color=#00aa00]Ascension Diploma[/outline_color]"
 
 msgid "ascension_diploma_description"
 msgstr "Tutorial complete."
@@ -824,6 +836,12 @@ msgstr "[outline_color=#dd0000]Reward: Greater Health[/outline_color]"
 
 msgid "greater_health_reward_description"
 msgstr "Gain +[outline_size=10][40][/outline_size] max health and fully recover."
+
+msgid "damage_reward_title"
+msgstr "[outline_color=#00aa00]Reward: Damage[/outline_color]"
+
+msgid "damage_reward_description"
+msgstr "Gain +[outline_size=10][5][/outline_size] damage."
 
 msgid "qualia_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"

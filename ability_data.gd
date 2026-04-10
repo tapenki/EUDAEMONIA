@@ -285,6 +285,11 @@ var ability_data = {
 		"type" : "token",
 		"affect" : preload("res://affects/ui/health_boost_reminder.tscn")
 	},
+	"damage_boost" : {
+		"script" : preload("res://affects/damage_boost.gd"),
+		"type" : "token",
+		"affect" : preload("res://affects/ui/damage_boost_reminder.tscn")
+	},
 	"dark_price" : {
 		"script" : preload("res://affects/dark_price.gd"),
 		"type" : "token",

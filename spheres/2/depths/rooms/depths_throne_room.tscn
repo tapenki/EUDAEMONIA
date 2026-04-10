@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_f7baf"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_67h2w"]
 [ext_resource type="PackedScene" uid="uid://ppjabc1udges" path="res://spheres/environment/rewards/nous_reward.tscn" id="10_35bci"]
-[ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://spheres/environment/rewards/red_reward.png" id="10_lfvrr"]
 [ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="11_35bci"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35bci"]
@@ -108,7 +107,6 @@ position = Vector2(510, 30)
 room = "doubt_entrance_hall"
 door = "Entrance0"
 subject = "doubt_entrance_gate"
-tag = "greater_travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=368457800 instance=ExtResource("6_10ubj")]
 position = Vector2(990, 480)
@@ -116,7 +114,6 @@ rotation = 1.5707964
 room = "wonder_entrance_hall"
 door = "Entrance0"
 subject = "wonder_entrance_gate"
-tag = "greater_travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_kluuj")]
 reward = ExtResource("7_f7baf")
@@ -131,7 +128,7 @@ reward = ExtResource("10_35bci")
 self_modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(570, 30)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("10_lfvrr")
+texture = ExtResource("11_35bci")
 
 [node name="Symbol" type="Label" parent="DoubtSign" unique_id=1823464910]
 anchors_preset = 15

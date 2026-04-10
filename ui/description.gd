@@ -6,7 +6,7 @@ extends RichTextLabel
 func set_title(title_text):
 	text = title_text
 	size = Vector2(240, get_content_height())
-	description.position.y = size.y + 4
+	description.position.y = size.y + 2
 
 func set_description(description_text):
 	description.text = description_text

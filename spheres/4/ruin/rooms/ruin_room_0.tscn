@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_mw37e"]
 [ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://spheres/environment/rewards/red_reward.png" id="6_wpymr"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_ifn63"]
-[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="7_sct1u"]
+[ext_resource type="Texture2D" uid="uid://wnnqqljt1wfn" path="res://spheres/environment/rewards/green_reward.png" id="7_y64um"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_wpymr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2so8y"]
@@ -95,10 +95,10 @@ tag = "lesser_travel_cost"
 
 [node name="Exit2" parent="Doors" unique_id=248772373 instance=ExtResource("3_6wpsr")]
 position = Vector2(570, 30)
-room = "ruin_qualia_treasury"
+room = "ruin_damage_treasury"
 door = "Entrance0"
 travel_time = 0
-subject = "qualia_treasury_gate"
+subject = "damage_treasury_gate"
 tag = "lesser_travel_cost"
 
 [node name="HealthSign" type="Sprite2D" parent="." unique_id=1692367915]
@@ -117,18 +117,18 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hp"
+text = "He"
 label_settings = SubResource("LabelSettings_2so8y")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QualiaSign" type="Sprite2D" parent="." unique_id=669853528]
+[node name="DamageSign" type="Sprite2D" parent="." unique_id=669853528]
 self_modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(630, 30)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_sct1u")
+texture = ExtResource("7_y64um")
 
-[node name="Symbol" type="Label" parent="QualiaSign" unique_id=1650176256]
+[node name="Symbol" type="Label" parent="DamageSign" unique_id=1650176256]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -138,7 +138,7 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Qu"
+text = "Da"
 label_settings = SubResource("LabelSettings_2so8y")
 horizontal_alignment = 1
 vertical_alignment = 1

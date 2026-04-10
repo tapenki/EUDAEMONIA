@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_4yix7"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_vb023"]
 [ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://spheres/environment/rewards/red_reward.png" id="9_yc31n"]
-[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="10_ca8sh"]
+[ext_resource type="Texture2D" uid="uid://wnnqqljt1wfn" path="res://spheres/environment/rewards/green_reward.png" id="10_yc31n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yggkk"]
 resource_local_to_scene = true
@@ -102,10 +102,10 @@ tag = "lesser_travel_cost"
 [node name="Exit2" parent="Doors" unique_id=1945921795 instance=ExtResource("5_yggkk")]
 position = Vector2(870, 690)
 rotation = 1.5707964
-room = "depths_qualia_treasury"
+room = "depths_damage_treasury"
 door = "Entrance0"
 travel_time = 0
-subject = "qualia_treasury_gate"
+subject = "damage_treasury_gate"
 tag = "lesser_travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_jrd5f")]
@@ -130,18 +130,18 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hp"
+text = "He"
 label_settings = SubResource("LabelSettings_yggkk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QualiaSign" type="Sprite2D" parent="." unique_id=203276773]
+[node name="DamageSign" type="Sprite2D" parent="." unique_id=203276773]
 self_modulate = Color(1, 1, 1, 0.49803922)
 position = Vector2(870, 630)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("10_ca8sh")
+texture = ExtResource("10_yc31n")
 
-[node name="Symbol" type="Label" parent="QualiaSign" unique_id=551471413]
+[node name="Symbol" type="Label" parent="DamageSign" unique_id=551471413]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,7 +151,7 @@ offset_right = -30.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Qu"
+text = "Da"
 label_settings = SubResource("LabelSettings_yggkk")
 horizontal_alignment = 1
 vertical_alignment = 1
