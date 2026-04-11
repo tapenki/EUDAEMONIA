@@ -35,3 +35,5 @@ func damage_dealt(entity, damage, ability_relay) -> void:
 
 func detrack(ability_relay):
 	tracked.erase(ability_relay)
+	if ability_relay.freed.is_connected(detrack):
+		ability_relay.freed.disconnect(detrack)

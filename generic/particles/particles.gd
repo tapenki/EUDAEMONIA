@@ -12,7 +12,7 @@ func _ready() -> void:
 func self_death():
 	kill()
 	modulate *= get_parent().modulate
-	reparent(get_tree().current_scene)
+	reparent(get_node("/root/Main/Effects"))
 
 func kill():
 	emitting = false

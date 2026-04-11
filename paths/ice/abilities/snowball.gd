@@ -10,7 +10,7 @@ func apply(ability_relay, applicant_data):
 		applicant_data["scale_boost"] = applicants[ability_relay.source]["scale_boost"]
 	else:
 		applicant_data["damage_boost"] = 0.0
-		applicant_data["scale_boost"] = 1.0
+		applicant_data["scale_boost"] = 0.0
 	super(ability_relay, applicant_data)
 	ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
@@ -27,11 +27,11 @@ func disapply(ability_relay):
 
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
-		applicants[ability_relay]["damage_boost"] += 5 * delta * level * ability_relay.speed_scale
+		applicants[ability_relay]["damage_boost"] += 4 * delta * level * ability_relay.speed_scale
 		applicants[ability_relay]["scale_boost"] += (1 - pow(0.5, level)) * delta * ability_relay.speed_scale
 
 func attack_scale_modifiers(modifiers, ability_relay) -> void:
-	modifiers["multiplier"] *= applicants[ability_relay]["scale_boost"]
+	modifiers["base"] += applicants[ability_relay]["scale_boost"]
 
 func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
 	modifiers["base"] += applicants[ability_relay]["damage_boost"]

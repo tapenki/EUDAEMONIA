@@ -19,7 +19,7 @@ func apply(ability_relay, applicant_data):
 			particle_instance.position = sprite["offset"]
 			particle_instance.emission_rect_extents.x = sprite["size"].x * 0.5
 			particle_instance.emission_rect_extents.y = sprite["size"].y * 0.5
-			particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
+			particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0003, 1)
 			particle_instances.append(particle_instance)
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances
@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 				damage_mult = 0.75
 			ability_relay.deal_damage(ability_relay.owner, 
 			{"base" : damage_mult * applicants[ability_relay]["accumulated"], "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
-			Config.get_team_color(1, "tertiary"))
+			Config.get_team_color(1, "secondary"))
 			disapply(ability_relay)
 
 func damage_taken(damage, ability_relay) -> void:

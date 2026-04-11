@@ -24,5 +24,5 @@ func _physics_process(delta: float) -> void:
 
 func parent_died():
 	base_scale = get_parent().global_scale
-	reparent(get_tree().current_scene)
+	reparent(get_node("/root/Main/Effects"))
 	alive = false

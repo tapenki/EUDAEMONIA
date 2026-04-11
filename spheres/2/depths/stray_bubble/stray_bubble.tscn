@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccxrct2ea7nlc"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_uboir"]
+[ext_resource type="Script" uid="uid://cs252pgax2pmw" path="res://spheres/2/depths/stray_bubble/stray_bubble.gd" id="1_feavu"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_vqdqp"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_5avlj"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_0k81l"]
@@ -45,11 +45,11 @@ collision_layer = 0
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_uboir")
+script = ExtResource("1_feavu")
 ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
-max_health = 0
+max_health = 20
 health = 0.0
 summoned = true
 unchaseable = true

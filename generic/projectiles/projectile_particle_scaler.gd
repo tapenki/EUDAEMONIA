@@ -23,11 +23,12 @@ func _physics_process(delta: float) -> void:
 		if scaler <= 0:
 			queue_free()
 	scale = base_scale * scaler
-	particles.scale_amount_min = global_scale.x
-	particles.scale_amount_max = global_scale.x
+	#particles.scale_amount_min = global_scale.x
+	#particles.scale_amount_max = global_scale.x
 
 func parent_died():
 	base_scale = get_parent().global_scale
-	reparent(get_tree().current_scene)
+	reparent(get_node("/root/Main/Effects"))
 	particles.notification(NOTIFICATION_INTERNAL_PROCESS) ## fix for reparent flicker
+	particles.emitting = false
 	alive = false

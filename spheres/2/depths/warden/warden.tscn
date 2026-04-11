@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ca2l0srgkijny" path="res://spheres/2/depths/warden/warden.png" id="9_pyjhh"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_vhc8i"]
 [ext_resource type="Texture2D" uid="uid://dkg8x150s4mnm" path="res://spheres/2/depths/warden/warden_hurt.png" id="11_2okfs"]
+[ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="11_m11n8"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_lssfr"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_40ygs"]
 [ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="17_pssg1"]
@@ -253,7 +254,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="RadialAttack1a" type="Node" parent="StateHandler" unique_id=1613964652 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_lcc2q")
-bullet = ExtResource("7_ohken")
+bullet = ExtResource("11_m11n8")
 bullet_lifetime = 2.75
 bullet_count = 8
 angle = -7.5
@@ -272,12 +273,12 @@ next = NodePath("../RadialAttack1c")
 [node name="RadialAttack1c" type="Node" parent="StateHandler" unique_id=1064810893 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_lcc2q")
-bullet = ExtResource("7_ohken")
+bullet = ExtResource("11_m11n8")
 bullet_lifetime = 2.75
 bullet_count = 8
 angle = 7.5
 bullet_speed = 300
-next = NodePath("../PrepareRadialAttack2")
+next = NodePath("../RadialAttack1Endlag")
 
 [node name="RadialAttack1Endlag" type="Node" parent="StateHandler" unique_id=1707211341 node_paths=PackedStringArray("next")]
 process_mode = 4
@@ -305,7 +306,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="RadialAttack2a" type="Node" parent="StateHandler" unique_id=880282453 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_lcc2q")
-bullet = ExtResource("7_ohken")
+bullet = ExtResource("11_m11n8")
 bullet_lifetime = 2.75
 bullet_count = 8
 angle = 15.0
@@ -325,7 +326,7 @@ next = NodePath("../RadialAttack2c")
 [node name="RadialAttack2c" type="Node" parent="StateHandler" unique_id=1730482796 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_lcc2q")
-bullet = ExtResource("7_ohken")
+bullet = ExtResource("11_m11n8")
 bullet_lifetime = 2.75
 bullet_count = 8
 angle = 30.0

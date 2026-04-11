@@ -237,7 +237,7 @@ msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
 
 msgid "burn_description"
-msgstr "Deals [outline_size=10][STACKS][/outline_size] damage every second.[br]Expires after dealing damage [outline_size=10][5][/outline_size] times.[br]Reapplying burn resets expiration."
+msgstr "Deals [outline_size=10][STACKS][/outline_size] pure damage every second.[br]Expires after dealing damage [outline_size=10][4][/outline_size] times.[br]Reapplying burn resets expiration."
 
 msgid "chill_title"
 msgstr "[outline_color=#0000ff]Notes: Chill[/outline_color]"
@@ -261,7 +261,7 @@ msgid "doom_title"
 msgstr "[outline_color=#cc00cc]Notes: Doom[/outline_color]"
 
 msgid "doom_description"
-msgstr "Accumulates up to [outline_size=10][10xSTACKS][/outline_size] damage and deals [outline_size=10][0.5xACCUMULATED][/outline_size] damage after [outline_size=10][4][/outline_size] seconds."
+msgstr "Accumulates up to [outline_size=10][10xSTACKS][/outline_size] damage and deals [outline_size=10][0.5xACCUMULATED][/outline_size] pure damage after [outline_size=10][4][/outline_size] seconds."
 
 # fire
 msgid "fire_title"
@@ -274,37 +274,37 @@ msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ability: Ignition[/outline_color]"
 
 msgid "ignition_description"
-msgstr "[outline_size=10][33]% upon dealing damage:[/outline_size] Apply [outline_size=10][3xLEVEL][/outline_size] burn."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply [outline_size=10][4xLEVEL][/outline_size] burn for every [outline_size=10][30%MAXHP][/outline_size] damage accumulated."
 
 msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][4][/outline_size] flaming skulls. They have [outline_size=10][40xLEVEL][/outline_size] health, [outline_size=10]x[0.5xLEVEL][/outline_size] damage, and apply [outline_size=10][10xLEVEL][/outline_size] burn to nearby enemies when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10][30xLEVEL][/outline_size] health and apply [outline_size=10][3xLEVEL][/outline_size] burn to nearby enemies when killed."
 
-msgid "melt_title"
-msgstr "[outline_color=#ff0000]Ability: Melt[/outline_color]"
+msgid "conflagration_title"
+msgstr "[outline_color=#ff0000]Ability: Conflagration[/outline_color]"
 
-msgid "melt_description"
-msgstr "You have [outline_size=10]+[0.25xLEVELxSTACKS][/outline_size] damage against burning entities."
+msgid "conflagration_description"
+msgstr "[outline_size=10]Upon a burning entity perishing:[/outline_size] Spread up to [outline_size=10][8xLEVEL][/outline_size] of its burn to the nearest enemy."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10][50]% upon a projectile expiring:[/outline_size] Manifest a pool of fire that deals [outline_size=10]x[0.25xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
 
 msgid "from_ashes_description"
-msgstr "[outline_size=10]Once per encounter, upon your imminent demise:[/outline_size] Escape your fate and recover [outline_size=10]+[10xLEVEL][/outline_size] health per second over [outline_size=10][5][/outline_size] seconds."
+msgstr "[outline_size=10]Once per encounter, upon your imminent demise:[/outline_size] Escape your fate and recover [outline_size=10]+[12xLEVEL][/outline_size] health per second over [outline_size=10][4][/outline_size] seconds."
 
-msgid "conflagration_title"
-msgstr "[outline_color=#ff0000]Mastery: Conflagration[/outline_color]"
+msgid "pyre_title"
+msgstr "[outline_color=#ff0000]Mastery: Pyre[/outline_color]"
 
-msgid "conflagration_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br][outline_size=10]Upon a burning entity dying:[/outline_size] Spread its burn to the nearest enemy."
+msgid "pyre_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br]Burn can deal damage [outline_size=10]+[4][/outline_size] times."
 
 msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
@@ -312,11 +312,11 @@ msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
 msgid "undying_flames_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][LEVEL][/outline_size] pure damage and reconstitute it."
 
-msgid "white_hot_title"
-msgstr "[outline_color=#ff0000]Mastery: White Hot[/outline_color]"
+msgid "inferno_title"
+msgstr "[outline_color=#ff0000]Mastery: Inferno[/outline_color]"
 
-msgid "white_hot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Melt[/outline_color][br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]>=[50][/outline_size] burn stacks."
+msgid "inferno_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Conflagration[/outline_color][br][outline_color=#ff0000]Conflagration[/outline_color] spreads burn to [outline_size=10]+[1][/outline_size] enemy."
 
 msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
@@ -328,7 +328,7 @@ msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
 
 msgid "fiery_rebirth_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[10xLEVEL][/outline_size] burn to all enemies then double their burn."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[LEVEL][/outline_size] burn to all enemies then double their burn."
 
 # ice
 msgid "ice_title"
@@ -347,7 +347,7 @@ msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ability: Snowball[/outline_color]"
 
 msgid "snowball_description"
-msgstr "Projectiles gain [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]x[1-0.5^LEVEL][/outline_size] bonus size per second."
+msgstr "Projectiles gain [outline_size=10]+[4xLEVEL][/outline_size] damage and [outline_size=10]+[1-0.5^LEVEL][/outline_size] bonus size per second."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
@@ -377,7 +377,7 @@ msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance per second."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]+[4xLEVEL]%[/outline_size] crit chance per second."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
@@ -481,7 +481,7 @@ msgid "enrage_title"
 msgstr "[outline_color=#0f9936]Ability: Enrage[/outline_color]"
 
 msgid "enrage_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] You and your allies gain [outline_size=10]+[0.05xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[5xLEVEL][/outline_size]."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] You and your allies gain [outline_size=10]+[0.05xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[4xLEVEL][/outline_size]."
 
 msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
@@ -499,7 +499,7 @@ msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]x[2][/outline_size] damage and [outline_size=10]+[0.6+0.4xLEVEL][/outline_size] size."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]x[2][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
@@ -529,7 +529,7 @@ msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
 
 msgid "pressurized_quills_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
 
 msgid "multimold_title"
 msgstr "[outline_color=#0f9936]Mastery: Multimold[/outline_color]"
@@ -572,7 +572,7 @@ msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]x[2][/outline_size] of its damage and [outline_size=10]+[0.6+0.4xLEVEL][/outline_size] size."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]x[2][/outline_size] of its damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "soul_tether_title"
 msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"

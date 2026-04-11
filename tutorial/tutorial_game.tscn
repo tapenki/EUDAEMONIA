@@ -17,6 +17,7 @@
 [ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="9_r2yfh"]
 [ext_resource type="Script" uid="uid://4ppm2rwjo0nc" path="res://paths/ui/upgrade_points.gd" id="10_dvfo5"]
 [ext_resource type="AudioStream" uid="uid://p5q0rsgodu7y" path="res://sounds/leap.wav" id="10_jtxca"]
+[ext_resource type="Script" uid="uid://bph10ww728rkd" path="res://ui/misc/chat.gd" id="10_wfgev"]
 [ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="11_2fjtk"]
 [ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://ui/misc/version.gd" id="11_lvowx"]
 [ext_resource type="Texture2D" uid="uid://b8wk65u3oxd4e" path="res://ui/misc/gear.png" id="12_dsb7f"]
@@ -29,11 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://bgpscaxywuyn6" path="res://tutorial/ui/tutorial_path_picker.tscn" id="15_xvoxj"]
 [ext_resource type="Texture2D" uid="uid://bxijlb14fyxl3" path="res://generic/particles/bullet.png" id="16_h1wje"]
 [ext_resource type="Script" uid="uid://vh8xivmipwsn" path="res://ui/reset.gd" id="16_ocakq"]
-[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="17_8i5ba"]
+[ext_resource type="PackedScene" uid="uid://bbacgjor4wear" path="res://affects/ui/reminder.tscn" id="16_wfgev"]
 [ext_resource type="Shader" uid="uid://drjpyynjqtv52" path="res://shaders/aligned_particle_shader.gdshader" id="17_tln5d"]
-[ext_resource type="Script" uid="uid://bvj8m276etwfq" path="res://affects/ui/challenge_container.gd" id="18_cwo5d"]
 [ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="18_d4f8b"]
-[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="19_jjpt0"]
+[ext_resource type="Script" uid="uid://nwqubmmn511u" path="res://generic/abilities/ability_handler.gd" id="18_ew74y"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_pmn51"]
 [ext_resource type="PackedScene" uid="uid://djssli0g02cdt" path="res://ui/settings/settings.tscn" id="20_7valt"]
 [ext_resource type="Texture2D" uid="uid://bwhdqqonqgcdy" path="res://generic/particles/star.png" id="20_uo7ol"]
@@ -58,6 +58,17 @@ shadow_offset = Vector2(3, 3)
 [sub_resource type="LabelSettings" id="LabelSettings_4xnvd"]
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lk5w"]
+resource_local_to_scene = true
+outline_size = 5
+outline_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wfgev"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c44sx"]
 outline_size = 5
@@ -205,6 +216,7 @@ shader_parameter/scale_curve = SubResource("CurveTexture_1u8w0")
 [node name="Main" type="Node2D" unique_id=1222646399]
 process_mode = 1
 script = ExtResource("1_5ot4n")
+room = "tutorial_entrance_hall"
 
 [node name="Saver" type="Node" parent="." unique_id=2058622283]
 script = ExtResource("2_w7oih")
@@ -363,6 +375,23 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
+[node name="Chat" type="BoxContainer" parent="UI/HUD" unique_id=2068076398]
+process_mode = 1
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -104.0
+offset_right = 191.0
+offset_bottom = -4.0
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
+vertical = true
+script = ExtResource("10_wfgev")
+
 [node name="GameMenu" type="Control" parent="UI" unique_id=1048853400]
 z_index = 1
 layout_mode = 3
@@ -383,9 +412,9 @@ mouse_filter = 2
 [node name="UpgradePoints" type="Label" parent="UI/GameMenu" unique_id=1299756249]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29200003
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.293
+anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -0.3000183
 offset_top = -40.0
@@ -539,6 +568,69 @@ offset_top = 75.0
 offset_right = 900.0
 offset_bottom = 375.0
 
+[node name="Affects" type="Control" parent="UI/GameMenu" unique_id=347512701]
+visible = false
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 85.0
+offset_right = 885.0
+offset_bottom = 385.0
+
+[node name="Background" type="NinePatchRect" parent="UI/GameMenu/Affects" unique_id=1207334535]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_xtque")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="Label" parent="UI/GameMenu/Affects" unique_id=501916047]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.5
+offset_top = 2.0
+offset_right = 39.5
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "affects"
+label_settings = SubResource("LabelSettings_1lk5w")
+horizontal_alignment = 1
+
+[node name="Container" type="HFlowContainer" parent="UI/GameMenu/Affects" unique_id=552783996]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BaseStats" parent="UI/GameMenu/Affects/Container" unique_id=374846769 instance=ExtResource("16_wfgev")]
+layout_mode = 2
+texture_normal = ExtResource("14_xtque")
+subject = "stats"
+
+[node name="Symbol" parent="UI/GameMenu/Affects/Container/BaseStats" index="0" unique_id=532623967]
+text = "St"
+label_settings = SubResource("LabelSettings_wfgev")
+
 [node name="Reset" type="Button" parent="UI/GameMenu" unique_id=1927097229]
 z_index = 1
 layout_mode = 1
@@ -626,107 +718,14 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Stats" type="Button" parent="UI/GameMenu" unique_id=1961183202]
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.245
-anchor_top = 1.0
-anchor_right = 0.33800003
-anchor_bottom = 1.0
-offset_top = -80.0
-offset_right = 0.2999878
-offset_bottom = -49.0
-grow_horizontal = 2
-grow_vertical = 0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("9_r2yfh")
-text = "stats_title"
-flat = true
-script = ExtResource("17_8i5ba")
-subject = "stats"
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/Stats" unique_id=152820818]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_0wl52")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
-
-[node name="Challenges" type="Control" parent="UI/GameMenu" unique_id=1822248197]
-anchors_preset = 0
-offset_left = 525.0
-offset_top = 500.0
-offset_right = 750.0
-offset_bottom = 590.0
-mouse_filter = 2
-script = ExtResource("18_cwo5d")
-
-[node name="Background" type="NinePatchRect" parent="UI/GameMenu/Challenges" unique_id=2092187334]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_xtque")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="Label" type="RichTextLabel" parent="UI/GameMenu/Challenges" unique_id=1054928097]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -58.5
-offset_top = 2.0
-offset_right = 58.5
-offset_bottom = 25.0
-grow_horizontal = 2
-mouse_filter = 2
-theme = ExtResource("19_jjpt0")
-bbcode_enabled = true
-text = "challenges"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Container" type="HBoxContainer" parent="UI/GameMenu/Challenges" unique_id=116980096]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -30.0
-offset_right = 158.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
 [node name="Settings" parent="UI" unique_id=1211290594 instance=ExtResource("20_7valt")]
+
+[node name="PlayerAbilityHandler" type="Node" parent="." unique_id=594518607]
+script = ExtResource("18_ew74y")
+
+[node name="Effects" type="Node" parent="." unique_id=1698329828]
+
+[node name="Projectiles" type="Node" parent="." unique_id=44507611]
 
 [node name="Entities" type="Node" parent="." unique_id=145850713]
 
@@ -734,8 +733,6 @@ alignment = 1
 z_index = 2
 position = Vector2(450, 350)
 group = 1
-
-[node name="Projectiles" type="Node" parent="." unique_id=44507611]
 
 [node name="Spawns" type="Node" parent="." unique_id=1379633274]
 
@@ -864,5 +861,5 @@ process_material = SubResource("ShaderMaterial_0odxb")
 [connection signal="mouse_entered" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="up"]
 [connection signal="pressed" from="UI/GameMenu/Settings" to="UI" method="toggle_settings"]
-[connection signal="mouse_entered" from="UI/GameMenu/Stats" to="UI/GameMenu/Stats" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/GameMenu/Stats" to="UI/GameMenu/Stats" method="_on_mouse_exited"]
+
+[editable path="UI/GameMenu/Affects/Container/BaseStats"]

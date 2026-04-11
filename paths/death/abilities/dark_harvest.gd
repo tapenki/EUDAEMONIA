@@ -57,7 +57,7 @@ func damage_dealt_modifiers(_entity, damage) -> void:
 	damage["multiplier"] *= 2
 
 func attack_scale_modifiers(modifiers) -> void:
-	modifiers["multiplier"] *= 0.6 + 0.4 * level
+	modifiers["base"] += 0.4 * level - 0.4
 
 func damage_dealt(entity, damage, ability_relay) -> void:
 	if bad_crop:

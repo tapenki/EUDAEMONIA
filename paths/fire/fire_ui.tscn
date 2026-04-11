@@ -93,10 +93,10 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Melt" parent="Abilities2" unique_id=1307101254 instance=ExtResource("4_la5fy")]
+[node name="Conflagration" parent="Abilities2" unique_id=1307101254 instance=ExtResource("4_la5fy")]
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
-subject = "melt"
+subject = "conflagration"
 
 [node name="Firespawning" parent="Abilities2" unique_id=1239380423 instance=ExtResource("4_la5fy")]
 layout_mode = 2
@@ -117,13 +117,13 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Conflagration" parent="Masteries1" unique_id=1000262055 instance=ExtResource("5_2ix0u")]
+[node name="Pyre" parent="Masteries1" unique_id=1000262055 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
 "ignition": 5
 }
-subject = "conflagration"
+subject = "pyre"
 extras = ["burn"]
 
 [node name="RingOfFire" parent="Masteries1" unique_id=160881786 instance=ExtResource("5_2ix0u")]
@@ -156,13 +156,13 @@ offset_bottom = 286.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="WhiteHot" parent="Masteries2" unique_id=408650081 instance=ExtResource("5_2ix0u")]
+[node name="Inferno" parent="Masteries2" unique_id=408650081 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
-"melt": 5
+"conflagration": 5
 }
-subject = "white_hot"
+subject = "inferno"
 
 [node name="UndyingFlames" parent="Masteries2" unique_id=423107617 instance=ExtResource("5_2ix0u")]
 layout_mode = 2

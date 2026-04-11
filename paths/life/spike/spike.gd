@@ -8,5 +8,8 @@ func _physics_process(delta):
 	if windup >= hit_delay:
 		hit_enabled = true
 
+func calculate_movement(delta):
+	return global_position + velocity * delta * ability_relay.speed_scale * 0.33
+
 func _on_lifetime_timeout() -> void:
 	kill()

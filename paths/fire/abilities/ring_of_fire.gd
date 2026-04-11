@@ -1,30 +1,19 @@
-#extends Ability
-#
-#var projectile_scene = preload("res://paths/fire/ring_of_fire/ring_of_fire.tscn")
-#var projectile
-#
-#var scorched_earth
-#
-#func _ready() -> void:
-	#scorched_earth = ability_relay.get_node_or_null("scorched_earth")
-	#if not scorched_earth:
-		#return
-	#get_node("/root/Main").day_start.connect(day_start)
-	#get_node("/root/Main").intermission.connect(intermission)
-#
-#func day_start(_day: int) -> void:
-	#var projectile_instance = ability_relay.make_projectile(projectile_scene, 
-	#Vector2(),
-	#{"subscription" = 2},
-	#Vector2())
-	#projectile_instance.ability_relay.inherited_damage["multiplier"] *= 0.25 * scorched_earth.level
-	#projectile_instance.get_node("Sprite").ability_relay = ability_relay
-	#projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
-	#add_child(projectile_instance)
-	#projectile = projectile_instance
-#
-#func intermission(_day: int) -> void:
-	#projectile.queue_free()
-#
-#func inherit(_handler, _tier):
-	#return
+extends Ability
+
+var projectile_scene = preload("res://paths/fire/ring_of_fire/ring_of_fire.tscn")
+
+func apply(ability_relay, applicant_data):
+	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
+		var projectile_instance = ability_relay.make_projectile(projectile_scene, 
+		Vector2(),
+		{"subscription" = 2, "scorched_earth" = true},
+		Vector2())
+		#projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
+		ability_relay.add_child(projectile_instance)
+		applicant_data["ring_of_fire"] = projectile_instance
+	super(ability_relay, applicant_data)
+
+func disapply(ability_relay):
+	if applicants[ability_relay].has("ring_of_fire"):
+		applicants[ability_relay]["ring_of_fire"].kill()
+	super(ability_relay)

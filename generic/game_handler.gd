@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-var room = "steps_entrance_hall"
+@export var room = "steps_entrance_hall" ## exported for tutorial
 var door = "Entrance0"
 
 var day = 1
@@ -206,6 +206,8 @@ func travel(to_room, to_door):
 	for projectile in get_node("/root/Main/Projectiles").get_children():
 		projectile.ability_relay.freed.emit()
 		projectile.queue_free()
+	for effect in get_node("/root/Main/Effects").get_children():
+		effect.queue_free()
 	day_started = false
 	room = to_room
 	door = to_door

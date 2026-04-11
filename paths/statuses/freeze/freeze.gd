@@ -15,7 +15,7 @@ func apply(ability_relay, applicant_data):
 			particle_instance.position = sprite["offset"]
 			particle_instance.emission_rect_extents.x = sprite["size"].x * 0.5
 			particle_instance.emission_rect_extents.y = sprite["size"].y * 0.5
-			particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0005, 1)
+			particle_instance.amount = max(particle_instance.amount * sprite["size"].x * sprite["size"].y * 0.0002, 1)
 			particle_instances.append(particle_instance)
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances

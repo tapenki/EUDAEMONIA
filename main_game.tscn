@@ -173,6 +173,8 @@ player = NodePath("../Entities/Player")
 [node name="PlayerAbilityHandler" type="Node" parent="." unique_id=280908071]
 script = ExtResource("4_vn0ol")
 
+[node name="Effects" type="Node" parent="." unique_id=1560163350]
+
 [node name="Projectiles" type="Node" parent="." unique_id=1379355387]
 
 [node name="Entities" type="Node" parent="." unique_id=268946511]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl3rbcfsokq2m"]
 
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="1_diwj5"]
-[ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="2_e7k4j"]
+[ext_resource type="Texture2D" uid="uid://dprl5lmh0bsql" path="res://paths/statuses/burn/burn.png" id="2_1jl0b"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="3_s4rhl"]
 
 [sub_resource type="Curve" id="Curve_mtknr"]
@@ -12,9 +12,10 @@ point_count = 3
 z_index = -1
 material = ExtResource("1_diwj5")
 amount = 12
-texture = ExtResource("2_e7k4j")
+texture = ExtResource("2_1jl0b")
 lifetime = 0.5
 fixed_fps = 30
+local_coords = true
 draw_order = 1
 emission_shape = 3
 emission_rect_extents = Vector2(16, 16)

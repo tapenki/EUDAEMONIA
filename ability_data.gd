@@ -43,6 +43,10 @@ var ability_data = {
 	},
 	#endregion
 	#region statuses
+	"burn" : {
+		"script" : preload("res://paths/statuses/burn/burn.gd"),
+		"type" : "status"
+	},
 	"chill" : {
 		"script" : preload("res://paths/statuses/chill/chill.gd"),
 		"type" : "status"
@@ -69,12 +73,8 @@ var ability_data = {
 		"script" : preload("res://paths/fire/abilities/firespawning.gd"),
 		"type" : "upgrade"
 	},
-	"fireburst" : {
-		"script" : preload("res://paths/fire/flaming_skull/fireburst.gd"),
-		"type" : "token"
-	},
-	"melt" : {
-		"script" : preload("res://paths/fire/abilities/melt.gd"),
+	"conflagration" : {
+		"script" : preload("res://paths/fire/abilities/conflagration.gd"),
 		"type" : "upgrade"
 	},
 	"scorched_earth" : {
@@ -85,16 +85,16 @@ var ability_data = {
 		"script" : preload("res://paths/fire/abilities/from_ashes.gd"),
 		"type" : "upgrade"
 	},
-	"conflagration" : {
-		"script" : preload("res://paths/fire/abilities/conflagration.gd"),
+	"pyre" : {
+		"script" : preload("res://paths/fire/abilities/pyre.gd"),
 		"type" : "mastery"
 	},
 	"undying_flames" : {
 		"script" : preload("res://paths/fire/abilities/undying_flames.gd"),
 		"type" : "mastery"
 	},
-	"white_hot" : {
-		"script" : preload("res://paths/fire/abilities/white_hot.gd"),
+	"inferno" : {
+		"script" : preload("res://paths/fire/abilities/inferno.gd"),
 		"type" : "mastery"
 	},
 	"ring_of_fire" : {
@@ -104,10 +104,6 @@ var ability_data = {
 	"fiery_rebirth" : {
 		"script" : preload("res://paths/fire/abilities/fiery_rebirth.gd"),
 		"type" : "mastery"
-	},
-	"burn" : {
-		"script" : preload("res://paths/fire/burn.gd"),
-		"type" : "status"
 	},
 	#endregion
 	#region ice

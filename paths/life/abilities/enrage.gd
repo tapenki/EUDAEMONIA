@@ -22,7 +22,7 @@ func intermission(_day):
 	damage_boost = 0.0
 
 func damage_taken(damage) -> void:
-	damage_boost = min(damage_boost + damage["final"] * 0.05, 5 * level)
+	damage_boost = min(damage_boost + damage["final"] * 0.05, 4 * level)
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	modifiers["base"] += damage_boost

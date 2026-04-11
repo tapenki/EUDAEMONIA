@@ -28,7 +28,7 @@ func _ready() -> void:
 func parent_died():
 	if death_quotes.size() > 0:
 		say(death_quotes.pick_random())
-	reparent(get_tree().current_scene)
+	reparent(get_node("/root/Main/Effects"))
 	cleanup = true
 
 func _physics_process(_delta: float) -> void:

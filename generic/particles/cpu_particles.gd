@@ -6,10 +6,9 @@ func _ready() -> void:
 	if ability_relay:
 		ability_relay.self_death.connect(self_death)
 
-## TODO: particles flicker when reparented
 func self_death():
 	modulate *= get_parent().modulate
-	reparent(get_tree().current_scene)
+	reparent(get_node("/root/Main/Effects"))
 	emitting = false
 	notification(NOTIFICATION_INTERNAL_PROCESS) ## fix for reparent flicker
 	await get_tree().create_timer(lifetime).timeout
