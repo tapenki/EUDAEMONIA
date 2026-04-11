@@ -52,7 +52,7 @@ func day_start(_day: int) -> void:
 			get_node("/root/Main").spawn_entity(summon_instance)
 
 func max_health_modifiers(modifiers, ability_relay) -> void:
-	modifiers["base"] += applicants[ability_relay]["base_hp"] * 0.5 * level
+	modifiers["base"] += applicants[ability_relay]["base_hp"] * 0.75 * level
 
 func damage_dealt_modifiers(_entity, damage) -> void:
 	damage["base"] += 3 * level - 3

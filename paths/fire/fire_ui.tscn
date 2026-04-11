@@ -97,6 +97,7 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "conflagration"
+extras = ["burn"]
 
 [node name="Firespawning" parent="Abilities2" unique_id=1239380423 instance=ExtResource("4_la5fy")]
 layout_mode = 2
@@ -163,6 +164,7 @@ requires = {
 "conflagration": 5
 }
 subject = "inferno"
+extras = ["burn"]
 
 [node name="UndyingFlames" parent="Masteries2" unique_id=423107617 instance=ExtResource("5_2ix0u")]
 layout_mode = 2

@@ -49,7 +49,7 @@ func death_effects(ability_relay):
 	var attack_scale = ability_relay.get_attack_scale({"base" : 0, "multiplier" : 1})
 	var reach = 150 * attack_scale
 	for entity in ability_relay.area_targets(ability_relay.global_position, reach):
-		status.apply(entity.ability_relay, {"stacks" = 3 * level})
+		status.apply(entity.ability_relay, {"stacks" = 4 * level})
 		get_node("/root/Main").particle_beam(get_node("/root/Main/Particles/Firebeam"), ability_relay.global_position, entity.global_position, 32, 1, Config.get_team_color(ability_relay.owner.group, "secondary"))
 	if undying_flames:
 		for applicant in applicants:
@@ -59,4 +59,4 @@ func death_effects(ability_relay):
 		spawn(ability_relay.global_position, ability_relay, 1)
 
 func max_health_modifiers(modifiers) -> void:
-	modifiers["base"] += 30 * level
+	modifiers["base"] += 40 * level

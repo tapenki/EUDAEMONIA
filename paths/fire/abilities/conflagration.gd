@@ -22,7 +22,7 @@ func entity_death(dying_entity: Entity):
 				max_targets = 2
 			for entity in ability_relay.area_targets(dying_entity.global_position, 9999):
 				if entity != ability_relay.owner and entity != dying_entity and not entity.unchaseable:
-					status.apply(entity.ability_relay, {"stacks" = min(8 * level, status.applicants[dying_entity.ability_relay]["stacks"])})
+					status.apply(entity.ability_relay, {"stacks" = min(10 * level, status.applicants[dying_entity.ability_relay]["stacks"])})
 					get_node("/root/Main").particle_beam(get_node("/root/Main/Particles/Firebeam"), dying_entity.global_position, entity.global_position, 32, 1, Config.get_team_color(ability_relay.owner.group, "secondary"))
 					targets += 1
 					if targets >= max_targets:

@@ -157,6 +157,7 @@ next = NodePath("../PrepareAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag1" unique_id=1787239292 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_cqhco")
+wait_time = 1.25
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -187,6 +188,7 @@ next = NodePath("../Moldwalk")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag2" unique_id=2067932678 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_cqhco")
+wait_time = 1.25
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

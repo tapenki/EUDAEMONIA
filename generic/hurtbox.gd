@@ -13,12 +13,19 @@ func on_collision(_collision_position: Vector2, _body: Node, _crits: int):
 	if hit_sound:
 		get_node("/root/Main").play_sound(hit_sound)
 
+func hurt(entity):
+	if exclude.has(entity):
+		return
+	exclude[entity] = hit_delay
+	var damage = ability_relay.deal_damage(entity, {"base" : 0, "multiplier" : 1, "direction" : get_knockback_direction(entity)})
+	on_collision(entity.global_position, entity, damage["crits"])
+	if ability_relay.owner is Entity and is_instance_valid(entity.hurtbox):
+		entity.hurtbox.hurt(ability_relay.owner)
+
 func _physics_process(delta):
 	for body in get_overlapping_bodies():
-		if body is Entity and not body.is_ancestor_of(self) and not exclude.has(body) and body.alive and hit_enabled:
-			exclude[body] = hit_delay
-			var damage = ability_relay.deal_damage(body, {"base" : 0, "multiplier" : 1, "direction" : get_knockback_direction(body)})
-			on_collision(body.global_position, body, damage["crits"])
+		if body is Entity and not body.is_ancestor_of(self) and body.alive and hit_enabled:
+			hurt(body)
 	for body in exclude.keys():
 		exclude[body] -= delta * ability_relay.speed_scale
 		if exclude[body] <= 0:

@@ -16,5 +16,5 @@ func disapply(ability_relay):
 
 func damage_dealt(entity, damage, ability_relay) -> void:
 	if damage.has("first_blood"):
-		status.apply(entity.ability_relay, {"stacks" = 4 * level})
+		status.apply(entity.ability_relay, {"stacks" = 6 * level})
 		status.damage_taken(damage, entity.ability_relay)

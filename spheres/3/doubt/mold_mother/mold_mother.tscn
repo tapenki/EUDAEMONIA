@@ -184,7 +184,7 @@ next = NodePath("../Summoning")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=756987145 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
-wait_time = 0.3
+wait_time = 0.75
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

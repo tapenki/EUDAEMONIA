@@ -280,19 +280,19 @@ msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10][30xLEVEL][/outline_size] health and apply [outline_size=10][3xLEVEL][/outline_size] burn to nearby enemies when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10][40xLEVEL][/outline_size] health and apply [outline_size=10][4xLEVEL][/outline_size] burn to nearby enemies when killed."
 
 msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Ability: Conflagration[/outline_color]"
 
 msgid "conflagration_description"
-msgstr "[outline_size=10]Upon a burning entity perishing:[/outline_size] Spread up to [outline_size=10][8xLEVEL][/outline_size] of its burn to the nearest enemy."
+msgstr "[outline_size=10]Upon a burning entity perishing:[/outline_size] Spread up to [outline_size=10][10xLEVEL][/outline_size] of its burn to the nearest enemy."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -322,7 +322,7 @@ msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
 
 msgid "ring_of_fire_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Manifest a ring of fire around you. It has [outline_size=10]x[0.25xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
@@ -420,7 +420,7 @@ msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "You manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
+msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
@@ -481,7 +481,7 @@ msgid "enrage_title"
 msgstr "[outline_color=#0f9936]Ability: Enrage[/outline_color]"
 
 msgid "enrage_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] You and your allies gain [outline_size=10]+[0.05xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[4xLEVEL][/outline_size]."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] You and your allies gain [outline_size=10]+[0.05xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[3xLEVEL][/outline_size]."
 
 msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
@@ -548,13 +548,13 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.5xLEVEL][/outline_size] health and [outline_size=10]+[3xLEVEL-3][/outline_size] damage."
+msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.75xLEVEL][/outline_size] health and [outline_size=10]+[3xLEVEL-3][/outline_size] damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"
 
 msgid "fated_end_description"
-msgstr "[outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10][4xLEVEL][/outline_size] doom."
+msgstr "[outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10][6xLEVEL][/outline_size] doom."
 
 msgid "hunger_title"
 msgstr "[outline_color=#cc00cc]Ability: Hunger[/outline_color]"

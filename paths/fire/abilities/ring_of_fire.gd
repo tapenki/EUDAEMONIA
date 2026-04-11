@@ -8,7 +8,6 @@ func apply(ability_relay, applicant_data):
 		Vector2(),
 		{"subscription" = 2, "scorched_earth" = true},
 		Vector2())
-		#projectile_instance.get_node("Sprite/Particles").ability_relay = ability_relay
 		ability_relay.add_child(projectile_instance)
 		applicant_data["ring_of_fire"] = projectile_instance
 	super(ability_relay, applicant_data)
