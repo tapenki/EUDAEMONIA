@@ -55,7 +55,7 @@ func death_effects(ability_relay):
 		for applicant in applicants:
 			if applicants[applicant].has("subscription") and applicants[applicant]["subscription"] < 5:
 				continue
-			applicant.deal_damage(applicant.owner, {"base" : level, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+			applicant.deal_damage(applicant.owner, {"base" : 0.3 * get_node("/root/Main").day + 3, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 		spawn(ability_relay.global_position, ability_relay, 1)
 
 func max_health_modifiers(modifiers) -> void:

@@ -153,7 +153,7 @@ bullet = ExtResource("7_o3tbh")
 bullet_lifetime = 2.75
 bullet_count = 3
 spread = 60
-bullet_speed = 275
+bullet_speed = 225
 next = NodePath("../PrepareAttack2")
 
 [node name="PrepareAttack2" type="Node" parent="StateHandler" unique_id=1343661659 node_paths=PackedStringArray("next")]
@@ -174,7 +174,7 @@ bullet = ExtResource("7_o3tbh")
 bullet_lifetime = 2.75
 bullet_count = 2
 spread = 45
-bullet_speed = 275
+bullet_speed = 225
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler" unique_id=1792581921 node_paths=PackedStringArray("next")]

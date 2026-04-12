@@ -147,7 +147,7 @@ process_mode = 4
 script = ExtResource("7_l225b")
 bullet = ExtResource("7_lfj4u")
 bullet_lifetime = 2.75
-bullet_speed = 275
+bullet_speed = 225
 next = NodePath("../Endlag1")
 
 [node name="Endlag1" type="Node" parent="StateHandler" unique_id=1451368392 node_paths=PackedStringArray("next")]
@@ -178,7 +178,7 @@ process_mode = 4
 script = ExtResource("7_l225b")
 bullet = ExtResource("7_lfj4u")
 bullet_lifetime = 2.75
-bullet_speed = 275
+bullet_speed = 225
 next = NodePath("../Endlag2")
 
 [node name="Endlag2" type="Node" parent="StateHandler" unique_id=1927563516 node_paths=PackedStringArray("next")]

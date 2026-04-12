@@ -4,7 +4,7 @@ extends TextureProgressBar
 @onready var damage_timer = $DamageTimer
 @onready var health_label = $Label
 
-@onready var player = $"../../".player
+@onready var player = get_node("/root/Main/UI").player
 @onready var ability_relay = player.ability_relay
 
 var button_red = preload("res://ui/button_red.png")

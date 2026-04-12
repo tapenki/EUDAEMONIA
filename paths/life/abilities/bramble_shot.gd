@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 3:
 			return
 		if Input.is_action_just_pressed("bramble_shot") and event.is_action("bramble_shot"):
-			ability_relay.deal_damage(ability_relay.owner, {"base" : 25, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+			ability_relay.deal_damage(ability_relay.owner, {"base" : get_node("/root/Main").day + 10, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 			var direction = (ability_relay.get_global_mouse_position() - ability_relay.global_position).normalized()
 			var bullet_instance = ability_relay.make_projectile(bramble, 
 			ability_relay.global_position + direction * 25, 

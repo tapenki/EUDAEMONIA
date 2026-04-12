@@ -36,15 +36,15 @@ func movement(distance, ability_relay) -> void:
 	if not applicants[ability_relay].has("charge"):
 		return
 	applicants[ability_relay]["charge"] += distance
-	if applicants[ability_relay]["charge"] >= 75:
-		applicants[ability_relay]["charge"] -= 75
+	if applicants[ability_relay]["charge"] >= 100:
+		applicants[ability_relay]["charge"] -= 100
 		if pain_walk:
 			for i in 2:
 				spawn(ability_relay.owner.global_position + Vector2(randf_range(-24, 24), randf_range(-24, 24)), ability_relay)
 			if ability_relay.is_entity:
 				applicants[ability_relay]["pain_walk"] = (applicants[ability_relay]["pain_walk"] + 1) % 2
 				if applicants[ability_relay]["pain_walk"] == 0:
-					ability_relay.deal_damage(ability_relay.owner, {"base" : 3, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+					ability_relay.deal_damage(ability_relay.owner, {"base" : 0.1 * get_node("/root/Main").day + 1, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 		else:
 			spawn(ability_relay.owner.global_position, ability_relay)
 

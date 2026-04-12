@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://ps2ils4552ox" path="res://sounds/click.wav" id="22_8uw0o"]
 [ext_resource type="AudioStream" uid="uid://bwbuvxyk7t5ji" path="res://sounds/error.wav" id="23_ql5ya"]
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_c3fg2"]
 font_size = 48
 outline_size = 5
@@ -259,7 +258,7 @@ patch_margin_bottom = 10
 [node name="Challenges" type="Control" parent="UI/MainMenu" unique_id=635966473]
 anchors_preset = 0
 offset_left = 525.0
-offset_top = 465.0
+offset_top = 485.0
 offset_right = 750.0
 offset_bottom = 590.0
 mouse_filter = 2
@@ -302,17 +301,12 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Container" type="HBoxContainer" parent="UI/MainMenu/Challenges" unique_id=1395886151]
+[node name="Container" type="HFlowContainer" parent="UI/MainMenu/Challenges" unique_id=1331663616]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.0
-offset_top = -30.0
-offset_right = 158.0
-offset_bottom = 30.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -328,6 +322,16 @@ subject = "burning_hours"
 [node name="EraWince" parent="UI/MainMenu/Challenges/Container" unique_id=727060304 instance=ExtResource("12_h1gbt")]
 layout_mode = 2
 subject = "era_wince"
+
+[node name="Atrophy" parent="UI/MainMenu/Challenges/Container" unique_id=820471021 instance=ExtResource("12_h1gbt")]
+visible = false
+layout_mode = 2
+subject = "atrophy"
+
+[node name="Vulnerability" parent="UI/MainMenu/Challenges/Container" unique_id=1867965416 instance=ExtResource("12_h1gbt")]
+visible = false
+layout_mode = 2
+subject = "vulnerability"
 
 [node name="Settings" parent="UI" unique_id=1701143465 instance=ExtResource("13_km3bq")]
 

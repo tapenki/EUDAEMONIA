@@ -22,4 +22,4 @@ func disapply(ability_relay):
 
 func damage_dealt(entity, damage) -> void:
 	if damage.has("first_blood"):
-		status.apply(entity.ability_relay, {"stacks" = 10 * get_mortal_shock_level()})
+		status.apply(entity.ability_relay, {"stacks" = 5 * get_mortal_shock_level()})

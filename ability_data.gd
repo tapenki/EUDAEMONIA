@@ -41,6 +41,16 @@ var ability_data = {
 		"type" : "challenge",
 		"affect" : preload("res://affects/challenges/ui/challenge_reminder.tscn")
 	},
+	"atrophy" : {
+		"script" : preload("res://affects/challenges/atrophy.gd"),
+		"type" : "challenge",
+		"affect" : preload("res://affects/challenges/ui/challenge_reminder.tscn")
+	},
+	"vulnerability" : {
+		"script" : preload("res://affects/challenges/vulnerability.gd"),
+		"type" : "challenge",
+		"affect" : preload("res://affects/challenges/ui/challenge_reminder.tscn")
+	},
 	#endregion
 	#region statuses
 	"burn" : {
