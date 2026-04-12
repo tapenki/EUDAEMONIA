@@ -273,7 +273,7 @@ msgid "doom_title"
 msgstr "[outline_color=#cc00cc]Notes: Doom[/outline_color]"
 
 msgid "doom_description"
-msgstr "Accumulates up to [outline_size=10][10xSTACKS][/outline_size] damage and deals [outline_size=10][0.5xACCUMULATED][/outline_size] pure damage after [outline_size=10][4][/outline_size] seconds."
+msgstr "Accumulates up to [outline_size=10][10xSTACKS][/outline_size] damage and deals [outline_size=10][0.4xACCUMULATED][/outline_size] pure damage after [outline_size=10][4][/outline_size] seconds."
 
 # fire
 msgid "fire_title"
@@ -353,13 +353,13 @@ msgid "blue_needle_title"
 msgstr "[outline_color=#0000ff]Ability: Blue Needle[/outline_color]"
 
 msgid "blue_needle_description"
-msgstr "Projectiles have [outline_size=10]+[LEVEL][/outline_size] pierce."
+msgstr "Projectiles have [outline_size=10]+[20xLEVEL]%[/outline_size] rollover chance to gain [br][outline_size=10]+[ROLLED][/outline_size] pierce."
 
 msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ability: Snowball[/outline_color]"
 
 msgid "snowball_description"
-msgstr "Projectiles gain [outline_size=10]+[4xLEVEL][/outline_size] damage and [outline_size=10]+[1-0.5^LEVEL][/outline_size] bonus size per second."
+msgstr "Projectiles gain [outline_size=10]+[3xLEVEL][/outline_size] damage and [outline_size=10]+[1-0.5^LEVEL][/outline_size] bonus size per second."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
@@ -377,7 +377,7 @@ msgid "cryobombs_title"
 msgstr "[outline_color=#0000ff]Ability: Cryobombs[/outline_color]"
 
 msgid "cryobombs_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They accumulate up to [outline_size=10][60xLEVEL][/outline_size] damage taken, and explode dealing [outline_size=10]+[0.5xACCUMULATED][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10][60xLEVEL][/outline_size] health, accumulate damage taken, and explode dealing [outline_size=10]+[0.4xACCUMULATED][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit or when destroyed."
 
 msgid "glacial_rail_title"
 msgstr "[outline_color=#0000ff]Mastery: Glacial Rail[/outline_color]"
@@ -389,7 +389,7 @@ msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]+[4xLEVEL]%[/outline_size] crit chance per second."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]+[3xLEVEL]%[/outline_size] crit chance per second."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
@@ -420,13 +420,13 @@ msgid "chain_bolt_title"
 msgstr "[outline_color=#a87e00]Ability: Chain Bolt[/outline_color]"
 
 msgid "chain_bolt_description"
-msgstr "You have [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][LEVEL][/outline_size] times."
+msgstr "You have [outline_size=10]+[5xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Damage chains to the closest enemy up to [outline_size=10][2][/outline_size] times."
 
 msgid "mortal_shock_title"
 msgstr "[outline_color=#a87e00]Ability: Mortal Shock[/outline_color]"
 
 msgid "mortal_shock_description"
-msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[3xLEVEL][/outline_size] damage on crit."
+msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] crit chance against undamaged enemies and [outline_size=10]+[2xLEVEL][/outline_size] damage on crit."
 
 msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
@@ -493,7 +493,7 @@ msgid "enrage_title"
 msgstr "[outline_color=#0f9936]Ability: Enrage[/outline_color]"
 
 msgid "enrage_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]+[0.05xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[3xLEVEL][/outline_size]."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]+[0.03xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[3xLEVEL][/outline_size]."
 
 msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
@@ -505,7 +505,7 @@ msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
 
 msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [100]px you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[LEVEL-1][/outline_size] pierce."
+msgstr "[outline_size=10]Every [100]px you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[5xLEVEL-5][/outline_size] damage."
 
 msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
@@ -853,7 +853,7 @@ msgid "damage_reward_title"
 msgstr "[outline_color=#00aa00]Reward: Damage[/outline_color]"
 
 msgid "damage_reward_description"
-msgstr "Gain +[outline_size=10][5][/outline_size] damage."
+msgstr "Gain +[outline_size=10][3][/outline_size] damage."
 
 msgid "qualia_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"

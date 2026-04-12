@@ -19,7 +19,7 @@ radius = 20.0
 [node name="BallLightning" type="Area2D" unique_id=2072656203 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("1_0owue")
 ability_relay = NodePath("AbilityRelay")
-hits_left = -1
+unlimited_hits = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1597376643]
 script = ExtResource("3_r00uu")

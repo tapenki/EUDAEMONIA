@@ -23,11 +23,6 @@ signal max_health_modifiers(modifiers: Dictionary)
 signal heal_modifiers(modifiers: Dictionary)
 signal healed(amount: float)
 
-## status signals
-signal status_level_modifiers(status_name: String, modifiers: Dictionary)
-signal status_applied(status: Node, levels: int)
-#signal update_status(status: Node)
-
 ## movement & speed signals
 signal speed_scale_modifiers(modifiers: Dictionary)
 signal move_speed_modifiers(modifiers: Dictionary)
@@ -59,6 +54,7 @@ signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ## misc signals
+signal hits_left_modifiers(modifiers: Dictionary)
 
 ### methods
 func _physics_process(_delta: float) -> void:
@@ -79,6 +75,11 @@ func get_health(health = owner.health, max_health = owner.max_health):
 	var final_max_health = modifiers["base"] * modifiers["multiplier"]
 	var final_health = final_max_health - max_health + health
 	return {"health" : final_health, "max_health" : final_max_health}
+
+func get_hits_left(hits_left = owner.hits_left):
+	var modifiers = {"base" : hits_left, "multiplier" : 1}
+	hits_left_modifiers.emit(modifiers)
+	return int(modifiers["base"] * modifiers["multiplier"])
 
 func get_immune_duration(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
 	immune_duration_modifiers.emit(modifiers)
@@ -154,14 +155,11 @@ func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" 
 
 func roll_chance(odds: Dictionary):
 	var final_chance = odds["base"] * odds["multiplier"]
-	var result = false
+	var result = floor(final_chance / 100)
 	var rolls = 1
 	for i in rolls:
-		if not result:
-			result = randi() % 100 < final_chance
-			if result:
-				break
-		else:
+		if randf() * 100 < fmod(final_chance, 100):
+			result += 1
 			break
 	return result
 

@@ -24,7 +24,7 @@ ability_relay = NodePath("AbilityRelay")
 hit_particles = ""
 crit_particles = ""
 hit_enabled = false
-hits_left = -1
+unlimited_hits = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=622851868]
 script = ExtResource("2_7j7ie")

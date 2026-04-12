@@ -4,12 +4,11 @@ var bomb = preload("res://paths/ice/cryobomb/cryobomb.tscn")
 var explosion_scene = preload("res://generic/projectiles/explosion.tscn")
 
 func apply(ability_relay, applicant_data):
-	if ability_relay.owner.scene_file_path == "res://paths/ice/cryobomb/cryobomb.tscn":
+	if applicant_data.has("cryobombs"):
 		applicant_data["bomb_primed"] = false
 		applicant_data["bomb_timer"] = 3
 		applicant_data["accumulated"] = 0
 		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
-		ability_relay.before_self_death.connect(before_self_death)
 		ability_relay.death_effects.connect(death_effects.bind(ability_relay))
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("accumulated"):
@@ -21,8 +20,6 @@ func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.damage_taken.is_connected(damage_taken):
 		ability_relay.damage_taken.disconnect(damage_taken)
-	if ability_relay.before_self_death.is_connected(before_self_death):
-		ability_relay.before_self_death.disconnect(before_self_death)
 	if ability_relay.death_effects.is_connected(death_effects):
 		ability_relay.death_effects.disconnect(death_effects)
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
@@ -48,11 +45,11 @@ func day_start(_day: int) -> void:
 			var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 			var summon_instance = applicant.make_summon(bomb, 
 			spawn_position,
-			{"subscription" = 2})  ## inheritance
+			{"subscription" = 2, "cryobombs" = true})  ## inheritance
 			for layer in range(1, 3):
 				summon_instance.set_collision_layer_value(layer, layer != applicant.owner.group)
 			
-			summon_instance.max_health = 40*level
+			summon_instance.max_health = 60*level
 			summon_instance.health = summon_instance.max_health
 			
 			summon_instance.apply_palette(applicant.owner.group, "tertiary")
@@ -60,13 +57,10 @@ func day_start(_day: int) -> void:
 			get_node("/root/Main").spawn_entity(summon_instance)
 
 func damage_taken(damage, ability_relay) -> void:
-	applicants[ability_relay]["accumulated"] = min(60*level, applicants[ability_relay]["accumulated"] + ability_relay.accumulate_damage(damage))
+	applicants[ability_relay]["accumulated"] = applicants[ability_relay]["accumulated"] + ability_relay.accumulate_damage(damage)
 	if not applicants[ability_relay]["bomb_primed"] and ability_relay.owner.alive:
 		applicants[ability_relay]["bomb_primed"] = true
 		ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
-
-func before_self_death(modifiers) -> void:
-	modifiers["soft_prevented"] = true
 
 func death_effects(ability_relay):
 	var explosion_instance = ability_relay.make_projectile(explosion_scene, 
@@ -78,6 +72,9 @@ func death_effects(ability_relay):
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)
 	get_node("/root/Main").play_sound("Explosion")
 
+func max_health_modifiers(modifiers) -> void:
+	modifiers["base"] += 60 * level
+
 func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
 	if applicants[ability_relay].has("accumulated"):
-		modifiers["base"] += 0.5 * applicants[ability_relay]["accumulated"]
+		modifiers["base"] += 0.4 * applicants[ability_relay]["accumulated"]

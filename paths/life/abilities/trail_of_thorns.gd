@@ -29,7 +29,6 @@ func spawn(spawn_position, ability_relay):
 	spawn_position, 
 	{"subscription" = 2},
 	Vector2())
-	bullet_instance.hits_left += level - 1
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)
 
 func movement(distance, ability_relay) -> void:
@@ -49,4 +48,4 @@ func movement(distance, ability_relay) -> void:
 			spawn(ability_relay.owner.global_position, ability_relay)
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
-	modifiers["base"] += 3 * level - 3
+	modifiers["base"] += 5 * level - 5

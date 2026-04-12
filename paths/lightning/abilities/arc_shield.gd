@@ -12,7 +12,5 @@ func disapply(ability_relay):
 		ability_relay.damage_taken_modifiers.disconnect(damage_taken_modifiers)
 
 func damage_taken_modifiers(damage, ability_relay) -> void:
-	var odds = {"base": 20, "multiplier": 1.0}
-	odds["crits"] = damage["crits"]
-	if ability_relay.roll_chance(odds):
+	if ability_relay.roll_chance({"base": 20, "multiplier": 1.0}):
 		damage["multiplier"] *= 0

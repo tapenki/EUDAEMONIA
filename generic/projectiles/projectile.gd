@@ -7,9 +7,9 @@ class_name Projectile extends Area2D
 
 @export var hit_delay: = 0.5
 @export var hit_enabled = true
-
 @export var hit_walls = false
 @export var hits_left = 1
+@export var unlimited_hits = false
 var velocity: Vector2
 
 @export var group: int
@@ -69,8 +69,10 @@ func on_collision(crits: int):
 
 func on_hit(crits):
 	on_collision(crits)
+	if unlimited_hits:
+		return
 	hits_left -= 1
-	if hits_left == 0:
+	if ability_relay.get_hits_left() == 0:
 		kill()
 
 func _on_lifetime_timeout() -> void:

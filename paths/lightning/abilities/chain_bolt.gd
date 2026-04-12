@@ -18,7 +18,7 @@ func crit_chance_modifiers(_entity, modifiers) -> void:
 	modifiers["base"] += 5 * level
 
 func damage_dealt(entity, damage, ability_relay) -> void:
-	var max_chains = level
+	var max_chains = 2#level
 	if chain.size() < max_chains and damage.get("crits", 0) > 0:
 		chain[entity] = true
 		var target = ability_relay.find_target(entity.global_position, 9999, chain)

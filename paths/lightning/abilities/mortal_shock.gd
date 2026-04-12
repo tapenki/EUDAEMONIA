@@ -18,4 +18,4 @@ func crit_chance_modifiers(entity, modifiers) -> void:
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	if modifiers.get("crits", 0) > 0:
-		modifiers["base"] += 3 * level
+		modifiers["base"] += 2 * level
