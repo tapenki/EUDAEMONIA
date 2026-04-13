@@ -17,8 +17,7 @@ radius = 80.0
 [node name="RingOfFire" type="Area2D" unique_id=959676471 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("1_f2ma2")
 ability_relay = NodePath("AbilityRelay")
-hit_particles = ""
-crit_particles = ""
+hit_particle_preset = ""
 unlimited_hits = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=842809720]

@@ -43,6 +43,7 @@ func write_run():
 		"upgrade_points" : get_node("/root/Main/UI").upgrade_points,
 		"paths" : get_node("/root/Main/UI").paths,
 		"abilities" : {},
+		"equipped_weapons" : get_node("/root/Main/PlayerAbilityHandler").equipped_weapons
 	}
 	for ability in get_node("/root/Main/PlayerAbilityHandler").get_children():
 		save_data["abilities"][ability.name] = ability.serialize()
@@ -74,6 +75,7 @@ func read_run():
 		#ability_node.deserialize(save_data["abilities"][ability])
 		#ability_node.name = ability
 		#get_node("/root/Main/Entities/Player/AbilityRelay").add_child(ability_node)
+	get_node("/root/Main/PlayerAbilityHandler").equipped_weapons = save_data["equipped_weapons"]
 	return true
 
 func _ready():

@@ -16,13 +16,17 @@ var path_data = {
 	"death" : {
 		"scene" : preload("res://paths/death/death_ui.tscn"),
 	},
+	"blade" : {
+		"scene" : preload("res://paths/blade/blade_ui.tscn"),
+	},
 }
 
 var ability_data = {
 	#region weapons
 	"magic_missile" : {
 		"script" : preload("res://affects/equipment/weapons/magic_missile/magic_missile.gd"),
-		"type" : "weapon"
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
 	},
 	#endregion
 	#region challenges
@@ -283,6 +287,12 @@ var ability_data = {
 	"bad_crop" : {
 		"script" : preload("res://paths/death/abilities/bad_crop.gd"),
 		"type" : "mastery"
+	},
+	#endregion
+	#region blade
+	"sword" : {
+		"script" : preload("res://paths/blade/sword/sword.gd"),
+		"type" : "weapon"
 	},
 	#endregion
 	#region misc

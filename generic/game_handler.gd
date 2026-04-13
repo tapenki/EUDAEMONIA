@@ -220,18 +220,6 @@ func play_sound(sound: String, pitch_scale = randf_range(0.9, 1.1)):
 	node.pitch_scale = pitch_scale
 	node.play()
 
-func spawn_particles(particle_instance: GPUParticles2D, count: int, position: Vector2, scale: float = 1, color: Color = Color.WHITE):
-	for i in count:
-		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, position), Vector2(), color, Color(), 11)
-
-func particle_beam(particle_instance: GPUParticles2D, start: Vector2, end: Vector2, spacing: int = 32, scale: float = 1, color: Color = Color.WHITE):
-	var distance = start.distance_to(end)
-	var delta = 0
-	while delta < distance:
-		delta += spacing
-		particle_instance.emit_particle(Transform2D(0, Vector2(scale, scale), 0, start.move_toward(end, delta)), Vector2(), color, Color(), 11)
-	return particle_instance
-
 @onready var floating_text_scene = preload("res://generic/misc/floating_text.tscn")
 func floating_text(text_position: Vector2, text: String, color: Color):
 	if not Config.config.get_value("gameplay", "damage_numbers"):

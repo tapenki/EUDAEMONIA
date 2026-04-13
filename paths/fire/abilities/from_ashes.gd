@@ -40,9 +40,19 @@ func before_self_death(modifiers, ability_relay) -> void:
 				status.apply(target.ability_relay, {"stacks" = level})
 				if status.applicants.has(target.ability_relay):
 					status.applicants[target.ability_relay]["stacks"] *= 2
-			get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Fire"), 16, ability_relay.global_position, 4, Config.get_team_color(ability_relay.owner.group, "secondary"))
+			get_node("/root/Main/ParticleHandler").quick_particles("burst", 
+			preload("res://paths/fire/flame.png"),
+			ability_relay.global_position,
+			4,
+			16,
+			Config.get_team_color(ability_relay.owner.group, "secondary"))
 		else:
-			get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Fire"), 16, ability_relay.global_position, 2, Config.get_team_color(ability_relay.owner.group, "secondary"))
+			get_node("/root/Main/ParticleHandler").quick_particles("burst", 
+			preload("res://paths/fire/flame.png"),
+			ability_relay.global_position,
+			2,
+			16,
+			Config.get_team_color(ability_relay.owner.group, "secondary"))
 
 func day_start(_day: int) -> void:
 	for ability_relay in applicants:

@@ -6,7 +6,7 @@ class_name Entity extends CharacterBody2D
 @export var death_sound = "DeathLight"
 @export var hurtbox: Hurtbox
 @export var animation_player: AnimationPlayer
-@export_category("stats")
+@export_category("Stats")
 @export var max_health: int = 100
 @export var health: float = 100
 
@@ -14,7 +14,7 @@ var immune_timer = ScaledTimer.new()
 @export var immune_duration: float = 0
 #var knockback_timer = ScaledTimer.new()
 #@export var knockback_affect: float = 1.0
-@export_category("tags")
+@export_category("Tags")
 @export var group: int
 @export var summoned: bool
 @export var unchaseable: bool

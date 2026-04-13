@@ -1,9 +1,13 @@
 class_name Projectile extends Area2D
 
 @export var ability_relay: Node2D
+@export_category("Hit Effects")
 @export var hit_sound = "HitLight"
-@export var hit_particles: String = "Impact"
-@export var crit_particles: String = "Zap"
+@export var hit_particle_preset: String = "impact"
+@export var hit_particle_texture: Texture = preload("res://generic/particles/bullet.png")
+@export var crit_particle_texture: Texture = preload("res://paths/statuses/shock/shock.png")
+@export var hit_particle_scale: float = 1.0
+@export var hit_particle_count: int = 4
 
 @export var hit_delay: = 0.5
 @export var hit_enabled = true
@@ -11,7 +15,7 @@ class_name Projectile extends Area2D
 @export var hits_left = 1
 @export var unlimited_hits = false
 var velocity: Vector2
-
+@export_category("Tags")
 @export var group: int
 
 var alive = true
@@ -60,10 +64,20 @@ func movement(new_position):
 	ability_relay.movement.emit(old_position.distance_to(global_position))
 
 func on_collision(crits: int):
-	if hit_particles:
-		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + hit_particles), 4, global_position, scale.x, get_node("Sprite").self_modulate)
-	if crits > 0 and crit_particles:
-		get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + crit_particles), 4, global_position, scale.x, get_node("Sprite").self_modulate)
+	if hit_particle_preset != "":
+		if crits > 0:
+			get_node("/root/Main/ParticleHandler").quick_particles(hit_particle_preset, 
+			crit_particle_texture,
+			global_position,
+			hit_particle_scale,
+			hit_particle_count,
+			get_node("Sprite").self_modulate)
+		get_node("/root/Main/ParticleHandler").quick_particles(hit_particle_preset, 
+		hit_particle_texture,
+		global_position,
+		hit_particle_scale,
+		hit_particle_count,
+		get_node("Sprite").self_modulate)
 	if hit_sound:
 		get_node("/root/Main").play_sound(hit_sound)
 

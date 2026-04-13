@@ -21,8 +21,7 @@ collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_ry3wi")
 ability_relay = NodePath("AbilityRelay")
-hit_particles = ""
-crit_particles = ""
+hit_particle_preset = ""
 hit_enabled = false
 unlimited_hits = true
 

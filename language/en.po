@@ -179,7 +179,7 @@ msgstr "Selected"
 # weapons
 
 msgid "magic_missile_title"
-msgstr "[outline_color=#BF4040]Weapon: Magic Missile[/outline_color]"
+msgstr "[outline_size=10]Weapon: Magic Missile[/outline_size]"
 
 msgid "magic_missile_description"
 msgstr "Cooldown: [outline_size=10][0.35][/outline_size] seconds.[br]Completely unremarkable."
@@ -615,6 +615,20 @@ msgstr "[outline_color=#cc00cc]Mastery: Bad Crop[/outline_color]"
 
 msgid "bad_crop_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Dark Harvest[/outline_color][br][outline_color=#cc00cc]Dark Harvest[/outline_color] explosion applies [outline_size=10][0.05xALLYMAXHP][/outline_size] doom."
+
+# blade
+
+msgid "blade_title"
+msgstr "[outline_color=#5B6487]Blade[/outline_color]"
+
+msgid "blade_description"
+msgstr "- Have a stab at it."
+
+msgid "sword_title"
+msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
+
+msgid "sword_description"
+msgstr "Cut."
 
 # spheres
 msgid "day_counter"

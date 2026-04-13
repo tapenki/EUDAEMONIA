@@ -1,43 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://xavq6u15l5sw"]
+[gd_scene format=3 uid="uid://xavq6u15l5sw"]
 
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="1_infvu"]
 [ext_resource type="Texture2D" uid="uid://bxijlb14fyxl3" path="res://generic/particles/bullet.png" id="2_qvaty"]
-[ext_resource type="Shader" uid="uid://drjpyynjqtv52" path="res://shaders/aligned_particle_shader.gdshader" id="3_hnl0o"]
 
-[sub_resource type="Curve" id="Curve_mtknr"]
-_limits = [0.0, 0.7, 0.0, 1.0]
-_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_pxslp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_hnl0o"]
-curve = SubResource("Curve_mtknr")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_074og"]
-shader = ExtResource("3_hnl0o")
-shader_parameter/direction = Vector3(0, 0, 0)
-shader_parameter/spread = 180.0
-shader_parameter/initial_linear_velocity_min = 45.0
-shader_parameter/initial_linear_velocity_max = 60.0
-shader_parameter/directional_velocity_min = 0.0
-shader_parameter/directional_velocity_max = 0.0
-shader_parameter/linear_accel_min = 0.0
-shader_parameter/linear_accel_max = 0.0
-shader_parameter/damping_min = 0.0
-shader_parameter/damping_max = 0.0
-shader_parameter/scale_min = 1.0
-shader_parameter/scale_max = 1.0
-shader_parameter/lifetime_randomness = 0.0
-shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
-shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
-shader_parameter/scale_curve = SubResource("CurveTexture_hnl0o")
-
-[node name="Impact" type="GPUParticles2D"]
+[node name="Impact" type="CPUParticles2D" unique_id=54658223]
 z_index = 2
 material = ExtResource("1_infvu")
 emitting = false
-amount = 128
 texture = ExtResource("2_qvaty")
 lifetime = 0.32
-visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
-draw_order = 0
-process_material = SubResource("ShaderMaterial_074og")
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 45.0
+initial_velocity_max = 60.0
+scale_amount_curve = SubResource("Curve_pxslp")

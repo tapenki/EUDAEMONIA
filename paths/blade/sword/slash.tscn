@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://smie5aehcryo"]
+
+[ext_resource type="Script" uid="uid://dxg5jfemwi37q" path="res://paths/blade/sword/slash.gd" id="1_0v0s7"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_k58d1"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4eko8"]
+[ext_resource type="Texture2D" uid="uid://c0yfujykhsgbk" path="res://paths/blade/sword/slash.png" id="4_0v0s7"]
+[ext_resource type="Script" uid="uid://qqxul163tjne" path="res://generic/projectiles/velocity_direction.gd" id="5_dffyn"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_rm655"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_o7rr0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0v0s7"]
+radius = 32.0
+
+[node name="Slash" type="Area2D" unique_id=1235810907 node_paths=PackedStringArray("ability_relay")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_0v0s7")
+ability_relay = NodePath("AbilityRelay")
+hit_particle_preset = ""
+hit_walls = true
+unlimited_hits = true
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1638014074]
+script = ExtResource("2_k58d1")
+is_projectile = true
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=233347566]
+material = ExtResource("3_4eko8")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_0v0s7")
+script = ExtResource("5_dffyn")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1719824022]
+z_index = -3
+scale = Vector2(2, 2)
+texture = ExtResource("6_rm655")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1531420590]
+shape = SubResource("CircleShape2D_0v0s7")
+
+[node name="Lifetime" type="Node" parent="." unique_id=1431600111 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("7_o7rr0")
+wait_time = 0.3
+running = true
+ability_relay = NodePath("../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

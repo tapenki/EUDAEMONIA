@@ -2,7 +2,12 @@ extends Node
 
 var subscribers: Dictionary
 
+var equipped_weapons = ["magic_missile"]
+var default_weapon = "magic_missile"
+
 signal ability_added()
+
+signal weapons_changed()
 
 func _ready() -> void:
 	subscribe(get_node("/root/Main/Entities/Player/AbilityRelay"), {"subscription" = 5})
@@ -12,7 +17,7 @@ func subscribe(ability_relay, subscription_data):
 	ability_relay.freed.connect(unsubscribe.bind(ability_relay))
 	subscribers[ability_relay] = subscription_data.duplicate()
 	for ability_node in get_children():
-		ability_node.apply(ability_relay, subscription_data)
+		ability_node.apply(ability_relay, subscribers[ability_relay].duplicate())
 
 func unsubscribe(ability_relay):
 	subscribers.erase(ability_relay)
@@ -31,7 +36,21 @@ func learn(ability, levels = 1):
 		ability_node.name = ability
 		add_child(ability_node)
 		for i in subscribers.keys():
-			ability_node.apply(i, subscribers[i])
+			ability_node.apply(i, subscribers[i].duplicate())
 		ability_added.emit(ability)
 	get_node("/root/Main/UI").update_abilities.emit()
 	return ability_node
+
+func equip_weapon(weapon):
+	if equipped_weapons.size() > 0:
+		equipped_weapons.remove_at(0)
+	if not has_node(weapon):
+		learn(weapon)
+	equipped_weapons.append(weapon)
+	weapons_changed.emit()
+
+func unequip_weapon(weapon):
+	equipped_weapons.erase(weapon)
+	if equipped_weapons.size() == 0 and weapon != default_weapon:
+		equipped_weapons.append(default_weapon)
+	weapons_changed.emit()

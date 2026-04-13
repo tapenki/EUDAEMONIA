@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/life/green.png" id="6_j1tjt"]
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="7_bj4g6"]
 [ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/death/black.png" id="8_vx3qw"]
+[ext_resource type="Texture2D" uid="uid://cwh4efrqwbb54" path="res://paths/blade/blade.png" id="9_dhhy1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wf76l"]
 resource_local_to_scene = true
@@ -102,3 +103,8 @@ subject = "life"
 layout_mode = 2
 texture_normal = ExtResource("8_vx3qw")
 subject = "death"
+
+[node name="Blade" parent="Paths2" unique_id=850521461 instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("9_dhhy1")
+subject = "blade"

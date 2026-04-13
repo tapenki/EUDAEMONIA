@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://dlfcirk10jsk6"]
+
+[ext_resource type="Texture2D" uid="uid://cwh4efrqwbb54" path="res://paths/blade/blade.png" id="1_qr8k3"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_1ue8r"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_q7nao"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3eh07"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_w077r"]
+[ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="6_yr0g6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yr0g6"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[node name="Blade" type="Control" unique_id=2118698369]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
+mouse_filter = 2
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=400382669]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qr8k3")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=510287080]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 2.0
+offset_right = 62.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_1ue8r")
+bbcode_enabled = true
+text = "blade_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("3_q7nao")
+subject = "blade"
+
+[node name="Abilities1" type="HBoxContainer" parent="." unique_id=2092258762]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Snowball" parent="Abilities1" unique_id=452593380 instance=ExtResource("4_3eh07")]
+layout_mode = 2
+texture_normal = ExtResource("1_qr8k3")
+subject = "snowball"
+
+[node name="Shatter" parent="Abilities1" unique_id=1440218836 instance=ExtResource("4_3eh07")]
+layout_mode = 2
+texture_normal = ExtResource("1_qr8k3")
+subject = "shatter"
+
+[node name="Frostbite" parent="Abilities1" unique_id=755603844 instance=ExtResource("4_3eh07")]
+layout_mode = 2
+texture_normal = ExtResource("1_qr8k3")
+subject = "frostbite"
+extras = ["chill"]
+
+[node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291390336]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 94.0
+offset_right = 112.5
+offset_bottom = 154.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="BlueNeedle" parent="Abilities2" unique_id=244962004 instance=ExtResource("4_3eh07")]
+layout_mode = 2
+texture_normal = ExtResource("1_qr8k3")
+subject = "blue_needle"
+
+[node name="Cryobombs" parent="Abilities2" unique_id=1950595630 instance=ExtResource("4_3eh07")]
+layout_mode = 2
+texture_normal = ExtResource("1_qr8k3")
+subject = "cryobombs"
+
+[node name="Masteries1" type="HBoxContainer" parent="." unique_id=2131887875]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 162.0
+offset_right = 112.5
+offset_bottom = 222.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="SnowballII" parent="Masteries1" unique_id=664334916 instance=ExtResource("5_w077r")]
+layout_mode = 2
+accessible_texture = ExtResource("1_qr8k3")
+requires = {
+"snowball": 5
+}
+subject = "snowball_ii"
+
+[node name="BrittleCold" parent="Masteries1" unique_id=1593561668 instance=ExtResource("5_w077r")]
+layout_mode = 2
+accessible_texture = ExtResource("1_qr8k3")
+requires = {
+"shatter": 5
+}
+subject = "brittle_cold"
+
+[node name="SnapFreeze" parent="Masteries1" unique_id=2138347233 instance=ExtResource("5_w077r")]
+layout_mode = 2
+accessible_texture = ExtResource("1_qr8k3")
+requires = {
+"frostbite": 5
+}
+subject = "snap_freeze"
+extras = ["freeze"]
+
+[node name="Sword" parent="." unique_id=786159629 instance=ExtResource("6_yr0g6")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 226.0
+offset_right = 174.0
+offset_bottom = 286.0
+subject = "sword"
+
+[node name="TextureRect1" parent="Sword" index="0" unique_id=1837236885]
+texture = ExtResource("1_qr8k3")
+
+[node name="TextureRect2" parent="Sword" index="1" unique_id=519565613]
+texture = ExtResource("1_qr8k3")
+
+[node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
+label_settings = SubResource("LabelSettings_yr0g6")
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
+
+[editable path="Sword"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bmqfb01e1pny7" path="res://ui/ui.tscn" id="2_kek77"]
+[ext_resource type="Script" uid="uid://cecf78idmwirj" path="res://particle_handler.gd" id="2_wt57k"]
 [ext_resource type="Script" uid="uid://nwqubmmn511u" path="res://generic/abilities/ability_handler.gd" id="4_vn0ol"]
 [ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="5_dg77c"]
 [ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="9_efxa6"]
@@ -163,6 +164,9 @@ shader_parameter/scale_curve = SubResource("CurveTexture_1u8w0")
 [node name="Main" type="Node2D" unique_id=1403718385]
 process_mode = 1
 script = ExtResource("1_5vw27")
+
+[node name="ParticleHandler" type="Node" parent="." unique_id=1842861166]
+script = ExtResource("2_wt57k")
 
 [node name="Saver" type="Node" parent="." unique_id=1606122259]
 script = ExtResource("21_getpj")

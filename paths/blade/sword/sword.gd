@@ -1,7 +1,7 @@
 extends Weapon
 
-var bullet = preload("res://generic/projectiles/bullet.tscn")
-const wait_time = 0.35
+var bullet = preload("res://paths/blade/sword/slash.tscn")
+const wait_time = 0.5
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription") and applicant_data["subscription"] < 4:
@@ -26,11 +26,12 @@ func attack(direction, ability_relay):
 	if applicants[ability_relay]["time"] <= 0:
 		fire(direction, ability_relay)
 		applicants[ability_relay]["time"] = wait_time
+		
 
 func fire(direction, ability_relay):
 	var bullet_instance = ability_relay.make_projectile(bullet, 
 	ability_relay.global_position + direction * 25, 
 	{"subscription" = 2},
-	direction * 600)
+	direction * 1200)
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)
-	get_node("/root/Main").play_sound("ShootLight")
+	get_node("/root/Main").play_sound("Explosion")

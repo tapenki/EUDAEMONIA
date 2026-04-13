@@ -24,7 +24,18 @@ func damage_dealt(entity, damage, ability_relay) -> void:
 		var target = ability_relay.find_target(entity.global_position, 9999, chain)
 		if target:
 			ability_relay.deal_damage(target, {"base" : 0, "multiplier" : 1, "direction" : entity.global_position.direction_to(target.global_position)})
-			var particle_scale = 1.2#ability_relay.get_attack_scale()
-			get_node("/root/Main").particle_beam(get_node("/root/Main/Particles/Zap"), entity.global_position, target.global_position, 48, particle_scale, Config.get_team_color(ability_relay.owner.group, "secondary"))
-			get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/Zap"), 4, target.global_position, particle_scale, Config.get_team_color(ability_relay.owner.group, "secondary"))
+			var particle_scale = 1#1.2#ability_relay.get_attack_scale()
+			get_node("/root/Main/ParticleHandler").particle_beam("common", 
+			preload("res://paths/lightning/zap.png"),
+			entity.global_position,
+			target.global_position,
+			particle_scale,
+			32,
+			Config.get_team_color(ability_relay.owner.group, "secondary"))
+			get_node("/root/Main/ParticleHandler").quick_particles("impact", 
+			preload("res://paths/lightning/zap.png"),
+			target.global_position,
+			particle_scale,
+			4,
+			Config.get_team_color(ability_relay.owner.group, "secondary"))
 	chain.clear()

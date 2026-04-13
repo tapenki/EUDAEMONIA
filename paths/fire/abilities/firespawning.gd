@@ -50,7 +50,13 @@ func death_effects(ability_relay):
 	var reach = 150 * attack_scale
 	for entity in ability_relay.area_targets(ability_relay.global_position, reach):
 		status.apply(entity.ability_relay, {"stacks" = 4 * level})
-		get_node("/root/Main").particle_beam(get_node("/root/Main/Particles/Firebeam"), ability_relay.global_position, entity.global_position, 32, 1, Config.get_team_color(ability_relay.owner.group, "secondary"))
+		get_node("/root/Main/ParticleHandler").particle_beam("common", 
+		preload("res://paths/fire/flame.png"),
+		ability_relay.global_position,
+		entity.global_position,
+		1.0,
+		32,
+		Config.get_team_color(ability_relay.owner.group, "secondary"))
 	if undying_flames:
 		for applicant in applicants:
 			if applicants[applicant].has("subscription") and applicants[applicant]["subscription"] < 5:

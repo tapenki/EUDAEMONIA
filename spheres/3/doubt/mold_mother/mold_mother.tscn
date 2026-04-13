@@ -193,7 +193,7 @@ process_mode = 4
 script = ExtResource("8_j48gv")
 summon = ExtResource("9_5chnv")
 summon_health = 0.1
-max_summons = 4
+max_summons = 3
 next = NodePath("../Moldwalk")
 
 [node name="Moldwalk" type="Node" parent="StateHandler" unique_id=701511880 node_paths=PackedStringArray("next")]

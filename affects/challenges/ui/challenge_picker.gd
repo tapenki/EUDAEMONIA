@@ -2,29 +2,29 @@ extends Described
 
 @onready var symbol_label: = $"Symbol"
 
-var accessible: bool
+#var accessible: bool
 
 var selected: bool
 
 func _ready() -> void:
 	if get_node("/root/Main/Saver").tutorial_complete:
 		symbol_label.text = subject.substr(0, 2).capitalize()
-		accessible = true
+		#accessible = true
 		if ui.challenges.has(subject):
 			selected = true
 			self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE
 			tag = "selected"
 
-func _on_mouse_entered() -> void:
-	if not accessible:
-		return
-	super()
+#func _on_mouse_entered() -> void:
+	#if not accessible:
+		#return
+	#super()
 
 func _on_pressed() -> void:
-	if not accessible:
-		get_node("/root/Main").play_sound("Error")
-		return
+	#if not accessible:
+		#get_node("/root/Main").play_sound("Error")
+		#return
 	get_node("/root/Main").play_sound("Click")
 	if selected:
 		selected = false

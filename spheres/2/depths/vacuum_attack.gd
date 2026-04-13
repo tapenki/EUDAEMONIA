@@ -26,12 +26,13 @@ func _physics_process(delta):
 			{"subscription" = 2})
 			bullet_instance.target = user
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
-			if bullet_instance.hit_particles:
-				get_node("/root/Main").spawn_particles(get_node("/root/Main/Particles/" + bullet_instance.hit_particles), 
-					4, 
-					bullet_instance.global_position, 
-					bullet_instance.scale.x, 
-					bullet_instance.get_node("Sprite").self_modulate)
+			if bullet_instance.hit_particle_preset != "":
+				get_node("/root/Main/ParticleHandler").quick_particles(bullet_instance.hit_particle_preset, 
+				bullet_instance.hit_particle_texture,
+				bullet_instance.global_position,
+				bullet_instance.hit_particle_scale,
+				bullet_instance.hit_particle_count,
+				bullet_instance.get_node("Sprite").self_modulate)
 		get_node("/root/Main").play_sound("ShootLight")
 
 func _on_timer_timeout() -> void:

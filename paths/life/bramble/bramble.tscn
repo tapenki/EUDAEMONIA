@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbe5ffkla7aw"]
 
-[ext_resource type="Script" uid="uid://cp58ndweda070" path="res://paths/life/bramble/bramble.gd" id="1_c1qbk"]
+[ext_resource type="Script" uid="uid://wgm1krpiavay" path="res://generic/projectiles/projectile.gd" id="1_oahip"]
+[ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="2_fqisw"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_oahip"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_fqisw"]
 [ext_resource type="Texture2D" uid="uid://dnbbqhbxt3tif" path="res://affects/equipment/weapons/star_blaze/star_bomb.png" id="4_0epdr"]
@@ -21,10 +22,12 @@ radius = 20.0
 z_index = 1
 collision_layer = 0
 collision_mask = 128
-script = ExtResource("1_c1qbk")
+script = ExtResource("1_oahip")
 ability_relay = NodePath("AbilityRelay")
 hit_sound = "HurtLight"
-hit_particles = "Quills"
+hit_particle_preset = "burst"
+hit_particle_texture = ExtResource("2_fqisw")
+hit_particle_count = 12
 hit_walls = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=312084464]

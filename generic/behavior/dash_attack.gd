@@ -47,7 +47,6 @@ func _physics_process(_delta):
 			if round(collision.get_normal().x) != stick_normal.x or round(collision.get_normal().y) != stick_normal.y:
 				stick = false
 		if not stick:
-			#get_node("/root/Main").spawn_particles("Impact", user.global_position, user.scale.x * 1.5, user.get_node("Sprite").modulate)
 			_on_timer_timeout()
 	elif stick:
 		user.wall_min_slide_angle = 180
