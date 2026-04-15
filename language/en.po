@@ -93,7 +93,7 @@ msgid "stats_title"
 msgstr "[outline_size=10]Base Stats[/outline_size]"
 
 msgid "stats_description"
-msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[320][/outline_size].""
+msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[300][/outline_size].""
 
 msgid "defeated"
 msgstr "died :("
@@ -182,7 +182,7 @@ msgid "magic_missile_title"
 msgstr "[outline_size=10]Weapon: Magic Missile[/outline_size]"
 
 msgid "magic_missile_description"
-msgstr "Cooldown: [outline_size=10][0.35][/outline_size] seconds.[br]Completely unremarkable."
+msgstr "Attack: Launch a missile every [outline_size=10][0.35][/outline_size] seconds."
 
 msgid "star_blaze_title"
 msgstr "[outline_color=#BF4040]Weapon: Star Blaze[/outline_color]"
@@ -255,13 +255,13 @@ msgid "chill_title"
 msgstr "[outline_color=#0000ff]Notes: Chill[/outline_color]"
 
 msgid "chill_description"
-msgstr "Reduces speed to [outline_size=10]x[0.5][/outline_size]."
+msgstr "Reduces action speed to [outline_size=10]x[0.5][/outline_size]."
 
 msgid "freeze_title"
 msgstr "[outline_color=#0000ff]Notes: Freeze[/outline_color]"
 
 msgid "freeze_description"
-msgstr "Reduces speed to [outline_size=10]x[0][/outline_size]."
+msgstr "Reduces action speed to [outline_size=10]x[0][/outline_size]."
 
 msgid "shock_title"
 msgstr "[outline_color=#a87e00]Notes: Shock[/outline_color]"
@@ -304,7 +304,7 @@ msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -359,7 +359,7 @@ msgid "snowball_title"
 msgstr "[outline_color=#0000ff]Ability: Snowball[/outline_color]"
 
 msgid "snowball_description"
-msgstr "Projectiles gain [outline_size=10]+[3xLEVEL][/outline_size] damage and [outline_size=10]+[1-0.5^LEVEL][/outline_size] bonus size per second."
+msgstr "Projectiles gain [outline_size=10]+[3xLEVEL][/outline_size] damage and [outline_size=10]+[50]%[/outline_size] size per second."
 
 msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
@@ -480,7 +480,7 @@ msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
-msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[2][/outline_size] damage and [outline_size=10]x[1.5][/outline_size] damage accumulated on crit."
+msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[1.5][/outline_size] damage and [outline_size=10]x[1.5][/outline_size] damage accumulated on crit."
 
 # life
 msgid "life_title"
@@ -511,7 +511,7 @@ msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]x[2][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]x[2][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
@@ -584,7 +584,7 @@ msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]x[2][/outline_size] of its damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]x[2][/outline_size] of its damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "soul_tether_title"
 msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"
@@ -628,7 +628,7 @@ msgid "sword_title"
 msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
 
 msgid "sword_description"
-msgstr "Cut."
+msgstr "Attack: Perform a slash every [outline_size=10][0.5][/outline_size] seconds. Slashes have limited range and [outline_size=10]+[1][/outline_size] pierce."
 
 # spheres
 msgid "day_counter"
@@ -867,7 +867,7 @@ msgid "damage_reward_title"
 msgstr "[outline_color=#00aa00]Reward: Damage[/outline_color]"
 
 msgid "damage_reward_description"
-msgstr "Gain +[outline_size=10][3][/outline_size] damage."
+msgstr "Gain +[outline_size=10][5][/outline_size] damage."
 
 msgid "qualia_reward_title"
 msgstr "[outline_color=#0066dd]Reward: +[1] Qualia[/outline_color]"

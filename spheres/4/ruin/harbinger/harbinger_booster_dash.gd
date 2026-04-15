@@ -13,18 +13,18 @@ var bullet_counter: float
 
 var stick_normal: Vector2
 var stick: bool
-var direction: Vector2
 
 func on_enter() -> void:
 	super()
+	user.velocity = Vector2()
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_relay.find_target()
-	
-	user.velocity = Vector2()
 	if is_instance_valid(state_handler.target):
-		direction = user.global_position.direction_to(state_handler.target.global_position)
+		#var time_to_hit = user.global_position.distance_to(state_handler.target.global_position) / speed
+		#var predicted_position = state_handler.target.global_position + state_handler.target.velocity * 0.3 * time_to_hit
+		state_handler.data["direction"] = user.global_position.direction_to(state_handler.target.global_position)#user.global_position.direction_to(predicted_position)
 	else:
-		direction = Vector2.from_angle(randf()*TAU)
+		state_handler.data["direction"] = Vector2.from_angle(randf()*TAU)
 	
 	if sound != "":
 		get_node("/root/Main").play_sound(sound)
@@ -43,7 +43,7 @@ func on_enter() -> void:
 
 func _physics_process(delta):
 	var final_speed = user.ability_relay.get_move_speed(speed)
-	user.velocity = lerp(user.velocity, direction * final_speed, 0.2)
+	user.velocity = lerp(user.velocity, state_handler.data["direction"] * final_speed, 0.2)
 	user.still = false
 	if user.is_on_wall():
 		for i in user.get_slide_collision_count():
@@ -62,7 +62,7 @@ func _physics_process(delta):
 			var bullet_instance = user.ability_relay.make_projectile(bullet, 
 			user.global_position, 
 			{"subscription" = 2},
-			direction.rotated(randf_range(-1, 1)) * -250 * randf_range(1, 2))
+			state_handler.data["direction"].rotated(randf_range(-1, 1)) * -250 * randf_range(1, 2))
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)
 		get_node("/root/Main").play_sound("ShootLight")
 

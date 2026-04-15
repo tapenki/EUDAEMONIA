@@ -3,16 +3,11 @@ extends Node2D
 @export var ability_relay: Node
 
 var bullet = preload("res://generic/projectiles/bullet.tscn")
-var splosion = preload("res://generic/projectiles/explosion.tscn")
 
 func _ready() -> void:
 	ability_relay.death_effects.connect(death_effects)
 
 func death_effects() -> void:
-	var splosion_instance = ability_relay.make_projectile(splosion, 
-	global_position, 
-	{"subscription" = 2})
-	get_node("/root/Main/Projectiles").add_child(splosion_instance)
 	var bullet_count = 3
 	var direction = ability_relay.owner.velocity.normalized() * -1
 	var stepsize = deg_to_rad(120) / (bullet_count - 1)

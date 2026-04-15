@@ -82,7 +82,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_14oqu"]
 resource_name = "WINDUP"
-length = 0.3
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,8 +90,8 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 0.5),
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
 }
@@ -128,7 +128,7 @@ initial_state = NodePath("CloseIn")
 process_mode = 4
 script = ExtResource("4_8bhlb")
 speed = 300
-distance_margin = 160
+distance_margin = 150
 shapecast_radius = 20
 next = NodePath("../PrepareAttack")
 
@@ -140,7 +140,7 @@ next = NodePath("../DashAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=1856549923 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_33os3")
-wait_time = 0.2
+wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -154,7 +154,7 @@ next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=1048063217 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_33os3")
-wait_time = 0.5
+wait_time = 0.6
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -165,7 +165,7 @@ next = NodePath("../CloseIn")
 
 [node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=1533322686 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_33os3")
-wait_time = 0.2
+wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

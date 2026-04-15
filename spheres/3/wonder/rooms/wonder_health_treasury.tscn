@@ -116,7 +116,7 @@ tag = "travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1980795606 instance=ExtResource("6_e2ett")]
 reward = ExtResource("7_od63u")
-quantity = 4
+quantity = 5
 
 [node name="QualiaRewardGiver" parent="." unique_id=988520030 instance=ExtResource("6_e2ett")]
 reward = ExtResource("8_psp0f")

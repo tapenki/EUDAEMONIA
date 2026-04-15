@@ -72,21 +72,20 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Snowball" parent="Abilities1" unique_id=452593380 instance=ExtResource("4_3eh07")]
+[node name="Cadence" parent="Abilities1" unique_id=452593380 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
-subject = "snowball"
+subject = "cadence"
 
-[node name="Shatter" parent="Abilities1" unique_id=1440218836 instance=ExtResource("4_3eh07")]
+[node name="BroadSwings" parent="Abilities1" unique_id=1440218836 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
-subject = "shatter"
+subject = "broad_swings"
 
-[node name="Frostbite" parent="Abilities1" unique_id=755603844 instance=ExtResource("4_3eh07")]
+[node name="Block" parent="Abilities1" unique_id=755603844 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
-subject = "frostbite"
-extras = ["chill"]
+subject = "block"
 
 [node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291390336]
 layout_mode = 1
@@ -100,15 +99,15 @@ offset_bottom = 154.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="BlueNeedle" parent="Abilities2" unique_id=244962004 instance=ExtResource("4_3eh07")]
+[node name="Deflect" parent="Abilities2" unique_id=244962004 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
-subject = "blue_needle"
+subject = "deflect"
 
-[node name="Cryobombs" parent="Abilities2" unique_id=1950595630 instance=ExtResource("4_3eh07")]
+[node name="Unsheathe" parent="Abilities2" unique_id=1950595630 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
-subject = "cryobombs"
+subject = "unsheathe"
 
 [node name="Masteries1" type="HBoxContainer" parent="." unique_id=2131887875]
 layout_direction = 2
@@ -131,22 +130,22 @@ requires = {
 }
 subject = "snowball_ii"
 
-[node name="BrittleCold" parent="Masteries1" unique_id=1593561668 instance=ExtResource("5_w077r")]
+[node name="CutDown" parent="Masteries1" unique_id=1593561668 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
-"shatter": 5
+"broad_swings": 5
 }
-subject = "brittle_cold"
+subject = "cut_down"
 
-[node name="SnapFreeze" parent="Masteries1" unique_id=2138347233 instance=ExtResource("5_w077r")]
+[node name="Percussion" parent="Masteries1" unique_id=2138347233 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
-"frostbite": 5
+"block": 5
 }
-subject = "snap_freeze"
-extras = ["freeze"]
+subject = "percussion"
+extras = ["shock"]
 
 [node name="Sword" parent="." unique_id=786159629 instance=ExtResource("6_yr0g6")]
 layout_mode = 0

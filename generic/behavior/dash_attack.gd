@@ -5,22 +5,26 @@ extends State
 @export var speed: int
 @export var sound = "Leap"
 
+@export var recalc_direction = true
+#@export var prediction = 0.3
+
 @export var next: State
 
 var stick_normal: Vector2
 var stick: bool
-var direction: Vector2
 
 func on_enter() -> void:
 	super()
-	if not is_instance_valid(state_handler.target):
-		state_handler.target = user.ability_relay.find_target()
-	
 	user.velocity = Vector2()
-	if is_instance_valid(state_handler.target):
-		direction = user.global_position.direction_to(state_handler.target.global_position)
-	else:
-		direction = Vector2.from_angle(randf()*TAU)
+	if recalc_direction:
+		if not is_instance_valid(state_handler.target):
+			state_handler.target = user.ability_relay.find_target()
+		if is_instance_valid(state_handler.target):
+			#var time_to_hit = user.global_position.distance_to(state_handler.target.global_position) / speed
+			#var predicted_position = state_handler.target.global_position + state_handler.target.velocity * prediction * time_to_hit
+			state_handler.data["direction"] = user.global_position.direction_to(state_handler.target.global_position)#user.global_position.direction_to(predicted_position)
+		else:
+			state_handler.data["direction"] = Vector2.from_angle(randf()*TAU)
 	
 	if sound != "":
 		get_node("/root/Main").play_sound(sound)
@@ -39,7 +43,7 @@ func on_enter() -> void:
 
 func _physics_process(_delta):
 	var final_speed = user.ability_relay.get_move_speed(speed)
-	user.velocity = lerp(user.velocity, direction * final_speed, 0.5)
+	user.velocity = lerp(user.velocity, state_handler.data["direction"] * final_speed, 0.5)
 	user.still = false
 	if user.is_on_wall():
 		for i in user.get_slide_collision_count():

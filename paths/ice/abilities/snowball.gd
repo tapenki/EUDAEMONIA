@@ -28,7 +28,7 @@ func disapply(ability_relay):
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
 		applicants[ability_relay]["damage_boost"] += 3 * delta * level * ability_relay.speed_scale
-		applicants[ability_relay]["scale_boost"] += (1 - pow(0.5, level)) * delta * ability_relay.speed_scale
+		applicants[ability_relay]["scale_boost"] += 0.5 * delta * ability_relay.speed_scale
 
 func attack_scale_modifiers(modifiers, ability_relay) -> void:
 	modifiers["base"] += applicants[ability_relay]["scale_boost"]

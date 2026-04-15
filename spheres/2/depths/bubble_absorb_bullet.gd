@@ -13,7 +13,7 @@ func _physics_process(delta):
 				get_node("/root/Main").play_sound(hit_sound)
 			kill()
 			return
-		var to_target = global_position.direction_to(target.global_position) * 450
+		var to_target = global_position.direction_to(target.global_position) * 400
 		velocity = lerp(velocity, to_target, 0.05)
 		get_node("Lifetime").start(randf_range(0.2, 0.5))
 	else:

@@ -38,12 +38,12 @@ script = ExtResource("3_k11cq")
 entity = "leaker"
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave1" unique_id=1556630176]
-position = Vector2(240, 240)
+position = Vector2(270, 270)
 script = ExtResource("3_k11cq")
 entity = "mold"
 
 [node name="SpawnMold2" type="Node2D" parent="Waves/Wave1" unique_id=954301649]
-position = Vector2(780, 240)
+position = Vector2(750, 270)
 script = ExtResource("3_k11cq")
 entity = "mold"
 
@@ -65,12 +65,12 @@ script = ExtResource("3_k11cq")
 entity = "leaker"
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave2" unique_id=1346639595]
-position = Vector2(240, 780)
+position = Vector2(270, 750)
 script = ExtResource("3_k11cq")
 entity = "mold"
 
 [node name="SpawnMold2" type="Node2D" parent="Waves/Wave2" unique_id=2077163188]
-position = Vector2(780, 780)
+position = Vector2(750, 750)
 script = ExtResource("3_k11cq")
 entity = "mold"
 

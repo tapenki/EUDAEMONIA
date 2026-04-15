@@ -5,6 +5,7 @@ extends State
 @export var bullet_speed = 600
 
 @export var recalc_direction = true
+#@export var prediction = 0.3
 
 @export var next: State
 
@@ -16,7 +17,9 @@ func on_enter() -> void:
 		if not is_instance_valid(state_handler.target):
 			state_handler.change_state(next)
 			return
-		state_handler.data["direction"] = user.global_position.direction_to(state_handler.target.global_position)
+		#var time_to_hit = user.global_position.distance_to(state_handler.target.global_position) / bullet_speed
+		#var predicted_position = state_handler.target.global_position + state_handler.target.velocity * prediction * time_to_hit
+		state_handler.data["direction"] = user.global_position.direction_to(state_handler.target.global_position)#user.global_position.direction_to(predicted_position)
 	
 	var bullet_instance = user.ability_relay.make_projectile(bullet, 
 	user.global_position + state_handler.data["direction"] * 25, 

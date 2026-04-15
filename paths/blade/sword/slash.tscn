@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_o7rr0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0v0s7"]
-radius = 32.0
+radius = 40.0
 
 [node name="Slash" type="Area2D" unique_id=1235810907 node_paths=PackedStringArray("ability_relay")]
 z_index = 1
@@ -19,7 +19,7 @@ script = ExtResource("1_0v0s7")
 ability_relay = NodePath("AbilityRelay")
 hit_particle_preset = ""
 hit_walls = true
-unlimited_hits = true
+hits_left = 2
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1638014074]
 script = ExtResource("2_k58d1")
@@ -41,7 +41,7 @@ shape = SubResource("CircleShape2D_0v0s7")
 
 [node name="Lifetime" type="Node" parent="." unique_id=1431600111 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("7_o7rr0")
-wait_time = 0.3
+wait_time = 0.4
 running = true
 ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

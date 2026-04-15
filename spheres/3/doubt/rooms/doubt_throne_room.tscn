@@ -29,7 +29,7 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnMoldMother" type="Node2D" parent="Waves/Wave1" unique_id=1914994217]
-position = Vector2(540, 660)
+position = Vector2(540, 570)
 script = ExtResource("3_be68w")
 entity = "mold_mother"
 
@@ -71,7 +71,6 @@ rotation = -1.5707964
 room = "ruin_entrance_hall"
 door = "Entrance0"
 subject = "ruin_entrance_gate"
-tag = "greater_travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=621960960 instance=ExtResource("4_nelx5")]
 position = Vector2(1050, 150)

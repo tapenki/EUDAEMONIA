@@ -108,7 +108,7 @@ func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "
 		entity.ability_relay.damage_taken_modifiers.emit(damage)
 	damage["final"] = damage["base"] * damage["multiplier"]
 	if damage.has("crits"):
-		damage["final"] *= pow(2, damage["crits"])
+		damage["final"] *= pow(1.5, damage["crits"])
 
 func get_crits(entity: Entity = null, crit: Dictionary = {"base" : 0, "multiplier" : 1}, skip_input_modifiers = false, skip_output_modifiers = false):
 	if not skip_output_modifiers:

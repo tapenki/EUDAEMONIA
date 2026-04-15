@@ -10,21 +10,22 @@ func on_enter() -> void:
 	super()
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_relay.find_target()
+	if not is_instance_valid(state_handler.target):
+		state_handler.change_state(next)
+		return
+	#var time_to_hit = user.global_position.distance_to(state_handler.target.global_position) / bullet_speed
+	#var predicted_position = state_handler.target.global_position + state_handler.target.velocity * 0.3 * time_to_hit
+	state_handler.data["direction"] = user.global_position.direction_to(state_handler.target.global_position)#user.global_position.direction_to(predicted_position)
 	
-	var direction: Vector2
-	if is_instance_valid(state_handler.target):
-		direction = user.global_position.direction_to(state_handler.target.global_position)
-		#var distance = user.global_position.distance_to(state_handler.target.global_position)
-		#var fire_rate = user.ability_relay.get_attack_rate(1)
-		for i in 10:
-			var liferangemult = randf_range(0.2, 1.2)
-			var bullet_instance = user.ability_relay.make_projectile(bullet, 
-			user.global_position + direction * 25 + Vector2(randf_range(-25, 25), randf_range(-25, 25)), 
-			{"subscription" = 2},
-			direction * bullet_speed * liferangemult)
-			bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime * liferangemult
-			get_node("/root/Main/Projectiles").add_child(bullet_instance)
-		#user.ability_relay.attack.emit(direction)
-		get_node("/root/Main").play_sound("ShootLight")
+	for i in 10:
+		var liferangemult = randf_range(0.2, 1.2)
+		var bullet_instance = user.ability_relay.make_projectile(bullet, 
+		user.global_position + state_handler.data["direction"] * 25 + Vector2(randf_range(-25, 25), randf_range(-25, 25)), 
+		{"subscription" = 2},
+		state_handler.data["direction"] * bullet_speed * liferangemult)
+		bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime * liferangemult
+		get_node("/root/Main/Projectiles").add_child(bullet_instance)
+	#user.ability_relay.attack.emit(direction)
+	get_node("/root/Main").play_sound("ShootLight")
 	state_handler.target = null
 	state_handler.change_state(next)
