@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dlfcirk10jsk6"]
 
+[ext_resource type="Script" uid="uid://dwpw45htkhqkv" path="res://paths/blade/blade_path_ui.gd" id="1_1qmn0"]
 [ext_resource type="Texture2D" uid="uid://cwh4efrqwbb54" path="res://paths/blade/blade.png" id="1_qr8k3"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_1ue8r"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_q7nao"]
@@ -7,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_w077r"]
 [ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="6_yr0g6"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_yr0g6"]
+[sub_resource type="LabelSettings" id="LabelSettings_ps08w"]
 resource_local_to_scene = true
 font_size = 40
 outline_size = 8
@@ -19,6 +20,7 @@ anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
+script = ExtResource("1_1qmn0")
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=400382669]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -60,7 +62,7 @@ horizontal_alignment = 1
 script = ExtResource("3_q7nao")
 subject = "blade"
 
-[node name="Abilities1" type="HBoxContainer" parent="." unique_id=2092258762]
+[node name="Abilities" type="HFlowContainer" parent="." unique_id=1516786450]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -72,44 +74,32 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Cadence" parent="Abilities1" unique_id=452593380 instance=ExtResource("4_3eh07")]
+[node name="Cadence" parent="Abilities" unique_id=452593380 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "cadence"
 
-[node name="BroadSwings" parent="Abilities1" unique_id=1440218836 instance=ExtResource("4_3eh07")]
+[node name="BroadSwings" parent="Abilities" unique_id=1440218836 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "broad_swings"
 
-[node name="Block" parent="Abilities1" unique_id=755603844 instance=ExtResource("4_3eh07")]
+[node name="Block" parent="Abilities" unique_id=755603844 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "block"
 
-[node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291390336]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 94.0
-offset_right = 112.5
-offset_bottom = 154.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Deflect" parent="Abilities2" unique_id=244962004 instance=ExtResource("4_3eh07")]
+[node name="Deflect" parent="Abilities" unique_id=244962004 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "deflect"
 
-[node name="Unsheathe" parent="Abilities2" unique_id=1950595630 instance=ExtResource("4_3eh07")]
+[node name="Unsheathe" parent="Abilities" unique_id=1950595630 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "unsheathe"
 
-[node name="Masteries1" type="HBoxContainer" parent="." unique_id=2131887875]
+[node name="Masteries" type="HFlowContainer" parent="." unique_id=1227866759]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -122,7 +112,7 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="SnowballII" parent="Masteries1" unique_id=664334916 instance=ExtResource("5_w077r")]
+[node name="SnowballII" parent="Masteries" unique_id=664334916 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
@@ -130,7 +120,7 @@ requires = {
 }
 subject = "snowball_ii"
 
-[node name="CutDown" parent="Masteries1" unique_id=1593561668 instance=ExtResource("5_w077r")]
+[node name="CutDown" parent="Masteries" unique_id=1593561668 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
@@ -138,7 +128,7 @@ requires = {
 }
 subject = "cut_down"
 
-[node name="Percussion" parent="Masteries1" unique_id=2138347233 instance=ExtResource("5_w077r")]
+[node name="Percussion" parent="Masteries" unique_id=2138347233 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
@@ -162,7 +152,7 @@ texture = ExtResource("1_qr8k3")
 texture = ExtResource("1_qr8k3")
 
 [node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
-label_settings = SubResource("LabelSettings_yr0g6")
+label_settings = SubResource("LabelSettings_ps08w")
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

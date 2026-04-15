@@ -13,3 +13,7 @@ func disapply(ability_relay):
 
 func max_health_modifiers(modifiers) -> void:
 	modifiers["base"] -= level
+
+func unlearn():
+	get_node("/root/Main/UI").disaffect(self.name)
+	super()

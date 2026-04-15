@@ -7,6 +7,7 @@ var default_weapon = "magic_missile"
 
 signal ability_added()
 
+signal abilities_changed()
 signal weapons_changed()
 
 func _ready() -> void:
@@ -38,8 +39,18 @@ func learn(ability, levels = 1):
 		for i in subscribers.keys():
 			ability_node.apply(i, subscribers[i].duplicate())
 		ability_added.emit(ability)
-	get_node("/root/Main/UI").update_abilities.emit()
+	abilities_changed.emit()
 	return ability_node
+
+func unlearn(ability, levels = 1):
+	var ability_node = get_node_or_null(NodePath(ability))
+	if not ability_node:
+		return
+	if ability_node.level > levels:
+		ability_node.level -= levels
+	else:
+		ability_node.unlearn()
+	abilities_changed.emit()
 
 func equip_weapon(weapon):
 	if equipped_weapons.size() > 0:

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dovdyljqfid6t"]
 
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="1_ijwcu"]
+[ext_resource type="Script" uid="uid://dsdvquf1qy2ik" path="res://paths/ui/path_ui.gd" id="1_mva7w"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_mva7w"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_1d61d"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3rk0q"]
@@ -18,6 +19,7 @@ anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
+script = ExtResource("1_mva7w")
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=2095093976]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -93,7 +95,7 @@ label_settings = SubResource("LabelSettings_pmft3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Abilities1" type="HBoxContainer" parent="." unique_id=1748389468]
+[node name="Abilities" type="HFlowContainer" parent="." unique_id=190863513]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -105,47 +107,35 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ChainBolt" parent="Abilities1" unique_id=1702264514 instance=ExtResource("4_3rk0q")]
+[node name="ChainBolt" parent="Abilities" unique_id=1702264514 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "chain_bolt"
 extras = ["crit"]
 
-[node name="BallLightning" parent="Abilities1" unique_id=262058008 instance=ExtResource("4_3rk0q")]
+[node name="BallLightning" parent="Abilities" unique_id=262058008 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "ball_lightning"
 extras = ["crit"]
 
-[node name="Thunderstep" parent="Abilities1" unique_id=1373121206 instance=ExtResource("4_3rk0q")]
+[node name="Thunderstep" parent="Abilities" unique_id=1373121206 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "thunderstep"
 
-[node name="Abilities2" type="HBoxContainer" parent="." unique_id=1157839179]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 94.0
-offset_right = 112.5
-offset_bottom = 154.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="MortalShock" parent="Abilities2" unique_id=431656401 instance=ExtResource("4_3rk0q")]
+[node name="MortalShock" parent="Abilities" unique_id=431656401 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "mortal_shock"
 extras = ["crit"]
 
-[node name="Electromagnetism" parent="Abilities2" unique_id=975056362 instance=ExtResource("4_3rk0q")]
+[node name="Electromagnetism" parent="Abilities" unique_id=975056362 instance=ExtResource("4_3rk0q")]
 layout_mode = 2
 texture_normal = ExtResource("1_ijwcu")
 subject = "electromagnetism"
 
-[node name="Masteries1" type="HBoxContainer" parent="." unique_id=1412215670]
+[node name="Masteries" type="HFlowContainer" parent="." unique_id=1884517432]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -158,7 +148,7 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="StormWeave" parent="Masteries1" unique_id=1774960858 instance=ExtResource("6_eepm7")]
+[node name="StormWeave" parent="Masteries" unique_id=1774960858 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
@@ -167,7 +157,7 @@ requires = {
 subject = "storm_weave"
 extras = ["crit"]
 
-[node name="Covalence" parent="Masteries1" unique_id=1793056073 instance=ExtResource("6_eepm7")]
+[node name="Covalence" parent="Masteries" unique_id=1793056073 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
@@ -175,7 +165,7 @@ requires = {
 }
 subject = "covalence"
 
-[node name="ArcShield" parent="Masteries1" unique_id=556702490 instance=ExtResource("6_eepm7")]
+[node name="ArcShield" parent="Masteries" unique_id=556702490 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
@@ -183,20 +173,7 @@ requires = {
 }
 subject = "arc_shield"
 
-[node name="Masteries2" type="HBoxContainer" parent="." unique_id=1956728656]
-layout_direction = 2
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 226.0
-offset_right = 112.5
-offset_bottom = 286.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="ShockingGrasp" parent="Masteries2" unique_id=1405145588 instance=ExtResource("6_eepm7")]
+[node name="ShockingGrasp" parent="Masteries" unique_id=1405145588 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {
@@ -205,7 +182,7 @@ requires = {
 subject = "shocking_grasp"
 extras = ["shock", "crit"]
 
-[node name="Repulsar" parent="Masteries2" unique_id=1028252816 instance=ExtResource("6_eepm7")]
+[node name="Repulsar" parent="Masteries" unique_id=1028252816 instance=ExtResource("6_eepm7")]
 layout_mode = 2
 accessible_texture = ExtResource("1_ijwcu")
 requires = {

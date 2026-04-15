@@ -13,6 +13,6 @@ func apply(ability_relay, applicant_data):
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
-	if applicants[ability_relay].has("ring_of_fire"):
+	if applicants.has(ability_relay) and applicants[ability_relay].has("ring_of_fire"):
 		applicants[ability_relay]["ring_of_fire"].kill()
 	super(ability_relay)

@@ -25,8 +25,9 @@ func apply(ability_relay, applicant_data):
 		ability_relay.crit_taken_modifiers.connect(crit_taken_modifiers.bind(ability_relay))
 
 func disapply(ability_relay):
-	for particles in applicants[ability_relay]["particle_instances"]:
-		particles.self_death()
+	if applicants.has(ability_relay):
+		for particles in applicants[ability_relay]["particle_instances"]:
+			particles.self_death()
 	super(ability_relay)
 	if ability_relay.crit_taken_modifiers.is_connected(crit_taken_modifiers):
 		ability_relay.crit_taken_modifiers.disconnect(crit_taken_modifiers)

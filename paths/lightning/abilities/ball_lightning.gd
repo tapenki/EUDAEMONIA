@@ -34,7 +34,7 @@ func apply(ability_relay, applicant_data):
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
-	if applicants[ability_relay].has("anchor_node"):
+	if applicants.has(ability_relay) and applicants[ability_relay].has("anchor_node"):
 		for i in applicants[ability_relay]["anchor_node"].get_children():
 			i.kill()
 	super(ability_relay)

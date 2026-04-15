@@ -13,7 +13,7 @@ var button_blue = preload("res://ui/button_blue.png")
 func _ready() -> void:
 	ability_relay.damage_taken.connect(damage_taken)
 	ability_relay.healed.connect(healed)
-	get_node("/root/Main/UI").update_abilities.connect(update)
+	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update)
 	update.call_deferred()
 
 func update() -> void:

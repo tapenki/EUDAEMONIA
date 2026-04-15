@@ -22,7 +22,7 @@ var description_nodes: Array
 var accessible: bool
 
 func _ready() -> void:
-	ui.update_abilities.connect(update)
+	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update)
 	update()
 
 func update():

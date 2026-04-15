@@ -17,6 +17,11 @@ func disapply(ability_relay):
 	if ability_relay.freed.is_connected(disapply):
 		ability_relay.freed.disconnect(disapply)
 
+func unlearn():
+	for ability_relay in applicants.keys():
+		disapply(ability_relay)
+	queue_free()
+
 func serialize():
 	return {"level" : level}
 

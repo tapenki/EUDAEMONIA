@@ -27,8 +27,9 @@ func apply(ability_relay, applicant_data):
 		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
 
 func disapply(ability_relay):
-	for particles in applicants[ability_relay]["particle_instances"]:
-		particles.self_death()
+	if applicants.has(ability_relay):
+		for particles in applicants[ability_relay]["particle_instances"]:
+			particles.self_death()
 	super(ability_relay)
 	if ability_relay.damage_taken.is_connected(damage_taken):
 		ability_relay.damage_taken.disconnect(damage_taken)

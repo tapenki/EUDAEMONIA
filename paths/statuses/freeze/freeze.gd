@@ -23,8 +23,9 @@ func apply(ability_relay, applicant_data):
 		ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
 
 func disapply(ability_relay):
-	for particles in applicants[ability_relay]["particle_instances"]:
-		particles.self_death()
+	if applicants.has(ability_relay):
+		for particles in applicants[ability_relay]["particle_instances"]:
+			particles.self_death()
 	super(ability_relay)
 	if ability_relay.speed_scale_modifiers.is_connected(speed_scale_modifiers):
 		ability_relay.speed_scale_modifiers.disconnect(speed_scale_modifiers)

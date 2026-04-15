@@ -31,7 +31,7 @@ var accessible: bool
 func _ready() -> void:
 	set_process_input(false)
 	keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
-	ui.update_abilities.connect(update)
+	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update)
 	update()
 
 func update():

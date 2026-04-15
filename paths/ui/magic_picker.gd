@@ -7,7 +7,7 @@ extends Control
 func pick(path):
 	var path_instance = AbilityData.path_data[path]["scene"].instantiate()
 	path_instance.position = position
-	add_sibling(path_instance)
+	ui.path_ui.add_child(path_instance)
 	queue_free()
 	if next:
 		next.reveal()

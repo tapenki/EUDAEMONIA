@@ -4,7 +4,7 @@ extends Reminder
 
 func _ready() -> void:
 	super()
-	ui.update_abilities.connect(update)
+	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update)
 	update()
 
 func update():

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dvqgjf3aefht7"]
 
+[ext_resource type="Script" uid="uid://dqn3usmyg2cbu" path="res://paths/death/death_path_ui.gd" id="1_m812x"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="1_satne"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="2_4f4ow"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="3_vlamy"]
@@ -14,6 +15,7 @@ anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
+script = ExtResource("1_m812x")
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=121494154]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -55,7 +57,7 @@ horizontal_alignment = 1
 script = ExtResource("2_4f4ow")
 subject = "death"
 
-[node name="Abilities1" type="HBoxContainer" parent="." unique_id=1122338486]
+[node name="Abilities" type="HFlowContainer" parent="." unique_id=370957121]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -67,46 +69,34 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="ArmyOfTheDead" parent="Abilities1" unique_id=2082684325 instance=ExtResource("3_vlamy")]
+[node name="ArmyOfTheDead" parent="Abilities" unique_id=2082684325 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "army_of_the_dead"
 
-[node name="FatedEnd" parent="Abilities1" unique_id=2038194257 instance=ExtResource("3_vlamy")]
+[node name="FatedEnd" parent="Abilities" unique_id=2038194257 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "fated_end"
 extras = ["doom"]
 
-[node name="Hunger" parent="Abilities1" unique_id=111728649 instance=ExtResource("3_vlamy")]
+[node name="Hunger" parent="Abilities" unique_id=111728649 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "hunger"
 
-[node name="Abilities2" type="HBoxContainer" parent="." unique_id=949019680]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 94.0
-offset_right = 112.5
-offset_bottom = 154.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="BoneShield" parent="Abilities2" unique_id=2010099927 instance=ExtResource("3_vlamy")]
+[node name="BoneShield" parent="Abilities" unique_id=2010099927 instance=ExtResource("3_vlamy")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "bone_shield"
 extras = ["chill"]
 
-[node name="DarkHarvest" parent="Abilities2" unique_id=1890856360 instance=ExtResource("5_4llcc")]
+[node name="DarkHarvest" parent="Abilities" unique_id=1890856360 instance=ExtResource("5_4llcc")]
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "dark_harvest"
 
-[node name="Masteries1" type="HBoxContainer" parent="." unique_id=1753396738]
+[node name="Masteries" type="HFlowContainer" parent="." unique_id=1635433167]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -119,7 +109,7 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="SoulTether" parent="Masteries1" unique_id=182688108 instance=ExtResource("6_x8qv0")]
+[node name="SoulTether" parent="Masteries" unique_id=182688108 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -127,7 +117,7 @@ requires = {
 }
 subject = "soul_tether"
 
-[node name="SwiftFate" parent="Masteries1" unique_id=836903578 instance=ExtResource("6_x8qv0")]
+[node name="SwiftFate" parent="Masteries" unique_id=836903578 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -136,7 +126,7 @@ requires = {
 subject = "swift_fate"
 extras = ["doom"]
 
-[node name="Starvation" parent="Masteries1" unique_id=1208735487 instance=ExtResource("6_x8qv0")]
+[node name="Starvation" parent="Masteries" unique_id=1208735487 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -144,20 +134,7 @@ requires = {
 }
 subject = "starvation"
 
-[node name="Masteries2" type="HBoxContainer" parent="." unique_id=1966469170]
-layout_direction = 2
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 226.0
-offset_right = 112.5
-offset_bottom = 286.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Osteophalanx" parent="Masteries2" unique_id=1584237372 instance=ExtResource("6_x8qv0")]
+[node name="Osteophalanx" parent="Masteries" unique_id=1584237372 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {
@@ -165,7 +142,7 @@ requires = {
 }
 subject = "osteophalanx"
 
-[node name="BadCrop" parent="Masteries2" unique_id=1818882751 instance=ExtResource("6_x8qv0")]
+[node name="BadCrop" parent="Masteries" unique_id=1818882751 instance=ExtResource("6_x8qv0")]
 layout_mode = 2
 accessible_texture = ExtResource("7_4llcc")
 requires = {

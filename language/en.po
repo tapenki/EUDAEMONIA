@@ -751,6 +751,12 @@ msgstr "[outline_size=10]Gate: Ruins[/outline_size]"
 msgid "ruin_basic_gate_description"
 msgstr "The way forward."
 
+msgid "shrine_of_ruin_title"
+msgstr "[outline_size=10]Shrine of Ruin[/outline_size]"
+
+msgid "shrine_of_ruin_description"
+msgstr "Unlearn all your abilities."
+
 msgid "land_of_breath_title"
 msgstr "Sphere [5]: Land of Breath"
 

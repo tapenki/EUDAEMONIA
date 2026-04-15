@@ -46,4 +46,4 @@ func recover():
 	#for ability in ability_relay.get_children():
 	#	if AbilityData.ability_data[ability.name]["type"] == "status":
 	#		ability.clear()
-	get_node("/root/Main/UI").update_abilities.emit()
+	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.emit()

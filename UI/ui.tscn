@@ -362,12 +362,17 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="MagicPicker1" parent="GameMenu/Abilities" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="PathPickers" type="Control" parent="GameMenu/Abilities" unique_id=1998880688]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicPicker1" parent="GameMenu/Abilities/PathPickers" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 layout_mode = 0
 mouse_filter = 2
 next = NodePath("../MagicPicker2")
 
-[node name="MagicPicker2" parent="GameMenu/Abilities" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker2" parent="GameMenu/Abilities/PathPickers" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 225.0
@@ -375,7 +380,7 @@ offset_right = 450.0
 mouse_filter = 2
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="GameMenu/Abilities" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+[node name="MagicPicker3" parent="GameMenu/Abilities/PathPickers" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 450.0
@@ -383,12 +388,17 @@ offset_right = 675.0
 mouse_filter = 2
 next = NodePath("../MagicPicker4")
 
-[node name="MagicPicker4" parent="GameMenu/Abilities" unique_id=1650941343 instance=ExtResource("6_6rr40")]
+[node name="MagicPicker4" parent="GameMenu/Abilities/PathPickers" unique_id=1650941343 instance=ExtResource("6_6rr40")]
 visible = false
 layout_mode = 0
 offset_left = 675.0
 offset_right = 900.0
 mouse_filter = 2
+
+[node name="PathUI" type="Control" parent="GameMenu/Abilities" unique_id=1526798085]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Affects" type="Control" parent="GameMenu" unique_id=1013813671]
 visible = false

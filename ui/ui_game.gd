@@ -4,29 +4,32 @@ class_name UIGame extends UICore
 
 @onready var backdrop = $"Backdrop"
 
+@onready var game_menu = $"GameMenu"
+@onready var hud = $"HUD"
+
+@onready var proceed = $"HUD/Proceed"
+@onready var reset_button = $"GameMenu/Reset"
+
+@onready var ability_menu = $"GameMenu/Abilities"
+@onready var affect_menu = $"GameMenu/Affects"
+
+@onready var path_pickers = $"GameMenu/Abilities/PathPickers"
+@onready var path_ui = $"GameMenu/Abilities/PathUI"
+
 var button_red = preload("res://ui/button_red.png")
 var button_blue = preload("res://ui/button_blue.png")
 var button_gray = preload("res://ui/button.png")
 
-@onready var proceed = $"HUD/Proceed"
-@onready var game_menu = $"GameMenu"
-@onready var ability_menu = $"GameMenu/Abilities"
-@onready var affect_menu = $"GameMenu/Affects"
-@onready var reset_button = $"GameMenu/Reset"
-@onready var hud = $"HUD"
-
-var upgrade_points = 100
-var unlock_points = 100
+var upgrade_points: int = 100
+var unlock_points: int = 100
 var paths: Array
 
 var challenges: Array
 
 @onready var game_menu_tab = $"GameMenu/Abilities"
 
-signal update_abilities()
-
 func _ready() -> void:
-	var magic_picker = ability_menu.get_node("MagicPicker1")
+	var magic_picker = path_pickers.get_node("MagicPicker1")
 	for path in paths:
 		magic_picker.pick(path)
 		magic_picker = magic_picker.next
@@ -120,4 +123,29 @@ func affect(ability: String):
 	if AbilityData.ability_data.has(ability) and (AbilityData.ability_data[ability].has("affect")):
 		var reminder_instance = AbilityData.ability_data[ability]["affect"].instantiate()
 		reminder_instance.subject = ability
+		reminder_instance.name = ability
 		affect_menu.get_node("Container").add_child(reminder_instance)
+
+func disaffect(ability: String):
+	var reminder_instance = affect_menu.get_node_or_null("Container/"+ability)
+	if reminder_instance:
+		reminder_instance.queue_free()
+
+func unlearn_all():
+	for path_node in path_ui.get_children():
+		path_node.unlearn()
+	for path_picker in path_pickers.get_children():
+		path_picker.queue_free()
+	paths.clear()
+	game_menu.get_node("UpgradePoints").update()
+	var path_picker_scene = preload("res://paths/ui/magic_picker.tscn")
+	var previous_picker = null
+	for i in 4:
+		var path_picker_instance = path_picker_scene.instantiate()
+		if i > 0:
+			path_picker_instance.visible = false
+		path_picker_instance.position.x = i * 225
+		if previous_picker:
+			previous_picker.next = path_picker_instance
+		previous_picker = path_picker_instance
+		path_pickers.add_child(path_picker_instance)

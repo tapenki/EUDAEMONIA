@@ -16,7 +16,7 @@ func apply(ability_relay, applicant_data):
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
-	if applicants[ability_relay].has("bone_shields"):
+	if applicants.has(ability_relay) and applicants[ability_relay].has("bone_shields"):
 		for shield in applicants[ability_relay]["bone_shields"]:
 			if is_instance_valid(shield):
 				shield.ability_relay.freed.emit()

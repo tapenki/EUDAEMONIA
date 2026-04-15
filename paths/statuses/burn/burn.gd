@@ -27,8 +27,9 @@ func apply(ability_relay, applicant_data):
 		super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
-	for particles in applicants[ability_relay]["particle_instances"]:
-		particles.self_death()
+	if applicants.has(ability_relay):
+		for particles in applicants[ability_relay]["particle_instances"]:
+			particles.self_death()
 	super(ability_relay)
 
 func _physics_process(delta: float) -> void:
