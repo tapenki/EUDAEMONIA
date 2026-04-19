@@ -216,6 +216,21 @@ alignment = 2
 vertical = true
 script = ExtResource("8_co7pv")
 
+[node name="Tricks" type="HFlowContainer" parent="HUD" unique_id=967280855]
+process_mode = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
+
 [node name="GameMenu" type="Control" parent="." unique_id=38269991]
 z_index = 1
 layout_mode = 3

@@ -16,7 +16,8 @@ func _ready() -> void:
 	set_process_input(false)
 	#rotation_degrees = randf_range(-5, 5)
 	symbol_label.text = name.substr(0, 2)
-	keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
+	Utils.controls_changed.connect(controls_changed)
+	controls_changed(subject)
 	var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 	if ability_node:
 		self_modulate = Color.WHITE
@@ -52,24 +53,19 @@ func toggle_keybind_input(toggled_on: bool) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
-		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
-		var new_event = InputEventKey.new()
-		new_event.keycode = event.keycode
-		InputMap.action_add_event(subject, event)
-		Config.config.set_value("keyboard_controls", subject, [0, event.keycode])
-		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % new_event.as_text()
+		Utils.set_keybind(subject, event.keycode)
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
 	if event is InputEventMouseButton and event.pressed:
-		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
-		var new_event = InputEventMouseButton.new()
-		new_event.button_index = event.button_index
-		InputMap.action_add_event(subject, new_event)
-		Config.config.set_value("keyboard_controls", subject, [1, event.button_index])
-		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % new_event.as_text()
+		Utils.set_mousebind(subject, event.button_index)
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
+
+func controls_changed(action):
+	if action == subject:
+		keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
+	for description_node in description_nodes:
+		if action == description_node.subject:
+			description_node.set_description(get_description_text(description_node.subject))

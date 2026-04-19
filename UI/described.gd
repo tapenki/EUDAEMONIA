@@ -17,12 +17,13 @@ func get_description_text(what):
 		description = description.format({"keybind": tr("[%s]" % InputMap.action_get_events(what)[0].as_text())})
 	return description
 
-func make_description(description_title, description_text, description_tag, description_position):
+func make_description(description_subject, description_title, description_text, description_tag, description_position):
 	var description_instance = description_scene.instantiate()
 	ui.add_child(description_instance)
 	
 	description_instance.position = description_position
 	
+	description_instance.subject = description_subject
 	description_instance.set_title(description_title)
 	description_instance.set_description(description_text)
 	description_instance.set_tag(description_tag)
@@ -45,10 +46,10 @@ func _on_mouse_entered() -> void:
 		#direction = 1
 	description_position.x += (winsize.x - get_window().content_scale_size.x) * 0.5
 	
-	make_description(get_description_title(subject), get_description_text(subject), tag, description_position)
+	make_description(subject, get_description_title(subject), get_description_text(subject), tag, description_position)
 	for extra in extras:
 		description_position += Vector2(260 * direction, 0)
-		make_description(get_description_title(extra), get_description_text(extra), "", description_position)
+		make_description(extra, get_description_title(extra), get_description_text(extra), "", description_position)
 
 func _on_mouse_exited() -> void:
 	for description_node in description_nodes:

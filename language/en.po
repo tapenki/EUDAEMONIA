@@ -322,7 +322,7 @@ msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
 
 msgid "undying_flames_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][0.3xDAY+3][/outline_size] pure damage and reconstitute it."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][0.05xMAXHP][/outline_size] pure damage and reconstitute it."
 
 msgid "inferno_title"
 msgstr "[outline_color=#ff0000]Mastery: Inferno[/outline_color]"
@@ -523,13 +523,13 @@ msgid "bramble_shot_title"
 msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"
 
 msgid "bramble_shot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][DAY+10][/outline_size] pure damage and shoot a bramble with [outline_size=10]x[3][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][0.1xMAXHP][/outline_size] pure damage and shoot a bramble with [outline_size=10]x[3][/outline_size] damage."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [75]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][0.1xDAY+1][/outline_size] pure damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [100]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][0.02xMAXHP][/outline_size] pure damage."
 
 msgid "vitalism_title"
 msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
@@ -652,7 +652,7 @@ msgid "deflect_title"
 msgstr "[outline_color=#5B6487]Mastery: Deflect[/outline_color]"
 
 msgid "deflect_description"
-msgstr "outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Deflect[/outline_color][br][outline_color=#5B6487]Sword[/outline_color] slashes deflect enemy projectiles to nearest enemy if [outline_color=#5B6487]Unsheathe[/outline_color] is fully charged."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Unsheathe[/outline_color][br][outline_color=#5B6487]Sword[/outline_color] slashes deflect enemy projectiles to nearest enemy if [outline_color=#5B6487]Unsheathe[/outline_color] is fully charged."
 
 msgid "unflinching_title"
 msgstr "[outline_color=#5B6487]Mastery: Unflinching[/outline_color]"

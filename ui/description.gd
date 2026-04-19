@@ -3,6 +3,8 @@ extends RichTextLabel
 @onready var description = $Text
 @onready var tag = $Tag
 
+var subject: String
+
 func set_title(title_text):
 	text = title_text
 	size = Vector2(240, get_content_height())

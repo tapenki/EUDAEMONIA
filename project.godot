@@ -31,9 +31,10 @@ boot_splash/rendering_method.web="gl_compatibility"
 
 [autoload]
 
+Utils="*uid://wdqxn52hs64m"
+Config="*res://config.gd"
 AbilityData="*res://ability_data.gd"
 SphereData="*res://sphere_data.gd"
-Config="*res://config.gd"
 
 [debug]
 

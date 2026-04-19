@@ -43,7 +43,8 @@ func movement(distance, ability_relay) -> void:
 			if ability_relay.is_entity:
 				applicants[ability_relay]["pain_walk"] = (applicants[ability_relay]["pain_walk"] + 1) % 2
 				if applicants[ability_relay]["pain_walk"] == 0:
-					ability_relay.deal_damage(ability_relay.owner, {"base" : 0.1 * get_node("/root/Main").day + 1, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+					var max_health = ability_relay.get_health()["max_health"]
+					ability_relay.deal_damage(ability_relay.owner, {"base" : 0.02 * max_health, "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
 		else:
 			spawn(ability_relay.owner.global_position, ability_relay)
 

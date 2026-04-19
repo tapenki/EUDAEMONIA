@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmsbb262j11w7"]
+[gd_scene format=3 uid="uid://bmsbb262j11w7"]
 
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="1_4mo16"]
 [ext_resource type="Script" uid="uid://cufgjpblnsj3" path="res://paths/ui/trick_upgrade_button.gd" id="2_12rqu"]
@@ -15,7 +15,7 @@ outline_color = Color(1, 1, 1, 0.2509804)
 outline_size = 5
 outline_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
 
-[node name="Button" type="TextureButton"]
+[node name="Button" type="TextureButton" unique_id=753979935]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 custom_minimum_size = Vector2(60, 60)
 anchors_preset = 8
@@ -37,7 +37,7 @@ stretch_mode = 0
 script = ExtResource("2_12rqu")
 tag = "upgrade_cost"
 
-[node name="Symbol" type="Label" parent="."]
+[node name="Symbol" type="Label" parent="." unique_id=1097871018]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 z_index = 1
 layout_mode = 1
@@ -50,7 +50,7 @@ label_settings = SubResource("LabelSettings_muabv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Level" type="Label" parent="."]
+[node name="Level" type="Label" parent="." unique_id=1213506985]
 z_index = 1
 layout_mode = 1
 anchors_preset = 5
@@ -64,7 +64,7 @@ label_settings = SubResource("LabelSettings_xm21l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bind" type="Button" parent="."]
+[node name="Bind" type="Button" parent="." unique_id=640031930]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -83,7 +83,7 @@ toggle_mode = true
 text = "[A]"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Bind"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Bind" unique_id=308743305]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1

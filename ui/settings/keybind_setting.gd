@@ -11,7 +11,8 @@ var off = preload("res://ui/button.png")
 
 func _ready() -> void:
 	set_process_input(false)
-	keybind_button.text = "[%s]" % InputMap.action_get_events(action)[0].as_text()
+	Utils.controls_changed.connect(controls_changed)
+	controls_changed(action)
 
 func toggle(toggled_on: bool) -> void:
 	set_process_input(toggled_on)
@@ -26,24 +27,16 @@ func toggle(toggled_on: bool) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
-		InputMap.action_erase_event(action, InputMap.action_get_events(action)[0])
-		var new_event = InputEventKey.new()
-		new_event.keycode = event.keycode
-		InputMap.action_add_event(action, event)
-		Config.config.set_value("keyboard_controls", action, [0, event.keycode])
-		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % new_event.as_text()
+		Utils.set_keybind(action, event.keycode)
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
 	if event is InputEventMouseButton and event.pressed:
-		InputMap.action_erase_event(action, InputMap.action_get_events(action)[0])
-		var new_event = InputEventMouseButton.new()
-		new_event.button_index = event.button_index
-		InputMap.action_add_event(action, new_event)
-		Config.config.set_value("keyboard_controls", action, [1, event.button_index])
-		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % new_event.as_text()
+		Utils.set_mousebind(action, event.button_index)
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
+
+func controls_changed(update_action):
+	if update_action == action:
+		keybind_button.text = "[%s]" % InputMap.action_get_events(action)[0].as_text()

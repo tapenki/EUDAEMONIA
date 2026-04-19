@@ -1,6 +1,5 @@
-extends TextureButton
+extends Described
 
-@onready var ui = get_node("/root/Main/UI")
 @onready var player = get_node("/root/Main/UI").player
 @onready var ability_relay = player.get_node("AbilityRelay")
 
@@ -18,21 +17,14 @@ extends TextureButton
 var on = preload("res://ui/button_blue.png")
 var off = preload("res://ui/button.png")
 
-## from described
-@export var subject: String
-@export var tag: String
-@export var extras: Array
-
-var description_scene = preload("res://ui/description.tscn")
-var description_nodes: Array
-
 var accessible: bool
 
 func _ready() -> void:
 	set_process_input(false)
-	keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
 	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update)
 	update()
+	Utils.controls_changed.connect(controls_changed)
+	controls_changed(subject)
 
 func update():
 	var passed = true
@@ -85,73 +77,19 @@ func toggle_keybind_input(toggled_on: bool) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
-		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
-		var new_event = InputEventKey.new()
-		new_event.keycode = event.keycode
-		InputMap.action_add_event(subject, event)
-		Config.config.set_value("keyboard_controls", subject, [0, event.keycode])
-		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % new_event.as_text()
+		Utils.set_keybind(subject, event.keycode)
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
 	if event is InputEventMouseButton and event.pressed:
-		InputMap.action_erase_event(subject, InputMap.action_get_events(subject)[0])
-		var new_event = InputEventMouseButton.new()
-		new_event.button_index = event.button_index
-		InputMap.action_add_event(subject, new_event)
-		Config.config.set_value("keyboard_controls", subject, [1, event.button_index])
-		Config.config.save("user://config.ini")
-		keybind_button.text = "[%s]" % new_event.as_text()
+		Utils.set_mousebind(subject, event.button_index)
 		keybind_button.button_pressed = false
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
 
-## from described
-func get_description_title(what):
-	return tr(what+"_title")
-
-func get_description_text(what):
-	var description = tr(what+"_description")
-	if InputMap.has_action(what):
-		description = description.format({"keybind": tr("[%s]" % InputMap.action_get_events(what)[0].as_text())})
-	return description
-
-func make_description(description_title, description_text, description_tag, description_position):
-	var description_instance = description_scene.instantiate()
-	ui.add_child(description_instance)
-	
-	description_instance.position = description_position
-	
-	description_instance.set_title(description_title)
-	description_instance.set_description(description_text)
-	description_instance.set_tag(description_tag)
-	
-	description_nodes.append(description_instance)
-	return description_instance
-
-func _on_mouse_entered() -> void:
-	if not accessible:
-		return
-	var winsize = get_window().content_scale_size ## horrible and evil solutions
-	var ratio = float(get_window().size.x)/get_window().size.y
-	if ratio > float(winsize.x)/winsize.y:
-		winsize.x = winsize.y * ratio
-	elif ratio < float(winsize.x)/winsize.y:
-		winsize.y = winsize.x / ratio
-	
-	var description_position = Vector2(640, 16)
-	var direction = -1
-	#if global_position.x + size.x * 0.5 > winsize.x * 0.5:
-		#description_position = Vector2(20, 16)
-		#direction = 1
-	description_position.x += (winsize.x - get_window().content_scale_size.x) * 0.5
-	make_description(get_description_title(subject), get_description_text(subject), tag, description_position)
-	for extra in extras:
-		description_position += Vector2(260 * direction, 0)
-		make_description(get_description_title(extra), get_description_text(extra), "", description_position)
-
-func _on_mouse_exited() -> void:
+func controls_changed(action):
+	if action == subject:
+		keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()
 	for description_node in description_nodes:
-		description_node.disappear()
-	description_nodes.clear()
+		if action == description_node.subject:
+			description_node.set_description(get_description_text(description_node.subject))
