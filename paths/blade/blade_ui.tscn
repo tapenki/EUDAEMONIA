@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_w077r"]
 [ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="6_yr0g6"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_ps08w"]
+[sub_resource type="LabelSettings" id="LabelSettings_1qmn0"]
 resource_local_to_scene = true
 font_size = 40
 outline_size = 8
@@ -74,10 +74,10 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Cadence" parent="Abilities" unique_id=452593380 instance=ExtResource("4_3eh07")]
+[node name="HoldGround" parent="Abilities" unique_id=452593380 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
-subject = "cadence"
+subject = "hold_ground"
 
 [node name="BroadSwings" parent="Abilities" unique_id=1440218836 instance=ExtResource("4_3eh07")]
 layout_mode = 2
@@ -89,15 +89,18 @@ layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "block"
 
-[node name="Deflect" parent="Abilities" unique_id=244962004 instance=ExtResource("4_3eh07")]
-layout_mode = 2
-texture_normal = ExtResource("1_qr8k3")
-subject = "deflect"
-
 [node name="Unsheathe" parent="Abilities" unique_id=1950595630 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "unsheathe"
+
+[node name="Deflect" parent="Abilities" unique_id=1915207044 instance=ExtResource("5_w077r")]
+layout_mode = 2
+accessible_texture = ExtResource("1_qr8k3")
+requires = {
+"unsheathe": 5
+}
+subject = "deflect"
 
 [node name="Masteries" type="HFlowContainer" parent="." unique_id=1227866759]
 layout_direction = 2
@@ -112,21 +115,21 @@ offset_bottom = 222.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="SnowballII" parent="Masteries" unique_id=664334916 instance=ExtResource("5_w077r")]
+[node name="Unflinching" parent="Masteries" unique_id=664334916 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
-"snowball": 5
+"hold_ground": 5
 }
-subject = "snowball_ii"
+subject = "unflinching"
 
-[node name="CutDown" parent="Masteries" unique_id=1593561668 instance=ExtResource("5_w077r")]
+[node name="Cleave" parent="Masteries" unique_id=1593561668 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
 "broad_swings": 5
 }
-subject = "cut_down"
+subject = "cleave"
 
 [node name="Percussion" parent="Masteries" unique_id=2138347233 instance=ExtResource("5_w077r")]
 layout_mode = 2
@@ -152,7 +155,7 @@ texture = ExtResource("1_qr8k3")
 texture = ExtResource("1_qr8k3")
 
 [node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
-label_settings = SubResource("LabelSettings_ps08w")
+label_settings = SubResource("LabelSettings_1qmn0")
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

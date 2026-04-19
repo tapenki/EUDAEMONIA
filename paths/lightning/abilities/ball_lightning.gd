@@ -52,7 +52,7 @@ func damage_dealt_modifiers(_entity, modifiers) -> void:
 	modifiers["base"] += 5 * level - 5
 
 func crit_chance_modifiers(_entity, modifiers) -> void:
-	modifiers["multiplier"] *= 2
+	modifiers["multiplier"] *= 1 + level * 0.2
 
 func apply_covalence():
 	covalence = true

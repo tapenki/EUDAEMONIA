@@ -18,5 +18,5 @@ func _physics_process(delta: float) -> void:
 		var intersections = space_state.intersect_shape(shape_query, 128)
 		for i in intersections:
 			var projectile = i.get("collider")
-			if projectile is Projectile:
+			if projectile.get("ability_relay") and projectile.ability_relay.is_projectile:
 				projectile.velocity += ability_relay.global_position.direction_to(projectile.global_position) * 200 * delta * ability_relay.speed_scale

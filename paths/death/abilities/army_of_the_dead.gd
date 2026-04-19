@@ -55,7 +55,7 @@ func max_health_modifiers(modifiers, ability_relay) -> void:
 	modifiers["base"] += applicants[ability_relay]["base_hp"] * 0.75 * level
 
 func damage_dealt_modifiers(_entity, damage) -> void:
-	damage["base"] += 3 * level - 3
+	damage["base"] += 5 * level - 5
 
 func serialize():
 	return {"level" : level, "preserved_elite" : preserved_elite}

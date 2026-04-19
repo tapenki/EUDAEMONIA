@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-@export var room = "ruin_room_2" ## exported for tutorial
+@export var room = "steps_entrance_hall" ## exported for tutorial
 var door = "Entrance0"
 
 var day = 1
@@ -46,14 +46,14 @@ signal failed()
 ### methods
 
 ## groups 
-func assign_projectile_group(projectile: Projectile, group: int, color: String = "secondary"):
+func assign_projectile_group(projectile: Node, group: int, color: String = "secondary"):
 	projectile.group = group
 	for i in range(1, 3):
 			projectile.set_collision_mask_value(i, i != group)
 	projectile.set_collision_layer_value(group, true)
 	projectile.apply_palette(group, color)
 
-func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
+func assign_entity_group(entity: Node, group: int, color: String = "secondary"):
 	entity.group = group
 	var hurtbox = entity.get_node_or_null("Hurtbox")
 	if hurtbox:

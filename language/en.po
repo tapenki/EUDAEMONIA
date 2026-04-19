@@ -89,11 +89,11 @@ msgstr "Abilities"
 msgid "affects"
 msgstr "Affects"
 
-msgid "stats_title"
-msgstr "[outline_size=10]Base Stats[/outline_size]"
+msgid "pawn_title"
+msgstr "[outline_size=10]Class: Pawn[/outline_size]"
 
-msgid "stats_description"
-msgstr "Attack damage: [outline_size=10]+[10][/outline_size].[br]Crit chance: [outline_size=10]+[5]%[/outline_size].[br]Move speed: [outline_size=10]+[300][/outline_size].""
+msgid "pawn_description"
+msgstr "You have:[br][outline_size=10]+[5][/outline_size] damage.[br][outline_size=10]+[5]%[/outline_size] crit chance.[br][outline_size=10]+[300][/outline_size] move speed.""
 
 msgid "defeated"
 msgstr "died :("
@@ -182,7 +182,7 @@ msgid "magic_missile_title"
 msgstr "[outline_size=10]Weapon: Magic Missile[/outline_size]"
 
 msgid "magic_missile_description"
-msgstr "Attack: Launch a missile every [outline_size=10][0.35][/outline_size] seconds."
+msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a missile with [outline_size=10]+[5][/outline_size] damage."
 
 msgid "star_blaze_title"
 msgstr "[outline_color=#BF4040]Weapon: Star Blaze[/outline_color]"
@@ -304,7 +304,7 @@ msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -334,7 +334,7 @@ msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
 
 msgid "ring_of_fire_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[3xLEVEL-3][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
@@ -432,7 +432,7 @@ msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[2]%[/outline_size] crit chance."
+msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[1+LEVELx0.2][/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
@@ -511,7 +511,7 @@ msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]x[2][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
@@ -560,7 +560,7 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.75xLEVEL][/outline_size] health and [outline_size=10]+[3xLEVEL-3][/outline_size] damage."
+msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.75xLEVEL][/outline_size] health and [outline_size=10]+[5xLEVEL-5][/outline_size] damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"
@@ -584,7 +584,7 @@ msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]x[2][/outline_size] of its damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "soul_tether_title"
 msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"
@@ -624,11 +624,53 @@ msgstr "[outline_color=#5B6487]Blade[/outline_color]"
 msgid "blade_description"
 msgstr "- Have a stab at it."
 
+msgid "hold_ground_title"
+msgstr "[outline_color=#5B6487]Ability: Hold Ground[/outline_color]"
+
+msgid "hold_ground_description"
+msgstr "[outline_size=10]Once every [0.25] seconds while standing still:[/outline_size] Manifest a shockwave. It has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+
+msgid "broad_swings_title"
+msgstr "[outline_color=#5B6487]Ability: Broad Swings[/outline_color]"
+
+msgid "broad_swings_description"
+msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] attack size."
+
+msgid "block_title"
+msgstr "[outline_color=#5B6487]Ability: Block[/outline_color]"
+
+msgid "block_description"
+msgstr "[outline_size=10]Once every [4] seconds:[/outline_size] Reduce damage taken by [outline_size=10][10xLEVEL][/outline_size]."
+
+msgid "unsheathe_title"
+msgstr "[outline_color=#5B6487]Ability: Unsheathe[/outline_color]"
+
+msgid "unsheathe_description"
+msgstr "Gain [outline_size=10]+[5][/outline_size] [outline_color=#5B6487]Sword[/outline_color] damage per second for up to [outline_size=10][4][/outline_size] seconds resetting upon attacking."
+
+msgid "deflect_title"
+msgstr "[outline_color=#5B6487]Mastery: Deflect[/outline_color]"
+
+msgid "deflect_description"
+msgstr "outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Deflect[/outline_color][br][outline_color=#5B6487]Sword[/outline_color] slashes deflect enemy projectiles to nearest enemy if [outline_color=#5B6487]Unsheathe[/outline_color] is fully charged."
+
+msgid "unflinching_title"
+msgstr "[outline_color=#5B6487]Mastery: Unflinching[/outline_color]"
+
+msgid "unflinching_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color][br]Each subsequent [outline_color=#5B6487]Hold Ground[/outline_color] shockwave gains [outline_size=10]x[0.25][/outline_size] bonus damage up to [outline_size=10][4][/outline_size] times resetting upon moving."
+
+msgid "percussion_title"
+msgstr "[outline_color=#5B6487]Mastery: Percussion[/outline_color]"
+
+msgid "percussion_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color][br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10][5xLEVEL][/outline_size] shock to nearby enemies."
+
 msgid "sword_title"
 msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
 
 msgid "sword_description"
-msgstr "Attack: Perform a slash every [outline_size=10][0.5][/outline_size] seconds. Slashes have limited range and [outline_size=10]+[1][/outline_size] pierce."
+msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Perform a slash with [outline_size=10]+[5][/outline_size] damage and [outline_size=10]+[1][/outline_size] pierce."
 
 # spheres
 msgid "day_counter"

@@ -290,6 +290,34 @@ var ability_data = {
 	},
 	#endregion
 	#region blade
+	"hold_ground" : {
+		"script" : preload("res://paths/blade/abilities/hold_ground.gd"),
+		"type" : "upgrade"
+	},
+	"broad_swings" : {
+		"script" : preload("res://paths/blade/abilities/broad_swings.gd"),
+		"type" : "upgrade"
+	},
+	"block" : {
+		"script" : preload("res://paths/blade/abilities/block.gd"),
+		"type" : "upgrade"
+	},
+	"deflect" : {
+		"script" : preload("res://paths/blade/abilities/deflect.gd"),
+		"type" : "upgrade"
+	},
+	"unsheathe" : {
+		"script" : preload("res://paths/blade/abilities/unsheathe.gd"),
+		"type" : "upgrade"
+	},
+	"unflinching" : {
+		"script" : preload("res://paths/blade/abilities/unflinching.gd"),
+		"type" : "mastery"
+	},
+	"percussion" : {
+		"script" : preload("res://paths/blade/abilities/percussion.gd"),
+		"type" : "mastery"
+	},
 	"sword" : {
 		"script" : preload("res://paths/blade/sword/sword.gd"),
 		"type" : "weapon"

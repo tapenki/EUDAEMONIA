@@ -2,7 +2,6 @@ extends Node
 
 @export var inherited_scale = {"base" : 0.0, "multiplier" : 1.0}
 @export var inherited_damage = {"base" : 10.0, "multiplier" : 1.0}
-@export var inherited_summon_damage = {"base" : 10.0, "multiplier" : 1.0}
 @export var inherited_crit_chance = {"base" : 0.0, "multiplier" : 1.0}
 #@export var inherited_speed_scale = {"base" : 1.0, "multiplier" : 1.0}
 
@@ -32,6 +31,7 @@ signal movement(distance: float)
 #signal attack_rate_modifiers(modifiers: Dictionary)
 signal attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
+signal attack_success(direction: Vector2, weapon: Node)
 #signal projectile_created(projectile: Projectile)
 #signal attack_impact(position: Vector2, body: Node)
 
@@ -106,7 +106,7 @@ func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "
 		damage_dealt_modifiers.emit(entity, damage)
 	if entity and not damage.has("skip_input_modifiers"):
 		entity.ability_relay.damage_taken_modifiers.emit(damage)
-	damage["final"] = damage["base"] * damage["multiplier"]
+	damage["final"] = max(0, damage["base"] * damage["multiplier"])
 	if damage.has("crits"):
 		damage["final"] *= pow(1.5, damage["crits"])
 
@@ -212,14 +212,14 @@ func find_target(position = owner.global_position, reach = 9999, exclude = {}):
 
 ## instantiation
 # can't get main from outside the tree
-func assign_projectile_group(projectile: Projectile, group: int, color: String = "secondary"):
+func assign_projectile_group(projectile: Node, group: int, color: String = "secondary"):
 	projectile.group = group
 	for i in range(1, 3):
 			projectile.set_collision_mask_value(i, i != group)
 	projectile.set_collision_layer_value(group, true)
 	projectile.apply_palette(group, color)
 
-func assign_entity_group(entity: Entity, group: int, color: String = "secondary"):
+func assign_entity_group(entity: Node, group: int, color: String = "secondary"):
 	entity.group = group
 	var hurtbox = entity.get_node_or_null("Hurtbox")
 	if hurtbox:
@@ -269,8 +269,8 @@ func make_summon(summon_scene: PackedScene, position: Vector2, applicant_data: D
 	elif is_instance_valid(entity_source):
 		summon_instance.ability_relay.entity_source = entity_source
 	
-	var summon_damage = inherited_summon_damage.duplicate()
-	summon_damage_modifiers.emit(summon_damage)
+	var summon_damage = inherited_damage.duplicate()
+	#summon_damage_modifiers.emit(summon_damage)
 	summon_instance.ability_relay.inherited_damage = summon_damage
 	
 	if ability_handler:

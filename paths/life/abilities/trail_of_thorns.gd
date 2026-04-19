@@ -14,8 +14,8 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
 		applicant_data["charge"] = 0
 		applicant_data["pain_walk"] = 0
+		ability_relay.movement.connect(movement.bind(ability_relay))
 	super(ability_relay, applicant_data)
-	ability_relay.movement.connect(movement.bind(ability_relay))
 
 func disapply(ability_relay):
 	super(ability_relay)

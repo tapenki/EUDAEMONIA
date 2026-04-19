@@ -69,13 +69,13 @@ func on_collision(crits: int):
 			get_node("/root/Main/ParticleHandler").quick_particles(hit_particle_preset, 
 			crit_particle_texture,
 			global_position,
-			hit_particle_scale,
+			hit_particle_scale * scale.x,
 			hit_particle_count,
 			get_node("Sprite").self_modulate)
 		get_node("/root/Main/ParticleHandler").quick_particles(hit_particle_preset, 
 		hit_particle_texture,
 		global_position,
-		hit_particle_scale,
+		hit_particle_scale * scale.x,
 		hit_particle_count,
 		get_node("Sprite").self_modulate)
 	if hit_sound:

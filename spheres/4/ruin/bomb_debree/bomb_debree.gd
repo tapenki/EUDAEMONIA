@@ -4,16 +4,16 @@ var explosion_scene = preload("res://generic/projectiles/explosion.tscn")
 
 func _ready() -> void:
 	super()
-	ability_relay.before_self_death.connect(before_self_death)
+	ability_relay.damage_taken.connect(damage_taken)
 	ability_relay.death_effects.connect(death_effects)
 
-func before_self_death(modifiers) -> void:
-	modifiers["soft_prevented"] = true
+func damage_taken(_damage) -> void:
 	if not get_node("Lifetime").running and alive:
-		get_node("Lifetime").start()
+		get_node("Lifetime").start(4)
 		ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
 
 func death_effects():
+	loosen()
 	var explosion_instance = ability_relay.make_projectile(explosion_scene, 
 	global_position, ## position
 	{"subscription" = 2}, ## inheritance
@@ -24,6 +24,11 @@ func death_effects():
 	get_node("/root/Main").play_sound("Explosion")
 
 func loosen():
-	if not get_node("Lifetime").running and alive:
-		ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
-	super()
+	if not get_node("Lifetime").running:
+		if alive:
+			ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
+		get_node("Lifetime").start(2)
+	elif get_node("Lifetime").time_left > 2:
+		get_node("Lifetime").start(2)
+	loose = true
+	reparent(get_node("/root/Main/Entities"), true)

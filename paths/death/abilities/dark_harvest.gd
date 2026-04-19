@@ -54,7 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				target.kill()
 
 func damage_dealt_modifiers(_entity, damage) -> void:
-	damage["multiplier"] *= 2
+	damage["base"] += 5 * level - 5 
 
 func attack_scale_modifiers(modifiers) -> void:
 	modifiers["base"] += 0.4 * level - 0.4

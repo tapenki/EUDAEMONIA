@@ -43,12 +43,6 @@ resource_local_to_scene = true
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_74toj"]
-resource_local_to_scene = true
-font_size = 40
-outline_size = 8
-outline_color = Color(1, 1, 1, 0.2509804)
-
 [sub_resource type="LabelSettings" id="LabelSettings_c44sx"]
 outline_size = 5
 outline_color = Color(1, 0, 0, 1)
@@ -454,14 +448,10 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="BaseStats" parent="GameMenu/Affects/Container" unique_id=1930712691 instance=ExtResource("15_3lbto")]
+[node name="Pawn" parent="GameMenu/Affects/Container" unique_id=1930712691 instance=ExtResource("15_3lbto")]
 layout_mode = 2
 texture_normal = ExtResource("14_c74r5")
-subject = "stats"
-
-[node name="Symbol" parent="GameMenu/Affects/Container/BaseStats" index="0" unique_id=532623967]
-text = "St"
-label_settings = SubResource("LabelSettings_74toj")
+subject = "pawn"
 
 [node name="Reset" type="Button" parent="GameMenu" unique_id=1520013231]
 z_index = 1
@@ -621,5 +611,3 @@ patch_margin_bottom = 10
 [connection signal="pressed" from="GameMenu/Settings" to="." method="toggle_settings"]
 [connection signal="pressed" from="GameMenu/TabButtons/AbilitiesTabButton" to="GameMenu/TabButtons/AbilitiesTabButton" method="_on_pressed"]
 [connection signal="pressed" from="GameMenu/TabButtons/AffectsTabButton" to="GameMenu/TabButtons/AffectsTabButton" method="_on_pressed"]
-
-[editable path="GameMenu/Affects/Container/BaseStats"]

@@ -132,6 +132,18 @@ func disaffect(ability: String):
 		reminder_instance.queue_free()
 
 func unlearn_all():
+	fade.color = Color(0,0,0)
+	var tween = create_tween()
+	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
+	for entity in get_node("/root/Main/Entities").get_children():
+		if not entity is Player:
+			entity.ability_relay.freed.emit()
+			entity.queue_free()
+	for projectile in get_node("/root/Main/Projectiles").get_children():
+		projectile.ability_relay.freed.emit()
+		projectile.queue_free()
+	for effect in get_node("/root/Main/Effects").get_children():
+		effect.queue_free()
 	for path_node in path_ui.get_children():
 		path_node.unlearn()
 	for path_picker in path_pickers.get_children():
