@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://do7uont8pp61q"]
+[gd_scene format=3 uid="uid://d2nqytus2qjs1"]
 
-[ext_resource type="Texture2D" uid="uid://dgux5aejbmeo" path="res://affects/challenges/ui/challenge.png" id="1_6ftad"]
-[ext_resource type="Script" uid="uid://dokyn68dbivob" path="res://affects/ui/trick_reminder.gd" id="2_4w0na"]
-[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_4w0na"]
+[ext_resource type="Texture2D" uid="uid://cue0rs26jtjxv" path="res://paths/life/green.png" id="1_yk2n8"]
+[ext_resource type="Script" uid="uid://dokyn68dbivob" path="res://affects/ui/trick_reminder.gd" id="2_aojd8"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_22llj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_srhlf"]
 resource_local_to_scene = true
@@ -14,13 +14,52 @@ outline_color = Color(1, 1, 1, 0.2509804)
 outline_size = 5
 outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
 
-[node name="Reminder" type="TextureButton" unique_id=374846769]
+[node name="Reminder" type="Control" unique_id=2032813159]
 custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 60.0
+offset_bottom = 60.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_6ftad")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("2_4w0na")
+script = ExtResource("2_aojd8")
+subject = "bramble_shot"
+
+[node name="TextureRect1" type="NinePatchRect" parent="." unique_id=1935167980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_yk2n8")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="TextureRect2" type="NinePatchRect" parent="." unique_id=303863519]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -29.999985
+offset_right = 30.0
+offset_bottom = 30.000015
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.7853982
+pivot_offset = Vector2(30, 30)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_yk2n8")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 
 [node name="Symbol" type="Label" parent="." unique_id=532623967]
 layout_mode = 1
@@ -47,6 +86,7 @@ offset_right = 11.0
 offset_bottom = 11.0
 grow_horizontal = 2
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 text = "[A]"
 label_settings = SubResource("LabelSettings_x3bi1")
 horizontal_alignment = 1
@@ -64,7 +104,9 @@ offset_right = 4.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_4w0na")
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_22llj")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10
 patch_margin_top = 10

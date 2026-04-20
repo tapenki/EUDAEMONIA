@@ -375,22 +375,39 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Chat" type="BoxContainer" parent="UI/HUD" unique_id=2068076398]
+[node name="Chat" type="BoxContainer" parent="UI/HUD" unique_id=1815592407]
 process_mode = 1
 visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -104.0
-offset_right = 191.0
-offset_bottom = -4.0
+offset_left = 20.0
+offset_right = 20.0
+offset_bottom = -5.0
 grow_vertical = 0
 mouse_filter = 2
 alignment = 2
 vertical = true
 script = ExtResource("10_wfgev")
+
+[node name="Tricks" type="BoxContainer" parent="UI/HUD" unique_id=153085665]
+process_mode = 1
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -12.0
+offset_right = -20.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
 
 [node name="GameMenu" type="Control" parent="UI" unique_id=1048853400]
 z_index = 1

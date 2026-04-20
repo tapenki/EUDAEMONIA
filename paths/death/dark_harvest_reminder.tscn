@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://do7uont8pp61q"]
+[gd_scene format=3 uid="uid://djo7bs0d33beh"]
 
-[ext_resource type="Texture2D" uid="uid://dgux5aejbmeo" path="res://affects/challenges/ui/challenge.png" id="1_6ftad"]
-[ext_resource type="Script" uid="uid://dokyn68dbivob" path="res://affects/ui/trick_reminder.gd" id="2_4w0na"]
-[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_4w0na"]
+[ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/death/black.png" id="1_38syk"]
+[ext_resource type="Script" uid="uid://dokyn68dbivob" path="res://affects/ui/trick_reminder.gd" id="2_38syk"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_aoeo8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_srhlf"]
 resource_local_to_scene = true
@@ -17,10 +17,11 @@ outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
 [node name="Reminder" type="TextureButton" unique_id=374846769]
 custom_minimum_size = Vector2(60, 60)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_6ftad")
+texture_normal = ExtResource("1_38syk")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("2_4w0na")
+script = ExtResource("2_38syk")
+subject = "dark_harvest"
 
 [node name="Symbol" type="Label" parent="." unique_id=532623967]
 layout_mode = 1
@@ -47,6 +48,7 @@ offset_right = 11.0
 offset_bottom = 11.0
 grow_horizontal = 2
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 text = "[A]"
 label_settings = SubResource("LabelSettings_x3bi1")
 horizontal_alignment = 1
@@ -64,7 +66,9 @@ offset_right = 4.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_4w0na")
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture = ExtResource("3_aoeo8")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10
 patch_margin_top = 10

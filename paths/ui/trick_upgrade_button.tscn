@@ -39,7 +39,6 @@ tag = "upgrade_cost"
 
 [node name="Symbol" type="Label" parent="." unique_id=1097871018]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
-z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0

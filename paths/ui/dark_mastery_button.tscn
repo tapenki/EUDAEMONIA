@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3wex0msyo1yg"]
+[gd_scene format=3 uid="uid://d3wex0msyo1yg"]
 
 [ext_resource type="Script" uid="uid://cbd6kv4xpumes" path="res://paths/ui/dark_mastery_button.gd" id="1_lbblf"]
 [ext_resource type="Texture2D" uid="uid://cgujkskmg6j61" path="res://paths/ui/dark_blank.png" id="2_v5nmr"]
@@ -9,7 +9,7 @@ font_size = 40
 outline_size = 8
 outline_color = Color(1, 1, 1, 0.2509804)
 
-[node name="Button" type="TextureButton"]
+[node name="Button" type="TextureButton" unique_id=2087909266]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
 custom_minimum_size = Vector2(60, 60)
 anchors_preset = 8
@@ -29,7 +29,7 @@ script = ExtResource("1_lbblf")
 accessible_texture = ExtResource("2_v5nmr")
 tag = "dark_unlock_cost"
 
-[node name="TextureRect1" type="NinePatchRect" parent="."]
+[node name="TextureRect1" type="NinePatchRect" parent="." unique_id=559452468]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -43,9 +43,8 @@ patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
 
-[node name="TextureRect2" type="NinePatchRect" parent="."]
+[node name="TextureRect2" type="NinePatchRect" parent="." unique_id=506343021]
 self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
-z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -68,9 +67,8 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="Symbol" type="Label" parent="."]
+[node name="Symbol" type="Label" parent="." unique_id=1258956486]
 self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
-z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0

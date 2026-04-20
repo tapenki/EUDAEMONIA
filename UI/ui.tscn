@@ -206,25 +206,27 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -104.0
-offset_right = 191.0
-offset_bottom = -4.0
+offset_left = 20.0
+offset_right = 20.0
+offset_bottom = -5.0
 grow_vertical = 0
 mouse_filter = 2
 alignment = 2
 vertical = true
 script = ExtResource("8_co7pv")
 
-[node name="Tricks" type="HFlowContainer" parent="HUD" unique_id=967280855]
+[node name="Tricks" type="BoxContainer" parent="HUD" unique_id=1790490533]
 process_mode = 1
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -8.0
+offset_left = -20.0
+offset_top = -12.0
+offset_right = -20.0
 offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0

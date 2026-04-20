@@ -1,5 +1,8 @@
 extends Ability
 
+var reminder_scene = preload("res://paths/death/dark_harvest_reminder.tscn")
+var reminder_node: Node
+
 var explosion_scene = preload("res://paths/death/harvest_explosion/harvest_explosion.tscn")
 
 var status: Node
@@ -28,7 +31,14 @@ func disapply(ability_relay):
 		ability_relay.damage_dealt.disconnect(damage_dealt)
 
 func _ready() -> void:
+	reminder_node = reminder_scene.instantiate()
+	get_node("/root/Main/UI/HUD/Tricks").add_child(reminder_node)
+	get_node("/root/Main/UI/HUD/Tricks").move_child(reminder_node, 0)
 	status = ability_handler.learn("doom", 0)
+
+func unlearn():
+	reminder_node.queue_free()
+	super()
 
 func _unhandled_input(event: InputEvent) -> void:
 	for ability_relay in applicants:

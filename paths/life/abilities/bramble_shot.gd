@@ -1,5 +1,8 @@
 extends Ability
 
+var reminder_scene = preload("res://paths/life/bramble_shot_reminder.tscn")
+var reminder_node: Node
+
 var bramble = preload("res://paths/life/bramble/bramble.tscn")
 
 func apply(ability_relay, applicant_data):
@@ -12,6 +15,15 @@ func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
+
+func _ready() -> void:
+	reminder_node = reminder_scene.instantiate()
+	get_node("/root/Main/UI/HUD/Tricks").add_child(reminder_node)
+	get_node("/root/Main/UI/HUD/Tricks").move_child(reminder_node, 0)
+
+func unlearn():
+	reminder_node.queue_free()
+	super()
 
 func _unhandled_input(event: InputEvent) -> void:
 	for ability_relay in applicants:

@@ -75,6 +75,7 @@ func toggle_game_menu():
 		if not main.day_started:
 			main.start_day()
 		hud.get_node("Chat").visible = true
+		hud.get_node("Tricks").visible = true
 		toggle_pause(false)
 	else:
 		game_menu.visible = true
@@ -86,6 +87,7 @@ func toggle_game_menu():
 		elif not main.game_over:
 			proceed.text = "continue"
 		hud.get_node("Chat").visible = false
+		hud.get_node("Tricks").visible = false
 		toggle_pause(true)
 	get_node("/root/Main").play_sound("Click")
 	fade.color = Color(0,0,0)
