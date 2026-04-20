@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			if swift_fate:
 				damage_mult = 0.6
 			ability_relay.deal_damage(ability_relay.owner, 
-			{"base" : damage_mult * applicants[ability_relay]["accumulated"], "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
+			{"base" : damage_mult * applicants[ability_relay]["accumulated"], "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
 			Config.get_team_color(1, "secondary"))
 			disapply(ability_relay)
 

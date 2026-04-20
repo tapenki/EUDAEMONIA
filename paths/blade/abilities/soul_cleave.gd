@@ -36,6 +36,6 @@ func _unhandled_input(event: InputEvent) -> void:
 					summon_position,
 					{"subscription" = 3})
 					summon_instance.max_health = target.max_health * 0.75
-					summon_instance.health = summon_instance.max_health
+					summon_instance.health = target.health * 0.75
 					get_node("/root/Main").spawn_entity(summon_instance)
 				target.kill()

@@ -23,6 +23,7 @@ var loop = 0
 
 var enemy_queue: Array
 
+var wave_over: bool
 var game_over: bool
 
 ### signals
@@ -181,18 +182,24 @@ func check_finished(dying_entity):
 			saver.erase_run()
 			#var tween = create_tween()
 			#tween.tween_property(camera, "zoom", Vector2(2, 2), 15)
-	else: ## check wave progress
+	elif not dying_entity.untargetable: ## check wave progress
 		var enemies_alive = false
 		for entity in get_node("/root/Main/Entities").get_children():
-			if entity.alive and entity.group == 2:
+			if entity.alive and entity.group == 2 and not entity.untargetable:
 				enemies_alive = true
 				break
 		for spawn in spawns.get_children():
-			if not spawn.is_queued_for_deletion() and spawn.entity.group == 2:
+			if not spawn.is_queued_for_deletion() and spawn.entity.group == 2 and not spawn.entity.untargetable:
 				enemies_alive = true
 				break
 		if enemies_alive: return ## return if there's still enemies left alive
-		wave_cleared.emit()
+		if wave_over: return
+		finish_wave.call_deferred()
+		wave_over = true
+
+func finish_wave():
+	wave_cleared.emit()
+	wave_over = false
 
 func full_clear():
 	play_sound("Completion")

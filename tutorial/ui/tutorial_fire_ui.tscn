@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbvlub08cxuks"]
 
 [ext_resource type="Texture2D" uid="uid://dl3undunmonyt" path="res://paths/fire/red.png" id="1_3c07l"]
+[ext_resource type="Script" uid="uid://dsdvquf1qy2ik" path="res://paths/ui/path_ui.gd" id="1_y177h"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="2_muc1t"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="3_gohqs"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_xmg6a"]
@@ -13,6 +14,7 @@ anchors_preset = 0
 offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
+script = ExtResource("1_y177h")
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=144110366]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -54,7 +56,7 @@ horizontal_alignment = 1
 script = ExtResource("3_gohqs")
 subject = "fire"
 
-[node name="Abilities1" type="HBoxContainer" parent="." unique_id=2141398342]
+[node name="Abilities" type="HFlowContainer" parent="." unique_id=196677694]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -66,50 +68,38 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Ignition" parent="Abilities1" unique_id=38969323 instance=ExtResource("4_xmg6a")]
+[node name="Ignition" parent="Abilities" unique_id=38969323 instance=ExtResource("4_xmg6a")]
 layout_mode = 2
 texture_normal = ExtResource("1_3c07l")
 subject = "ignition"
 extras = ["burn"]
 
-[node name="ScorchedEarth" parent="Abilities1" unique_id=799314877 instance=ExtResource("4_xmg6a")]
+[node name="ScorchedEarth" parent="Abilities" unique_id=799314877 instance=ExtResource("4_xmg6a")]
 layout_mode = 2
 texture_normal = ExtResource("1_3c07l")
 subject = "scorched_earth"
 
-[node name="FromAshes" parent="Abilities1" unique_id=1303334605 instance=ExtResource("4_xmg6a")]
+[node name="FromAshes" parent="Abilities" unique_id=1303334605 instance=ExtResource("4_xmg6a")]
 layout_mode = 2
 texture_normal = ExtResource("1_3c07l")
 subject = "from_ashes"
 
-[node name="Abilities2" type="HBoxContainer" parent="." unique_id=1291601244]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 94.0
-offset_right = 112.5
-offset_bottom = 154.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Conflagration" parent="Abilities2" unique_id=269160871 instance=ExtResource("5_fa5ig")]
+[node name="Conflagration" parent="Abilities" unique_id=269160871 instance=ExtResource("5_fa5ig")]
 layout_mode = 2
 
-[node name="FromAshes" parent="Abilities2" unique_id=1881715234 instance=ExtResource("5_fa5ig")]
+[node name="FromAshes2" parent="Abilities" unique_id=1881715234 instance=ExtResource("5_fa5ig")]
 layout_mode = 2
 
-[node name="Masteries1" type="HBoxContainer" parent="." unique_id=1076665176]
+[node name="Masteries1" type="HFlowContainer" parent="." unique_id=628219849]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -112.5
-offset_top = 162.0
+offset_top = 158.0
 offset_right = 112.5
-offset_bottom = 222.0
+offset_bottom = 282.0
 grow_horizontal = 2
 alignment = 1
 
@@ -117,7 +107,7 @@ alignment = 1
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
-"ignition": 5
+"pyre": 1
 }
 subject = "pyre"
 extras = ["burn"]
@@ -126,7 +116,7 @@ extras = ["burn"]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
-"scorched_earth": 5
+"ring_of_fire": 1
 }
 subject = "ring_of_fire"
 
@@ -134,37 +124,24 @@ subject = "ring_of_fire"
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
-"from_ashes": 5
+"fiery_rebirth": 1
 }
 subject = "fiery_rebirth"
 extras = ["burn"]
 
-[node name="Masteries2" type="HBoxContainer" parent="." unique_id=1667646860]
-layout_direction = 2
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 226.0
-offset_right = 112.5
-offset_bottom = 286.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Inferno" parent="Masteries2" unique_id=408650081 instance=ExtResource("5_10p88")]
+[node name="Inferno" parent="Masteries1" unique_id=408650081 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
-"melt": 5
+"inferno": 1
 }
 subject = "inferno"
 
-[node name="UndyingFlames" parent="Masteries2" unique_id=423107617 instance=ExtResource("5_10p88")]
+[node name="UndyingFlames" parent="Masteries1" unique_id=423107617 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
-"firespawning": 5
+"undying_flames": 1
 }
 subject = "undying_flames"
 

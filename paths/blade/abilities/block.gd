@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 
 func damage_taken_modifiers(damage, ability_relay) -> void:
 	if applicants[ability_relay].has("time") and applicants[ability_relay]["time"] <= 0:
-		damage["base"] -= 10 * level
+		damage["flat"] -= 10 * level
 		damage["blocked"] = true
 
 func damage_taken(damage, ability_relay) -> void:

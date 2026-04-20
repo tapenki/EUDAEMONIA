@@ -23,7 +23,7 @@ func damage_dealt(entity, damage, ability_relay) -> void:
 		chain[entity] = true
 		var target = ability_relay.find_target(entity.global_position, 9999, chain)
 		if target:
-			ability_relay.deal_damage(target, {"base" : 0, "multiplier" : 1, "direction" : entity.global_position.direction_to(target.global_position)})
+			ability_relay.deal_damage(target)
 			var particle_scale = 1#1.2#ability_relay.get_attack_scale()
 			get_node("/root/Main/ParticleHandler").particle_beam("common", 
 			preload("res://paths/lightning/zap.png"),

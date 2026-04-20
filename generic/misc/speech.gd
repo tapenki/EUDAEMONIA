@@ -17,7 +17,7 @@ func say(text: String):
 	get_node("/root/Main/UI/HUD/Chat").print_message(time+"[outline_color=#"+color+"]"+tr(text)+"[/outline_color]")
 
 func _ready() -> void:
-	if owner.group != 2:
+	if owner.summoned:
 		return
 	if spawn_quotes.size() > 0:
 		say(spawn_quotes.pick_random())

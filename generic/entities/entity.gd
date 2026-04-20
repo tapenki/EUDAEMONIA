@@ -17,7 +17,7 @@ var immune_timer = ScaledTimer.new()
 @export_category("Tags")
 @export var group: int
 @export var summoned: bool
-@export var unchaseable: bool
+@export var untargetable: bool
 var target
 
 var alive = true

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://rupy08jng400"]
 
 [ext_resource type="Script" uid="uid://dixlok5134qdp" path="res://generic/game_handler.gd" id="1_5ot4n"]
+[ext_resource type="Script" uid="uid://cecf78idmwirj" path="res://particle_handler.gd" id="2_kktqm"]
 [ext_resource type="Script" uid="uid://dmr22mfrayynh" path="res://saver_game.gd" id="2_w7oih"]
 [ext_resource type="Script" uid="uid://yyn4tad8snr2" path="res://tutorial/ui/ui_tutorial.gd" id="3_wfgev"]
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="4_kktqm"]
@@ -217,6 +218,9 @@ shader_parameter/scale_curve = SubResource("CurveTexture_1u8w0")
 process_mode = 1
 script = ExtResource("1_5ot4n")
 room = "tutorial_entrance_hall"
+
+[node name="ParticleHandler" type="Node" parent="." unique_id=733435625]
+script = ExtResource("2_kktqm")
 
 [node name="Saver" type="Node" parent="." unique_id=2058622283]
 script = ExtResource("2_w7oih")
@@ -551,39 +555,43 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="MagicPicker1" parent="UI/GameMenu/Abilities" unique_id=675235411 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+[node name="PathPickers" type="Control" parent="UI/GameMenu/Abilities" unique_id=72457511]
+anchors_preset = 0
+offset_top = 75.0
+offset_right = 40.0
+offset_bottom = 115.0
+
+[node name="MagicPicker1" parent="UI/GameMenu/Abilities/PathPickers" unique_id=675235411 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 z_index = 5
 layout_mode = 0
-offset_top = 75.0
-offset_bottom = 375.0
 next = NodePath("../MagicPicker2")
 blink = true
 
-[node name="MagicPicker2" parent="UI/GameMenu/Abilities" unique_id=1460984491 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+[node name="MagicPicker2" parent="UI/GameMenu/Abilities/PathPickers" unique_id=1460984491 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 visible = false
 layout_mode = 0
 offset_left = 225.0
-offset_top = 75.0
 offset_right = 450.0
-offset_bottom = 375.0
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="UI/GameMenu/Abilities" unique_id=870491073 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+[node name="MagicPicker3" parent="UI/GameMenu/Abilities/PathPickers" unique_id=870491073 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 visible = false
 layout_mode = 0
 offset_left = 450.0
-offset_top = 75.0
 offset_right = 675.0
-offset_bottom = 375.0
 next = NodePath("../MagicPicker4")
 
-[node name="MagicPicker4" parent="UI/GameMenu/Abilities" unique_id=1972808017 instance=ExtResource("15_xvoxj")]
+[node name="MagicPicker4" parent="UI/GameMenu/Abilities/PathPickers" unique_id=1972808017 instance=ExtResource("15_xvoxj")]
 visible = false
 layout_mode = 0
 offset_left = 675.0
-offset_top = 75.0
 offset_right = 900.0
-offset_bottom = 375.0
+
+[node name="PathUI" type="Control" parent="UI/GameMenu/Abilities" unique_id=934101495]
+anchors_preset = 0
+offset_top = 75.0
+offset_right = 40.0
+offset_bottom = 115.0
 
 [node name="Affects" type="Control" parent="UI/GameMenu" unique_id=347512701]
 visible = false

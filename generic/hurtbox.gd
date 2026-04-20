@@ -17,7 +17,7 @@ func hurt(entity):
 	if exclude.has(entity):
 		return
 	exclude[entity] = hit_delay
-	var damage = ability_relay.deal_damage(entity, {"base" : 0, "multiplier" : 1, "direction" : get_knockback_direction(entity)})
+	var damage = ability_relay.deal_damage(entity)
 	on_collision(entity.global_position, entity, damage["crits"])
 	if ability_relay.owner is Entity and is_instance_valid(entity.hurtbox):
 		entity.hurtbox.hurt(ability_relay.owner)

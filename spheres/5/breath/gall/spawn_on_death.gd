@@ -16,4 +16,6 @@ func death_effects():
 	summon_instance.health = summon_instance.max_health
 	summon_instance.ability_relay.inherited_damage = ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
 	summon_instance.summoned = ability_relay.owner.summoned
+	if not summon_instance.summoned:
+		summon_instance.apply_palette(summon_instance.group, "primary")
 	get_node("/root/Main/Entities").add_child(summon_instance)

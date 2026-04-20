@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			applicants[ability_relay]["duration"] -= delta
 			if applicants[ability_relay]["duration"] <= 0:
 				ability_relay.deal_damage(ability_relay.owner, 
-				{"base" : applicants[ability_relay]["stacks"], "multiplier" : 1.0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
+				{"base" : applicants[ability_relay]["stacks"], "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
 				Config.get_team_color(1, "secondary"))
 				applicants[ability_relay]["duration"] = 1
 				applicants[ability_relay]["ticks"] += 1

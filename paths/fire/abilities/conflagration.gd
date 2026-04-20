@@ -21,7 +21,7 @@ func entity_death(dying_entity: Entity):
 			if inferno:
 				max_targets = 2
 			for entity in ability_relay.area_targets(dying_entity.global_position, 9999):
-				if entity != ability_relay.owner and entity != dying_entity and not entity.unchaseable:
+				if entity != ability_relay.owner and entity != dying_entity and not entity.untargetable:
 					status.apply(entity.ability_relay, {"stacks" = min(10 * level, status.applicants[dying_entity.ability_relay]["stacks"])})
 					get_node("/root/Main/ParticleHandler").particle_beam("common", 
 					preload("res://paths/fire/flame.png"),

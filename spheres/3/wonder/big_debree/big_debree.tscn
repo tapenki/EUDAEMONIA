@@ -83,7 +83,7 @@ hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 120
 health = 120.0
-unchaseable = true
+untargetable = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=67728224]
 script = ExtResource("2_jo4yx")

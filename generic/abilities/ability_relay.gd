@@ -99,7 +99,7 @@ func get_attack_scale(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
 	attack_scale_modifiers.emit(modifiers)
 	return (1 + inherited_scale["base"] + modifiers["base"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
 
-func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "multiplier" : 1}):
+func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "multiplier" : 1, "flat" : 0}):
 	if not damage.has("skip_output_modifiers"):
 		damage["base"] += inherited_damage["base"]
 		damage["multiplier"] *= inherited_damage["multiplier"]
@@ -109,6 +109,7 @@ func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "
 	damage["final"] = max(0, damage["base"] * damage["multiplier"])
 	if damage.has("crits"):
 		damage["final"] *= pow(1.5, damage["crits"])
+	damage["final"] += damage["flat"]
 
 func get_crits(entity: Entity = null, crit: Dictionary = {"base" : 0, "multiplier" : 1}, skip_input_modifiers = false, skip_output_modifiers = false):
 	if not skip_output_modifiers:
@@ -123,7 +124,7 @@ func get_crits(entity: Entity = null, crit: Dictionary = {"base" : 0, "multiplie
 		crits += 1
 	return crits
 
-func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" : 1, "direction" : Vector2()}, damage_color = Config.get_team_color(owner.group, "secondary")):
+func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" : 1, "flat" : 0}, damage_color = Config.get_team_color(owner.group, "secondary")):
 	damage["group"] = owner.group
 	if entity.health == entity.max_health:
 		damage["first_blood"] = true
@@ -203,7 +204,7 @@ func area_targets(position: Vector2, radius = 9999, mask = enemies_mask()):
 func find_target(position = owner.global_position, reach = 9999, exclude = {}):
 	var found
 	for entity in area_targets(position, reach):
-		if entity != owner and not exclude.has(entity) and not entity.unchaseable:
+		if entity != owner and not exclude.has(entity) and not entity.untargetable:
 			var distance = position.distance_to(entity.global_position)
 			if distance < reach:
 				reach = distance
