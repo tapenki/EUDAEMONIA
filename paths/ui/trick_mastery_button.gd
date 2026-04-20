@@ -87,6 +87,10 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		get_node("/root/Main").play_sound("Click")
 
+func _on_mouse_entered() -> void:
+	if accessible:
+		super()
+
 func controls_changed(action):
 	if action == subject:
 		keybind_button.text = "[%s]" % InputMap.action_get_events(subject)[0].as_text()

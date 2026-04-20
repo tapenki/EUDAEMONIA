@@ -89,6 +89,10 @@ bramble_shot={
 "deadzone": 0.2,
 "events": []
 }
+soul_cleave={
+"deadzone": 0.2,
+"events": []
+}
 
 [internationalization]
 

@@ -181,14 +181,14 @@ func check_finished(dying_entity):
 			saver.erase_run()
 			#var tween = create_tween()
 			#tween.tween_property(camera, "zoom", Vector2(2, 2), 15)
-	elif not dying_entity.summoned: ## check wave progress
+	else: ## check wave progress
 		var enemies_alive = false
 		for entity in get_node("/root/Main/Entities").get_children():
-			if entity.alive and entity.group == 2 and not entity.summoned:
+			if entity.alive and entity.group == 2:
 				enemies_alive = true
 				break
 		for spawn in spawns.get_children():
-			if not spawn.is_queued_for_deletion() and spawn.entity.group == 2 and not spawn.entity.summoned:
+			if not spawn.is_queued_for_deletion() and spawn.entity.group == 2:
 				enemies_alive = true
 				break
 		if enemies_alive: return ## return if there's still enemies left alive

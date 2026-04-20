@@ -54,3 +54,7 @@ func _on_pressed() -> void:
 		get_node("/root/Main").play_sound("Click")
 	else:
 		get_node("/root/Main").play_sound("Error")
+
+func _on_mouse_entered() -> void:
+	if accessible:
+		super()

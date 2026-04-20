@@ -18,7 +18,7 @@ func avoidance():
 	for entity in get_node("/root/Main/Entities").get_children():
 		if entity != user and entity.scene_file_path == user.scene_file_path and not user.ability_relay.can_hit(entity):
 			distance = user.global_position.distance_to(entity.global_position)
-			if distance < reach:
+			if distance > 0 and distance < reach:
 				reach = distance
 				found = entity
 	if found:

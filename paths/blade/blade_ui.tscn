@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="4_3eh07"]
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="5_w077r"]
 [ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="6_yr0g6"]
+[ext_resource type="PackedScene" uid="uid://b84j2ldvpmk6t" path="res://paths/ui/trick_mastery_button.tscn" id="7_ps08w"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_1qmn0"]
+[sub_resource type="LabelSettings" id="LabelSettings_ps08w"]
 resource_local_to_scene = true
 font_size = 40
 outline_size = 8
@@ -74,15 +75,15 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="HoldGround" parent="Abilities" unique_id=452593380 instance=ExtResource("4_3eh07")]
-layout_mode = 2
-texture_normal = ExtResource("1_qr8k3")
-subject = "hold_ground"
-
 [node name="BroadSwings" parent="Abilities" unique_id=1440218836 instance=ExtResource("4_3eh07")]
 layout_mode = 2
 texture_normal = ExtResource("1_qr8k3")
 subject = "broad_swings"
+
+[node name="HoldGround" parent="Abilities" unique_id=452593380 instance=ExtResource("4_3eh07")]
+layout_mode = 2
+texture_normal = ExtResource("1_qr8k3")
+subject = "hold_ground"
 
 [node name="Block" parent="Abilities" unique_id=755603844 instance=ExtResource("4_3eh07")]
 layout_mode = 2
@@ -109,11 +110,19 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -112.5
-offset_top = 162.0
+offset_top = 158.0
 offset_right = 112.5
-offset_bottom = 222.0
+offset_bottom = 218.0
 grow_horizontal = 2
 alignment = 1
+
+[node name="SoulCleave" parent="Masteries" unique_id=1701464479 instance=ExtResource("7_ps08w")]
+layout_mode = 2
+accessible_texture = ExtResource("1_qr8k3")
+requires = {
+"broad_swings": 5
+}
+subject = "soul_cleave"
 
 [node name="Unflinching" parent="Masteries" unique_id=664334916 instance=ExtResource("5_w077r")]
 layout_mode = 2
@@ -122,14 +131,6 @@ requires = {
 "hold_ground": 5
 }
 subject = "unflinching"
-
-[node name="Cleave" parent="Masteries" unique_id=1593561668 instance=ExtResource("5_w077r")]
-layout_mode = 2
-accessible_texture = ExtResource("1_qr8k3")
-requires = {
-"broad_swings": 5
-}
-subject = "cleave"
 
 [node name="Percussion" parent="Masteries" unique_id=2138347233 instance=ExtResource("5_w077r")]
 layout_mode = 2
@@ -155,7 +156,7 @@ texture = ExtResource("1_qr8k3")
 texture = ExtResource("1_qr8k3")
 
 [node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
-label_settings = SubResource("LabelSettings_1qmn0")
+label_settings = SubResource("LabelSettings_ps08w")
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

@@ -65,7 +65,6 @@ vertical_alignment = 1
 
 [node name="Bind" type="Button" parent="." unique_id=640031930]
 visible = false
-z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -92,6 +91,7 @@ offset_top = 5.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 texture = ExtResource("4_qs4nh")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 10

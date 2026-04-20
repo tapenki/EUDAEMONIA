@@ -33,6 +33,7 @@ var base_values = {
 		"pause" : [0, KEY_ESCAPE],
 		"dark_harvest" : [0, KEY_E],
 		"bramble_shot" : [0, KEY_Q],
+		"soul_cleave" : [0, KEY_C],
 	}
 }
 

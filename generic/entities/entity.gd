@@ -94,16 +94,6 @@ func movement(_delta):
 	velocity = old_velocity
 	ability_relay.movement.emit(old_position.distance_to(global_position))
 
-func random_valid_position(tilemap):
-	var wall_cells = tilemap.get_used_cells_by_id(0)
-	var floor_cells = tilemap.get_used_cells_by_id(2)
-	for i in wall_cells:
-		for j in range(-1, 2):
-			for k in range(-1, 2):
-				floor_cells.erase(Vector2i(i.x + j, i.y + k))
-	var cell = floor_cells.pick_random()
-	return Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
-
 func animation_finished(anim_name: StringName) -> void:
 	if anim_name == "DEATH":
 		queue_free()
@@ -125,3 +115,28 @@ func apply_palette(team, denominator):
 		for spritechild in sprite["node"].get_children():
 			if spritechild is CanvasItem:
 				spritechild.self_modulate = team_color
+
+func get_valid_positions(tilemap):
+	var wall_cells = tilemap.get_used_cells_by_id(0)
+	var floor_cells = tilemap.get_used_cells_by_id(2)
+	for i in wall_cells:
+		for j in range(-1, 2):
+			for k in range(-1, 2):
+				floor_cells.erase(Vector2i(i.x + j, i.y + k))
+	var result = []
+	for i in floor_cells:
+		result.append(Vector2(i * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5)
+	return result
+
+func random_valid_position(tilemap):
+	return get_valid_positions(tilemap).pick_random()
+
+func nearby_valid_position(tilemap, from_position, max_range):
+	var positions = get_valid_positions(tilemap)
+	var result = []
+	for i in positions:
+		if i.distance_to(from_position) <= max_range:
+			result.append(i)
+	if result.size() == 0:
+		return from_position
+	return result.pick_random()

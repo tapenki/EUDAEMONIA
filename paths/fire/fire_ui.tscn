@@ -14,7 +14,6 @@ offset_right = 225.0
 offset_bottom = 300.0
 mouse_filter = 2
 script = ExtResource("1_lgc5t")
-path = "fire"
 
 [node name="Background" type="NinePatchRect" parent="." unique_id=144110366]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -103,9 +102,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -112.5
-offset_top = 162.0
+offset_top = 158.0
 offset_right = 112.5
-offset_bottom = 222.0
+offset_bottom = 282.0
 grow_horizontal = 2
 alignment = 1
 
