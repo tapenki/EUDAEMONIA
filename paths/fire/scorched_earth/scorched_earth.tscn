@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diq45gst5plkq"]
 
-[ext_resource type="Script" uid="uid://dl1ot8whcchll" path="res://paths/life/spike/spike.gd" id="1_ry3wi"]
+[ext_resource type="Script" uid="uid://c262tdi631nrw" path="res://paths/fire/scorched_earth/scorched_earth.gd" id="1_k4xq5"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_7j7ie"]
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="3_73dah"]
 [ext_resource type="Texture2D" uid="uid://c3tdh2o3sopuf" path="res://paths/fire/scorched_earth/scorched_earth.png" id="3_e37t2"]
@@ -14,16 +14,16 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Ve
 point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
-radius = 60.0
+radius = 90.0
 
 [node name="ScorchedEarth" type="Area2D" unique_id=43339573 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
 collision_mask = 128
-script = ExtResource("1_ry3wi")
+script = ExtResource("1_k4xq5")
 ability_relay = NodePath("AbilityRelay")
 hit_particle_preset = ""
 hit_enabled = false
-unlimited_hits = true
+hits_left = 4
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=622851868]
 script = ExtResource("2_7j7ie")
@@ -45,8 +45,8 @@ fixed_fps = 30
 local_coords = true
 draw_order = 1
 emission_shape = 6
-emission_ring_inner_radius = 50.0
-emission_ring_radius = 60.0
+emission_ring_inner_radius = 80.0
+emission_ring_radius = 90.0
 direction = Vector2(0, -1)
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -62,7 +62,7 @@ shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Node" parent="." unique_id=848772616 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_7dolq")
-wait_time = 2.25
+wait_time = 3.0
 running = true
 ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"

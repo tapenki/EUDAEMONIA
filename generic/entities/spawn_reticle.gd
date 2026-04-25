@@ -17,6 +17,7 @@ func set_spawn(node):
 
 func _on_spawn_timer_timeout() -> void:
 	get_node("/root/Main/Entities").add_child(entity)
+	get_node("/root/Main").entity_manifestation.emit(entity)
 	for particles in particle_instances:
 		particles.self_death()
 	queue_free()

@@ -32,6 +32,7 @@ signal camera_parameters(zoom_scale: float)#, left: int, top: int, right: int, b
 signal screenshake(intensity: float)
 
 signal entity_death(entity: Entity)
+signal entity_manifestation(entity: Entity)
 
 signal wave_start(wave: Wave)
 signal wave_cleared()

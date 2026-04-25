@@ -7,11 +7,11 @@ var unflinching: bool
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("hold_ground"):
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("hold_ground"):
 		applicant_data["hold_ground"] = applicants[ability_relay.source]["hold_ground"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
 		applicant_data["shockwave_count"] = 0
 		applicant_data["charge"] = 0
@@ -24,6 +24,16 @@ func disapply(ability_relay):
 	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
 		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
 
+func _ready() -> void:
+	get_node("/root/Main").intermission.connect(intermission)
+
+func intermission(_day: int) -> void:
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("charge"):
+			applicants[ability_relay]["charge"] = 0
+		if applicants[ability_relay].has("shockwave_count"):
+			applicants[ability_relay]["shockwave_count"] = 0
+
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("charge") and ability_relay.is_entity:
@@ -35,7 +45,7 @@ func _physics_process(delta: float) -> void:
 					ability_relay.global_position, 
 					{"subscription" = 2, "hold_ground" = 1.0 + 0.25 * applicants[ability_relay]["shockwave_count"]},
 					Vector2())
-					explosion_instance.scale_multiplier = 2
+					explosion_instance.scale_multiplier = 3
 					get_node("/root/Main/Projectiles").add_child(explosion_instance)
 					if unflinching and applicants[ability_relay]["shockwave_count"] < 4:
 						applicants[ability_relay]["shockwave_count"] += 1
@@ -48,5 +58,7 @@ func damage_dealt_modifiers(_entity, damage, ability_relay) -> void:
 	if applicants[ability_relay].has("hold_ground"):
 		damage["multiplier"] *= applicants[ability_relay]["hold_ground"]
 
-func attack_scale_modifiers(modifiers) -> void:
-	modifiers["base"] += 0.4 * level - 0.4
+func attack_scale_modifiers(modifiers, ability_relay) -> void:
+	#modifiers["base"] += 0.4 * level - 0.4
+	if applicants[ability_relay].has("hold_ground"):
+		modifiers["multiplier"] *= applicants[ability_relay]["hold_ground"]

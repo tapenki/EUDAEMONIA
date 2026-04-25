@@ -11,11 +11,11 @@ func apply(ability_relay, applicant_data):
 		else:
 			applicant_data["quill_spray"] = 1.0
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("quill_spray"):
 		applicant_data["quill_spray"] = applicants[ability_relay.source]["quill_spray"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
 		applicant_data["pressure_multiplier"] = 1.0
 		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
@@ -29,6 +29,14 @@ func disapply(ability_relay):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
 	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
 		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
+
+func _ready() -> void:
+	get_node("/root/Main").intermission.connect(intermission)
+
+func intermission(_day: int) -> void:
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("pressure_multiplier"):
+			applicants[ability_relay]["pressure_multiplier"] = 1.0
 
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
@@ -48,9 +56,11 @@ func damage_taken(_damage, ability_relay) -> void:
 	call_deferred("spawn", ability_relay.global_position, ability_relay)
 
 func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
-	modifiers["base"] += 5 * level
+	modifiers["base"] += 7 * level
 	if applicants[ability_relay].has("quill_spray"):
 		modifiers["multiplier"] *= applicants[ability_relay]["quill_spray"]
 
-func attack_scale_modifiers(modifiers) -> void:
-	modifiers["base"] += 0.4 * level - 0.4
+func attack_scale_modifiers(modifiers, ability_relay) -> void:
+	#modifiers["base"] += 0.3 * level
+	if applicants[ability_relay].has("quill_spray"):
+		modifiers["multiplier"] *= applicants[ability_relay]["quill_spray"]

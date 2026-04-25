@@ -12,7 +12,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Ve
 point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxnif"]
-radius = 80.0
+radius = 200.0
 
 [node name="RingOfFire" type="Area2D" unique_id=959676471 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("1_f2ma2")
@@ -32,14 +32,14 @@ fixed_fps = 30
 local_coords = true
 draw_order = 1
 emission_shape = 6
-emission_ring_inner_radius = 70.0
-emission_ring_radius = 80.0
+emission_ring_inner_radius = 180.0
+emission_ring_radius = 200.0
 direction = Vector2(0, -1)
 spread = 0.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 1.0
 initial_velocity_max = 5.0
-scale_amount_min = 0.5
+scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_esp0q")
 script = ExtResource("7_65in0")
 ability_relay = NodePath("../AbilityRelay")

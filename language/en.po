@@ -304,7 +304,7 @@ msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon a non summoned entity manifesting:[/outline_size] Create a pool of fire around it that has [outline_size=10]+[3xLEVEL][/outline_size] damage."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -334,7 +334,7 @@ msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
 
 msgid "ring_of_fire_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[3xLEVEL][/outline_size] damage."
 
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
@@ -511,7 +511,7 @@ msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]+[7xLEVEL][/outline_size] damage."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
@@ -541,7 +541,7 @@ msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
 
 msgid "pressurized_quills_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
 
 msgid "multimold_title"
 msgstr "[outline_color=#0f9936]Mastery: Multimold[/outline_color]"
@@ -584,7 +584,7 @@ msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]+[7xLEVEL][/outline_size] damage."
 
 msgid "soul_tether_title"
 msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"
@@ -628,7 +628,7 @@ msgid "hold_ground_title"
 msgstr "[outline_color=#5B6487]Ability: Hold Ground[/outline_color]"
 
 msgid "hold_ground_description"
-msgstr "[outline_size=10]Once every [0.25] seconds while standing still:[/outline_size] Manifest a shockwave. It has [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Once every [0.25] seconds while standing still:[/outline_size] Manifest a shockwave. It has [outline_size=10]+[5xLEVEL][/outline_size] damage."
 
 msgid "broad_swings_title"
 msgstr "[outline_color=#5B6487]Ability: Broad Swings[/outline_color]"
@@ -658,7 +658,7 @@ msgid "unflinching_title"
 msgstr "[outline_color=#5B6487]Mastery: Unflinching[/outline_color]"
 
 msgid "unflinching_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color][br]Each subsequent [outline_color=#5B6487]Hold Ground[/outline_color] shockwave gains [outline_size=10]x[0.25][/outline_size] bonus damage up to [outline_size=10][4][/outline_size] times resetting upon moving."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color][br]Each subsequent [outline_color=#5B6487]Hold Ground[/outline_color] shockwave gains [outline_size=10]x[0.25][/outline_size] bonus damage and size up to [outline_size=10][4][/outline_size] times resetting upon moving."
 
 msgid "soul_cleave_title"
 msgstr "[outline_color=#5B6487]Mastery: Soul Cleave[/outline_color]"

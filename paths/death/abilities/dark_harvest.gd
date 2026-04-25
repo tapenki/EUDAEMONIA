@@ -12,12 +12,12 @@ var bad_crop: bool
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("dark_harvest"):
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+#		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
 		ability_relay.damage_dealt.connect(damage_dealt.bind(ability_relay))
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("dark_harvest"):
 		applicant_data["dark_harvest"] = applicants[ability_relay.source]["dark_harvest"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+#		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
 		ability_relay.damage_dealt.connect(damage_dealt.bind(ability_relay))
 	super(ability_relay, applicant_data)
 
@@ -25,8 +25,8 @@ func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
-	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
-		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
+#	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
+#		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
 	if ability_relay.damage_dealt.is_connected(damage_dealt):
 		ability_relay.damage_dealt.disconnect(damage_dealt)
 
@@ -58,16 +58,16 @@ func _unhandled_input(event: InputEvent) -> void:
 				target.global_position, ## position
 				{"subscription" = 2, "dark_harvest" = target.ability_relay.get_health()["max_health"]}, ## inheritance
 				Vector2()) ## velocity
-				explosion_instance.scale_multiplier = 2
+				explosion_instance.scale_multiplier = 3
 				get_node("/root/Main/Projectiles").add_child(explosion_instance)
 				get_node("/root/Main").play_sound("Explosion")
 				target.kill()
 
 func damage_dealt_modifiers(_entity, damage) -> void:
-	damage["base"] += 5 * level - 5 
+	damage["base"] += 7 * level
 
-func attack_scale_modifiers(modifiers) -> void:
-	modifiers["base"] += 0.4 * level - 0.4
+#func attack_scale_modifiers(modifiers) -> void:
+#	modifiers["base"] += 0.4 * level - 0.4
 
 func damage_dealt(entity, damage, ability_relay) -> void:
 	if bad_crop:

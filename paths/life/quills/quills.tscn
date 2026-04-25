@@ -11,7 +11,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
-radius = 80.0
+radius = 120.0
 
 [node name="Quills" type="Area2D" unique_id=678856818 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
@@ -38,8 +38,8 @@ draw_order = 1
 particle_flag_align_y = true
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 240.0
-initial_velocity_max = 320.0
+initial_velocity_min = 360.0
+initial_velocity_max = 480.0
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_t5laq")
