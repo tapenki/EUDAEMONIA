@@ -24,6 +24,7 @@ var loop = 0
 var enemy_queue: Array
 
 var wave_over: bool
+var day_over: bool
 var game_over: bool
 
 ### signals
@@ -194,15 +195,18 @@ func check_finished(dying_entity):
 				enemies_alive = true
 				break
 		if enemies_alive: return ## return if there's still enemies left alive
-		if wave_over: return
-		finish_wave.call_deferred()
+		if wave_over: return ## no double wave clears
 		wave_over = true
+		finish_wave.call_deferred()
+		
 
 func finish_wave():
-	wave_cleared.emit()
 	wave_over = false
+	wave_cleared.emit()
 
 func full_clear():
+	if day_over: return
+	day_over = true
 	play_sound("Completion")
 	day_cleared.emit(day)
 
@@ -217,6 +221,7 @@ func travel(to_room, to_door):
 	for effect in get_node("/root/Main/Effects").get_children():
 		effect.queue_free()
 	day_started = false
+	day_over = false
 	room = to_room
 	door = to_door
 	intermission.emit(day)

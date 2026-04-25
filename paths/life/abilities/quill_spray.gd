@@ -5,11 +5,9 @@ var quills_scene = preload("res://paths/life/quills/quills.tscn")
 var pressurized_quills: bool
 
 func apply(ability_relay, applicant_data):
-	if ability_relay.owner.scene_file_path == "res://paths/life/quills/quills.tscn":
+	if applicant_data.has("quill_spray"):
 		if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("pressure_multiplier"):
 			applicant_data["quill_spray"] = applicants[ability_relay.source]["pressure_multiplier"]
-		else:
-			applicant_data["quill_spray"] = 1.0
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
 		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("quill_spray"):
@@ -46,7 +44,7 @@ func _physics_process(delta: float) -> void:
 func spawn(position, ability_relay):
 	var quills_instance = ability_relay.make_projectile(quills_scene, 
 	position, 
-	{"subscription" = 2},
+	{"subscription" = 2, "quill_spray" = 1.0},
 	Vector2())
 	quills_instance.get_node("Sprite").emitting = true
 	get_node("/root/Main/Projectiles").add_child(quills_instance)

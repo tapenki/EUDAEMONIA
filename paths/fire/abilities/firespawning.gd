@@ -11,7 +11,7 @@ func apply(ability_relay, applicant_data):
 		ability_relay.max_health_modifiers.connect(max_health_modifiers)
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 		ability_relay.death_effects.connect(death_effects.bind(ability_relay))
-	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("firespawning"):
+	elif applicants.has(ability_relay.source) and applicants[ability_relay.source].has("firespawning"):
 		applicant_data["firespawning"] = applicants[ability_relay.source]["firespawning"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
