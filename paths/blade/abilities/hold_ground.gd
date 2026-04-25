@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 				applicants[ability_relay]["charge"] = 0
 
 func damage_dealt_modifiers(_entity, damage, ability_relay) -> void:
-	damage["base"] += 5 * level - 5
+	damage["base"] += 5 * level
 	if applicants[ability_relay].has("hold_ground"):
 		damage["multiplier"] *= applicants[ability_relay]["hold_ground"]
 

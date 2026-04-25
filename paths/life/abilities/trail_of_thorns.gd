@@ -49,4 +49,4 @@ func movement(distance, ability_relay) -> void:
 			spawn(ability_relay.owner.global_position, ability_relay)
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
-	modifiers["base"] += 5 * level - 5
+	modifiers["base"] += 5 * level

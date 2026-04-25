@@ -93,7 +93,7 @@ msgid "pawn_title"
 msgstr "[outline_size=10]Class: Pawn[/outline_size]"
 
 msgid "pawn_description"
-msgstr "You have:[br][outline_size=10]+[5][/outline_size] damage.[br][outline_size=10]+[5]%[/outline_size] crit chance.[br][outline_size=10]+[300][/outline_size] move speed.""
+msgstr "You have:[br][outline_size=10]+[40][/outline_size] health.[br][outline_size=10]+[5]%[/outline_size] crit chance.[br][outline_size=10]+[300][/outline_size] move speed."
 
 msgid "defeated"
 msgstr "died :("
@@ -182,7 +182,7 @@ msgid "magic_missile_title"
 msgstr "[outline_size=10]Weapon: Magic Missile[/outline_size]"
 
 msgid "magic_missile_description"
-msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a missile with [outline_size=10]+[5][/outline_size] damage."
+msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a missile with [outline_size=10]+[10][/outline_size] damage."
 
 msgid "star_blaze_title"
 msgstr "[outline_color=#BF4040]Weapon: Star Blaze[/outline_color]"
@@ -286,13 +286,13 @@ msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ability: Ignition[/outline_color]"
 
 msgid "ignition_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply [outline_size=10][4xLEVEL][/outline_size] burn for every [outline_size=10][30%MAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply [outline_size=10]+[4xLEVEL][/outline_size] burn for every [outline_size=10][0.3xMAXHP][/outline_size] damage accumulated."
 
 msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10][40xLEVEL][/outline_size] health and apply [outline_size=10][4xLEVEL][/outline_size] burn to nearby enemies when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10]+[40xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and apply [outline_size=10]+[4xLEVEL][/outline_size] burn to nearby enemies when killed."
 
 msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Ability: Conflagration[/outline_color]"
@@ -304,7 +304,7 @@ msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon an entity perishing:[/outline_size] Manifest a pool of fire in its place that has [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -334,7 +334,7 @@ msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
 
 msgid "ring_of_fire_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[0.4xLEVEL-0.4][/outline_size] size."
 
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
@@ -365,19 +365,19 @@ msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
 
 msgid "frostbite_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply chill for [outline_size=10][LEVEL][/outline_size] seconds for every [outline_size=10][30%MAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply chill for [outline_size=10][LEVEL][/outline_size] seconds for every [outline_size=10][0.3xMAXHP][/outline_size] damage accumulated."
 
 msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ability: Shatter[/outline_color]"
 
 msgid "shatter_description"
-msgstr "[outline_size=10]Upon an entity dying:[/outline_size] It releases [outline_size=10][3][/outline_size] shards with [outline_size=10]+[5xLEVEL-5][/outline_size] damage. Summoned entities only release [outline_size=10][1][/outline_size] shards."
+msgstr "[outline_size=10]Upon an entity dying:[/outline_size] It releases [outline_size=10][3][/outline_size] shards with [outline_size=10]+[5xLEVEL][/outline_size] damage. Summoned entities only release [outline_size=10][1][/outline_size] shards."
 
 msgid "cryobombs_title"
 msgstr "[outline_color=#0000ff]Ability: Cryobombs[/outline_color]"
 
 msgid "cryobombs_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10][60xLEVEL][/outline_size] health, accumulate damage taken, and explode dealing [outline_size=10]+[0.4xACCUMULATED][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit or when destroyed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] cryobombs. They have [outline_size=10][60xLEVEL][/outline_size] health, accumulate damage taken, and explode dealing [outline_size=10][0.4xACCUMULATED][/outline_size] damage [outline_size=10][3][/outline_size] seconds after getting hit or when destroyed."
 
 msgid "glacial_rail_title"
 msgstr "[outline_color=#0000ff]Mastery: Glacial Rail[/outline_color]"
@@ -395,7 +395,7 @@ msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][0.5xLEVEL][/outline_size] seconds for every [outline_size=10][60%MAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][0.5xLEVEL][/outline_size] seconds for every [outline_size=10][0.6xMAXHP][/outline_size] damage accumulated."
 
 msgid "brittle_cold_title"
 msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
@@ -432,7 +432,7 @@ msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]x[1+LEVELx0.2][/outline_size] crit chance."
+msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]x[1+LEVELx0.2][/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
@@ -456,7 +456,7 @@ msgid "shocking_grasp_title"
 msgstr "[outline_color=#a87e00]Mastery: Shocking Grasp[/outline_color]"
 
 msgid "shocking_grasp_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10][5xLEVEL][/outline_size] shock."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock."
 
 msgid "covalence_title"
 msgstr "[outline_color=#a87e00]Mastery: Covalence[/outline_color]"
@@ -505,25 +505,25 @@ msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
 
 msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [100]px you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[5xLEVEL-5][/outline_size] damage."
+msgstr "[outline_size=10]Every [100]px you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[5xLEVEL][/outline_size] damage."
 
 msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
 
 msgid "quill_spray_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Release a spray of quills.[br]They have [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "animated_clay_title"
 msgstr "[outline_color=#0f9936]Ability: Animated Clay[/outline_color]"
 
 msgid "animated_clay_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[80xLEVEL][/outline_size] health and your personal abilities."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a clay effigy. It has [outline_size=10]+[80xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and your personal abilities."
 
 msgid "bramble_shot_title"
 msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"
 
 msgid "bramble_shot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][0.1xMAXHP][/outline_size] pure damage and shoot a bramble with [outline_size=10]x[3][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][0.12xMAXHP][/outline_size] pure damage and shoot [outline_size=10][3][/outline_size] brambles with [outline_size=10]x[3][/outline_size] damage."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"
@@ -560,7 +560,7 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.75xLEVEL][/outline_size] health and [outline_size=10]+[5xLEVEL-5][/outline_size] damage."
+msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.75xLEVEL][/outline_size] health and [outline_size=10]+[5xLEVEL][/outline_size] damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"
@@ -578,7 +578,7 @@ msgid "bone_shield_title"
 msgstr "[outline_color=#cc00cc]Ability: Bone Shield[/outline_color]"
 
 msgid "bone_shield_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health and applies chill for [outline_size=10][0.3][/outline_size] seconds upon dealing damage."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and applies chill for [outline_size=10][0.3][/outline_size] seconds upon dealing damage."
 
 msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
@@ -628,7 +628,7 @@ msgid "hold_ground_title"
 msgstr "[outline_color=#5B6487]Ability: Hold Ground[/outline_color]"
 
 msgid "hold_ground_description"
-msgstr "[outline_size=10]Once every [0.25] seconds while standing still:[/outline_size] Manifest a shockwave. It has [outline_size=10]+[5xLEVEL-5][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
+msgstr "[outline_size=10]Once every [0.25] seconds while standing still:[/outline_size] Manifest a shockwave. It has [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]+[40xLEVEL-40]%[/outline_size] size."
 
 msgid "broad_swings_title"
 msgstr "[outline_color=#5B6487]Ability: Broad Swings[/outline_color]"
@@ -670,13 +670,13 @@ msgid "percussion_title"
 msgstr "[outline_color=#5B6487]Mastery: Percussion[/outline_color]"
 
 msgid "percussion_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color][br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10][5xLEVEL][/outline_size] shock to nearby enemies."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color][br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock to nearby enemies."
 
 msgid "sword_title"
 msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
 
 msgid "sword_description"
-msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Perform a slash with [outline_size=10]+[5][/outline_size] damage and [outline_size=10]+[1][/outline_size] pierce."
+msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Perform a slash with [outline_size=10]+[10][/outline_size] damage and [outline_size=10]+[1][/outline_size] pierce."
 
 # spheres
 msgid "day_counter"

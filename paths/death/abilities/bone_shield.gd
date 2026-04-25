@@ -9,9 +9,11 @@ var status: Node
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("bone_shield"):
 		ability_relay.max_health_modifiers.connect(max_health_modifiers)
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 		ability_relay.damage_dealt.connect(damage_dealt)
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("bone_shield"):
 		applicant_data["bone_shield"] = applicants[ability_relay.source]["bone_shield"]
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 		ability_relay.damage_dealt.connect(damage_dealt)
 	super(ability_relay, applicant_data)
 
@@ -24,6 +26,8 @@ func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.max_health_modifiers.is_connected(max_health_modifiers):
 		ability_relay.max_health_modifiers.disconnect(max_health_modifiers)
+	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
+		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
 	if ability_relay.damage_dealt.is_connected(damage_dealt):
 		ability_relay.damage_dealt.disconnect(damage_dealt)
 
@@ -81,6 +85,9 @@ func intermission(_day: int) -> void:
 
 func max_health_modifiers(modifiers) -> void:
 	modifiers["base"] += 60 * level
+
+func damage_dealt_modifiers(_entity, damage) -> void:
+	damage["base"] += 5 * level
 
 func damage_dealt(entity, _damage) -> void:
 	status.apply(entity.ability_relay, {"duration" = 0.3})

@@ -43,4 +43,4 @@ func fire(direction, ability_relay):
 	get_node("/root/Main").play_sound("ShootLight")
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
-	modifiers["base"] += 5
+	modifiers["base"] += 10

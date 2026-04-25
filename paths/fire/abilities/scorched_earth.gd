@@ -33,7 +33,7 @@ func entity_death(dying_entity: Entity):
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 
 func damage_dealt_modifiers(_entity, damage) -> void:
-	damage["base"] += 5 * level - 5
+	damage["base"] += 5 * level
 
 func attack_scale_modifiers(modifiers) -> void:
 	modifiers["base"] += 0.4 * level - 0.4

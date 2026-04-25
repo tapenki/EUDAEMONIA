@@ -9,13 +9,19 @@ var undying_flames: bool
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("firespawning"):
 		ability_relay.max_health_modifiers.connect(max_health_modifiers)
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 		ability_relay.death_effects.connect(death_effects.bind(ability_relay))
+	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("firespawning"):
+		applicant_data["firespawning"] = applicants[ability_relay.source]["firespawning"]
+		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.max_health_modifiers.is_connected(max_health_modifiers):
 		ability_relay.max_health_modifiers.disconnect(max_health_modifiers)
+	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
+		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
 	if ability_relay.death_effects.is_connected(death_effects):
 		ability_relay.death_effects.disconnect(death_effects)
 
@@ -67,3 +73,6 @@ func death_effects(ability_relay):
 
 func max_health_modifiers(modifiers) -> void:
 	modifiers["base"] += 40 * level
+
+func damage_dealt_modifiers(_entity, damage) -> void:
+	damage["base"] += 5 * level

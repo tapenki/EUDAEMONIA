@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 			applicants[applicant]["anchor_node"].rotation += delta * PI * applicant.speed_scale
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
-	modifiers["base"] += 5 * level - 5
+	modifiers["base"] += 5 * level
 
 func crit_chance_modifiers(_entity, modifiers) -> void:
 	modifiers["multiplier"] *= 1 + level * 0.2

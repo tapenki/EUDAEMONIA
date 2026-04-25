@@ -33,14 +33,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		if Input.is_action_just_pressed("bramble_shot") and event.is_action("bramble_shot"):
 			var max_health = ability_relay.get_health()["max_health"]
-			ability_relay.deal_damage(ability_relay.owner, {"base" : 0.1 * max_health, "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
-			var direction = (ability_relay.get_global_mouse_position() - ability_relay.global_position).normalized()
-			var bullet_instance = ability_relay.make_projectile(bramble, 
-			ability_relay.global_position + direction * 25, 
-			{"subscription" = 2},
-			direction * 600)
-			get_node("/root/Main/Projectiles").add_child(bullet_instance)
-			get_node("/root/Main").play_sound("ShootLight")
+			ability_relay.deal_damage(ability_relay.owner, {"base" : 0.12 * max_health, "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true}, Config.get_team_color(1, "tertiary"))
+			for i in 3:
+				var direction = (ability_relay.get_global_mouse_position() - ability_relay.global_position).normalized().rotated(i*0.6-0.6)
+				var bullet_instance = ability_relay.make_projectile(bramble, 
+				ability_relay.global_position + direction * 25, 
+				{"subscription" = 2},
+				direction * 600)
+				get_node("/root/Main/Projectiles").add_child(bullet_instance)
+				get_node("/root/Main").play_sound("ShootLight")
 
 func damage_dealt_modifiers(_entity, damage) -> void:
 	damage["multiplier"] *= 3

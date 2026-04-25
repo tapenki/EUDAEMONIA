@@ -48,7 +48,7 @@ func damage_taken(_damage, ability_relay) -> void:
 	call_deferred("spawn", ability_relay.global_position, ability_relay)
 
 func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
-	modifiers["base"] += 5 * level - 5
+	modifiers["base"] += 5 * level
 	if applicants[ability_relay].has("quill_spray"):
 		modifiers["multiplier"] *= applicants[ability_relay]["quill_spray"]
 
