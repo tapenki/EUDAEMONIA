@@ -6,15 +6,15 @@ extends State
 
 @export var next: State
 
-var summons: Array
-
 func _ready() -> void:
-	get_node("/root/Main").entity_death.connect(entity_death)
+	if not state_handler.data.has("summons"):
+		state_handler.data["summons"] = []
+		get_node("/root/Main").entity_death.connect(entity_death)
 
 func on_enter() -> void:
 	super()
 	
-	if summons.size() < max_summons:
+	if state_handler.data["summons"].size() < max_summons:
 		var summon_instance = user.ability_relay.make_summon(summon, 
 		user.global_position, 
 		{"subscription" = 2})
@@ -23,14 +23,14 @@ func on_enter() -> void:
 		summon_instance.ability_relay.inherited_damage = user.ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
 		get_node("/root/Main/Entities").add_child(summon_instance)
 		get_node("/root/Main/Entities").move_child(summon_instance, 0)
-		summons.append(summon_instance)
+		state_handler.data["summons"].append(summon_instance)
 	
 	state_handler.change_state(next)
 
 func entity_death(dying_entity: Entity):
-	if summons.has(dying_entity):
-		summons.erase(dying_entity)
+	if state_handler.data["summons"].has(dying_entity):
+		state_handler.data["summons"].erase(dying_entity)
 	elif dying_entity == user:
 		get_node("/root/Main").entity_death.disconnect(entity_death)
-		for entity in summons:
+		for entity in state_handler.data["summons"]:
 			entity.kill()

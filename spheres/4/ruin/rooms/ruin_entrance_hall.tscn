@@ -2,9 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://bgy68txdpxat8" path="res://spheres/4/ruin/rooms/ruin_wall_tileset.tres" id="1_1siwd"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://spheres/environment/encounters/wave.gd" id="2_lb48w"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="2_rveq5"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="2_rveq5"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_bje13"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://spheres/environment/doors/door.tscn" id="3_lb48w"]
+[ext_resource type="Texture2D" uid="uid://cf4xdwdge0pxg" path="res://spheres/environment/doors/sphere_door.png" id="5_jvrml"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_f5vlr"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_u4htj"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_48pce"]
@@ -79,6 +80,7 @@ entity = "rocketjumper"
 [node name="Entrance0" parent="Doors" unique_id=1214374768 instance=ExtResource("2_rveq5")]
 position = Vector2(930, 420)
 rotation = 1.5707964
+texture = ExtResource("5_jvrml")
 
 [node name="Exit0" parent="Doors" unique_id=1267180042 instance=ExtResource("3_lb48w")]
 position = Vector2(30, 420)

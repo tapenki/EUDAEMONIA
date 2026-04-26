@@ -2,9 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://4ptldjx8ftu7" path="res://spheres/2/depths/rooms/depths_wall_tileset.tres" id="1_45soy"]
 [ext_resource type="Script" uid="uid://c1tyo5jsp5bvj" path="res://spheres/environment/encounters/boss_wave.gd" id="2_10ubj"]
-[ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://spheres/environment/encounters/wave.gd" id="2_uxe3r"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_10ubj"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="4_lfvrr"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="4_lfvrr"]
 [ext_resource type="PackedScene" uid="uid://caj2w8w8af8wu" path="res://spheres/environment/doors/sphere_door.tscn" id="6_10ubj"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_kluuj"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_f7baf"]
@@ -27,10 +26,9 @@ navigation_enabled = false
 
 [node name="Waves" type="Node2D" parent="." unique_id=444637396]
 
-[node name="Wave1" type="Node2D" parent="Waves" unique_id=1239132950 node_paths=PackedStringArray("next")]
+[node name="Wave1" type="Node2D" parent="Waves" unique_id=1239132950]
 script = ExtResource("2_10ubj")
 autostart = true
-next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1001599058]
 wait_time = 7.5
@@ -40,61 +38,6 @@ one_shot = true
 position = Vector2(510, 480)
 script = ExtResource("3_10ubj")
 entity = "warden"
-
-[node name="Wave2" type="Node2D" parent="Waves" unique_id=34037754 node_paths=PackedStringArray("next")]
-script = ExtResource("2_uxe3r")
-next = NodePath("../Wave3")
-
-[node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=620234642]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnSpouter1" type="Node2D" parent="Waves/Wave2" unique_id=1353859618]
-position = Vector2(450, 420)
-script = ExtResource("3_10ubj")
-entity = "spouter"
-
-[node name="SpawnSpouter2" type="Node2D" parent="Waves/Wave2" unique_id=77877569]
-position = Vector2(570, 420)
-script = ExtResource("3_10ubj")
-entity = "spouter"
-
-[node name="SpawnSpouter3" type="Node2D" parent="Waves/Wave2" unique_id=1380882876]
-position = Vector2(450, 540)
-script = ExtResource("3_10ubj")
-entity = "spouter"
-
-[node name="SpawnSpouter4" type="Node2D" parent="Waves/Wave2" unique_id=1878419447]
-position = Vector2(570, 540)
-script = ExtResource("3_10ubj")
-entity = "spouter"
-
-[node name="Wave3" type="Node2D" parent="Waves" unique_id=1400841436]
-script = ExtResource("2_uxe3r")
-
-[node name="Timer" type="Timer" parent="Waves/Wave3" unique_id=1482584743]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnDiver1" type="Node2D" parent="Waves/Wave3" unique_id=646702295]
-position = Vector2(510, 390)
-script = ExtResource("3_10ubj")
-entity = "diver"
-
-[node name="SpawnDiver2" type="Node2D" parent="Waves/Wave3" unique_id=1085242994]
-position = Vector2(600, 480)
-script = ExtResource("3_10ubj")
-entity = "diver"
-
-[node name="SpawnDiver3" type="Node2D" parent="Waves/Wave3" unique_id=1769130493]
-position = Vector2(510, 570)
-script = ExtResource("3_10ubj")
-entity = "diver"
-
-[node name="SpawnDiver4" type="Node2D" parent="Waves/Wave3" unique_id=239939281]
-position = Vector2(420, 480)
-script = ExtResource("3_10ubj")
-entity = "diver"
 
 [node name="Doors" type="Node2D" parent="." unique_id=2016811140]
 
@@ -167,5 +110,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
-[connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]
-[connection signal="timeout" from="Waves/Wave3/Timer" to="Waves/Wave3" method="proceed"]

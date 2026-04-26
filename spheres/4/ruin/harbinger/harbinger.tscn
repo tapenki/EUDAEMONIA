@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_m4hsf"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_sublx"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_dgt3o"]
+[ext_resource type="Script" uid="uid://qf3a8iiniswk" path="res://spheres/4/ruin/harbinger/personal_explodifier.gd" id="3_ee4s7"]
 [ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_s3wuf"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_hyg13"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_04ynr"]
@@ -140,6 +141,18 @@ health = 480.0
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=852153742]
 script = ExtResource("2_sublx")
 is_entity = true
+
+[node name="PersonalExplodifier" type="Node" parent="." unique_id=2101922898 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("3_ee4s7")
+ability_relay = NodePath("../AbilityRelay")
+
+[node name="Timer" type="Node" parent="PersonalExplodifier" unique_id=1782332743 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_04ynr")
+wait_time = 1.5
+one_shot = false
+running = true
+ability_relay = NodePath("../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="StateHandler" type="Node" parent="." unique_id=1514937036 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_dgt3o")
@@ -310,6 +323,7 @@ spawn_quotes = ["harbinger_spawn_1"]
 death_quotes = ["harbinger_death_1", "harbinger_death_2"]
 
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="PersonalExplodifier/Timer" to="PersonalExplodifier" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cv1pyglc75pba" path="res://spheres/3/doubt/mold_walk.gd" id="10_lokmr"]
 [ext_resource type="Texture2D" uid="uid://c8301mmhj5mjf" path="res://spheres/3/doubt/mold_mother/mold_mother.png" id="10_mma2i"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_6quvf"]
+[ext_resource type="Script" uid="uid://223gsub2cqm6" path="res://spheres/3/doubt/mold_mother/giga_shoot_attack.gd" id="11_k2m38"]
 [ext_resource type="Texture2D" uid="uid://bwjc8sxk7qssx" path="res://spheres/3/doubt/mold_mother/mold_mother_hurt.png" id="12_wpqwi"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_ov3p2"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_ybnfo"]
@@ -90,7 +91,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vajmc"]
 resource_name = "WINDUP"
-length = 0.8
+length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,10 +99,10 @@ tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.35, 0.75, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jcicx"]
@@ -132,7 +133,7 @@ is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=1342484558 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_5jmcu")
-initial_state = NodePath("Walklag")
+initial_state = NodePath("Walklag2")
 
 [node name="PrepareAttack1" type="Node" parent="StateHandler" unique_id=1861543243 node_paths=PackedStringArray("next")]
 process_mode = 4
@@ -151,8 +152,8 @@ process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
 bullet_lifetime = 2.75
-bullet_count = 3
-spread = 60
+bullet_count = 5
+spread = 150
 bullet_speed = 225
 next = NodePath("../PrepareAttack2")
 
@@ -172,52 +173,108 @@ process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
 bullet_lifetime = 2.75
-bullet_count = 2
-spread = 45
+bullet_count = 4
+spread = 120
 bullet_speed = 225
-next = NodePath("../Endlag")
+next = NodePath("../Endlag1")
 
-[node name="Endlag" type="Node" parent="StateHandler" unique_id=1792581921 node_paths=PackedStringArray("next")]
+[node name="Endlag1" type="Node" parent="StateHandler" unique_id=1792581921 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-next = NodePath("../Summoning")
+next = NodePath("../Summoning1")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=756987145 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/Endlag1" unique_id=756987145 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
 wait_time = 0.75
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Summoning" type="Node" parent="StateHandler" unique_id=462062318 node_paths=PackedStringArray("next")]
+[node name="Summoning1" type="Node" parent="StateHandler" unique_id=462062318 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("8_j48gv")
 summon = ExtResource("9_5chnv")
 summon_health = 0.1
 max_summons = 3
-next = NodePath("../Moldwalk")
+next = NodePath("../Moldwalk1")
 
-[node name="Moldwalk" type="Node" parent="StateHandler" unique_id=701511880 node_paths=PackedStringArray("next")]
+[node name="Moldwalk1" type="Node" parent="StateHandler" unique_id=701511880 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("10_lokmr")
-anim = "WALK"
-min_cycles = 12
-max_cycles = 18
-next = NodePath("../Walklag")
+next = NodePath("../Walklag1")
 
-[node name="Timer" type="Node" parent="StateHandler/Moldwalk" unique_id=2018735305 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/Moldwalk1" unique_id=2018735305 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
 wait_time = 0.1
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Walklag" type="Node" parent="StateHandler" unique_id=1147947512 node_paths=PackedStringArray("next")]
+[node name="Walklag1" type="Node" parent="StateHandler" unique_id=1147947512 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+next = NodePath("../PrepareAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/Walklag1" unique_id=835771078 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("5_hciqw")
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareAttack3" type="Node" parent="StateHandler" unique_id=1829282402 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+anim = "WINDUP"
+next = NodePath("../ShootAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack3" unique_id=535089914 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("5_hciqw")
+wait_time = 0.3
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack3" type="Node" parent="StateHandler" unique_id=561749664 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("11_k2m38")
+bullet = ExtResource("7_o3tbh")
+bullet_lifetime = 2.75
+bullet_speed = 350
+next = NodePath("../Endlag2")
+
+[node name="Endlag2" type="Node" parent="StateHandler" unique_id=1977490839 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_hg44d")
+next = NodePath("../Summoning2")
+
+[node name="Timer" type="Node" parent="StateHandler/Endlag2" unique_id=547835853 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("5_hciqw")
+wait_time = 0.75
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Summoning2" type="Node" parent="StateHandler" unique_id=2019683016 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_j48gv")
+summon = ExtResource("9_5chnv")
+summon_health = 0.1
+max_summons = 3
+next = NodePath("../Moldwalk2")
+
+[node name="Moldwalk2" type="Node" parent="StateHandler" unique_id=128029833 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("10_lokmr")
+next = NodePath("../Walklag2")
+
+[node name="Timer" type="Node" parent="StateHandler/Moldwalk2" unique_id=1646284425 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("5_hciqw")
+wait_time = 0.1
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Walklag2" type="Node" parent="StateHandler" unique_id=395509208 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
 next = NodePath("../PrepareAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/Walklag" unique_id=835771078 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/Walklag2" unique_id=205718366 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
-wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -267,8 +324,12 @@ death_quotes = ["mold_mother_death_1"]
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Moldwalk/Timer" to="StateHandler/Moldwalk" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Walklag/Timer" to="StateHandler/Walklag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag1/Timer" to="StateHandler/Endlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Moldwalk1/Timer" to="StateHandler/Moldwalk1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Walklag1/Timer" to="StateHandler/Walklag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack3/Timer" to="StateHandler/PrepareAttack3" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Moldwalk2/Timer" to="StateHandler/Moldwalk2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Walklag2/Timer" to="StateHandler/Walklag2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

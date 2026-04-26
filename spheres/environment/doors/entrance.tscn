@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ct15fsuhi0fdx"]
+
+[ext_resource type="Texture2D" uid="uid://drpb75gbucjf6" path="res://spheres/environment/doors/door.png" id="1_ctb8a"]
+
+[node name="Entrance" type="Sprite2D" unique_id=1275183838]
+self_modulate = Color(0.49747366, 0.49747366, 0.49747366, 1)
+texture = ExtResource("1_ctb8a")

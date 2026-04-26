@@ -201,8 +201,8 @@ process_mode = 4
 script = ExtResource("8_43bv4")
 bullet = ExtResource("7_ohken")
 bullet_lifetime = 2.75
-bullet_count = 5
-spread = 90
+bullet_count = 7
+spread = 120
 bullet_speed = 300
 next = NodePath("../PrepareShootAttack2")
 
@@ -222,8 +222,8 @@ process_mode = 4
 script = ExtResource("8_43bv4")
 bullet = ExtResource("7_ohken")
 bullet_lifetime = 2.75
-bullet_count = 5
-spread = 90
+bullet_count = 7
+spread = 120
 bullet_speed = 300
 recalc_direction = false
 next = NodePath("../ShootAttackEndlag")
@@ -235,7 +235,6 @@ next = NodePath("../PrepareRadialAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttackEndlag" unique_id=741188095 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
-wait_time = 2.0
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -287,7 +286,6 @@ next = NodePath("../PrepareRadialAttack2")
 
 [node name="Timer" type="Node" parent="StateHandler/RadialAttack1Endlag" unique_id=305304039 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1uc4r")
-wait_time = 1.5
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

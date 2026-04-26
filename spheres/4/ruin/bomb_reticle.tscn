@@ -23,8 +23,6 @@ visibility_layer = 129
 script = ExtResource("1_q1ocw")
 ability_relay = NodePath("AbilityRelay")
 hit_sound = ""
-hit_particles = ""
-crit_particles = ""
 hit_enabled = false
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=650856352]
@@ -56,6 +54,7 @@ texture = ExtResource("6_h8cus")
 shape = SubResource("CircleShape2D_jpvjx")
 
 [node name="Lifetime" type="Timer" parent="." unique_id=958342644]
+wait_time = 1.5
 autostart = true
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

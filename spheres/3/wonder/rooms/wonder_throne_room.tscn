@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cexv6sopeol1d"]
 
 [ext_resource type="TileSet" uid="uid://cvpg0dl0gcihy" path="res://spheres/3/wonder/rooms/wonder_wall_tileset.tres" id="1_0hd80"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="2_3k6qr"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="2_3k6qr"]
 [ext_resource type="Script" uid="uid://c1tyo5jsp5bvj" path="res://spheres/environment/encounters/boss_wave.gd" id="2_33smu"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_xydnr"]
 [ext_resource type="PackedScene" uid="uid://caj2w8w8af8wu" path="res://spheres/environment/doors/sphere_door.tscn" id="5_33smu"]
@@ -19,10 +19,9 @@ navigation_enabled = false
 
 [node name="Waves" type="Node2D" parent="." unique_id=2131360654]
 
-[node name="Wave1" type="Node2D" parent="Waves" unique_id=1991918232 node_paths=PackedStringArray("next")]
+[node name="Wave1" type="Node2D" parent="Waves" unique_id=1991918232]
 script = ExtResource("2_33smu")
 autostart = true
-next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1517706234]
 wait_time = 7.5
@@ -32,23 +31,6 @@ one_shot = true
 position = Vector2(570, 570)
 script = ExtResource("3_xydnr")
 entity = "saturn"
-
-[node name="Wave2" type="Node2D" parent="Waves" unique_id=582936902]
-script = ExtResource("2_33smu")
-
-[node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1713106900]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnMars1" type="Node2D" parent="Waves/Wave2" unique_id=1003309068]
-position = Vector2(570, 210)
-script = ExtResource("3_xydnr")
-entity = "mars"
-
-[node name="SpawnMars2" type="Node2D" parent="Waves/Wave2" unique_id=1535836233]
-position = Vector2(570, 930)
-script = ExtResource("3_xydnr")
-entity = "mars"
 
 [node name="Doors" type="Node2D" parent="." unique_id=955699225]
 
@@ -80,4 +62,3 @@ reward = ExtResource("8_aadvh")
 reward = ExtResource("9_fjeu8")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
-[connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

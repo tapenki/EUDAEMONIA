@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bgy68txdpxat8" path="res://spheres/4/ruin/rooms/ruin_wall_tileset.tres" id="1_op0v8"]
 [ext_resource type="Script" uid="uid://c1tyo5jsp5bvj" path="res://spheres/environment/encounters/boss_wave.gd" id="2_kxdll"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="2_vrt6i"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="2_vrt6i"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_oqujk"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_hy2kp"]
 [ext_resource type="PackedScene" uid="uid://caj2w8w8af8wu" path="res://spheres/environment/doors/sphere_door.tscn" id="6_kxdll"]
@@ -19,10 +19,9 @@ navigation_enabled = false
 
 [node name="Waves" type="Node2D" parent="." unique_id=908114306]
 
-[node name="Wave1" type="Node2D" parent="Waves" unique_id=158199357 node_paths=PackedStringArray("next")]
+[node name="Wave1" type="Node2D" parent="Waves" unique_id=158199357]
 script = ExtResource("2_kxdll")
 autostart = true
-next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=1049584887]
 wait_time = 7.5
@@ -32,46 +31,6 @@ one_shot = true
 position = Vector2(780, 360)
 script = ExtResource("3_oqujk")
 entity = "harbinger"
-
-[node name="Wave2" type="Node2D" parent="Waves" unique_id=1923284871 node_paths=PackedStringArray("next")]
-script = ExtResource("2_kxdll")
-next = NodePath("../Wave3")
-
-[node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1508864988]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnGriefer" type="Node2D" parent="Waves/Wave2" unique_id=625138131]
-position = Vector2(840, 360)
-script = ExtResource("3_oqujk")
-entity = "griefer"
-
-[node name="SpawnRocketjumper1" type="Node2D" parent="Waves/Wave2" unique_id=1624125663]
-position = Vector2(840, 570)
-script = ExtResource("3_oqujk")
-entity = "rocketjumper"
-
-[node name="SpawnRocketjumper2" type="Node2D" parent="Waves/Wave2" unique_id=1556446109]
-position = Vector2(840, 150)
-script = ExtResource("3_oqujk")
-entity = "rocketjumper"
-
-[node name="Wave3" type="Node2D" parent="Waves" unique_id=800614481]
-script = ExtResource("2_kxdll")
-
-[node name="Timer" type="Timer" parent="Waves/Wave3" unique_id=2091164762]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnMeteor1" type="Node2D" parent="Waves/Wave3" unique_id=1945435141]
-position = Vector2(210, 150)
-script = ExtResource("3_oqujk")
-entity = "meteor"
-
-[node name="SpawnMeteor2" type="Node2D" parent="Waves/Wave3" unique_id=442787716]
-position = Vector2(210, 570)
-script = ExtResource("3_oqujk")
-entity = "meteor"
 
 [node name="Doors" type="Node2D" parent="." unique_id=182926648]
 
@@ -96,5 +55,3 @@ reward = ExtResource("8_kxdll")
 reward = ExtResource("9_c6lg1")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
-[connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]
-[connection signal="timeout" from="Waves/Wave3/Timer" to="Waves/Wave3" method="proceed"]

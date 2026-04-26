@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bx5hrcuh7e0xe" path="res://spheres/5/breath/rooms/breath_wall_tileset.tres" id="1_htdl3"]
 [ext_resource type="Script" uid="uid://c1tyo5jsp5bvj" path="res://spheres/environment/encounters/boss_wave.gd" id="2_34phv"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_jbp5y"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="4_agge2"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="4_agge2"]
 [ext_resource type="PackedScene" uid="uid://bcr1xtwtfnmdx" path="res://spheres/environment/doors/loop_door.tscn" id="5_34phv"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_34phv"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_3mek5"]
@@ -19,10 +19,9 @@ navigation_enabled = false
 
 [node name="Waves" type="Node2D" parent="." unique_id=1531344445]
 
-[node name="Wave1" type="Node2D" parent="Waves" unique_id=1318117822 node_paths=PackedStringArray("next")]
+[node name="Wave1" type="Node2D" parent="Waves" unique_id=1318117822]
 script = ExtResource("2_34phv")
 autostart = true
-next = NodePath("../Wave2")
 
 [node name="Timer" type="Timer" parent="Waves/Wave1" unique_id=183578000]
 wait_time = 7.5
@@ -32,31 +31,6 @@ one_shot = true
 position = Vector2(540, 480)
 script = ExtResource("3_jbp5y")
 entity = "gall"
-
-[node name="Wave2" type="Node2D" parent="Waves" unique_id=1830414747 node_paths=PackedStringArray("next")]
-script = ExtResource("2_34phv")
-next = NodePath("../Wave3")
-
-[node name="Timer" type="Timer" parent="Waves/Wave2" unique_id=1927584944]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnStalk" type="Node2D" parent="Waves/Wave2" unique_id=682628996]
-position = Vector2(870, 480)
-script = ExtResource("3_jbp5y")
-entity = "stalk"
-
-[node name="Wave3" type="Node2D" parent="Waves" unique_id=812917967]
-script = ExtResource("2_34phv")
-
-[node name="Timer" type="Timer" parent="Waves/Wave3" unique_id=2004644822]
-wait_time = 7.5
-one_shot = true
-
-[node name="SpawnStalk" type="Node2D" parent="Waves/Wave3" unique_id=1742131839]
-position = Vector2(210, 480)
-script = ExtResource("3_jbp5y")
-entity = "stalk"
 
 [node name="Doors" type="Node2D" parent="." unique_id=1950545928]
 
@@ -79,5 +53,3 @@ reward = ExtResource("8_syd18")
 reward = ExtResource("9_ey1iv")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
-[connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]
-[connection signal="timeout" from="Waves/Wave3/Timer" to="Waves/Wave3" method="proceed"]

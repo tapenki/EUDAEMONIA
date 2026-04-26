@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://4ptldjx8ftu7" path="res://spheres/2/depths/rooms/depths_wall_tileset.tres" id="1_fgggc"]
 [ext_resource type="Script" uid="uid://cgdkqi5yv0nca" path="res://spheres/environment/encounters/wave.gd" id="2_bpq7g"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_7atoa"]
-[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/broken_door.tscn" id="4_slbef"]
+[ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="4_slbef"]
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://spheres/environment/doors/door.tscn" id="5_50twf"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_kc64v"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_bk3hk"]

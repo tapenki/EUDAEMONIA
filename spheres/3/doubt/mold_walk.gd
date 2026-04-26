@@ -1,7 +1,5 @@
 extends State
 
-@export var anim: String
-
 var walk_target: Vector2
 var wobble = 0
 
