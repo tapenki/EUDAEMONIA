@@ -246,6 +246,13 @@ var room_data = {
 		"challenge" : true,
 	},
 	#endregion
+	#region light
+	"light_entrance_hall" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
+	#endregion
 	#region misc
 	"debug_room" : {
 		"scene" : preload("res://spheres/debug_room.tscn"), 
@@ -345,6 +352,11 @@ var entity_data = {
 	},
 	"giga_leafer" : {
 		"scene" : preload("res://spheres/5/breath/giga_leafer/giga_leafer.tscn")
+	},
+	#endregion
+	#region light
+	"blaster" : {
+		"scene" : preload("res://spheres/6/light/blaster/blaster.tscn")
 	},
 	#endregion
 }

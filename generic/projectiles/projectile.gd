@@ -55,7 +55,7 @@ func wall_collision():
 		for body in get_overlapping_bodies():
 			if body is TileMapLayer:
 				var crits = 0#ability_relay.get_crits()
-				on_collision(crits)
+				hit_effects(crits)
 				kill()
 
 func movement(new_position):
@@ -63,7 +63,7 @@ func movement(new_position):
 	global_position = new_position
 	ability_relay.movement.emit(old_position.distance_to(global_position))
 
-func on_collision(crits: int):
+func hit_effects(crits: int):
 	if hit_particle_preset != "":
 		if crits > 0:
 			get_node("/root/Main/ParticleHandler").quick_particles(hit_particle_preset, 
@@ -82,7 +82,7 @@ func on_collision(crits: int):
 		get_node("/root/Main").play_sound(hit_sound)
 
 func on_hit(crits):
-	on_collision(crits)
+	hit_effects(crits)
 	if unlimited_hits:
 		return
 	hits_left -= 1
@@ -91,7 +91,7 @@ func on_hit(crits):
 
 func _on_lifetime_timeout() -> void:
 	var crits = 0#ability_relay.get_crits()
-	on_collision(crits)
+	hit_effects(crits)
 	kill()
 
 func adjust_scale():

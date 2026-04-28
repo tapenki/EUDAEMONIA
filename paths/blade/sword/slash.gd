@@ -19,7 +19,7 @@ func _on_lifetime_timeout() -> void:
 	kill()
 
 func on_hit(crits):
-	on_collision(crits)
+	hit_effects(crits)
 	if unlimited_hits:
 		return
 	hits_left -= 1

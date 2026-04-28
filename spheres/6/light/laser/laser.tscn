@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://k1m3opvfn184"]
+
+[ext_resource type="Script" uid="uid://bui47a145ofur" path="res://spheres/6/light/laser/laser.gd" id="1_jua8h"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_ud0ky"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_3b5hm"]
+[ext_resource type="Texture2D" uid="uid://bu5ynclbjvg72" path="res://spheres/6/light/laser/laser.png" id="4_jua8h"]
+[ext_resource type="Texture2D" uid="uid://bxpt7xradpduj" path="res://spheres/6/light/laser/laser_glow.png" id="5_jua8h"]
+[ext_resource type="Script" uid="uid://df0bakhxk35h6" path="res://spheres/6/light/laser/laser_sprite.gd" id="5_sl15b"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_d7x1w"]
+[ext_resource type="Texture2D" uid="uid://xuh03rowai7d" path="res://spheres/6/light/laser/laser_tip.png" id="7_ey6ql"]
+[ext_resource type="Texture2D" uid="uid://dprl5lmh0bsql" path="res://paths/statuses/burn/burn.png" id="7_os5i6"]
+[ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="7_sl15b"]
+
+[sub_resource type="Curve" id="Curve_07fpd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1017544, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Laser" type="Node2D" unique_id=1092706323 node_paths=PackedStringArray("ability_relay")]
+z_index = 1
+script = ExtResource("1_jua8h")
+ability_relay = NodePath("AbilityRelay")
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1638014074]
+script = ExtResource("2_ud0ky")
+
+[node name="Sprite" type="NinePatchRect" parent="." unique_id=833043588 node_paths=PackedStringArray("ability_relay")]
+material = ExtResource("3_3b5hm")
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 7.0
+offset_bottom = 15.0
+grow_vertical = 2
+texture = ExtResource("4_jua8h")
+region_rect = Rect2(0, 0, 16, 32)
+patch_margin_left = 7
+script = ExtResource("5_sl15b")
+ability_relay = NodePath("../AbilityRelay")
+
+[node name="Glow" type="NinePatchRect" parent="Sprite" unique_id=327347811]
+z_index = -3
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_jua8h")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="TipSprite" type="TextureRect" parent="Sprite" unique_id=1587188682]
+material = ExtResource("3_3b5hm")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("7_ey6ql")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="Sprite" unique_id=1595911815]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Particles" type="CPUParticles2D" parent="Sprite/Control" unique_id=1587966448 node_paths=PackedStringArray("ability_relay")]
+show_behind_parent = true
+material = ExtResource("3_3b5hm")
+texture = ExtResource("7_os5i6")
+lifetime = 0.5
+draw_order = 1
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 80.0
+damping_min = 80.0
+damping_max = 80.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_07fpd")
+script = ExtResource("7_sl15b")
+ability_relay = NodePath("../../../AbilityRelay")
+
+[node name="Lifetime" type="Node" parent="." unique_id=1431600111 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("7_d7x1w")
+running = true
+ability_relay = NodePath("../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

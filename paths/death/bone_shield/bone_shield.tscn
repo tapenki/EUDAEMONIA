@@ -111,7 +111,7 @@ hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 0
 health = 0.0
-unchaseable = true
+untargetable = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=395787743]
 script = ExtResource("2_2bgfb")

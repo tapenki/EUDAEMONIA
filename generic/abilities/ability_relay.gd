@@ -215,9 +215,10 @@ func find_target(position = owner.global_position, reach = 9999, exclude = {}):
 # can't get main from outside the tree
 func assign_projectile_group(projectile: Node, group: int, color: String = "secondary"):
 	projectile.group = group
-	for i in range(1, 3):
-			projectile.set_collision_mask_value(i, i != group)
-	projectile.set_collision_layer_value(group, true)
+	if projectile is Area2D:
+		for i in range(1, 3):
+				projectile.set_collision_mask_value(i, i != group)
+		projectile.set_collision_layer_value(group, true)
 	projectile.apply_palette(group, color)
 
 func assign_entity_group(entity: Node, group: int, color: String = "secondary"):
