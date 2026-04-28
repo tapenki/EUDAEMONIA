@@ -21,6 +21,8 @@ var alive = true
 
 var exclude: Dictionary
 
+var sound_timer = 0.0
+
 func _ready() -> void:
 	rotation = velocity.angle()
 	var attack_scale = adjust_scale()
@@ -40,6 +42,7 @@ func _physics_process(delta):
 	else:
 		sprite.size.x = length / attack_scale - sprite.position.x
 		entity_collision(global_position + velocity.normalized() * length, sprite.size.y * attack_scale * 0.5)
+	#sound_effects(delta)
 
 func tick_exclusion(delta):
 	for body in exclude.keys():
@@ -89,6 +92,12 @@ func adjust_scale():
 	var attack_scale = ability_relay.get_attack_scale()
 	scale = Vector2(attack_scale, attack_scale)
 	return attack_scale
+
+func sound_effects(delta):
+	sound_timer += delta * ability_relay.speed_scale
+	if sound_timer > 0.25:
+		sound_timer = 0
+		get_node("/root/Main").play_sound("Error")
 
 #func get_knockback_direction(target):
 #	return lerp(velocity, global_position.direction_to(target.global_position), 1/max(velocity.length()*0.01, 1)).normalized()

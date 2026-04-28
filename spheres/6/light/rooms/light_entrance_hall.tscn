@@ -29,12 +29,12 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnBlaster1" type="Node2D" parent="Waves/Wave1" unique_id=200022765]
-position = Vector2(300, 180)
+position = Vector2(300, 330)
 script = ExtResource("3_r4rno")
 entity = "blaster"
 
 [node name="SpawnBlaster2" type="Node2D" parent="Waves/Wave1" unique_id=2071305083]
-position = Vector2(540, 180)
+position = Vector2(540, 330)
 script = ExtResource("3_r4rno")
 entity = "blaster"
 
@@ -46,12 +46,12 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnBlaster1" type="Node2D" parent="Waves/Wave2" unique_id=890576780]
-position = Vector2(300, 180)
+position = Vector2(300, 330)
 script = ExtResource("3_r4rno")
 entity = "blaster"
 
 [node name="SpawnBlaster2" type="Node2D" parent="Waves/Wave2" unique_id=1511232694]
-position = Vector2(540, 180)
+position = Vector2(540, 330)
 script = ExtResource("3_r4rno")
 entity = "blaster"
 

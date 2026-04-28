@@ -38,6 +38,6 @@ func on_enter() -> void:
 	laser_instance.spin = 0.5 * spin_direction
 	get_node("/root/Main/Projectiles").add_child(laser_instance)
 	#user.ability_relay.attack.emit(direction)
-	get_node("/root/Main").play_sound("ShootLight")
+	get_node("/root/Main").play_sound("Explosion")
 	state_handler.target = null
 	state_handler.change_state(next)
