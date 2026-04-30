@@ -48,7 +48,7 @@ func day_start(_day: int) -> void:
 			{"subscription" = 2, "army_of_the_dead" = true})  ## inheritance
 			summon_instance.max_health = 0
 			summon_instance.health = 0
-			summon_instance.global_position = summon_instance.random_valid_position(get_node("/root/Main").room_node.get_node("TileMap"))
+			summon_instance.global_position = summon_instance.random_valid_position(get_node("/root/Main").get_tilemap())
 			get_node("/root/Main").spawn_entity(summon_instance)
 
 func max_health_modifiers(modifiers, ability_relay) -> void:

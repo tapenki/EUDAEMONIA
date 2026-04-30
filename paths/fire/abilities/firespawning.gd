@@ -39,7 +39,7 @@ func day_start(_day: int) -> void:
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 5:
 			return
-		var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+		var tilemap = get_node("/root/Main").get_tilemap()
 		var wall_cells = tilemap.get_used_cells_by_id(0)
 		var floor_cells = tilemap.get_used_cells_by_id(2)
 		for j in wall_cells:

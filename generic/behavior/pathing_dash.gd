@@ -16,7 +16,7 @@ func on_enter() -> void:
 	
 	user.velocity = Vector2()
 	if is_instance_valid(state_handler.target):
-		var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+		var tilemap = get_node("/root/Main").get_tilemap()
 		var start = tilemap.local_to_map(state_handler.target.global_position)
 		var end = tilemap.local_to_map(user.global_position)
 		var path: PackedVector2Array

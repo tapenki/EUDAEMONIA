@@ -40,7 +40,7 @@ func day_start(_day: int) -> void:
 		if applicants[applicant].has("subscription") and applicants[applicant]["subscription"] < 5:
 			return
 		for i in 2:
-			var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+			var tilemap = get_node("/root/Main").get_tilemap()
 			var cell = tilemap.get_used_cells_by_id(2).pick_random()
 			var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 			var summon_instance = applicant.make_summon(bomb, 

@@ -4,6 +4,8 @@ extends State
 @export var distance_margin: int
 @export var shapecast_radius: int = 16
 
+@export var anim = "WALK"
+
 @export var next: State
 
 #var node2d = Node2D.new()
@@ -30,7 +32,7 @@ func _physics_process(_delta):
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_relay.find_target()
 	if not is_instance_valid(state_handler.target):# or user.knockback_timer.running:
-		if user.animation_player.current_animation == "WALK":
+		if anim != "" and user.animation_player.current_animation == anim:
 			user.animation_player.stop()
 		return
 	
@@ -61,7 +63,7 @@ func _physics_process(_delta):
 	if shape_intersections: ## obstacles in the way, pathfind around them
 		var path = get_node("/root/Main").pathfind(user.global_position, state_handler.target.global_position)
 		if path.size() == 0:
-			if user.animation_player.current_animation == "WALK":
+			if anim != "" and user.animation_player.current_animation == anim:
 				user.animation_player.stop()
 			return
 		#for i in path:
@@ -87,5 +89,6 @@ func _physics_process(_delta):
 		final_velocity = lerp(final_velocity, avoid_direction * final_speed, min(10/avoid["distance"], 1))
 	
 	user.velocity = lerp(user.velocity, final_velocity, 0.5)
-	user.animation_player.play("WALK")
+	if anim != "":
+		user.animation_player.play(anim)
 	user.still = false

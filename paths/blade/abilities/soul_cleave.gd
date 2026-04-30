@@ -31,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 						to_target = to_entity
 			if target:
 				for i in 2:
-					var summon_position = target.nearby_valid_position(get_node("/root/Main").room_node.get_node("TileMap"), target.global_position, 60)
+					var summon_position = target.nearby_valid_position(get_node("/root/Main").get_tilemap(), target.global_position, 60)
 					var summon_instance = target.ability_relay.make_summon(load(target.scene_file_path), 
 					summon_position,
 					{"subscription" = 3})

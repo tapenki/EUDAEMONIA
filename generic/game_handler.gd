@@ -91,6 +91,9 @@ func instantiate_enemy(scene: PackedScene):
 	return entity_instance
 
 ## map
+func get_tilemap():
+	return room_node.get_node("TileMap")
+
 func generate_map():
 	if room_node != null:
 		room_node.queue_free()
@@ -105,7 +108,7 @@ func generate_map():
 
 func setup_astar():
 	astar.clear()
-	var tilemap = room_node.get_node("TileMap")
+	var tilemap = get_tilemap()
 	astar.region = tilemap.get_used_rect()
 	astar.cell_size = tilemap.tile_set.tile_size
 	astar.offset = astar.cell_size * 0.5
@@ -128,7 +131,7 @@ func setup_astar():
 								astar.set_point_weight_scale(pos + Vector2i(k, l), 16)
 
 func pathfind(start, end):
-	var tilemap = room_node.get_node("TileMap")
+	var tilemap = get_tilemap()
 	start = tilemap.local_to_map(start)
 	end = tilemap.local_to_map(end)
 	if not astar.is_in_boundsv(start) or not astar.is_in_boundsv(end):

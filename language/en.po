@@ -820,6 +820,21 @@ msgstr "[outline_size=10]Gate: Garden[/outline_size]"
 msgid "breath_basic_gate_description"
 msgstr "The way forward."
 
+msgid "land_of_light_title"
+msgstr "Sphere [6]: Land of Light"
+
+msgid "light_entrance_gate_title"
+msgstr "[outline_size=10]Gate: Land of Light[/outline_size]"
+
+msgid "light_entrance_gate_description"
+msgstr "The way forward."
+
+msgid "light_basic_gate_title"
+msgstr "[outline_size=10]Gate: Bright Room[/outline_size]"
+
+msgid "light_basic_gate_description"
+msgstr "The way forward."
+
 msgid "his_throne_title"
 msgstr "Sphere [8]: His Throne"
 

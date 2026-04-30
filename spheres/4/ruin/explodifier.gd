@@ -2,7 +2,7 @@ extends Node
 
 @onready var timer = $Timer
 
-@onready var tilemap = get_node("/root/Main").room_node.get_node("TileMap")
+@onready var tilemap = get_node("/root/Main").get_tilemap()
 @onready var wall_cells = tilemap.get_used_cells_by_id(0)
 @onready var floor_cells = tilemap.get_used_cells_by_id(2)
 

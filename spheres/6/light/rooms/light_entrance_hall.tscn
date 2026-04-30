@@ -64,9 +64,9 @@ texture = ExtResource("5_mbva1")
 
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("6_1as4t")]
 position = Vector2(420, 30)
-room = "steps_room_0"
+room = "light_room_0"
 door = "Entrance0"
-subject = "steps_basic_gate"
+subject = "light_basic_gate"
 tag = "travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("7_x2l4r")]

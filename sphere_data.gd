@@ -252,6 +252,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "light",
 	},
+	"light_room_0" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
+	"light_room_1" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
 	#endregion
 	#region misc
 	"debug_room" : {
@@ -357,6 +367,12 @@ var entity_data = {
 	#region light
 	"blaster" : {
 		"scene" : preload("res://spheres/6/light/blaster/blaster.tscn")
+	},
+	"disco" : {
+		"scene" : preload("res://spheres/6/light/disco/disco.tscn")
+	},
+	"looker" : {
+		"scene" : preload("res://spheres/6/light/looker/looker.tscn")
 	},
 	#endregion
 }
