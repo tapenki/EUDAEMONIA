@@ -16,6 +16,8 @@ var room_node: Node
 @export var room = "light_entrance_hall" ## exported for tutorial
 var door = "Entrance0"
 
+var valid_spawn_cells: Dictionary
+
 var day = 1
 var day_started = false
 
@@ -94,6 +96,41 @@ func instantiate_enemy(scene: PackedScene):
 func get_tilemap():
 	return room_node.get_node("TileMap")
 
+func ajacent_cells(start, cycles):
+	var result: Dictionary
+	var prev_cells = [start]
+	for i in cycles:
+		var next_cells: Array
+		for j in prev_cells:
+			if valid_spawn_cells.has(j + Vector2i(1, 0)) and not result.has(j + Vector2i(1, 0)):
+				result[j + Vector2i(1, 0)] = true
+				next_cells.append(j + Vector2i(1, 0))
+			if valid_spawn_cells.has(j + Vector2i(-1, 0)) and not result.has(j + Vector2i(-1, 0)):
+				result[j + Vector2i(-1, 0)] = true
+				next_cells.append(j + Vector2i(-1, 0))
+			if valid_spawn_cells.has(j + Vector2i(0, 1)) and not result.has(j + Vector2i(0, 1)):
+				result[j + Vector2i(0, 1)] = true
+				next_cells.append(j + Vector2i(0, 1))
+			if valid_spawn_cells.has(j + Vector2i(0, -1)) and not result.has(j + Vector2i(0, -1)):
+				result[j + Vector2i(0, -1)] = true
+				next_cells.append(j + Vector2i(0, -1))
+			prev_cells = next_cells
+	if not result:
+		result[start] = true
+	return result
+
+func map_update():
+	setup_astar()
+	var tilemap = get_tilemap()
+	var wall_cells = tilemap.get_used_cells_by_id(0)
+	var floor_cells = tilemap.get_used_cells_by_id(2)
+	for i in wall_cells:
+		for j in range(-1, 2):
+			for k in range(-1, 2):
+				floor_cells.erase(Vector2i(i.x + j, i.y + k))
+	for i in floor_cells:
+		valid_spawn_cells[i] = true
+
 func generate_map():
 	if room_node != null:
 		room_node.queue_free()
@@ -101,7 +138,7 @@ func generate_map():
 	room_node = room_data["scene"].instantiate()
 	add_child(room_node)
 	#generate_nav_polygon()
-	setup_astar()
+	map_update()
 	var entrance_door = room_node.get_node("Doors/"+door)
 	player.global_position = entrance_door.global_position + Vector2(0, 60).rotated(entrance_door.rotation)
 	camera_parameters.emit(room_data["zoom_scale"])#, layout_data["left"], layout_data["top"], layout_data["right"], layout_data["bottom"])

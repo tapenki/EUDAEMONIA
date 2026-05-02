@@ -277,6 +277,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "light",
 	},
+	"light_room_2" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
 	#endregion
 	#region misc
 	"debug_room" : {

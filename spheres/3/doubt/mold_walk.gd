@@ -7,7 +7,7 @@ var wobble = 0
 
 func on_enter() -> void:
 	super()
-	walk_target = user.random_valid_position(get_node("/root/Main").get_tilemap())
+	walk_target = user.random_valid_position(get_node("/root"))
 
 func _physics_process(delta):
 	if user.global_position.distance_to(walk_target) < 300 * delta * user.ability_relay.speed_scale:
