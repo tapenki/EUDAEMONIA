@@ -116,6 +116,7 @@ func apply_palette(team, denominator):
 			if spritechild is CanvasItem:
 				spritechild.self_modulate = team_color
 
+## TODO: optimization
 func get_valid_positions(tilemap):
 	var wall_cells = tilemap.get_used_cells_by_id(0)
 	var floor_cells = tilemap.get_used_cells_by_id(2)

@@ -35,6 +35,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "steps",
 	},
+	"steps_secret_room_0" : {
+		"scene" : preload("res://spheres/1/steps/rooms/steps_secret_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steps",
+	},
 	"steps_room_0" : {
 		"scene" : preload("res://spheres/1/steps/rooms/steps_room_0.tscn"), 
 		"zoom_scale" : 0.9, 
@@ -115,6 +120,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "wonder",
 	},
+	"wonder_secret_room_0" : {
+		"scene" : preload("res://spheres/3/wonder/rooms/wonder_secret_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "wonder",
+	},
 	"wonder_room_1" : {
 		"scene" : preload("res://spheres/3/wonder/rooms/wonder_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
@@ -151,6 +161,11 @@ var room_data = {
 	"doubt_damage_treasury" : {
 		"scene" : preload("res://spheres/3/doubt/rooms/doubt_damage_treasury.tscn"), 
 		"zoom_scale" : 0.8, 
+		"land" : "doubt",
+	},
+	"doubt_secret_room_0" : {
+		"scene" : preload("res://spheres/3/doubt/rooms/doubt_secret_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
 		"land" : "doubt",
 	},
 	"doubt_room_1" : {

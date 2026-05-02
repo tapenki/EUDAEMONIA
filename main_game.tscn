@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://d38ioikfp2sdp" path="res://sounds/explosion.wav" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://bxijlb14fyxl3" path="res://generic/particles/bullet.png" id="16_getpj"]
 [ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="16_yaehf"]
+[ext_resource type="AudioStream" uid="uid://dmcpla6xtbt2c" path="res://sounds/secret.wav" id="17_pk5u2"]
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://dnad4gqguw327" path="res://shaders/particle_shader.gdshader" id="19_82xsv"]
 [ext_resource type="Texture2D" uid="uid://da1vwx5yft8li" path="res://paths/lightning/zap.png" id="20_82xsv"]
@@ -239,6 +240,11 @@ bus = &"SFX"
 
 [node name="Click" type="AudioStreamPlayer" parent="Audio" unique_id=1082388728]
 stream = ExtResource("14_vn0ol")
+bus = &"SFX"
+
+[node name="Secret" type="AudioStreamPlayer" parent="Audio" unique_id=788175999]
+stream = ExtResource("17_pk5u2")
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="Particles" type="Node" parent="." unique_id=1716681722]

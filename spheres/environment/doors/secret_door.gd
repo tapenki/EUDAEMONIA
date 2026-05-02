@@ -1,7 +1,9 @@
-class_name Door extends Sprite2D
+extends Node2D
 
 @onready var button = $Button
+@onready var sprite = $Sprite
 @onready var particles = $Particles
+@onready var appearance_effect = $Appearance
 
 @export var room: String
 @export var door = "Entrance0"
@@ -18,15 +20,22 @@ var description_scene = preload("res://ui/description.tscn")
 var description_nodes: Array
 
 func _ready() -> void:
+	sprite.visible = false
 	get_node("/root/Main").day_cleared.connect(activate.unbind(1))
 
 func activate():
 	if get_node("/root/Main").game_over:
 		return
 	button.visible = true
-	particles.emitting = true
 
 func enter():
+	if not sprite.visible:
+		sprite.visible = true
+		particles.emitting = true
+		appearance_effect.emitting = true
+		_on_mouse_entered()
+		get_node("/root/Main").play_sound("Secret")
+		return
 	if get_node("/root/Main").game_over:
 		get_node("/root/Main").play_sound("Error")
 		return
@@ -61,6 +70,8 @@ func make_description(description_title, description_text, description_tag, desc
 	return description_instance
 
 func _on_mouse_entered() -> void:
+	if not sprite.visible:
+		return
 	var winsize = get_window().content_scale_size ## horrible and evil solutions
 	var ratio = float(get_window().size.x)/get_window().size.y
 	if ratio > float(winsize.x)/winsize.y:

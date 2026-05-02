@@ -724,6 +724,12 @@ msgstr "[outline_size=10]Gate: Spiral to Madness[/outline_size]"
 msgid "loop_gate_description"
 msgstr "The way nowhere."
 
+msgid "secret_gate_title"
+msgstr "[outline_size=10]Gate: Secret Passage[/outline_size]"
+
+msgid "secret_gate_description"
+msgstr "The way forward?"
+
 msgid "land_of_steps_title"
 msgstr "Sphere [1]: Land of Steps"
 
