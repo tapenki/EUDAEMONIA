@@ -72,23 +72,17 @@ rotation = 3.1415927
 position = Vector2(30, 390)
 rotation = 4.712389
 room = "light_room_1"
-door = "Entrance0"
 subject = "light_basic_gate"
-tag = "travel_cost"
 
 [node name="Exit1" parent="Doors" unique_id=248772373 instance=ExtResource("6_0em7x")]
 position = Vector2(210, 90)
-room = "steps_room_0"
-door = "Entrance0"
-subject = "steps_basic_gate"
-tag = "travel_cost"
+room = "light_health_treasury"
+subject = "health_treasury_gate"
 
 [node name="Exit2" parent="Doors" unique_id=1086895742 instance=ExtResource("6_0em7x")]
 position = Vector2(570, 90)
-room = "steps_room_0"
-door = "Entrance0"
-subject = "steps_basic_gate"
-tag = "travel_cost"
+room = "light_damage_treasury"
+subject = "damage_treasury_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("7_70n6x")]
 reward = ExtResource("8_wfylk")

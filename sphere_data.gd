@@ -272,6 +272,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "light",
 	},
+	"light_health_treasury" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
+	"light_damage_treasury" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_damage_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
 	"light_room_1" : {
 		"scene" : preload("res://spheres/6/light/rooms/light_room_1.tscn"), 
 		"zoom_scale" : 0.9, 

@@ -74,7 +74,7 @@ rotation = 1.5707964
 position = Vector2(30, 330)
 rotation = 4.712389
 room = "light_room_2"
-subject = "steps_basic_gate"
+subject = "light_basic_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_ky2bj")]
 reward = ExtResource("7_pumig")
