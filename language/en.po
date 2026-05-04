@@ -918,6 +918,12 @@ msgstr "[Giga Leafer]: come here you >:("
 msgid "giga_leafer_death_1"
 msgstr "[Giga Leafer]: grrgghn >:("
 
+msgid "grand_luminary_spawn_1"
+msgstr "[Grand Luminary]: fu7ur3 1s br1gh7"
+
+msgid "grand_luminary_death_1"
+msgstr "[Grand Luminary]: y0u t00 sh4ll s33"
+
 # rewards
 
 msgid "ascension_diploma_title"

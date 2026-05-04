@@ -15,6 +15,14 @@ func disapply(ability_relay):
 	if ability_relay.damage_taken.is_connected(damage_taken):
 		ability_relay.damage_taken.disconnect(damage_taken)
 
+func _ready() -> void:
+	get_node("/root/Main").intermission.connect(intermission)
+
+func intermission(_day: int) -> void:
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("time"):
+			applicants[ability_relay]["time"] = 0.0
+
 func _process(delta: float) -> void:
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("time") and applicants[ability_relay]["time"] > 0:

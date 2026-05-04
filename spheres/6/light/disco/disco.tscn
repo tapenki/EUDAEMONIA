@@ -188,12 +188,6 @@ laser_speed = 450
 laser_length = 200
 next = NodePath("../Endlag")
 
-[node name="Timer" type="Node" parent="StateHandler/LaserAttack" unique_id=963615062 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_ky0ps")
-wait_time = 0.3
-ability_relay = NodePath("../../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
-
 [node name="Endlag" type="Node" parent="StateHandler" unique_id=716655635 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_7ub05")
@@ -248,7 +242,6 @@ next/WINDUP = &"IDLE"
 [connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/LaserAttack/Timer" to="StateHandler/LaserAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

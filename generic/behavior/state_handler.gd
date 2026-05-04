@@ -18,7 +18,10 @@ func enter_state(state: State):
 func change_state(state: State):
 	if current_state:
 		current_state.on_exit()
-	call_deferred("enter_state", state)
+	if state:
+		call_deferred("enter_state", state)
+	else:
+		current_state = null
 	
 func entity_death(dying_entity: Entity):
 	if dying_entity == get_parent():

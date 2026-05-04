@@ -51,6 +51,7 @@ func _physics_process(_delta):
 			if round(collision.get_normal().x) != stick_normal.x or round(collision.get_normal().y) != stick_normal.y:
 				stick = false
 		if not stick:
+			user.velocity *= 0
 			_on_timer_timeout()
 	elif stick:
 		user.wall_min_slide_angle = 180

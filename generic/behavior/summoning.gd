@@ -2,6 +2,7 @@ extends State
 
 @export var summon: PackedScene
 @export var summon_health: float = 1.0
+@export var summon_count: int = 1
 @export var max_summons: int
 
 @export var next: State
@@ -14,16 +15,17 @@ func _ready() -> void:
 func on_enter() -> void:
 	super()
 	
-	if state_handler.data["summons"].size() < max_summons:
-		var summon_instance = user.ability_relay.make_summon(summon, 
-		user.global_position, 
-		{"subscription" = 2})
-		summon_instance.max_health = user.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
-		summon_instance.health = summon_instance.max_health
-		summon_instance.ability_relay.inherited_damage = user.ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
-		get_node("/root/Main/Entities").add_child(summon_instance)
-		get_node("/root/Main/Entities").move_child(summon_instance, 0)
-		state_handler.data["summons"].append(summon_instance)
+	for i in summon_count:
+		if state_handler.data["summons"].size() < max_summons:
+			var summon_instance = user.ability_relay.make_summon(summon, 
+			user.global_position, 
+			{"subscription" = 2})
+			summon_instance.max_health = user.max_health * summon_health ## prevent necromanced enemies summons from having inflated stats
+			summon_instance.health = summon_instance.max_health
+			summon_instance.ability_relay.inherited_damage = user.ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
+			get_node("/root/Main/Entities").add_child(summon_instance)
+			get_node("/root/Main/Entities").move_child(summon_instance, 0)
+			state_handler.data["summons"].append(summon_instance)
 	
 	state_handler.change_state(next)
 

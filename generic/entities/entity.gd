@@ -90,7 +90,7 @@ func movement(_delta):
 	var old_position = global_position
 	var old_velocity = velocity
 	velocity *= ability_relay.speed_scale
-	move_and_slide()
+	move_and_slide() ## watch out for wall collisions
 	velocity = old_velocity
 	ability_relay.movement.emit(old_position.distance_to(global_position))
 
@@ -118,7 +118,7 @@ func apply_palette(team, denominator):
 
 func random_valid_position(tree):
 	var tilemap = tree.get_node("Main").get_tilemap()
-	var cell = tree.get_node("Main").valid_spawn_positions.keys().pick_random()
+	var cell = tree.get_node("Main").valid_spawn_cells.keys().pick_random()
 	return tilemap.map_to_local(cell)
 
 func nearby_valid_position(tree, start, cycles):

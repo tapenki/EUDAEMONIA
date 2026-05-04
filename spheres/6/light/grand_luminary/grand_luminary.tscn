@@ -1,0 +1,428 @@
+[gd_scene format=3 uid="uid://dbngso7bp5caa"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_v5g6t"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_je60v"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_4i16r"]
+[ext_resource type="Script" uid="uid://dy41sp7cldye7" path="res://spheres/6/light/grand_luminary/hover_move.gd" id="4_ennks"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_bhkbn"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_mthdj"]
+[ext_resource type="Script" uid="uid://b1aiugrmdqtmg" path="res://spheres/6/light/grand_luminary/laser_cage_attack.gd" id="7_ennks"]
+[ext_resource type="PackedScene" uid="uid://dp0fk2jnls0lj" path="res://spheres/6/light/big_laser/big_laser.tscn" id="8_kwyp3"]
+[ext_resource type="Script" uid="uid://brss7bxe5ejqs" path="res://generic/behavior/scattershot_attack.gd" id="9_kwyp3"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_mp608"]
+[ext_resource type="Texture2D" uid="uid://by3p0whra0ctv" path="res://spheres/6/light/grand_luminary/grand_luminary.png" id="10_dudnq"]
+[ext_resource type="PackedScene" uid="uid://xkp8korlpxmc" path="res://generic/projectiles/cluster_bullet.tscn" id="10_vskwg"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_2lh50"]
+[ext_resource type="Texture2D" uid="uid://d3th4jbgb3bu4" path="res://spheres/6/light/grand_luminary/grand_luminary_hurt.png" id="12_qcl2j"]
+[ext_resource type="Script" uid="uid://cs3akfhlh0kbu" path="res://spheres/6/light/radial_laser_attack.gd" id="12_vskwg"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_to5eq"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_os1hy"]
+[ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="18_vskwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 50.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ennks"]
+resource_name = "IDLE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 0.9), Vector2(0.9, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_icb8a"]
+resource_name = "WALK"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 0.9), Vector2(0.9, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_vajmc"]
+resource_name = "WINDUP"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"IDLE": SubResource("Animation_ennks"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WALK": SubResource("Animation_icb8a"),
+&"WINDUP": SubResource("Animation_vajmc")
+}
+
+[node name="GrandLuminary" type="CharacterBody2D" unique_id=1948901896 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_v5g6t")
+ability_relay = NodePath("AbilityRelay")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 400
+health = 400.0
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=2077891043]
+script = ExtResource("2_je60v")
+is_entity = true
+
+[node name="StateHandler" type="Node" parent="." unique_id=1682319058 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_4i16r")
+initial_state = NodePath("HoverEndlag2")
+
+[node name="Hover1" type="Node" parent="StateHandler" unique_id=354024229 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_ennks")
+speed = 400
+next = NodePath("../HoverEndlag1")
+
+[node name="HoverEndlag1" type="Node" parent="StateHandler" unique_id=81129476 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+next = NodePath("../PrepareCageAttack")
+
+[node name="Timer" type="Node" parent="StateHandler/HoverEndlag1" unique_id=1404294775 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.4
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareCageAttack" type="Node" parent="StateHandler" unique_id=385334432 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../LaserCageAttack")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareCageAttack" unique_id=301225554 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="LaserCageAttack" type="Node" parent="StateHandler" unique_id=1613964652 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_ennks")
+laser = ExtResource("8_kwyp3")
+bullet_lifetime = 4.0
+bullet_speed = 450
+next = NodePath("../PrepareShootAttack1")
+
+[node name="PrepareShootAttack1" type="Node" parent="StateHandler" unique_id=972761077 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../ShootAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack1" unique_id=2116590572 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack1" type="Node" parent="StateHandler" unique_id=92461819 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("9_kwyp3")
+bullet = ExtResource("10_vskwg")
+bullet_lifetime = 2.75
+bullet_count = 3
+spread = 75
+bullet_speed = 300
+next = NodePath("../PrepareShootAttack2")
+
+[node name="PrepareShootAttack2" type="Node" parent="StateHandler" unique_id=54176046 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../ShootAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack2" unique_id=77568686 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack2" type="Node" parent="StateHandler" unique_id=712374456 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("9_kwyp3")
+bullet = ExtResource("10_vskwg")
+bullet_lifetime = 2.75
+bullet_count = 3
+spread = 75
+bullet_speed = 300
+next = NodePath("../PrepareShootAttack3")
+
+[node name="PrepareShootAttack3" type="Node" parent="StateHandler" unique_id=765632482 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../ShootAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareShootAttack3" unique_id=825098649 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="ShootAttack3" type="Node" parent="StateHandler" unique_id=1730366610 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("9_kwyp3")
+bullet = ExtResource("10_vskwg")
+bullet_lifetime = 2.75
+bullet_count = 3
+spread = 75
+bullet_speed = 300
+next = NodePath("../ShootAttackEndlag")
+
+[node name="ShootAttackEndlag" type="Node" parent="StateHandler" unique_id=710942793 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+next = NodePath("../Hover2")
+
+[node name="Timer" type="Node" parent="StateHandler/ShootAttackEndlag" unique_id=1891105075 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Hover2" type="Node" parent="StateHandler" unique_id=1031651882 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_ennks")
+speed = 400
+next = NodePath("../HoverEndlag2")
+
+[node name="HoverEndlag2" type="Node" parent="StateHandler" unique_id=1505649527 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+next = NodePath("../PrepareSpinAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/HoverEndlag2" unique_id=2012838066 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.4
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareSpinAttack1" type="Node" parent="StateHandler" unique_id=503117937 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../LaserSpinAttack1")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareSpinAttack1" unique_id=990435192 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="LaserSpinAttack1" type="Node" parent="StateHandler" unique_id=73571294 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("12_vskwg")
+laser = ExtResource("8_kwyp3")
+laser_lifetime = 2.0
+laser_count = 5
+laser_speed = 450
+laser_length = 9999
+spin = 0.75
+next = NodePath("../LaserSpinEndlag1")
+
+[node name="LaserSpinEndlag1" type="Node" parent="StateHandler" unique_id=1823132297 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+next = NodePath("../PrepareSpinAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/LaserSpinEndlag1" unique_id=1798511935 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareSpinAttack2" type="Node" parent="StateHandler" unique_id=1183767602 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../LaserSpinAttack2")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareSpinAttack2" unique_id=765403965 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="LaserSpinAttack2" type="Node" parent="StateHandler" unique_id=1119029856 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("12_vskwg")
+laser = ExtResource("8_kwyp3")
+laser_lifetime = 2.0
+laser_count = 5
+laser_speed = 450
+laser_length = 9999
+spin = -0.75
+next = NodePath("../LaserSpinEndlag2")
+
+[node name="LaserSpinEndlag2" type="Node" parent="StateHandler" unique_id=285897350 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+next = NodePath("../PrepareSpinAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/LaserSpinEndlag2" unique_id=1475627748 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="PrepareSpinAttack3" type="Node" parent="StateHandler" unique_id=1744701480 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+anim = "WINDUP"
+next = NodePath("../LaserSpinAttack3")
+
+[node name="Timer" type="Node" parent="StateHandler/PrepareSpinAttack3" unique_id=1857737502 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.9
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="LaserSpinAttack3" type="Node" parent="StateHandler" unique_id=922814134 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("12_vskwg")
+laser = ExtResource("8_kwyp3")
+laser_lifetime = 2.0
+laser_count = 5
+laser_speed = 450
+laser_length = 9999
+spin = 0.75
+next = NodePath("../LaserSpinEndlag3")
+
+[node name="LaserSpinEndlag3" type="Node" parent="StateHandler" unique_id=226936146 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_bhkbn")
+next = NodePath("../Hover1")
+
+[node name="Timer" type="Node" parent="StateHandler/LaserSpinEndlag3" unique_id=709574608 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 2.0
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1563565232]
+material = ExtResource("9_mp608")
+position = Vector2(0, 48)
+texture = ExtResource("10_dudnq")
+offset = Vector2(0, -48)
+script = ExtResource("11_2lh50")
+base_texture = ExtResource("10_dudnq")
+hurt_texture = ExtResource("12_qcl2j")
+
+[node name="Hurt" type="Node" parent="Sprite" unique_id=352123192 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_mthdj")
+wait_time = 0.2
+ability_relay = NodePath("../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=627207528]
+z_index = -3
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+texture = ExtResource("13_to5eq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1064312361]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=242625050 node_paths=PackedStringArray("ability_relay")]
+collision_layer = 0
+script = ExtResource("14_os1hy")
+ability_relay = NodePath("../AbilityRelay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=320875735]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=633758266]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_v1kwl")
+autoplay = &"IDLE"
+next/WALK = &"IDLE"
+next/WINDUP = &"IDLE"
+blend_times = [&"WALK", &"IDLE", 0.5, &"WINDUP", &"IDLE", 0.5]
+
+[node name="Speech" type="Node2D" parent="." unique_id=417714855]
+position = Vector2(0, -25)
+script = ExtResource("18_vskwg")
+spawn_quotes = ["grand_luminary_spawn_1"]
+death_quotes = ["grand_luminary_death_1"]
+
+[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
+[connection signal="timeout" from="StateHandler/HoverEndlag1/Timer" to="StateHandler/HoverEndlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareCageAttack/Timer" to="StateHandler/PrepareCageAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareShootAttack1/Timer" to="StateHandler/PrepareShootAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareShootAttack2/Timer" to="StateHandler/PrepareShootAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareShootAttack3/Timer" to="StateHandler/PrepareShootAttack3" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/ShootAttackEndlag/Timer" to="StateHandler/ShootAttackEndlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/HoverEndlag2/Timer" to="StateHandler/HoverEndlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareSpinAttack1/Timer" to="StateHandler/PrepareSpinAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/LaserSpinEndlag1/Timer" to="StateHandler/LaserSpinEndlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareSpinAttack2/Timer" to="StateHandler/PrepareSpinAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/LaserSpinEndlag2/Timer" to="StateHandler/LaserSpinEndlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareSpinAttack3/Timer" to="StateHandler/PrepareSpinAttack3" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/LaserSpinEndlag3/Timer" to="StateHandler/LaserSpinEndlag3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

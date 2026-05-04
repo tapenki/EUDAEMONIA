@@ -292,6 +292,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "light",
 	},
+	"light_throne_room" : {
+		"scene" : preload("res://spheres/6/light/rooms/light_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "light",
+	},
 	#endregion
 	#region misc
 	"debug_room" : {
@@ -403,6 +408,9 @@ var entity_data = {
 	},
 	"looker" : {
 		"scene" : preload("res://spheres/6/light/looker/looker.tscn")
+	},
+	"grand_luminary" : {
+		"scene" : preload("res://spheres/6/light/grand_luminary/grand_luminary.tscn")
 	},
 	#endregion
 }
