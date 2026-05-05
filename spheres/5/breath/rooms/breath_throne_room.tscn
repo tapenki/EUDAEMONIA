@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c1tyo5jsp5bvj" path="res://spheres/environment/encounters/boss_wave.gd" id="2_34phv"]
 [ext_resource type="Script" uid="uid://cyg5slac7b1ms" path="res://spheres/environment/encounters/wave_spawn.gd" id="3_jbp5y"]
 [ext_resource type="PackedScene" uid="uid://ct15fsuhi0fdx" path="res://spheres/environment/doors/entrance.tscn" id="4_agge2"]
-[ext_resource type="PackedScene" uid="uid://bcr1xtwtfnmdx" path="res://spheres/environment/doors/loop_door.tscn" id="5_34phv"]
+[ext_resource type="PackedScene" uid="uid://caj2w8w8af8wu" path="res://spheres/environment/doors/sphere_door.tscn" id="4_lh3ha"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_34phv"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_3mek5"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_syd18"]
@@ -38,10 +38,10 @@ entity = "gall"
 position = Vector2(540, 1290)
 rotation = 3.1415927
 
-[node name="Loop" parent="Doors" unique_id=1977797072 instance=ExtResource("5_34phv")]
+[node name="Exit0" parent="Doors" unique_id=1977797072 instance=ExtResource("4_lh3ha")]
 position = Vector2(540, 30)
-room = "steps_entrance_hall"
-door = "Entrance0"
+room = "light_entrance_hall"
+subject = "light_entrance_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=428245818 instance=ExtResource("6_34phv")]
 reward = ExtResource("7_3mek5")

@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func intermission(_day: int) -> void:
 	for ability_relay in applicants:
-		if applicants[ability_relay].has("pressure_multiplier"):
+		if applicants[ability_relay].has("pressure_multiplier") and pressurized_quills:
 			applicants[ability_relay]["pressure_multiplier"] = 2.0
 
 func _physics_process(delta: float) -> void:

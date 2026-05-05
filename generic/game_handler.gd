@@ -13,7 +13,7 @@ extends Node
 var astar = AStarGrid2D.new()
 
 var room_node: Node
-@export var room = "light_throne_room" ## exported for tutorial
+@export var room = "steps_entrance_hall" ## exported for tutorial
 var door = "Entrance0"
 
 var valid_spawn_cells: Dictionary
@@ -121,6 +121,7 @@ func ajacent_cells(start, cycles):
 
 func map_update():
 	setup_astar()
+	valid_spawn_cells.clear()
 	var tilemap = get_tilemap()
 	var wall_cells = tilemap.get_used_cells_by_id(0)
 	var floor_cells = tilemap.get_used_cells_by_id(2)
