@@ -7,8 +7,8 @@ class_name UIGame extends UICore
 @onready var game_menu = $"GameMenu"
 @onready var hud = $"HUD"
 
-@onready var proceed = $"HUD/Proceed"
-@onready var reset_button = $"GameMenu/Reset"
+@onready var proceed = $"HUD/TopRightButtons/Proceed"
+@onready var reset_button = $"GameMenu/BottomRightButtons/Reset"
 
 @onready var ability_menu = $"GameMenu/Abilities"
 @onready var affect_menu = $"GameMenu/Affects"
@@ -27,18 +27,31 @@ var paths: Array
 var challenges: Array
 
 @onready var game_menu_tab = $"GameMenu/Abilities"
+signal switch_game_menu_tab(tab)
 
 func _ready() -> void:
+	Config.rescale_ui.emit(Config.config.get_value("display", "ui_scale"))
+	
 	var magic_picker = path_pickers.get_node("MagicPicker1")
 	for path in paths:
 		magic_picker.pick(path)
 		magic_picker = magic_picker.next
+	
 	get_node("/root/Main/PlayerAbilityHandler").ability_added.connect(affect)
 	for ability in get_node("/root/Main/PlayerAbilityHandler").get_children():
 		affect(ability.name)
+		
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
+	
+	switch_game_menu_tab.connect(
+		func(tab):
+		game_menu_tab.visible = false
+		tab.visible = true
+		game_menu_tab = tab
+		)
+	
 	main.intermission.connect(intermission)
 	player.ability_relay.self_death.connect(defeat)
 	toggle_pause(true)
@@ -110,16 +123,6 @@ func intermission(_day) -> void:
 func reset():
 	saver.erase_run()
 	get_tree().change_scene_to_file("res://main_menu.tscn")
-
-func switch_game_menu_tab(tab):
-	for button in game_menu.get_node("TabButtons").get_children():
-		if button.tab == tab:
-			button.get_node("NinePatchRect").texture = button_blue
-		else:
-			button.get_node("NinePatchRect").texture = button_gray
-	game_menu_tab.visible = false
-	tab.visible = true
-	game_menu_tab = tab
 
 func affect(ability: String):
 	if AbilityData.ability_data.has(ability) and (AbilityData.ability_data[ability].has("affect")):

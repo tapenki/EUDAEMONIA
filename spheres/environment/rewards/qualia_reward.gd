@@ -9,7 +9,7 @@ func _on_pressed() -> void:
 		return
 	visible = false
 	get_node("/root/Main/UI").upgrade_points += 1
-	get_node("/root/Main/UI/GameMenu/UpgradePoints").update()
+	get_node("/root/Main/UI/GameMenu/UpgradePoints").update_points()
 	get_node("/root/Main").play_sound("Click")
 	get_node("../Particles").emitting = false
 	await get_tree().create_timer(1).timeout

@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	if enabled and not get_node("/root/Main").game_over and ui.unlock_points >= 1:
 		ui.unlock_points -= 1
-		point_counter.update()
+		point_counter.update_points()
 		ui.paths.append(subject)
 		picker.pick(subject)
 		get_node("/root/Main").play_sound("Click")

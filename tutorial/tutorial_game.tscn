@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://yyn4tad8snr2" path="res://tutorial/ui/ui_tutorial.gd" id="3_wfgev"]
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="4_kktqm"]
 [ext_resource type="PackedScene" uid="uid://chjju7v5k68xm" path="res://generic/entities/player.tscn" id="4_t5v04"]
+[ext_resource type="Script" uid="uid://vpih48d88d8d" path="res://ui/ui_scaler.gd" id="5_0wl52"]
 [ext_resource type="AudioStream" uid="uid://oc1fy2imqxok" path="res://sounds/shoot_light.wav" id="5_2hyu6"]
 [ext_resource type="Script" uid="uid://vjiaup5byjy" path="res://ui/health_bar.gd" id="5_nj3ya"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="6_0wl52"]
@@ -60,16 +61,10 @@ shadow_offset = Vector2(3, 3)
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_1lk5w"]
+[sub_resource type="LabelSettings" id="LabelSettings_r0ery"]
 resource_local_to_scene = true
 outline_size = 5
 outline_color = Color(0.25098, 0.25098, 0.25098, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_kktqm"]
-resource_local_to_scene = true
-font_size = 40
-outline_size = 8
-outline_color = Color(1, 1, 1, 0.2509804)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c44sx"]
 outline_size = 5
@@ -225,21 +220,20 @@ script = ExtResource("2_kktqm")
 [node name="Saver" type="Node" parent="." unique_id=2058622283]
 script = ExtResource("2_w7oih")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=920201887 node_paths=PackedStringArray("player")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1408212827 node_paths=PackedStringArray("player")]
 process_mode = 3
 script = ExtResource("3_wfgev")
 player = NodePath("../Entities/Player")
 
-[node name="Backdrop" type="ColorRect" parent="UI" unique_id=556171595]
+[node name="Backdrop" type="ColorRect" parent="UI" unique_id=1653410776]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TransitionFade" type="ColorRect" parent="UI" unique_id=1327331791]
+[node name="TransitionFade" type="ColorRect" parent="UI" unique_id=45799239]
 z_index = 25
 anchors_preset = 15
 anchor_right = 1.0
@@ -249,7 +243,17 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="HUD" type="Control" parent="UI" unique_id=106535089]
+[node name="Descriptions" type="Control" parent="UI" unique_id=1674855381]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 450.0
+offset_right = 450.0
+grow_horizontal = 0
+script = ExtResource("5_0wl52")
+
+[node name="HUD" type="Control" parent="UI" unique_id=992551759]
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -266,7 +270,7 @@ grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
 
-[node name="HealthBar" type="TextureProgressBar" parent="UI/HUD" unique_id=1761530054]
+[node name="HealthBar" type="TextureProgressBar" parent="UI/HUD" unique_id=71381973]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -282,7 +286,7 @@ stretch_margin_bottom = 8
 texture_progress = ExtResource("4_kktqm")
 script = ExtResource("5_nj3ya")
 
-[node name="DamageBar" type="TextureProgressBar" parent="UI/HUD/HealthBar" unique_id=1392903795]
+[node name="DamageBar" type="TextureProgressBar" parent="UI/HUD/HealthBar" unique_id=1320198418]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -300,7 +304,7 @@ stretch_margin_bottom = 8
 texture_under = ExtResource("6_0wl52")
 texture_progress = ExtResource("7_dy25x")
 
-[node name="Label" type="Label" parent="UI/HUD/HealthBar" unique_id=490352561]
+[node name="Label" type="Label" parent="UI/HUD/HealthBar" unique_id=2136870075]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -313,10 +317,10 @@ text = "50/100"
 label_settings = SubResource("LabelSettings_iknsa")
 horizontal_alignment = 1
 
-[node name="DamageTimer" type="Timer" parent="UI/HUD/HealthBar" unique_id=1350220821]
+[node name="DamageTimer" type="Timer" parent="UI/HUD/HealthBar" unique_id=2130152475]
 one_shot = true
 
-[node name="FloorNumber" type="Label" parent="UI/HUD" unique_id=1925362251]
+[node name="FloorNumber" type="Label" parent="UI/HUD" unique_id=1149464976]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -326,11 +330,12 @@ offset_top = 16.0
 offset_right = 75.0
 offset_bottom = 39.0
 grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
 label_settings = SubResource("LabelSettings_o2jkc")
 horizontal_alignment = 1
 script = ExtResource("8_r0ery")
 
-[node name="Defeated" type="Label" parent="UI/HUD" unique_id=1826636182]
+[node name="Defeated" type="Label" parent="UI/HUD" unique_id=1510467001]
 visible = false
 z_index = -2
 layout_mode = 1
@@ -346,40 +351,7 @@ text = "defeated"
 label_settings = SubResource("LabelSettings_qmobw")
 horizontal_alignment = 1
 
-[node name="Proceed" type="Button" parent="UI/HUD" unique_id=762258862]
-z_index = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -92.0
-offset_top = 12.0
-offset_right = -20.0
-offset_bottom = 43.0
-grow_horizontal = 0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("9_r2yfh")
-text = "start_day"
-flat = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/HUD/Proceed" unique_id=614717353]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_0wl52")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
-
-[node name="Chat" type="BoxContainer" parent="UI/HUD" unique_id=1815592407]
+[node name="Chat" type="BoxContainer" parent="UI/HUD" unique_id=1923956970]
 process_mode = 1
 visible = false
 layout_mode = 1
@@ -395,7 +367,7 @@ alignment = 2
 vertical = true
 script = ExtResource("10_wfgev")
 
-[node name="Tricks" type="BoxContainer" parent="UI/HUD" unique_id=153085665]
+[node name="Tricks" type="BoxContainer" parent="UI/HUD" unique_id=1790490533]
 process_mode = 1
 visible = false
 layout_mode = 1
@@ -413,7 +385,48 @@ grow_vertical = 0
 mouse_filter = 2
 alignment = 2
 
-[node name="GameMenu" type="Control" parent="UI" unique_id=1048853400]
+[node name="TopRightButtons" type="Control" parent="UI/HUD" unique_id=1604507299]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("5_0wl52")
+
+[node name="Proceed" type="Button" parent="UI/HUD/TopRightButtons" unique_id=868086650]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("9_r2yfh")
+text = "start_day"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/HUD/TopRightButtons/Proceed" unique_id=567309395]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0wl52")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="GameMenu" type="Control" parent="UI" unique_id=38269991]
 z_index = 1
 layout_mode = 3
 anchors_preset = 8
@@ -430,7 +443,7 @@ grow_vertical = 2
 focus_behavior_recursive = 1
 mouse_filter = 2
 
-[node name="UpgradePoints" type="Label" parent="UI/GameMenu" unique_id=1299756249]
+[node name="UpgradePoints" type="Label" parent="UI/GameMenu" unique_id=1435138176]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -443,11 +456,12 @@ offset_right = -0.2000122
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 1)
 label_settings = SubResource("LabelSettings_4xnvd")
 horizontal_alignment = 1
 script = ExtResource("10_dvfo5")
 
-[node name="Version" type="Label" parent="UI/GameMenu" unique_id=1118764989]
+[node name="Version" type="Label" parent="UI/GameMenu" unique_id=619836749]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -457,47 +471,73 @@ offset_top = -40.0
 offset_right = 77.0
 offset_bottom = -16.0
 grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
 text = "ver"
 label_settings = SubResource("LabelSettings_4xnvd")
 script = ExtResource("11_lvowx")
 
-[node name="Gear1" type="TextureRect" parent="UI/GameMenu" unique_id=1887253427]
+[node name="BackgroundDetail" type="Control" parent="UI/GameMenu" unique_id=932051250]
+anchors_preset = 0
+offset_left = 450.0
+offset_top = 225.0
+offset_right = 450.0
+offset_bottom = 225.0
+script = ExtResource("5_0wl52")
+
+[node name="Gear1" type="TextureRect" parent="UI/GameMenu/BackgroundDetail" unique_id=945869680]
 modulate = Color(0, 0, 0.047058824, 1)
 show_behind_parent = true
 z_index = -1
-layout_mode = 0
-offset_left = 150.0
-offset_top = -75.0
-offset_right = 750.0
-offset_bottom = 525.0
-pivot_offset = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("12_dsb7f")
 script = ExtResource("13_ngqgq")
 rotation_speed = 0.1
 
-[node name="Gear2" type="TextureRect" parent="UI/GameMenu" unique_id=1219835233]
+[node name="Gear2" type="TextureRect" parent="UI/GameMenu/BackgroundDetail" unique_id=1548134467]
 modulate = Color(0, 0, 0.09803922, 1)
 show_behind_parent = true
 z_index = -1
-layout_mode = 0
-offset_left = 210.0
-offset_top = -15.0
-offset_right = 690.0
-offset_bottom = 465.0
-pivot_offset = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -240.0
+offset_right = 240.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("12_dsb7f")
 script = ExtResource("13_ngqgq")
 rotation_speed = -0.1
 
-[node name="Abilities" type="Control" parent="UI/GameMenu" unique_id=2055358215]
+[node name="Abilities" type="Control" parent="UI/GameMenu" unique_id=332492797]
 anchors_preset = 0
-offset_top = 75.0
+offset_top = 85.0
 offset_right = 900.0
-offset_bottom = 375.0
+offset_bottom = 385.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+script = ExtResource("5_0wl52")
 
-[node name="Background1" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=1884225518]
+[node name="Background1" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=302963193]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 4.0
@@ -511,7 +551,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background2" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=1588480572]
+[node name="Background2" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=1275125340]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 229.0
@@ -525,7 +565,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background3" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=19938689]
+[node name="Background3" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=943374326]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 454.0
@@ -539,7 +579,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Background4" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=855339033]
+[node name="Background4" type="NinePatchRect" parent="UI/GameMenu/Abilities" unique_id=1361050124]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 0
 offset_left = 679.0
@@ -553,51 +593,53 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="PathPickers" type="Control" parent="UI/GameMenu/Abilities" unique_id=72457511]
+[node name="PathPickers" type="Control" parent="UI/GameMenu/Abilities" unique_id=1998880688]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MagicPicker1" parent="UI/GameMenu/Abilities/PathPickers" unique_id=675235411 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
-z_index = 5
+[node name="MagicPicker1" parent="UI/GameMenu/Abilities/PathPickers" unique_id=93769070 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 layout_mode = 0
 next = NodePath("../MagicPicker2")
 blink = true
 
-[node name="MagicPicker2" parent="UI/GameMenu/Abilities/PathPickers" unique_id=1460984491 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+[node name="MagicPicker2" parent="UI/GameMenu/Abilities/PathPickers" unique_id=1345090583 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 visible = false
 layout_mode = 0
 offset_left = 225.0
 offset_right = 450.0
 next = NodePath("../MagicPicker3")
 
-[node name="MagicPicker3" parent="UI/GameMenu/Abilities/PathPickers" unique_id=870491073 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
+[node name="MagicPicker3" parent="UI/GameMenu/Abilities/PathPickers" unique_id=1925036671 node_paths=PackedStringArray("next") instance=ExtResource("15_xvoxj")]
 visible = false
 layout_mode = 0
 offset_left = 450.0
 offset_right = 675.0
 next = NodePath("../MagicPicker4")
 
-[node name="MagicPicker4" parent="UI/GameMenu/Abilities/PathPickers" unique_id=1972808017 instance=ExtResource("15_xvoxj")]
+[node name="MagicPicker4" parent="UI/GameMenu/Abilities/PathPickers" unique_id=124388577 instance=ExtResource("15_xvoxj")]
 visible = false
 layout_mode = 0
 offset_left = 675.0
 offset_right = 900.0
 
-[node name="PathUI" type="Control" parent="UI/GameMenu/Abilities" unique_id=934101495]
+[node name="PathUI" type="Control" parent="UI/GameMenu/Abilities" unique_id=1526798085]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Affects" type="Control" parent="UI/GameMenu" unique_id=347512701]
+[node name="Affects" type="Control" parent="UI/GameMenu" unique_id=1013813671]
 visible = false
 anchors_preset = 0
 offset_left = 15.0
 offset_top = 85.0
 offset_right = 885.0
 offset_bottom = 385.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+script = ExtResource("5_0wl52")
 
-[node name="Background" type="NinePatchRect" parent="UI/GameMenu/Affects" unique_id=1207334535]
+[node name="Background" type="NinePatchRect" parent="UI/GameMenu/Affects" unique_id=271586179]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -616,7 +658,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="Label" parent="UI/GameMenu/Affects" unique_id=501916047]
+[node name="Label" type="Label" parent="UI/GameMenu/Affects" unique_id=1055659898]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -627,10 +669,10 @@ offset_right = 39.5
 offset_bottom = 25.0
 grow_horizontal = 2
 text = "affects"
-label_settings = SubResource("LabelSettings_1lk5w")
+label_settings = SubResource("LabelSettings_r0ery")
 horizontal_alignment = 1
 
-[node name="Container" type="HFlowContainer" parent="UI/GameMenu/Affects" unique_id=552783996]
+[node name="Container" type="HFlowContainer" parent="UI/GameMenu/Affects" unique_id=218071182]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -643,16 +685,23 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="BaseStats" parent="UI/GameMenu/Affects/Container" unique_id=374846769 instance=ExtResource("16_wfgev")]
+[node name="Pawn" parent="UI/GameMenu/Affects/Container" unique_id=1930712691 instance=ExtResource("16_wfgev")]
 layout_mode = 2
 texture_normal = ExtResource("14_xtque")
-subject = "stats"
+subject = "pawn"
 
-[node name="Symbol" parent="UI/GameMenu/Affects/Container/BaseStats" index="0" unique_id=532623967]
-text = "St"
-label_settings = SubResource("LabelSettings_kktqm")
+[node name="BottomRightButtons" type="Control" parent="UI/GameMenu" unique_id=510277333]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("5_0wl52")
 
-[node name="Reset" type="Button" parent="UI/GameMenu" unique_id=1927097229]
+[node name="Reset" type="Button" parent="UI/GameMenu/BottomRightButtons" unique_id=1520013231]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -673,7 +722,7 @@ text = "reset"
 flat = true
 script = ExtResource("16_ocakq")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/Reset" unique_id=1249395981]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/BottomRightButtons/Reset" unique_id=1258880797]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -689,7 +738,7 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Hint" type="Label" parent="UI/GameMenu/Reset" unique_id=27050681]
+[node name="Hint" type="Label" parent="UI/GameMenu/BottomRightButtons/Reset" unique_id=1818452429]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -703,7 +752,7 @@ grow_vertical = 2
 text = "click and hold ->"
 label_settings = SubResource("LabelSettings_c44sx")
 
-[node name="Settings" type="Button" parent="UI/GameMenu" unique_id=49656388]
+[node name="Settings" type="Button" parent="UI/GameMenu/BottomRightButtons" unique_id=407825510]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -723,7 +772,7 @@ theme = ExtResource("9_r2yfh")
 text = "settings"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/Settings" unique_id=547924789]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu/BottomRightButtons/Settings" unique_id=1726568209]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -739,7 +788,8 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Settings" parent="UI" unique_id=1211290594 instance=ExtResource("20_7valt")]
+[node name="Settings" parent="UI" unique_id=1586582074 instance=ExtResource("20_7valt")]
+visible = false
 
 [node name="PlayerAbilityHandler" type="Node" parent="." unique_id=594518607]
 script = ExtResource("18_ew74y")
@@ -876,11 +926,9 @@ visibility_rect = Rect2(inf_neg, inf_neg, inf, inf)
 draw_order = 0
 process_material = SubResource("ShaderMaterial_0odxb")
 
-[connection signal="pressed" from="UI/HUD/Proceed" to="UI" method="toggle_game_menu"]
-[connection signal="button_down" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="down"]
-[connection signal="button_up" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="up"]
-[connection signal="mouse_entered" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/GameMenu/Reset" to="UI/GameMenu/Reset" method="up"]
-[connection signal="pressed" from="UI/GameMenu/Settings" to="UI" method="toggle_settings"]
-
-[editable path="UI/GameMenu/Affects/Container/BaseStats"]
+[connection signal="pressed" from="UI/HUD/TopRightButtons/Proceed" to="UI" method="toggle_game_menu"]
+[connection signal="button_down" from="UI/GameMenu/BottomRightButtons/Reset" to="UI/GameMenu/BottomRightButtons/Reset" method="down"]
+[connection signal="button_up" from="UI/GameMenu/BottomRightButtons/Reset" to="UI/GameMenu/BottomRightButtons/Reset" method="up"]
+[connection signal="mouse_entered" from="UI/GameMenu/BottomRightButtons/Reset" to="UI/GameMenu/BottomRightButtons/Reset" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/GameMenu/BottomRightButtons/Reset" to="UI/GameMenu/BottomRightButtons/Reset" method="up"]
+[connection signal="pressed" from="UI/GameMenu/BottomRightButtons/Settings" to="UI" method="toggle_settings"]

@@ -53,7 +53,7 @@ func _on_pressed() -> void:
 		if not ability_node:
 			ui.unlock_points -= 1
 			get_node("/root/Main/PlayerAbilityHandler").learn(subject, 1)
-			point_counter.update()
+			point_counter.update_points()
 			texture_rect1.self_modulate = Color.WHITE
 			texture_rect2.self_modulate = Color.WHITE
 			symbol_label.self_modulate = Color.WHITE

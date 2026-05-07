@@ -5,7 +5,7 @@ class_name UICore extends Node
 
 @onready var settings = $"Settings"
 @onready var settings_tab = $"Settings/General"
-@onready var settings_tab_button = $"Settings/ToGeneral"
+@onready var settings_tab_button = $"Settings/TopRightButtons/ToGeneral"
 
 @onready var fade = $"TransitionFade"
 

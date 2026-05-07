@@ -1,6 +1,6 @@
 extends Button
 
-@onready var ui = $"../.."
+@onready var ui = $"../../.."
 @onready var rect = $"NinePatchRect"
 
 @export var tab : Node

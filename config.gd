@@ -7,6 +7,9 @@ var base_values = {
 		"auto_restart" = false,
 		"screenshake" = 1.0,
 	},
+	"display" : {
+		"ui_scale" = 1.0,
+	},
 	"audio" : {
 		"master_volume" = 1,
 		"music_volume" = 0.2,
@@ -39,6 +42,10 @@ var base_values = {
 
 var config = ConfigFile.new()
 
+signal value_changed(section, key)
+
+signal rescale_ui(scale)
+
 func _init() -> void:
 	var loaded = config.load("user://config.ini")
 	var should_save: bool
@@ -64,7 +71,22 @@ func _init() -> void:
 	
 	if should_save:
 		config.save("user://config.ini")
+	
+	value_changed.connect(
+		func(section, key):
+			if section == "display" and key == "ui_scale":
+				rescale_ui.emit(config.get_value("display", "ui_scale"))
+	)
 
 func get_team_color(team: int, denominator: String):
 	var key = "%s/%s" % [team, denominator]
 	return Color(config.get_value("palette", key, "ffffff"))
+
+#func set_ui_scale(updated_scale):
+	#var window_size = DisplayServer.window_get_size()
+	#var x_scale = float(window_size.x) / 900
+	#var y_scale = float(window_size.y) / 600
+	#var window_scale_mod = pow(min(x_scale, y_scale), 0.3)
+	#updated_scale /= window_scale_mod
+	#updated_scale = min(1.0, updated_scale)
+	#rescale_ui.emit(updated_scale)

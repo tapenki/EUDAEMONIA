@@ -17,18 +17,6 @@ msgstr "Back"
 msgid "general"
 msgstr "General"
 
-msgid "audio"
-msgstr "Audio"
-
-msgid "general_volume"
-msgstr "General Volume:"
-
-msgid "music_volume"
-msgstr "Music Volume:"
-
-msgid "sfx_volume"
-msgstr "SFX Volume:"
-
 msgid "gameplay"
 msgstr "Gameplay"
 
@@ -40,6 +28,24 @@ msgstr "Damage Numbers:"
 
 msgid "auto_restart"
 msgstr "Return to menu on defeat:"
+
+msgid "display"
+msgstr "Display"
+
+msgid "ui_scale"
+msgstr "UI Scale:"
+
+msgid "audio"
+msgstr "Audio"
+
+msgid "general_volume"
+msgstr "General Volume:"
+
+msgid "music_volume"
+msgstr "Music Volume:"
+
+msgid "sfx_volume"
+msgstr "SFX Volume:"
 
 msgid "keybinds"
 msgstr "Keybinds"

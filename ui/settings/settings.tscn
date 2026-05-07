@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djssli0g02cdt"]
 
+[ext_resource type="Script" uid="uid://vpih48d88d8d" path="res://ui/ui_scaler.gd" id="1_8uhoi"]
 [ext_resource type="PackedScene" uid="uid://bgovbas7d6tye" path="res://ui/settings/slider_setting.tscn" id="1_jxi54"]
 [ext_resource type="Script" uid="uid://cjfp8hq1cvmbj" path="res://ui/settings/volume_slider_setting.gd" id="2_q0pcl"]
 [ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://ui/settings/toggle_setting.tscn" id="3_bqqix"]
@@ -16,7 +17,6 @@ outline_size = 10
 outline_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
 
 [node name="Settings" type="Control" unique_id=456750874]
-visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 8
@@ -53,6 +53,7 @@ offset_right = -120.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8uhoi")
 
 [node name="Audio" type="Label" parent="General" unique_id=462144205]
 layout_mode = 2
@@ -82,6 +83,20 @@ text = "sfx_volume"
 script = ExtResource("2_q0pcl")
 bus_index = "SFX"
 key = "sfx_volume"
+
+[node name="Display" type="Label" parent="General" unique_id=231531796]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "display"
+label_settings = SubResource("LabelSettings_o2t6a")
+horizontal_alignment = 1
+
+[node name="UIScale" parent="General" unique_id=9505721 instance=ExtResource("1_jxi54")]
+layout_mode = 2
+text = "ui_scale"
+section = "display"
+key = "ui_scale"
+min_value = 0.75
 
 [node name="Gameplay" type="Label" parent="General" unique_id=171820445]
 layout_mode = 2
@@ -120,6 +135,7 @@ offset_right = -120.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8uhoi")
 
 [node name="Keybinds" type="Label" parent="Keybinds" unique_id=501488982]
 layout_mode = 2
@@ -163,7 +179,96 @@ layout_mode = 2
 text = "pause_keybind"
 action = "pause"
 
-[node name="Back" type="Button" parent="." unique_id=1149733423]
+[node name="TopRightButtons" type="Control" parent="." unique_id=614531102]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_8uhoi")
+
+[node name="ToGeneral" type="Button" parent="TopRightButtons" unique_id=1445864674 node_paths=PackedStringArray("tab")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_uh4u3")
+text = "general"
+flat = true
+script = ExtResource("7_06elf")
+tab = NodePath("../../General")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TopRightButtons/ToGeneral" unique_id=601502274]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_g3f8h")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="ToKeybinds" type="Button" parent="TopRightButtons" unique_id=1571212080 node_paths=PackedStringArray("tab")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 45.0
+offset_right = -20.0
+offset_bottom = 76.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_uh4u3")
+text = "keybinds"
+flat = true
+script = ExtResource("7_06elf")
+tab = NodePath("../../Keybinds")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TopRightButtons/ToKeybinds" unique_id=200616788]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s70fv")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="BottomRightButtons" type="Control" parent="." unique_id=863330465]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_8uhoi")
+
+[node name="Back" type="Button" parent="BottomRightButtons" unique_id=1149733423]
 z_index = 1
 layout_mode = 1
 anchors_preset = 3
@@ -184,7 +289,7 @@ text = "back"
 flat = true
 script = ExtResource("6_h58ci")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Back" unique_id=658121]
+[node name="NinePatchRect" type="NinePatchRect" parent="BottomRightButtons/Back" unique_id=658121]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -200,76 +305,6 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="ToGeneral" type="Button" parent="." unique_id=1445864674 node_paths=PackedStringArray("tab")]
-z_index = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -87.0
-offset_top = 12.0
-offset_right = -20.0
-offset_bottom = 43.0
-grow_horizontal = 0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("5_uh4u3")
-text = "general"
-flat = true
-script = ExtResource("7_06elf")
-tab = NodePath("../General")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="ToGeneral" unique_id=601502274]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_g3f8h")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
-
-[node name="ToKeybinds" type="Button" parent="." unique_id=1571212080 node_paths=PackedStringArray("tab")]
-z_index = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -98.0
-offset_top = 45.0
-offset_right = -20.0
-offset_bottom = 76.0
-grow_horizontal = 0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("5_uh4u3")
-text = "keybinds"
-flat = true
-script = ExtResource("7_06elf")
-tab = NodePath("../Keybinds")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="ToKeybinds" unique_id=200616788]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_s70fv")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
-
-[connection signal="pressed" from="Back" to="Back" method="pressed"]
-[connection signal="pressed" from="ToGeneral" to="ToGeneral" method="pressed"]
-[connection signal="pressed" from="ToKeybinds" to="ToKeybinds" method="pressed"]
+[connection signal="pressed" from="TopRightButtons/ToGeneral" to="TopRightButtons/ToGeneral" method="pressed"]
+[connection signal="pressed" from="TopRightButtons/ToKeybinds" to="TopRightButtons/ToKeybinds" method="pressed"]
+[connection signal="pressed" from="BottomRightButtons/Back" to="BottomRightButtons/Back" method="pressed"]

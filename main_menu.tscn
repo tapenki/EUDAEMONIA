@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bvxrfc530wy76" path="res://paths/ui/blank.png" id="10_2kjvi"]
 [ext_resource type="AudioStream" uid="uid://dacc5mwmkl3k2" path="res://sounds/hit_light.wav" id="10_u5051"]
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="11_kvjq3"]
+[ext_resource type="Script" uid="uid://vpih48d88d8d" path="res://ui/ui_scaler.gd" id="11_ql5ya"]
 [ext_resource type="AudioStream" uid="uid://pto26y0o4ny6" path="res://sounds/hurt_light.wav" id="11_v2sba"]
 [ext_resource type="AudioStream" uid="uid://bxhpn3crgoh85" path="res://sounds/hurt_heavy.wav" id="12_ai24q"]
 [ext_resource type="PackedScene" uid="uid://m8e1a3uvgf8i" path="res://affects/challenges/ui/challenge_picker.tscn" id="12_h1gbt"]
@@ -66,6 +67,15 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
+[node name="Descriptions" type="Control" parent="UI" unique_id=2000907076]
+layout_mode = 3
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 450.0
+offset_right = 450.0
+grow_horizontal = 0
+script = ExtResource("11_ql5ya")
+
 [node name="MainMenu" type="Control" parent="UI" unique_id=218847664]
 z_index = 1
 layout_mode = 3
@@ -93,6 +103,7 @@ offset_top = 4.0
 offset_right = 161.0
 offset_bottom = 71.0
 grow_horizontal = 2
+pivot_offset = Vector2(161, 33)
 text = "EUDAEMONIA"
 label_settings = SubResource("LabelSettings_c3fg2")
 horizontal_alignment = 1
@@ -179,81 +190,10 @@ offset_top = -40.0
 offset_right = 77.0
 offset_bottom = -16.0
 grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
 text = "ver"
 label_settings = SubResource("LabelSettings_4xnvd")
 script = ExtResource("6_u6vjd")
-
-[node name="Settings" type="Button" parent="UI/MainMenu" unique_id=1035941010]
-z_index = 1
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -46.0
-offset_right = -20.0
-offset_bottom = -15.0
-grow_horizontal = 0
-grow_vertical = 0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("7_swr0i")
-text = "settings"
-flat = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Settings" unique_id=1482164808]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_2urq5")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
-
-[node name="Start" type="Button" parent="UI/MainMenu" unique_id=658864939]
-z_index = 1
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -79.0
-offset_right = -20.0
-offset_bottom = -48.0
-grow_horizontal = 0
-grow_vertical = 0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("7_swr0i")
-text = "start_game"
-flat = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/Start" unique_id=1882782894]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_ix6bv")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
 
 [node name="Challenges" type="Control" parent="UI/MainMenu" unique_id=635966473]
 anchors_preset = 0
@@ -261,7 +201,9 @@ offset_left = 525.0
 offset_top = 485.0
 offset_right = 750.0
 offset_bottom = 590.0
+pivot_offset_ratio = Vector2(0.5, 1)
 mouse_filter = 2
+script = ExtResource("11_ql5ya")
 
 [node name="Background" type="NinePatchRect" parent="UI/MainMenu/Challenges" unique_id=134659274]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
@@ -333,7 +275,91 @@ visible = false
 layout_mode = 2
 subject = "vulnerability"
 
+[node name="BottomRightButtons" type="Control" parent="UI/MainMenu" unique_id=288500509]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("11_ql5ya")
+
+[node name="Settings" type="Button" parent="UI/MainMenu/BottomRightButtons" unique_id=1035941010]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -46.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_swr0i")
+text = "settings"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/BottomRightButtons/Settings" unique_id=1482164808]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_2urq5")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Start" type="Button" parent="UI/MainMenu/BottomRightButtons" unique_id=658864939]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -79.0
+offset_right = -20.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_swr0i")
+text = "start_game"
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/MainMenu/BottomRightButtons/Start" unique_id=1882782894]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ix6bv")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
 [node name="Settings" parent="UI" unique_id=1701143465 instance=ExtResource("13_km3bq")]
+visible = false
 
 [node name="Audio" type="Node" parent="." unique_id=1072441119]
 process_mode = 3
@@ -386,5 +412,5 @@ bus = &"SFX"
 stream = ExtResource("23_ql5ya")
 bus = &"SFX"
 
-[connection signal="pressed" from="UI/MainMenu/Settings" to="UI" method="toggle_settings"]
-[connection signal="pressed" from="UI/MainMenu/Start" to="UI" method="start_run"]
+[connection signal="pressed" from="UI/MainMenu/BottomRightButtons/Settings" to="UI" method="toggle_settings"]
+[connection signal="pressed" from="UI/MainMenu/BottomRightButtons/Start" to="UI" method="start_run"]

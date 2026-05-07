@@ -1,4 +1,5 @@
-extends Label
+extends UIScaler
 
 func _ready() -> void:
-	text = "v[%s]" % ProjectSettings.get_setting("application/config/version")
+	super()
+	self.text = "v[%s]" % ProjectSettings.get_setting("application/config/version")

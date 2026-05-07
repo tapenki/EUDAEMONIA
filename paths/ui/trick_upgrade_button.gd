@@ -29,7 +29,7 @@ func _on_pressed() -> void:
 	if not get_node("/root/Main").game_over and ui.upgrade_points >= 1:
 		ui.upgrade_points -= 1
 		get_node("/root/Main/PlayerAbilityHandler").learn(subject, 1)
-		point_counter.update()
+		point_counter.update_points()
 		var ability_node = get_node_or_null("/root/Main/PlayerAbilityHandler/"+subject)
 		if ability_node:
 			self_modulate = Color.WHITE

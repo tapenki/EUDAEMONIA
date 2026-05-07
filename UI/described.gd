@@ -1,6 +1,7 @@
 class_name Described extends Control
 
 @onready var ui = get_node("/root/Main/UI")
+@onready var descriptions = get_node("/root/Main/UI/Descriptions")
 @export var subject: String
 @export var tag: String
 @export var extras: Array
@@ -19,7 +20,7 @@ func get_description_text(what):
 
 func make_description(description_subject, description_title, description_text, description_tag, description_position):
 	var description_instance = description_scene.instantiate()
-	ui.add_child(description_instance)
+	descriptions.add_child(description_instance)
 	
 	description_instance.position = description_position
 	
@@ -32,23 +33,11 @@ func make_description(description_subject, description_title, description_text, 
 	return description_instance
 
 func _on_mouse_entered() -> void:
-	var winsize = get_window().content_scale_size ## horrible and evil solutions
-	var ratio = float(get_window().size.x)/get_window().size.y
-	if ratio > float(winsize.x)/winsize.y:
-		winsize.x = winsize.y * ratio
-	elif ratio < float(winsize.x)/winsize.y:
-		winsize.y = winsize.x / ratio
-	
-	var description_position = Vector2(640, 16)
-	var direction = -1
-	#if global_position.x + size.x * 0.5 > winsize.x * 0.5:
-		#description_position = Vector2(20, 16)
-		#direction = 1
-	description_position.x += (winsize.x - get_window().content_scale_size.x) * 0.5
+	var description_position = Vector2(-260, 16)
 	
 	make_description(subject, get_description_title(subject), get_description_text(subject), tag, description_position)
 	for extra in extras:
-		description_position += Vector2(260 * direction, 0)
+		description_position += Vector2(-260, 0)
 		make_description(extra, get_description_title(extra), get_description_text(extra), "", description_position)
 
 func _on_mouse_exited() -> void:
