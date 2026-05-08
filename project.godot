@@ -77,7 +77,7 @@ pause={
 "deadzone": 0.2,
 "events": []
 }
-inspect={
+toggle_fullscreen={
 "deadzone": 0.2,
 "events": []
 }

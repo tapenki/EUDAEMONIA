@@ -30,8 +30,6 @@ var challenges: Array
 signal switch_game_menu_tab(tab)
 
 func _ready() -> void:
-	Config.rescale_ui.emit(Config.config.get_value("display", "ui_scale"))
-	
 	var magic_picker = path_pickers.get_node("MagicPicker1")
 	for path in paths:
 		magic_picker.pick(path)

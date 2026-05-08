@@ -9,6 +9,7 @@ var base_values = {
 	},
 	"display" : {
 		"ui_scale" = 1.0,
+		"camera_zoom" = 1.0,
 	},
 	"audio" : {
 		"master_volume" = 1,
@@ -34,6 +35,7 @@ var base_values = {
 		"right" : [0, KEY_D],
 		"precision_movement" : [0, KEY_SHIFT],
 		"pause" : [0, KEY_ESCAPE],
+		"toggle_fullscreen" : [0, KEY_P],
 		"dark_harvest" : [0, KEY_E],
 		"bramble_shot" : [0, KEY_Q],
 		"soul_cleave" : [0, KEY_C],
@@ -43,8 +45,6 @@ var base_values = {
 var config = ConfigFile.new()
 
 signal value_changed(section, key)
-
-signal rescale_ui(scale)
 
 func _init() -> void:
 	var loaded = config.load("user://config.ini")
@@ -59,6 +59,8 @@ func _init() -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), config.get_value("audio", "sfx_volume", 1))
 	
 	for action in config.get_section_keys("keyboard_controls"):
+		if not InputMap.has_action(action):
+			continue
 		var value = config.get_value("keyboard_controls", action)
 		if value[0] == 0:
 			var input_event = InputEventKey.new()
@@ -71,12 +73,6 @@ func _init() -> void:
 	
 	if should_save:
 		config.save("user://config.ini")
-	
-	value_changed.connect(
-		func(section, key):
-			if section == "display" and key == "ui_scale":
-				rescale_ui.emit(config.get_value("display", "ui_scale"))
-	)
 
 func get_team_color(team: int, denominator: String):
 	var key = "%s/%s" % [team, denominator]

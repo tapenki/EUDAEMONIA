@@ -69,6 +69,7 @@ color = Color(0, 0, 0, 0)
 
 [node name="Descriptions" type="Control" parent="UI" unique_id=2000907076]
 layout_mode = 3
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 450.0
@@ -201,7 +202,7 @@ offset_left = 525.0
 offset_top = 485.0
 offset_right = 750.0
 offset_bottom = 590.0
-pivot_offset_ratio = Vector2(0.5, 1)
+pivot_offset_ratio = Vector2(1, 1)
 mouse_filter = 2
 script = ExtResource("11_ql5ya")
 

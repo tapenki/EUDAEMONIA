@@ -35,6 +35,9 @@ msgstr "Display"
 msgid "ui_scale"
 msgstr "UI Scale:"
 
+msgid "camera_zoom"
+msgstr "Camera Zoom:"
+
 msgid "audio"
 msgstr "Audio"
 
@@ -70,6 +73,9 @@ msgstr "Precision movement:"
 
 msgid "pause_keybind"
 msgstr "Pause/Proceed:"
+
+msgid "toggle_fullscreen_keybind"
+msgstr "Toggle fullscreen:"
 
 msgid "start_game"
 msgstr "Start"

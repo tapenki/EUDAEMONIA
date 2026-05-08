@@ -31,7 +31,7 @@ var game_over: bool
 
 ### signals
 
-signal camera_parameters(zoom_scale: float)#, left: int, top: int, right: int, bottom: int)
+signal update_cam()
 signal screenshake(intensity: float)
 
 signal entity_death(entity: Entity)
@@ -142,7 +142,7 @@ func generate_map():
 	map_update()
 	var entrance_door = room_node.get_node("Doors/"+door)
 	player.global_position = entrance_door.global_position + Vector2(0, 60).rotated(entrance_door.rotation)
-	camera_parameters.emit(room_data["zoom_scale"])#, layout_data["left"], layout_data["top"], layout_data["right"], layout_data["bottom"])
+	update_cam.emit()
 
 func setup_astar():
 	astar.clear()

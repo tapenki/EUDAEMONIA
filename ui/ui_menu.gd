@@ -3,7 +3,6 @@ extends UICore
 var challenges: Array
 
 func _ready() -> void:
-	Config.rescale_ui.emit(Config.config.get_value("display", "ui_scale"))
 	fade.color = Color(0,0,0)
 	var tween = create_tween()
 	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)

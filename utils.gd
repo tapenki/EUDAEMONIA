@@ -2,6 +2,18 @@ extends Node
 
 signal controls_changed(action: String)
 
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _unhandled_input(event) -> void:
+	##is_action_just_pressed_by_event doesn't work with mouse buttons :(
+	if Input.is_action_just_pressed("toggle_fullscreen") and event.is_action("toggle_fullscreen"): 
+		var window = get_window()
+		if window.mode == window.MODE_FULLSCREEN:
+			window.mode = window.MODE_WINDOWED
+		else:
+			window.mode = window.MODE_FULLSCREEN
+
 func set_keybind(action, keycode):
 	InputMap.action_erase_event(action, InputMap.action_get_events(action)[0])
 	var new_event = InputEventKey.new()

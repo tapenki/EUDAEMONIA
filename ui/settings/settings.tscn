@@ -98,6 +98,13 @@ section = "display"
 key = "ui_scale"
 min_value = 0.75
 
+[node name="CameraZoom" parent="General" unique_id=841414168 instance=ExtResource("1_jxi54")]
+layout_mode = 2
+text = "camera_zoom"
+section = "display"
+key = "camera_zoom"
+min_value = 0.75
+
 [node name="Gameplay" type="Label" parent="General" unique_id=171820445]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -178,6 +185,11 @@ action = "precision_movement"
 layout_mode = 2
 text = "pause_keybind"
 action = "pause"
+
+[node name="ToggleFullscreen" parent="Keybinds" unique_id=738314207 instance=ExtResource("4_b4akq")]
+layout_mode = 2
+text = "toggle_fullscreen_keybind"
+action = "toggle_fullscreen"
 
 [node name="TopRightButtons" type="Control" parent="." unique_id=614531102]
 layout_mode = 1

@@ -18,6 +18,14 @@ func disapply(ability_relay):
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
 
+func _ready() -> void:
+	get_node("/root/Main").intermission.connect(intermission)
+
+func intermission(_day: int) -> void:
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("unsheathe_charge"):
+			applicants[ability_relay]["unsheathe_charge"] = 0.0
+
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("unsheathe_charge"):

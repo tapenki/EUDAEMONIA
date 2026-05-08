@@ -72,6 +72,7 @@ color = Color(0, 0, 0, 0)
 
 [node name="Descriptions" type="Control" parent="." unique_id=1674855381]
 layout_mode = 3
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 450.0
@@ -359,7 +360,7 @@ anchors_preset = 0
 offset_top = 85.0
 offset_right = 900.0
 offset_bottom = 385.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0)
 mouse_filter = 2
 script = ExtResource("13_co7pv")
 
@@ -530,7 +531,7 @@ offset_left = 15.0
 offset_top = 85.0
 offset_right = 885.0
 offset_bottom = 385.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0)
 mouse_filter = 2
 script = ExtResource("13_co7pv")
 
