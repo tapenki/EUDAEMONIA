@@ -8,7 +8,7 @@ func _ready() -> void:
 	get_node("/root/Main").failed.connect(defeat)
 	Config.value_changed.connect(
 		func(section, key):
-			if section == "display" and key == "camera_zoom":
+			if section == "display" and (key == "camera_zoom_windowed" or key == "camera_zoom_maximized"):
 				update_cam()
 	)
 	update_cam()
@@ -22,7 +22,11 @@ func _process(delta):
 
 func update_cam():
 	zoom = Vector2(1, 1)
-	zoom *= Config.config.get_value("display", "camera_zoom")
+	var window = get_window()
+	if window.mode == window.MODE_MAXIMIZED or window.mode == window.MODE_FULLSCREEN:
+		zoom *= Config.config.get_value("display", "camera_zoom_maximized")
+	else:
+		zoom *= Config.config.get_value("display", "camera_zoom_windowed")
 	zoom *= SphereData.room_data[get_node("/root/Main").room]["zoom_scale"]
 
 func screenshake(intensity):

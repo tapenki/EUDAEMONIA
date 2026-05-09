@@ -8,8 +8,10 @@ var base_values = {
 		"screenshake" = 1.0,
 	},
 	"display" : {
-		"ui_scale" = 1.0,
-		"camera_zoom" = 1.0,
+		"ui_scale_windowed" = 1.0,
+		"camera_zoom_windowed" = 1.0,
+		"ui_scale_maximized" = 0.8,
+		"camera_zoom_maximized" = 0.8,
 	},
 	"audio" : {
 		"master_volume" = 1,

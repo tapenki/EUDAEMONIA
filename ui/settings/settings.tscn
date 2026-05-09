@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cjfp8hq1cvmbj" path="res://ui/settings/volume_slider_setting.gd" id="2_q0pcl"]
 [ext_resource type="PackedScene" uid="uid://6ever7o6jn0f" path="res://ui/settings/toggle_setting.tscn" id="3_bqqix"]
 [ext_resource type="PackedScene" uid="uid://cep2eleduru2x" path="res://ui/settings/keybind_setting.tscn" id="4_b4akq"]
+[ext_resource type="Script" uid="uid://bi0t6eh82lpeo" path="res://ui/settings/ui_scale_setting.gd" id="4_winn6"]
 [ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="5_uh4u3"]
 [ext_resource type="Script" uid="uid://dgt5ep53mbugy" path="res://ui/settings/back.gd" id="6_h58ci"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="6_s70fv"]
@@ -94,15 +95,21 @@ horizontal_alignment = 1
 [node name="UIScale" parent="General" unique_id=9505721 instance=ExtResource("1_jxi54")]
 layout_mode = 2
 text = "ui_scale"
+script = ExtResource("4_winn6")
+windowed_key = "ui_scale_windowed"
+maximized_key = "ui_scale_maximized"
 section = "display"
-key = "ui_scale"
+key = "ui_scale_windowed"
 min_value = 0.75
 
 [node name="CameraZoom" parent="General" unique_id=841414168 instance=ExtResource("1_jxi54")]
 layout_mode = 2
 text = "camera_zoom"
+script = ExtResource("4_winn6")
+windowed_key = "camera_zoom_windowed"
+maximized_key = "camera_zoom_maximized"
 section = "display"
-key = "camera_zoom"
+key = "camera_zoom_windowed"
 min_value = 0.75
 
 [node name="Gameplay" type="Label" parent="General" unique_id=171820445]
