@@ -21,6 +21,7 @@ hit_particle_preset = ""
 unlimited_hits = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=842809720]
+unique_name_in_owner = true
 script = ExtResource("2_r78nq")
 
 [node name="Sprite" type="CPUParticles2D" parent="." unique_id=302160309 node_paths=PackedStringArray("ability_relay")]

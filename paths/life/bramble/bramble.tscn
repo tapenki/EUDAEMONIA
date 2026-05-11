@@ -31,6 +31,7 @@ hit_particle_count = 12
 hit_walls = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=312084464]
+unique_name_in_owner = true
 script = ExtResource("2_oahip")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=815032055 node_paths=PackedStringArray("ability_relay")]

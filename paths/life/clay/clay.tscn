@@ -119,6 +119,7 @@ health = 0.0
 immune_duration = 0.25
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1423322263]
+unique_name_in_owner = true
 script = ExtResource("2_d1k6k")
 inherited_crit_chance = {
 "base": 5.0,

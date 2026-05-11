@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_c6lg1"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_kxdll"]
 [ext_resource type="PackedScene" uid="uid://ppjabc1udges" path="res://spheres/environment/rewards/nous_reward.tscn" id="9_c6lg1"]
+[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="10_fre32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1votv"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [node name="RuinThroneRoom" type="Node2D" unique_id=1383815232]
 
@@ -39,11 +46,16 @@ position = Vector2(30, 360)
 rotation = 4.712389
 
 [node name="Exit0" parent="Doors" unique_id=651667404 instance=ExtResource("6_kxdll")]
-position = Vector2(960, 360)
+position = Vector2(962, 122)
 rotation = 1.5707964
 room = "breath_entrance_hall"
-door = "Entrance0"
 subject = "breath_entrance_gate"
+
+[node name="Exit1" parent="Doors" unique_id=1977797072 instance=ExtResource("6_kxdll")]
+position = Vector2(960, 600)
+rotation = 1.5707964
+room = "steel_entrance_hall"
+subject = "steel_entrance_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1733888454 instance=ExtResource("6_hy2kp")]
 reward = ExtResource("7_c6lg1")
@@ -53,5 +65,47 @@ reward = ExtResource("8_kxdll")
 
 [node name="NousRewardGiver" parent="." unique_id=826415790 instance=ExtResource("6_hy2kp")]
 reward = ExtResource("9_c6lg1")
+
+[node name="BreathSign" type="Sprite2D" parent="." unique_id=620118817]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(960.00006, 180)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_fre32")
+
+[node name="Symbol" type="Label" parent="BreathSign" unique_id=277986185]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Br"
+label_settings = SubResource("LabelSettings_1votv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SteelSign" type="Sprite2D" parent="." unique_id=1268393915]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(960.00006, 540)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_fre32")
+
+[node name="Symbol" type="Label" parent="SteelSign" unique_id=1925268272]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "St"
+label_settings = SubResource("LabelSettings_1votv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]

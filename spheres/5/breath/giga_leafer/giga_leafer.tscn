@@ -120,6 +120,7 @@ max_health = 200
 health = 200.0
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=168721618]
+unique_name_in_owner = true
 script = ExtResource("2_yklba")
 is_entity = true
 

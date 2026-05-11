@@ -19,6 +19,7 @@ script = ExtResource("1_88law")
 ability_relay = NodePath("AbilityRelay")
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=370658401]
+unique_name_in_owner = true
 script = ExtResource("2_nwwbr")
 is_projectile = true
 

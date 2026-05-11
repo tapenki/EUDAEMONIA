@@ -23,6 +23,7 @@ hit_delay = 1.0
 hits_left = -1
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=148590914]
+unique_name_in_owner = true
 script = ExtResource("2_frfv8")
 
 [node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876]

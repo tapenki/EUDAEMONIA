@@ -261,6 +261,13 @@ var room_data = {
 		"challenge" : true,
 	},
 	#endregion
+	#region breath
+	"steel_entrance_hall" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
+	#endregion
 	#region light
 	"light_entrance_hall" : {
 		"scene" : preload("res://spheres/6/light/rooms/light_entrance_hall.tscn"), 
@@ -398,6 +405,15 @@ var entity_data = {
 	"giga_leafer" : {
 		"scene" : preload("res://spheres/5/breath/giga_leafer/giga_leafer.tscn")
 	},
+	#endregion
+	#region steel
+	"leaper_forge" : {
+		"scene" : preload("res://spheres/5/steel/leaper_forge/leaper_forge.tscn")
+	},
+	"terminator" : {
+		"scene" : preload("res://spheres/5/steel/terminator/terminator.tscn")
+	},
+	
 	#endregion
 	#region light
 	"blaster" : {

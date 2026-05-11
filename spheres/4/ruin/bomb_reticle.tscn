@@ -26,6 +26,7 @@ hit_sound = ""
 hit_enabled = false
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=650856352]
+unique_name_in_owner = true
 script = ExtResource("2_1egge")
 is_projectile = true
 

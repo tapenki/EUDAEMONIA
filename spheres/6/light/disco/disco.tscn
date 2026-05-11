@@ -123,6 +123,7 @@ group = null
 summoned = null
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=661919259]
+unique_name_in_owner = true
 script = ExtResource("2_l0f7w")
 is_entity = true
 

@@ -124,6 +124,7 @@ animation_player = NodePath("AnimationPlayer")
 untargetable = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=2077891043]
+unique_name_in_owner = true
 script = ExtResource("2_mfnmw")
 is_entity = true
 
@@ -133,7 +134,6 @@ script = ExtResource("3_4bidg")
 [node name="Hover" type="Node" parent="CommandHandler" unique_id=354024229]
 process_mode = 4
 script = ExtResource("4_h35qe")
-duration = 1.5
 
 [node name="PrepareShootAttack1" type="Node" parent="CommandHandler" unique_id=1968383427 node_paths=PackedStringArray("next")]
 process_mode = 4

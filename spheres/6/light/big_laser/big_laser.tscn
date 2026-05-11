@@ -21,6 +21,7 @@ script = ExtResource("1_g0jvk")
 ability_relay = NodePath("AbilityRelay")
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1638014074]
+unique_name_in_owner = true
 script = ExtResource("2_hvh6a")
 
 [node name="Sprite" type="NinePatchRect" parent="." unique_id=833043588 node_paths=PackedStringArray("ability_relay")]

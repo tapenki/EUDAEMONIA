@@ -86,6 +86,7 @@ health = 60.0
 untargetable = true
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=414548680]
+unique_name_in_owner = true
 script = ExtResource("2_jwabc")
 is_entity = true
 

@@ -119,6 +119,7 @@ animation_player = NodePath("AnimationPlayer")
 max_health = 60
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=802578382]
+unique_name_in_owner = true
 script = ExtResource("2_tj0jb")
 is_entity = true
 

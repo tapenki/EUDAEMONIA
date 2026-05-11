@@ -139,6 +139,7 @@ max_health = 480
 health = 480.0
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=852153742]
+unique_name_in_owner = true
 script = ExtResource("2_sublx")
 is_entity = true
 

@@ -20,6 +20,7 @@ hit_particle_preset = ""
 hits_left = -1
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=695504123]
+unique_name_in_owner = true
 script = ExtResource("2_4rnp2")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=895457277]

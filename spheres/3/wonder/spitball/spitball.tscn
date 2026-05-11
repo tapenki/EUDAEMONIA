@@ -131,6 +131,7 @@ max_health = 80
 health = 80.0
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1166487462]
+unique_name_in_owner = true
 script = ExtResource("2_756k3")
 is_entity = true
 
