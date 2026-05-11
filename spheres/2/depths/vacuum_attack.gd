@@ -37,7 +37,7 @@ func _physics_process(delta):
 
 func _on_timer_timeout() -> void:
 	#user.ability_relay.attack.emit(direction)
-	state_handler.change_state(next)
+	change_state(next)
 
 func on_exit() -> void:
 	bullet_counter = 0

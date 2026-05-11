@@ -120,6 +120,7 @@ script = ExtResource("2_37jx0")
 is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=1363610631 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("3_1o3sq")
 initial_state = NodePath("CloseIn")
 
@@ -129,41 +130,41 @@ script = ExtResource("4_8duge")
 speed = 300
 distance_margin = 150
 shapecast_radius = 20
-next = NodePath("../PrepareAttack")
+next = NodePath("../DashAttack")
 
-[node name="PrepareAttack" type="Node" parent="StateHandler" unique_id=1480813901 node_paths=PackedStringArray("next")]
+[node name="DashAttack" type="Node" parent="StateHandler" unique_id=1480813901 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_s7l6t")
 anim = "WINDUP"
-next = NodePath("../DashAttack")
+next = NodePath("Dash")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=2034450092 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=2034450092 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_37jx0")
 wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack" type="Node" parent="StateHandler" unique_id=1475567560 node_paths=PackedStringArray("next")]
+[node name="Dash" type="Node" parent="StateHandler/DashAttack" unique_id=1475567560 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_cen8c")
 speed = 500
 next = NodePath("../Endlag")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=253487977 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack/Dash" unique_id=253487977 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_37jx0")
 wait_time = 0.6
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Endlag" type="Node" parent="StateHandler" unique_id=736876883 node_paths=PackedStringArray("next")]
+[node name="Endlag" type="Node" parent="StateHandler/DashAttack" unique_id=736876883 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_s7l6t")
-next = NodePath("../CloseIn")
+next = NodePath("../../CloseIn")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=1968887967 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack/Endlag" unique_id=1968887967 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_37jx0")
 wait_time = 0.3
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1635633884]
@@ -201,8 +202,8 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Dash/Timer" to="StateHandler/DashAttack/Dash" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Endlag/Timer" to="StateHandler/DashAttack/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

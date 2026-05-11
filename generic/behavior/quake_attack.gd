@@ -13,4 +13,4 @@ func on_enter() -> void:
 	projectile_instance.scale_multiplier = scale
 	get_node("/root/Main/Projectiles").add_child(projectile_instance)
 	get_node("/root/Main").play_sound("HurtLight")
-	state_handler.change_state(next)
+	change_state(next)

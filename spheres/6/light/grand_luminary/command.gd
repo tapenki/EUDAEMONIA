@@ -12,5 +12,5 @@ func on_enter() -> void:
 			if summon_state_handler:
 				var summon_state = summon_state_handler.get_node_or_null(command_state)
 				if summon_state:# and not summon_state_handler.current_state:
-					summon_state_handler.change_state(summon_state)
-	state_handler.change_state(next)
+					summon_change_state(summon_state)
+	change_state(next)

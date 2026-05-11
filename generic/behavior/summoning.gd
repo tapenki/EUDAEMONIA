@@ -27,7 +27,7 @@ func on_enter() -> void:
 			get_node("/root/Main/Entities").move_child(summon_instance, 0)
 			state_handler.data["summons"].append(summon_instance)
 	
-	state_handler.change_state(next)
+	change_state(next)
 
 func entity_death(dying_entity: Entity):
 	if state_handler.data["summons"].has(dying_entity):

@@ -33,4 +33,4 @@ func on_enter() -> void:
 	user.animation_player.play("WALK")
 
 func _on_timer_timeout() -> void:
-	state_handler.change_state(next)
+	change_state(next)

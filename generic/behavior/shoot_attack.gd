@@ -15,7 +15,7 @@ func on_enter() -> void:
 		if not is_instance_valid(state_handler.target):
 			state_handler.target = user.ability_relay.find_target()
 		if not is_instance_valid(state_handler.target):
-			state_handler.change_state(next)
+			change_state(next)
 			return
 		#var time_to_hit = user.global_position.distance_to(state_handler.target.global_position) / bullet_speed
 		#var predicted_position = state_handler.target.global_position + state_handler.target.velocity * prediction * time_to_hit
@@ -30,4 +30,4 @@ func on_enter() -> void:
 	#user.ability_relay.attack.emit(direction)
 	get_node("/root/Main").play_sound("ShootLight")
 	state_handler.target = null
-	state_handler.change_state(next)
+	change_state(next)

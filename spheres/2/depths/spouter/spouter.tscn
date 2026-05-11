@@ -135,6 +135,7 @@ script = ExtResource("2_bkgrn")
 is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=1682319058 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("3_mnw6e")
 initial_state = NodePath("CloseIn")
 
@@ -143,41 +144,41 @@ process_mode = 4
 script = ExtResource("4_2od1x")
 speed = 300
 distance_margin = 150
-next = NodePath("../PrepareAttack1")
+next = NodePath("../ShootAttack")
 
-[node name="PrepareAttack1" type="Node" parent="StateHandler" unique_id=385334432 node_paths=PackedStringArray("next")]
+[node name="ShootAttack" type="Node" parent="StateHandler" unique_id=385334432 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_h52yw")
 anim = "WINDUP"
-next = NodePath("../ShootAttack1")
+next = NodePath("Shoot1")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" unique_id=301225554 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/ShootAttack" unique_id=301225554 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_kyb7t")
 wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack1" type="Node" parent="StateHandler" unique_id=1613964652 node_paths=PackedStringArray("next")]
+[node name="Shoot1" type="Node" parent="StateHandler/ShootAttack" unique_id=1613964652 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_0xil2")
 bullet = ExtResource("8_x0lce")
 bullet_lifetime = 2.75
 bullet_speed = 300
-next = NodePath("../PrepareAttack2")
+next = NodePath("../ShootDelay")
 
-[node name="PrepareAttack2" type="Node" parent="StateHandler" unique_id=2116552989 node_paths=PackedStringArray("next")]
+[node name="ShootDelay" type="Node" parent="StateHandler/ShootAttack" unique_id=2116552989 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_h52yw")
 anim = "WINDUP"
-next = NodePath("../ShootAttack2")
+next = NodePath("../Shoot2")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" unique_id=1470376567 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/ShootAttack/ShootDelay" unique_id=1470376567 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_kyb7t")
 wait_time = 0.2
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack2" type="Node" parent="StateHandler" unique_id=1810708892 node_paths=PackedStringArray("next")]
+[node name="Shoot2" type="Node" parent="StateHandler/ShootAttack" unique_id=1810708892 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_0xil2")
 bullet = ExtResource("8_x0lce")
@@ -185,15 +186,15 @@ bullet_lifetime = 2.75
 bullet_speed = 300
 next = NodePath("../Endlag")
 
-[node name="Endlag" type="Node" parent="StateHandler" unique_id=81129476 node_paths=PackedStringArray("next")]
+[node name="Endlag" type="Node" parent="StateHandler/ShootAttack" unique_id=81129476 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_h52yw")
-next = NodePath("../CloseIn")
+next = NodePath("../../CloseIn")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=1404294775 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/ShootAttack/Endlag" unique_id=1404294775 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_kyb7t")
 wait_time = 0.6
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1563565232]
@@ -232,8 +233,8 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/ShootAttack/Timer" to="StateHandler/ShootAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/ShootAttack/ShootDelay/Timer" to="StateHandler/ShootAttack/ShootDelay" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/ShootAttack/Endlag/Timer" to="StateHandler/ShootAttack/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

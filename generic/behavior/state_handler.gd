@@ -1,30 +1,22 @@
-extends Node
+class_name StateHandler extends Node
+
+#@onready var user = get_node("..")
+@onready var ability_relay = get_node("../AbilityRelay")
 
 @export var initial_state: State
-var current_state: State
+var current_states: Array
 
 var data: Dictionary
 var target
 
+var disabled = false
+
 func _ready() -> void:
-	get_node("/root/Main").entity_death.connect(entity_death)
-	change_state(initial_state)
-
-func enter_state(state: State):
-	if process_mode != ProcessMode.PROCESS_MODE_DISABLED:
-		current_state = state
-		state.on_enter()
-
-func change_state(state: State):
-	if current_state:
-		current_state.on_exit()
-	if state:
-		call_deferred("enter_state", state)
-	else:
-		current_state = null
+	ability_relay.self_death.connect(self_death)
+	initial_state.on_enter()
 	
-func entity_death(dying_entity: Entity):
-	if dying_entity == get_parent():
-		process_mode = ProcessMode.PROCESS_MODE_DISABLED
-		if current_state:
-			current_state.on_exit()
+func self_death():
+	#process_mode = ProcessMode.PROCESS_MODE_DISABLED
+	disabled = true
+	for current_state in current_states:
+		current_state.on_exit()

@@ -135,6 +135,7 @@ script = ExtResource("2_756k3")
 is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=1131503520 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("3_oicv5")
 initial_state = NodePath("CloseIn")
 
@@ -150,7 +151,7 @@ next = NodePath("../PrepareAttack")
 process_mode = 4
 script = ExtResource("7_5qife")
 anim = "WINDUP"
-next = NodePath("../ShootAttack")
+next = NodePath("ShootAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=316807338 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_5mgv0")
@@ -158,7 +159,7 @@ wait_time = 0.8
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack" type="Node" parent="StateHandler" unique_id=1688594114 node_paths=PackedStringArray("next")]
+[node name="ShootAttack" type="Node" parent="StateHandler/PrepareAttack" unique_id=1688594114 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_mtcj7")
 bullet = ExtResource("6_67o3g")
@@ -166,15 +167,15 @@ bullet_lifetime = 2.75
 bullet_speed = 300
 next = NodePath("../Endlag")
 
-[node name="Endlag" type="Node" parent="StateHandler" unique_id=1046443782 node_paths=PackedStringArray("next")]
+[node name="Endlag" type="Node" parent="StateHandler/PrepareAttack" unique_id=1046443782 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_5qife")
-next = NodePath("../CloseIn")
+next = NodePath("../../CloseIn")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=2110794544 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack/Endlag" unique_id=2110794544 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_5mgv0")
 wait_time = 1.5
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=104389151]
@@ -215,6 +216,6 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack/Endlag/Timer" to="StateHandler/PrepareAttack/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

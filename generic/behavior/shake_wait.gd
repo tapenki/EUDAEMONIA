@@ -24,4 +24,4 @@ func _physics_process(_delta):
 	sprite.position = sprite_position + Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
 
 func _on_timer_timeout() -> void:
-	state_handler.change_state(next)
+	change_state(next)

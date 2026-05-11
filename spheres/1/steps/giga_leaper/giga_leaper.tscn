@@ -132,47 +132,47 @@ script = ExtResource("4_4eycc")
 speed = 400
 distance_margin = 300
 shapecast_radius = 30
-next = NodePath("../PrepareAttack")
+next = NodePath("../DashAttack")
 
-[node name="PrepareAttack" type="Node" parent="StateHandler" unique_id=430962577 node_paths=PackedStringArray("next")]
+[node name="DashAttack" type="Node" parent="StateHandler" unique_id=430962577 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_4xjc3")
 anim = "WINDUP"
-next = NodePath("../DashAttack")
+next = NodePath("Dash")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack" unique_id=225797971 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=225797971 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_uyvgd")
 wait_time = 0.8
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack" type="Node" parent="StateHandler" unique_id=1824475061 node_paths=PackedStringArray("next")]
+[node name="Dash" type="Node" parent="StateHandler/DashAttack" unique_id=1824475061 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_nw14a")
 speed = 600
-next = NodePath("../QuakeAttack")
+next = NodePath("../Quake")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=802788356 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack/Dash" unique_id=802788356 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_uyvgd")
 wait_time = 2.0
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="QuakeAttack" type="Node" parent="StateHandler" unique_id=1096016647 node_paths=PackedStringArray("next")]
+[node name="Quake" type="Node" parent="StateHandler/DashAttack" unique_id=1096016647 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_uitko")
 scale = 4.0
 next = NodePath("../Endlag")
 
-[node name="Endlag" type="Node" parent="StateHandler" unique_id=161528419 node_paths=PackedStringArray("next")]
+[node name="Endlag" type="Node" parent="StateHandler/DashAttack" unique_id=161528419 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_4xjc3")
-next = NodePath("../CloseIn")
+next = NodePath("../../CloseIn")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag" unique_id=169413628 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/DashAttack/Endlag" unique_id=169413628 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_uyvgd")
 wait_time = 0.2
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1226265677]
@@ -217,8 +217,8 @@ spawn_quotes = ["giga_leaper_spawn_1", "giga_leaper_spawn_2"]
 death_quotes = ["giga_leaper_death_1", "giga_leaper_death_2"]
 
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag/Timer" to="StateHandler/Endlag" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Dash/Timer" to="StateHandler/DashAttack/Dash" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Endlag/Timer" to="StateHandler/DashAttack/Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

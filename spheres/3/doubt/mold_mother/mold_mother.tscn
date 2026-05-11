@@ -132,14 +132,15 @@ script = ExtResource("2_2ntoc")
 is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=1342484558 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("3_5jmcu")
-initial_state = NodePath("Walklag2")
+initial_state = NodePath("Moldwalk2/Walklag2")
 
 [node name="PrepareAttack1" type="Node" parent="StateHandler" unique_id=1861543243 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
 anim = "WINDUP"
-next = NodePath("../ShootAttack1")
+next = NodePath("ShootAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" unique_id=560481635 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
@@ -147,7 +148,7 @@ wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack1" type="Node" parent="StateHandler" unique_id=2077334378 node_paths=PackedStringArray("next")]
+[node name="ShootAttack1" type="Node" parent="StateHandler/PrepareAttack1" unique_id=2077334378 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
@@ -157,18 +158,18 @@ spread = 150
 bullet_speed = 225
 next = NodePath("../PrepareAttack2")
 
-[node name="PrepareAttack2" type="Node" parent="StateHandler" unique_id=1343661659 node_paths=PackedStringArray("next")]
+[node name="PrepareAttack2" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1343661659 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
 next = NodePath("../ShootAttack2")
 
-[node name="Timer" type="Node" parent="StateHandler/PrepareAttack2" unique_id=634918572 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1/PrepareAttack2" unique_id=634918572 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
 wait_time = 0.45
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack2" type="Node" parent="StateHandler" unique_id=1816735792 node_paths=PackedStringArray("next")]
+[node name="ShootAttack2" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1816735792 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_a2v2i")
 bullet = ExtResource("7_o3tbh")
@@ -178,15 +179,15 @@ spread = 120
 bullet_speed = 225
 next = NodePath("../Endlag1")
 
-[node name="Endlag1" type="Node" parent="StateHandler" unique_id=1792581921 node_paths=PackedStringArray("next")]
+[node name="Endlag1" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1792581921 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-next = NodePath("../Summoning1")
+next = NodePath("../../Summoning1")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag1" unique_id=756987145 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1/Endlag1" unique_id=756987145 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
 wait_time = 0.75
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Summoning1" type="Node" parent="StateHandler" unique_id=462062318 node_paths=PackedStringArray("next")]
@@ -200,7 +201,7 @@ next = NodePath("../Moldwalk1")
 [node name="Moldwalk1" type="Node" parent="StateHandler" unique_id=701511880 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("10_lokmr")
-next = NodePath("../Walklag1")
+next = NodePath("Walklag1")
 
 [node name="Timer" type="Node" parent="StateHandler/Moldwalk1" unique_id=2018735305 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
@@ -208,21 +209,21 @@ wait_time = 0.1
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Walklag1" type="Node" parent="StateHandler" unique_id=1147947512 node_paths=PackedStringArray("next")]
+[node name="Walklag1" type="Node" parent="StateHandler/Moldwalk1" unique_id=1147947512 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-next = NodePath("../PrepareAttack3")
+next = NodePath("../../PrepareAttack3")
 
-[node name="Timer" type="Node" parent="StateHandler/Walklag1" unique_id=835771078 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/Moldwalk1/Walklag1" unique_id=835771078 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="PrepareAttack3" type="Node" parent="StateHandler" unique_id=1829282402 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
 anim = "WINDUP"
-next = NodePath("../ShootAttack3")
+next = NodePath("ShootAttack3")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack3" unique_id=535089914 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
@@ -230,7 +231,7 @@ wait_time = 0.3
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="ShootAttack3" type="Node" parent="StateHandler" unique_id=561749664 node_paths=PackedStringArray("next")]
+[node name="ShootAttack3" type="Node" parent="StateHandler/PrepareAttack3" unique_id=561749664 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("11_k2m38")
 bullet = ExtResource("7_o3tbh")
@@ -238,15 +239,15 @@ bullet_lifetime = 2.75
 bullet_speed = 350
 next = NodePath("../Endlag2")
 
-[node name="Endlag2" type="Node" parent="StateHandler" unique_id=1977490839 node_paths=PackedStringArray("next")]
+[node name="Endlag2" type="Node" parent="StateHandler/PrepareAttack3" unique_id=1977490839 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-next = NodePath("../Summoning2")
+next = NodePath("../../Summoning2")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag2" unique_id=547835853 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack3/Endlag2" unique_id=547835853 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
 wait_time = 0.75
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Summoning2" type="Node" parent="StateHandler" unique_id=2019683016 node_paths=PackedStringArray("next")]
@@ -260,7 +261,7 @@ next = NodePath("../Moldwalk2")
 [node name="Moldwalk2" type="Node" parent="StateHandler" unique_id=128029833 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("10_lokmr")
-next = NodePath("../Walklag2")
+next = NodePath("Walklag2")
 
 [node name="Timer" type="Node" parent="StateHandler/Moldwalk2" unique_id=1646284425 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
@@ -268,14 +269,14 @@ wait_time = 0.1
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="Walklag2" type="Node" parent="StateHandler" unique_id=395509208 node_paths=PackedStringArray("next")]
+[node name="Walklag2" type="Node" parent="StateHandler/Moldwalk2" unique_id=395509208 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("4_hg44d")
-next = NodePath("../PrepareAttack1")
+next = NodePath("../../PrepareAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/Walklag2" unique_id=205718366 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/Moldwalk2/Walklag2" unique_id=205718366 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_hciqw")
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1456270809]
@@ -323,13 +324,13 @@ death_quotes = ["mold_mother_death_1"]
 
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/PrepareAttack2/Timer" to="StateHandler/PrepareAttack2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag1/Timer" to="StateHandler/Endlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/PrepareAttack2/Timer" to="StateHandler/PrepareAttack1/PrepareAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Endlag1/Timer" to="StateHandler/PrepareAttack1/Endlag1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Moldwalk1/Timer" to="StateHandler/Moldwalk1" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Walklag1/Timer" to="StateHandler/Walklag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Moldwalk1/Walklag1/Timer" to="StateHandler/Moldwalk1/Walklag1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack3/Timer" to="StateHandler/PrepareAttack3" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack3/Endlag2/Timer" to="StateHandler/PrepareAttack3/Endlag2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/Moldwalk2/Timer" to="StateHandler/Moldwalk2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Walklag2/Timer" to="StateHandler/Walklag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Moldwalk2/Walklag2/Timer" to="StateHandler/Moldwalk2/Walklag2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

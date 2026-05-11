@@ -23,4 +23,4 @@ func on_enter() -> void:
 		#user.ability_relay.attack.emit(direction)
 		get_node("/root/Main").play_sound("ShootLight")
 	state_handler.target = null
-	state_handler.change_state(next)
+	change_state(next)

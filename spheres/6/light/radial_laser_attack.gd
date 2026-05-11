@@ -22,4 +22,4 @@ func on_enter() -> void:
 		laser_instance.spin = spin
 		laser_instance.max_length = laser_length
 	get_node("/root/Main").play_sound("Explosion")
-	state_handler.change_state(next)
+	change_state(next)

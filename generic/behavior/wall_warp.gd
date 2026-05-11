@@ -8,4 +8,4 @@ func on_enter() -> void:
 	var cell = get_node("/root/Main").get_tilemap().get_used_cells_by_id(0).pick_random()
 	user.global_position = Vector2(cell * 30) + Vector2(15, 15)
 	
-	state_handler.change_state(next)
+	change_state(next)

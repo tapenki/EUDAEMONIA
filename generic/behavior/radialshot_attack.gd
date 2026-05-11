@@ -18,4 +18,4 @@ func on_enter() -> void:
 		bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 	get_node("/root/Main").play_sound("ShootLight")
-	state_handler.change_state(next)
+	change_state(next)

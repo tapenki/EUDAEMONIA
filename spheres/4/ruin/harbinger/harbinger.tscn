@@ -170,7 +170,7 @@ next = NodePath("../PrepareAttack1")
 process_mode = 4
 script = ExtResource("5_hyg13")
 anim = "WINDUP"
-next = NodePath("../DashAttack1")
+next = NodePath("DashAttack1")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack1" unique_id=2100474122 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
@@ -178,53 +178,53 @@ wait_time = 0.9
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="DashAttack1" type="Node" parent="StateHandler" unique_id=1885545066 node_paths=PackedStringArray("next")]
+[node name="DashAttack1" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1885545066 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_tsh4m")
 speed = 400
 next = NodePath("../QuakeAttack1")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack1" unique_id=1059164465 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1/DashAttack1" unique_id=1059164465 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
 wait_time = 0.3
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="QuakeAttack1" type="Node" parent="StateHandler" unique_id=2110826068 node_paths=PackedStringArray("next")]
+[node name="QuakeAttack1" type="Node" parent="StateHandler/PrepareAttack1" unique_id=2110826068 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("8_tyr7c")
 scale = 3.0
 next = NodePath("../DashAttack2")
 
-[node name="DashAttack2" type="Node" parent="StateHandler" unique_id=1444644597 node_paths=PackedStringArray("next")]
+[node name="DashAttack2" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1444644597 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_tsh4m")
 speed = 400
 recalc_direction = false
 next = NodePath("../QuakeAttack2")
 
-[node name="Timer" type="Node" parent="StateHandler/DashAttack2" unique_id=1172289538 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1/DashAttack2" unique_id=1172289538 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
 wait_time = 0.3
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="QuakeAttack2" type="Node" parent="StateHandler" unique_id=2031504435 node_paths=PackedStringArray("next")]
+[node name="QuakeAttack2" type="Node" parent="StateHandler/PrepareAttack1" unique_id=2031504435 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("8_tyr7c")
 scale = 4.0
 next = NodePath("../Endlag1")
 
-[node name="Endlag1" type="Node" parent="StateHandler" unique_id=482785001 node_paths=PackedStringArray("next")]
+[node name="Endlag1" type="Node" parent="StateHandler/PrepareAttack1" unique_id=482785001 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_hyg13")
 anim = "ENDLAG"
-next = NodePath("../CloseIn2")
+next = NodePath("../../CloseIn2")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag1" unique_id=1894615930 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareAttack1/Endlag1" unique_id=1894615930 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
 wait_time = 0.4
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="CloseIn2" type="Node" parent="StateHandler" unique_id=1822850301 node_paths=PackedStringArray("next")]
@@ -239,7 +239,7 @@ next = NodePath("../PrepareBooster")
 process_mode = 4
 script = ExtResource("5_hyg13")
 anim = "WINDUP"
-next = NodePath("../BoosterAttack")
+next = NodePath("BoosterAttack")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareBooster" unique_id=2117795655 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
@@ -247,35 +247,35 @@ wait_time = 0.9
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="BoosterAttack" type="Node" parent="StateHandler" unique_id=251625930 node_paths=PackedStringArray("next")]
+[node name="BoosterAttack" type="Node" parent="StateHandler/PrepareBooster" unique_id=251625930 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("9_33aw5")
 speed = 600
 bullet = ExtResource("10_x18un")
 next = NodePath("../QuakeAttack3")
 
-[node name="Timer" type="Node" parent="StateHandler/BoosterAttack" unique_id=2024680665 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareBooster/BoosterAttack" unique_id=2024680665 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
 wait_time = 2.0
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="QuakeAttack3" type="Node" parent="StateHandler" unique_id=1648887323 node_paths=PackedStringArray("next")]
+[node name="QuakeAttack3" type="Node" parent="StateHandler/PrepareBooster" unique_id=1648887323 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("8_tyr7c")
 scale = 3.0
 next = NodePath("../Endlag2")
 
-[node name="Endlag2" type="Node" parent="StateHandler" unique_id=1033168667 node_paths=PackedStringArray("next")]
+[node name="Endlag2" type="Node" parent="StateHandler/PrepareBooster" unique_id=1033168667 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("5_hyg13")
 anim = "ENDLAG"
-next = NodePath("../CloseIn1")
+next = NodePath("../../CloseIn1")
 
-[node name="Timer" type="Node" parent="StateHandler/Endlag2" unique_id=1735681639 node_paths=PackedStringArray("ability_relay")]
+[node name="Timer" type="Node" parent="StateHandler/PrepareBooster/Endlag2" unique_id=1735681639 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_04ynr")
 wait_time = 0.4
-ability_relay = NodePath("../../../AbilityRelay")
+ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1199160650]
@@ -325,11 +325,11 @@ death_quotes = ["harbinger_death_1", "harbinger_death_2"]
 [connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="PersonalExplodifier/Timer" to="PersonalExplodifier" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/DashAttack1/Timer" to="StateHandler/DashAttack1" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/DashAttack2/Timer" to="StateHandler/DashAttack2" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag1/Timer" to="StateHandler/Endlag1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/DashAttack1/Timer" to="StateHandler/PrepareAttack1/DashAttack1" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/DashAttack2/Timer" to="StateHandler/PrepareAttack1/DashAttack2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareAttack1/Endlag1/Timer" to="StateHandler/PrepareAttack1/Endlag1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareBooster/Timer" to="StateHandler/PrepareBooster" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/BoosterAttack/Timer" to="StateHandler/BoosterAttack" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateHandler/Endlag2/Timer" to="StateHandler/Endlag2" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareBooster/BoosterAttack/Timer" to="StateHandler/PrepareBooster/BoosterAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/PrepareBooster/Endlag2/Timer" to="StateHandler/PrepareBooster/Endlag2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

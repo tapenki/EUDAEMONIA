@@ -77,7 +77,7 @@ func _physics_process(_delta):
 		direction = user.global_position.direction_to(ray_intersection.position)
 		if distance < distance_margin: ## proceed to next state
 			state_handler.data["direction"] = direction
-			state_handler.change_state(next)
+			change_state(next)
 			return
 	
 	var final_speed = user.ability_relay.get_move_speed(speed)

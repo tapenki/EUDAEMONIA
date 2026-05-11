@@ -13,7 +13,7 @@ func _physics_process(delta):
 	if user.global_position.distance_to(walk_target) < 300 * delta * user.ability_relay.speed_scale:
 		user.velocity *= 0
 		user.global_position = walk_target
-		state_handler.change_state(next)
+		change_state(next)
 	wobble += delta * user.ability_relay.speed_scale * 12
 	var to_target = user.global_position.direction_to(walk_target).rotated(sin(wobble)*0.25) * 300
 	user.velocity = to_target
