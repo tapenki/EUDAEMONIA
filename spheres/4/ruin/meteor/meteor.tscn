@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="9_dycxl"]
 [ext_resource type="Texture2D" uid="uid://c8scgoik5p153" path="res://spheres/4/ruin/meteor/meteor.png" id="9_t8eg7"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_olt0q"]
-[ext_resource type="Texture2D" uid="uid://ce4wppcs772wc" path="res://spheres/4/ruin/meteor/meteor_hurt.png" id="11_5du8u"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_x0p1f"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_ywl2w"]
 
@@ -200,20 +199,13 @@ position = Vector2(0, 28)
 texture = ExtResource("9_t8eg7")
 offset = Vector2(0, -28)
 script = ExtResource("10_olt0q")
-base_texture = ExtResource("9_t8eg7")
-hurt_texture = ExtResource("11_5du8u")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=1504473167 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_spe3e")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1785831943]
 z_index = -3
 position = Vector2(0, -28)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_x0p1f")
+script = ExtResource("10_olt0q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1898148983]
 shape = SubResource("CircleShape2D_bhp25")
@@ -232,11 +224,9 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 autoplay = &"IDLE"
 next/WINDUP = &"IDLE"
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/DashAttack1/Timer" to="StateHandler/PrepareAttack1/DashAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/PrepareAttack2/Timer" to="StateHandler/PrepareAttack1/PrepareAttack2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/DashAttack2/Timer" to="StateHandler/PrepareAttack1/DashAttack2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Endlag/Timer" to="StateHandler/PrepareAttack1/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

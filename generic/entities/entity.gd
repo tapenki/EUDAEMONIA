@@ -100,11 +100,7 @@ func animation_finished(anim_name: StringName) -> void:
 
 func get_sprites():
 	var sprite = get_node("Sprite")
-	var size
-	if sprite is EntitySprite:
-		size = sprite.base_texture.get_size()
-	else:
-		size = sprite.texture.get_size()
+	var size = sprite.texture.get_size()
 	return [{"node" : sprite, "size" : size, "position" : sprite.position, "offset" : sprite.offset}]
 
 func apply_palette(team, denominator):

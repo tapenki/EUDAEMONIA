@@ -11,7 +11,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_r4yed"]
 [ext_resource type="Texture2D" uid="uid://b5tl341g373ik" path="res://spheres/5/steel/terminator/terminator.png" id="10_ry3pv"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_qrkkp"]
-[ext_resource type="Texture2D" uid="uid://ikfkvph55hcm" path="res://spheres/5/steel/terminator/terminator_hurt.png" id="12_0l2bb"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_nw3ji"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_2hrpp"]
 
@@ -237,20 +236,13 @@ position = Vector2(0, 31)
 texture = ExtResource("10_ry3pv")
 offset = Vector2(0, -31)
 script = ExtResource("11_qrkkp")
-base_texture = ExtResource("10_ry3pv")
-hurt_texture = ExtResource("12_0l2bb")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=411614133 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_4q57g")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1393765356]
 z_index = -3
 position = Vector2(0, -31)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("13_nw3ji")
+script = ExtResource("11_qrkkp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347472664]
 shape = SubResource("CircleShape2D_bhp25")
@@ -267,11 +259,9 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/QuakeAttack/Timer" to="StateHandler/QuakeAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/QuakeAttack/Dash/Timer" to="StateHandler/QuakeAttack/Dash" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/QuakeAttack/Delay1/Timer" to="StateHandler/QuakeAttack/Delay1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/QuakeAttack/Delay2/Timer" to="StateHandler/QuakeAttack/Delay2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/QuakeAttack/Endlag/Timer" to="StateHandler/QuakeAttack/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

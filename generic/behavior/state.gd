@@ -13,7 +13,12 @@ func on_exit() -> void:
 	state_handler.current_states.erase(self)
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
+func pre_enter() -> void:
+	if state_handler.disabled:
+		return
+	on_enter()
+
 func change_state(state: State):
 	on_exit()
-	if state and not state_handler.disabled:
-		state.call_deferred("on_enter")
+	if state:
+		state.call_deferred("pre_enter")

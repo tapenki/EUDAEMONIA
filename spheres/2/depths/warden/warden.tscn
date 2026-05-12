@@ -13,7 +13,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_n5tfd"]
 [ext_resource type="Texture2D" uid="uid://ca2l0srgkijny" path="res://spheres/2/depths/warden/warden.png" id="9_pyjhh"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_vhc8i"]
-[ext_resource type="Texture2D" uid="uid://dkg8x150s4mnm" path="res://spheres/2/depths/warden/warden_hurt.png" id="11_2okfs"]
 [ext_resource type="PackedScene" uid="uid://ba60m2btsfh1r" path="res://spheres/2/depths/bubble_bullet.tscn" id="11_m11n8"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_lssfr"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_40ygs"]
@@ -350,20 +349,13 @@ position = Vector2(0, 37)
 texture = ExtResource("9_pyjhh")
 offset = Vector2(0, -37)
 script = ExtResource("10_vhc8i")
-base_texture = ExtResource("9_pyjhh")
-hurt_texture = ExtResource("11_2okfs")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=352123192 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("5_1uc4r")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=627207528]
 z_index = -3
 position = Vector2(0, -37)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_lssfr")
+script = ExtResource("10_vhc8i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1064312361]
 shape = SubResource("CircleShape2D_bhp25")
@@ -388,7 +380,6 @@ script = ExtResource("17_pssg1")
 spawn_quotes = ["warden_spawn_1"]
 death_quotes = ["warden_death_1"]
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareVacuumAttack/Timer" to="StateHandler/PrepareVacuumAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareVacuumAttack/VacuumAttack/Timer" to="StateHandler/PrepareVacuumAttack/VacuumAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareVacuumAttack/VacuumAttackEndlag/Timer" to="StateHandler/PrepareVacuumAttack/VacuumAttackEndlag" method="_on_timer_timeout"]
@@ -399,5 +390,4 @@ death_quotes = ["warden_death_1"]
 [connection signal="timeout" from="StateHandler/PrepareRadialAttack1/RadialAttack1Endlag/Timer" to="StateHandler/PrepareRadialAttack1/RadialAttack1Endlag" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareRadialAttack2/Timer" to="StateHandler/PrepareRadialAttack2" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareRadialAttack2/RadialAttack2Endlag/Timer" to="StateHandler/PrepareRadialAttack2/RadialAttack2Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

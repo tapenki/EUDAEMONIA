@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="8_lkaxu"]
 [ext_resource type="Texture2D" uid="uid://vvwhf7gkmtpt" path="res://spheres/3/wonder/mars/mars.png" id="9_r133b"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_ub0du"]
-[ext_resource type="Texture2D" uid="uid://uuld0etjkjnv" path="res://spheres/3/wonder/mars/mars_hurt.png" id="11_276uv"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_1ku38"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_5kbcb"]
 
@@ -178,20 +177,13 @@ position = Vector2(0, 28)
 texture = ExtResource("9_r133b")
 offset = Vector2(0, -28)
 script = ExtResource("10_ub0du")
-base_texture = ExtResource("9_r133b")
-hurt_texture = ExtResource("11_276uv")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=666685226 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_77vvh")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1408803765]
 z_index = -3
 position = Vector2(0, -28)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_1ku38")
+script = ExtResource("10_ub0du")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600113351]
 shape = SubResource("CircleShape2D_bhp25")
@@ -210,9 +202,7 @@ libraries/ = SubResource("AnimationLibrary_v1kwl")
 autoplay = &"IDLE"
 next/WINDUP = &"IDLE"
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/DashAttack/Timer" to="StateHandler/PrepareAttack/DashAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Endlag/Timer" to="StateHandler/PrepareAttack/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ivd4xcthecwr" path="res://paths/death/bone_shield/shield.gd" id="1_iecfp"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_2bgfb"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_hyvx1"]
 [ext_resource type="Texture2D" uid="uid://cgxp0ij0vh66r" path="res://paths/death/bone_shield/bone_shield.png" id="7_y2u7u"]
-[ext_resource type="Texture2D" uid="uid://bbqod4g3aoygc" path="res://paths/death/bone_shield/bone_shield_hurt.png" id="9_16mca"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_onlb1"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_gyqlo"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_hcilj"]
@@ -124,20 +122,13 @@ position = Vector2(0, 20)
 texture = ExtResource("7_y2u7u")
 offset = Vector2(0, -20)
 script = ExtResource("10_gyqlo")
-base_texture = ExtResource("7_y2u7u")
-hurt_texture = ExtResource("9_16mca")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=1535850846 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_hyvx1")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1124972599]
 z_index = -3
 position = Vector2(0, -20)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("11_hcilj")
+script = ExtResource("10_gyqlo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=329852549]
 shape = SubResource("CircleShape2D_bhp25")
@@ -155,6 +146,4 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

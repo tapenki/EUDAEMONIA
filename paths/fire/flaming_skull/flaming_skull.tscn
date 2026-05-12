@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bb6f56hji22r4" path="res://paths/fire/flaming_skull/flaming_skull.png" id="8_5iypb"]
 [ext_resource type="Script" uid="uid://dvr6gecg7swmt" path="res://generic/randomized_timer.gd" id="8_div0h"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_ws2h1"]
-[ext_resource type="Texture2D" uid="uid://b7y5jlp5qyeyw" path="res://paths/fire/flaming_skull/flaming_skull_hurt.png" id="10_qvixt"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_26aru"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_crknv"]
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="13_h3b6x"]
@@ -199,19 +198,12 @@ position = Vector2(0, 19)
 texture = ExtResource("8_5iypb")
 offset = Vector2(0, -19)
 script = ExtResource("9_ws2h1")
-base_texture = ExtResource("8_5iypb")
-hurt_texture = ExtResource("10_qvixt")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=340064928 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_oyhwu")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=800656325]
 z_index = -3
 position = Vector2(0, -19)
 texture = ExtResource("11_26aru")
+script = ExtResource("9_ws2h1")
 
 [node name="Burn" type="CPUParticles2D" parent="Sprite" unique_id=1403551847]
 z_index = -1
@@ -247,9 +239,7 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/DashAttack/Timer" to="StateHandler/PrepareAttack/DashAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Endlag/Timer" to="StateHandler/PrepareAttack/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

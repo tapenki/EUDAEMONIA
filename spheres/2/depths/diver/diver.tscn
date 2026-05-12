@@ -10,7 +10,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_rynlx"]
 [ext_resource type="Texture2D" uid="uid://dlu6rpiegao4c" path="res://spheres/2/depths/diver/diver.png" id="8_s4f4n"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="9_y3w6m"]
-[ext_resource type="Texture2D" uid="uid://cb0c8kh4sxc3a" path="res://spheres/2/depths/diver/diver_hurt.png" id="10_dtj7i"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_hotfb"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_u0fjb"]
 [ext_resource type="Texture2D" uid="uid://bsr832l3d1ck5" path="res://spheres/2/depths/bubble.png" id="13_2xbth"]
@@ -178,19 +177,12 @@ position = Vector2(0, 21)
 texture = ExtResource("8_s4f4n")
 offset = Vector2(0, -21)
 script = ExtResource("9_y3w6m")
-base_texture = ExtResource("8_s4f4n")
-hurt_texture = ExtResource("10_dtj7i")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=1660884044 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_jn0si")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=2046652448]
 z_index = -3
 position = Vector2(0, -21)
 texture = ExtResource("11_hotfb")
+script = ExtResource("9_y3w6m")
 
 [node name="Bubble" type="Sprite2D" parent="Sprite" unique_id=598869899 node_paths=PackedStringArray("ability_relay")]
 material = ExtResource("8_rynlx")
@@ -216,9 +208,7 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack/Dash/Timer" to="StateHandler/DashAttack/Dash" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/DashAttack/Endlag/Timer" to="StateHandler/DashAttack/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

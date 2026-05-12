@@ -12,7 +12,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_vxm3h"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="10_eduxh"]
 [ext_resource type="Texture2D" uid="uid://bwsj4h3xb6pid" path="res://paths/life/clay/clay.png" id="10_moxgt"]
-[ext_resource type="Texture2D" uid="uid://dqggvfwuuajj" path="res://paths/life/clay/clay_hurt.png" id="12_6wrf8"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_udn53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
@@ -187,19 +186,12 @@ position = Vector2(0, 20)
 texture = ExtResource("10_moxgt")
 offset = Vector2(0, -20)
 script = ExtResource("8_2qjnk")
-base_texture = ExtResource("10_moxgt")
-hurt_texture = ExtResource("12_6wrf8")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=2045199755 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_tdrsd")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1430070267]
 z_index = -3
 position = Vector2(0, -20)
 texture = ExtResource("12_udn53")
+script = ExtResource("8_2qjnk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=563673301]
 shape = SubResource("CircleShape2D_bhp25")
@@ -217,9 +209,7 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Timer" to="StateHandler/PrepareAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/DashAttack/Timer" to="StateHandler/PrepareAttack/DashAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack/Endlag/Timer" to="StateHandler/PrepareAttack/Endlag" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

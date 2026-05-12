@@ -14,7 +14,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="11_gs2a3"]
 [ext_resource type="Texture2D" uid="uid://ci4nv8t5khsek" path="res://spheres/4/ruin/harbinger/harbinger.png" id="12_o4x2o"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="13_yk0yl"]
-[ext_resource type="Texture2D" uid="uid://lxvukviq6jn3" path="res://spheres/4/ruin/harbinger/harbinger_hurt.png" id="14_67870"]
 [ext_resource type="Script" uid="uid://c5162b43etb3h" path="res://generic/misc/speech.gd" id="15_i12jv"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="15_sfmxc"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="16_m0v1g"]
@@ -285,20 +284,13 @@ position = Vector2(0, 40)
 texture = ExtResource("12_o4x2o")
 offset = Vector2(0, -40)
 script = ExtResource("13_yk0yl")
-base_texture = ExtResource("12_o4x2o")
-hurt_texture = ExtResource("14_67870")
-
-[node name="Hurt" type="Node" parent="Sprite" unique_id=1586665321 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_04ynr")
-wait_time = 0.2
-ability_relay = NodePath("../../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=338825324]
 z_index = -3
 position = Vector2(0, -36)
 scale = Vector2(2, 2)
 texture = ExtResource("15_sfmxc")
+script = ExtResource("13_yk0yl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1783687706]
 position = Vector2(0, 4)
@@ -323,7 +315,6 @@ script = ExtResource("15_i12jv")
 spawn_quotes = ["harbinger_spawn_1"]
 death_quotes = ["harbinger_death_1", "harbinger_death_2"]
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="PersonalExplodifier/Timer" to="PersonalExplodifier" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/Timer" to="StateHandler/PrepareAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareAttack1/DashAttack1/Timer" to="StateHandler/PrepareAttack1/DashAttack1" method="_on_timer_timeout"]
@@ -332,5 +323,4 @@ death_quotes = ["harbinger_death_1", "harbinger_death_2"]
 [connection signal="timeout" from="StateHandler/PrepareBooster/Timer" to="StateHandler/PrepareBooster" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareBooster/BoosterAttack/Timer" to="StateHandler/PrepareBooster/BoosterAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareBooster/Endlag2/Timer" to="StateHandler/PrepareBooster/Endlag2" method="_on_timer_timeout"]
-[connection signal="timeout" from="Sprite/Hurt" to="Sprite" method="_on_hurt_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
