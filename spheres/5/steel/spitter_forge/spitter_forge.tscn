@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://da5smy47l5b1y"]
+[gd_scene format=3 uid="uid://ppajk7rvsnfg"]
 
-[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_iskxc"]
-[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_5slvs"]
-[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_sabwh"]
-[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_akq77"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_1fjkk"]
-[ext_resource type="Script" uid="uid://bsm5f71t71xlo" path="res://generic/behavior/summoning.gd" id="6_gyc7o"]
-[ext_resource type="PackedScene" uid="uid://ck4u2n4xslv51" path="res://spheres/1/steps/leaper/leaper.tscn" id="7_tvem5"]
-[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_2qgn1"]
-[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_gyc7o"]
-[ext_resource type="Texture2D" uid="uid://b8r7ifnc7x22g" path="res://spheres/5/steel/leaper_forge/leaper_forge.png" id="10_tfc8b"]
-[ext_resource type="Texture2D" uid="uid://t7gghbx4qhp5" path="res://spheres/5/steel/leaper_forge/leaper_forge_top.png" id="12_tvem5"]
-[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_la6tc"]
-[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_1kw2s"]
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_da5un"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_wkmbb"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_gqhj3"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_ryrsi"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_r8sqa"]
+[ext_resource type="Script" uid="uid://bsm5f71t71xlo" path="res://generic/behavior/summoning.gd" id="6_oyvv8"]
+[ext_resource type="PackedScene" uid="uid://br85yiholjjui" path="res://spheres/1/steps/spitter/spitter.tscn" id="7_wcvhy"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_ffehq"]
+[ext_resource type="Texture2D" uid="uid://dpv685ysv8l34" path="res://spheres/5/steel/spitter_forge/spitter_forge.png" id="9_anxvf"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_ieush"]
+[ext_resource type="Texture2D" uid="uid://llfnw3mesx28" path="res://spheres/5/steel/spitter_forge/spitter_forge_top.png" id="11_wmt4q"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_cjew3"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_ndtj7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 40.0
@@ -127,82 +127,82 @@ _data = {
 &"WINDUP": SubResource("Animation_14oqu")
 }
 
-[node name="LeaperForge" type="CharacterBody2D" unique_id=865233851 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
+[node name="SpitterForge" type="CharacterBody2D" unique_id=865233851 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_iskxc")
+script = ExtResource("1_da5un")
 ability_relay = NodePath("AbilityRelay")
 hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=2066136744]
 unique_name_in_owner = true
-script = ExtResource("2_5slvs")
+script = ExtResource("2_wkmbb")
 is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=377507445 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
-script = ExtResource("3_sabwh")
+script = ExtResource("3_gqhj3")
 initial_state = NodePath("Summoning")
 
 [node name="Summoning" type="Node" parent="StateHandler" unique_id=1406922771 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("5_akq77")
+script = ExtResource("4_ryrsi")
 anim = "WINDUP"
 next = NodePath("Summon")
 
 [node name="Timer" type="Node" parent="StateHandler/Summoning" unique_id=214472774 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_1fjkk")
+script = ExtResource("5_r8sqa")
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Summon" type="Node" parent="StateHandler/Summoning" unique_id=209612773 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("6_gyc7o")
-summon = ExtResource("7_tvem5")
+script = ExtResource("6_oyvv8")
+summon = ExtResource("7_wcvhy")
 summon_health = 0.4
 max_summons = 2
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler/Summoning" unique_id=500529585 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("5_akq77")
+script = ExtResource("4_ryrsi")
 next = NodePath("..")
 
 [node name="Timer" type="Node" parent="StateHandler/Summoning/Endlag" unique_id=1140750284 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_1fjkk")
+script = ExtResource("5_r8sqa")
 wait_time = 0.5
 ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=809943861]
-material = ExtResource("9_2qgn1")
+material = ExtResource("8_ffehq")
 position = Vector2(0, 35)
-texture = ExtResource("10_tfc8b")
+texture = ExtResource("9_anxvf")
 offset = Vector2(0, -35)
-script = ExtResource("10_gyc7o")
+script = ExtResource("10_ieush")
 
 [node name="Sprite2" type="Sprite2D" parent="Sprite" unique_id=1191444418]
 position = Vector2(0, -55)
-texture = ExtResource("12_tvem5")
-script = ExtResource("10_gyc7o")
+texture = ExtResource("11_wmt4q")
+script = ExtResource("10_ieush")
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1393765356]
 z_index = -3
 position = Vector2(0, -35)
 scale = Vector2(1.75, 1.75)
-texture = ExtResource("13_la6tc")
-script = ExtResource("10_gyc7o")
+texture = ExtResource("12_cjew3")
+script = ExtResource("10_ieush")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347472664]
 shape = SubResource("CircleShape2D_bhp25")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1905815031 node_paths=PackedStringArray("ability_relay")]
 collision_layer = 0
-script = ExtResource("14_1kw2s")
+script = ExtResource("13_ndtj7")
 ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1583717017]

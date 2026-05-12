@@ -65,8 +65,8 @@ texture = ExtResource("5_qb348")
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("6_b86ic")]
 position = Vector2(750, 330)
 rotation = 1.5707964
-room = "steps_room_0"
-subject = "steps_basic_gate"
+room = "steel_room_0"
+subject = "steel_basic_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("8_2lwvv")]
 reward = ExtResource("9_qk5sy")

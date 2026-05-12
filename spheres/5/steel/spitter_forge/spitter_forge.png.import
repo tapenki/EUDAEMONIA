@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ikfkvph55hcm"
-path="res://.godot/imported/terminator_hurt.png-79694a1069cf2d56bd2586b4784a249c.ctex"
+uid="uid://dpv685ysv8l34"
+path="res://.godot/imported/spitter_forge.png-c7374106bc6b9c3ad2b99a077a73f531.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/5/steel/terminator/terminator_hurt.png"
-dest_files=["res://.godot/imported/terminator_hurt.png-79694a1069cf2d56bd2586b4784a249c.ctex"]
+source_file="res://spheres/5/steel/spitter_forge/spitter_forge.png"
+dest_files=["res://.godot/imported/spitter_forge.png-c7374106bc6b9c3ad2b99a077a73f531.ctex"]
 
 [params]
 

@@ -267,6 +267,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "steel",
 	},
+	"steel_room_0" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
 	#endregion
 	#region light
 	"light_entrance_hall" : {
@@ -409,6 +414,9 @@ var entity_data = {
 	#region steel
 	"leaper_forge" : {
 		"scene" : preload("res://spheres/5/steel/leaper_forge/leaper_forge.tscn")
+	},
+	"spitter_forge" : {
+		"scene" : preload("res://spheres/5/steel/spitter_forge/spitter_forge.tscn")
 	},
 	"terminator" : {
 		"scene" : preload("res://spheres/5/steel/terminator/terminator.tscn")

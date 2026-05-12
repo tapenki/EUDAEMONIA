@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjxcyqrky0s5"
-path="res://.godot/imported/leaper_forge_hurt.png-6bf8dbfea68f17e071740f54c59c542a.ctex"
+uid="uid://llfnw3mesx28"
+path="res://.godot/imported/spitter_forge_top.png-291371c87372242043014669ec13bf3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/5/steel/leaper_forge/leaper_forge_hurt.png"
-dest_files=["res://.godot/imported/leaper_forge_hurt.png-6bf8dbfea68f17e071740f54c59c542a.ctex"]
+source_file="res://spheres/5/steel/spitter_forge/spitter_forge_top.png"
+dest_files=["res://.godot/imported/spitter_forge_top.png-291371c87372242043014669ec13bf3a.ctex"]
 
 [params]
 
