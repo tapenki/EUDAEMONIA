@@ -1,4 +1,4 @@
-class_name EntitySprite extends Sprite2D
+class_name EntitySprite extends Node2D
 
 @onready var hurt_timer = ScaledTimer.new()
 

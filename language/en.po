@@ -108,7 +108,7 @@ msgid "pawn_description"
 msgstr "You have:[br][outline_size=10]+[40][/outline_size] health.[br][outline_size=10]+[5]%[/outline_size] crit chance.[br][outline_size=10]+[300][/outline_size] move speed."
 
 msgid "defeated"
-msgstr "died :("
+msgstr "i am dead"
 
 msgid "move_controls"
 msgstr "{up}{left}{down}{right} to move."
@@ -749,13 +749,13 @@ msgid "steps_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Steps[/outline_size]"
 
 msgid "steps_entrance_gate_description"
-msgstr "The way forward."
+msgstr "Where it begins."
 
 msgid "steps_basic_gate_title"
 msgstr "[outline_size=10]Gate: Outpost[/outline_size]"
 
 msgid "steps_basic_gate_description"
-msgstr "The way forward."
+msgstr "Outer edges of the sky."
 
 msgid "land_of_depths_title"
 msgstr "Sphere [2]: Land of Depths"
@@ -764,13 +764,13 @@ msgid "depths_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Depths[/outline_size]"
 
 msgid "depths_entrance_gate_description"
-msgstr "The way forward."
+msgstr "Your first chance to drown."
 
 msgid "depths_basic_gate_title"
 msgstr "[outline_size=10]Gate: Loch[/outline_size]"
 
 msgid "depths_basic_gate_description"
-msgstr "The way forward."
+msgstr "As wide as a lake as deep as a lake."
 
 msgid "land_of_wonder_title"
 msgstr "Sphere [3]: Land of Wonder"
@@ -779,13 +779,13 @@ msgid "wonder_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Wonder[/outline_size]"
 
 msgid "wonder_entrance_gate_description"
-msgstr "The way forward."
+msgstr "The tall sky."
 
 msgid "wonder_basic_gate_title"
 msgstr "[outline_size=10]Gate: Observatory[/outline_size]"
 
 msgid "wonder_basic_gate_description"
-msgstr "The way forward."
+msgstr "You can see every star from here."
 
 msgid "land_of_doubt_title"
 msgstr "Sphere [3]: Land of Doubt"
@@ -794,13 +794,13 @@ msgid "doubt_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Doubt[/outline_size]"
 
 msgid "doubt_entrance_gate_description"
-msgstr "The way forward."
+msgstr "If there is such a place."
 
 msgid "doubt_basic_gate_title"
 msgstr "[outline_size=10]Gate: Crawlspace[/outline_size]"
 
 msgid "doubt_basic_gate_description"
-msgstr "The way forward."
+msgstr "You aren't there."
 
 msgid "land_of_ruin_title"
 msgstr "Sphere [4]: Land of Ruin"
@@ -809,13 +809,13 @@ msgid "ruin_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Ruin[/outline_size]"
 
 msgid "ruin_entrance_gate_description"
-msgstr "The way forward."
+msgstr "The all that remains."
 
 msgid "ruin_basic_gate_title"
 msgstr "[outline_size=10]Gate: Ruins[/outline_size]"
 
 msgid "ruin_basic_gate_description"
-msgstr "The way forward."
+msgstr "The all that is lost."
 
 msgid "shrine_of_ruin_title"
 msgstr "[outline_size=10]Shrine of Ruin[/outline_size]"
@@ -830,13 +830,13 @@ msgid "breath_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Breath[/outline_size]"
 
 msgid "breath_entrance_gate_description"
-msgstr "The way forward."
+msgstr "There is a garden in the sky."
 
 msgid "breath_basic_gate_title"
 msgstr "[outline_size=10]Gate: Garden[/outline_size]"
 
 msgid "breath_basic_gate_description"
-msgstr "The way forward."
+msgstr "A garden where thorns grow."
 
 msgid "land_of_steel_title"
 msgstr "Sphere [5]: Land of Steel"
@@ -845,13 +845,13 @@ msgid "steel_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Steel[/outline_size]"
 
 msgid "steel_entrance_gate_description"
-msgstr "The way forward."
+msgstr "It that was made."
 
 msgid "steel_basic_gate_title"
-msgstr "[outline_size=10]Gate: Forge[/outline_size]"
+msgstr "[outline_size=10]Gate: Factory[/outline_size]"
 
 msgid "steel_basic_gate_description"
-msgstr "The way forward."
+msgstr "A cabin in the grey woods."
 
 msgid "land_of_light_title"
 msgstr "Sphere [6]: Land of Light"
@@ -860,13 +860,13 @@ msgid "light_entrance_gate_title"
 msgstr "[outline_size=10]Gate: Land of Light[/outline_size]"
 
 msgid "light_entrance_gate_description"
-msgstr "The way forward."
+msgstr "You can see but you can't touch."
 
 msgid "light_basic_gate_title"
 msgstr "[outline_size=10]Gate: Bright Room[/outline_size]"
 
 msgid "light_basic_gate_description"
-msgstr "The way forward."
+msgstr "Anything for your eyes."
 
 msgid "his_throne_title"
 msgstr "Sphere [8]: His Throne"
@@ -944,6 +944,12 @@ msgstr "[Giga Leafer]: come here you >:("
 
 msgid "giga_leafer_death_1"
 msgstr "[Giga Leafer]: grrgghn >:("
+
+msgid "forgemaster_spawn_1"
+msgstr "[Forgemaster]: (industrial machine noise)"
+
+msgid "forgemaster_death_1"
+msgstr "[Forgemaster]: (industrial machine noise)"
 
 msgid "grand_luminary_spawn_1"
 msgstr "[Grand Luminary]: fu7ur3 1s br1gh7"

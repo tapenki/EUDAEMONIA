@@ -282,6 +282,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "steel",
 	},
+	"steel_throne_room" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
 	#endregion
 	#region light
 	"light_entrance_hall" : {
@@ -433,6 +438,9 @@ var entity_data = {
 	},
 	"giga_spitter_ii" : {
 		"scene" : preload("res://spheres/5/steel/giga_spitter_ii/giga_spitter_ii.tscn")
+	},
+	"forgemaster" : {
+		"scene" : preload("res://spheres/5/steel/forgemaster/forgemaster.tscn")
 	},
 	#endregion
 	#region light
