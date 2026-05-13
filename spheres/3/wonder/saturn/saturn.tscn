@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_58q1v"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_7xc43"]
-[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://spheres/3/wonder/debree_shield.gd" id="3_6838j"]
+[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://generic/entities/debree_shield.gd" id="3_6838j"]
 [ext_resource type="PackedScene" uid="uid://bhqe46kgmupeo" path="res://spheres/3/wonder/big_debree/big_debree.tscn" id="4_q8h26"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="4_vknsd"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_53qhx"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bfpp1gok1gouc" path="res://spheres/3/wonder/saturn/saturn.png" id="9_gc870"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_33l04"]
 [ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="10_nc6hc"]
-[ext_resource type="Texture2D" uid="uid://bqlvxt827fi56" path="res://spheres/3/wonder/saturn/saturn_hurt.png" id="11_2m4ei"]
 [ext_resource type="Script" uid="uid://brss7bxe5ejqs" path="res://generic/behavior/scattershot_attack.gd" id="11_krnbf"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_3wili"]
 [ext_resource type="PackedScene" uid="uid://xkp8korlpxmc" path="res://generic/projectiles/cluster_bullet.tscn" id="12_a7ib2"]
@@ -145,18 +144,20 @@ unique_name_in_owner = true
 script = ExtResource("2_7xc43")
 is_entity = true
 
-[node name="big_debree_shield" type="Node2D" parent="." unique_id=75545093 node_paths=PackedStringArray("ability_relay")]
+[node name="debree_shield" type="Node2D" parent="." unique_id=75545093 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("3_6838j")
+ability_relay = NodePath("../AbilityRelay")
+count = 6
+summon_health = 0.15
+max_distance = 200
+
+[node name="big_debree_shield" type="Node2D" parent="." unique_id=134310946 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("3_6838j")
 ability_relay = NodePath("../AbilityRelay")
 entity_scene = ExtResource("4_q8h26")
 count = 4
 summon_health = 0.3
-
-[node name="debree_shield" type="Node2D" parent="." unique_id=134310946 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("3_6838j")
-ability_relay = NodePath("../AbilityRelay")
-count = 4
-summon_health = 0.15
+max_distance = 100
 
 [node name="StateHandler" type="Node" parent="." unique_id=1999036109 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
@@ -413,8 +414,6 @@ position = Vector2(0, 36)
 texture = ExtResource("9_gc870")
 offset = Vector2(0, -36)
 script = ExtResource("10_33l04")
-base_texture = ExtResource("9_gc870")
-hurt_texture = ExtResource("11_2m4ei")
 
 [node name="Hurt" type="Node" parent="Sprite" unique_id=1517486164 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_0yn8a")
@@ -452,7 +451,6 @@ script = ExtResource("17_nc6hc")
 spawn_quotes = ["saturn_spawn_1", "saturn_spawn_2"]
 death_quotes = ["saturn_death_1", "saturn_death_2"]
 
-[connection signal="damage_taken" from="AbilityRelay" to="Sprite" method="_on_damage_taken"]
 [connection signal="timeout" from="StateHandler/PrepareDash1/Timer" to="StateHandler/PrepareDash1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareDash1/DashAttack1/Timer" to="StateHandler/PrepareDash1/DashAttack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/PrepareDash1/Endlag1/Timer" to="StateHandler/PrepareDash1/Endlag1" method="_on_timer_timeout"]

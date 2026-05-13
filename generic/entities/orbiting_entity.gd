@@ -1,9 +1,9 @@
 class_name OrbitingEntity extends Entity
 
 @export var max_distance: float
-@export var distance_deviation: float
+#@export var distance_deviation: float
 @export var speed: float
-@export var speed_deviation: float
+#@export var speed_deviation: float
 
 var distance: float
 var offset: Vector2
@@ -11,11 +11,11 @@ var orbitation: float
 
 var loose: bool
 
-func _ready() -> void:
-	super()
-	orbitation = randf() * TAU
-	max_distance = max_distance * (1 + randf_range(-1, 1) * distance_deviation)
-	speed = speed * (1 + randf_range(-1, 1) * speed_deviation)
+#func _ready() -> void:
+	#super()
+	#orbitation = randf() * TAU
+	#max_distance = max_distance * (1 + randf_range(-1, 1) * distance_deviation)
+	#speed = speed * (1 + randf_range(-1, 1) * speed_deviation)
 
 func movement(delta):
 	var old_position = global_position

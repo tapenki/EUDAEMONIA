@@ -19,7 +19,7 @@ func death_effects():
 	{"subscription" = 2}, ## inheritance
 	Vector2()) ## velocity
 	explosion_instance.exclude[ability_relay.owner] = INF
-	explosion_instance.scale_multiplier = 2
+	explosion_instance.scale_multiplier = 2.5
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)
 	get_node("/root/Main").play_sound("Explosion")
 

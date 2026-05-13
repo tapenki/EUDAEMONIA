@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_5dxxv"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_tj0jb"]
-[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://spheres/3/wonder/debree_shield.gd" id="3_irfvx"]
+[ext_resource type="Script" uid="uid://cieoi1aifej3t" path="res://generic/entities/debree_shield.gd" id="3_irfvx"]
 [ext_resource type="PackedScene" uid="uid://c511sypv8nipf" path="res://spheres/4/ruin/bomb_debree/bomb_debree.tscn" id="4_6lqvu"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="4_fnkkn"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_pj6vt"]
@@ -127,6 +127,7 @@ script = ExtResource("3_irfvx")
 ability_relay = NodePath("../AbilityRelay")
 entity_scene = ExtResource("4_6lqvu")
 count = 3
+max_distance = 100
 
 [node name="StateHandler" type="Node" parent="." unique_id=639463105 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
