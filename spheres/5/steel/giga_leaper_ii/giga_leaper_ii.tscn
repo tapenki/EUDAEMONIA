@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://drnx0ix8g7els"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_2nx41"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_lxou7"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_tmic8"]
+[ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_cfpd5"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_da0fr"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_sqn2g"]
+[ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="7_p1abu"]
+[ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="8_fvgnr"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_dooja"]
+[ext_resource type="Texture2D" uid="uid://bjq3r1nn2jq6t" path="res://spheres/5/steel/giga_leaper_ii/giga_leaper_ii.png" id="9_vp2vl"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_je28o"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="11_5aumn"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="12_28gmb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 30.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_icb8a"]
+resource_name = "WALK"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_14oqu"]
+resource_name = "WINDUP"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 0.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WALK": SubResource("Animation_icb8a"),
+&"WINDUP": SubResource("Animation_14oqu")
+}
+
+[node name="GigaLeaperII" type="CharacterBody2D" unique_id=361589110 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2nx41")
+ability_relay = NodePath("AbilityRelay")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+max_health = 80
+health = 80.0
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1314944044]
+unique_name_in_owner = true
+script = ExtResource("2_lxou7")
+is_entity = true
+
+[node name="StateHandler" type="Node" parent="." unique_id=178010367 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("3_tmic8")
+initial_state = NodePath("CloseIn")
+
+[node name="CloseIn" type="Node" parent="StateHandler" unique_id=1152727254 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_cfpd5")
+speed = 400
+distance_margin = 200
+shapecast_radius = 30
+next = NodePath("../DashAttack")
+
+[node name="DashAttack" type="Node" parent="StateHandler" unique_id=430962577 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_da0fr")
+anim = "WINDUP"
+next = NodePath("Dash")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack" unique_id=225797971 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_sqn2g")
+wait_time = 0.8
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Dash" type="Node" parent="StateHandler/DashAttack" unique_id=1824475061 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_p1abu")
+speed = 600
+next = NodePath("../Quake")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack/Dash" unique_id=802788356 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_sqn2g")
+wait_time = 2.0
+ability_relay = NodePath("../../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Quake" type="Node" parent="StateHandler/DashAttack" unique_id=1096016647 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("8_fvgnr")
+scale = 4.0
+next = NodePath("../Endlag")
+
+[node name="Endlag" type="Node" parent="StateHandler/DashAttack" unique_id=161528419 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("5_da0fr")
+next = NodePath("../../CloseIn")
+
+[node name="Timer" type="Node" parent="StateHandler/DashAttack/Endlag" unique_id=169413628 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_sqn2g")
+wait_time = 0.2
+ability_relay = NodePath("../../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1226265677]
+material = ExtResource("9_dooja")
+position = Vector2(0, 31.5)
+texture = ExtResource("9_vp2vl")
+offset = Vector2(0, -31.5)
+script = ExtResource("10_je28o")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=24397641]
+z_index = -3
+position = Vector2(0, -32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_5aumn")
+script = ExtResource("10_je28o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423685998]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=167818215 node_paths=PackedStringArray("ability_relay")]
+collision_layer = 0
+script = ExtResource("12_28gmb")
+ability_relay = NodePath("../AbilityRelay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1863003073]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=96463389]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_v1kwl")
+
+[connection signal="timeout" from="StateHandler/DashAttack/Timer" to="StateHandler/DashAttack" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Dash/Timer" to="StateHandler/DashAttack/Dash" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/DashAttack/Endlag/Timer" to="StateHandler/DashAttack/Endlag" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

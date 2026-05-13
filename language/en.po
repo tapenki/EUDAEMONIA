@@ -838,6 +838,21 @@ msgstr "[outline_size=10]Gate: Garden[/outline_size]"
 msgid "breath_basic_gate_description"
 msgstr "The way forward."
 
+msgid "land_of_steel_title"
+msgstr "Sphere [5]: Land of Steel"
+
+msgid "steel_entrance_gate_title"
+msgstr "[outline_size=10]Gate: Land of Steel[/outline_size]"
+
+msgid "steel_entrance_gate_description"
+msgstr "The way forward."
+
+msgid "steel_basic_gate_title"
+msgstr "[outline_size=10]Gate: Forge[/outline_size]"
+
+msgid "steel_basic_gate_description"
+msgstr "The way forward."
+
 msgid "land_of_light_title"
 msgstr "Sphere [6]: Land of Light"
 

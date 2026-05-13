@@ -272,6 +272,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "steel",
 	},
+	"steel_room_1" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_room_1.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
+	"steel_room_2" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_room_2.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
 	#endregion
 	#region light
 	"light_entrance_hall" : {
@@ -418,10 +428,12 @@ var entity_data = {
 	"spitter_forge" : {
 		"scene" : preload("res://spheres/5/steel/spitter_forge/spitter_forge.tscn")
 	},
-	"terminator" : {
-		"scene" : preload("res://spheres/5/steel/terminator/terminator.tscn")
+	"giga_leaper_ii" : {
+		"scene" : preload("res://spheres/5/steel/giga_leaper_ii/giga_leaper_ii.tscn")
 	},
-	
+	"giga_spitter_ii" : {
+		"scene" : preload("res://spheres/5/steel/giga_spitter_ii/giga_spitter_ii.tscn")
+	},
 	#endregion
 	#region light
 	"blaster" : {

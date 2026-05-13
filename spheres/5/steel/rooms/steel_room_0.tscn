@@ -32,10 +32,10 @@ position = Vector2(600, 480)
 script = ExtResource("3_2i1br")
 entity = "spitter_forge"
 
-[node name="SpawnTerminator" type="Node2D" parent="Waves/Wave1" unique_id=2052777910]
+[node name="SpawnGigaLeaperII" type="Node2D" parent="Waves/Wave1" unique_id=2052777910]
 position = Vector2(540, 480)
 script = ExtResource("3_2i1br")
-entity = "terminator"
+entity = "giga_leaper_ii"
 
 [node name="Wave2" type="Node2D" parent="Waves" unique_id=1853708472]
 script = ExtResource("2_75i2x")
@@ -49,10 +49,10 @@ position = Vector2(150, 480)
 script = ExtResource("3_2i1br")
 entity = "spitter_forge"
 
-[node name="SpawnTerminator" type="Node2D" parent="Waves/Wave2" unique_id=1221168372]
+[node name="SpawnGigaLeaperII" type="Node2D" parent="Waves/Wave2" unique_id=1221168372]
 position = Vector2(210, 480)
 script = ExtResource("3_2i1br")
-entity = "terminator"
+entity = "giga_leaper_ii"
 
 [node name="Doors" type="Node2D" parent="." unique_id=2016811140]
 
@@ -62,7 +62,7 @@ rotation = 4.712389
 
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("6_xskkl")]
 position = Vector2(480, 30)
-room = "steel_room_0"
+room = "steel_room_1"
 subject = "steel_basic_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("7_ed7je")]
