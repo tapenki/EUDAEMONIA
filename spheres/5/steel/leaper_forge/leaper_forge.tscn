@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_akq77"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_1fjkk"]
 [ext_resource type="Script" uid="uid://bsm5f71t71xlo" path="res://generic/behavior/summoning.gd" id="6_gyc7o"]
-[ext_resource type="PackedScene" uid="uid://ck4u2n4xslv51" path="res://spheres/1/steps/leaper/leaper.tscn" id="7_tvem5"]
+[ext_resource type="PackedScene" uid="uid://c4l55eqnx5sfe" path="res://spheres/5/steel/mecha_leaper/mecha_leaper.tscn" id="7_gyc7o"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_2qgn1"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_gyc7o"]
 [ext_resource type="Texture2D" uid="uid://b8r7ifnc7x22g" path="res://spheres/5/steel/leaper_forge/leaper_forge.png" id="10_tfc8b"]
@@ -162,7 +162,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 [node name="Summon" type="Node" parent="StateHandler/Summoning" unique_id=209612773 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_gyc7o")
-summon = ExtResource("7_tvem5")
+summon = ExtResource("7_gyc7o")
 summon_health = 0.4
 max_summons = 2
 next = NodePath("../Endlag")

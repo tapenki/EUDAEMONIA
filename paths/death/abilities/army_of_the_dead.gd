@@ -5,11 +5,12 @@ var preserved_elite: String
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("army_of_the_dead"):
-		applicant_data["base_hp"] = ability_relay.owner.max_health
-		ability_relay.max_health_modifiers.connect(max_health_modifiers.bind(ability_relay))
+		ability_relay.max_health_modifiers.connect(max_health_modifiers)
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("army_of_the_dead"):
 		applicant_data["army_of_the_dead"] = applicants[ability_relay.source]["army_of_the_dead"]
+		if applicant_data.has("innate_summon"):
+			ability_relay.max_health_modifiers.connect(max_health_modifiers)
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
@@ -34,8 +35,6 @@ func entity_death(dying_entity: Entity):
 			{"subscription" = 2, "army_of_the_dead" = true})  ## inheritance
 			if summon_instance.max_health > 100:
 				preserved_elite = dying_entity.scene_file_path
-			summon_instance.max_health = 0
-			summon_instance.health = 0
 			get_node("/root/Main").spawn_entity(summon_instance)
 
 func day_start(_day: int) -> void:
@@ -46,13 +45,11 @@ func day_start(_day: int) -> void:
 			var summon_instance = ability_relay.make_summon(load(preserved_elite), 
 			ability_relay.global_position,
 			{"subscription" = 2, "army_of_the_dead" = true})  ## inheritance
-			summon_instance.max_health = 0
-			summon_instance.health = 0
 			summon_instance.global_position = summon_instance.random_valid_position(get_node("/root"))
 			get_node("/root/Main").spawn_entity(summon_instance)
 
-func max_health_modifiers(modifiers, ability_relay) -> void:
-	modifiers["base"] += applicants[ability_relay]["base_hp"] * 0.75 * level
+func max_health_modifiers(modifiers) -> void:
+	modifiers["multiplier"] *= 0.75 * level
 
 func damage_dealt_modifiers(_entity, damage) -> void:
 	damage["base"] += 5 * level

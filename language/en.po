@@ -572,7 +572,7 @@ msgid "army_of_the_dead_title"
 msgstr "[outline_color=#cc00cc]Ability: Army of the Dead[/outline_color]"
 
 msgid "army_of_the_dead_description"
-msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10][BASEHPx0.75xLEVEL][/outline_size] health and [outline_size=10]+[5xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon slaying a non summoned enemy:[/outline_size] reconstitute it as an ally with [outline_size=10]x[0.75xLEVEL][/outline_size] health and [outline_size=10]+[5xLEVEL][/outline_size] damage."
 
 msgid "fated_end_title"
 msgstr "[outline_color=#cc00cc]Ability: Fated End[/outline_color]"
