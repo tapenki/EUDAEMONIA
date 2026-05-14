@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_jttke"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_1pyom"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="6_dn0tj"]
-[ext_resource type="Script" uid="uid://bsm5f71t71xlo" path="res://generic/behavior/summoning.gd" id="6_oe7y3"]
 [ext_resource type="Script" uid="uid://brss7bxe5ejqs" path="res://generic/behavior/scattershot_attack.gd" id="7_mval1"]
 [ext_resource type="PackedScene" uid="uid://c4l55eqnx5sfe" path="res://spheres/5/steel/mecha_leaper/mecha_leaper.tscn" id="7_wrvx8"]
 [ext_resource type="PackedScene" uid="uid://t53js78y1xq2" path="res://generic/projectiles/bullet.tscn" id="8_17mcb"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_ml7xq"]
 [ext_resource type="Texture2D" uid="uid://ct3ei0yv3ul4e" path="res://spheres/5/steel/forgemaster/forgemaster.png" id="9_31bpb"]
+[ext_resource type="Script" uid="uid://df6lt2im58b3d" path="res://generic/behavior/launch_summoning.gd" id="9_es5wp"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_oct4a"]
 [ext_resource type="PackedScene" uid="uid://du0ckc58r7gue" path="res://spheres/5/steel/mecha_spitter/mecha_spitter.tscn" id="11_17mcb"]
 [ext_resource type="Texture2D" uid="uid://bu470lw7v673" path="res://spheres/5/steel/forgemaster/forgemaster_top.png" id="11_ma02j"]
@@ -159,20 +159,20 @@ initial_state = NodePath("Summoning1")
 process_mode = 4
 script = ExtResource("4_jttke")
 anim = "WINDUP"
-next = NodePath("QuakeAttack")
+next = NodePath("Quake")
 
 [node name="Timer" type="Node" parent="StateHandler/Summoning1" unique_id=214472774 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1pyom")
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="QuakeAttack" type="Node" parent="StateHandler/Summoning1" unique_id=1101951605 node_paths=PackedStringArray("next")]
+[node name="Quake" type="Node" parent="StateHandler/Summoning1" unique_id=1101951605 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_dn0tj")
 scale = 2.0
-next = NodePath("../ShootAttack")
+next = NodePath("../Shoot")
 
-[node name="ShootAttack" type="Node" parent="StateHandler/Summoning1" unique_id=1089676019 node_paths=PackedStringArray("next")]
+[node name="Shoot" type="Node" parent="StateHandler/Summoning1" unique_id=1089676019 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_mval1")
 bullet = ExtResource("8_17mcb")
@@ -184,11 +184,14 @@ next = NodePath("../Summon")
 
 [node name="Summon" type="Node" parent="StateHandler/Summoning1" unique_id=209612773 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("6_oe7y3")
+script = ExtResource("9_es5wp")
 summon = ExtResource("7_wrvx8")
 summon_health = 0.1
 summon_count = 2
 max_summons = 4
+knockback_speed = 400
+knockback_duration = 0.2
+spread = 45
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler/Summoning1" unique_id=500529585 node_paths=PackedStringArray("next")]
@@ -206,20 +209,20 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("4_jttke")
 anim = "WINDUP"
-next = NodePath("QuakeAttack")
+next = NodePath("Quake")
 
 [node name="Timer" type="Node" parent="StateHandler/Summoning2" unique_id=1103535013 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("5_1pyom")
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
-[node name="QuakeAttack" type="Node" parent="StateHandler/Summoning2" unique_id=476966230 node_paths=PackedStringArray("next")]
+[node name="Quake" type="Node" parent="StateHandler/Summoning2" unique_id=476966230 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("6_dn0tj")
 scale = 2.0
-next = NodePath("../ShootAttack")
+next = NodePath("../Shoot")
 
-[node name="ShootAttack" type="Node" parent="StateHandler/Summoning2" unique_id=1286846593 node_paths=PackedStringArray("next")]
+[node name="Shoot" type="Node" parent="StateHandler/Summoning2" unique_id=1286846593 node_paths=PackedStringArray("next")]
 process_mode = 4
 script = ExtResource("7_mval1")
 bullet = ExtResource("8_17mcb")
@@ -231,11 +234,14 @@ next = NodePath("../Summon")
 
 [node name="Summon" type="Node" parent="StateHandler/Summoning2" unique_id=2039833283 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("6_oe7y3")
+script = ExtResource("9_es5wp")
 summon = ExtResource("11_17mcb")
 summon_health = 0.1
 summon_count = 2
 max_summons = 4
+knockback_speed = 400
+knockback_duration = 0.2
+spread = 45
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler/Summoning2" unique_id=2016791516 node_paths=PackedStringArray("next")]

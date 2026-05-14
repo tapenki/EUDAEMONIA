@@ -143,7 +143,7 @@ initial_state = NodePath("CloseIn")
 process_mode = 4
 script = ExtResource("4_edj03")
 speed = 200
-distance_margin = 200
+distance_margin = 300
 next = NodePath("../ShootAttack")
 
 [node name="ShootAttack" type="Node" parent="StateHandler" unique_id=385334432 node_paths=PackedStringArray("next")]

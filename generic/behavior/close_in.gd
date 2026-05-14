@@ -27,6 +27,8 @@ func avoidance():
 		return {"target" : found, "distance" : distance}
 
 func _physics_process(_delta):
+	if user.knockback_timer.running:
+		return
 	#for i in node2d.get_children():
 		#i.queue_free()
 	if not is_instance_valid(state_handler.target):

@@ -5,8 +5,9 @@
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_sabwh"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_akq77"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_1fjkk"]
-[ext_resource type="Script" uid="uid://bsm5f71t71xlo" path="res://generic/behavior/summoning.gd" id="6_gyc7o"]
+[ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="6_tvem5"]
 [ext_resource type="PackedScene" uid="uid://c4l55eqnx5sfe" path="res://spheres/5/steel/mecha_leaper/mecha_leaper.tscn" id="7_gyc7o"]
+[ext_resource type="Script" uid="uid://df6lt2im58b3d" path="res://generic/behavior/launch_summoning.gd" id="7_tvem5"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_2qgn1"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_gyc7o"]
 [ext_resource type="Texture2D" uid="uid://b8r7ifnc7x22g" path="res://spheres/5/steel/leaper_forge/leaper_forge.png" id="10_tfc8b"]
@@ -152,19 +153,27 @@ initial_state = NodePath("Summoning")
 process_mode = 4
 script = ExtResource("5_akq77")
 anim = "WINDUP"
-next = NodePath("Summon")
+next = NodePath("Quake")
 
 [node name="Timer" type="Node" parent="StateHandler/Summoning" unique_id=214472774 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_1fjkk")
 ability_relay = NodePath("../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
+[node name="Quake" type="Node" parent="StateHandler/Summoning" unique_id=1855708243 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("6_tvem5")
+next = NodePath("../Summon")
+
 [node name="Summon" type="Node" parent="StateHandler/Summoning" unique_id=209612773 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("6_gyc7o")
+script = ExtResource("7_tvem5")
 summon = ExtResource("7_gyc7o")
 summon_health = 0.4
 max_summons = 2
+knockback_speed = 400
+knockback_duration = 0.2
+spread = 45
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler/Summoning" unique_id=500529585 node_paths=PackedStringArray("next")]
