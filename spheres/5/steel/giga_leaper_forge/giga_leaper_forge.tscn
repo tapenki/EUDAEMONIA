@@ -1,0 +1,226 @@
+[gd_scene format=3 uid="uid://bqlbni5mb23yv"]
+
+[ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_ujmv5"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_jj43x"]
+[ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_elrpo"]
+[ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_2bj4a"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_l5aq3"]
+[ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="6_2i7q3"]
+[ext_resource type="Script" uid="uid://df6lt2im58b3d" path="res://generic/behavior/launch_summoning.gd" id="7_7ucya"]
+[ext_resource type="PackedScene" uid="uid://drnx0ix8g7els" path="res://spheres/5/steel/giga_leaper_ii/giga_leaper_ii.tscn" id="8_ggvr2"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_ecj0c"]
+[ext_resource type="Texture2D" uid="uid://bnmsedxglepvx" path="res://spheres/5/steel/giga_leaper_forge/giga_leaper_forge.png" id="10_pbee5"]
+[ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_1lolr"]
+[ext_resource type="Texture2D" uid="uid://dqb08l42xirl2" path="res://spheres/5/steel/giga_leaper_forge/giga_leaper_forge_top.png" id="12_uavyj"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_bt7uo"]
+[ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_ckyux"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpw2x"]
+radius = 40.0
+
+[sub_resource type="Animation" id="Animation_drum4"]
+resource_name = "DEATH"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fnls8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Sprite2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -55)]
+}
+
+[sub_resource type="Animation" id="Animation_icb8a"]
+resource_name = "WALK"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_14oqu"]
+resource_name = "WINDUP"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Sprite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -55), Vector2(0, -80), Vector2(0, -55)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1kwl"]
+_data = {
+&"DEATH": SubResource("Animation_drum4"),
+&"RESET": SubResource("Animation_fnls8"),
+&"WALK": SubResource("Animation_icb8a"),
+&"WINDUP": SubResource("Animation_14oqu")
+}
+
+[node name="GigaLeaperForge" type="CharacterBody2D" unique_id=865233851 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
+z_index = 1
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_ujmv5")
+ability_relay = NodePath("AbilityRelay")
+hurtbox = NodePath("Hurtbox")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=2066136744]
+unique_name_in_owner = true
+script = ExtResource("2_jj43x")
+is_entity = true
+
+[node name="StateHandler" type="Node" parent="." unique_id=377507445 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("3_elrpo")
+initial_state = NodePath("Summoning")
+
+[node name="Summoning" type="Node" parent="StateHandler" unique_id=1406922771 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_2bj4a")
+anim = "WINDUP"
+next = NodePath("Quake")
+
+[node name="Timer" type="Node" parent="StateHandler/Summoning" unique_id=214472774 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("5_l5aq3")
+ability_relay = NodePath("../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Quake" type="Node" parent="StateHandler/Summoning" unique_id=1855708243 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("6_2i7q3")
+next = NodePath("../Summon")
+
+[node name="Summon" type="Node" parent="StateHandler/Summoning" unique_id=209612773 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("7_7ucya")
+summon = ExtResource("8_ggvr2")
+summon_health = 0.8
+max_summons = 1
+knockback_speed = 400
+knockback_duration = 0.2
+spread = 45
+next = NodePath("../Endlag")
+
+[node name="Endlag" type="Node" parent="StateHandler/Summoning" unique_id=500529585 node_paths=PackedStringArray("next")]
+process_mode = 4
+script = ExtResource("4_2bj4a")
+next = NodePath("..")
+
+[node name="Timer" type="Node" parent="StateHandler/Summoning/Endlag" unique_id=1140750284 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("5_l5aq3")
+wait_time = 0.5
+ability_relay = NodePath("../../../../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=809943861]
+material = ExtResource("9_ecj0c")
+position = Vector2(0, 35)
+texture = ExtResource("10_pbee5")
+offset = Vector2(0, -35)
+script = ExtResource("11_1lolr")
+
+[node name="Sprite2" type="Sprite2D" parent="Sprite" unique_id=1191444418]
+position = Vector2(0, -55)
+texture = ExtResource("12_uavyj")
+script = ExtResource("11_1lolr")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1393765356]
+z_index = -3
+position = Vector2(0, -35)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("13_bt7uo")
+script = ExtResource("11_1lolr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347472664]
+shape = SubResource("CircleShape2D_bhp25")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1905815031 node_paths=PackedStringArray("ability_relay")]
+collision_layer = 0
+script = ExtResource("14_ckyux")
+ability_relay = NodePath("../AbilityRelay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1583717017]
+shape = SubResource("CircleShape2D_jpw2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=807907519]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_v1kwl")
+
+[connection signal="timeout" from="StateHandler/Summoning/Timer" to="StateHandler/Summoning" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateHandler/Summoning/Endlag/Timer" to="StateHandler/Summoning/Endlag" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]

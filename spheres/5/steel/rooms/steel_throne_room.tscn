@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_2fcli"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_kmr5f"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_1bfe0"]
+[ext_resource type="PackedScene" uid="uid://ppjabc1udges" path="res://spheres/environment/rewards/nous_reward.tscn" id="9_odi5i"]
 
 [node name="SteelRoom2" type="Node2D" unique_id=1768725321]
 
@@ -47,5 +48,8 @@ reward = ExtResource("7_kmr5f")
 
 [node name="QualiaRewardGiver" parent="." unique_id=1921029291 instance=ExtResource("6_2fcli")]
 reward = ExtResource("8_1bfe0")
+
+[node name="NousRewardGiver" parent="." unique_id=1242768647 instance=ExtResource("6_2fcli")]
+reward = ExtResource("9_odi5i")
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]

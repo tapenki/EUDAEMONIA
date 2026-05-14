@@ -7,7 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://davf88x6b6eoq" path="res://spheres/environment/doors/door.tscn" id="6_xskkl"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="7_ed7je"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="8_y5hs4"]
+[ext_resource type="Texture2D" uid="uid://b27islu7002ah" path="res://spheres/environment/rewards/red_reward.png" id="9_75i2x"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="9_k01rp"]
+[ext_resource type="Texture2D" uid="uid://wnnqqljt1wfn" path="res://spheres/environment/rewards/green_reward.png" id="10_2i1br"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gfg58"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [node name="SteelRoom0" type="Node2D" unique_id=1768725321]
 
@@ -65,11 +73,65 @@ position = Vector2(480, 30)
 room = "steel_room_1"
 subject = "steel_basic_gate"
 
+[node name="Exit1" parent="Doors" unique_id=248772373 instance=ExtResource("6_xskkl")]
+position = Vector2(780, 240)
+rotation = 1.5707964
+room = "steel_health_treasury"
+subject = "health_treasury_gate"
+
+[node name="Exit2" parent="Doors" unique_id=661018587 instance=ExtResource("6_xskkl")]
+position = Vector2(780, 720)
+rotation = 1.5707964
+room = "steel_damage_treasury"
+subject = "damage_treasury_gate"
+
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("7_ed7je")]
 reward = ExtResource("8_y5hs4")
 
 [node name="QualiaRewardGiver" parent="." unique_id=1921029291 instance=ExtResource("7_ed7je")]
 reward = ExtResource("9_k01rp")
+
+[node name="HealthSign" type="Sprite2D" parent="." unique_id=1127086296]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(780, 300)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_75i2x")
+
+[node name="Symbol" type="Label" parent="HealthSign" unique_id=568186255]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "He"
+label_settings = SubResource("LabelSettings_gfg58")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageSign" type="Sprite2D" parent="." unique_id=892454581]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(780, 660)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_2i1br")
+
+[node name="Symbol" type="Label" parent="DamageSign" unique_id=792768788]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Da"
+label_settings = SubResource("LabelSettings_gfg58")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

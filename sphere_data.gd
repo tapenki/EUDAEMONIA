@@ -272,6 +272,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "steel",
 	},
+	"steel_health_treasury" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
+	"steel_damage_treasury" : {
+		"scene" : preload("res://spheres/5/steel/rooms/steel_damage_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "steel",
+	},
 	"steel_room_1" : {
 		"scene" : preload("res://spheres/5/steel/rooms/steel_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
@@ -438,6 +448,9 @@ var entity_data = {
 	},
 	"giga_spitter_ii" : {
 		"scene" : preload("res://spheres/5/steel/giga_spitter_ii/giga_spitter_ii.tscn")
+	},
+	"giga_leaper_forge" : {
+		"scene" : preload("res://spheres/5/steel/giga_leaper_forge/giga_leaper_forge.tscn")
 	},
 	"forgemaster" : {
 		"scene" : preload("res://spheres/5/steel/forgemaster/forgemaster.tscn")
