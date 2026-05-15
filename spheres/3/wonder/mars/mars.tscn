@@ -116,9 +116,6 @@ hurtbox = NodePath("Hurtbox")
 animation_player = NodePath("AnimationPlayer")
 max_health = 60
 health = 60.0
-immune_duration = null
-group = null
-summoned = null
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=661919259]
 unique_name_in_owner = true
@@ -128,7 +125,8 @@ is_entity = true
 [node name="debree_shield" type="Node2D" parent="." unique_id=1623431449 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("3_aeyf6")
 ability_relay = NodePath("../AbilityRelay")
-count = 4
+count = 5
+max_distance = 150
 
 [node name="StateHandler" type="Node" parent="." unique_id=1118467419 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
@@ -155,7 +153,7 @@ next = NodePath("../Endlag")
 
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack/DashAttack" unique_id=1581309372 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_77vvh")
-wait_time = 0.5
+wait_time = 0.6
 ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
@@ -167,7 +165,7 @@ next = NodePath("..")
 [node name="Timer" type="Node" parent="StateHandler/PrepareAttack/Endlag" unique_id=1266671826 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("8_lkaxu")
 wait_time = 0.3
-deviation = 0.25
+deviation = 0.5
 ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
