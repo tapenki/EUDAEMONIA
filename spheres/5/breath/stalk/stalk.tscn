@@ -121,6 +121,7 @@ script = ExtResource("2_vql3y")
 is_entity = true
 
 [node name="StateHandler" type="Node" parent="." unique_id=1378934216 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("3_bvwtb")
 initial_state = NodePath("Endlag")
 

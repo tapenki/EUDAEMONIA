@@ -26,6 +26,9 @@ msgstr "Screenshake:"
 msgid "damage_numbers"
 msgstr "Damage Numbers:"
 
+msgid "auto_collect"
+msgstr "Auto-collect rewards:"
+
 msgid "auto_restart"
 msgstr "Return to menu on defeat:"
 

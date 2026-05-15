@@ -1,9 +1,27 @@
 extends Described
 
+var auto_collect_timer = 0.0
+var auto_collect_timer_running = false
+var free_timer = 0.0
+var free_timer_running = false
+
 func _ready() -> void:
 	get_node("../Appearance").emitting = true
+	if Config.config.get_value("gameplay", "auto_collect"):
+		auto_collect_timer_running = true
+
+func _process(delta: float) -> void:
+	if auto_collect_timer_running:
+		auto_collect_timer += delta
+		if auto_collect_timer >= 1.0:
+			_on_pressed()
+	if free_timer_running:
+		free_timer += delta
+		if free_timer >= 1.0:
+			get_parent().queue_free()
 
 func _on_pressed() -> void:
+	auto_collect_timer_running = false
 	if get_node("/root/Main").game_over:
 		get_node("/root/Main").play_sound("Error")
 		return
@@ -11,5 +29,4 @@ func _on_pressed() -> void:
 	get_node("/root/Main/PlayerAbilityHandler").learn("damage_boost", 5)
 	get_node("/root/Main").play_sound("Click")
 	get_node("../Particles").emitting = false
-	await get_tree().create_timer(1).timeout
-	get_parent().queue_free()
+	free_timer_running = true

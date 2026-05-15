@@ -71,8 +71,8 @@ func assign_entity_group(entity: Node, group: int, color: String = "secondary"):
 func scale_enemy_health(health: float):
 	return health * (1 + (day - 1) * (0.25 + 0.25 * loop))
 
-func scale_enemy_damage():
-	return 1 + (day - 1) * (0.25 + 0.025 * loop)
+func scale_enemy_damage(damage: float):
+	return damage * (1 + (day - 1) * (0.25 + 0.025 * loop))
 
 func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()
@@ -89,7 +89,7 @@ func instantiate_enemy(scene: PackedScene):
 	assign_entity_group(entity_instance, 2, color)
 	entity_instance.max_health = scale_enemy_health(entity_instance.max_health)
 	entity_instance.health = entity_instance.max_health
-	entity_instance.ability_relay.inherited_damage["multiplier"] = scale_enemy_damage()
+	entity_instance.ability_relay.inherited_damage["base"] = scale_enemy_damage(entity_instance.ability_relay.inherited_damage["base"])
 	return entity_instance
 
 ## map

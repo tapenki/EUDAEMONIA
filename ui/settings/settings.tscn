@@ -131,6 +131,12 @@ text = "damage_numbers"
 section = "gameplay"
 key = "damage_numbers"
 
+[node name="AutoCollect" parent="General" unique_id=921893365 instance=ExtResource("3_bqqix")]
+layout_mode = 2
+text = "auto_collect"
+section = "gameplay"
+key = "auto_collect"
+
 [node name="AutoRestart" parent="General" unique_id=322475391 instance=ExtResource("3_bqqix")]
 layout_mode = 2
 text = "auto_restart"

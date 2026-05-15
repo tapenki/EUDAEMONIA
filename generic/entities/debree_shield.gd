@@ -17,7 +17,7 @@ func _ready() -> void:
 		entity_instance.orbitation = TAU / count * repeat
 		entity_instance.max_distance = max_distance
 		add_child(entity_instance)
-		entity_instance.ability_relay.inherited_damage["multiplier"] = get_node("/root/Main").scale_enemy_damage()
+		entity_instance.ability_relay.inherited_damage["multiplier"] = ability_relay.inherited_damage.duplicate()#get_node("/root/Main").scale_enemy_damage()
 	ability_relay.self_death.connect(self_death)
 	ability_relay.freed.connect(freed)
 
