@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://hrs1x18b7ao5" path="res://paths/lightning/white.png" id="7_bj4g6"]
 [ext_resource type="Texture2D" uid="uid://bl5kff47cqaac" path="res://paths/death/black.png" id="8_vx3qw"]
 [ext_resource type="Texture2D" uid="uid://cwh4efrqwbb54" path="res://paths/blade/blade.png" id="9_dhhy1"]
+[ext_resource type="Texture2D" uid="uid://b7llxcks0ln0v" path="res://paths/time/time.png" id="10_f0tcv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wf76l"]
 resource_local_to_scene = true
@@ -55,7 +56,7 @@ text = "path_picker"
 label_settings = SubResource("LabelSettings_wf76l")
 horizontal_alignment = 1
 
-[node name="Paths1" type="HBoxContainer" parent="." unique_id=2031730292]
+[node name="Paths" type="HFlowContainer" parent="." unique_id=1417522221]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -63,48 +64,41 @@ anchor_right = 0.5
 offset_left = -112.5
 offset_top = 30.0
 offset_right = 112.5
-offset_bottom = 90.0
+offset_bottom = 280.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Fire" parent="Paths1" unique_id=369977194 instance=ExtResource("2_yj67j")]
+[node name="Fire" parent="Paths" unique_id=369977194 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("3_rnk8j")
 subject = "fire"
 
-[node name="Ice" parent="Paths1" unique_id=2120552981 instance=ExtResource("2_yj67j")]
+[node name="Ice" parent="Paths" unique_id=2120552981 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("5_t4f8r")
 subject = "ice"
 
-[node name="Lightning" parent="Paths1" unique_id=810333865 instance=ExtResource("2_yj67j")]
+[node name="Lightning" parent="Paths" unique_id=810333865 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("7_bj4g6")
 subject = "lightning"
 
-[node name="Paths2" type="HBoxContainer" parent="." unique_id=2024068296]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.5
-offset_top = 94.0
-offset_right = 112.5
-offset_bottom = 154.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Life" parent="Paths2" unique_id=1781352977 instance=ExtResource("2_yj67j")]
+[node name="Life" parent="Paths" unique_id=1781352977 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("6_j1tjt")
 subject = "life"
 
-[node name="Death" parent="Paths2" unique_id=1088663724 instance=ExtResource("2_yj67j")]
+[node name="Death" parent="Paths" unique_id=1088663724 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("8_vx3qw")
 subject = "death"
 
-[node name="Blade" parent="Paths2" unique_id=850521461 instance=ExtResource("2_yj67j")]
+[node name="Blade" parent="Paths" unique_id=850521461 instance=ExtResource("2_yj67j")]
 layout_mode = 2
 texture_normal = ExtResource("9_dhhy1")
 subject = "blade"
+
+[node name="Time" parent="Paths" unique_id=1233362423 instance=ExtResource("2_yj67j")]
+layout_mode = 2
+texture_normal = ExtResource("10_f0tcv")
+subject = "time"

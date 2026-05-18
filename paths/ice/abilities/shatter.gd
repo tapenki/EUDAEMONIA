@@ -3,11 +3,10 @@ extends Ability
 var bullet = preload("res://paths/ice/shard.tscn")
 
 func apply(ability_relay, applicant_data):
-	if ability_relay.owner.scene_file_path == "res://paths/ice/shard.tscn":
-		applicant_data["shatter_power"] = true
+	if applicant_data.has("shatter"):
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("shatter_power"):
-		applicant_data["shatter_power"] = applicants[ability_relay.source]["shatter_power"]
+	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("shatter"):
+		applicant_data["shatter"] = applicants[ability_relay.source]["shatter"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
@@ -33,7 +32,7 @@ func entity_death(dying_entity: Entity):
 		for repeat in total:
 			var bullet_instance = applicant.make_projectile(bullet, 
 			dying_entity.global_position, 
-			{"subscription" = 2},
+			{"subscription" = 2, "shatter" = true},
 			Vector2.from_angle(angle + (TAU / total * repeat)) * 600)
 			bullet_instance.exclude[dying_entity] = INF
 			get_node("/root/Main/Projectiles").add_child(bullet_instance)

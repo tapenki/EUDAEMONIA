@@ -28,12 +28,10 @@ signal move_speed_modifiers(modifiers: Dictionary)
 signal movement(distance: float)
 
 ## attack signals
-#signal attack_rate_modifiers(modifiers: Dictionary)
+signal attack_rate_modifiers(modifiers: Dictionary)
 signal attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 signal attack_success(direction: Vector2, weapon: Node)
-#signal projectile_created(projectile: Projectile)
-#signal attack_impact(position: Vector2, body: Node)
 
 ## summon signals
 signal summon_damage_modifiers(modifiers: Dictionary)
@@ -90,10 +88,9 @@ func get_move_speed(base: float):
 	move_speed_modifiers.emit(modifiers)
 	return max(modifiers["base"] * modifiers["multiplier"], 0)
 
-#func get_attack_rate(source: float):
-#	var modifiers = {"base" : source, "multiplier" : 1}
-#	attack_rate_modifiers.emit(modifiers)
-#	return modifiers["base"] * modifiers["multiplier"]
+func get_attack_rate(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
+	attack_rate_modifiers.emit(modifiers)
+	return modifiers["base"] * modifiers["multiplier"]
 
 func get_attack_scale(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
 	attack_scale_modifiers.emit(modifiers)

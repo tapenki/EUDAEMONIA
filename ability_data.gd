@@ -19,6 +19,9 @@ var path_data = {
 	"blade" : {
 		"scene" : preload("res://paths/blade/blade_ui.tscn"),
 	},
+	"time" : {
+		"scene" : preload("res://paths/time/time_ui.tscn"),
+	},
 }
 
 var ability_data = {
@@ -325,6 +328,20 @@ var ability_data = {
 	"sword" : {
 		"script" : preload("res://paths/blade/sword/sword.gd"),
 		"type" : "weapon"
+	},
+	#endregion
+	#region time
+	"minute_hand" : {
+		"script" : preload("res://paths/time/abilities/minute_hand.gd"),
+		"type" : "upgrade"
+	},
+	"hour_hand" : {
+		"script" : preload("res://paths/time/abilities/hour_hand.gd"),
+		"type" : "upgrade"
+	},
+	"clockwinding" : {
+		"script" : preload("res://paths/time/abilities/clockwinding.gd"),
+		"type" : "upgrade"
 	},
 	#endregion
 	#region misc

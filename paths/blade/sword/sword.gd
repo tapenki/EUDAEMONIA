@@ -24,7 +24,7 @@ func disapply(ability_relay):
 func _process(delta: float) -> void:
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("time") and applicants[ability_relay]["time"] > 0:
-			applicants[ability_relay]["time"] -= delta * ability_relay.speed_scale
+			applicants[ability_relay]["time"] -= delta * ability_relay.speed_scale * ability_relay.get_attack_rate()
 
 func attack(direction, ability_relay):
 	if not equipped:
@@ -37,7 +37,7 @@ func attack(direction, ability_relay):
 func fire(direction, ability_relay):
 	var bullet_instance = ability_relay.make_projectile(bullet, 
 	ability_relay.global_position + direction * 25, 
-	{"subscription" = 2, "sword" = true},
+	{"subscription" = 2, "weapon" = true, "sword" = true},
 	direction * 1200)
 	get_node("/root/Main/Projectiles").add_child(bullet_instance)
 	get_node("/root/Main").play_sound("Explosion")

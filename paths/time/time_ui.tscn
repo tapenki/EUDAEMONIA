@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://ccfhsuudd34vo"]
+
+[ext_resource type="Script" uid="uid://ryrg5y04a0t" path="res://paths/time/time_path_ui.gd" id="1_sbyxc"]
+[ext_resource type="Texture2D" uid="uid://b7llxcks0ln0v" path="res://paths/time/time.png" id="2_hlo4x"]
+[ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="3_a71n6"]
+[ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="4_o5nxg"]
+[ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="5_w0qkf"]
+[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_ypv5m"]
+[ext_resource type="PackedScene" uid="uid://b84j2ldvpmk6t" path="res://paths/ui/trick_mastery_button.tscn" id="7_n3oyw"]
+[ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="8_6ht33"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtxho"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[node name="Time" type="Control" unique_id=2118698369]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 225.0
+offset_bottom = 300.0
+mouse_filter = 2
+script = ExtResource("1_sbyxc")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=400382669]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hlo4x")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=510287080]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 2.0
+offset_right = 62.5
+offset_bottom = 25.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_a71n6")
+bbcode_enabled = true
+text = "time_title"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("4_o5nxg")
+subject = "time"
+
+[node name="Abilities" type="HFlowContainer" parent="." unique_id=1516786450]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 30.0
+offset_right = 112.5
+offset_bottom = 90.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="MinuteHand" parent="Abilities" unique_id=1440218836 instance=ExtResource("5_w0qkf")]
+layout_mode = 2
+texture_normal = ExtResource("2_hlo4x")
+subject = "minute_hand"
+
+[node name="HourHand" parent="Abilities" unique_id=452593380 instance=ExtResource("5_w0qkf")]
+layout_mode = 2
+texture_normal = ExtResource("2_hlo4x")
+subject = "hour_hand"
+
+[node name="TimeDilation" parent="Abilities" unique_id=755603844 instance=ExtResource("5_w0qkf")]
+layout_mode = 2
+texture_normal = ExtResource("2_hlo4x")
+subject = "block"
+
+[node name="Clockwinding" parent="Abilities" unique_id=1950595630 instance=ExtResource("5_w0qkf")]
+layout_mode = 2
+texture_normal = ExtResource("2_hlo4x")
+subject = "clockwinding"
+
+[node name="Overtime" parent="Abilities" unique_id=1915207044 instance=ExtResource("6_ypv5m")]
+layout_mode = 2
+accessible_texture = ExtResource("2_hlo4x")
+requires = {
+"unsheathe": 5
+}
+subject = "overtime"
+
+[node name="Masteries" type="HFlowContainer" parent="." unique_id=1227866759]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 158.0
+offset_right = 112.5
+offset_bottom = 218.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="GivenMinute" parent="Masteries" unique_id=1701464479 instance=ExtResource("7_n3oyw")]
+layout_mode = 2
+accessible_texture = ExtResource("2_hlo4x")
+requires = {
+"broad_swings": 5
+}
+subject = "soul_cleave"
+
+[node name="EleventhHour" parent="Masteries" unique_id=664334916 instance=ExtResource("6_ypv5m")]
+layout_mode = 2
+accessible_texture = ExtResource("2_hlo4x")
+requires = {
+"hold_ground": 5
+}
+subject = "unflinching"
+
+[node name="TimeStop" parent="Masteries" unique_id=2138347233 instance=ExtResource("6_ypv5m")]
+layout_mode = 2
+accessible_texture = ExtResource("2_hlo4x")
+requires = {
+"block": 5
+}
+subject = "percussion"
+extras = ["shock"]
+
+[node name="Sword" parent="." unique_id=786159629 instance=ExtResource("8_6ht33")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 226.0
+offset_right = 174.0
+offset_bottom = 286.0
+subject = "sword"
+
+[node name="TextureRect1" parent="Sword" index="0" unique_id=1837236885]
+texture = ExtResource("2_hlo4x")
+
+[node name="TextureRect2" parent="Sword" index="1" unique_id=519565613]
+texture = ExtResource("2_hlo4x")
+
+[node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
+label_settings = SubResource("LabelSettings_vtxho")
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
+
+[editable path="Sword"]
