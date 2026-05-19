@@ -28,7 +28,7 @@ hit_enabled = false
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=650856352]
 unique_name_in_owner = true
 script = ExtResource("2_1egge")
-is_projectile = true
+is_projectile = 2
 
 [node name="Sprite" type="CPUParticles2D" parent="." unique_id=1170847227 node_paths=PackedStringArray("ability_relay")]
 z_index = -1

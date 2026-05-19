@@ -1,8 +1,8 @@
 extends Ability
 
 func apply(ability_relay, applicant_data):
-	if not ability_relay.is_projectile:
-		return
+	#if not ability_relay.is_projectile > 0:
+	#	return
 	applicant_data["pierce"] = ability_relay.roll_chance({"base": 20 * level, "multiplier": 1.0})
 	ability_relay.hits_left_modifiers.connect(hits_left_modifiers.bind(ability_relay))
 	super(ability_relay, applicant_data)

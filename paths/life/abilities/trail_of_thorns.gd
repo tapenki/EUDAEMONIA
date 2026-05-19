@@ -40,7 +40,7 @@ func movement(distance, ability_relay) -> void:
 		if pain_walk:
 			for i in 2:
 				spawn(ability_relay.owner.global_position + Vector2(randf_range(-24, 24), randf_range(-24, 24)), ability_relay)
-			if ability_relay.is_entity:
+			if ability_relay.is_entity > 0:
 				applicants[ability_relay]["pain_walk"] = (applicants[ability_relay]["pain_walk"] + 1) % 2
 				if applicants[ability_relay]["pain_walk"] == 0:
 					var max_health = ability_relay.get_health()["max_health"]

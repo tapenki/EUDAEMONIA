@@ -5,8 +5,8 @@ extends Node
 @export var inherited_crit_chance = {"base" : 0.0, "multiplier" : 1.0}
 #@export var inherited_speed_scale = {"base" : 1.0, "multiplier" : 1.0}
 
-@export var is_entity: bool
-@export var is_projectile: bool
+@export var is_entity: int ## 0 - no entity effects 1 - some entity effects 2 - all entity effects
+@export var is_projectile: int ## 0 - no projectile effects 1 - some projectile effects 2 - all projectile effects
 
 var ability_handler: Node
 var applied_abilities: Dictionary
@@ -26,15 +26,14 @@ signal healed(amount: float)
 signal speed_scale_modifiers(modifiers: Dictionary)
 signal move_speed_modifiers(modifiers: Dictionary)
 signal movement(distance: float)
+signal knockback_taken_modifiers(modifiers: Dictionary)
+signal slow_taken_modifiers(modifiers: Dictionary)
 
 ## attack signals
 signal attack_rate_modifiers(modifiers: Dictionary)
 signal attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 signal attack_success(direction: Vector2, weapon: Node)
-
-## summon signals
-signal summon_damage_modifiers(modifiers: Dictionary)
 
 ## damage taken signals
 signal damage_taken_modifiers(modifiers: Dictionary)
@@ -63,7 +62,7 @@ func _physics_process(_delta: float) -> void:
 func _ready() -> void:
 	if not source:
 		source = self
-	if not entity_source and is_entity:
+	if not entity_source and is_entity > 0:
 		entity_source = self
 
 ## stat getters
@@ -87,6 +86,12 @@ func get_move_speed(base: float):
 	var modifiers = {"base" : base, "multiplier" : 1}
 	move_speed_modifiers.emit(modifiers)
 	return max(modifiers["base"] * modifiers["multiplier"], 0)
+
+func get_knockback(entity: Entity = null, knockback: Dictionary = {"base" : 1, "multiplier" : 1}):
+	if entity:
+		entity.ability_relay.knockback_taken_modifiers.emit(knockback)
+	#attack_rate_modifiers.emit(modifiers)
+	return knockback["base"] * knockback["multiplier"]
 
 func get_attack_rate(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
 	attack_rate_modifiers.emit(modifiers)
@@ -141,16 +146,15 @@ func deal_damage(entity: Entity, damage: Dictionary = {"base" : 0, "multiplier" 
 	#	apply_knockback(entity, damage["direction"])
 	return damage
 
-#func apply_knockback(entity: Entity, direction: Vector2, intensity = 1.0):
-	#intensity *= entity.knockback_affect
-	#if intensity == 0:
-		#return
-	#var duration = 0.05*intensity
-	#if entity.knockback_timer.time_left < duration:
-		#entity.knockback_timer.start(duration)
-	#var knockback_velocity = direction * 900 * (1 - pow(0.5, intensity))
-	#var max_length = max(knockback_velocity.length(), entity.velocity.length())
-	#entity.velocity += knockback_velocity * (entity.velocity - knockback_velocity).limit_length(max_length).length()/max_length
+func apply_knockback(entity: Entity, direction: Vector2, intensity = 1.0):
+	var knockback_applied = get_knockback(entity) * intensity
+	if knockback_applied <= 0:
+		return
+	var knockback_velocity = direction * 400
+	var duration = 0.2 * knockback_applied
+	if entity.knockback_timer.time_left < duration:
+		entity.knockback_timer.start(duration)
+	entity.velocity = knockback_velocity
 
 func roll_chance(odds: Dictionary):
 	var final_chance = odds["base"] * odds["multiplier"]
@@ -236,7 +240,7 @@ func make_projectile(projectile_scene: PackedScene, position: Vector2, applicant
 	assign_projectile_group(projectile_instance, projectile_group)
 	
 	projectile_instance.ability_relay.source = self
-	if is_entity:
+	if is_entity > 0:
 		projectile_instance.ability_relay.entity_source = self
 	elif is_instance_valid(entity_source):
 		projectile_instance.ability_relay.entity_source = entity_source
@@ -264,13 +268,12 @@ func make_summon(summon_scene: PackedScene, position: Vector2, applicant_data: D
 	summon_instance.summoned = true
 	
 	summon_instance.ability_relay.source = self
-	if is_entity:
+	if is_entity > 0:
 		summon_instance.ability_relay.entity_source = self
 	elif is_instance_valid(entity_source):
 		summon_instance.ability_relay.entity_source = entity_source
 	
 	var summon_damage = inherited_damage.duplicate()
-	#summon_damage_modifiers.emit(summon_damage)
 	summon_instance.ability_relay.inherited_damage = summon_damage
 	
 	if ability_handler:

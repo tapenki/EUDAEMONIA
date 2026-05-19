@@ -1,7 +1,9 @@
 extends Ability
 
+var minute_boost = 0.0
+
 func apply(ability_relay, applicant_data):
-	if applicant_data.has("subscription") and applicant_data["subscription"] >= 4:
+	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
 		var hand = Sprite2D.new()
 		hand.texture = preload("res://paths/time/clock_hand.png")
 		hand.scale *= 1.2
@@ -10,11 +12,7 @@ func apply(ability_relay, applicant_data):
 		ability_relay.add_child(hand)
 		applicant_data["hand"] = hand
 		applicant_data["time"] = 0.0
-		applicant_data["minute_boost"] = 0.0
-		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
-	elif applicants.has(ability_relay.source) and applicants[ability_relay.source].has("minute_boost"):
-		applicant_data["minute_boost"] = applicants[ability_relay.source]["minute_boost"]
-		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
+	ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
@@ -31,8 +29,7 @@ func intermission(_day: int) -> void:
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("time"):
 			applicants[ability_relay]["time"] = 0.0
-		if applicants[ability_relay].has("minute_boost"):
-			applicants[ability_relay]["minute_boost"] = 0.0
+	minute_boost = 0.0
 
 func _physics_process(delta: float) -> void:
 	for applicant in applicants:
@@ -43,10 +40,9 @@ func _physics_process(delta: float) -> void:
 				speed_mult += 0.1 * clockwinding.level
 			applicants[applicant]["time"] += 0.5 * delta * applicant.speed_scale * speed_mult
 			if applicants[applicant]["time"] > 1:
-				applicants[applicant]["minute_boost"] += floor(applicants[applicant]["time"]) * level
+				minute_boost += floor(applicants[applicant]["time"]) * level
 				applicants[applicant]["time"] = fmod(applicants[applicant]["time"], 1)
 			applicants[applicant]["hand"].rotation = applicants[applicant]["time"] * TAU
 
-func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:
-	if applicants.has(ability_relay) and applicants[ability_relay].has("minute_boost"):
-		modifiers["base"] += applicants[ability_relay]["minute_boost"]
+func damage_dealt_modifiers(_entity, modifiers) -> void:
+	modifiers["base"] += minute_boost

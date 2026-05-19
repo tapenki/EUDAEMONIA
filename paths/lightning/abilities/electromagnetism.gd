@@ -1,7 +1,7 @@
 extends Ability
 
 func apply(ability_relay, applicant_data):
-	if not ability_relay.is_projectile:
+	if not ability_relay.is_projectile > 1:
 		return
 	applicant_data["velocity_decay"] = false
 	super(ability_relay, applicant_data)

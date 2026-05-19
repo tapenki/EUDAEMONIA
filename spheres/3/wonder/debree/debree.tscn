@@ -72,9 +72,7 @@ motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_88hjm")
 max_distance = 120.0
-distance_deviation = 0.5
 speed = 200.0
-speed_deviation = 0.5
 ability_relay = NodePath("AbilityRelay")
 death_sound = "HitLight"
 hurtbox = NodePath("Hurtbox")
@@ -86,7 +84,7 @@ untargetable = true
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=414548680]
 unique_name_in_owner = true
 script = ExtResource("2_jwabc")
-is_entity = true
+is_entity = 1
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2139798227]
 material = ExtResource("8_yuve4")

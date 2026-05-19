@@ -343,6 +343,14 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/clockwinding.gd"),
 		"type" : "upgrade"
 	},
+	"time_stop" : {
+		"script" : preload("res://paths/time/abilities/time_stop.gd"),
+		"type" : "upgrade"
+	},
+	"time_lock" : {
+		"script" : preload("res://paths/time/abilities/time_lock.gd"),
+		"type" : "mastery"
+	},
 	#endregion
 	#region misc
 	"health_boost" : {

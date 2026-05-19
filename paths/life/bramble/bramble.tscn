@@ -33,6 +33,7 @@ hit_walls = true
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=312084464]
 unique_name_in_owner = true
 script = ExtResource("2_oahip")
+is_projectile = 2
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=815032055 node_paths=PackedStringArray("ability_relay")]
 material = ExtResource("3_fqisw")

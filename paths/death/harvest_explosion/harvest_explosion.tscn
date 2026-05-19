@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bauj1wnsvphta" path="res://generic/projectiles/explosion.gd" id="1_rhm4h"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_8bs8h"]
+[ext_resource type="Script" uid="uid://clvpoysq1lemi" path="res://generic/projectiles/knockback.gd" id="3_ccjmv"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_dqch4"]
 [ext_resource type="Texture2D" uid="uid://cynbu06cbbvau" path="res://paths/death/harvest_explosion/harvest_explosion.png" id="4_e07et"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_b34si"]
@@ -22,6 +23,10 @@ hits_left = -1
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=695504123]
 unique_name_in_owner = true
 script = ExtResource("2_8bs8h")
+is_projectile = 1
+
+[node name="Knockback" type="Node2D" parent="." unique_id=461199149]
+script = ExtResource("3_ccjmv")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=895457277]
 material = ExtResource("3_dqch4")

@@ -1,7 +1,7 @@
 extends Ability
 
 var bomb = preload("res://paths/ice/cryobomb/cryobomb.tscn")
-var explosion_scene = preload("res://generic/projectiles/explosion.tscn")
+var explosion_scene = preload("res://paths/ice/cryoblast/cryoblast.tscn")
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("cryobombs"):
@@ -68,7 +68,7 @@ func death_effects(ability_relay):
 	{"subscription" = 2}, ## inheritance
 	Vector2()) ## velocity
 	explosion_instance.exclude[ability_relay.owner] = INF
-	explosion_instance.scale_multiplier = 8
+	explosion_instance.get_node("Sprite").emitting = true
 	get_node("/root/Main/Projectiles").add_child(explosion_instance)
 	get_node("/root/Main").play_sound("Explosion")
 

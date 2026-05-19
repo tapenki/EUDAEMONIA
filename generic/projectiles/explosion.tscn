@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qlfmnt1urinb"]
 
 [ext_resource type="Script" uid="uid://bauj1wnsvphta" path="res://generic/projectiles/explosion.gd" id="1_i6r65"]
+[ext_resource type="Script" uid="uid://clvpoysq1lemi" path="res://generic/projectiles/knockback.gd" id="2_sg4bm"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="3_p0y1b"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_vypyj"]
 [ext_resource type="Texture2D" uid="uid://covist8tci8hy" path="res://generic/projectiles/explosion.png" id="5_sg4bm"]
@@ -22,6 +23,10 @@ hits_left = -1
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1467920456]
 unique_name_in_owner = true
 script = ExtResource("3_p0y1b")
+is_projectile = 1
+
+[node name="Knockback" type="Node2D" parent="." unique_id=183769406]
+script = ExtResource("2_sg4bm")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=263788185]
 material = ExtResource("4_vypyj")

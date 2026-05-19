@@ -133,7 +133,7 @@ health = 160.0
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1027441392]
 unique_name_in_owner = true
 script = ExtResource("2_3ocmb")
-is_entity = true
+is_entity = 2
 
 [node name="StateHandler" type="Node" parent="." unique_id=43412057 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true

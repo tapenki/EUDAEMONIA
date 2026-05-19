@@ -36,7 +36,7 @@ func intermission(_day: int) -> void:
 
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
-		if applicants[ability_relay].has("charge") and ability_relay.is_entity:
+		if applicants[ability_relay].has("charge") and ability_relay.is_entity > 0:
 			if ability_relay.owner.velocity.length() < 25:
 				applicants[ability_relay]["charge"] += delta * ability_relay.speed_scale
 				if applicants[ability_relay]["charge"] >= 0.25:

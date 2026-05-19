@@ -16,14 +16,12 @@ collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_15nt0")
 ability_relay = NodePath("AbilityRelay")
-hit_particles = ""
-crit_particles = ""
 hit_delay = 1.0
 hits_left = 2
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=331850995]
 script = ExtResource("2_87p6x")
-is_projectile = true
+is_projectile = 2
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=704820196 node_paths=PackedStringArray("ability_relay")]
 material = ExtResource("3_ndxfh")

@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 		var intersections = space_state.intersect_shape(shape_query, 128)
 		for i in intersections:
 			var projectile = i.get("collider")
-			if not projectile.get("ability_relay") or not projectile.ability_relay.is_projectile:
+			if not projectile.get("ability_relay") or not projectile.ability_relay.is_projectile > 0:
 				continue
 			if applicants[ability_relay]["exclude"].has(projectile):
 				continue

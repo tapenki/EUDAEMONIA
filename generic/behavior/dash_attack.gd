@@ -15,6 +15,9 @@ var stick: bool
 
 func on_enter() -> void:
 	super()
+	if user.knockback_timer.running:
+		change_state(next)
+		return
 	user.velocity = Vector2()
 	if recalc_direction:
 		if not is_instance_valid(state_handler.target):
@@ -37,11 +40,16 @@ func on_enter() -> void:
 	else:
 		user.wall_min_slide_angle = 180
 		stick = false
+	#if user.knockback_timer.running:
+	#	user.knockback_timer.stop()
 	timer.start()
 	
 	state_handler.target = null
 
 func _physics_process(_delta):
+	if user.knockback_timer.running:
+		change_state(next)
+		return
 	var final_speed = user.ability_relay.get_move_speed(speed)
 	user.velocity = lerp(user.velocity, state_handler.data["direction"] * final_speed, 0.5)
 	user.still = false
@@ -59,9 +67,9 @@ func _physics_process(_delta):
 
 func _on_timer_timeout() -> void:
 	#user.ability_relay.attack.emit(direction)
+	user.velocity *= 0.25
 	change_state(next)
 
 func on_exit() -> void:
-	user.velocity *= 0.25
 	user.wall_min_slide_angle = 0
 	super()

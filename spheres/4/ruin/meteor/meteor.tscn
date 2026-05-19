@@ -120,7 +120,7 @@ max_health = 60
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=802578382]
 unique_name_in_owner = true
 script = ExtResource("2_tj0jb")
-is_entity = true
+is_entity = 2
 
 [node name="debree_shield" type="Node2D" parent="." unique_id=818849719 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("3_irfvx")

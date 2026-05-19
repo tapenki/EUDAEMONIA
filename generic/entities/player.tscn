@@ -87,7 +87,7 @@ inherited_crit_chance = {
 "base": 5.0,
 "multiplier": 1.0
 }
-is_entity = true
+is_entity = 2
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=161096714]
 position = Vector2(0, 20)

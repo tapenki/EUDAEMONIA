@@ -12,3 +12,11 @@ func movement(delta):
 	position -= offset
 	offset = Vector2.from_angle(rotation - PI * 0.5) * distance
 	position += offset
+
+func _ready() -> void:
+	super()
+	ability_relay.damage_dealt.connect(damage_dealt)
+
+func damage_dealt(entity, _damage) -> void:
+	var direction = Vector2.from_angle(rotation - PI * 0.5)
+	ability_relay.apply_knockback(entity, direction)

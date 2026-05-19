@@ -1,7 +1,7 @@
 extends Ability
 
 func apply(ability_relay, applicant_data):
-	if not ability_relay.is_projectile:
+	if not ability_relay.is_projectile > 0:
 		return
 	super(ability_relay, applicant_data)
 	ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)

@@ -23,13 +23,11 @@ visibility_layer = 129
 script = ExtResource("1_u546l")
 ability_relay = NodePath("AbilityRelay")
 hit_sound = ""
-hit_particles = ""
-crit_particles = ""
 hit_enabled = false
 
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=650856352]
 script = ExtResource("2_blg4x")
-is_projectile = true
+is_projectile = 2
 
 [node name="Sprite" type="CPUParticles2D" parent="." unique_id=1170847227 node_paths=PackedStringArray("ability_relay")]
 z_index = -1

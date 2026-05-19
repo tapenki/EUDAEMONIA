@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func entity_death(_dying_entity: Entity):
 	for ability_relay in applicants:
-		if ability_relay.is_entity and ability_relay.owner.summoned:
+		if ability_relay.is_entity > 0 and ability_relay.owner.summoned:
 			applicants[ability_relay]["damage_boost"] += 0.4 * get_hunger_level()
 
 func damage_dealt_modifiers(_entity, modifiers, ability_relay) -> void:

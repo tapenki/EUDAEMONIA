@@ -27,3 +27,7 @@ func start(time = wait_time):
 	wait_time = time
 	time_left = time
 	running = true
+
+func stop():
+	time_left = 0
+	running = false

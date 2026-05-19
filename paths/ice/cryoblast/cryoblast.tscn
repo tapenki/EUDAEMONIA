@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cmpjjsfxqtsjj"]
+
+[ext_resource type="Script" uid="uid://w6ad6q8ilnj6" path="res://generic/projectiles/particle_sprite_projectile.gd" id="1_xns54"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="3_fn7xk"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_ad2n0"]
+[ext_resource type="Texture2D" uid="uid://bnfh1uob3chyb" path="res://paths/ice/cryoblast/cryoblast.png" id="5_1wds2"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_lbejh"]
+
+[sub_resource type="Curve" id="Curve_t5laq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5017544, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 300.0
+
+[node name="Cryoblast" type="Area2D" unique_id=678856818 node_paths=PackedStringArray("ability_relay")]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_xns54")
+ability_relay = NodePath("AbilityRelay")
+hit_particle_preset = ""
+hit_delay = 1.0
+hits_left = -1
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=148590914]
+unique_name_in_owner = true
+script = ExtResource("3_fn7xk")
+is_projectile = 1
+
+[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876]
+show_behind_parent = true
+material = ExtResource("4_ad2n0")
+emitting = false
+amount = 24
+texture = ExtResource("5_1wds2")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+draw_order = 1
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 360.0
+initial_velocity_max = 720.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_t5laq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696487460]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." unique_id=1264386971 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("6_lbejh")
+wait_time = 0.5
+running = true
+ability_relay = NodePath("../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

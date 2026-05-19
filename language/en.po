@@ -380,7 +380,7 @@ msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
 
 msgid "frostbite_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply chill for [outline_size=10][LEVEL][/outline_size] seconds for every [outline_size=10][0.3xMAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply chill for [outline_size=10][LEVEL^0.7][/outline_size] seconds for every [outline_size=10][0.3xMAXHP][/outline_size] damage accumulated."
 
 msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ability: Shatter[/outline_color]"
@@ -410,7 +410,7 @@ msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][0.5xLEVEL][/outline_size] seconds for every [outline_size=10][0.6xMAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][LEVEL^0.5][/outline_size] seconds for every [outline_size=10][0.6xMAXHP][/outline_size] damage accumulated."
 
 msgid "brittle_cold_title"
 msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
@@ -508,7 +508,7 @@ msgid "enrage_title"
 msgstr "[outline_color=#0f9936]Ability: Enrage[/outline_color]"
 
 msgid "enrage_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]+[0.1xDMGTAKEN][/outline_size] damage until the end of encounter up to [outline_size=10]+[4xLEVEL][/outline_size]."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]+[4xLEVEL][/outline_size] damage for [outline_size=10][4][/outline_size] seconds."
 
 msgid "wrought_flesh_title"
 msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
@@ -593,13 +593,13 @@ msgid "bone_shield_title"
 msgstr "[outline_color=#cc00cc]Ability: Bone Shield[/outline_color]"
 
 msgid "bone_shield_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and applies chill for [outline_size=10][0.3][/outline_size] seconds upon dealing damage."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon a bone shield. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and applies knockback upon dealing damage."
 
 msgid "dark_harvest_title"
 msgstr "[outline_color=#cc00cc]Ability: Dark Harvest[/outline_color]"
 
 msgid "dark_harvest_description"
-msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]+[7xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] A summoned ally explodes. The explosion has [outline_size=10]+[7xLEVEL][/outline_size] damage and applies knockback upon dealing damage."
 
 msgid "soul_tether_title"
 msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"
@@ -692,6 +692,44 @@ msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
 
 msgid "sword_description"
 msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Perform a slash with [outline_size=10]+[10][/outline_size] damage and [outline_size=10]+[1][/outline_size] pierce."
+
+# time
+
+msgid "time_title"
+msgstr "[outline_color=#846742]Time[/outline_color]"
+
+msgid "time_description"
+msgstr "- Work like a clock.[br]- Buy yourself a time."
+
+msgid "minute_hand_title"
+msgstr "[outline_color=#846742]Ability: Minute Hand[/outline_color]"
+
+msgid "minute_hand_description"
+msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[LEVEL][/outline_size] damage until end of encounter."
+
+msgid "hour_hand_title"
+msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
+
+msgid "hour_hand_description"
+msgstr "[outline_size=10]Every [4] seconds:[/outline_size] Release a ring of [outline_size=10][12][/outline_size] bullets that have [outline_size=10]+[10xLEVEL][/outline_size] damage."
+
+msgid "time_stop_title"
+msgstr "[outline_color=#846742]Ability: Time Stop[/outline_color]"
+
+msgid "time_stop_description"
+msgstr "[outline_size=10]Once per encounter, upon pressing {keybind}:[/outline_size] Apply [outline_size=10][LEVEL^0.7][/outline_size] seconds of freeze to all enemies and enemy projectiles."
+
+msgid "clockwinding_title"
+msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
+
+msgid "clockwinding_description"
+msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate and clock hand rate."
+
+msgid "time_lock_title"
+msgstr "[outline_color=#846742]Mastery: Time Lock[/outline_color]"
+
+msgid "time_lock_description"
+msgstr "You and your summons can't be slowed or knocked back."
 
 # spheres
 msgid "day_counter"

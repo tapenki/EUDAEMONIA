@@ -7,7 +7,8 @@ class_name Ability extends Node
 var applicants: Dictionary
 
 func apply(ability_relay, applicant_data):
-	ability_relay.freed.connect(disapply.bind(ability_relay))
+	if not ability_relay.freed.is_connected(disapply):
+		ability_relay.freed.connect(disapply.bind(ability_relay))
 	ability_relay.applied_abilities[self] = true
 	applicants[ability_relay] = applicant_data
 

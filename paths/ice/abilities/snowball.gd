@@ -3,7 +3,7 @@ extends Ability
 var snowball_ii: bool
 
 func apply(ability_relay, applicant_data):
-	if not ability_relay.is_projectile:
+	if not ability_relay.is_projectile > 0:
 		return
 	if applicants.has(ability_relay.source):
 		applicant_data["damage_boost"] = applicants[ability_relay.source]["damage_boost"]

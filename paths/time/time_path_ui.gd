@@ -11,7 +11,7 @@ func unlearn():
 			ui.unlock_points += 1
 			ability_handler.unlearn(mastery.subject, mastery_node.level)
 	for ability in get_node("Abilities").get_children():
-		if ability.name == "Overtime": ## jank solution
+		if ability.name == "TimeLock": ## jank solution
 			var mastery_node = ability_handler.get_node_or_null(ability.subject)
 			if mastery_node:
 				ui.unlock_points += 1

@@ -1,7 +1,7 @@
 extends Ability
 
 func apply(ability_relay, applicant_data):
-	if ability_relay.is_entity and ability_relay.owner.summoned:
+	if ability_relay.is_entity > 0 and ability_relay.owner.summoned:
 		ability_relay.max_health_modifiers.connect(max_health_modifiers)
 	super(ability_relay, applicant_data)
 
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func entity_death(_dying_entity: Entity):
 	for ability_relay in applicants:
-		if ability_relay.is_entity and ability_relay.owner.summoned:
+		if ability_relay.is_entity > 0 and ability_relay.owner.summoned:
 			ability_relay.owner.heal(20*level)
 
 func max_health_modifiers(modifiers) -> void:

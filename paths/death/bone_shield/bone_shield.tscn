@@ -114,7 +114,7 @@ untargetable = true
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=395787743]
 unique_name_in_owner = true
 script = ExtResource("2_2bgfb")
-is_entity = true
+is_entity = 1
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1694553334]
 material = ExtResource("9_onlb1")

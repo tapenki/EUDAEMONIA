@@ -8,7 +8,7 @@ func apply(ability_relay, applicant_data):
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("hour_hand"):
 		applicant_data["hour_hand"] = applicants[ability_relay.source]["hour_hand"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-	if applicant_data.has("subscription") and applicant_data["subscription"] >= 4:
+	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
 		var hand = Sprite2D.new()
 		hand.texture = preload("res://paths/time/clock_hand.png")
 		hand.offset.y = -50
@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 					{"subscription" = 2, "hour_hand" = true},
 					Vector2.from_angle((TAU / 12 * i)) * 600)
 					get_node("/root/Main/Projectiles").add_child(bullet_instance)
+				get_node("/root/Main").play_sound("Explosion")
 				applicants[applicant]["time"] = fmod(applicants[applicant]["time"], 1)
 			applicants[applicant]["hand"].rotation = applicants[applicant]["time"] * TAU
 

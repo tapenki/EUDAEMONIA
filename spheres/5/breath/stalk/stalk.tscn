@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_cuxw7"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_vql3y"]
+[ext_resource type="Script" uid="uid://clvpoysq1lemi" path="res://generic/projectiles/knockback.gd" id="3_1rq10"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_bvwtb"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_fnypg"]
 [ext_resource type="Script" uid="uid://c0gxn2ptvo02n" path="res://spheres/5/breath/indicator_attack.gd" id="6_ht3rl"]
@@ -118,7 +119,10 @@ animation_player = NodePath("AnimationPlayer")
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=1289028484]
 unique_name_in_owner = true
 script = ExtResource("2_vql3y")
-is_entity = true
+is_entity = 2
+
+[node name="KnockbackResist" type="Node2D" parent="." unique_id=685833694]
+script = ExtResource("3_1rq10")
 
 [node name="StateHandler" type="Node" parent="." unique_id=1378934216 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true

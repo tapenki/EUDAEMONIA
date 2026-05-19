@@ -13,7 +13,6 @@ class_name Entity extends CharacterBody2D
 var immune_timer = ScaledTimer.new()
 @export var immune_duration: float = 0
 var knockback_timer = ScaledTimer.new()
-@export var knockback_affect: float = 1.0
 @export_category("Tags")
 @export var group: int
 @export var summoned: bool
@@ -38,6 +37,8 @@ func kill(modifiers = {}):
 			ability_relay.self_death.emit()
 			ability_relay.freed.emit()
 			alive = false
+			collision_layer = 0
+			collision_mask = 0
 			animation_player.speed_scale = 1 
 			animation_player.play("DEATH")
 			if hurtbox:
@@ -84,7 +85,7 @@ func movement(_delta):
 			knockback_timer.start(knockback_timer.time_left * 0.5)
 	else:
 		if still:
-			velocity = lerp(velocity, Vector2(), 0.2)
+			velocity = lerp(velocity, Vector2(), 0.5)
 		else:
 			still = true
 	var old_position = global_position

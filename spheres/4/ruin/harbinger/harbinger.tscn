@@ -140,7 +140,7 @@ health = 480.0
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=852153742]
 unique_name_in_owner = true
 script = ExtResource("2_sublx")
-is_entity = true
+is_entity = 2
 
 [node name="PersonalExplodifier" type="Node" parent="." unique_id=2101922898 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("3_ee4s7")

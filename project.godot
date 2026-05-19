@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="EUDAEMONIA"
-config/version="0.7.0"
+config/version="0.8.0"
 run/main_scene="uid://bj4okui2tg38g"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -90,6 +90,10 @@ bramble_shot={
 "events": []
 }
 soul_cleave={
+"deadzone": 0.2,
+"events": []
+}
+time_stop={
 "deadzone": 0.2,
 "events": []
 }

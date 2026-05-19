@@ -25,7 +25,7 @@ hit_walls = true
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=702888536]
 unique_name_in_owner = true
 script = ExtResource("2_hkirg")
-is_projectile = true
+is_projectile = 2
 
 [node name="Bulletsplosion" type="Node2D" parent="." unique_id=842544513 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("3_rcjvb")

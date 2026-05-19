@@ -21,7 +21,7 @@ ability_relay = NodePath("AbilityRelay")
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=370658401]
 unique_name_in_owner = true
 script = ExtResource("2_nwwbr")
-is_projectile = true
+is_projectile = 2
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1312563947]
 material = ExtResource("3_glax7")
