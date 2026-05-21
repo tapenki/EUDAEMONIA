@@ -331,31 +331,31 @@ msgid "pyre_title"
 msgstr "[outline_color=#ff0000]Mastery: Pyre[/outline_color]"
 
 msgid "pyre_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color][br]Burn can deal damage [outline_size=10]+[4][/outline_size] times."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color].[br]Burn can deal damage [outline_size=10]+[4][/outline_size] times."
 
 msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
 
 msgid "undying_flames_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color][br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][0.05xMAXHP][/outline_size] pure damage and reconstitute it."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color].[br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][0.05xMAXHP][/outline_size] pure damage and reconstitute it."
 
 msgid "inferno_title"
 msgstr "[outline_color=#ff0000]Mastery: Inferno[/outline_color]"
 
 msgid "inferno_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Conflagration[/outline_color][br][outline_color=#ff0000]Conflagration[/outline_color] spreads burn to [outline_size=10]+[1][/outline_size] enemy."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Conflagration[/outline_color].[br][outline_color=#ff0000]Conflagration[/outline_color] spreads burn to [outline_size=10]+[1][/outline_size] enemy."
 
 msgid "ring_of_fire_title"
 msgstr "[outline_color=#ff0000]Ability: Ring of Fire[/outline_color]"
 
 msgid "ring_of_fire_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color][br]Manifest a ring of fire around you. It has [outline_size=10]+[3xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Scorched Earth[/outline_color].[br]Manifest a ring of fire around you. It has [outline_size=10]+[3xLEVEL][/outline_size] damage."
 
 msgid "fiery_rebirth_title"
 msgstr "[outline_color=#ff0000]Mastery: Fiery Rebirth[/outline_color]"
 
 msgid "fiery_rebirth_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color][br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[LEVEL][/outline_size] burn to all enemies then double their burn."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]From Ashes[/outline_color].[br][outline_size=10]Upon [/outline_size][outline_color=#ff0000]From Ashes[/outline_color][outline_size=10] activation:[/outline_size] Apply [outline_size=10]+[LEVEL][/outline_size] burn to all enemies then double their burn."
 
 # ice
 msgid "ice_title"
@@ -398,31 +398,31 @@ msgid "glacial_rail_title"
 msgstr "[outline_color=#0000ff]Mastery: Glacial Rail[/outline_color]"
 
 msgid "glacial_rail_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color][br]Projectiles have [outline_size=10]x[1.5][/outline_size] speed."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color].[br]Projectiles have [outline_size=10]x[1.5][/outline_size] speed."
 
 msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color][br]Projectiles gain [outline_size=10]+[3xLEVEL]%[/outline_size] crit chance per second."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color].[br]Attack projectiles have [outline_size=10]x[3][/outline_size] [outline_color=#0000ff]Snowball[/outline_color] effect.[br][outline_size=10]Upon attacking:[/outline_size] Apply [outline_size=10][0.2][/outline_size] seconds of freeze to yourself."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color][br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][LEVEL^0.5][/outline_size] seconds for every [outline_size=10][0.6xMAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color].[br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][LEVEL^0.5][/outline_size] seconds for every [outline_size=10][0.6xMAXHP][/outline_size] damage accumulated."
 
 msgid "brittle_cold_title"
 msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
 
 msgid "brittle_cold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color][br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]<=[33%MAXHP][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Shatter[/outline_color].[br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities with [outline_size=10]<=[33%MAXHP][/outline_size] health."
 
 msgid "freeze_blast_title"
 msgstr "[outline_color=#0000ff]Mastery: Freeze Blast[/outline_color]"
 
 msgid "freeze_blast_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color][br]Cryobombs apply freeze for [outline_size=10][1.5][/outline_size] seconds upon dealing damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Cryobombs[/outline_color].[br]Cryobombs apply freeze for [outline_size=10][1.5][/outline_size] seconds upon dealing damage."
 
 # lightning
 msgid "lightning_title"
@@ -465,31 +465,31 @@ msgid "storm_weave_title"
 msgstr "[outline_color=#a87e00]Mastery: Storm Weave[/outline_color]"
 
 msgid "storm_weave_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Chain Bolt[/outline_color][br][outline_size=10]When dealing damage:[/outline_size] roll for crits an additional time with [outline_size=10]x[0.1][/outline_size] crit chance."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Chain Bolt[/outline_color].[br][outline_size=10]When dealing damage:[/outline_size] roll for crits an additional time with [outline_size=10]x[0.1][/outline_size] crit chance."
 
 msgid "shocking_grasp_title"
 msgstr "[outline_color=#a87e00]Mastery: Shocking Grasp[/outline_color]"
 
 msgid "shocking_grasp_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color][br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Mortal Shock[/outline_color].[br][outline_size=10]Upon dealing damage to an undamaged entity:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock."
 
 msgid "covalence_title"
 msgstr "[outline_color=#a87e00]Mastery: Covalence[/outline_color]"
 
 msgid "covalence_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color][br]Manifest [outline_size=10]+[1][/outline_size]Ball lightning.[br]Ball lightnings have [outline_size=10]x[0.6][/outline_size] orbit distance."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Ball Lightning[/outline_color].[br]Manifest [outline_size=10]+[1][/outline_size]Ball lightning.[br]Ball lightnings have [outline_size=10]x[0.6][/outline_size] orbit distance."
 
 msgid "repulsar_title"
 msgstr "[outline_color=#a87e00]Mastery: Repulsar[/outline_color]"
 
 msgid "repulsar_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Electromagnetism[/outline_color][br]You divert nearby enemy projectiles."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Electromagnetism[/outline_color].[br]You divert nearby enemy projectiles."
 
 msgid "arc_shield_title"
 msgstr "[outline_color=#a87e00]Mastery: Arc Shield[/outline_color]"
 
 msgid "arc_shield_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Thunderstep[/outline_color][br]You have [outline_size=10][20]%[/outline_size] chance to take [outline_size=10]x[0][/outline_size]."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#a87e00]Thunderstep[/outline_color].[br]You have [outline_size=10][20]%[/outline_size] chance to take [outline_size=10]x[0][/outline_size]."
 
 msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
@@ -538,31 +538,31 @@ msgid "bramble_shot_title"
 msgstr "[outline_color=#0f9936]Ability: Bramble Shot[/outline_color]"
 
 msgid "bramble_shot_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][0.12xMAXHP][/outline_size] pure damage and shoot [outline_size=10][3][/outline_size] brambles with [outline_size=10]x[3][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Enrage[/outline_color].[br][outline_size=10]Upon pressing {keybind}:[/outline_size] You take [outline_size=10][0.12xMAXHP][/outline_size] pure damage and shoot [outline_size=10][3][/outline_size] brambles with [outline_size=10]x[3][/outline_size] damage."
 
 msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color][br][outline_size=10]Every [100]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][0.02xMAXHP][/outline_size] pure damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color].[br][outline_size=10]Every [100]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][0.02xMAXHP][/outline_size] pure damage."
 
 msgid "vitalism_title"
 msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
 
 msgid "vitalism_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color][br]You have [outline_size=10]x[2][/outline_size] health recovery."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color].[br]You have [outline_size=10]x[2][/outline_size] health recovery."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
 
 msgid "pressurized_quills_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color][br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Quill Spray[/outline_color].[br][outline_color=#0f9936]Quill Spray[/outline_color] gains [outline_size=10]x[0.2][/outline_size] bonus damage and size per second for up to [outline_size=10][5][/outline_size] seconds resetting upon activation."
 
 msgid "multimold_title"
 msgstr "[outline_color=#0f9936]Mastery: Multimold[/outline_color]"
 
 msgid "multimold_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Animated Clay[/outline_color].[br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[1][/outline_size] clay effigy. Clay effigies have [outline_size=10]x[0.5][/outline_size] health."
 
 # death
 msgid "death_title"
@@ -605,31 +605,31 @@ msgid "soul_tether_title"
 msgstr "[outline_color=#cc00cc]Mastery: Soul Tether[/outline_color]"
 
 msgid "soul_tether_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Army of the Dead[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Last elite entity reconstituted by [outline_color=#cc00cc]Army of the Dead[/outline_color] is reconstituted once more."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Army of the Dead[/outline_color].[br][outline_size=10]Upon encounter:[/outline_size] Last elite entity reconstituted by [outline_color=#cc00cc]Army of the Dead[/outline_color] is reconstituted once more."
 
 msgid "swift_fate_title"
 msgstr "[outline_color=#cc00cc]Mastery: Swift Fate[/outline_color]"
 
 msgid "swift_fate_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Fated End[/outline_color][br]Doom you apply has [outline_size=10]x[0.5][/outline_size] duration and [outline_size=10]x[1.5][/outline_size] damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Fated End[/outline_color].[br]Doom you apply has [outline_size=10]x[0.5][/outline_size] duration and [outline_size=10]x[1.5][/outline_size] damage."
 
 msgid "starvation_title"
 msgstr "[outline_color=#cc00cc]Mastery: Starvation[/outline_color]"
 
 msgid "starvation_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color][br][outline_size=10]Upon an entity dying:[/outline_size] Summoned allies gain [outline_size=10]+[0.4xLEVEL][/outline_size] bonus damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Hunger[/outline_color].[br][outline_size=10]Upon an entity dying:[/outline_size] Summoned allies gain [outline_size=10]+[0.4xLEVEL][/outline_size] bonus damage."
 
 msgid "osteophalanx_title"
 msgstr "[outline_color=#cc00cc]Mastery: Osteophalanx[/outline_color]"
 
 msgid "osteophalanx_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color][br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Bone Shield[/outline_color].[br][outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10]+[3][/outline_size] bone shields."
 
 msgid "bad_crop_title"
 msgstr "[outline_color=#cc00cc]Mastery: Bad Crop[/outline_color]"
 
 msgid "bad_crop_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Dark Harvest[/outline_color][br][outline_color=#cc00cc]Dark Harvest[/outline_color] explosion applies [outline_size=10][0.05xALLYMAXHP][/outline_size] doom."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#cc00cc]Dark Harvest[/outline_color].[br][outline_color=#cc00cc]Dark Harvest[/outline_color] explosion applies [outline_size=10][0.05xALLYMAXHP][/outline_size] doom."
 
 # blade
 
@@ -667,25 +667,25 @@ msgid "deflect_title"
 msgstr "[outline_color=#5B6487]Mastery: Deflect[/outline_color]"
 
 msgid "deflect_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Unsheathe[/outline_color][br][outline_color=#5B6487]Sword[/outline_color] slashes deflect enemy projectiles to nearest enemy if [outline_color=#5B6487]Unsheathe[/outline_color] is fully charged."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Unsheathe[/outline_color].[br][outline_color=#5B6487]Sword[/outline_color] slashes deflect enemy projectiles to nearest enemy if [outline_color=#5B6487]Unsheathe[/outline_color] is fully charged."
 
 msgid "unflinching_title"
 msgstr "[outline_color=#5B6487]Mastery: Unflinching[/outline_color]"
 
 msgid "unflinching_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color][br]Each subsequent [outline_color=#5B6487]Hold Ground[/outline_color] shockwave gains [outline_size=10]x[0.25][/outline_size] bonus damage and size up to [outline_size=10][4][/outline_size] times resetting upon moving."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color].[br]Each subsequent [outline_color=#5B6487]Hold Ground[/outline_color] shockwave gains [outline_size=10]x[0.25][/outline_size] bonus damage and size up to [outline_size=10][4][/outline_size] times resetting upon moving."
 
 msgid "soul_cleave_title"
 msgstr "[outline_color=#5B6487]Mastery: Soul Cleave[/outline_color]"
 
 msgid "soul_cleave_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Broad Swings[/outline_color][br][outline_size=10]Upon pressing {keybind}:[/outline_size] Cleave a non summoned enemy into [outline_size=10][2][/outline_size] copies with [outline_size=10][x0.75][/outline_size] health."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Broad Swings[/outline_color].[br][outline_size=10]Upon pressing {keybind}:[/outline_size] Cleave a non summoned enemy into [outline_size=10][2][/outline_size] copies with [outline_size=10][x0.75][/outline_size] health."
 
 msgid "percussion_title"
 msgstr "[outline_color=#5B6487]Mastery: Percussion[/outline_color]"
 
 msgid "percussion_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color][br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock to nearby enemies."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color].[br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock to nearby enemies."
 
 msgid "sword_title"
 msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
@@ -729,7 +729,13 @@ msgid "time_lock_title"
 msgstr "[outline_color=#846742]Mastery: Time Lock[/outline_color]"
 
 msgid "time_lock_description"
-msgstr "You and your summons can't be slowed or knocked back."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You and your summons can't be slowed or knocked back."
+
+msgid "no_future_title"
+msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"
+
+msgid "no_future_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Time Stop[/outline_color].[br][outline_color=#846742]Time Stop[/outline_color] applies [outline_size=10]+[6xLEVEL][/outline_size] doom."
 
 # spheres
 msgid "day_counter"

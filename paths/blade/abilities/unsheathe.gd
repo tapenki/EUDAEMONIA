@@ -17,6 +17,8 @@ func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
+	if ability_relay.attack_success.is_connected(attack_success):
+		ability_relay.attack_success.disconnect(attack_success)
 
 func _ready() -> void:
 	get_node("/root/Main").intermission.connect(intermission)

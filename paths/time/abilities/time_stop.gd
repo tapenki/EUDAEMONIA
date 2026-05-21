@@ -3,7 +3,10 @@ extends Ability
 var reminder_scene = preload("res://paths/time/time_stop_reminder.tscn")
 var reminder_node: Node
 
-var status: Node
+var freeze: Node
+var doom: Node
+
+var no_future: bool
 
 var active = true
 
@@ -13,7 +16,8 @@ func apply(ability_relay, applicant_data):
 	super(ability_relay, applicant_data)
 
 func _ready() -> void:
-	status = ability_handler.learn("freeze", 0)
+	freeze = ability_handler.learn("freeze", 0)
+	doom = ability_handler.learn("doom", 0)
 	reminder_node = reminder_scene.instantiate()
 	get_node("/root/Main/UI/HUD/Tricks").add_child(reminder_node)
 	get_node("/root/Main/UI/HUD/Tricks").move_child(reminder_node, 0)
@@ -48,7 +52,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				for i in intersections:
 					var collider = i.get("collider")
 					if collider.get("ability_relay") and (collider.ability_relay.is_entity > 0 or collider.ability_relay.is_projectile > 0):
-						status.apply(collider.ability_relay, {"duration" = pow(level, 0.7)})
+						freeze.apply(collider.ability_relay, {"duration" = pow(level, 0.7)})
+						if no_future:
+							doom.apply(collider.ability_relay, {"stacks" = 6 * level})
 			get_node("/root/Main").play_sound("Explosion")
 		else:
 			get_node("/root/Main").play_sound("Error")

@@ -27,7 +27,7 @@ signal speed_scale_modifiers(modifiers: Dictionary)
 signal move_speed_modifiers(modifiers: Dictionary)
 signal movement(distance: float)
 signal knockback_taken_modifiers(modifiers: Dictionary)
-signal slow_taken_modifiers(modifiers: Dictionary)
+signal incoming_slow_modifiers(modifiers: Dictionary)
 
 ## attack signals
 signal attack_rate_modifiers(modifiers: Dictionary)
@@ -92,6 +92,10 @@ func get_knockback(entity: Entity = null, knockback: Dictionary = {"base" : 1, "
 		entity.ability_relay.knockback_taken_modifiers.emit(knockback)
 	#attack_rate_modifiers.emit(modifiers)
 	return knockback["base"] * knockback["multiplier"]
+
+func get_incoming_slow(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
+	incoming_slow_modifiers.emit(modifiers)
+	return modifiers["base"] * modifiers["multiplier"]
 
 func get_attack_rate(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
 	attack_rate_modifiers.emit(modifiers)

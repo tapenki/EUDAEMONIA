@@ -20,7 +20,7 @@ func apply(ability_relay, applicant_data):
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances
 		super(ability_relay, applicant_data)
-		ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
+		ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers.bind(ability_relay))
 
 func disapply(ability_relay):
 	if applicants.has(ability_relay):
@@ -36,5 +36,6 @@ func _physics_process(delta: float) -> void:
 		if applicants[ability_relay]["duration"] <= 0:
 			disapply(ability_relay)
 
-func speed_scale_modifiers(modifiers) -> void:
-	modifiers["multiplier"] *= 0
+func speed_scale_modifiers(modifiers, ability_relay) -> void:
+	var slow = ability_relay.get_incoming_slow()
+	modifiers["multiplier"] *= 1 - slow

@@ -138,10 +138,10 @@ subject = "unflinching"
 layout_mode = 2
 accessible_texture = ExtResource("2_hlo4x")
 requires = {
-"block": 5
+"time_stop": 5
 }
-subject = "percussion"
-extras = ["shock"]
+subject = "no_future"
+extras = ["doom"]
 
 [node name="Sword" parent="." unique_id=786159629 instance=ExtResource("8_6ht33")]
 layout_mode = 0

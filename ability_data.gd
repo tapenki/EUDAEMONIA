@@ -351,6 +351,10 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/time_lock.gd"),
 		"type" : "mastery"
 	},
+	"no_future" : {
+		"script" : preload("res://paths/time/abilities/no_future.gd"),
+		"type" : "mastery"
+	},
 	#endregion
 	#region misc
 	"health_boost" : {
