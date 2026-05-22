@@ -89,7 +89,6 @@ subject = "hunger"
 layout_mode = 2
 texture_normal = ExtResource("4_xpvhb")
 subject = "bone_shield"
-extras = ["chill"]
 
 [node name="DarkHarvest" parent="Abilities" unique_id=1890856360 instance=ExtResource("5_4llcc")]
 layout_mode = 2

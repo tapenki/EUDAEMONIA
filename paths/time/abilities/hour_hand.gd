@@ -1,6 +1,9 @@
 extends Ability
 
 var bullet = preload("res://paths/time/shard.tscn")
+var explosion = preload("res://generic/projectiles/explosion.tscn")
+
+var daybreak: bool
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("hour_hand"):
@@ -46,8 +49,14 @@ func _physics_process(delta: float) -> void:
 					var bullet_instance = applicant.make_projectile(bullet, 
 					applicant.global_position, 
 					{"subscription" = 2, "hour_hand" = true},
-					Vector2.from_angle((TAU / 12 * i)) * 600)
+					Vector2.from_angle(TAU / 12 * i) * 600)
 					get_node("/root/Main/Projectiles").add_child(bullet_instance)
+				if daybreak:
+					var explosion_instance = applicant.make_projectile(explosion, 
+					applicant.global_position, 
+					{"subscription" = 2, "hour_hand" = true})
+					explosion_instance.scale_multiplier = 4
+					get_node("/root/Main/Projectiles").add_child(explosion_instance)
 				get_node("/root/Main").play_sound("Explosion")
 				applicants[applicant]["time"] = fmod(applicants[applicant]["time"], 1)
 			applicants[applicant]["hand"].rotation = applicants[applicant]["time"] * TAU

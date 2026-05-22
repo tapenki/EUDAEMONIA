@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_ujmv5"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_jj43x"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_elrpo"]
-[ext_resource type="Script" uid="uid://clvpoysq1lemi" path="res://generic/projectiles/knockback.gd" id="3_jj43x"]
+[ext_resource type="Script" uid="uid://clvpoysq1lemi" path="res://generic/entities/knockback_resist.gd" id="3_jj43x"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="4_2bj4a"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="5_l5aq3"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="6_2i7q3"]

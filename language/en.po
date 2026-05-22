@@ -725,6 +725,18 @@ msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
 msgid "clockwinding_description"
 msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate and clock hand rate."
 
+msgid "killer_minute_title"
+msgstr "[outline_color=#846742]Mastery: Killer Minute[/outline_color]"
+
+msgid "killer_minute_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities that are slowed or doomed."
+
+msgid "daybreak_title"
+msgstr "[outline_color=#846742]Mastery: Daybreak[/outline_color]"
+
+msgid "daybreak_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Hour Hand[/outline_color].[br][outline_color=#846742]Hour Hand[/outline_color] creates an exlposion that has [outline_size=10]+[10xLEVEL][/outline_size] damage and knocks back enemies upon dealing damage."
+
 msgid "time_lock_title"
 msgstr "[outline_color=#846742]Mastery: Time Lock[/outline_color]"
 

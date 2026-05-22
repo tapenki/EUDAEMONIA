@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_ypv5m"]
 [ext_resource type="PackedScene" uid="uid://b84j2ldvpmk6t" path="res://paths/ui/trick_mastery_button.tscn" id="7_n3oyw"]
 [ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="8_6ht33"]
+[ext_resource type="Script" uid="uid://cj2612bumlodp" path="res://paths/ui/mastery_button.gd" id="9_s1m52"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_1a0dx"]
+[sub_resource type="LabelSettings" id="LabelSettings_s1m52"]
 resource_local_to_scene = true
 font_size = 40
 outline_size = 8
@@ -118,21 +119,22 @@ offset_bottom = 218.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="MomentOfTruth" parent="Masteries" unique_id=1701464479 instance=ExtResource("7_n3oyw")]
+[node name="MinuteKiller" parent="Masteries" unique_id=1701464479 instance=ExtResource("7_n3oyw")]
 layout_mode = 2
+script = ExtResource("9_s1m52")
 accessible_texture = ExtResource("2_hlo4x")
 requires = {
-"broad_swings": 5
+"minute_hand": 5
 }
-subject = "soul_cleave"
+subject = "minute_killer"
 
 [node name="Daybreak" parent="Masteries" unique_id=664334916 instance=ExtResource("6_ypv5m")]
 layout_mode = 2
 accessible_texture = ExtResource("2_hlo4x")
 requires = {
-"hold_ground": 5
+"hour_hand": 5
 }
-subject = "unflinching"
+subject = "daybreak"
 
 [node name="NoFuture" parent="Masteries" unique_id=2138347233 instance=ExtResource("6_ypv5m")]
 layout_mode = 2
@@ -158,7 +160,7 @@ texture = ExtResource("2_hlo4x")
 texture = ExtResource("2_hlo4x")
 
 [node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
-label_settings = SubResource("LabelSettings_1a0dx")
+label_settings = SubResource("LabelSettings_s1m52")
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
