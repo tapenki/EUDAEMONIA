@@ -6,12 +6,11 @@
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="4_o5nxg"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="5_w0qkf"]
 [ext_resource type="PackedScene" uid="uid://bmsbb262j11w7" path="res://paths/ui/trick_upgrade_button.tscn" id="6_1a0dx"]
-[ext_resource type="PackedScene" uid="uid://1ylajdgg6vyo" path="res://paths/ui/mastery_button.tscn" id="6_ypv5m"]
-[ext_resource type="PackedScene" uid="uid://b84j2ldvpmk6t" path="res://paths/ui/trick_mastery_button.tscn" id="7_n3oyw"]
-[ext_resource type="PackedScene" uid="uid://d1ofhuxn7u6qw" path="res://affects/ui/weapon_button.tscn" id="8_6ht33"]
-[ext_resource type="Script" uid="uid://cj2612bumlodp" path="res://paths/ui/mastery_button.gd" id="9_s1m52"]
+[ext_resource type="PackedScene" uid="uid://cdfm1xvd65cu1" path="res://paths/ui/time_mastery_button.tscn" id="7_1a0dx"]
+[ext_resource type="Texture2D" uid="uid://bj6lwhadlclfi" path="res://paths/time/time_time.png" id="8_s1m52"]
+[ext_resource type="Script" uid="uid://cnko556ohhfl7" path="res://paths/time/rewind.gd" id="10_s1m52"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_s1m52"]
+[sub_resource type="LabelSettings" id="LabelSettings_66rea"]
 resource_local_to_scene = true
 font_size = 40
 outline_size = 8
@@ -98,14 +97,6 @@ layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "clockwinding"
 
-[node name="TimeLock" parent="Abilities" unique_id=1915207044 instance=ExtResource("6_ypv5m")]
-layout_mode = 2
-accessible_texture = ExtResource("2_hlo4x")
-requires = {
-"clockwinding": 5
-}
-subject = "time_lock"
-
 [node name="Masteries" type="HFlowContainer" parent="." unique_id=1227866759]
 layout_direction = 2
 layout_mode = 1
@@ -119,50 +110,84 @@ offset_bottom = 218.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="MinuteKiller" parent="Masteries" unique_id=1701464479 instance=ExtResource("7_n3oyw")]
+[node name="KillerMinute" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
-script = ExtResource("9_s1m52")
-accessible_texture = ExtResource("2_hlo4x")
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "minute_hand": 5
 }
-subject = "minute_killer"
+subject = "killer_minute"
 
-[node name="Daybreak" parent="Masteries" unique_id=664334916 instance=ExtResource("6_ypv5m")]
+[node name="Daybreak" parent="Masteries" unique_id=502092284 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
-accessible_texture = ExtResource("2_hlo4x")
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "hour_hand": 5
 }
 subject = "daybreak"
 
-[node name="NoFuture" parent="Masteries" unique_id=2138347233 instance=ExtResource("6_ypv5m")]
+[node name="NoFuture" parent="Masteries" unique_id=1735317579 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
-accessible_texture = ExtResource("2_hlo4x")
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "time_stop": 5
 }
 subject = "no_future"
-extras = ["doom"]
 
-[node name="Sword" parent="." unique_id=786159629 instance=ExtResource("8_6ht33")]
+[node name="TimeLock" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
+layout_mode = 2
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
+requires = {
+"clockwinding": 5
+}
+subject = "time_lock"
+
+[node name="Rewind" type="TextureButton" parent="." unique_id=786159629]
+visible = false
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+custom_minimum_size = Vector2(124, 60)
 layout_mode = 0
 offset_left = 50.0
 offset_top = 226.0
 offset_right = 174.0
 offset_bottom = 286.0
-subject = "sword"
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+script = ExtResource("10_s1m52")
+subject = "rewind"
 
-[node name="TextureRect1" parent="Sword" index="0" unique_id=1837236885]
+[node name="TextureRect1" type="NinePatchRect" parent="Rewind" unique_id=1837236885]
+self_modulate = Color(0.49803922, 0.49803922, 0.49803922, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_hlo4x")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
 
-[node name="TextureRect2" parent="Sword" index="1" unique_id=519565613]
-texture = ExtResource("2_hlo4x")
-
-[node name="Symbol" parent="Sword" index="2" unique_id=1769525656]
-label_settings = SubResource("LabelSettings_s1m52")
+[node name="Symbol" type="Label" parent="Rewind" unique_id=1769525656]
+self_modulate = Color(0.498039, 0.498039, 0.498039, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+text = "Re"
+label_settings = SubResource("LabelSettings_66rea")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]
-
-[editable path="Sword"]
+[connection signal="mouse_entered" from="Rewind" to="Rewind" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Rewind" to="Rewind" method="_on_mouse_exited"]
+[connection signal="pressed" from="Rewind" to="Rewind" method="_on_pressed"]

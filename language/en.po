@@ -255,6 +255,9 @@ msgstr "Price: [1] Nous"
 msgid "dark_unlock_cost"
 msgstr "Dark Price: [40] Max Health"
 
+msgid "time_unlock_cost"
+msgstr "Price: [3] Days"
+
 msgid "learned"
 msgstr "Learned"
 
@@ -447,7 +450,7 @@ msgid "ball_lightning_title"
 msgstr "[outline_color=#a87e00]Ability: Ball Lightning[/outline_color]"
 
 msgid "ball_lightning_description"
-msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]x[1+LEVELx0.2][/outline_size] crit chance."
+msgstr "Manifest [outline_size=10][2][/outline_size] ball lightnings orbiting around you. They have [outline_size=10]+[5xLEVEL][/outline_size] damage and [outline_size=10]x[2][/outline_size] crit chance."
 
 msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"

@@ -347,8 +347,8 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/time_stop.gd"),
 		"type" : "upgrade"
 	},
-	"minute_killer" : {
-		"script" : preload("res://paths/time/abilities/minute_killer.gd"),
+	"killer_minute" : {
+		"script" : preload("res://paths/time/abilities/killer_minute.gd"),
 		"type" : "mastery"
 	},
 	"daybreak" : {

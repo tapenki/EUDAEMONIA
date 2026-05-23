@@ -53,7 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					var collider = i.get("collider")
 					if collider.get("ability_relay") and (collider.ability_relay.is_entity > 0 or collider.ability_relay.is_projectile > 0):
 						freeze.apply(collider.ability_relay, {"duration" = pow(level, 0.7)})
-						if no_future:
+						if no_future and collider.ability_relay.is_entity > 0:
 							doom.apply(collider.ability_relay, {"stacks" = 6 * level})
 			get_node("/root/Main").play_sound("Explosion")
 		else:
