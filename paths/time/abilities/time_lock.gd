@@ -1,8 +1,9 @@
 extends Ability
 
 func apply(ability_relay, applicant_data):
-	ability_relay.knockback_taken_modifiers.connect(knockback_taken_modifiers)
-	ability_relay.incoming_slow_modifiers.connect(incoming_slow_modifiers)
+	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
+		ability_relay.knockback_taken_modifiers.connect(knockback_taken_modifiers)
+		ability_relay.incoming_slow_modifiers.connect(incoming_slow_modifiers)
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):

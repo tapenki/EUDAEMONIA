@@ -2,4 +2,4 @@ extends Projectile
 
 func _physics_process(delta):
 	super(delta)
-	velocity *= 0.99
+	velocity *= pow(0.3, delta * ability_relay.speed_scale)

@@ -4,9 +4,9 @@ extends Projectile
 
 func _physics_process(delta):
 	super(delta)
-	velocity *= 0.9
+	velocity *= pow(0.002, delta * ability_relay.speed_scale)
 	if ability_relay.get_hits_left() <= 0:
-		velocity *= 0.5
+		velocity *= pow(0.001, delta * ability_relay.speed_scale)
 
 func wall_collision():
 	if hit_walls:
@@ -28,6 +28,6 @@ func on_hit(crits):
 
 func adjust_scale():
 	var scale_progress = Tween.interpolate_value(0.5, 0.5, lifetime.wait_time-lifetime.time_left, lifetime.wait_time, Tween.TRANS_QUAD, Tween.EASE_OUT)
-	scale = Vector2(1, 1) * ability_relay.get_attack_scale() * scale_progress
+	scale = Vector2(1, 1) * ability_relay.get_effect_scale() * scale_progress
 	var alpha_progress = Tween.interpolate_value(0.0, 1.0, lifetime.wait_time-lifetime.time_left, lifetime.wait_time, Tween.TRANS_QUART, Tween.EASE_IN)
 	modulate.a = 1-alpha_progress

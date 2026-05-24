@@ -52,7 +52,7 @@ func day_start(_day: int) -> void:
 			spawn(spawn_position, ability_relay)
 
 func death_effects(ability_relay):
-	var attack_scale = ability_relay.get_attack_scale({"base" : 0, "multiplier" : 1})
+	var attack_scale = ability_relay.get_effect_scale()
 	var reach = 150 * attack_scale
 	for entity in ability_relay.area_targets(ability_relay.global_position, reach):
 		status.apply(entity.ability_relay, {"stacks" = 4 * level})

@@ -13,15 +13,15 @@ func apply(ability_relay, applicant_data):
 		else:
 			applicant_data["damage_boost"] = 0.0
 			applicant_data["scale_boost"] = 0.0
-		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers.bind(ability_relay))
+		ability_relay.effect_scale_modifiers.connect(effect_scale_modifiers.bind(ability_relay))
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers.bind(ability_relay))
 	ability_relay.attack_success.connect(attack_success.bind(ability_relay))
 	#ability_relay.crit_chance_modifiers.connect(crit_chance_modifiers.bind(ability_relay))
 
 func disapply(ability_relay):
 	super(ability_relay)
-	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
-		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
+	if ability_relay.effect_scale_modifiers.is_connected(effect_scale_modifiers):
+		ability_relay.effect_scale_modifiers.disconnect(effect_scale_modifiers)
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
 	if ability_relay.attack_success.is_connected(attack_success):
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 			applicants[ability_relay]["damage_boost"] += 3 * delta * level * ability_relay.speed_scale
 			applicants[ability_relay]["scale_boost"] += 0.5 * delta * ability_relay.speed_scale
 
-func attack_scale_modifiers(modifiers, ability_relay) -> void:
+func effect_scale_modifiers(modifiers, ability_relay) -> void:
 	if applicants.has(ability_relay):
 		var mult = 1
 		if snowball_ii and applicants[ability_relay].has("weapon"):

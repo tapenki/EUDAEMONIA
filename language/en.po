@@ -652,7 +652,7 @@ msgid "broad_swings_title"
 msgstr "[outline_color=#5B6487]Ability: Broad Swings[/outline_color]"
 
 msgid "broad_swings_description"
-msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] attack size."
+msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] effect size."
 
 msgid "block_title"
 msgstr "[outline_color=#5B6487]Ability: Block[/outline_color]"
@@ -708,7 +708,7 @@ msgid "minute_hand_title"
 msgstr "[outline_color=#846742]Ability: Minute Hand[/outline_color]"
 
 msgid "minute_hand_description"
-msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[LEVEL][/outline_size] damage until end of encounter."
+msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
 
 msgid "hour_hand_title"
 msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
@@ -728,6 +728,12 @@ msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
 msgid "clockwinding_description"
 msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate and clock hand rate."
 
+msgid "tomorrow_bullets_title"
+msgstr "[outline_color=#846742]Ability: Tomorrow Bullets[/outline_color]"
+
+msgid "tomorrow_bullets_description"
+msgstr "Apply [outline_size=10][0.2xLEVEL][/outline_size] seconds of freeze to projectiles.[br]Slowed projectiles have [outline_size=10]+[4xLEVEL][/outline_size] damage."
+
 msgid "killer_minute_title"
 msgstr "[outline_color=#846742]Mastery: Killer Minute[/outline_color]"
 
@@ -744,7 +750,7 @@ msgid "time_lock_title"
 msgstr "[outline_color=#846742]Mastery: Time Lock[/outline_color]"
 
 msgid "time_lock_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You and your summons can't be slowed or knocked back."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You can't be slowed or knocked back."
 
 msgid "no_future_title"
 msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"

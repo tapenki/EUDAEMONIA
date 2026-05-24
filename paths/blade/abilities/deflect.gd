@@ -13,7 +13,7 @@ func _physics_process(_delta: float) -> void:
 		var unsheathe = ability_handler.get_node_or_null("unsheathe")
 		if not unsheathe or not unsheathe.applicants.has(ability_relay) or not unsheathe.applicants[ability_relay].has("unsheathe_multiplier") or unsheathe.applicants[ability_relay]["unsheathe_multiplier"] < 4:
 			continue
-		var attack_scale = ability_relay.get_attack_scale()
+		var attack_scale = ability_relay.get_effect_scale()
 		var space_state = get_node("/root/Main").physics_space
 		var shape_query = PhysicsShapeQueryParameters2D.new()
 		shape_query.shape = CircleShape2D.new()
@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 		var intersections = space_state.intersect_shape(shape_query, 128)
 		for i in intersections:
 			var projectile = i.get("collider")
-			if not projectile.get("ability_relay") or not projectile.ability_relay.is_projectile > 0:
+			if not projectile.get("ability_relay") or projectile.ability_relay.is_projectile < 2:
 				continue
 			if applicants[ability_relay]["exclude"].has(projectile):
 				continue

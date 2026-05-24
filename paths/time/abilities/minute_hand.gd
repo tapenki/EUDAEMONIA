@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 				speed_mult += 0.1 * clockwinding.level
 			applicants[applicant]["time"] += 0.5 * delta * applicant.speed_scale * speed_mult
 			if applicants[applicant]["time"] > 1:
-				minute_boost += floor(applicants[applicant]["time"]) * level
+				minute_boost += floor(applicants[applicant]["time"]) * level * 0.5
 				applicants[applicant]["time"] = fmod(applicants[applicant]["time"], 1)
 			applicants[applicant]["hand"].rotation = applicants[applicant]["time"] * TAU
 

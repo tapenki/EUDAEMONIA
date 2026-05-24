@@ -31,7 +31,6 @@ signal incoming_slow_modifiers(modifiers: Dictionary)
 
 ## attack signals
 signal attack_rate_modifiers(modifiers: Dictionary)
-signal attack_scale_modifiers(modifiers: Dictionary)
 signal attack(direction: Vector2)
 signal attack_success(direction: Vector2, weapon: Node)
 
@@ -51,6 +50,8 @@ signal crit_chance_modifiers(entity: Entity, modifiers: Dictionary)
 signal damage_dealt(entity: Entity, damage: Dictionary)
 
 ## misc signals
+signal effect_scale_modifiers(modifiers: Dictionary)
+signal effect_duration_modifiers(modifiers: Dictionary)
 signal hits_left_modifiers(modifiers: Dictionary)
 
 ### methods
@@ -101,9 +102,13 @@ func get_attack_rate(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
 	attack_rate_modifiers.emit(modifiers)
 	return modifiers["base"] * modifiers["multiplier"]
 
-func get_attack_scale(modifiers: Dictionary = {"base" : 0, "multiplier" : 1}):
-	attack_scale_modifiers.emit(modifiers)
-	return (1 + inherited_scale["base"] + modifiers["base"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
+func get_effect_scale(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
+	effect_scale_modifiers.emit(modifiers)
+	return (inherited_scale["base"] + modifiers["base"]) * inherited_scale["multiplier"] * modifiers["multiplier"]
+
+func get_effect_duration(modifiers: Dictionary = {"base" : 1, "multiplier" : 1}):
+	effect_duration_modifiers.emit(modifiers)
+	return modifiers["base"] * modifiers["multiplier"]
 
 func get_damage_dealt(entity: Entity = null, damage: Dictionary = {"base" : 0, "multiplier" : 1, "flat" : 0}):
 	if not damage.has("skip_output_modifiers"):

@@ -5,19 +5,19 @@ var bullet = preload("res://paths/fire/scorched_earth/scorched_earth.tscn")
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("scorched_earth"):
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-#		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+#		ability_relay.effect_scale_modifiers.connect(effect_scale_modifiers)
 	if applicants.has(ability_relay.source) and applicants[ability_relay.source].has("scorched_earth"):
 		applicant_data["scorched_earth"] = applicants[ability_relay.source]["scorched_earth"]
 		ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
-#		ability_relay.attack_scale_modifiers.connect(attack_scale_modifiers)
+#		ability_relay.effect_scale_modifiers.connect(effect_scale_modifiers)
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.damage_dealt_modifiers.is_connected(damage_dealt_modifiers):
 		ability_relay.damage_dealt_modifiers.disconnect(damage_dealt_modifiers)
-#	if ability_relay.attack_scale_modifiers.is_connected(attack_scale_modifiers):
-#		ability_relay.attack_scale_modifiers.disconnect(attack_scale_modifiers)
+#	if ability_relay.effect_scale_modifiers.is_connected(effect_scale_modifiers):
+#		ability_relay.effect_scale_modifiers.disconnect(effect_scale_modifiers)
 
 func _ready() -> void:
 	get_node("/root/Main").entity_manifestation.connect(entity_manifestation)
@@ -36,5 +36,5 @@ func entity_manifestation(entity: Entity):
 func damage_dealt_modifiers(_entity, damage) -> void:
 	damage["base"] += 3 * level
 
-#func attack_scale_modifiers(modifiers) -> void:
+#func effect_scale_modifiers(modifiers) -> void:
 #	modifiers["base"] += 0.2 * level

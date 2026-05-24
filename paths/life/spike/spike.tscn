@@ -28,7 +28,7 @@ material = ExtResource("3_4p3px")
 texture = ExtResource("4_styyi")
 script = ExtResource("5_ysibf")
 ability_relay = NodePath("../AbilityRelay")
-scaler = 0.5
+scaler = 1.0
 grow = 4.0
 shrink = 4.0
 

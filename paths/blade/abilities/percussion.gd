@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func damage_taken(damage, ability_relay) -> void:
 	if damage.has("blocked"):
-		var attack_scale = ability_relay.get_attack_scale({"base" : 0, "multiplier" : 1})
+		var attack_scale = ability_relay.get_effect_scale()
 		var reach = 150 * attack_scale
 		for entity in ability_relay.area_targets(ability_relay.global_position, reach):
 			status.apply(entity.ability_relay, {"stacks" = 5 * get_block_level()})

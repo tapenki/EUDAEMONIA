@@ -343,6 +343,10 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/clockwinding.gd"),
 		"type" : "upgrade"
 	},
+	"tomorrow_bullets" : {
+		"script" : preload("res://paths/time/abilities/tomorrow_bullets.gd"),
+		"type" : "upgrade"
+	},
 	"time_stop" : {
 		"script" : preload("res://paths/time/abilities/time_stop.gd"),
 		"type" : "upgrade"

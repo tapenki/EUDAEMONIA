@@ -95,7 +95,7 @@ func _on_lifetime_timeout() -> void:
 	kill()
 
 func adjust_scale():
-	var attack_scale = ability_relay.get_attack_scale()
+	var attack_scale = ability_relay.get_effect_scale()
 	scale = Vector2(attack_scale, attack_scale)
 
 func get_knockback_direction(target):

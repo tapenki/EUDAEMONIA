@@ -97,6 +97,12 @@ layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "clockwinding"
 
+[node name="TomorrowBullets" parent="Abilities" unique_id=85282344 instance=ExtResource("5_w0qkf")]
+layout_mode = 2
+texture_normal = ExtResource("2_hlo4x")
+subject = "tomorrow_bullets"
+extras = ["freeze"]
+
 [node name="Masteries" type="HFlowContainer" parent="." unique_id=1227866759]
 layout_direction = 2
 layout_mode = 1

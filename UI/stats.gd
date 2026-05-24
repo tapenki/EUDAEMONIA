@@ -17,7 +17,7 @@ func update_stattext():
 	var crit_chance = ability_relay.inherited_crit_chance.duplicate()
 	ability_relay.crit_chance_modifiers.emit(null, crit_chance)
 	var attack_scale = ability_relay.inherited_scale.duplicate()
-	ability_relay.attack_scale_modifiers.emit(attack_scale)
+	ability_relay.effect_scale_modifiers.emit(attack_scale)
 	var move_speed = ability_relay.get_move_speed(450)
 	## yeah
 	stattext = "Attack damage: [outline_size=10]+[{attack_damage_source}]x[{attack_damage_multiplier}][/outline_size]

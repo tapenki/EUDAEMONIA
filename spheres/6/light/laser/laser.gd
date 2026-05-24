@@ -89,7 +89,7 @@ func entity_collision(endpoint, width = 8):
 			ability_relay.deal_damage(entity["collider"])
 
 func adjust_scale():
-	var attack_scale = ability_relay.get_attack_scale()
+	var attack_scale = ability_relay.get_effect_scale()
 	scale = Vector2(attack_scale, attack_scale)
 	return attack_scale
 
@@ -115,7 +115,7 @@ func kill():
 		ability_relay.freed.emit()
 
 func get_sprites():
-	var attack_scale = ability_relay.get_attack_scale()
+	var attack_scale = ability_relay.get_effect_scale()
 	return [{"node" : sprite, "size" : sprite.size * attack_scale, "position" : global_position, "offset" : Vector2()}]
 
 func apply_palette(team, denominator):
