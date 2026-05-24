@@ -22,11 +22,14 @@ func disapply(ability_relay):
 func _ready() -> void:
 	status = ability_handler.learn("doom", 0)
 
-func damage_taken(_damage, ability_relay) -> void:
+func damage_taken(damage, ability_relay) -> void:
 	var attack_scale = ability_relay.get_effect_scale()
 	var reach = 150 * attack_scale
 	for entity in ability_relay.area_targets(ability_relay.global_position, reach):
-		status.apply(entity.ability_relay, {"stacks" = 4 * get_borrowed_time_level()})
+		var doomed = status.applicants.has(entity.ability_relay)
+		status.apply(entity.ability_relay, {"stacks" = 2 * get_borrowed_time_level(), "duration" = ability_relay.get_effect_duration()})
+		if not doomed:
+			status.damage_taken(damage, entity.ability_relay)
 		get_node("/root/Main/ParticleHandler").particle_beam("common", 
 		preload("res://paths/statuses/doom/doom.png"),
 		ability_relay.global_position,

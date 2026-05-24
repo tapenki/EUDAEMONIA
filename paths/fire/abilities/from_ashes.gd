@@ -37,7 +37,7 @@ func before_self_death(modifiers, ability_relay) -> void:
 		ability_relay.owner.immune(ability_relay.get_immune_duration({"base" : ability_relay.owner.immune_duration, "multiplier" : 4}))
 		if fiery_rebirth:
 			for target in ability_relay.area_targets(ability_relay.global_position):
-				status.apply(target.ability_relay, {"stacks" = level})
+				status.apply(target.ability_relay, {"stacks" = level, "duration" = ability_relay.get_effect_duration()})
 				if status.applicants.has(target.ability_relay):
 					status.applicants[target.ability_relay]["stacks"] *= 2
 			get_node("/root/Main/ParticleHandler").quick_particles("burst", 

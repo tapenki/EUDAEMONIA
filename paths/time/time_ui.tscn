@@ -75,7 +75,12 @@ offset_bottom = 90.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="MinuteHand" parent="Abilities" unique_id=1440218836 instance=ExtResource("5_w0qkf")]
+[node name="SecondHand" parent="Abilities" unique_id=1440218836 instance=ExtResource("5_w0qkf")]
+layout_mode = 2
+texture_normal = ExtResource("2_hlo4x")
+subject = "second_hand"
+
+[node name="MinuteHand" parent="Abilities" unique_id=85282344 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "minute_hand"
@@ -84,11 +89,6 @@ subject = "minute_hand"
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "hour_hand"
-
-[node name="BorrowedTime" parent="Abilities" unique_id=85282344 instance=ExtResource("5_w0qkf")]
-layout_mode = 2
-texture_normal = ExtResource("2_hlo4x")
-subject = "borrowed_time"
 
 [node name="Clockwinding" parent="Abilities" unique_id=1950595630 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
@@ -113,14 +113,24 @@ offset_bottom = 218.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="KillerMinute" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
+[node name="Finalty" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
+layout_mode = 2
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
+requires = {
+"second_hand": 5
+}
+subject = "finalty"
+
+[node name="NoFuture" parent="Masteries" unique_id=1735317579 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "minute_hand": 5
 }
-subject = "killer_minute"
+subject = "no_future"
+extras = ["doom"]
 
 [node name="Daybreak" parent="Masteries" unique_id=502092284 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
@@ -130,16 +140,6 @@ requires = {
 "hour_hand": 5
 }
 subject = "daybreak"
-
-[node name="NoFuture" parent="Masteries" unique_id=1735317579 instance=ExtResource("7_1a0dx")]
-layout_mode = 2
-accessible_texture_1 = ExtResource("2_hlo4x")
-accessible_texture_2 = ExtResource("8_s1m52")
-requires = {
-"borrowed_time": 5
-}
-subject = "no_future"
-extras = ["doom"]
 
 [node name="TimeLock" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
 layout_mode = 2

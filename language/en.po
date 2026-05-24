@@ -108,7 +108,7 @@ msgid "pawn_title"
 msgstr "[outline_size=10]Class: Pawn[/outline_size]"
 
 msgid "pawn_description"
-msgstr "You have:[br][outline_size=10]+[40][/outline_size] health.[br][outline_size=10]+[5]%[/outline_size] crit chance.[br][outline_size=10]+[300][/outline_size] move speed."
+msgstr "You have:[br][outline_size=10]+[40][/outline_size] max health.[br][outline_size=10]+[5]%[/outline_size] crit chance.[br][outline_size=10]+[300][/outline_size] move speed."
 
 msgid "defeated"
 msgstr "i am dead"
@@ -334,7 +334,7 @@ msgid "pyre_title"
 msgstr "[outline_color=#ff0000]Mastery: Pyre[/outline_color]"
 
 msgid "pyre_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color].[br]Burn can deal damage [outline_size=10]+[4][/outline_size] times."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color].[br]Burn deals damage [outline_size=10]+[4][/outline_size] times over [outline_size=10]+[4][/outline_size] seconds."
 
 msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
@@ -513,11 +513,11 @@ msgstr "[outline_color=#0f9936]Ability: Enrage[/outline_color]"
 msgid "enrage_description"
 msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]+[4xLEVEL][/outline_size] damage for [outline_size=10][4][/outline_size] seconds."
 
-msgid "wrought_flesh_title"
-msgstr "[outline_color=#0f9936]Ability: Wrought Flesh[/outline_color]"
+msgid "rapid_recovery_title"
+msgstr "[outline_color=#0f9936]Ability: Rapid Recovery[/outline_color]"
 
-msgid "wrought_flesh_description"
-msgstr "You have [outline_size=10]+[25xLEVEL][/outline_size] max health and recover [outline_size=10]+[LEVEL][/outline_size] health per second."
+msgid "rapid_recovery_description"
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Recover [outline_size=10]+[2xLEVEL][/outline_size] health per second over [outline_size=10][4][/outline_size] seconds."
 
 msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
@@ -553,7 +553,7 @@ msgid "vitalism_title"
 msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
 
 msgid "vitalism_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Wrought Flesh[/outline_color].[br]You have [outline_size=10]x[2][/outline_size] health recovery."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Rapid Recovery[/outline_color].[br]You have [outline_size=10]x[2][/outline_size] health recovery."
 
 msgid "pressurized_quills_title"
 msgstr "[outline_color=#0f9936]Mastery: Pressurized Quills[/outline_color]"
@@ -704,11 +704,17 @@ msgstr "[outline_color=#846742]Time[/outline_color]"
 msgid "time_description"
 msgstr "- Work like a clock.[br]- Buy yourself a time."
 
+msgid "second_hand_title"
+msgstr "[outline_color=#846742]Ability: Second Hand[/outline_color]"
+
+msgid "second_hand_description"
+msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
+
 msgid "minute_hand_title"
 msgstr "[outline_color=#846742]Ability: Minute Hand[/outline_color]"
 
 msgid "minute_hand_description"
-msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
+msgstr "[outline_size=10]Every [3] seconds:[/outline_size] Gain [br][outline_size=10]+[2xLEVEL][/outline_size] max health until end of encounter."
 
 msgid "hour_hand_title"
 msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
@@ -720,7 +726,7 @@ msgid "borrowed_time_title"
 msgstr "[outline_color=#846742]Ability: Borrowed Time[/outline_color]"
 
 msgid "borrowed_time_description"
-msgstr "Reduce damage taken by [outline_size=10][10xLEVEL][/outline_size] for the first [outline_size=10][5][/outline_size] seconds of each encounter."
+msgstr "Reduce damage taken by [outline_size=10][10xLEVEL][/outline_size].[br][outline_size=10]Upon taking damage reduced by [/outline_size][outline_color=#846742]Borrowed Time[/outline_color][outline_size=10]:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] burn to yourself."
 
 msgid "clockwinding_title"
 msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
@@ -734,11 +740,11 @@ msgstr "[outline_color=#846742]Ability: Prolong[/outline_color]"
 msgid "prolong_description"
 msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] effect duration."
 
-msgid "killer_minute_title"
-msgstr "[outline_color=#846742]Mastery: Killer Minute[/outline_color]"
+msgid "finalty_title"
+msgstr "[outline_color=#846742]Mastery: Finalty[/outline_color]"
 
-msgid "killer_minute_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities that are slowed or doomed."
+msgid "finalty_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Second Hand[/outline_color].[br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities that are slowed or doomed."
 
 msgid "daybreak_title"
 msgstr "[outline_color=#846742]Mastery: Daybreak[/outline_color]"
@@ -756,7 +762,7 @@ msgid "no_future_title"
 msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"
 
 msgid "no_future_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Borrowed Time[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[4xLEVEL][/outline_size] doom to nearby enemies."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] doom to nearby enemies."
 
 # spheres
 msgid "day_counter"

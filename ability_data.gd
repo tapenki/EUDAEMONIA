@@ -221,8 +221,8 @@ var ability_data = {
 		"script" : preload("res://paths/life/abilities/quill_spray.gd"),
 		"type" : "upgrade"
 	},
-	"wrought_flesh" : {
-		"script" : preload("res://paths/life/abilities/wrought_flesh.gd"),
+	"rapid_recovery" : {
+		"script" : preload("res://paths/life/abilities/rapid_recovery.gd"),
 		"type" : "upgrade"
 	},
 	"animated_clay" : {
@@ -331,6 +331,10 @@ var ability_data = {
 	},
 	#endregion
 	#region time
+	"second_hand" : {
+		"script" : preload("res://paths/time/abilities/second_hand.gd"),
+		"type" : "upgrade"
+	},
 	"minute_hand" : {
 		"script" : preload("res://paths/time/abilities/minute_hand.gd"),
 		"type" : "upgrade"
@@ -347,12 +351,8 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/prolong.gd"),
 		"type" : "upgrade"
 	},
-	"borrowed_time" : {
-		"script" : preload("res://paths/time/abilities/borrowed_time.gd"),
-		"type" : "upgrade"
-	},
-	"killer_minute" : {
-		"script" : preload("res://paths/time/abilities/killer_minute.gd"),
+	"finalty" : {
+		"script" : preload("res://paths/time/abilities/finalty.gd"),
 		"type" : "mastery"
 	},
 	"daybreak" : {

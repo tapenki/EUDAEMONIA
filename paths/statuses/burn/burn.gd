@@ -8,10 +8,13 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
 	if applicants.has(ability_relay):
+		applicants[ability_relay]["duration"] = applicant_data["duration"]
 		applicants[ability_relay]["stacks"] += applicant_data["stacks"]
 		applicants[ability_relay]["ticks"] = 0
 	else:
-		applicant_data["duration"] = 1
+		if not applicant_data.has("duration"):
+			applicant_data["duration"] = 1.0
+		applicant_data["time"] = 0.0
 		applicant_data["ticks"] = 0
 		var particle_instances: Array
 		for sprite in ability_relay.owner.get_sprites():
@@ -40,10 +43,10 @@ func _physics_process(delta: float) -> void:
 		if applicants[ability_relay]["ticks"] >= max_ticks:
 			disapply(ability_relay)
 		else:
-			applicants[ability_relay]["duration"] -= delta
-			if applicants[ability_relay]["duration"] <= 0:
+			applicants[ability_relay]["time"] += delta
+			if applicants[ability_relay]["time"] >= applicants[ability_relay]["duration"]:
 				ability_relay.deal_damage(ability_relay.owner, 
 				{"base" : applicants[ability_relay]["stacks"], "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
 				Config.get_team_color(1, "secondary"))
-				applicants[ability_relay]["duration"] = 1
+				applicants[ability_relay]["time"] = 0.0
 				applicants[ability_relay]["ticks"] += 1

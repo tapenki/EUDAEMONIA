@@ -78,10 +78,10 @@ layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
 subject = "trail_of_thorns"
 
-[node name="WroughtFlesh" parent="Abilities" unique_id=828295592 instance=ExtResource("4_owrg1")]
+[node name="RapidRecovery" parent="Abilities" unique_id=828295592 instance=ExtResource("4_owrg1")]
 layout_mode = 2
 texture_normal = ExtResource("1_hlnos")
-subject = "wrought_flesh"
+subject = "rapid_recovery"
 
 [node name="QuillSpray" parent="Abilities" unique_id=385153559 instance=ExtResource("4_owrg1")]
 layout_mode = 2
@@ -126,7 +126,7 @@ subject = "pain_walk"
 layout_mode = 2
 accessible_texture = ExtResource("1_hlnos")
 requires = {
-"wrought_flesh": 5
+"rapid_recovery": 5
 }
 subject = "vitalism"
 

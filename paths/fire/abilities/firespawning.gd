@@ -55,7 +55,7 @@ func death_effects(ability_relay):
 	var attack_scale = ability_relay.get_effect_scale()
 	var reach = 150 * attack_scale
 	for entity in ability_relay.area_targets(ability_relay.global_position, reach):
-		status.apply(entity.ability_relay, {"stacks" = 4 * level})
+		status.apply(entity.ability_relay, {"stacks" = 4 * level, "duration" = ability_relay.get_effect_duration()})
 		get_node("/root/Main/ParticleHandler").particle_beam("common", 
 		preload("res://paths/fire/flame.png"),
 		ability_relay.global_position,

@@ -8,10 +8,15 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
 	if applicants.has(ability_relay):
+		applicants[ability_relay]["duration"] = applicant_data["duration"] * 4
 		applicants[ability_relay]["stacks"] += applicant_data["stacks"]
 	else:
+		if applicant_data.has("duration"):
+			applicant_data["duration"] *= 4.0
+		else:
+			applicant_data["duration"] = 4.0
+		applicant_data["time"] = 0.0
 		applicant_data["accumulated"] = 0
-		applicant_data["duration"] = 4
 		var particle_instances: Array
 		for sprite in ability_relay.owner.get_sprites():
 			var particle_instance = particle_scene.instantiate()
@@ -37,10 +42,10 @@ func disapply(ability_relay):
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants.keys():
 		if swift_fate:
-			applicants[ability_relay]["duration"] -= delta * 2
+			applicants[ability_relay]["time"] += delta * 2
 		else:
-			applicants[ability_relay]["duration"] -= delta
-		if applicants[ability_relay]["duration"] <= 0:
+			applicants[ability_relay]["time"] += delta
+		if applicants[ability_relay]["time"] >= applicants[ability_relay]["duration"]:
 			var damage_mult = 0.4
 			if swift_fate:
 				damage_mult = 0.6
