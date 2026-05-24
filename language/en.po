@@ -267,7 +267,7 @@ msgid "burn_title"
 msgstr "[outline_color=#ff0000]Notes: Burn[/outline_color]"
 
 msgid "burn_description"
-msgstr "Deals [outline_size=10][STACKS][/outline_size] pure damage every second.[br]Expires after dealing damage [outline_size=10][4][/outline_size] times.[br]Reapplying burn resets expiration."
+msgstr "Deals [outline_size=10][STACKS][/outline_size] pure damage [outline_size=10][4][/outline_size] times over [outline_size=10][4][/outline_size] seconds.[br]Reapplying burn resets expiration."
 
 msgid "chill_title"
 msgstr "[outline_color=#0000ff]Notes: Chill[/outline_color]"
@@ -716,11 +716,11 @@ msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
 msgid "hour_hand_description"
 msgstr "[outline_size=10]Every [4] seconds:[/outline_size] Release a ring of [outline_size=10][12][/outline_size] bullets that have [outline_size=10]+[10xLEVEL][/outline_size] damage."
 
-msgid "time_stop_title"
-msgstr "[outline_color=#846742]Ability: Time Stop[/outline_color]"
+msgid "borrowed_time_title"
+msgstr "[outline_color=#846742]Ability: Borrowed Time[/outline_color]"
 
-msgid "time_stop_description"
-msgstr "[outline_size=10]Once per encounter, upon pressing {keybind}:[/outline_size] Apply [outline_size=10][LEVEL^0.7][/outline_size] seconds of freeze to all enemies and enemy projectiles."
+msgid "borrowed_time_description"
+msgstr "Reduce damage taken by [outline_size=10][10xLEVEL][/outline_size] for the first [outline_size=10][5][/outline_size] seconds of each encounter."
 
 msgid "clockwinding_title"
 msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
@@ -728,11 +728,11 @@ msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
 msgid "clockwinding_description"
 msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate and clock hand rate."
 
-msgid "tomorrow_bullets_title"
-msgstr "[outline_color=#846742]Ability: Tomorrow Bullets[/outline_color]"
+msgid "prolong_title"
+msgstr "[outline_color=#846742]Ability: Prolong[/outline_color]"
 
-msgid "tomorrow_bullets_description"
-msgstr "Apply [outline_size=10][0.2xLEVEL][/outline_size] seconds of freeze to projectiles.[br]Slowed projectiles have [outline_size=10]+[4xLEVEL][/outline_size] damage."
+msgid "prolong_description"
+msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] effect duration."
 
 msgid "killer_minute_title"
 msgstr "[outline_color=#846742]Mastery: Killer Minute[/outline_color]"
@@ -756,7 +756,7 @@ msgid "no_future_title"
 msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"
 
 msgid "no_future_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Time Stop[/outline_color].[br][outline_color=#846742]Time Stop[/outline_color] applies [outline_size=10]+[6xLEVEL][/outline_size] doom."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Borrowed Time[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[4xLEVEL][/outline_size] doom to nearby enemies."
 
 # spheres
 msgid "day_counter"

@@ -343,12 +343,12 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/clockwinding.gd"),
 		"type" : "upgrade"
 	},
-	"tomorrow_bullets" : {
-		"script" : preload("res://paths/time/abilities/tomorrow_bullets.gd"),
+	"prolong" : {
+		"script" : preload("res://paths/time/abilities/prolong.gd"),
 		"type" : "upgrade"
 	},
-	"time_stop" : {
-		"script" : preload("res://paths/time/abilities/time_stop.gd"),
+	"borrowed_time" : {
+		"script" : preload("res://paths/time/abilities/borrowed_time.gd"),
 		"type" : "upgrade"
 	},
 	"killer_minute" : {

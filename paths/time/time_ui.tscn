@@ -5,7 +5,6 @@
 [ext_resource type="Theme" uid="uid://bjge10noq5yla" path="res://ui/16px_font_theme.tres" id="3_a71n6"]
 [ext_resource type="Script" uid="uid://cg2gbucvcjl2v" path="res://ui/described.gd" id="4_o5nxg"]
 [ext_resource type="PackedScene" uid="uid://dgnmcjqbr70jb" path="res://paths/ui/upgrade_button.tscn" id="5_w0qkf"]
-[ext_resource type="PackedScene" uid="uid://bmsbb262j11w7" path="res://paths/ui/trick_upgrade_button.tscn" id="6_1a0dx"]
 [ext_resource type="PackedScene" uid="uid://cdfm1xvd65cu1" path="res://paths/ui/time_mastery_button.tscn" id="7_1a0dx"]
 [ext_resource type="Texture2D" uid="uid://bj6lwhadlclfi" path="res://paths/time/time_time.png" id="8_s1m52"]
 [ext_resource type="Script" uid="uid://cnko556ohhfl7" path="res://paths/time/rewind.gd" id="10_s1m52"]
@@ -86,22 +85,20 @@ layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "hour_hand"
 
-[node name="TimeStop" parent="Abilities" unique_id=753979935 instance=ExtResource("6_1a0dx")]
+[node name="BorrowedTime" parent="Abilities" unique_id=85282344 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
-subject = "time_stop"
-extras = ["freeze"]
+subject = "borrowed_time"
 
 [node name="Clockwinding" parent="Abilities" unique_id=1950595630 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "clockwinding"
 
-[node name="TomorrowBullets" parent="Abilities" unique_id=85282344 instance=ExtResource("5_w0qkf")]
+[node name="Prolong" parent="Abilities" unique_id=1562094916 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
-subject = "tomorrow_bullets"
-extras = ["freeze"]
+subject = "prolong"
 
 [node name="Masteries" type="HFlowContainer" parent="." unique_id=1227866759]
 layout_direction = 2
@@ -139,9 +136,10 @@ layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
-"time_stop": 5
+"borrowed_time": 5
 }
 subject = "no_future"
+extras = ["doom"]
 
 [node name="TimeLock" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
