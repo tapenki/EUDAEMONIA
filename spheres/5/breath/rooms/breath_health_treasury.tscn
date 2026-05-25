@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_cejwc"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_ke774"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_ixtmi"]
+[ext_resource type="PackedScene" uid="uid://qgkbtuy54j5n" path="res://spheres/environment/rewards/shrines/shrine_of_health.tscn" id="9_o1al6"]
 
 [node name="BreathHealthTreasury" type="Node2D" unique_id=946941522]
 
@@ -130,16 +131,17 @@ rotation = 3.1415927
 position = Vector2(30, 360)
 rotation = 4.712389
 room = "breath_room_1"
-door = "Entrance0"
 subject = "breath_basic_gate"
-tag = "travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=9129693 instance=ExtResource("6_cejwc")]
 reward = ExtResource("7_ke774")
-quantity = 5
+quantity = 4
 
 [node name="QualiaRewardGiver" parent="." unique_id=1525535269 instance=ExtResource("6_cejwc")]
 reward = ExtResource("8_ixtmi")
+
+[node name="ShrineOfHealth" parent="." unique_id=96305373 instance=ExtResource("9_o1al6")]
+position = Vector2(1020, 420)
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

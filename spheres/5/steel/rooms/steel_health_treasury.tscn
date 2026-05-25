@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_5qdwf"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_uusbk"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_cyfpg"]
+[ext_resource type="PackedScene" uid="uid://qgkbtuy54j5n" path="res://spheres/environment/rewards/shrines/shrine_of_health.tscn" id="9_bveyw"]
 
 [node name="SteelHealthTreasury" type="Node2D" unique_id=1768725321]
 
@@ -103,10 +104,13 @@ subject = "steel_basic_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_5qdwf")]
 reward = ExtResource("7_uusbk")
-quantity = 5
+quantity = 4
 
 [node name="QualiaRewardGiver" parent="." unique_id=1921029291 instance=ExtResource("6_5qdwf")]
 reward = ExtResource("8_cyfpg")
+
+[node name="ShrineOfHealth" parent="." unique_id=96305373 instance=ExtResource("9_bveyw")]
+position = Vector2(540, 840)
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

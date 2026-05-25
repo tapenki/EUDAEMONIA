@@ -756,7 +756,7 @@ msgid "no_future_title"
 msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"
 
 msgid "no_future_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] doom to nearby enemies."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] doom to nearby enemies storing the damage taken."
 
 msgid "borrowed_time_title"
 msgstr "[outline_color=#846742]Mastery: Borrowed Time[/outline_color]"
