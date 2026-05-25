@@ -722,12 +722,6 @@ msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
 msgid "hour_hand_description"
 msgstr "[outline_size=10]Every [4] seconds:[/outline_size] Release a ring of [outline_size=10][12][/outline_size] bullets that have [outline_size=10]+[10xLEVEL][/outline_size] damage."
 
-msgid "borrowed_time_title"
-msgstr "[outline_color=#846742]Ability: Borrowed Time[/outline_color]"
-
-msgid "borrowed_time_description"
-msgstr "Reduce damage taken by [outline_size=10][10xLEVEL][/outline_size].[br][outline_size=10]Upon taking damage reduced by [/outline_size][outline_color=#846742]Borrowed Time[/outline_color][outline_size=10]:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] burn to yourself."
-
 msgid "clockwinding_title"
 msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
 
@@ -740,11 +734,11 @@ msgstr "[outline_color=#846742]Ability: Prolong[/outline_color]"
 msgid "prolong_description"
 msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] effect duration."
 
-msgid "finalty_title"
-msgstr "[outline_color=#846742]Mastery: Finalty[/outline_color]"
+msgid "tomorrow_bullets_title"
+msgstr "[outline_color=#846742]Mastery: Tomorrow Bullets[/outline_color]"
 
-msgid "finalty_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Second Hand[/outline_color].[br]You have [outline_size=10]+[100]%[/outline_size] crit chance against entities that are slowed or doomed."
+msgid "tomorrow_bullets_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Second Hand[/outline_color].[br]Projectiles have [outline_size=10]+[50]%[/outline_size] crit chance.[br]Apply [outline_size=10]+[0.5][/outline_size] seconds of freeze to projetiles."
 
 msgid "daybreak_title"
 msgstr "[outline_color=#846742]Mastery: Daybreak[/outline_color]"
@@ -752,10 +746,10 @@ msgstr "[outline_color=#846742]Mastery: Daybreak[/outline_color]"
 msgid "daybreak_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Hour Hand[/outline_color].[br][outline_color=#846742]Hour Hand[/outline_color] creates an exlposion that has [outline_size=10]+[10xLEVEL][/outline_size] damage and knocks back enemies upon dealing damage."
 
-msgid "time_lock_title"
-msgstr "[outline_color=#846742]Mastery: Time Lock[/outline_color]"
+msgid "stasis_title"
+msgstr "[outline_color=#846742]Mastery: Stasis[/outline_color]"
 
-msgid "time_lock_description"
+msgid "stasis_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You can't be slowed or knocked back."
 
 msgid "no_future_title"
@@ -763,6 +757,12 @@ msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"
 
 msgid "no_future_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] doom to nearby enemies."
+
+msgid "borrowed_time_title"
+msgstr "[outline_color=#846742]Mastery: Borrowed Time[/outline_color]"
+
+msgid "borrowed_time_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Prolong[/outline_color].[br]Reduce damage taken to [outline_size=10]x[0.2][/outline_size].[br][outline_size=10]Upon taking reduced damage:[/outline_size] Apply [outline_size=10]+[DAMAGETAKEN][/outline_size] burn to yourself."
 
 # spheres
 msgid "day_counter"

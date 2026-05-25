@@ -13,13 +13,13 @@ func _ready() -> void:
 
 func apply(ability_relay, applicant_data):
 	super(ability_relay, applicant_data)
-	ability_relay.damage_dealt.connect(damage_dealt)
+	ability_relay.damage_dealt.connect(damage_dealt.bind(ability_relay))
 
 func disapply(ability_relay):
 	super(ability_relay)
 	if ability_relay.damage_dealt.is_connected(damage_dealt):
 		ability_relay.damage_dealt.disconnect(damage_dealt)
 
-func damage_dealt(entity, damage) -> void:
+func damage_dealt(entity, damage, ability_relay) -> void:
 	if damage.has("first_blood"):
-		status.apply(entity.ability_relay, {"stacks" = 5 * get_mortal_shock_level()})
+		status.apply(entity.ability_relay, {"stacks" = 5 * get_mortal_shock_level(), "duration" = 4*ability_relay.get_effect_duration()})

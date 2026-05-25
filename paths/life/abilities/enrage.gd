@@ -4,7 +4,7 @@ var damage_boost = 0.0
 
 func apply(ability_relay, applicant_data):
 	if not applicant_data.has("subscription") or applicant_data["subscription"] >= 3:
-		ability_relay.damage_taken.connect(damage_taken)
+		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
 	ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 func intermission(_day):
 	damage_boost = 0.0
 
-func damage_taken(_damage) -> void:
-	damage_boost = 4.0#min(damage_boost + damage["final"] * 0.1, 4 * level)
+func damage_taken(_damage, ability_relay) -> void:
+	damage_boost = 4.0 * ability_relay.get_effect_duration()
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	if damage_boost > 0:

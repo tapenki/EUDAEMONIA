@@ -27,7 +27,7 @@ func damage_taken(damage, ability_relay) -> void:
 	var reach = 150 * attack_scale
 	for entity in ability_relay.area_targets(ability_relay.global_position, reach):
 		var doomed = status.applicants.has(entity.ability_relay)
-		status.apply(entity.ability_relay, {"stacks" = 2 * get_borrowed_time_level(), "duration" = ability_relay.get_effect_duration()})
+		status.apply(entity.ability_relay, {"stacks" = 2 * get_borrowed_time_level(), "duration" = 4*ability_relay.get_effect_duration()})
 		if not doomed:
 			status.damage_taken(damage, entity.ability_relay)
 		get_node("/root/Main/ParticleHandler").particle_beam("common", 

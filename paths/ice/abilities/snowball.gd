@@ -61,7 +61,7 @@ func attack_success(_direction, _weapon, ability_relay) -> void:
 	2,
 	3,
 	Config.get_team_color(ability_relay.owner.group, "secondary"))
-	status.apply(ability_relay, {"duration" = 0.2})
+	status.apply(ability_relay, {"duration" = 0.2 * ability_relay.get_effect_duration()})
 
 #func crit_chance_modifiers(_entity, modifiers, ability_relay) -> void:
 	#if not snowball_ii:

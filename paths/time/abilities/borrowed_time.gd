@@ -20,9 +20,9 @@ func _ready() -> void:
 	status = ability_handler.learn("burn", 0)
 
 func damage_taken_modifiers(damage) -> void:
-	damage["flat"] -= 10 * level
+	damage["multiplier"] *= 0.2
 	damage["borrowed_time"] = true
 
 func damage_taken(damage, ability_relay) -> void:
-	if damage.has("borrowed_time"):
-		status.apply(ability_relay, {"stacks" = 2 * level, "duration" = ability_relay.get_effect_duration()})
+	if damage.has("borrowed_time") and damage["final"] > 0:
+		status.apply(ability_relay, {"stacks" = damage["final"], "duration" = ability_relay.get_effect_duration()})

@@ -31,7 +31,7 @@ func damage_dealt(entity, damage, ability_relay) -> void:
 	if tracked[entity.ability_relay]["accumulated"] >= 60:
 		var count = floor(tracked[entity.ability_relay]["accumulated"] / 60)
 		tracked[entity.ability_relay]["accumulated"] -= 60 * count
-		status.apply(entity.ability_relay, {"duration" = pow(get_frostbite_level(), 0.5) * count})
+		status.apply(entity.ability_relay, {"duration" = pow(get_frostbite_level(), 0.5) * count * ability_relay.get_effect_duration()})
 
 func detrack(ability_relay):
 	tracked.erase(ability_relay)

@@ -8,7 +8,10 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
 	if applicants.has(ability_relay):
-		applicants[ability_relay]["duration"] = applicant_data["duration"]
+		if applicant_data.has("duration"):
+			applicants[ability_relay]["duration"] = applicant_data["duration"]
+		else:
+			applicants[ability_relay]["duration"] = 1.0
 		applicants[ability_relay]["stacks"] += applicant_data["stacks"]
 		applicants[ability_relay]["ticks"] = 0
 	else:
@@ -27,12 +30,15 @@ func apply(ability_relay, applicant_data):
 			particle_instances.append(particle_instance)
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances
+		ability_relay.cleanse.connect(disapply.bind(ability_relay))
 		super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
 	if applicants.has(ability_relay):
 		for particles in applicants[ability_relay]["particle_instances"]:
 			particles.self_death()
+	if ability_relay.cleanse.is_connected(disapply):
+		ability_relay.cleanse.disconnect(disapply)
 	super(ability_relay)
 
 func _physics_process(delta: float) -> void:

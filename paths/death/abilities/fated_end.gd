@@ -17,6 +17,6 @@ func disapply(ability_relay):
 func damage_dealt(entity, damage, ability_relay) -> void:
 	if damage.has("first_blood"):
 		var doomed = status.applicants.has(entity.ability_relay)
-		status.apply(entity.ability_relay, {"stacks" = 6 * level, "duration" = ability_relay.get_effect_duration()})
+		status.apply(entity.ability_relay, {"stacks" = 6 * level, "duration" = 4*ability_relay.get_effect_duration()})
 		if not doomed:
 			status.damage_taken(damage, entity.ability_relay)

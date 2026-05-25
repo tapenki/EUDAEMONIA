@@ -113,14 +113,14 @@ offset_bottom = 218.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Finalty" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
+[node name="TomorrowBullets" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "second_hand": 5
 }
-subject = "finalty"
+subject = "tomorrow_bullets"
 
 [node name="NoFuture" parent="Masteries" unique_id=1735317579 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
@@ -141,14 +141,24 @@ requires = {
 }
 subject = "daybreak"
 
-[node name="TimeLock" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
+[node name="Stasis" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "clockwinding": 5
 }
-subject = "time_lock"
+subject = "stasis"
+
+[node name="BorrowedTime" parent="Masteries" unique_id=1627324160 instance=ExtResource("7_1a0dx")]
+layout_mode = 2
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
+requires = {
+"prolong": 5
+}
+subject = "borrowed_time"
+extras = ["burn"]
 
 [node name="Rewind" type="TextureButton" parent="." unique_id=786159629]
 visible = false

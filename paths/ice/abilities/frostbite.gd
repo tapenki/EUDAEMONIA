@@ -25,7 +25,7 @@ func damage_dealt(entity, damage, ability_relay) -> void:
 	if tracked[entity.ability_relay]["accumulated"] >= 30:
 		var count = floor(tracked[entity.ability_relay]["accumulated"] / 30)
 		tracked[entity.ability_relay]["accumulated"] -= 30 * count
-		status.apply(entity.ability_relay, {"duration" = pow(level, 0.7) * count})
+		status.apply(entity.ability_relay, {"duration" = pow(level, 0.7) * count * ability_relay.get_effect_duration()})
 
 func detrack(ability_relay):
 	tracked.erase(ability_relay)

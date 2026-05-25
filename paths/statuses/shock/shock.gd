@@ -5,10 +5,11 @@ var particle_scene = preload("res://paths/statuses/shock/shock.tscn")
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
-	applicant_data["duration"] = 4
+	if not applicant_data.has("duration"):
+		applicant_data["duration"] = 4.0
 	if applicants.has(ability_relay):
-		applicants[ability_relay]["stacks"] = applicant_data["stacks"]
 		applicants[ability_relay]["duration"] = applicant_data["duration"]
+		applicants[ability_relay]["stacks"] += applicant_data["stacks"]
 	else:
 		var particle_instances: Array
 		for sprite in ability_relay.owner.get_sprites():
@@ -21,6 +22,7 @@ func apply(ability_relay, applicant_data):
 			particle_instances.append(particle_instance)
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances
+		ability_relay.cleanse.connect(disapply.bind(ability_relay))
 		super(ability_relay, applicant_data)
 		ability_relay.crit_taken_modifiers.connect(crit_taken_modifiers.bind(ability_relay))
 
@@ -28,6 +30,8 @@ func disapply(ability_relay):
 	if applicants.has(ability_relay):
 		for particles in applicants[ability_relay]["particle_instances"]:
 			particles.self_death()
+	if ability_relay.cleanse.is_connected(disapply):
+		ability_relay.cleanse.disconnect(disapply)
 	super(ability_relay)
 	if ability_relay.crit_taken_modifiers.is_connected(crit_taken_modifiers):
 		ability_relay.crit_taken_modifiers.disconnect(crit_taken_modifiers)

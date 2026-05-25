@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 func before_self_death(modifiers, ability_relay) -> void:
 	if applicants[ability_relay]["active"] and not modifiers.has("prevented"):
 		applicants[ability_relay]["active"] = false
-		applicants[ability_relay]["recovery"] = 5.0
+		applicants[ability_relay]["recovery"] = 5.0 * ability_relay.get_effect_duration()
 		modifiers["prevented"] = true
 		var health_values = ability_relay.get_health(ability_relay.owner.health, ability_relay.owner.max_health)
 		ability_relay.owner.health = max(ability_relay.owner.health, ability_relay.owner.max_health - health_values["max_health"])

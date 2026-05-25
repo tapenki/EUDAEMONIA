@@ -351,20 +351,24 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/prolong.gd"),
 		"type" : "upgrade"
 	},
-	"finalty" : {
-		"script" : preload("res://paths/time/abilities/finalty.gd"),
+	"tomorrow_bullets" : {
+		"script" : preload("res://paths/time/abilities/tomorrow_bullets.gd"),
 		"type" : "mastery"
 	},
 	"daybreak" : {
 		"script" : preload("res://paths/time/abilities/daybreak.gd"),
 		"type" : "mastery"
 	},
-	"time_lock" : {
-		"script" : preload("res://paths/time/abilities/time_lock.gd"),
+	"stasis" : {
+		"script" : preload("res://paths/time/abilities/stasis.gd"),
 		"type" : "mastery"
 	},
 	"no_future" : {
 		"script" : preload("res://paths/time/abilities/no_future.gd"),
+		"type" : "mastery"
+	},
+	"borrowed_time" : {
+		"script" : preload("res://paths/time/abilities/borrowed_time.gd"),
 		"type" : "mastery"
 	},
 	#endregion

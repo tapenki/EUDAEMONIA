@@ -28,7 +28,6 @@ hits_left = 4
 [node name="AbilityRelay" type="Node2D" parent="." unique_id=622851868]
 unique_name_in_owner = true
 script = ExtResource("2_7j7ie")
-is_projectile = 2
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2033246428 node_paths=PackedStringArray("ability_relay")]
 material = ExtResource("3_o2x1p")

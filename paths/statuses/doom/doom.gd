@@ -8,14 +8,10 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
 	if applicants.has(ability_relay):
-		applicants[ability_relay]["duration"] = applicant_data["duration"] * 4
 		applicants[ability_relay]["stacks"] += applicant_data["stacks"]
 	else:
-		if applicant_data.has("duration"):
-			applicant_data["duration"] *= 4.0
-		else:
+		if not applicant_data.has("duration"):
 			applicant_data["duration"] = 4.0
-		applicant_data["time"] = 0.0
 		applicant_data["accumulated"] = 0
 		var particle_instances: Array
 		for sprite in ability_relay.owner.get_sprites():
@@ -28,6 +24,7 @@ func apply(ability_relay, applicant_data):
 			particle_instances.append(particle_instance)
 			sprite["node"].add_child(particle_instance)
 		applicant_data["particle_instances"] = particle_instances
+		ability_relay.cleanse.connect(disapply.bind(ability_relay))
 		super(ability_relay, applicant_data)
 		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
 
@@ -35,6 +32,8 @@ func disapply(ability_relay):
 	if applicants.has(ability_relay):
 		for particles in applicants[ability_relay]["particle_instances"]:
 			particles.self_death()
+	if ability_relay.cleanse.is_connected(disapply):
+		ability_relay.cleanse.disconnect(disapply)
 	super(ability_relay)
 	if ability_relay.damage_taken.is_connected(damage_taken):
 		ability_relay.damage_taken.disconnect(damage_taken)
@@ -42,10 +41,10 @@ func disapply(ability_relay):
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants.keys():
 		if swift_fate:
-			applicants[ability_relay]["time"] += delta * 2
+			applicants[ability_relay]["duration"] -= delta * 2
 		else:
-			applicants[ability_relay]["time"] += delta
-		if applicants[ability_relay]["time"] >= applicants[ability_relay]["duration"]:
+			applicants[ability_relay]["duration"] -= delta
+		if applicants[ability_relay]["duration"] <= 0:
 			var damage_mult = 0.4
 			if swift_fate:
 				damage_mult = 0.6

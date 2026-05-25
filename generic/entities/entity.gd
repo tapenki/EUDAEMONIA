@@ -83,17 +83,15 @@ func movement(delta):
 		if is_on_wall():
 			velocity = velocity.bounce(get_last_slide_collision().get_normal()) * 0.5
 			knockback_timer.start(knockback_timer.time_left * 0.5)
-	else:
-		if still: ## goodness gracious
+	elif still: ## goodness gracious
 			velocity = lerp(Vector2(), velocity, pow(0.00001, delta * ability_relay.speed_scale))
-		else:
-			still = true
 	var old_position = global_position
 	var old_velocity = velocity
 	velocity *= ability_relay.speed_scale
 	move_and_slide() ## watch out for wall collisions
 	velocity = old_velocity
 	ability_relay.movement.emit(old_position.distance_to(global_position))
+	still = true
 
 func animation_finished(anim_name: StringName) -> void:
 	if anim_name == "DEATH":

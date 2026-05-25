@@ -53,6 +53,7 @@ signal damage_dealt(entity: Entity, damage: Dictionary)
 signal effect_scale_modifiers(modifiers: Dictionary)
 signal effect_duration_modifiers(modifiers: Dictionary)
 signal hits_left_modifiers(modifiers: Dictionary)
+signal cleanse()
 
 ### methods
 func _physics_process(_delta: float) -> void:

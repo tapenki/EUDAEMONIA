@@ -71,5 +71,5 @@ func damage_dealt_modifiers(_entity, damage) -> void:
 
 func damage_dealt(entity, damage, ability_relay) -> void:
 	if bad_crop:
-		status.apply(entity.ability_relay, {"stacks" = 0.05 * applicants[ability_relay]["dark_harvest"], "duration" = ability_relay.get_effect_duration()})
+		status.apply(entity.ability_relay, {"stacks" = 0.05 * applicants[ability_relay]["dark_harvest"], "duration" = 4*ability_relay.get_effect_duration()})
 		status.damage_taken(damage, entity.ability_relay)

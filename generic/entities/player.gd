@@ -43,6 +43,7 @@ func take_damage(damage):
 
 func recover():
 	health = max_health
+	ability_relay.cleanse.emit()
 	#for ability in ability_relay.get_children():
 	#	if AbilityData.ability_data[ability.name]["type"] == "status":
 	#		ability.clear()

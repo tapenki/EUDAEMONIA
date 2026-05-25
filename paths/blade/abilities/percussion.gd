@@ -27,7 +27,7 @@ func damage_taken(damage, ability_relay) -> void:
 		var attack_scale = ability_relay.get_effect_scale()
 		var reach = 150 * attack_scale
 		for entity in ability_relay.area_targets(ability_relay.global_position, reach):
-			status.apply(entity.ability_relay, {"stacks" = 5 * get_block_level()})
+			status.apply(entity.ability_relay, {"stacks" = 5 * get_block_level(), "duration" = 4*ability_relay.get_effect_duration()})
 			get_node("/root/Main/ParticleHandler").particle_beam("common", 
 			preload("res://paths/statuses/shock/shock.png"),
 			ability_relay.global_position,
