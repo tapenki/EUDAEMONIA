@@ -194,7 +194,7 @@ msgstr "Selected"
 # weapons
 
 msgid "magic_missile_title"
-msgstr "[outline_size=10]Weapon: Magic Missile[/outline_size]"
+msgstr "[outline_color=#00aa00]Weapon: Magic Missile[/outline_color]"
 
 msgid "magic_missile_description"
 msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a missile with [outline_size=10]+[10][/outline_size] damage."
@@ -846,6 +846,12 @@ msgstr "[outline_size=10]Gate: Loch[/outline_size]"
 msgid "depths_basic_gate_description"
 msgstr "As wide as a lake as deep as a lake."
 
+msgid "popgun_title"
+msgstr "[outline_color=#00aa00]Weapon: Popgun[/outline_color]"
+
+msgid "popgun_description"
+msgstr "[outline_size=10]Once every [0.2] seconds:[/outline_size] Launch a bubble with [outline_size=10]+[5][/outline_size] damage."
+
 msgid "land_of_wonder_title"
 msgstr "Sphere [3]: Land of Wonder"
 
@@ -861,6 +867,12 @@ msgstr "[outline_size=10]Gate: Observatory[/outline_size]"
 msgid "wonder_basic_gate_description"
 msgstr "You can see every star from here."
 
+msgid "five_of_stars_title"
+msgstr "[outline_color=#00aa00]Weapon: Five of Stars[/outline_color]"
+
+msgid "five_of_stars_description"
+msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Manifest a ring of [outline_size=10][5][/outline_size] missiles with [outline_size=10]+[10][/outline_size] damage."
+
 msgid "land_of_doubt_title"
 msgstr "Sphere [3]: Land of Doubt"
 
@@ -875,6 +887,12 @@ msgstr "[outline_size=10]Gate: Crawlspace[/outline_size]"
 
 msgid "doubt_basic_gate_description"
 msgstr "You aren't there."
+
+msgid "mold_machine_title"
+msgstr "[outline_color=#00aa00]Weapon: Mold Machine[/outline_color]"
+
+msgid "mold_machine_description"
+msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a mold spore with [outline_size=10]+[10][/outline_size] damage. Mold spores can pass through walls."
 
 msgid "land_of_ruin_title"
 msgstr "Sphere [4]: Land of Ruin"
@@ -1045,11 +1063,11 @@ msgstr "[outline_color=#dd0000]Reward: Health[/outline_color]"
 msgid "health_reward_description"
 msgstr "Gain +[outline_size=10][10][/outline_size] max health and fully recover."
 
-msgid "greater_health_reward_title"
-msgstr "[outline_color=#dd0000]Reward: Greater Health[/outline_color]"
+msgid "shrine_of_health_title"
+msgstr "[outline_color=#dd0000]Shrine of Health[/outline_color]"
 
-msgid "greater_health_reward_description"
-msgstr "Gain +[outline_size=10][40][/outline_size] max health and fully recover."
+msgid "shrine_of_health_description"
+msgstr "Gain +[outline_size=10][40][/outline_size] max health."
 
 msgid "damage_reward_title"
 msgstr "[outline_color=#00aa00]Reward: Damage[/outline_color]"

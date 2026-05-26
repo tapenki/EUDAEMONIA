@@ -16,4 +16,4 @@ func reveal():
 	visible = true
 	for button in get_node("Paths").get_children():
 		if ui.paths.has(button.subject):
-			button.disable()
+			button.visible = false

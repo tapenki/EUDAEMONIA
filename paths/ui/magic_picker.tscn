@@ -99,6 +99,7 @@ texture_normal = ExtResource("9_dhhy1")
 subject = "blade"
 
 [node name="Time" parent="Paths" unique_id=1233362423 instance=ExtResource("2_yj67j")]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("10_f0tcv")
 subject = "time"

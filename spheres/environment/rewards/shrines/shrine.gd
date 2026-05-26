@@ -1,14 +1,15 @@
-class_name Described extends Focusable
+class_name Shrine extends Node2D
 
-@onready var ui = get_node("/root/Main/UI")
+## described
 @onready var descriptions = get_node("/root/Main/UI/Descriptions")
 @export var subject: String
-@export var tag: String
+@export var tag = "upgrade_cost"
 @export var extras: Array
 
 var description_scene = preload("res://ui/description.tscn")
 var description_nodes: Array
 
+## described
 func get_description_title(what):
 	return tr(what+"_title")
 
@@ -33,8 +34,6 @@ func make_description(description_subject, description_title, description_text, 
 	return description_instance
 
 func _on_mouse_entered() -> void:
-	if description_nodes:
-		return
 	var description_position = Vector2(-260, 16)
 	
 	make_description(subject, get_description_title(subject), get_description_text(subject), tag, description_position)
@@ -46,11 +45,3 @@ func _on_mouse_exited() -> void:
 	for description_node in description_nodes:
 		description_node.disappear()
 	description_nodes.clear()
-
-func _on_focus_entered() -> void:
-	_on_mouse_entered()
-	super()
-	
-func _on_focus_exited() -> void:
-	_on_mouse_exited()
-	super()

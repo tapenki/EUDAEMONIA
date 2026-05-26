@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cufgjpblnsj3" path="res://paths/ui/trick_upgrade_button.gd" id="2_12rqu"]
 [ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="3_12rqu"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="4_qs4nh"]
+[ext_resource type="Script" uid="uid://b0q1rnllrr6lp" path="res://ui/focusable.gd" id="4_sj5vj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_muabv"]
 resource_local_to_scene = true
@@ -30,6 +31,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(30, 30)
+focus_neighbor_bottom = NodePath("Bind")
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_4mo16")
 ignore_texture_size = true
@@ -75,11 +77,13 @@ offset_left = -15.0
 offset_top = -20.0
 offset_right = 15.0
 grow_horizontal = 2
+focus_neighbor_top = NodePath("..")
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_12rqu")
 toggle_mode = true
 text = "[A]"
 flat = true
+script = ExtResource("4_sj5vj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Bind" unique_id=308743305]
 show_behind_parent = true
@@ -99,7 +103,11 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="focus_entered" from="Bind" to="Bind" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Bind" to="Bind" method="_on_focus_exited"]
 [connection signal="toggled" from="Bind" to="." method="toggle_keybind_input"]

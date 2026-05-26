@@ -17,7 +17,7 @@ func _physics_process(delta):
 		velocity = lerp(velocity, to_target, 0.05)
 		get_node("Lifetime").start(randf_range(0.2, 0.5))
 	else:
-		velocity *= 0.9
+		velocity *= pow(0.01, delta * ability_relay.speed_scale)
 
 func entity_collision():
 	if age < 0.75:

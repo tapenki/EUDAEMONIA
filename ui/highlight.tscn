@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://fnt5wdcnrryl"]
+
+[ext_resource type="Script" uid="uid://b1e3hvb0r8fib" path="res://ui/misc/word_wheel.gd" id="1_iobfn"]
+
+[node name="Highlight" type="Control" unique_id=167721496]
+z_index = 5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iobfn")
+radius = 45
+text = "SELECTION"
+text_color = Color(1, 1, 1, 1)
+outline_color = Color(0.3779188, 0.37791887, 0.37791884, 1)

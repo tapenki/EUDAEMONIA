@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="9_7j5ik"]
 [ext_resource type="Script" uid="uid://vh8xivmipwsn" path="res://ui/reset.gd" id="9_ow1yt"]
 [ext_resource type="Script" uid="uid://ckx6mkkpaia7r" path="res://ui/misc/version.gd" id="10_0w6e5"]
+[ext_resource type="Script" uid="uid://b0q1rnllrr6lp" path="res://ui/focusable.gd" id="10_x7nxp"]
 [ext_resource type="Texture2D" uid="uid://dlvhvxybaywq3" path="res://ui/button_red.png" id="12_2qbci"]
 [ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="12_o2jkc"]
 [ext_resource type="Script" uid="uid://vpih48d88d8d" path="res://ui/ui_scaler.gd" id="13_co7pv"]
@@ -236,6 +237,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("9_7j5ik")
 text = "start_day"
 flat = true
+script = ExtResource("10_x7nxp")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HUD/TopRightButtons/Proceed" unique_id=567309395]
 show_behind_parent = true
@@ -355,110 +357,15 @@ texture = ExtResource("17_bw7v0")
 script = ExtResource("18_rkf1o")
 rotation_speed = -0.1
 
-[node name="Abilities" type="Control" parent="GameMenu" unique_id=332492797]
+[node name="Middle" type="Control" parent="GameMenu" unique_id=1242429173]
 anchors_preset = 0
 offset_top = 85.0
 offset_right = 900.0
 offset_bottom = 385.0
 pivot_offset_ratio = Vector2(0.5, 0)
-mouse_filter = 2
 script = ExtResource("13_co7pv")
 
-[node name="Background1" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=302963193]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 221.0
-offset_bottom = 296.0
-texture = ExtResource("14_c74r5")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="Background2" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=1275125340]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 0
-offset_left = 229.0
-offset_top = 4.0
-offset_right = 446.0
-offset_bottom = 296.0
-texture = ExtResource("14_c74r5")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="Background3" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=943374326]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 0
-offset_left = 454.0
-offset_top = 4.0
-offset_right = 671.0
-offset_bottom = 296.0
-texture = ExtResource("14_c74r5")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="Background4" type="NinePatchRect" parent="GameMenu/Abilities" unique_id=1361050124]
-self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
-layout_mode = 0
-offset_left = 679.0
-offset_top = 4.0
-offset_right = 896.0
-offset_bottom = 296.0
-texture = ExtResource("14_c74r5")
-region_rect = Rect2(0, 0, 60, 60)
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="PathPickers" type="Control" parent="GameMenu/Abilities" unique_id=1998880688]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MagicPicker1" parent="GameMenu/Abilities/PathPickers" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
-layout_mode = 0
-mouse_filter = 2
-next = NodePath("../MagicPicker2")
-
-[node name="MagicPicker2" parent="GameMenu/Abilities/PathPickers" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
-visible = false
-layout_mode = 0
-offset_left = 225.0
-offset_right = 450.0
-mouse_filter = 2
-next = NodePath("../MagicPicker3")
-
-[node name="MagicPicker3" parent="GameMenu/Abilities/PathPickers" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
-visible = false
-layout_mode = 0
-offset_left = 450.0
-offset_right = 675.0
-mouse_filter = 2
-next = NodePath("../MagicPicker4")
-
-[node name="MagicPicker4" parent="GameMenu/Abilities/PathPickers" unique_id=1650941343 instance=ExtResource("6_6rr40")]
-visible = false
-layout_mode = 0
-offset_left = 675.0
-offset_right = 900.0
-mouse_filter = 2
-
-[node name="PathUI" type="Control" parent="GameMenu/Abilities" unique_id=1526798085]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TabButtons" type="HFlowContainer" parent="GameMenu/Abilities" unique_id=677729924]
+[node name="TabButtons" type="HFlowContainer" parent="GameMenu/Middle" unique_id=677729924]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -470,18 +377,17 @@ offset_bottom = -4.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="AbilitiesTabButton" type="Button" parent="GameMenu/Abilities/TabButtons" unique_id=1518762407 node_paths=PackedStringArray("tab")]
+[node name="AbilitiesTabButton" type="Button" parent="GameMenu/Middle/TabButtons" unique_id=1518762407 node_paths=PackedStringArray("tab")]
 z_index = 1
 layout_mode = 2
-focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_7j5ik")
 text = "abilities"
 flat = true
 script = ExtResource("18_co7pv")
-tab = NodePath("../..")
+tab = NodePath("../../Abilities")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Abilities/TabButtons/AbilitiesTabButton" unique_id=972537794]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Middle/TabButtons/AbilitiesTabButton" unique_id=972537794]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -497,18 +403,17 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="AffectsTabButton" type="Button" parent="GameMenu/Abilities/TabButtons" unique_id=1922868383 node_paths=PackedStringArray("tab")]
+[node name="AffectsTabButton" type="Button" parent="GameMenu/Middle/TabButtons" unique_id=1922868383 node_paths=PackedStringArray("tab")]
 z_index = 1
 layout_mode = 2
-focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_7j5ik")
 text = "affects"
 flat = true
 script = ExtResource("18_co7pv")
-tab = NodePath("../../../Affects")
+tab = NodePath("../../Affects")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Abilities/TabButtons/AffectsTabButton" unique_id=1183487405]
+[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Middle/TabButtons/AffectsTabButton" unique_id=1183487405]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -524,18 +429,117 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="Affects" type="Control" parent="GameMenu" unique_id=1013813671]
+[node name="Abilities" type="Control" parent="GameMenu/Middle" unique_id=332492797]
+anchors_preset = 0
+offset_right = 900.0
+offset_bottom = 300.0
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+
+[node name="Background1" type="NinePatchRect" parent="GameMenu/Middle/Abilities" unique_id=302963193]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 221.0
+offset_bottom = 296.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background2" type="NinePatchRect" parent="GameMenu/Middle/Abilities" unique_id=1275125340]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 229.0
+offset_top = 4.0
+offset_right = 446.0
+offset_bottom = 296.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background3" type="NinePatchRect" parent="GameMenu/Middle/Abilities" unique_id=943374326]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 454.0
+offset_top = 4.0
+offset_right = 671.0
+offset_bottom = 296.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Background4" type="NinePatchRect" parent="GameMenu/Middle/Abilities" unique_id=1361050124]
+self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+layout_mode = 0
+offset_left = 679.0
+offset_top = 4.0
+offset_right = 896.0
+offset_bottom = 296.0
+texture = ExtResource("14_c74r5")
+region_rect = Rect2(0, 0, 60, 60)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="PathPickers" type="Control" parent="GameMenu/Middle/Abilities" unique_id=1998880688]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicPicker1" parent="GameMenu/Middle/Abilities/PathPickers" unique_id=2141726281 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+layout_mode = 0
+mouse_filter = 2
+next = NodePath("../MagicPicker2")
+
+[node name="MagicPicker2" parent="GameMenu/Middle/Abilities/PathPickers" unique_id=487768394 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_right = 450.0
+mouse_filter = 2
+next = NodePath("../MagicPicker3")
+
+[node name="MagicPicker3" parent="GameMenu/Middle/Abilities/PathPickers" unique_id=1938075186 node_paths=PackedStringArray("next") instance=ExtResource("6_6rr40")]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_right = 675.0
+mouse_filter = 2
+next = NodePath("../MagicPicker4")
+
+[node name="MagicPicker4" parent="GameMenu/Middle/Abilities/PathPickers" unique_id=1650941343 instance=ExtResource("6_6rr40")]
+visible = false
+layout_mode = 0
+offset_left = 675.0
+offset_right = 900.0
+mouse_filter = 2
+
+[node name="PathUI" type="Control" parent="GameMenu/Middle/Abilities" unique_id=1526798085]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Affects" type="Control" parent="GameMenu/Middle" unique_id=1013813671]
 visible = false
 anchors_preset = 0
 offset_left = 15.0
-offset_top = 85.0
 offset_right = 885.0
-offset_bottom = 385.0
+offset_bottom = 300.0
 pivot_offset_ratio = Vector2(0.5, 0)
 mouse_filter = 2
-script = ExtResource("13_co7pv")
 
-[node name="Background" type="NinePatchRect" parent="GameMenu/Affects" unique_id=271586179]
+[node name="Background" type="NinePatchRect" parent="GameMenu/Middle/Affects" unique_id=271586179]
 self_modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -554,7 +558,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="Label" type="Label" parent="GameMenu/Affects" unique_id=1055659898]
+[node name="Label" type="Label" parent="GameMenu/Middle/Affects" unique_id=1055659898]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -568,7 +572,7 @@ text = "affects"
 label_settings = SubResource("LabelSettings_co7pv")
 horizontal_alignment = 1
 
-[node name="Container" type="HFlowContainer" parent="GameMenu/Affects" unique_id=218071182]
+[node name="Container" type="HFlowContainer" parent="GameMenu/Middle/Affects" unique_id=218071182]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -581,76 +585,10 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Pawn" parent="GameMenu/Affects/Container" unique_id=1930712691 instance=ExtResource("15_3lbto")]
+[node name="Pawn" parent="GameMenu/Middle/Affects/Container" unique_id=1930712691 instance=ExtResource("15_3lbto")]
 layout_mode = 2
 texture_normal = ExtResource("14_c74r5")
 subject = "pawn"
-
-[node name="TabButtons" type="HFlowContainer" parent="GameMenu/Affects" unique_id=1140065291]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -450.0
-offset_top = -35.0
-offset_right = 450.0
-offset_bottom = -4.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="AbilitiesTabButton" type="Button" parent="GameMenu/Affects/TabButtons" unique_id=1093889593 node_paths=PackedStringArray("tab")]
-z_index = 1
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("9_7j5ik")
-text = "abilities"
-flat = true
-script = ExtResource("18_co7pv")
-tab = NodePath("../../../Abilities")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Affects/TabButtons/AbilitiesTabButton" unique_id=1402207053]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("19_0tr35")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
-
-[node name="AffectsTabButton" type="Button" parent="GameMenu/Affects/TabButtons" unique_id=1473625632 node_paths=PackedStringArray("tab")]
-z_index = 1
-layout_mode = 2
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource("9_7j5ik")
-text = "affects"
-flat = true
-script = ExtResource("18_co7pv")
-tab = NodePath("../..")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="GameMenu/Affects/TabButtons/AffectsTabButton" unique_id=300245908]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_o2jkc")
-region_rect = Rect2(0, 0, 64, 64)
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
 
 [node name="BottomRightButtons" type="Control" parent="GameMenu" unique_id=510277333]
 layout_mode = 1
@@ -753,11 +691,15 @@ patch_margin_bottom = 10
 [node name="Settings" parent="." unique_id=1586582074 instance=ExtResource("21_3lbto")]
 visible = false
 
+[connection signal="focus_entered" from="HUD/TopRightButtons/Proceed" to="HUD/TopRightButtons/Proceed" method="_on_focus_entered"]
+[connection signal="focus_exited" from="HUD/TopRightButtons/Proceed" to="HUD/TopRightButtons/Proceed" method="_on_focus_exited"]
 [connection signal="pressed" from="HUD/TopRightButtons/Proceed" to="." method="toggle_game_menu"]
-[connection signal="pressed" from="GameMenu/Abilities/TabButtons/AbilitiesTabButton" to="GameMenu/Abilities/TabButtons/AbilitiesTabButton" method="_on_pressed"]
-[connection signal="pressed" from="GameMenu/Abilities/TabButtons/AffectsTabButton" to="GameMenu/Abilities/TabButtons/AffectsTabButton" method="_on_pressed"]
-[connection signal="pressed" from="GameMenu/Affects/TabButtons/AbilitiesTabButton" to="GameMenu/Affects/TabButtons/AbilitiesTabButton" method="_on_pressed"]
-[connection signal="pressed" from="GameMenu/Affects/TabButtons/AffectsTabButton" to="GameMenu/Affects/TabButtons/AffectsTabButton" method="_on_pressed"]
+[connection signal="focus_entered" from="GameMenu/Middle/TabButtons/AbilitiesTabButton" to="GameMenu/Middle/TabButtons/AbilitiesTabButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="GameMenu/Middle/TabButtons/AbilitiesTabButton" to="GameMenu/Middle/TabButtons/AbilitiesTabButton" method="_on_focus_exited"]
+[connection signal="pressed" from="GameMenu/Middle/TabButtons/AbilitiesTabButton" to="GameMenu/Middle/TabButtons/AbilitiesTabButton" method="_on_pressed"]
+[connection signal="focus_entered" from="GameMenu/Middle/TabButtons/AffectsTabButton" to="GameMenu/Middle/TabButtons/AffectsTabButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="GameMenu/Middle/TabButtons/AffectsTabButton" to="GameMenu/Middle/TabButtons/AffectsTabButton" method="_on_focus_exited"]
+[connection signal="pressed" from="GameMenu/Middle/TabButtons/AffectsTabButton" to="GameMenu/Middle/TabButtons/AffectsTabButton" method="_on_pressed"]
 [connection signal="button_down" from="GameMenu/BottomRightButtons/Reset" to="GameMenu/BottomRightButtons/Reset" method="down"]
 [connection signal="button_up" from="GameMenu/BottomRightButtons/Reset" to="GameMenu/BottomRightButtons/Reset" method="up"]
 [connection signal="mouse_entered" from="GameMenu/BottomRightButtons/Reset" to="GameMenu/BottomRightButtons/Reset" method="_on_mouse_entered"]

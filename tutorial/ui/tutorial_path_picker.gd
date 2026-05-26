@@ -36,4 +36,4 @@ func reveal():
 	for child in get_children():
 		for button in child.get_children():
 			if button is UnlockPathButton and ui.paths.has(button.subject):
-				button.disable()
+				button.visible = false

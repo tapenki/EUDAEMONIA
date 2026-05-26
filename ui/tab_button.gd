@@ -1,4 +1,4 @@
-extends Button
+extends Focusable
 
 var button_blue = preload("res://ui/button_blue.png")
 var button_gray = preload("res://ui/button.png")

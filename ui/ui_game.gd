@@ -10,11 +10,11 @@ class_name UIGame extends UICore
 @onready var proceed = $"HUD/TopRightButtons/Proceed"
 @onready var reset_button = $"GameMenu/BottomRightButtons/Reset"
 
-@onready var ability_menu = $"GameMenu/Abilities"
-@onready var affect_menu = $"GameMenu/Affects"
+@onready var ability_menu = $"GameMenu/Middle/Abilities"
+@onready var affect_menu = $"GameMenu/Middle/Affects"
 
-@onready var path_pickers = $"GameMenu/Abilities/PathPickers"
-@onready var path_ui = $"GameMenu/Abilities/PathUI"
+@onready var path_pickers = $"GameMenu/Middle/Abilities/PathPickers"
+@onready var path_ui = $"GameMenu/Middle/Abilities/PathUI"
 
 var button_red = preload("res://ui/button_red.png")
 var button_blue = preload("res://ui/button_blue.png")
@@ -26,7 +26,7 @@ var paths: Array
 
 var challenges: Array
 
-@onready var game_menu_tab = $"GameMenu/Abilities"
+@onready var game_menu_tab = $"GameMenu/Middle/Abilities"
 signal switch_game_menu_tab(tab)
 
 func _ready() -> void:

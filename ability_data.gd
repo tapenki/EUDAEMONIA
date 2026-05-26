@@ -31,6 +31,21 @@ var ability_data = {
 		"type" : "weapon",
 		"affect" : preload("res://affects/ui/weapon_button.tscn")
 	},
+	"popgun" : {
+		"script" : preload("res://spheres/2/depths/popgun/popgun.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
+	"mold_machine" : {
+		"script" : preload("res://spheres/3/doubt/mold_machine/mold_machine.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
+	"five_of_stars" : {
+		"script" : preload("res://spheres/3/wonder/five_of_stars/five_of_stars.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
 	#endregion
 	#region challenges
 	"lasting_wounds" : {
