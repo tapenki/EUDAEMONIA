@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="6_4lain"]
 [ext_resource type="Script" uid="uid://df6lt2im58b3d" path="res://generic/behavior/launch_summoning.gd" id="7_4lain"]
 [ext_resource type="PackedScene" uid="uid://du0ckc58r7gue" path="res://spheres/5/steel/mecha_spitter/mecha_spitter.tscn" id="7_wcvhy"]
+[ext_resource type="PackedScene" uid="uid://1yd3olx62ys5" path="res://generic/projectiles/weak_explosion.tscn" id="8_c73es"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_ffehq"]
 [ext_resource type="Texture2D" uid="uid://dpv685ysv8l34" path="res://spheres/5/steel/spitter_forge/spitter_forge.png" id="9_anxvf"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_ieush"]
@@ -168,6 +169,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_4lain")
 next = NodePath("../Summon")
+projectile_scene = ExtResource("8_c73es")
 
 [node name="Summon" type="Node" parent="StateHandler/Summoning" unique_id=209612773 node_paths=PackedStringArray("next")]
 process_mode = 4

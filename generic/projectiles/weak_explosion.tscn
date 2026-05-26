@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://1yd3olx62ys5"]
+
+[ext_resource type="Script" uid="uid://bauj1wnsvphta" path="res://generic/projectiles/explosion.gd" id="1_2dfdu"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_jblt0"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_77u75"]
+[ext_resource type="Texture2D" uid="uid://covist8tci8hy" path="res://generic/projectiles/explosion.png" id="5_k45o7"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_r80jg"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_ne1ah"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 50.0
+
+[node name="WeakExplosion" type="Area2D" unique_id=771189090 node_paths=PackedStringArray("ability_relay")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_2dfdu")
+ability_relay = NodePath("AbilityRelay")
+hit_particle_preset = ""
+hits_left = -1
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=1467920456]
+unique_name_in_owner = true
+script = ExtResource("2_jblt0")
+is_projectile = 1
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=263788185]
+material = ExtResource("4_77u75")
+texture = ExtResource("5_k45o7")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1908566703]
+z_index = -3
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_r80jg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=324326939]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." unique_id=296192468 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("7_ne1ah")
+wait_time = 0.4
+running = true
+ability_relay = NodePath("../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

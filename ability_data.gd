@@ -46,6 +46,26 @@ var ability_data = {
 		"type" : "weapon",
 		"affect" : preload("res://affects/ui/weapon_button.tscn")
 	},
+	"bombardier" : {
+		"script" : preload("res://spheres/4/ruin/bombardier/bombardier.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
+	"part_the_earth" : {
+		"script" : preload("res://spheres/5/breath/part_the_earth/part_the_earth.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
+	"hell_hammer" : {
+		"script" : preload("res://spheres/5/steel/hell_hammer/hell_hammer.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
+	"sight_sickle" : {
+		"script" : preload("res://spheres/6/light/sight_sickle/sight_sickle.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
 	#endregion
 	#region challenges
 	"lasting_wounds" : {

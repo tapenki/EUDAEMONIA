@@ -4,7 +4,7 @@ extends State
 
 @export var next: State
 
-var projectile_scene = preload("res://generic/projectiles/explosion.tscn")
+@export var projectile_scene = preload("res://generic/projectiles/explosion.tscn")
 
 func on_enter() -> void:
 	var projectile_instance = user.ability_relay.make_projectile(projectile_scene, 

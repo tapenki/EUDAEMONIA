@@ -892,7 +892,7 @@ msgid "mold_machine_title"
 msgstr "[outline_color=#00aa00]Weapon: Mold Machine[/outline_color]"
 
 msgid "mold_machine_description"
-msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a mold spore with [outline_size=10]+[10][/outline_size] damage. Mold spores can pass through walls."
+msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a mold spore that has [outline_size=10]+[10][/outline_size] damage and can pass through walls."
 
 msgid "land_of_ruin_title"
 msgstr "Sphere [4]: Land of Ruin"
@@ -915,6 +915,12 @@ msgstr "[outline_size=10]Shrine of Ruin[/outline_size]"
 msgid "shrine_of_ruin_description"
 msgstr "Unlearn all your abilities."
 
+msgid "bombardier_title"
+msgstr "[outline_color=#00aa00]Weapon: Bombardier[/outline_color]"
+
+msgid "bombardier_description"
+msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Launch a bomb that has [outline_size=10]+[8][/outline_size] damage and explodes on contact."
+
 msgid "land_of_breath_title"
 msgstr "Sphere [5]: Land of Breath"
 
@@ -929,6 +935,12 @@ msgstr "[outline_size=10]Gate: Garden[/outline_size]"
 
 msgid "breath_basic_gate_description"
 msgstr "A garden where thorns grow."
+
+msgid "part_the_earth_title"
+msgstr "[outline_color=#00aa00]Weapon: Part the Earth[/outline_color]"
+
+msgid "part_the_earth_description"
+msgstr "[outline_size=10]Once every [1.2] seconds:[/outline_size] Manifest a line of [outline_size=10][5][/outline_size] thorns that have [outline_size=10]+[10][/outline_size] damage and [outline_size=10]+[1][/outline_size] pierce."
 
 msgid "land_of_steel_title"
 msgstr "Sphere [5]: Land of Steel"
@@ -945,6 +957,12 @@ msgstr "[outline_size=10]Gate: Factory[/outline_size]"
 msgid "steel_basic_gate_description"
 msgstr "A cabin in the grey woods."
 
+msgid "hell_hammer_title"
+msgstr "[outline_color=#00aa00]Weapon: Hell Hammer[/outline_color]"
+
+msgid "hell_hammer_description"
+msgstr "[outline_size=10]Once every [1.2] seconds:[/outline_size] Create a shockwave that has [outline_size=10]+[20][/outline_size] damage and applies knockback upon dealing damage."
+
 msgid "land_of_light_title"
 msgstr "Sphere [6]: Land of Light"
 
@@ -959,6 +977,12 @@ msgstr "[outline_size=10]Gate: Bright Room[/outline_size]"
 
 msgid "light_basic_gate_description"
 msgstr "Anything for your eyes."
+
+msgid "sight_sickle_title"
+msgstr "[outline_color=#00aa00]Weapon: Sight Sickle[/outline_color]"
+
+msgid "sight_sickle_description"
+msgstr "[outline_size=10]Once every [0.7] seconds:[/outline_size] Swing a laser sickle with [outline_size=10]+[10][/outline_size] damage."
 
 msgid "his_throne_title"
 msgstr "Sphere [8]: His Throne"

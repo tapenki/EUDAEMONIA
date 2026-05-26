@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_4f15w"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_pf25n"]
 [ext_resource type="PackedScene" uid="uid://cwtwhshwddgbv" path="res://spheres/environment/rewards/damage_reward.tscn" id="10_aoovo"]
+[ext_resource type="PackedScene" uid="uid://d0rsfy6pux6a6" path="res://spheres/environment/rewards/shrines/weapon_shrine.tscn" id="11_l0qgo"]
 
 [node name="RuinDamageTreasury" type="Node2D" unique_id=1391640225]
 
@@ -98,9 +99,7 @@ rotation = 3.1415927
 [node name="Exit0" parent="Doors" unique_id=1267180042 instance=ExtResource("5_6to1l")]
 position = Vector2(630, 30)
 room = "ruin_room_1"
-door = "Entrance0"
 subject = "ruin_basic_gate"
-tag = "travel_cost"
 
 [node name="Explodifier" type="Node" parent="." unique_id=1128145461]
 script = ExtResource("6_8rffi")
@@ -116,6 +115,10 @@ reward = ExtResource("8_pf25n")
 
 [node name="DamageRewardGiver" parent="." unique_id=64177981 instance=ExtResource("6_im8gg")]
 reward = ExtResource("10_aoovo")
+
+[node name="BombardierShrine" parent="." unique_id=107534419 instance=ExtResource("11_l0qgo")]
+position = Vector2(300, 60)
+subject = "bombardier"
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnbbqhbxt3tif"
-path="res://.godot/imported/star_bomb.png-1493b38db771c8a669bca01ff28b05cd.ctex"
+uid="uid://c8apil7fqcs7r"
+path="res://.godot/imported/cursor_regular.png-55881a4c2daf8db6a6122281f4c012e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://affects/equipment/weapons/star_blaze/star_bomb.png"
-dest_files=["res://.godot/imported/star_bomb.png-1493b38db771c8a669bca01ff28b05cd.ctex"]
+source_file="res://ui/misc/cursor_regular.png"
+dest_files=["res://.godot/imported/cursor_regular.png-55881a4c2daf8db6a6122281f4c012e4.ctex"]
 
 [params]
 

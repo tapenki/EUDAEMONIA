@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="6_scvkh"]
 [ext_resource type="Texture2D" uid="uid://cchve0tb7088g" path="res://spheres/4/ruin/rocketjumper/rocketjumper.png" id="8_4fv88"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="8_75mwb"]
+[ext_resource type="PackedScene" uid="uid://1yd3olx62ys5" path="res://generic/projectiles/weak_explosion.tscn" id="8_amgbv"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_h5b7m"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_ws6uu"]
 
@@ -152,6 +153,7 @@ process_mode = 4
 script = ExtResource("5_tsvkj")
 scale = 1.2
 next = NodePath("../DashAttack1")
+projectile_scene = ExtResource("8_amgbv")
 
 [node name="DashAttack1" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1762795814 node_paths=PackedStringArray("next")]
 process_mode = 4
@@ -170,6 +172,7 @@ process_mode = 4
 script = ExtResource("5_tsvkj")
 scale = 1.2
 next = NodePath("../DashAttack2")
+projectile_scene = ExtResource("8_amgbv")
 
 [node name="DashAttack2" type="Node" parent="StateHandler/PrepareAttack1" unique_id=1275605999 node_paths=PackedStringArray("next")]
 process_mode = 4

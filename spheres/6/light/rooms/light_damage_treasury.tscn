@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_seflx"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_q0c65"]
 [ext_resource type="PackedScene" uid="uid://cwtwhshwddgbv" path="res://spheres/environment/rewards/damage_reward.tscn" id="9_0f03a"]
+[ext_resource type="PackedScene" uid="uid://d0rsfy6pux6a6" path="res://spheres/environment/rewards/shrines/weapon_shrine.tscn" id="10_nwff3"]
 
 [node name="LightDamageTreasury" type="Node2D" unique_id=1768725321]
 
@@ -93,6 +94,10 @@ reward = ExtResource("8_q0c65")
 
 [node name="DamageRewardGiver" parent="." unique_id=242710307 instance=ExtResource("6_ieab3")]
 reward = ExtResource("9_0f03a")
+
+[node name="SightSickleShrine" parent="." unique_id=107534419 instance=ExtResource("10_nwff3")]
+position = Vector2(360, -60)
+subject = "sight_sickle"
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

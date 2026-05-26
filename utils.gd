@@ -4,6 +4,8 @@ signal controls_changed(action: String)
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	#Input.set_custom_mouse_cursor(load("res://ui/misc/cursor_regular.png"))
+	#Input.set_custom_mouse_cursor(load("res://ui/misc/cursor_pointing.png"), Input.CURSOR_POINTING_HAND, Vector2(6, 6))
 
 func _unhandled_input(event) -> void:
 	##is_action_just_pressed_by_event doesn't work with mouse buttons :(

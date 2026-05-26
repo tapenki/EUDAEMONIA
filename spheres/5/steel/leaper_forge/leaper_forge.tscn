@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="6_tvem5"]
 [ext_resource type="PackedScene" uid="uid://c4l55eqnx5sfe" path="res://spheres/5/steel/mecha_leaper/mecha_leaper.tscn" id="7_gyc7o"]
 [ext_resource type="Script" uid="uid://df6lt2im58b3d" path="res://generic/behavior/launch_summoning.gd" id="7_tvem5"]
+[ext_resource type="PackedScene" uid="uid://1yd3olx62ys5" path="res://generic/projectiles/weak_explosion.tscn" id="8_222l6"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_2qgn1"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_gyc7o"]
 [ext_resource type="Texture2D" uid="uid://b8r7ifnc7x22g" path="res://spheres/5/steel/leaper_forge/leaper_forge.png" id="10_tfc8b"]
@@ -168,6 +169,7 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 process_mode = 4
 script = ExtResource("6_tvem5")
 next = NodePath("../Summon")
+projectile_scene = ExtResource("8_222l6")
 
 [node name="Summon" type="Node" parent="StateHandler/Summoning" unique_id=209612773 node_paths=PackedStringArray("next")]
 process_mode = 4
