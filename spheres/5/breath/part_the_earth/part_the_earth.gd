@@ -36,7 +36,7 @@ func attack(direction, ability_relay):
 
 func fire(direction, ability_relay):
 	for i in 5:
-		var thorn_position = ability_relay.global_position + direction * 50 * (i + 1) + Vector2(randf_range(-10, 10), randf_range(-10, 10))
+		var thorn_position = ability_relay.global_position + direction * 60 * (i + 1) + Vector2(randf_range(-10, 10), randf_range(-10, 10))
 		var wall_intersections
 		var ray_query = PhysicsRayQueryParameters2D.create(ability_relay.global_position, thorn_position)
 		ray_query.collision_mask = 128

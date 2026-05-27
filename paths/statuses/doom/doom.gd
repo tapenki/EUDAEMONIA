@@ -40,18 +40,20 @@ func disapply(ability_relay):
 
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants.keys():
-		if swift_fate:
-			applicants[ability_relay]["duration"] -= delta * 2
-		else:
-			applicants[ability_relay]["duration"] -= delta
 		if applicants[ability_relay]["duration"] <= 0:
-			var damage_mult = 0.4
-			if swift_fate:
-				damage_mult = 0.6
-			ability_relay.deal_damage(ability_relay.owner, 
-			{"base" : damage_mult * applicants[ability_relay]["accumulated"], "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
-			Config.get_team_color(1, "secondary"))
 			disapply(ability_relay)
+		else:
+			if swift_fate:
+				applicants[ability_relay]["duration"] -= delta * 2
+			else:
+				applicants[ability_relay]["duration"] -= delta
+			if applicants[ability_relay]["duration"] <= 0:
+				var damage_mult = 0.4
+				if swift_fate:
+					damage_mult = 0.6
+				ability_relay.deal_damage(ability_relay.owner, 
+				{"base" : damage_mult * applicants[ability_relay]["accumulated"], "multiplier" : 1.0, "flat" : 0, "skip_input_modifiers": true, "skip_output_modifiers": true, "skip_immunity": true},
+				Config.get_team_color(1, "secondary"))
 
 func damage_taken(damage, ability_relay) -> void:
 	applicants[ability_relay]["accumulated"] = min(10 * applicants[ability_relay]["stacks"], applicants[ability_relay]["accumulated"] + ability_relay.accumulate_damage(damage))

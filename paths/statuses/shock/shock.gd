@@ -38,9 +38,10 @@ func disapply(ability_relay):
 
 func _physics_process(delta: float) -> void:
 	for ability_relay in applicants.keys():
-		applicants[ability_relay]["duration"] -= delta
 		if applicants[ability_relay]["duration"] <= 0:
 			disapply(ability_relay)
+		else:
+			applicants[ability_relay]["duration"] -= delta
 
 func crit_taken_modifiers(modifiers, ability_relay) -> void:
 	modifiers["base"] += applicants[ability_relay]["stacks"]

@@ -316,7 +316,7 @@ msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Ability: Conflagration[/outline_color]"
 
 msgid "conflagration_description"
-msgstr "[outline_size=10]Upon a burning entity perishing:[/outline_size] Spread up to [outline_size=10][10xLEVEL][/outline_size] of its burn to the nearest enemy."
+msgstr "[outline_size=10]Upon a burning entity perishing:[/outline_size] Spread up to [outline_size=10][10xLEVEL][/outline_size] of its burn, shock, and doom to the nearest enemy."
 
 msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
@@ -517,7 +517,7 @@ msgid "rapid_recovery_title"
 msgstr "[outline_color=#0f9936]Ability: Rapid Recovery[/outline_color]"
 
 msgid "rapid_recovery_description"
-msgstr "[outline_size=10]Upon taking damage:[/outline_size] Recover [outline_size=10]+[2xLEVEL][/outline_size] health per second over [outline_size=10][4][/outline_size] seconds."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Recover [outline_size=10]+[1.5xLEVEL][/outline_size] health per second over [outline_size=10][4][/outline_size] seconds."
 
 msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"

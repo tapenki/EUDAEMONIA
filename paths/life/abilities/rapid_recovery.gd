@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	for ability_relay in applicants:
 		if applicants.has(ability_relay) and applicants[ability_relay].has("time") and applicants[ability_relay]["time"] > 0:
 			applicants[ability_relay]["time"] -= delta*ability_relay.speed_scale
-			ability_relay.owner.heal(2*level*delta*ability_relay.speed_scale)
+			ability_relay.owner.heal(1.5*level*delta*ability_relay.speed_scale)
 
 func damage_taken(_damage, ability_relay) -> void:
 	if applicants.has(ability_relay) and applicants[ability_relay].has("time"):
