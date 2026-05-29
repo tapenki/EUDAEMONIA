@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://4mon6i40d7sc" path="res://spheres/environment/doors/broken_door.png" id="5_qbu1n"]
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_d6vpi"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="6_wx3el"]
-[ext_resource type="PackedScene" uid="uid://b3503ul8m0fdg" path="res://spheres/environment/doors/secret_door.tscn" id="7_vw5cs"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_wu5bp"]
 
 [node name="StepsEntranceHall" type="Node2D" unique_id=1768725321]
@@ -87,13 +86,6 @@ texture = ExtResource("5_qbu1n")
 position = Vector2(480, 30)
 room = "steps_room_0"
 subject = "steps_basic_gate"
-tag = "travel_cost"
-
-[node name="SecretExit0" parent="Doors" unique_id=1627560506 instance=ExtResource("7_vw5cs")]
-position = Vector2(930, 330)
-rotation = 1.5707964
-room = "steps_secret_room_0"
-tag = "travel_cost"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_d6vpi")]
 reward = ExtResource("6_wx3el")

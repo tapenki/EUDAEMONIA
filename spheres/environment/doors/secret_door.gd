@@ -4,6 +4,7 @@ extends Node2D
 @onready var sprite = $Sprite
 @onready var particles = $Particles
 @onready var appearance_effect = $Appearance
+@onready var hint_particles = $HintParticles
 
 @export var room: String
 @export var door = "Entrance0"
@@ -31,6 +32,7 @@ func unlock():
 	button.visible = true
 	sprite.visible = true
 	particles.emitting = true
+	hint_particles.emitting = false
 	appearance_effect.emitting = true
 	get_node("/root/Main").play_sound("Secret")
 
