@@ -27,6 +27,7 @@ func _on_pressed() -> void:
 		return
 	visible = false
 	get_node("/root/Main/PlayerAbilityHandler").learn("health_boost", 10)
+	get_node("/root/Main/PlayerAbilityHandler").reward_recieved.emit("health_boost")
 	var player = get_node("/root/Main/UI").player
 	player.recover()
 	get_node("/root/Main").play_sound("Click")

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://decbafhx4weix"]
+
+[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="1_pqb05"]
+[ext_resource type="Script" uid="uid://bw2p6wbjt2dqy" path="res://affects/ui/reminder.gd" id="2_ley3e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ley3e"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[node name="Reminder" type="TextureButton" unique_id=374846769]
+custom_minimum_size = Vector2(60, 60)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_pqb05")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_ley3e")
+subject = "eyes_of_light"
+
+[node name="Symbol" type="Label" parent="." unique_id=532623967]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+text = "?"
+label_settings = SubResource("LabelSettings_ley3e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

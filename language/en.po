@@ -831,6 +831,12 @@ msgstr "[outline_size=10]Gate: Outpost[/outline_size]"
 msgid "steps_basic_gate_description"
 msgstr "Outer edges of the sky."
 
+msgid "knock_title"
+msgstr "[outline_color=#0066dd]Affect: Knock[/outline_color]"
+
+msgid "knock_description"
+msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] Spend a charge to release a shockwave that opens nearby doors. It has [outline_size=10]+[25][/outline_size] damage and applies knockback upon dealing damage.[br]Regain 1 charge upon harvesting nous."
+
 msgid "land_of_depths_title"
 msgstr "Sphere [2]: Land of Depths"
 
@@ -977,6 +983,12 @@ msgstr "[outline_size=10]Gate: Bright Room[/outline_size]"
 
 msgid "light_basic_gate_description"
 msgstr "Anything for your eyes."
+
+msgid "eyes_of_light_title"
+msgstr "[outline_color=#0066dd]Affect: Eyes of Light[/outline_color]"
+
+msgid "eyes_of_light_description"
+msgstr "You have [outline_size=10]+[3xNOUS][/outline_size] damage and [outline_size=10]+[10xNOUS][/outline_size] max health."
 
 msgid "sight_sickle_title"
 msgstr "[outline_color=#00aa00]Weapon: Sight Sickle[/outline_color]"

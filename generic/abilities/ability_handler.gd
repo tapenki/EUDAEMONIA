@@ -10,6 +10,8 @@ signal ability_added()
 signal abilities_changed()
 signal weapons_changed()
 
+signal reward_recieved(kind: String)
+
 func _ready() -> void:
 	subscribe(get_node("/root/Main/Entities/Player/AbilityRelay"), {"subscription" = 5})
 

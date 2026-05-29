@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c76uux4qevle2"]
+
+[ext_resource type="Script" uid="uid://bqi2qqgae8rtn" path="res://spheres/1/steps/knock/knock_explosion/knock_explosion.gd" id="1_pffvt"]
+[ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_dkvvq"]
+[ext_resource type="Script" uid="uid://b08brgi3plqjx" path="res://generic/projectiles/knockback.gd" id="3_rela3"]
+[ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_xqe85"]
+[ext_resource type="Texture2D" uid="uid://dnjjsov2mu27v" path="res://spheres/1/steps/knock/knock_explosion/knock_explosion.png" id="5_gibhm"]
+[ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="6_sdqwl"]
+[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="7_qard5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
+radius = 50.0
+
+[node name="KnockExplosion" type="Area2D" unique_id=343166432 node_paths=PackedStringArray("ability_relay")]
+z_index = 1
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_pffvt")
+ability_relay = NodePath("AbilityRelay")
+hit_particle_preset = ""
+hits_left = -1
+
+[node name="AbilityRelay" type="Node2D" parent="." unique_id=695504123]
+unique_name_in_owner = true
+script = ExtResource("2_dkvvq")
+is_projectile = 1
+
+[node name="Knockback" type="Node2D" parent="." unique_id=461199149]
+script = ExtResource("3_rela3")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=895457277]
+material = ExtResource("4_xqe85")
+texture = ExtResource("5_gibhm")
+
+[node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1009323075]
+z_index = -3
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_sdqwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=60140990]
+shape = SubResource("CircleShape2D_nofi0")
+
+[node name="Lifetime" type="Node" parent="." unique_id=189755914 node_paths=PackedStringArray("ability_relay")]
+script = ExtResource("7_qard5")
+wait_time = 0.3
+running = true
+ability_relay = NodePath("../AbilityRelay")
+metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

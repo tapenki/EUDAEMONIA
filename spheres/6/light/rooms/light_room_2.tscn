@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daaq6wxj0ridf" path="res://spheres/environment/rewards/reward_giver.tscn" id="6_n4hnn"]
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_mawft"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_7yhvu"]
+[ext_resource type="PackedScene" uid="uid://djbusk0y05y87" path="res://spheres/6/light/eyes_of_light/shrine_of_eyes.tscn" id="9_ggik4"]
 
 [node name="LightRoom2" type="Node2D" unique_id=1768725321]
 
@@ -99,6 +100,9 @@ reward = ExtResource("7_mawft")
 
 [node name="QualiaRewardGiver" parent="." unique_id=1921029291 instance=ExtResource("6_n4hnn")]
 reward = ExtResource("8_7yhvu")
+
+[node name="ShrineOfEyes" parent="." unique_id=96305373 instance=ExtResource("9_ggik4")]
+position = Vector2(360, -60)
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]
 [connection signal="timeout" from="Waves/Wave2/Timer" to="Waves/Wave2" method="proceed"]

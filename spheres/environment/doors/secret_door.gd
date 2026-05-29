@@ -19,23 +19,22 @@ extends Node2D
 var description_scene = preload("res://ui/description.tscn")
 var description_nodes: Array
 
+var locked = true
+
 func _ready() -> void:
 	sprite.visible = false
-	get_node("/root/Main").day_cleared.connect(activate.unbind(1))
 
-func activate():
+func unlock():
 	if get_node("/root/Main").game_over:
 		return
+	locked = false
 	button.visible = true
+	sprite.visible = true
+	particles.emitting = true
+	appearance_effect.emitting = true
+	get_node("/root/Main").play_sound("Secret")
 
 func enter():
-	if not sprite.visible:
-		sprite.visible = true
-		particles.emitting = true
-		appearance_effect.emitting = true
-		_on_mouse_entered()
-		get_node("/root/Main").play_sound("Secret")
-		return
 	if get_node("/root/Main").game_over:
 		get_node("/root/Main").play_sound("Error")
 		return

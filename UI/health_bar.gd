@@ -13,32 +13,25 @@ var button_blue = preload("res://ui/button_blue.png")
 func _ready() -> void:
 	super()
 	ability_relay.damage_taken.connect(damage_taken)
-	ability_relay.healed.connect(healed)
-	get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update_hp)
-	update_hp.call_deferred()
+	#ability_relay.healed.connect(healed)
+	#get_node("/root/Main/PlayerAbilityHandler").abilities_changed.connect(update_hp)
+	#update_hp.call_deferred()
 
-func update_hp() -> void:
-	var health_values = ability_relay.get_health(player.health, player.max_health)
-	self.max_value = health_values["max_health"]
-	self.value = health_values["health"]
-	damage_bar.max_value = health_values["max_health"]
-	damage_bar.value = health_values["health"]
-	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
-	if self.max_value <= 0:
-		self.texture_progress = button_blue
-	else:
-		self.texture_progress = button_red
+func _process(_delta: float) -> void:
+	if is_instance_valid(player):
+		var health_values = ability_relay.get_health(player.health, player.max_health)
+		self.max_value = health_values["max_health"]
+		self.value = health_values["health"]
+		damage_bar.max_value = health_values["max_health"]
+		damage_bar.value = health_values["health"]
+		health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
+		if self.max_value <= 0:
+			self.texture_progress = button_blue
+		else:
+			self.texture_progress = button_red
 
 func damage_taken(_damage) -> void:
-	var health_values = ability_relay.get_health(player.health, player.max_health)
-	self.value = health_values["health"]
-	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 	damage_timer.start()
-
-func healed(_amount) -> void:
-	var health_values = ability_relay.get_health(player.health, player.max_health)
-	self.value = health_values["health"]
-	health_label.text = "%s/%s" % [int(ceil(health_values["health"])), int(ceil(health_values["max_health"]))]
 
 func _physics_process(delta: float) -> void:
 	if damage_timer.is_stopped():

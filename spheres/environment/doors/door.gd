@@ -17,12 +17,15 @@ class_name Door extends Sprite2D
 var description_scene = preload("res://ui/description.tscn")
 var description_nodes: Array
 
-func _ready() -> void:
-	get_node("/root/Main").day_cleared.connect(activate.unbind(1))
+var locked = true
 
-func activate():
+func _ready() -> void:
+	get_node("/root/Main").day_cleared.connect(unlock.unbind(1))
+
+func unlock():
 	if get_node("/root/Main").game_over:
 		return
+	locked = false
 	button.visible = true
 	particles.emitting = true
 

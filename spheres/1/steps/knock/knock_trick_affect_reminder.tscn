@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://djxtt5vdjcavm"]
+
+[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="1_obej0"]
+[ext_resource type="Script" uid="uid://b3aqx0m3sgrd8" path="res://affects/ui/leveled_trick_affect_reminder.gd" id="2_rufyf"]
+[ext_resource type="Texture2D" uid="uid://cfuvblro7y1oh" path="res://ui/button.png" id="3_rufyf"]
+[ext_resource type="Theme" uid="uid://dp5g3ps8eyno7" path="res://ui/button_theme.tres" id="3_wpyt3"]
+[ext_resource type="Script" uid="uid://b0q1rnllrr6lp" path="res://ui/focusable.gd" id="4_e66dw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_srhlf"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wqbt7"]
+outline_size = 5
+outline_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="Reminder" type="TextureButton" unique_id=374846769]
+custom_minimum_size = Vector2(60, 60)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_obej0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_rufyf")
+subject = "knock"
+
+[node name="Symbol" type="Label" parent="." unique_id=532623967]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+text = "?"
+label_settings = SubResource("LabelSettings_srhlf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="." unique_id=933880506]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "[0]"
+label_settings = SubResource("LabelSettings_wqbt7")
+horizontal_alignment = 1
+
+[node name="Bind" type="Button" parent="." unique_id=766897399]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+grow_horizontal = 2
+focus_neighbor_top = NodePath("..")
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_wpyt3")
+toggle_mode = true
+text = "[A]"
+flat = true
+script = ExtResource("4_e66dw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bind" unique_id=240496732]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("3_rufyf")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="focus_entered" from="Bind" to="Bind" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Bind" to="Bind" method="_on_focus_exited"]
+[connection signal="toggled" from="Bind" to="." method="toggle_keybind_input"]

@@ -97,6 +97,10 @@ time_stop={
 "deadzone": 0.2,
 "events": []
 }
+knock={
+"deadzone": 0.2,
+"events": []
+}
 
 [internationalization]
 

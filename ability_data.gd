@@ -422,6 +422,16 @@ var ability_data = {
 		"script" : preload("res://affects/dark_price.gd"),
 		"type" : "token",
 		"affect" : preload("res://affects/ui/dark_price_reminder.tscn")
+	},
+	"knock" : {
+		"script" : preload("res://spheres/1/steps/knock/knock.gd"),
+		"type" : "shrine",
+		"affect" : preload("res://spheres/1/steps/knock/knock_trick_affect_reminder.tscn")
+	},
+	"eyes_of_light" : {
+		"script" : preload("res://spheres/6/light/eyes_of_light/eyes_of_light.gd"),
+		"type" : "shrine",
+		"affect" : preload("res://spheres/6/light/eyes_of_light/eyes_of_light_reminder.tscn")
 	}
 	#endregion
 }

@@ -90,16 +90,16 @@ position = Vector2(1290, 210)
 room = "wonder_health_treasury"
 subject = "health_treasury_gate"
 
-[node name="SecretExit0" parent="Doors/Exit1" unique_id=1627560506 instance=ExtResource("6_l8xig")]
-position = Vector2(-1110, 270)
-rotation = 4.712389
-room = "wonder_secret_room_0"
-
 [node name="Exit2" parent="Doors" unique_id=1919157672 instance=ExtResource("3_c574q")]
 position = Vector2(1290, 750)
 rotation = 3.1415927
 room = "wonder_damage_treasury"
 subject = "damage_treasury_gate"
+
+[node name="SecretExit0" parent="Doors" unique_id=1627560506 instance=ExtResource("6_l8xig")]
+position = Vector2(180, 480)
+rotation = -1.5707964
+room = "wonder_secret_room_0"
 
 [node name="HealthSign" type="Sprite2D" parent="." unique_id=1975421848]
 self_modulate = Color(1, 1, 1, 0.49803922)

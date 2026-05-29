@@ -27,6 +27,7 @@ func _on_pressed() -> void:
 		return
 	visible = false
 	get_node("/root/Main/PlayerAbilityHandler").learn("damage_boost", 5)
+	get_node("/root/Main/PlayerAbilityHandler").reward_recieved.emit("damage_boost")
 	get_node("/root/Main").play_sound("Click")
 	get_node("../Particles").emitting = false
 	free_timer_running = true
