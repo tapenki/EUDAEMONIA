@@ -304,7 +304,7 @@ msgid "ignition_title"
 msgstr "[outline_color=#ff0000]Ability: Ignition[/outline_color]"
 
 msgid "ignition_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply [outline_size=10]+[4xLEVEL][/outline_size] burn for every [outline_size=10][0.3xMAXHP][/outline_size] damage accumulated."
+msgstr "You have [outline_size=10]+[3xLEVEL]%[/outline_size] crit chance.[br][outline_size=10]Upon crit:[/outline_size] Apply [outline_size=10]+[3xLEVEL][/outline_size] burn."
 
 msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
@@ -328,13 +328,13 @@ msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
 
 msgid "from_ashes_description"
-msgstr "[outline_size=10]Once per encounter, upon your imminent demise:[/outline_size] Escape your fate and recover [outline_size=10]+[10xLEVEL][/outline_size] health per second over [outline_size=10][5][/outline_size] seconds."
+msgstr "[outline_size=10]Once per encounter, upon your imminent demise:[/outline_size] Escape your fate and recover [outline_size=10]+[40xLEVEL][/outline_size] health."
 
-msgid "pyre_title"
-msgstr "[outline_color=#ff0000]Mastery: Pyre[/outline_color]"
+msgid "short_fuse_title"
+msgstr "[outline_color=#ff0000]Mastery: Short Fuse[/outline_color]"
 
-msgid "pyre_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Ignition[/outline_color].[br]Burn deals damage [outline_size=10]+[4][/outline_size] times over [outline_size=10]+[4][/outline_size] seconds."
+msgid "short_fuse_description"
+msgstr "You have [outline_size=10]x[0.5][/outline_size] effect duration."
 
 msgid "undying_flames_title"
 msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
@@ -383,7 +383,7 @@ msgid "frostbite_title"
 msgstr "[outline_color=#0000ff]Ability: Frostbite[/outline_color]"
 
 msgid "frostbite_description"
-msgstr "[outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply chill for [outline_size=10][LEVEL^0.7][/outline_size] seconds for every [outline_size=10][0.3xMAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Upon an entity manifesting:[/outline_size] Apply [outline_size=10]+[LEVEL][/outline_size] seconds of chill."
 
 msgid "shatter_title"
 msgstr "[outline_color=#0000ff]Ability: Shatter[/outline_color]"
@@ -413,7 +413,7 @@ msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
 
 msgid "snap_freeze_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Frostbite[/outline_color].[br][outline_size=10]Upon dealing damage:[/outline_size] Accumulate damage dealt.[br]Apply freeze for [outline_size=10][LEVEL^0.5][/outline_size] seconds for every [outline_size=10][0.6xMAXHP][/outline_size] damage accumulated."
+msgstr "[outline_size=10]Upon an entity manifesting:[/outline_size] Apply [outline_size=10]+[2.5][/outline_size] second of freeze."
 
 msgid "brittle_cold_title"
 msgstr "[outline_color=#0000ff]Mastery: Brittle Cold[/outline_color]"
@@ -498,7 +498,7 @@ msgid "crit_title"
 msgstr "[outline_color=#a87e00]Notes: Crit[/outline_color]"
 
 msgid "crit_description"
-msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Gain [outline_size=10]x[1.5][/outline_size] damage and [outline_size=10]x[1.5][/outline_size] damage accumulated on crit."
+msgstr "[outline_size=10]When dealing damage:[/outline_size] roll for crits.[br]Deal [outline_size=10]x[1.5][/outline_size] damage on crit."
 
 # life
 msgid "life_title"

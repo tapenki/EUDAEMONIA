@@ -89,6 +89,7 @@ subject = "hour_hand"
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "event_horizon"
+extras = ["chill"]
 
 [node name="Clockwinding" parent="Abilities" unique_id=1950595630 instance=ExtResource("5_w0qkf")]
 layout_mode = 2

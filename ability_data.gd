@@ -137,8 +137,8 @@ var ability_data = {
 		"script" : preload("res://paths/fire/abilities/from_ashes.gd"),
 		"type" : "upgrade"
 	},
-	"pyre" : {
-		"script" : preload("res://paths/fire/abilities/pyre.gd"),
+	"short_fuse" : {
+		"script" : preload("res://paths/fire/abilities/short_fuse.gd"),
 		"type" : "mastery"
 	},
 	"undying_flames" : {

@@ -2,32 +2,12 @@ extends Ability
 
 var status: Node
 
-var tracked: Dictionary
-
 func _ready() -> void:
 	status = ability_handler.learn("chill", 0)
+	get_node("/root/Main").entity_manifestation.connect(entity_manifestation)
 
-func apply(ability_relay, applicant_data):
-	super(ability_relay, applicant_data)
-	ability_relay.damage_dealt.connect(damage_dealt.bind(ability_relay))
-
-func disapply(ability_relay):
-	super(ability_relay)
-	if ability_relay.damage_dealt.is_connected(damage_dealt):
-		ability_relay.damage_dealt.disconnect(damage_dealt)
-
-func damage_dealt(entity, damage, ability_relay) -> void:
-	var maxhp = entity.ability_relay.get_health()["max_health"]
-	if not tracked.has(entity.ability_relay):
-		entity.ability_relay.freed.connect(detrack.bind(entity.ability_relay))
-		tracked[entity.ability_relay] = {"accumulated" = 0}
-	tracked[entity.ability_relay]["accumulated"] += ability_relay.accumulate_damage(damage)/(maxhp/100.0)
-	if tracked[entity.ability_relay]["accumulated"] >= 30:
-		var count = floor(tracked[entity.ability_relay]["accumulated"] / 30)
-		tracked[entity.ability_relay]["accumulated"] -= 30 * count
-		status.apply(entity.ability_relay, {"duration" = pow(level, 0.7) * count * ability_relay.get_effect_duration()})
-
-func detrack(ability_relay):
-	tracked.erase(ability_relay)
-	if ability_relay.freed.is_connected(detrack):
-		ability_relay.freed.disconnect(detrack)
+func entity_manifestation(entity: Entity):
+	for ability_relay in applicants:
+		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 5:
+			return
+		status.apply(entity.ability_relay, {"duration" = level * ability_relay.get_effect_duration()})

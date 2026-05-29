@@ -12,7 +12,6 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription") and applicant_data["subscription"] < 3:
 		return
 	applicant_data["active"] = true
-	applicant_data["recovery"] = 0.0
 	super(ability_relay, applicant_data)
 	ability_relay.before_self_death.connect(before_self_death.bind(ability_relay))
 
@@ -21,19 +20,13 @@ func disapply(ability_relay):
 	if ability_relay.before_self_death.is_connected(before_self_death):
 		ability_relay.before_self_death.disconnect(before_self_death)
 
-func _physics_process(delta: float) -> void:
-	for ability_relay in applicants:
-		if applicants[ability_relay]["recovery"] > 0:
-			applicants[ability_relay]["recovery"] -= delta * ability_relay.speed_scale
-			ability_relay.owner.heal(delta*10*level*ability_relay.speed_scale)
-
 func before_self_death(modifiers, ability_relay) -> void:
 	if applicants[ability_relay]["active"] and not modifiers.has("prevented"):
 		applicants[ability_relay]["active"] = false
-		applicants[ability_relay]["recovery"] = 5.0 * ability_relay.get_effect_duration()
 		modifiers["prevented"] = true
 		var health_values = ability_relay.get_health(ability_relay.owner.health, ability_relay.owner.max_health)
 		ability_relay.owner.health = max(ability_relay.owner.health, ability_relay.owner.max_health - health_values["max_health"])
+		ability_relay.owner.heal(40*level)
 		ability_relay.owner.immune(ability_relay.get_immune_duration({"base" : ability_relay.owner.immune_duration, "multiplier" : 4}))
 		if fiery_rebirth:
 			for target in ability_relay.area_targets(ability_relay.global_position):

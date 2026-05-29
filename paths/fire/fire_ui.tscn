@@ -71,7 +71,7 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("1_y46ig")
 subject = "ignition"
-extras = ["burn"]
+extras = ["crit", "burn"]
 
 [node name="ScorchedEarth" parent="Abilities" unique_id=799314877 instance=ExtResource("4_la5fy")]
 layout_mode = 2
@@ -107,14 +107,13 @@ offset_bottom = 282.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Pyre" parent="Masteries" unique_id=1000262055 instance=ExtResource("5_2ix0u")]
+[node name="ShortFuse" parent="Masteries" unique_id=1000262055 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
 "ignition": 5
 }
-subject = "pyre"
-extras = ["burn"]
+subject = "short_fuse"
 
 [node name="RingOfFire" parent="Masteries" unique_id=160881786 instance=ExtResource("5_2ix0u")]
 layout_mode = 2

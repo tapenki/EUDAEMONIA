@@ -178,8 +178,8 @@ func roll_chance(odds: Dictionary):
 
 func accumulate_damage(damage: Dictionary):
 	var accumulated_damage = damage["final"]
-	if damage.has("crits"):
-		accumulated_damage *= pow(1.5, damage["crits"])
+	#if damage.has("crits"):
+	#	accumulated_damage *= pow(1.5, damage["crits"])
 	return accumulated_damage
 
 ## targeting
