@@ -366,16 +366,16 @@ var ability_data = {
 	},
 	#endregion
 	#region time
-	"second_hand" : {
-		"script" : preload("res://paths/time/abilities/second_hand.gd"),
-		"type" : "upgrade"
-	},
 	"minute_hand" : {
 		"script" : preload("res://paths/time/abilities/minute_hand.gd"),
 		"type" : "upgrade"
 	},
 	"hour_hand" : {
 		"script" : preload("res://paths/time/abilities/hour_hand.gd"),
+		"type" : "upgrade"
+	},
+	"event_horizon" : {
+		"script" : preload("res://paths/time/abilities/event_horizon.gd"),
 		"type" : "upgrade"
 	},
 	"clockwinding" : {

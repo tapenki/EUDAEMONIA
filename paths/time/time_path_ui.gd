@@ -8,18 +8,19 @@ func unlearn():
 	for mastery in get_node("Masteries").get_children():
 		var mastery_node = ability_handler.get_node_or_null(mastery.subject)
 		if mastery_node:
-			ui.unlock_points += 1
+			get_node("/root/Main").day -= 3
 			ability_handler.unlearn(mastery.subject, mastery_node.level)
 	for ability in get_node("Abilities").get_children():
-		if ability.name == "TimeLock": ## jank solution
+		if ability.name == "Stasis": ## jank solution
 			var mastery_node = ability_handler.get_node_or_null(ability.subject)
 			if mastery_node:
-				ui.unlock_points += 1
+				get_node("/root/Main").day -= 3
 				ability_handler.unlearn(ability.subject, mastery_node.level)
 			continue
 		var ability_node = ability_handler.get_node_or_null(ability.subject)
 		if ability_node:
 			ui.upgrade_points += roundi(ability_node.level)
 			ability_handler.unlearn(ability.subject, ability_node.level)
+	get_node("/root/Main/UI/HUD/FloorNumber").update_floor()
 	ui.unlock_points += 1
 	queue_free()

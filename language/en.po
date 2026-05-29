@@ -704,23 +704,23 @@ msgstr "[outline_color=#846742]Time[/outline_color]"
 msgid "time_description"
 msgstr "- Work like a clock.[br]- Buy yourself a time."
 
-msgid "second_hand_title"
-msgstr "[outline_color=#846742]Ability: Second Hand[/outline_color]"
-
-msgid "second_hand_description"
-msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
-
 msgid "minute_hand_title"
 msgstr "[outline_color=#846742]Ability: Minute Hand[/outline_color]"
 
 msgid "minute_hand_description"
-msgstr "[outline_size=10]Every [3] seconds:[/outline_size] Gain [br][outline_size=10]+[2xLEVEL][/outline_size] max health until end of encounter."
+msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
 
 msgid "hour_hand_title"
 msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
 
 msgid "hour_hand_description"
 msgstr "[outline_size=10]Every [4] seconds:[/outline_size] Release a ring of [outline_size=10][12][/outline_size] bullets that have [outline_size=10]+[10xLEVEL][/outline_size] damage."
+
+msgid "event_horizon_title"
+msgstr "[outline_color=#846742]Ability: Event Horizon[/outline_color]"
+
+msgid "event_horizon_description"
+msgstr "Apply [outline_size=10]+[0.5][/outline_size] seconds of chill to enemy projectiles within a [outline_size=10][25+LEVELx25][/outline_size] radius."
 
 msgid "clockwinding_title"
 msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"

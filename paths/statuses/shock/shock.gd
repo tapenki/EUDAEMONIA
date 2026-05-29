@@ -8,7 +8,7 @@ func apply(ability_relay, applicant_data):
 	if not applicant_data.has("duration"):
 		applicant_data["duration"] = 4.0
 	if applicants.has(ability_relay):
-		applicants[ability_relay]["duration"] = applicant_data["duration"]
+		applicants[ability_relay]["duration"] = max(applicant_data["duration"], applicants[ability_relay]["duration"])
 		applicants[ability_relay]["stacks"] += applicant_data["stacks"]
 	else:
 		var particle_instances: Array

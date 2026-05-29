@@ -6,7 +6,7 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription"):
 		return
 	if applicants.has(ability_relay):
-		applicants[ability_relay]["duration"] += applicant_data["duration"]
+		applicants[ability_relay]["duration"] = max(applicant_data["duration"], applicants[ability_relay]["duration"])
 	else:
 		var particle_instances: Array
 		for sprite in ability_relay.owner.get_sprites():

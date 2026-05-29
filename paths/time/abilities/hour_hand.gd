@@ -14,7 +14,6 @@ func apply(ability_relay, applicant_data):
 	if applicant_data.has("subscription") and applicant_data["subscription"] >= 3:
 		var hand = Sprite2D.new()
 		hand.texture = preload("res://paths/time/clock_hand.png")
-		hand.scale *= 0.9
 		hand.offset.y = -50
 		hand.modulate = Config.get_team_color(ability_relay.owner.group, "secondary")
 		ability_relay.add_child(hand)
