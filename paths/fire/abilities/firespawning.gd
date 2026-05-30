@@ -40,14 +40,8 @@ func day_start(_day: int) -> void:
 		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 5:
 			return
 		var tilemap = get_node("/root/Main").get_tilemap()
-		var wall_cells = tilemap.get_used_cells_by_id(0)
-		var floor_cells = tilemap.get_used_cells_by_id(2)
-		for j in wall_cells:
-			for k in range(-1, 2):
-				for l in range(-1, 2):
-					floor_cells.erase(Vector2i(j.x + k, j.y + l))
 		for i in 2:
-			var cell = floor_cells.pick_random()
+			var cell = get_node("/root/Main").valid_spawn_cells.keys().pick_random()
 			var spawn_position = Vector2(cell * tilemap.tile_set.tile_size) + tilemap.tile_set.tile_size * 0.5
 			spawn(spawn_position, ability_relay)
 

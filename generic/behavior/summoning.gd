@@ -26,6 +26,7 @@ func on_enter() -> void:
 			get_node("/root/Main/Entities").add_child(summon_instance)
 			get_node("/root/Main/Entities").move_child(summon_instance, 0)
 			state_handler.data["summons"].append(summon_instance)
+			get_node("/root/Main").entity_manifestation.emit(summon_instance)
 	
 	change_state(next)
 

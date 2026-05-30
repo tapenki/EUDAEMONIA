@@ -80,10 +80,10 @@ layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "minute_hand"
 
-[node name="HourHand" parent="Abilities" unique_id=452593380 instance=ExtResource("5_w0qkf")]
+[node name="EchoStep" parent="Abilities" unique_id=452593380 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
-subject = "hour_hand"
+subject = "echo_step"
 
 [node name="EventHorizon" parent="Abilities" unique_id=1440218836 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
@@ -114,33 +114,33 @@ offset_bottom = 218.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="TomorrowBullets" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
-layout_mode = 2
-accessible_texture_1 = ExtResource("2_hlo4x")
-accessible_texture_2 = ExtResource("8_s1m52")
-requires = {
-"second_hand": 5
-}
-subject = "tomorrow_bullets"
-
-[node name="Daybreak" parent="Masteries" unique_id=502092284 instance=ExtResource("7_1a0dx")]
-layout_mode = 2
-accessible_texture_1 = ExtResource("2_hlo4x")
-accessible_texture_2 = ExtResource("8_s1m52")
-requires = {
-"hour_hand": 5
-}
-subject = "daybreak"
-
-[node name="NoFuture" parent="Masteries" unique_id=1735317579 instance=ExtResource("7_1a0dx")]
+[node name="HourHand" parent="Masteries" unique_id=869113151 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "minute_hand": 5
 }
-subject = "no_future"
+subject = "hour_hand"
+
+[node name="Paradoxism" parent="Masteries" unique_id=502092284 instance=ExtResource("7_1a0dx")]
+layout_mode = 2
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
+requires = {
+"echo_step": 5
+}
+subject = "paradoxism"
 extras = ["doom"]
+
+[node name="SinkTheTime" parent="Masteries" unique_id=1735317579 instance=ExtResource("7_1a0dx")]
+layout_mode = 2
+accessible_texture_1 = ExtResource("2_hlo4x")
+accessible_texture_2 = ExtResource("8_s1m52")
+requires = {
+"event_horizon": 5
+}
+subject = "sink_the_time"
 
 [node name="Stasis" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
 layout_mode = 2

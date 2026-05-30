@@ -48,6 +48,7 @@ func on_enter() -> void:
 		state_handler.data["summons"].append(summon_instance)
 		summon_instance.velocity += velocity.rotated(halfspan - (stepsize * i))
 		summon_instance.knockback_timer.start(knockback_duration)
+		get_node("/root/Main").entity_manifestation.emit(summon_instance)
 	
 	change_state(next)
 

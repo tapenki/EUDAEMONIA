@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqggvfwuuajj"
-path="res://.godot/imported/clay_hurt.png-b37b4c0e14ceb6cc23a8d0380274ee8c.ctex"
+uid="uid://kjgcu1qx4yhj"
+path="res://.godot/imported/duplicate.png-d89c2c7bcc2106ab8513c889e9e2fe9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paths/life/clay/clay_hurt.png"
-dest_files=["res://.godot/imported/clay_hurt.png-b37b4c0e14ceb6cc23a8d0380274ee8c.ctex"]
+source_file="res://paths/time/duplicate/duplicate.png"
+dest_files=["res://.godot/imported/duplicate.png-d89c2c7bcc2106ab8513c889e9e2fe9c.ctex"]
 
 [params]
 

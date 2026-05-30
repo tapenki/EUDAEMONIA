@@ -1,5 +1,6 @@
 extends Ability
 
+var bullet = preload("res://paths/time/shard.tscn")
 var second_boost = 0.0
 
 func apply(ability_relay, applicant_data):
@@ -12,6 +13,7 @@ func apply(ability_relay, applicant_data):
 		ability_relay.add_child(hand)
 		applicant_data["hand"] = hand
 		applicant_data["time"] = 0.0
+		applicant_data["bullet_cycle"] = 0
 	ability_relay.damage_dealt_modifiers.connect(damage_dealt_modifiers)
 	super(ability_relay, applicant_data)
 
@@ -34,11 +36,7 @@ func intermission(_day: int) -> void:
 func _physics_process(delta: float) -> void:
 	for applicant in applicants:
 		if applicants[applicant].has("time"):
-			var speed_mult = 1
-			var clockwinding = ability_handler.get_node_or_null("clockwinding")
-			if clockwinding:
-				speed_mult += 0.1 * clockwinding.level
-			applicants[applicant]["time"] += delta * applicant.speed_scale * speed_mult / 2
+			applicants[applicant]["time"] += delta * applicant.speed_scale / 2
 			if applicants[applicant]["time"] > 1:
 				second_boost += floor(applicants[applicant]["time"]) * level * 0.5
 				applicants[applicant]["time"] = fmod(applicants[applicant]["time"], 1)

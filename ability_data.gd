@@ -370,8 +370,8 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/minute_hand.gd"),
 		"type" : "upgrade"
 	},
-	"hour_hand" : {
-		"script" : preload("res://paths/time/abilities/hour_hand.gd"),
+	"echo_step" : {
+		"script" : preload("res://paths/time/abilities/echo_step.gd"),
 		"type" : "upgrade"
 	},
 	"event_horizon" : {
@@ -386,20 +386,20 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/prolong.gd"),
 		"type" : "upgrade"
 	},
-	"tomorrow_bullets" : {
-		"script" : preload("res://paths/time/abilities/tomorrow_bullets.gd"),
+	"hour_hand" : {
+		"script" : preload("res://paths/time/abilities/hour_hand.gd"),
 		"type" : "mastery"
 	},
-	"daybreak" : {
-		"script" : preload("res://paths/time/abilities/daybreak.gd"),
+	"paradoxism" : {
+		"script" : preload("res://paths/time/abilities/paradoxism.gd"),
 		"type" : "mastery"
 	},
 	"stasis" : {
 		"script" : preload("res://paths/time/abilities/stasis.gd"),
 		"type" : "mastery"
 	},
-	"no_future" : {
-		"script" : preload("res://paths/time/abilities/no_future.gd"),
+	"sink_the_time" : {
+		"script" : preload("res://paths/time/abilities/sink_the_time.gd"),
 		"type" : "mastery"
 	},
 	"borrowed_time" : {

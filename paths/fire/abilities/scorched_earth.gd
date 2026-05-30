@@ -1,6 +1,6 @@
 extends Ability
 
-var bullet = preload("res://paths/fire/scorched_earth/scorched_earth.tscn")
+var bullet = preload("res://generic/projectiles/weak_explosion.tscn")
 
 func apply(ability_relay, applicant_data):
 	if applicant_data.has("scorched_earth"):
@@ -23,7 +23,6 @@ func _ready() -> void:
 	get_node("/root/Main").entity_manifestation.connect(entity_manifestation)
 
 func entity_manifestation(entity: Entity):
-	if entity.summoned: return
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 5:
 			return
@@ -31,10 +30,12 @@ func entity_manifestation(entity: Entity):
 		entity.global_position, 
 		{"subscription" = 1, "scorched_earth" = true},
 		Vector2())
+		bullet_instance.scale_multiplier = 2.5
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
+		get_node("/root/Main").play_sound("Explosion")
 
 func damage_dealt_modifiers(_entity, damage) -> void:
-	damage["base"] += 3 * level
+	damage["base"] += 10 * level
 
 #func effect_scale_modifiers(modifiers) -> void:
 #	modifiers["base"] += 0.2 * level

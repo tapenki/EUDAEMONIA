@@ -310,7 +310,7 @@ msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10]+[40xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and apply [outline_size=10]+[4xLEVEL][/outline_size] burn to nearby enemies when killed."
+msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10]+[40xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and apply [outline_size=10]+[4xLEVEL][/outline_size] burn to enemies within a [outline_size=10][150][/outline_size] radius when killed."
 
 msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Ability: Conflagration[/outline_color]"
@@ -322,7 +322,7 @@ msgid "scorched_earth_title"
 msgstr "[outline_color=#ff0000]Ability: Scorched Earth[/outline_color]"
 
 msgid "scorched_earth_description"
-msgstr "[outline_size=10]Upon a non summoned entity manifesting:[/outline_size] Create a pool of fire around it that has [outline_size=10]+[3xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Upon an entity manifesting:[/outline_size] Create an explosion with [outline_size=10]+[10xLEVEL][/outline_size] damage."
 
 msgid "from_ashes_title"
 msgstr "[outline_color=#ff0000]Ability: From Ashes[/outline_color]"
@@ -407,7 +407,7 @@ msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
 
 msgid "snowball_ii_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color].[br]Attack projectiles have [outline_size=10]x[3][/outline_size] [outline_color=#0000ff]Snowball[/outline_color] effect.[br][outline_size=10]Upon attacking:[/outline_size] Apply [outline_size=10][0.2][/outline_size] seconds of freeze to yourself."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Snowball[/outline_color].[br]Projectiles have [outline_size=10]x[3][/outline_size] [outline_color=#0000ff]Snowball[/outline_color] effect and are frozen for [outline_size=10][0.8][/outline_size] seconds."
 
 msgid "snap_freeze_title"
 msgstr "[outline_color=#0000ff]Mastery: Snap Freeze[/outline_color]"
@@ -456,7 +456,7 @@ msgid "electromagnetism_title"
 msgstr "[outline_color=#a87e00]Ability: Electromagnetism[/outline_color]"
 
 msgid "electromagnetism_description"
-msgstr "Projectiles home into enemies within [outline_size=10][50+50xLEVEL]px[/outline_size]."
+msgstr "Projectiles home into enemies within a [outline_size=10][50+50xLEVEL][/outline_size] radius."
 
 msgid "thunderstep_title"
 msgstr "[outline_color=#a87e00]Ability: Thunderstep[/outline_color]"
@@ -523,7 +523,7 @@ msgid "trail_of_thorns_title"
 msgstr "[outline_color=#0f9936]Ability: Trail of Thorns[/outline_color]"
 
 msgid "trail_of_thorns_description"
-msgstr "[outline_size=10]Every [100]px you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[5xLEVEL][/outline_size] damage."
+msgstr "[outline_size=10]Every [100] distance you move:[/outline_size] Manifest a thorn.[br]It has [outline_size=10]+[5xLEVEL][/outline_size] damage."
 
 msgid "quill_spray_title"
 msgstr "[outline_color=#0f9936]Ability: Quill Spray[/outline_color]"
@@ -688,7 +688,7 @@ msgid "percussion_title"
 msgstr "[outline_color=#5B6487]Mastery: Percussion[/outline_color]"
 
 msgid "percussion_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color].[br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock to nearby enemies."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Block[/outline_color].[br][outline_size=10]Upon blocking damage:[/outline_size] Apply [outline_size=10]+[5xLEVEL][/outline_size] shock to enemies within a [outline_size=10][150][/outline_size] radius."
 
 msgid "sword_title"
 msgstr "[outline_color=#5B6487]Weapon: Sword[/outline_color]"
@@ -710,11 +710,11 @@ msgstr "[outline_color=#846742]Ability: Minute Hand[/outline_color]"
 msgid "minute_hand_description"
 msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
 
-msgid "hour_hand_title"
-msgstr "[outline_color=#846742]Ability: Hour Hand[/outline_color]"
+msgid "echo_step_title"
+msgstr "[outline_color=#846742]Ability: Echo Step[/outline_color]"
 
-msgid "hour_hand_description"
-msgstr "[outline_size=10]Every [4] seconds:[/outline_size] Release a ring of [outline_size=10][12][/outline_size] bullets that have [outline_size=10]+[10xLEVEL][/outline_size] damage."
+msgid "echo_step_description"
+msgstr "[outline_size=10]Every [100] distance you move:[/outline_size] Summon an echo. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]+[3xLEVEL][/outline_size] damage, and dies after [outline_size=10][1.5][/outline_size] seconds."
 
 msgid "event_horizon_title"
 msgstr "[outline_color=#846742]Ability: Event Horizon[/outline_color]"
@@ -726,7 +726,7 @@ msgid "clockwinding_title"
 msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
 
 msgid "clockwinding_description"
-msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate and clock hand rate."
+msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate."
 
 msgid "prolong_title"
 msgstr "[outline_color=#846742]Ability: Prolong[/outline_color]"
@@ -734,29 +734,29 @@ msgstr "[outline_color=#846742]Ability: Prolong[/outline_color]"
 msgid "prolong_description"
 msgstr "You have [outline_size=10]+[20xLEVEL]%[/outline_size] effect duration."
 
-msgid "tomorrow_bullets_title"
-msgstr "[outline_color=#846742]Mastery: Tomorrow Bullets[/outline_color]"
+msgid "hour_hand_title"
+msgstr "[outline_color=#846742]Mastery: Hour Hand[/outline_color]"
 
-msgid "tomorrow_bullets_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Second Hand[/outline_color].[br]Projectiles have [outline_size=10]+[50]%[/outline_size] crit chance.[br]Apply [outline_size=10]+[0.5][/outline_size] seconds of freeze to projetiles."
+msgid "hour_hand_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br][outline_size=10]Every [4] seconds:[/outline_size] Release a ring of [outline_size=10][12][/outline_size] bullets that have [outline_size=10]x[3][/outline_size] damage."
 
-msgid "daybreak_title"
-msgstr "[outline_color=#846742]Mastery: Daybreak[/outline_color]"
+msgid "paradoxism_title"
+msgstr "[outline_color=#846742]Mastery: Paradoxism[/outline_color]"
 
-msgid "daybreak_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Hour Hand[/outline_color].[br][outline_color=#846742]Hour Hand[/outline_color] creates an exlposion that has [outline_size=10]+[10xLEVEL][/outline_size] damage and knocks back enemies upon dealing damage."
+msgid "paradoxism_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Echo Step[/outline_color].[br][outline_size=10]Upon an echo taking damage:[/outline_size] it applied [outline_size=10]+[0.1xDAMAGETAKEN][/outline_size] doom to enemies within a [outline_size=10][150][/outline_size] radius."
 
 msgid "stasis_title"
 msgstr "[outline_color=#846742]Mastery: Stasis[/outline_color]"
 
 msgid "stasis_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You can't be slowed or knocked back."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You, your projectiles, and your summons can't be slowed or knocked back."
 
-msgid "no_future_title"
-msgstr "[outline_color=#846742]Mastery: No Future[/outline_color]"
+msgid "sink_the_time_title"
+msgstr "[outline_color=#846742]Mastery: Sink the Time[/outline_color]"
 
-msgid "no_future_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Minute Hand[/outline_color].[br][outline_size=10]Upon taking damage:[/outline_size] Apply [outline_size=10]+[2xLEVEL][/outline_size] doom to nearby enemies storing the damage taken."
+msgid "sink_the_time_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Event Horizon[/outline_color].[br]Projectile affected by [outline_color=#846742]Event Horizon[/outline_color] expire [outline_size=10]x[3][/outline_size] as fast."
 
 msgid "borrowed_time_title"
 msgstr "[outline_color=#846742]Mastery: Borrowed Time[/outline_color]"
