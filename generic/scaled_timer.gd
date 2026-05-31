@@ -31,3 +31,6 @@ func start(time = wait_time):
 func stop():
 	time_left = 0
 	running = false
+
+func is_stopped():
+	return not running

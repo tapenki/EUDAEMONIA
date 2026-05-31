@@ -141,13 +141,13 @@ requires = {
 subject = "inferno"
 extras = ["burn"]
 
-[node name="UndyingFlames" parent="Masteries" unique_id=423107617 instance=ExtResource("5_2ix0u")]
+[node name="VengefulFlames" parent="Masteries" unique_id=423107617 instance=ExtResource("5_2ix0u")]
 layout_mode = 2
 accessible_texture = ExtResource("1_y46ig")
 requires = {
 "firespawning": 5
 }
-subject = "undying_flames"
+subject = "vengeful_flames"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

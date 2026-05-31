@@ -10,6 +10,10 @@ class_name RandomizedTimer extends Node
 
 signal timeout()
 
+func _ready() -> void:
+	if running:
+		time_left = wait_time * (1 + randf_range(-1, 1) * deviation)
+
 func _process(delta: float) -> void:
 	if running:
 		time_left -= delta * ability_relay.speed_scale
@@ -24,3 +28,10 @@ func start(time = wait_time):
 	wait_time = time
 	time_left = time * (1 + randf_range(-1, 1) * deviation)
 	running = true
+
+func stop():
+	time_left = 0
+	running = false
+
+func is_stopped():
+	return not running

@@ -310,7 +310,7 @@ msgid "firespawning_title"
 msgstr "[outline_color=#ff0000]Ability: Firespawning[/outline_color]"
 
 msgid "firespawning_description"
-msgstr "[outline_size=10]Upon encounter:[/outline_size] Summon [outline_size=10][2][/outline_size] flaming skulls. They have [outline_size=10]+[40xLEVEL][/outline_size] health, [outline_size=10]+[5xLEVEL][/outline_size] damage, and apply [outline_size=10]+[4xLEVEL][/outline_size] burn to enemies within a [outline_size=10][150][/outline_size] radius when killed."
+msgstr "[outline_size=10]Upon a non summoned entity manifesting:[/outline_size] Summon a flaming skull. It has [outline_size=10]+[15xLEVEL][/outline_size] health and [outline_size=10]+[2xLEVEL][/outline_size] damage, and applies [outline_size=10]+[LEVEL][/outline_size] burn to enemies within a [outline_size=10][150][/outline_size] radius when killed."
 
 msgid "conflagration_title"
 msgstr "[outline_color=#ff0000]Ability: Conflagration[/outline_color]"
@@ -336,11 +336,11 @@ msgstr "[outline_color=#ff0000]Mastery: Short Fuse[/outline_color]"
 msgid "short_fuse_description"
 msgstr "You have [outline_size=10]x[0.5][/outline_size] effect duration."
 
-msgid "undying_flames_title"
-msgstr "[outline_color=#ff0000]Mastery: Undying Flames[/outline_color]"
+msgid "vengeful_flames_title"
+msgstr "[outline_color=#ff0000]Mastery: Vengeful Flames[/outline_color]"
 
-msgid "undying_flames_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color].[br][outline_size=10]Upon a flaming skull dying:[/outline_size] Take [outline_size=10][0.05xMAXHP][/outline_size] pure damage and reconstitute it."
+msgid "vengeful_flames_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#ff0000]Firespawning[/outline_color].[br][outline_size=10]Upon a flaming skull dying for the first time:[/outline_size] Reconstitute it."
 
 msgid "inferno_title"
 msgstr "[outline_color=#ff0000]Mastery: Inferno[/outline_color]"
@@ -401,7 +401,7 @@ msgid "glacial_rail_title"
 msgstr "[outline_color=#0000ff]Mastery: Glacial Rail[/outline_color]"
 
 msgid "glacial_rail_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color].[br]Projectiles have [outline_size=10]x[1.5][/outline_size] speed."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0000ff]Blue Needle[/outline_color].[br]Projectiles have [outline_size=10]+[50]%[/outline_size] action speed."
 
 msgid "snowball_ii_title"
 msgstr "[outline_color=#0000ff]Mastery: Snowball II[/outline_color]"
@@ -726,7 +726,7 @@ msgid "clockwinding_title"
 msgstr "[outline_color=#846742]Ability: Clockwinding[/outline_color]"
 
 msgid "clockwinding_description"
-msgstr "Gain [outline_size=10]+[10]%[/outline_size] attack rate."
+msgstr "[outline_size=10]Upon taking damage:[/outline_size] Gain [outline_size=10]+[50]%[/outline_size] action speed for [outline_size=10][LEVEL][/outline_size] seconds."
 
 msgid "prolong_title"
 msgstr "[outline_color=#846742]Ability: Prolong[/outline_color]"
@@ -756,7 +756,7 @@ msgid "sink_the_time_title"
 msgstr "[outline_color=#846742]Mastery: Sink the Time[/outline_color]"
 
 msgid "sink_the_time_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Event Horizon[/outline_color].[br]Projectile affected by [outline_color=#846742]Event Horizon[/outline_color] expire [outline_size=10]x[3][/outline_size] as fast."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Event Horizon[/outline_color].[br]Projectile affected by [outline_color=#846742]Event Horizon[/outline_color] expire [outline_size=10]x[2][/outline_size] as fast."
 
 msgid "borrowed_time_title"
 msgstr "[outline_color=#846742]Mastery: Borrowed Time[/outline_color]"

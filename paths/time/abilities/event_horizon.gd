@@ -29,5 +29,5 @@ func _physics_process(delta: float) -> void:
 				status.apply(projectile.ability_relay, {"duration" = 0.5 * ability_relay.get_effect_duration()})
 				if sink_the_time:
 					var lifetime = projectile.get_node_or_null("Lifetime")
-					if lifetime and lifetime.running:
-						lifetime.time_left -= delta * projectile.ability_relay.speed_scale * 2
+					if lifetime and not lifetime.is_stopped():
+						lifetime.start(lifetime.time_left - delta * projectile.ability_relay.speed_scale)

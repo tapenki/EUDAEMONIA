@@ -87,10 +87,10 @@ subject = "from_ashes"
 [node name="Conflagration" parent="Abilities" unique_id=269160871 instance=ExtResource("5_fa5ig")]
 layout_mode = 2
 
-[node name="FromAshes2" parent="Abilities" unique_id=1881715234 instance=ExtResource("5_fa5ig")]
+[node name="Firespawning" parent="Abilities" unique_id=1881715234 instance=ExtResource("5_fa5ig")]
 layout_mode = 2
 
-[node name="Masteries1" type="HFlowContainer" parent="." unique_id=628219849]
+[node name="Masteries" type="HFlowContainer" parent="." unique_id=628219849]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 5
@@ -103,16 +103,16 @@ offset_bottom = 282.0
 grow_horizontal = 2
 alignment = 1
 
-[node name="Pyre" parent="Masteries1" unique_id=1000262055 instance=ExtResource("5_10p88")]
+[node name="ShortFuse" parent="Masteries" unique_id=1000262055 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
 "pyre": 1
 }
-subject = "pyre"
+subject = "short_fuse"
 extras = ["burn"]
 
-[node name="RingOfFire" parent="Masteries1" unique_id=160881786 instance=ExtResource("5_10p88")]
+[node name="RingOfFire" parent="Masteries" unique_id=160881786 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
@@ -120,7 +120,7 @@ requires = {
 }
 subject = "ring_of_fire"
 
-[node name="FieryRebirth" parent="Masteries1" unique_id=1132520690 instance=ExtResource("5_10p88")]
+[node name="FieryRebirth" parent="Masteries" unique_id=1132520690 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
@@ -129,7 +129,7 @@ requires = {
 subject = "fiery_rebirth"
 extras = ["burn"]
 
-[node name="Inferno" parent="Masteries1" unique_id=408650081 instance=ExtResource("5_10p88")]
+[node name="Inferno" parent="Masteries" unique_id=408650081 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
@@ -137,13 +137,13 @@ requires = {
 }
 subject = "inferno"
 
-[node name="UndyingFlames" parent="Masteries1" unique_id=423107617 instance=ExtResource("5_10p88")]
+[node name="VengefulFlames" parent="Masteries" unique_id=423107617 instance=ExtResource("5_10p88")]
 layout_mode = 2
 accessible_texture = ExtResource("1_3c07l")
 requires = {
 "undying_flames": 1
 }
-subject = "undying_flames"
+subject = "vengeful_flames"
 
 [connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Label" to="Label" method="_on_mouse_exited"]

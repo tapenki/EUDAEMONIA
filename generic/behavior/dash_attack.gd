@@ -15,7 +15,7 @@ var stick: bool
 
 func on_enter() -> void:
 	super()
-	if user.knockback_timer.running:
+	if not user.knockback_timer.is_stopped():
 		change_state(next)
 		return
 	user.velocity = Vector2()
@@ -40,14 +40,14 @@ func on_enter() -> void:
 	else:
 		user.wall_min_slide_angle = 180
 		stick = false
-	#if user.knockback_timer.running:
+	#if not user.knockback_timer.is_stopped():
 	#	user.knockback_timer.stop()
 	timer.start()
 	
 	state_handler.target = null
 
 func _physics_process(_delta):
-	if user.knockback_timer.running:
+	if not user.knockback_timer.is_stopped():
 		change_state(next)
 		return
 	var final_speed = user.ability_relay.get_move_speed(speed)

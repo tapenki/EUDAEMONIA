@@ -12,4 +12,4 @@ func disapply(ability_relay):
 		ability_relay.speed_scale_modifiers.disconnect(speed_scale_modifiers)
 
 func speed_scale_modifiers(modifiers) -> void:
-	modifiers["multiplier"] *= 1.5
+	modifiers["base"] += 0.5

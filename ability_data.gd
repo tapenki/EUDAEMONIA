@@ -141,8 +141,8 @@ var ability_data = {
 		"script" : preload("res://paths/fire/abilities/short_fuse.gd"),
 		"type" : "mastery"
 	},
-	"undying_flames" : {
-		"script" : preload("res://paths/fire/abilities/undying_flames.gd"),
+	"vengeful_flames" : {
+		"script" : preload("res://paths/fire/abilities/vengeful_flames.gd"),
 		"type" : "mastery"
 	},
 	"inferno" : {

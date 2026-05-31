@@ -27,13 +27,13 @@ func avoidance():
 		return {"target" : found, "distance" : distance}
 
 func _physics_process(_delta):
-	if user.knockback_timer.running:
+	if not user.knockback_timer.is_stopped():
 		return
 	#for i in node2d.get_children():
 		#i.queue_free()
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_relay.find_target()
-	if not is_instance_valid(state_handler.target):# or user.knockback_timer.running:
+	if not is_instance_valid(state_handler.target):
 		if anim != "" and user.animation_player.current_animation == anim:
 			user.animation_player.stop()
 		return

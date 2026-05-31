@@ -53,7 +53,7 @@ func immune(duration: float):
 
 func take_damage(damage):
 	if not damage.has("skip_immunity"):
-		if immune_timer.running:
+		if not immune_timer.is_stopped():
 			return false
 		else:
 			immune(ability_relay.get_immune_duration({"base" : immune_duration, "multiplier" : 1}))
@@ -79,7 +79,7 @@ func _physics_process(delta):
 	movement(delta)
 
 func movement(delta):
-	if knockback_timer.running:
+	if not knockback_timer.is_stopped():
 		if is_on_wall():
 			velocity = velocity.bounce(get_last_slide_collision().get_normal()) * 0.5
 			knockback_timer.start(knockback_timer.time_left * 0.5)

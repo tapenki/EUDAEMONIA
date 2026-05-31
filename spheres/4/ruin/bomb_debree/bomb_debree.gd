@@ -8,7 +8,7 @@ func _ready() -> void:
 	ability_relay.death_effects.connect(death_effects)
 
 func damage_taken(_damage) -> void:
-	if not get_node("Lifetime").running and alive:
+	if get_node("Lifetime").is_stopped() and alive:
 		get_node("Lifetime").start(4)
 		ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
 
@@ -24,7 +24,7 @@ func death_effects():
 	get_node("/root/Main").play_sound("Explosion")
 
 func loosen():
-	if not get_node("Lifetime").running:
+	if get_node("Lifetime").is_stopped():
 		if alive:
 			ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
 		get_node("Lifetime").start(2)
