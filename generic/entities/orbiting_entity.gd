@@ -11,8 +11,10 @@ var orbitation: float
 
 var loose: bool
 
-#func _ready() -> void:
-	#super()
+func _ready() -> void:
+	super()
+	var lifetime = get_node("Lifetime")
+	lifetime.wait_time *= ability_relay.get_effect_duration()
 	#orbitation = randf() * TAU
 	#max_distance = max_distance * (1 + randf_range(-1, 1) * distance_deviation)
 	#speed = speed * (1 + randf_range(-1, 1) * speed_deviation)

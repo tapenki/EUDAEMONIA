@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_frfv8"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_4fe2x"]
 [ext_resource type="Texture2D" uid="uid://cdk161oego7b6" path="res://paths/life/quills/quill.png" id="4_ujh5x"]
+[ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="5_eatd6"]
 
 [sub_resource type="Curve" id="Curve_t5laq"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.22807018, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.2954546, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 120.0
@@ -26,15 +27,12 @@ unique_name_in_owner = true
 script = ExtResource("2_frfv8")
 is_projectile = 1
 
-[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876]
+[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876 node_paths=PackedStringArray("ability_relay")]
 show_behind_parent = true
 material = ExtResource("3_4fe2x")
-emitting = false
-amount = 18
+amount = 36
 texture = ExtResource("4_ujh5x")
 lifetime = 0.3
-one_shot = true
-explosiveness = 1.0
 draw_order = 1
 particle_flag_align_y = true
 spread = 180.0
@@ -44,12 +42,14 @@ initial_velocity_max = 480.0
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_t5laq")
+script = ExtResource("5_eatd6")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696487460]
 shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Timer" parent="." unique_id=454424601]
-wait_time = 0.3
+wait_time = 0.15
 one_shot = true
 autostart = true
 

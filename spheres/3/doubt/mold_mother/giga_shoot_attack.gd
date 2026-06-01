@@ -23,7 +23,7 @@ func on_enter() -> void:
 		user.global_position + state_handler.data["direction"] * 25 + Vector2(randf_range(-25, 25), randf_range(-25, 25)), 
 		{"subscription" = 2},
 		state_handler.data["direction"] * bullet_speed * liferangemult)
-		bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime * liferangemult
+		bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime * liferangemult * bullet_instance.ability_relay.get_effect_duration()
 		get_node("/root/Main/Projectiles").add_child(bullet_instance)
 	#user.ability_relay.attack.emit(direction)
 	get_node("/root/Main").play_sound("ShootLight")

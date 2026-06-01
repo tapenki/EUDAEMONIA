@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func damage_taken(_damage) -> void:
 	if get_node("Lifetime").is_stopped() and alive:
-		get_node("Lifetime").start(4)
+		get_node("Lifetime").start(4 * ability_relay.get_effect_duration())
 		ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
 
 func death_effects():
@@ -27,8 +27,8 @@ func loosen():
 	if get_node("Lifetime").is_stopped():
 		if alive:
 			ability_relay.owner.get_node("AnimationPlayer").play("PRIMED")
-		get_node("Lifetime").start(2)
+		get_node("Lifetime").start(2 * ability_relay.get_effect_duration())
 	elif get_node("Lifetime").time_left > 2:
-		get_node("Lifetime").start(2)
+		get_node("Lifetime").start(2 * ability_relay.get_effect_duration())
 	loose = true
 	reparent(get_node("/root/Main/Entities"), true)

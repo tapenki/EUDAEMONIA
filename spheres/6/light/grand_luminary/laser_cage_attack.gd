@@ -29,7 +29,7 @@ func on_enter() -> void:
 		user.global_position, 
 		{"subscription" = 2},
 		state_handler.data["direction"].rotated(PI*0.3*spin_direction) * bullet_speed)
-		laser_instance.get_node("Lifetime").wait_time = bullet_lifetime
+		laser_instance.get_node("Lifetime").wait_time = bullet_lifetime * laser_instance.ability_relay.get_effect_duration()
 		laser_instance.spin = -0.12 * spin_direction
 		get_node("/root/Main/Projectiles").add_child(laser_instance)
 	#user.ability_relay.attack.emit(direction)

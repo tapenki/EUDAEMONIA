@@ -24,6 +24,9 @@ var exclude: Dictionary
 
 func _ready() -> void:
 	adjust_scale()
+	var lifetime = get_node_or_null("Lifetime")
+	if lifetime and not lifetime.is_stopped():
+		lifetime.start(lifetime.wait_time * ability_relay.get_effect_duration())
 
 func _physics_process(delta):
 	var new_position = calculate_movement(delta)

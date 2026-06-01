@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="3_fn7xk"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="4_ad2n0"]
 [ext_resource type="Texture2D" uid="uid://bnfh1uob3chyb" path="res://paths/ice/cryoblast/cryoblast.png" id="5_1wds2"]
+[ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="5_fjt5x"]
 
 [sub_resource type="Curve" id="Curve_t5laq"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5017544, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.20350878, 1), 0.0, 0.0, 0, 0, Vector2(0.5017544, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 300.0
@@ -26,15 +27,12 @@ unique_name_in_owner = true
 script = ExtResource("3_fn7xk")
 is_projectile = 1
 
-[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876]
+[node name="Sprite" type="CPUParticles2D" parent="." unique_id=1229961876 node_paths=PackedStringArray("ability_relay")]
 show_behind_parent = true
 material = ExtResource("4_ad2n0")
-emitting = false
-amount = 24
+amount = 48
 texture = ExtResource("5_1wds2")
 lifetime = 0.5
-one_shot = true
-explosiveness = 1.0
 draw_order = 1
 spread = 180.0
 gravity = Vector2(0, 0)
@@ -43,12 +41,14 @@ initial_velocity_max = 720.0
 scale_amount_min = 4.0
 scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_t5laq")
+script = ExtResource("5_fjt5x")
+ability_relay = NodePath("../AbilityRelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696487460]
 shape = SubResource("CircleShape2D_nofi0")
 
 [node name="Lifetime" type="Timer" parent="." unique_id=832802548]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 autostart = true
 
