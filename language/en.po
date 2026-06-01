@@ -714,7 +714,7 @@ msgid "echo_step_title"
 msgstr "[outline_color=#846742]Ability: Echo Step[/outline_color]"
 
 msgid "echo_step_description"
-msgstr "[outline_size=10]Every [100] distance you move:[/outline_size] Summon an echo. It has [outline_size=10]+[60xLEVEL][/outline_size] health, [outline_size=10]+[3xLEVEL][/outline_size] damage, and dies after [outline_size=10][1.5][/outline_size] seconds."
+msgstr "[outline_size=10]Every [100] distance you move:[/outline_size] Summon an echo. It has [outline_size=10]+[20xLEVEL][/outline_size] health, [outline_size=10]+[3xLEVEL][/outline_size] damage, and dies after [outline_size=10][1.5][/outline_size] seconds."
 
 msgid "event_horizon_title"
 msgstr "[outline_color=#846742]Ability: Event Horizon[/outline_color]"

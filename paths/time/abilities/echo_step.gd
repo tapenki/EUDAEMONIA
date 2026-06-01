@@ -41,7 +41,7 @@ func movement(distance, ability_relay) -> void:
 		spawn(ability_relay.owner.global_position, ability_relay)
 
 func max_health_modifiers(modifiers) -> void:
-	modifiers["base"] += 60 * level
+	modifiers["base"] += 20 * level
 
 func damage_dealt_modifiers(_entity, modifiers) -> void:
 	modifiers["base"] += 3 * level
