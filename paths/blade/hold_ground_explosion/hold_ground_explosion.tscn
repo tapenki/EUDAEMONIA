@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_thw23"]
 [ext_resource type="Texture2D" uid="uid://ciye83duq2td8" path="res://paths/blade/hold_ground_explosion/hold_ground_explosion.png" id="4_wl2jy"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_jsv1m"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_kcihg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nofi0"]
 radius = 50.0
@@ -36,11 +35,9 @@ texture = ExtResource("5_jsv1m")
 visible = false
 shape = SubResource("CircleShape2D_nofi0")
 
-[node name="Lifetime" type="Node" parent="." unique_id=189755914 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_kcihg")
+[node name="Lifetime" type="Timer" parent="." unique_id=1440469859]
 wait_time = 0.4
-running = true
-ability_relay = NodePath("../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

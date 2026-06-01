@@ -547,7 +547,7 @@ msgid "pain_walk_title"
 msgstr "[outline_color=#0f9936]Mastery: Pain Walk[/outline_color]"
 
 msgid "pain_walk_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color].[br][outline_size=10]Every [100]px you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][0.02xMAXHP][/outline_size] pure damage."
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#0f9936]Trail of Thorns[/outline_color].[br][outline_size=10]Every [100] distance you move:[/outline_size] Manifest [outline_size=10]+[1][/outline_size] thorn. [outline_size=10]Every other activation:[/outline_size] Take [outline_size=10][0.02xMAXHP][/outline_size] pure damage."
 
 msgid "vitalism_title"
 msgstr "[outline_color=#0f9936]Mastery: Vitalism[/outline_color]"
@@ -672,11 +672,11 @@ msgstr "[outline_color=#5B6487]Mastery: Deflect[/outline_color]"
 msgid "deflect_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Unsheathe[/outline_color].[br][outline_color=#5B6487]Sword[/outline_color] slashes deflect enemy projectiles to nearest enemy if [outline_color=#5B6487]Unsheathe[/outline_color] is fully charged."
 
-msgid "unflinching_title"
-msgstr "[outline_color=#5B6487]Mastery: Unflinching[/outline_color]"
+msgid "imposition_title"
+msgstr "[outline_color=#5B6487]Mastery: Imposition[/outline_color]"
 
-msgid "unflinching_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color].[br]Each subsequent [outline_color=#5B6487]Hold Ground[/outline_color] shockwave gains [outline_size=10]x[0.25][/outline_size] bonus damage and size up to [outline_size=10][4][/outline_size] times resetting upon moving."
+msgid "imposition_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#5B6487]Hold Ground[/outline_color].[br][outline_color=#5B6487]Hold Ground[/outline_color] shockwaves gain [outline_size=10]x[0.25][/outline_size] bonus damage and size up per [outline_size=10][250][/outline_size] distance you move for up to [outline_size=10][1000][/outline_size] distance moved losing one stage per activation."
 
 msgid "soul_cleave_title"
 msgstr "[outline_color=#5B6487]Mastery: Soul Cleave[/outline_color]"

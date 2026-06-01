@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_yt2fy"]
 [ext_resource type="Texture2D" uid="uid://c4doiap02wq0g" path="res://paths/fire/flame.png" id="6_31opf"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="7_65in0"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="8_obyu7"]
 
 [sub_resource type="Curve" id="Curve_esp0q"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503311, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -48,9 +47,7 @@ ability_relay = NodePath("../AbilityRelay")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=881751606]
 shape = SubResource("CircleShape2D_xxnif")
 
-[node name="Lifetime" type="Node" parent="." unique_id=966468027 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("8_obyu7")
-ability_relay = NodePath("../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+[node name="Lifetime" type="Timer" parent="." unique_id=1272672250]
+one_shot = true
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

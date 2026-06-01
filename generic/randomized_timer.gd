@@ -16,7 +16,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if running:
-		time_left -= delta * ability_relay.speed_scale
+		if ability_relay:
+			time_left -= delta * ability_relay.speed_scale
+		else:
+			time_left -= delta
 		if time_left <= 0:
 			if one_shot:
 				running = false

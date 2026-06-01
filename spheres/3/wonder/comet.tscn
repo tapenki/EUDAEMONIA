@@ -5,7 +5,6 @@
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="3_lq5xg"]
 [ext_resource type="Texture2D" uid="uid://csbg4wfwhnl4h" path="res://generic/projectiles/bullet.png" id="4_h67nx"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="5_o17tm"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="8_hprwm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxnif"]
 radius = 26.0
@@ -31,9 +30,7 @@ texture = ExtResource("5_o17tm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1746247623]
 shape = SubResource("CircleShape2D_xxnif")
 
-[node name="Lifetime" type="Node" parent="." unique_id=219089524 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("8_hprwm")
-ability_relay = NodePath("../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+[node name="Lifetime" type="Timer" parent="." unique_id=1589368086]
+one_shot = true
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

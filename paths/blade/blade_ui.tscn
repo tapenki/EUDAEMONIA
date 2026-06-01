@@ -124,13 +124,13 @@ requires = {
 }
 subject = "soul_cleave"
 
-[node name="Unflinching" parent="Masteries" unique_id=664334916 instance=ExtResource("5_w077r")]
+[node name="Imposition" parent="Masteries" unique_id=664334916 instance=ExtResource("5_w077r")]
 layout_mode = 2
 accessible_texture = ExtResource("1_qr8k3")
 requires = {
 "hold_ground": 5
 }
-subject = "unflinching"
+subject = "imposition"
 
 [node name="Percussion" parent="Masteries" unique_id=2138347233 instance=ExtResource("5_w077r")]
 layout_mode = 2

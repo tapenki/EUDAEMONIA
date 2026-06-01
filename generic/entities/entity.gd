@@ -78,13 +78,14 @@ func _physics_process(delta):
 	animation_player.speed_scale = ability_relay.speed_scale
 	movement(delta)
 
-func movement(delta):
+func movement(_delta):
 	if not knockback_timer.is_stopped():
 		if is_on_wall():
 			velocity = velocity.bounce(get_last_slide_collision().get_normal()) * 0.5
 			knockback_timer.start(knockback_timer.time_left * 0.5)
-	elif still: ## goodness gracious
-			velocity = lerp(Vector2(), velocity, pow(0.00001, delta * ability_relay.speed_scale))
+	elif still:
+			## goodness gracious velocity = lerp(Vector2(), velocity, pow(0.000001, delta * ability_relay.speed_scale))
+			velocity *= 0.5
 	var old_position = global_position
 	var old_velocity = velocity
 	velocity *= ability_relay.speed_scale

@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bqb8ochk0ewqm" path="res://spheres/6/light/big_laser/big_laser_tip.png" id="7_wv6tr"]
 [ext_resource type="Texture2D" uid="uid://dprl5lmh0bsql" path="res://paths/statuses/burn/burn.png" id="8_ogjvb"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="9_hmfyd"]
-[ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="10_urvtn"]
 
 [sub_resource type="Curve" id="Curve_07fpd"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1017544, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -103,10 +102,8 @@ scale_amount_curve = SubResource("Curve_07fpd")
 script = ExtResource("9_hmfyd")
 ability_relay = NodePath("../../../AbilityRelay")
 
-[node name="Lifetime" type="Node" parent="." unique_id=1431600111 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("10_urvtn")
-running = true
-ability_relay = NodePath("../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+[node name="Lifetime" type="Timer" parent="." unique_id=1887467355]
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

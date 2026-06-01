@@ -69,10 +69,10 @@ func assign_entity_group(entity: Node, group: int, color: String = "secondary"):
 
 ## entity spawning
 func scale_enemy_health(health: float):
-	return health * (1 + (day - 1) * (0.25 + 0.25 * loop))
+	return health * (1 + (day - 1) * 0.25) * pow(2, loop)
 
 func scale_enemy_damage(damage: float):
-	return damage * (1 + (day - 1) * (0.25 + 0.025 * loop))
+	return damage * (1 + (day - 1) * 0.25) * (1 + loop * 0.25)
 
 func spawn_entity(entity: Entity, delay = 0.5):
 	var reticle_instance = spawn_reticle.instantiate()

@@ -199,10 +199,8 @@ shape = SubResource("CircleShape2D_jpw2x")
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_v1kwl")
 
-[node name="Lifetime" type="Node" parent="." unique_id=398757583 node_paths=PackedStringArray("ability_relay")]
-script = ExtResource("6_vv2x4")
-ability_relay = NodePath("../AbilityRelay")
-metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
+[node name="Lifetime" type="Timer" parent="." unique_id=348473425]
+one_shot = true
 
 [connection signal="timeout" from="StateHandler/ShootAttack/Timer" to="StateHandler/ShootAttack" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateHandler/ShootAttack/Endlag/Timer" to="StateHandler/ShootAttack/Endlag" method="_on_timer_timeout"]

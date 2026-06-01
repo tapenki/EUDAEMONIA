@@ -348,8 +348,8 @@ var ability_data = {
 		"script" : preload("res://paths/blade/abilities/unsheathe.gd"),
 		"type" : "mastery"
 	},
-	"unflinching" : {
-		"script" : preload("res://paths/blade/abilities/unflinching.gd"),
+	"imposition" : {
+		"script" : preload("res://paths/blade/abilities/imposition.gd"),
 		"type" : "mastery"
 	},
 	"soul_cleave" : {

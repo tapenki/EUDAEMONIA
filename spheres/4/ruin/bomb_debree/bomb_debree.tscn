@@ -220,11 +220,10 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_74e7t")
 autoplay = &"IDLE"
 
-[node name="Lifetime" type="Node" parent="." unique_id=867021307 node_paths=PackedStringArray("ability_relay")]
+[node name="Lifetime" type="Node" parent="." unique_id=867021307]
 script = ExtResource("10_j8ubj")
 wait_time = 2.0
 deviation = 0.3
-ability_relay = NodePath("../AbilityRelay")
 metadata/_custom_type_script = "uid://dvr6gecg7swmt"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_finished"]
