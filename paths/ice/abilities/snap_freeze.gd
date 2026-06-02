@@ -10,4 +10,4 @@ func entity_manifestation(entity: Entity):
 	for ability_relay in applicants:
 		if applicants[ability_relay].has("subscription") and applicants[ability_relay]["subscription"] < 5:
 			return
-		status.apply(entity.ability_relay, {"duration" = 2.5 * ability_relay.get_effect_duration()})
+		status.apply(entity.ability_relay, {"duration" = 1.5 * ability_relay.get_effect_duration()})

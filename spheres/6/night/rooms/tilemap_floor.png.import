@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5tl341g373ik"
-path="res://.godot/imported/terminator.png-14bed010b7960b88f86809c3ba0b29d6.ctex"
+uid="uid://cn4gqd5abuo3j"
+path="res://.godot/imported/tilemap_floor.png-677b8e9fe78591e6f0fa4bfaa5ee5c0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/5/steel/terminator/terminator.png"
-dest_files=["res://.godot/imported/terminator.png-14bed010b7960b88f86809c3ba0b29d6.ctex"]
+source_file="res://spheres/6/night/rooms/tilemap_floor.png"
+dest_files=["res://.godot/imported/tilemap_floor.png-677b8e9fe78591e6f0fa4bfaa5ee5c0f.ctex"]
 
 [params]
 

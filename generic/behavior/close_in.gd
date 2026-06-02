@@ -29,15 +29,16 @@ func avoidance():
 func _physics_process(_delta):
 	if not user.knockback_timer.is_stopped():
 		return
-	#for i in node2d.get_children():
-		#i.queue_free()
+	if user.ability_relay.speed_scale <= 0:
+		return
 	if not is_instance_valid(state_handler.target):
 		state_handler.target = user.ability_relay.find_target()
 	if not is_instance_valid(state_handler.target):
 		if anim != "" and user.animation_player.current_animation == anim:
 			user.animation_player.stop()
 		return
-	
+	#for i in node2d.get_children():
+		#i.queue_free()
 	state_handler.target.set_collision_layer_value(16, true)
 	var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, state_handler.target.global_position)
 	ray_query.collision_mask = 32768

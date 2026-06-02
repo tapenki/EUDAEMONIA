@@ -335,6 +335,13 @@ var room_data = {
 		"land" : "light",
 	},
 	#endregion
+	#region night
+	"night_entrance_hall" : {
+		"scene" : preload("res://spheres/6/night/rooms/night_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "night",
+	},
+	#endregion
 	#region misc
 	"debug_room" : {
 		"scene" : preload("res://spheres/debug_room.tscn"), 
@@ -468,6 +475,11 @@ var entity_data = {
 	},
 	"grand_luminary" : {
 		"scene" : preload("res://spheres/6/light/grand_luminary/grand_luminary.tscn")
+	},
+	#endregion
+	#region night
+	"ogre" : {
+		"scene" : preload("res://spheres/6/night/ogre/ogre.tscn")
 	},
 	#endregion
 }

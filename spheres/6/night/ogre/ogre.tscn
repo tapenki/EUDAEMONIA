@@ -3,16 +3,30 @@
 [ext_resource type="Script" uid="uid://d4d0ytfo5qqll" path="res://generic/entities/entity.gd" id="1_3mabb"]
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_xl88m"]
 [ext_resource type="Script" uid="uid://dmtk2qjwmowu4" path="res://generic/behavior/state_handler.gd" id="3_ctu08"]
+[ext_resource type="Script" uid="uid://bolxc1et0yrj" path="res://spheres/6/night/sleep.gd" id="3_sdjhw"]
 [ext_resource type="Script" uid="uid://h38lxxmmb5k2" path="res://generic/behavior/close_in.gd" id="4_6bpub"]
+[ext_resource type="Shader" uid="uid://3skop3gu1f8n" path="res://shaders/colormap.gdshader" id="4_qd3kc"]
+[ext_resource type="Texture2D" uid="uid://dc6y764vrxfsh" path="res://spheres/6/night/sleep.png" id="5_2oprb"]
 [ext_resource type="Script" uid="uid://cb87obwoetqlr" path="res://generic/behavior/wait.gd" id="5_21j8e"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_4q57g"]
+[ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="6_u2u33"]
 [ext_resource type="Script" uid="uid://bw1pw5jtxctmm" path="res://generic/behavior/dash_attack.gd" id="7_rovex"]
 [ext_resource type="Script" uid="uid://blawfb3p3yi1r" path="res://generic/behavior/quake_attack.gd" id="8_pocrg"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_r4yed"]
-[ext_resource type="Texture2D" uid="uid://b5tl341g373ik" path="res://spheres/5/steel/terminator/terminator.png" id="10_ry3pv"]
+[ext_resource type="Texture2D" uid="uid://b5tl341g373ik" path="res://spheres/6/night/ogre/ogre.png" id="10_ry3pv"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_qrkkp"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="13_nw3ji"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="14_2hrpp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3rtc"]
+resource_local_to_scene = true
+shader = ExtResource("4_qd3kc")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/colorfill = false
+
+[sub_resource type="Curve" id="Curve_2k3sw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24561404, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhp25"]
 radius = 32.0
@@ -120,7 +134,7 @@ _data = {
 &"WINDUP": SubResource("Animation_14oqu")
 }
 
-[node name="Terminator" type="CharacterBody2D" unique_id=865233851 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
+[node name="Ogre" type="CharacterBody2D" unique_id=865233851 node_paths=PackedStringArray("ability_relay", "hurtbox", "animation_player")]
 z_index = 1
 collision_layer = 0
 collision_mask = 128
@@ -137,6 +151,27 @@ health = 80.0
 unique_name_in_owner = true
 script = ExtResource("2_xl88m")
 is_entity = 2
+
+[node name="Sleep" type="Node2D" parent="." unique_id=528075609]
+script = ExtResource("3_sdjhw")
+
+[node name="Particles" type="CPUParticles2D" parent="Sleep" unique_id=1302666596 node_paths=PackedStringArray("ability_relay")]
+z_index = -1
+material = SubResource("ShaderMaterial_o3rtc")
+texture = ExtResource("5_2oprb")
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+emission_shape = 3
+emission_rect_extents = Vector2(32, 32)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_curve = SubResource("Curve_2k3sw")
+script = ExtResource("6_u2u33")
+ability_relay = NodePath("../../AbilityRelay")
 
 [node name="StateHandler" type="Node" parent="." unique_id=377507445 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
@@ -231,14 +266,14 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=809943861]
 material = ExtResource("9_r4yed")
-position = Vector2(0, 31)
+position = Vector2(0, 35)
 texture = ExtResource("10_ry3pv")
-offset = Vector2(0, -31)
+offset = Vector2(0, -35)
 script = ExtResource("11_qrkkp")
 
 [node name="Glow" type="Sprite2D" parent="Sprite" unique_id=1393765356]
 z_index = -3
-position = Vector2(0, -31)
+position = Vector2(0, -35)
 scale = Vector2(1.75, 1.75)
 texture = ExtResource("13_nw3ji")
 script = ExtResource("11_qrkkp")
