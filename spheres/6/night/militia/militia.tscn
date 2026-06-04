@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_b8icu"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="6_nn0ul"]
 [ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="7_oitye"]
+[ext_resource type="Texture2D" uid="uid://356njuu87nxk" path="res://spheres/6/night/sleepline.png" id="7_w71dw"]
 [ext_resource type="PackedScene" uid="uid://c01qwigj126r2" path="res://spheres/6/night/moon_bullet/moon_bullet.tscn" id="8_73o5g"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_lflgw"]
 [ext_resource type="Texture2D" uid="uid://c46r4287im8un" path="res://spheres/6/night/militia/militia.png" id="10_eso7u"]
@@ -157,6 +158,10 @@ initial_velocity_max = 20.0
 scale_amount_curve = SubResource("Curve_1ksvv")
 script = ExtResource("6_nn0ul")
 ability_relay = NodePath("../../AbilityRelay")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sleep" unique_id=201117910]
+z_index = -3
+texture = ExtResource("7_w71dw")
 
 [node name="StateHandler" type="Node" parent="." unique_id=1682319058 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true

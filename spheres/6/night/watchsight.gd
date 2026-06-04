@@ -14,15 +14,23 @@ extends Node2D
 
 var sightlines: Dictionary
 
+var alarm = 0.0
+
 func _ready() -> void:
 	for sightline in get_children():
 		sightlines[sightline] = 0.0
 	modulate = Config.get_team_color(owner.group, "primary")
+	ability_relay.damage_taken.connect(damage_taken)
+	ability_relay.self_death.connect(self_death)
 
 func _physics_process(delta: float) -> void:
 	var enemies = ability_relay.area_targets(global_position, radius)
 	for sightline in sightlines:
-		sightline.rotation += delta * PI * 0.2
+		if alarm > 0.0:
+			sightline.rotation += delta * ability_relay.speed_scale * PI
+			alarm -= delta
+		else:
+			sightline.rotation += delta * ability_relay.speed_scale * PI * 0.25
 		if sightlines[sightline] < shoot_delay:
 			sightlines[sightline] += delta
 		else:
@@ -45,3 +53,10 @@ func _physics_process(delta: float) -> void:
 						bullet_instance.get_node("Lifetime").wait_time = bullet_lifetime
 						get_node("/root/Main/Projectiles").add_child(bullet_instance)
 					get_node("/root/Main").play_sound("ShootLight")
+
+func damage_taken(_damage) -> void:
+	alarm = ability_relay.get_effect_duration()
+	
+func self_death() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0, 0.1)

@@ -341,6 +341,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "night",
 	},
+	"night_room_0" : {
+		"scene" : preload("res://spheres/6/night/rooms/night_room_0.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "night",
+	},
 	#endregion
 	#region misc
 	"debug_room" : {
