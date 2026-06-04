@@ -481,5 +481,11 @@ var entity_data = {
 	"ogre" : {
 		"scene" : preload("res://spheres/6/night/ogre/ogre.tscn")
 	},
+	"watch" : {
+		"scene" : preload("res://spheres/6/night/watch/watch.tscn")
+	},
+	"militia" : {
+		"scene" : preload("res://spheres/6/night/militia/militia.tscn")
+	},
 	#endregion
 }

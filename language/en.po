@@ -826,7 +826,7 @@ msgid "steps_entrance_gate_description"
 msgstr "Where it begins."
 
 msgid "steps_basic_gate_title"
-msgstr "[outline_size=10]Gate: Outpost[/outline_size]"
+msgstr "[outline_size=10]Gate: Crossing[/outline_size]"
 
 msgid "steps_basic_gate_description"
 msgstr "Outer edges of the sky."
@@ -995,6 +995,21 @@ msgstr "[outline_color=#00aa00]Weapon: Sight Sickle[/outline_color]"
 
 msgid "sight_sickle_description"
 msgstr "[outline_size=10]Once every [0.7] seconds:[/outline_size] Swing a laser sickle with [outline_size=10]+[10][/outline_size] damage."
+
+msgid "land_of_night_title"
+msgstr "Sphere [6]: Land of Night"
+
+msgid "night_entrance_gate_title"
+msgstr "[outline_size=10]Gate: Land of Night[/outline_size]"
+
+msgid "night_entrance_gate_description"
+msgstr "Don't make a sound."
+
+msgid "night_basic_gate_title"
+msgstr "[outline_size=10]Gate: Outpost[/outline_size]"
+
+msgid "night_basic_gate_description"
+msgstr "Don't wake them up."
 
 msgid "his_throne_title"
 msgstr "Sphere [8]: His Throne"

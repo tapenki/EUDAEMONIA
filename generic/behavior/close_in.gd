@@ -16,29 +16,18 @@ extends State
 func avoidance():
 	var reach = 200
 	var found
-	var distance = 0
+	var found_distance = 0
 	for entity in get_node("/root/Main/Entities").get_children():
 		if entity != user and entity.scene_file_path == user.scene_file_path and not user.ability_relay.can_hit(entity):
-			distance = user.global_position.distance_to(entity.global_position)
+			var distance = user.global_position.distance_to(entity.global_position)
 			if distance > 0 and distance < reach:
 				reach = distance
+				found_distance = distance
 				found = entity
 	if found:
-		return {"target" : found, "distance" : distance}
+		return {"target" : found, "distance" : found_distance}
 
-func _physics_process(_delta):
-	if not user.knockback_timer.is_stopped():
-		return
-	if user.ability_relay.speed_scale <= 0:
-		return
-	if not is_instance_valid(state_handler.target):
-		state_handler.target = user.ability_relay.find_target()
-	if not is_instance_valid(state_handler.target):
-		if anim != "" and user.animation_player.current_animation == anim:
-			user.animation_player.stop()
-		return
-	#for i in node2d.get_children():
-		#i.queue_free()
+func pathfind():
 	state_handler.target.set_collision_layer_value(16, true)
 	var ray_query = PhysicsRayQueryParameters2D.create(user.global_position, state_handler.target.global_position)
 	ray_query.collision_mask = 32768
@@ -62,29 +51,45 @@ func _physics_process(_delta):
 		shape_query.collision_mask = 128
 		shape_intersections = get_node("/root/Main").physics_space.intersect_shape(shape_query, 1)
 	
-	var direction: Vector2
 	if shape_intersections: ## obstacles in the way, pathfind around them
 		var path = get_node("/root/Main").pathfind(user.global_position, state_handler.target.global_position)
 		if path.size() == 0:
 			if anim != "" and user.animation_player.current_animation == anim:
 				user.animation_player.stop()
-			return
+			return true
 		#for i in path:
 		#var rect = ColorRect.new()
 		#rect.position = i
 		#rect.size = Vector2(4, 4)
 		#node2d.add_child(rect)
-		direction = user.global_position.direction_to(path[0])
+		state_handler.data["direction"] = user.global_position.direction_to(path[0])
 	else: ## no obstacles in the way
 		var distance = user.global_position.distance_to(ray_intersection.position)
-		direction = user.global_position.direction_to(ray_intersection.position)
+		state_handler.data["direction"] = user.global_position.direction_to(ray_intersection.position)
 		if distance < distance_margin: ## proceed to next state
-			state_handler.data["direction"] = direction
 			change_state(next)
-			return
+			return true
+
+func _physics_process(_delta):
+	if not user.knockback_timer.is_stopped():
+		return
+	if user.ability_relay.speed_scale <= 0:
+		return
+	if not is_instance_valid(state_handler.target):
+		state_handler.target = user.ability_relay.find_target()
+	if not is_instance_valid(state_handler.target):
+		if anim != "" and user.animation_player.current_animation == anim:
+			user.animation_player.stop()
+		return
+	#for i in node2d.get_children():
+		#i.queue_free()
+	
+	var check = pathfind()
+	if check:
+		return
 	
 	var final_speed = user.ability_relay.get_move_speed(speed)
-	var final_velocity = direction * final_speed
+	var final_velocity = state_handler.data["direction"] * final_speed
 	
 	var avoid = avoidance()
 	if avoid:
