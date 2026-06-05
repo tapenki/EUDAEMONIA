@@ -1011,6 +1011,12 @@ msgstr "[outline_size=10]Gate: Outpost[/outline_size]"
 msgid "night_basic_gate_description"
 msgstr "Don't wake them up."
 
+msgid "full_moon_title"
+msgstr "[outline_color=#0066dd]Affect: Full Moon[/outline_color]"
+
+msgid "full_moon_description"
+msgstr "You have [outline_size=10]+[100]%[/outline_size] crit chance every [outline_size=10][4th][/outline_size] day."
+
 msgid "his_throne_title"
 msgstr "Sphere [8]: His Throne"
 

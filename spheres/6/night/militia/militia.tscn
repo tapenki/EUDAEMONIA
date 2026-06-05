@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dc6y764vrxfsh" path="res://spheres/6/night/sleep.png" id="5_rnqqg"]
 [ext_resource type="Script" uid="uid://cn1m6tv15kxr7" path="res://generic/scaled_timer.gd" id="6_b8icu"]
 [ext_resource type="Script" uid="uid://c8la3h662da2p" path="res://generic/particles/cpu_particles.gd" id="6_nn0ul"]
-[ext_resource type="Script" uid="uid://dmhaojuwedh1n" path="res://generic/behavior/shoot_attack.gd" id="7_oitye"]
 [ext_resource type="Texture2D" uid="uid://356njuu87nxk" path="res://spheres/6/night/sleepline.png" id="7_w71dw"]
 [ext_resource type="PackedScene" uid="uid://c01qwigj126r2" path="res://spheres/6/night/moon_bullet/moon_bullet.tscn" id="8_73o5g"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="9_lflgw"]
 [ext_resource type="Texture2D" uid="uid://c46r4287im8un" path="res://spheres/6/night/militia/militia.png" id="10_eso7u"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="11_bjh4a"]
 [ext_resource type="Texture2D" uid="uid://bw6gkkxy6p0yd" path="res://generic/misc/glow.png" id="12_bs0la"]
+[ext_resource type="Script" uid="uid://brss7bxe5ejqs" path="res://generic/behavior/scattershot_attack.gd" id="12_w71dw"]
 [ext_resource type="Script" uid="uid://cy43y4txciwst" path="res://generic/hurtbox.gd" id="13_t8grp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oe5o7"]
@@ -145,7 +145,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_oe5o7")
 amount = 6
 texture = ExtResource("5_rnqqg")
-fixed_fps = 30
 local_coords = true
 draw_order = 1
 emission_shape = 3
@@ -189,9 +188,11 @@ metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 
 [node name="Shoot" type="Node" parent="StateHandler/ShootAttack" unique_id=1613964652 node_paths=PackedStringArray("next")]
 process_mode = 4
-script = ExtResource("7_oitye")
+script = ExtResource("12_w71dw")
 bullet = ExtResource("8_73o5g")
 bullet_lifetime = 1.5
+bullet_count = 3
+spread = 15
 next = NodePath("../Endlag")
 
 [node name="Endlag" type="Node" parent="StateHandler/ShootAttack" unique_id=81129476 node_paths=PackedStringArray("next")]
@@ -201,7 +202,7 @@ next = NodePath("../../CloseIn")
 
 [node name="Timer" type="Node" parent="StateHandler/ShootAttack/Endlag" unique_id=1404294775 node_paths=PackedStringArray("ability_relay")]
 script = ExtResource("6_b8icu")
-wait_time = 0.6
+wait_time = 0.3
 ability_relay = NodePath("../../../../AbilityRelay")
 metadata/_custom_type_script = "uid://cn1m6tv15kxr7"
 

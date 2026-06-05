@@ -432,6 +432,11 @@ var ability_data = {
 		"script" : preload("res://spheres/6/light/eyes_of_light/eyes_of_light.gd"),
 		"type" : "shrine",
 		"affect" : preload("res://spheres/6/light/eyes_of_light/eyes_of_light_reminder.tscn")
+	},
+	"full_moon" : {
+		"script" : preload("res://spheres/6/night/full_moon/full_moon.gd"),
+		"type" : "shrine",
+		"affect" : preload("res://spheres/6/night/full_moon/full_moon_reminder.tscn")
 	}
 	#endregion
 }

@@ -21,7 +21,7 @@ func day_start(_day: int) -> void:
 	if is_instance_valid(room) and room.has_node("Doors"):
 		for door in room.get_node("Doors").get_children():
 			if door.has_node("HintParticles"):
-				door.get_node("HintParticles").amount = 16
+				door.get_node("HintParticles").emitting = true
 
 func max_health_modifiers(modifiers) -> void:
 	modifiers["base"] += 10 * get_node("/root/Main/UI").unlock_points

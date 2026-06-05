@@ -7,6 +7,7 @@ func _ready() -> void:
 		ability_relay.self_death.connect(self_death)
 
 func self_death():
+	emitting = true ## fix for reparent when stopping bug
 	modulate *= get_parent().modulate
 	reparent(get_node("/root/Main/Effects"))
 	emitting = false

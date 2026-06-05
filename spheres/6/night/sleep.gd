@@ -8,7 +8,7 @@ extends Node2D
 var active = true
 
 func _ready() -> void:
-	modulate = Config.get_team_color(owner.group, "primary")
+	modulate = Config.get_team_color(owner.group, "secondary")
 	var scale_mult = (1 - sin(Time.get_ticks_msec()*0.001) * 0.1) * sense_range_mult
 	get_node("Sprite2D").scale = Vector2(1, 1) * scale_mult
 	ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
@@ -30,8 +30,7 @@ func speed_scale_modifiers(modifiers) -> void:
 
 func awaken():
 	if active:
-		var color = Config.get_team_color(owner.group, "primary")
-		get_node("/root/Main").floating_text(global_position, "[!]", color)
+		get_node("/root/Main").floating_text(global_position, "[!]", modulate)
 		active = false
 		particles.emitting = false
 		var tween = create_tween()

@@ -19,7 +19,7 @@ var alarm = 0.0
 func _ready() -> void:
 	for sightline in get_children():
 		sightlines[sightline] = 0.0
-	modulate = Config.get_team_color(owner.group, "primary")
+	modulate = Config.get_team_color(owner.group, "secondary")
 	ability_relay.damage_taken.connect(damage_taken)
 	ability_relay.self_death.connect(self_death)
 
@@ -31,6 +31,8 @@ func _physics_process(delta: float) -> void:
 			alarm -= delta
 		else:
 			sightline.rotation += delta * ability_relay.speed_scale * PI * 0.25
+		if not owner.alive:
+			return
 		if sightlines[sightline] < shoot_delay:
 			sightlines[sightline] += delta
 		else:
