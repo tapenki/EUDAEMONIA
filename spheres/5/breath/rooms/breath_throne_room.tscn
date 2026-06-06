@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://nw5cjw5gk85y" path="res://spheres/environment/rewards/health_reward.tscn" id="7_3mek5"]
 [ext_resource type="PackedScene" uid="uid://bu475fp0w7g3" path="res://spheres/environment/rewards/qualia_reward.tscn" id="8_syd18"]
 [ext_resource type="PackedScene" uid="uid://ppjabc1udges" path="res://spheres/environment/rewards/nous_reward.tscn" id="9_ey1iv"]
+[ext_resource type="Texture2D" uid="uid://bcl51jp3wiq83" path="res://spheres/environment/rewards/blue_reward.png" id="10_0seku"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y8x4"]
+resource_local_to_scene = true
+font_size = 40
+outline_size = 8
+outline_color = Color(1, 1, 1, 0.2509804)
 
 [node name="BreathThroneRoom" type="Node2D" unique_id=1676857310]
 
@@ -39,9 +46,14 @@ position = Vector2(540, 1290)
 rotation = 3.1415927
 
 [node name="Exit0" parent="Doors" unique_id=1977797072 instance=ExtResource("4_lh3ha")]
-position = Vector2(540, 30)
+position = Vector2(300, 60)
 room = "light_entrance_hall"
 subject = "light_entrance_gate"
+
+[node name="Exit1" parent="Doors" unique_id=1369837853 instance=ExtResource("4_lh3ha")]
+position = Vector2(630, 30)
+room = "night_entrance_hall"
+subject = "night_entrance_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=428245818 instance=ExtResource("6_34phv")]
 reward = ExtResource("7_3mek5")
@@ -51,5 +63,47 @@ reward = ExtResource("8_syd18")
 
 [node name="NousRewardGiver" parent="." unique_id=1346666399 instance=ExtResource("6_34phv")]
 reward = ExtResource("9_ey1iv")
+
+[node name="LightSign" type="Sprite2D" parent="." unique_id=2123474762]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(360, 60)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_0seku")
+
+[node name="Symbol" type="Label" parent="LightSign" unique_id=1906914243]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Li"
+label_settings = SubResource("LabelSettings_2y8x4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NightSign" type="Sprite2D" parent="." unique_id=953594432]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(570.00006, 30)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_0seku")
+
+[node name="Symbol" type="Label" parent="NightSign" unique_id=1388352832]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ni"
+label_settings = SubResource("LabelSettings_2y8x4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Waves/Wave1/Timer" to="Waves/Wave1" method="proceed"]

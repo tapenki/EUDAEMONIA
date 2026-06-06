@@ -66,6 +66,11 @@ var ability_data = {
 		"type" : "weapon",
 		"affect" : preload("res://affects/ui/weapon_button.tscn")
 	},
+	"moon_dart" : {
+		"script" : preload("res://spheres/6/night/moon_dart/moon_dart.gd"),
+		"type" : "weapon",
+		"affect" : preload("res://affects/ui/weapon_button.tscn")
+	},
 	#endregion
 	#region challenges
 	"lasting_wounds" : {

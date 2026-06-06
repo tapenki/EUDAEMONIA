@@ -346,6 +346,16 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "night",
 	},
+	"night_health_treasury" : {
+		"scene" : preload("res://spheres/6/night/rooms/night_health_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "night",
+	},
+	"night_damage_treasury" : {
+		"scene" : preload("res://spheres/6/night/rooms/night_damage_treasury.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "night",
+	},
 	"night_room_1" : {
 		"scene" : preload("res://spheres/6/night/rooms/night_room_1.tscn"), 
 		"zoom_scale" : 0.9, 
