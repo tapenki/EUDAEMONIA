@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ebp7eoxijdn0" path="res://generic/abilities/ability_relay.gd" id="2_icvtd"]
 [ext_resource type="Texture2D" uid="uid://q50pyprnfm0p" path="res://spheres/6/night/sightline.png" id="3_l5v7r"]
 [ext_resource type="Script" uid="uid://xogpihv287sv" path="res://spheres/6/night/watchsight.gd" id="3_uq2ld"]
+[ext_resource type="Script" uid="uid://gyoreusdme04" path="res://spheres/6/night/sightline.gd" id="5_qk33v"]
 [ext_resource type="Material" uid="uid://b1egppgxbj7lu" path="res://shaders/colormap.tres" id="8_sghmy"]
 [ext_resource type="Texture2D" uid="uid://baofe44w18ixv" path="res://spheres/6/night/watch/watch.png" id="9_5e4ub"]
 [ext_resource type="Script" uid="uid://wbqw1e3qff13" path="res://generic/entities/entity_sprite.gd" id="10_31k71"]
@@ -138,19 +139,19 @@ is_entity = 2
 script = ExtResource("3_uq2ld")
 
 [node name="Sightline1" type="Sprite2D" parent="Watchsight" unique_id=1640182295]
-self_modulate = Color(1, 1, 1, 0.5019608)
 z_index = -3
 scale = Vector2(3, 3)
 texture = ExtResource("3_l5v7r")
 offset = Vector2(64, 0)
+script = ExtResource("5_qk33v")
 
 [node name="Sightline2" type="Sprite2D" parent="Watchsight" unique_id=641779560]
-self_modulate = Color(1, 1, 1, 0.5019608)
 z_index = -3
 rotation = 3.1415927
 scale = Vector2(3, 3)
 texture = ExtResource("3_l5v7r")
 offset = Vector2(64, 0)
+script = ExtResource("5_qk33v")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1563565232]
 material = ExtResource("8_sghmy")

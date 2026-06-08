@@ -81,8 +81,8 @@ rotation = 1.5707964
 [node name="Exit0" parent="Doors" unique_id=925670413 instance=ExtResource("5_6bl7b")]
 position = Vector2(570, 750)
 rotation = 3.1415927
-room = "night_room_0"
-subject = "night_basic_gate"
+room = "night_throne_room"
+subject = "throne_room_gate"
 
 [node name="HealthRewardGiver" parent="." unique_id=1753211318 instance=ExtResource("6_tp725")]
 reward = ExtResource("7_no1o5")

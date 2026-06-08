@@ -1112,6 +1112,12 @@ msgstr "[Grand Luminary]: fu7ur3 1s br1gh7"
 msgid "grand_luminary_death_1"
 msgstr "[Grand Luminary]: y0u t00 sh4ll s33"
 
+msgid "moon_moon_spawn_1"
+msgstr "[Moon Moon]: ju st a bad drea m"
+
+msgid "moon_moon_death_1"
+msgstr "[Moon Moon]: you will ne ver wake u p aga in"
+
 # rewards
 
 msgid "ascension_diploma_title"

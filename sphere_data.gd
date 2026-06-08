@@ -366,6 +366,11 @@ var room_data = {
 		"zoom_scale" : 0.9, 
 		"land" : "night",
 	},
+	"night_throne_room" : {
+		"scene" : preload("res://spheres/6/night/rooms/night_throne_room.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "night",
+	},
 	#endregion
 	#region misc
 	"debug_room" : {
@@ -511,6 +516,9 @@ var entity_data = {
 	},
 	"militia" : {
 		"scene" : preload("res://spheres/6/night/militia/militia.tscn")
+	},
+	"moon_moon" : {
+		"scene" : preload("res://spheres/6/night/moon_moon/moon_moon.tscn")
 	},
 	#endregion
 }

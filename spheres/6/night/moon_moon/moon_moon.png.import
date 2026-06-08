@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i8nhqoafcdib"
-path="res://.godot/imported/watch_alt.png-0f6af79afd1e001d378ab6d25aaa2824.ctex"
+uid="uid://b5x2msp83qww6"
+path="res://.godot/imported/moon_moon.png-93286b524db67c8d2bbdf3d5f9330eb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spheres/6/night/watch/watch_alt.png"
-dest_files=["res://.godot/imported/watch_alt.png-0f6af79afd1e001d378ab6d25aaa2824.ctex"]
+source_file="res://spheres/6/night/moon_moon/moon_moon.png"
+dest_files=["res://.godot/imported/moon_moon.png-93286b524db67c8d2bbdf3d5f9330eb3.ctex"]
 
 [params]
 
