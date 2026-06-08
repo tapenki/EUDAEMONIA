@@ -20,8 +20,8 @@ var button_red = preload("res://ui/button_red.png")
 var button_blue = preload("res://ui/button_blue.png")
 var button_gray = preload("res://ui/button.png")
 
-var upgrade_points: int = 100
-var unlock_points: int = 100
+var upgrade_points: int = 1
+var unlock_points: int = 1
 var paths: Array
 
 var challenges: Array
