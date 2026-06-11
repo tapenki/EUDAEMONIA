@@ -462,7 +462,7 @@ msgid "thunderstep_title"
 msgstr "[outline_color=#a87e00]Ability: Thunderstep[/outline_color]"
 
 msgid "thunderstep_description"
-msgstr "You have [outline_size=10]+[40xLEVEL][/outline_size] move speed and [outline_size=10]+[0.25xLEVEL][/outline_size] seconds of immunity when hit."
+msgstr "You have [outline_size=10]+[30xLEVEL][/outline_size] move speed and [outline_size=10]+[0.25xLEVEL][/outline_size] seconds of immunity when hit."
 
 msgid "storm_weave_title"
 msgstr "[outline_color=#a87e00]Mastery: Storm Weave[/outline_color]"
@@ -710,10 +710,10 @@ msgstr "[outline_color=#846742]Ability: Minute Hand[/outline_color]"
 msgid "minute_hand_description"
 msgstr "[outline_size=10]Every [2] seconds:[/outline_size] Gain [br][outline_size=10]+[0.5xLEVEL][/outline_size] damage until end of encounter."
 
-msgid "echo_step_title"
-msgstr "[outline_color=#846742]Ability: Echo Step[/outline_color]"
+msgid "echolalia_title"
+msgstr "[outline_color=#846742]Ability: Echolalia[/outline_color]"
 
-msgid "echo_step_description"
+msgid "echolalia_description"
 msgstr "[outline_size=10]Every [100] distance you move:[/outline_size] Summon an echo. It has [outline_size=10]+[20xLEVEL][/outline_size] health, [outline_size=10]+[3xLEVEL][/outline_size] damage, and dies after [outline_size=10][1.5][/outline_size] seconds."
 
 msgid "event_horizon_title"

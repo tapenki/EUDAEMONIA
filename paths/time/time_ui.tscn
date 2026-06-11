@@ -80,10 +80,10 @@ layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
 subject = "minute_hand"
 
-[node name="EchoStep" parent="Abilities" unique_id=452593380 instance=ExtResource("5_w0qkf")]
+[node name="Echolalia" parent="Abilities" unique_id=452593380 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
 texture_normal = ExtResource("2_hlo4x")
-subject = "echo_step"
+subject = "echolalia"
 
 [node name="EventHorizon" parent="Abilities" unique_id=1440218836 instance=ExtResource("5_w0qkf")]
 layout_mode = 2
@@ -128,7 +128,7 @@ layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
-"echo_step": 5
+"echolalia": 5
 }
 subject = "paradoxism"
 extras = ["doom"]

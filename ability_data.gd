@@ -375,8 +375,8 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/minute_hand.gd"),
 		"type" : "upgrade"
 	},
-	"echo_step" : {
-		"script" : preload("res://paths/time/abilities/echo_step.gd"),
+	"echolalia" : {
+		"script" : preload("res://paths/time/abilities/echolalia.gd"),
 		"type" : "upgrade"
 	},
 	"event_horizon" : {

@@ -15,7 +15,7 @@ func disapply(ability_relay):
 		ability_relay.immune_duration_modifiers.disconnect(immune_duration_modifiers)
 
 func move_speed_modifiers(modifiers) -> void:
-	modifiers["base"] += 40 * level
+	modifiers["base"] += 30 * level
 
 func immune_duration_modifiers(modifiers) -> void:
 	modifiers["base"] += 0.25 * level
