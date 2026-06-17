@@ -3,6 +3,7 @@ extends Ability
 func apply(ability_relay, applicant_data):
 	ability_relay.knockback_taken_modifiers.connect(knockback_taken_modifiers)
 	ability_relay.incoming_slow_modifiers.connect(incoming_slow_modifiers)
+	ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers)
 	super(ability_relay, applicant_data)
 
 func disapply(ability_relay):
@@ -17,3 +18,7 @@ func knockback_taken_modifiers(modifiers) -> void:
 
 func incoming_slow_modifiers(modifiers) -> void:
 	modifiers["multiplier"] *= 0
+
+func speed_scale_modifiers(modifiers) -> void:
+	if Engine.time_scale < 1.0 and Engine.time_scale > 0.0:
+		modifiers["multiplier"] /= Engine.time_scale

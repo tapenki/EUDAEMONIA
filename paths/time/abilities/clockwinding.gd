@@ -1,9 +1,12 @@
 extends Ability
 
+var overclock: bool
+
 func apply(ability_relay, applicant_data):
 	if not applicant_data.has("subscription") or applicant_data["subscription"] >= 3:
 		ability_relay.damage_taken.connect(damage_taken.bind(ability_relay))
 		ability_relay.speed_scale_modifiers.connect(speed_scale_modifiers.bind(ability_relay))
+		ability_relay.attack_rate_modifiers.connect(attack_rate_modifiers.bind(ability_relay))
 		applicant_data["time"] = 0.0
 	super(ability_relay, applicant_data)
 
@@ -13,6 +16,8 @@ func disapply(ability_relay):
 		ability_relay.damage_taken.disconnect(damage_taken)
 	if ability_relay.speed_scale_modifiers.is_connected(speed_scale_modifiers):
 		ability_relay.speed_scale_modifiers.disconnect(speed_scale_modifiers)
+	if ability_relay.attack_rate_modifiers.is_connected(attack_rate_modifiers):
+		ability_relay.attack_rate_modifiers.disconnect(attack_rate_modifiers)
 
 func _ready() -> void:
 	get_node("/root/Main").intermission.connect(intermission)
@@ -33,4 +38,8 @@ func damage_taken(_damage, ability_relay) -> void:
 
 func speed_scale_modifiers(modifiers, ability_relay) -> void:
 	if applicants.has(ability_relay) and applicants[ability_relay].has("time") and applicants[ability_relay]["time"] > 0:
+		modifiers["base"] += 0.5
+
+func attack_rate_modifiers(modifiers, ability_relay) -> void:
+	if overclock and applicants.has(ability_relay) and applicants[ability_relay].has("time") and applicants[ability_relay]["time"] > 0:
 		modifiers["base"] += 0.5

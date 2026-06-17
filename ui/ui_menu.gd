@@ -3,9 +3,7 @@ extends UICore
 var challenges: Array
 
 func _ready() -> void:
-	fade.color = Color(0,0,0)
-	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
+	transition(0.4)
 
 func _unhandled_input(event) -> void:
 	##is_action_just_pressed_by_event doesn't work with mouse buttons :(

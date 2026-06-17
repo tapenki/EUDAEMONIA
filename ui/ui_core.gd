@@ -7,14 +7,20 @@ class_name UICore extends Node
 @onready var settings_tab = $"Settings/General"
 @onready var settings_tab_button = $"Settings/TopRightButtons/ToGeneral"
 
-@onready var fade = $"TransitionFade"
-
 var keybind_setting: Node
 
-func _ready() -> void:
-	fade.color = Color(0,0,0)
+func transition(duration = 0.2):
+	var fade_instance = ColorRect.new()
+	fade_instance.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fade_instance.z_index = 25
+	fade_instance.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	fade_instance.color = Color(0,0,0)
+	add_child(fade_instance)
 	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
+	tween.tween_property(fade_instance, "color", Color(0,0,0,0), duration)
+
+func _ready() -> void:
+	transition(0.4)
 
 func _unhandled_input(event) -> void:
 	##is_action_just_pressed_by_event doesn't work with mouse buttons :(
@@ -34,9 +40,7 @@ func toggle_settings():
 		settings.visible = false
 	else:
 		settings.visible = true
-	fade.color = Color(0,0,0)
-	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
+	transition()
 	get_node("/root/Main").play_sound("Click")
 
 func toggle_pause(pause):

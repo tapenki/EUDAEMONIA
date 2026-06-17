@@ -142,24 +142,23 @@ requires = {
 }
 subject = "sink_the_time"
 
-[node name="Stasis" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
+[node name="Overclock" parent="Masteries" unique_id=852364366 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "clockwinding": 5
 }
-subject = "stasis"
+subject = "overclock"
 
-[node name="BorrowedTime" parent="Masteries" unique_id=1627324160 instance=ExtResource("7_1a0dx")]
+[node name="TimeDilation" parent="Masteries" unique_id=1627324160 instance=ExtResource("7_1a0dx")]
 layout_mode = 2
 accessible_texture_1 = ExtResource("2_hlo4x")
 accessible_texture_2 = ExtResource("8_s1m52")
 requires = {
 "prolong": 5
 }
-subject = "borrowed_time"
-extras = ["burn"]
+subject = "time_dilation"
 
 [node name="Rewind" type="TextureButton" parent="." unique_id=786159629]
 visible = false

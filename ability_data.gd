@@ -399,16 +399,16 @@ var ability_data = {
 		"script" : preload("res://paths/time/abilities/paradoxism.gd"),
 		"type" : "mastery"
 	},
-	"stasis" : {
-		"script" : preload("res://paths/time/abilities/stasis.gd"),
+	"overclock" : {
+		"script" : preload("res://paths/time/abilities/overclock.gd"),
 		"type" : "mastery"
 	},
 	"sink_the_time" : {
 		"script" : preload("res://paths/time/abilities/sink_the_time.gd"),
 		"type" : "mastery"
 	},
-	"borrowed_time" : {
-		"script" : preload("res://paths/time/abilities/borrowed_time.gd"),
+	"time_dilation" : {
+		"script" : preload("res://paths/time/abilities/time_dilation.gd"),
 		"type" : "mastery"
 	},
 	#endregion

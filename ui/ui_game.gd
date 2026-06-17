@@ -29,6 +29,8 @@ var challenges: Array
 @onready var game_menu_tab = $"GameMenu/Middle/Abilities"
 signal switch_game_menu_tab(tab)
 
+signal game_menu_toggle(toggle)
+
 func _ready() -> void:
 	var magic_picker = path_pickers.get_node("MagicPicker1")
 	for path in paths:
@@ -39,9 +41,7 @@ func _ready() -> void:
 	for ability in get_node("/root/Main/PlayerAbilityHandler").get_children():
 		affect(ability.name)
 		
-	fade.color = Color(0,0,0)
-	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
+	transition(0.4)
 	
 	switch_game_menu_tab.connect(
 		func(tab):
@@ -101,9 +101,8 @@ func toggle_game_menu():
 		hud.get_node("Tricks").visible = false
 		toggle_pause(true)
 	get_node("/root/Main").play_sound("Click")
-	fade.color = Color(0,0,0)
-	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.2)
+	transition()
+	game_menu_toggle.emit(game_menu.visible)
 
 func defeat():
 	if Config.config.get_value("gameplay", "auto_restart"):
@@ -135,9 +134,7 @@ func disaffect(ability: String):
 		reminder_instance.queue_free()
 
 func unlearn_all():
-	fade.color = Color(0,0,0)
-	var tween = create_tween()
-	tween.tween_property(fade, "color", Color(0,0,0,0), 0.4)
+	transition(0.4)
 	for entity in get_node("/root/Main/Entities").get_children():
 		if not entity is Player:
 			entity.ability_relay.freed.emit()

@@ -160,7 +160,7 @@ msgid "era_wince_title"
 msgstr "[outline_size=10]Challenge: Era Wince[/outline_size]"
 
 msgid "era_wince_description"
-msgstr "Time is [outline_size=10]x[1.3][/outline_size] faster."
+msgstr "[outline_size=10]x[1.3][/outline_size] time rate."
 
 msgid "atrophy_title"
 msgstr "[outline_size=10]Challenge: Atrophy[/outline_size]"
@@ -746,11 +746,11 @@ msgstr "[outline_color=#846742]Mastery: Paradoxism[/outline_color]"
 msgid "paradoxism_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Echo Step[/outline_color].[br][outline_size=10]Upon an echo taking damage:[/outline_size] it applied [outline_size=10]+[0.1xDAMAGETAKEN][/outline_size] doom to enemies within a [outline_size=10][150][/outline_size] radius."
 
-msgid "stasis_title"
-msgstr "[outline_color=#846742]Mastery: Stasis[/outline_color]"
+msgid "overclock_title"
+msgstr "[outline_color=#846742]Mastery: Overclock[/outline_color]"
 
-msgid "stasis_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You, your projectiles, and your summons can't be slowed or knocked back."
+msgid "overclock_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Clockwinding[/outline_color].[br]You have [outline_size=10]+[50]%[/outline_size] attack rate during [outline_color=#846742]Clockwinding[/outline_color]."
 
 msgid "sink_the_time_title"
 msgstr "[outline_color=#846742]Mastery: Sink the Time[/outline_color]"
@@ -758,11 +758,11 @@ msgstr "[outline_color=#846742]Mastery: Sink the Time[/outline_color]"
 msgid "sink_the_time_description"
 msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Event Horizon[/outline_color].[br]Projectile affected by [outline_color=#846742]Event Horizon[/outline_color] expire [outline_size=10]x[2][/outline_size] as fast."
 
-msgid "borrowed_time_title"
-msgstr "[outline_color=#846742]Mastery: Borrowed Time[/outline_color]"
+msgid "time_dilation_title"
+msgstr "[outline_color=#846742]Mastery: Time Dilation[/outline_color]"
 
-msgid "borrowed_time_description"
-msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Prolong[/outline_color].[br]Reduce damage taken to [outline_size=10]x[0.2][/outline_size].[br][outline_size=10]Upon taking reduced damage:[/outline_size] Apply [outline_size=10]+[DAMAGETAKEN][/outline_size] burn to yourself."
+msgid "time_dilation_description"
+msgstr "[outline_size=10]Requires:[/outline_size] Level [outline_size=10][5][/outline_size] [outline_color=#846742]Prolong[/outline_color].[br][outline_size=10]x[0.2][/outline_size] time rate while standing still."
 
 # spheres
 msgid "day_counter"

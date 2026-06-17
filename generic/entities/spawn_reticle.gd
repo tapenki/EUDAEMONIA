@@ -20,7 +20,13 @@ func _on_spawn_timer_timeout() -> void:
 	get_node("/root/Main").entity_manifestation.emit(entity)
 	for particles in particle_instances:
 		particles.self_death()
+		get_node("/root/Main/ParticleHandler").quick_particles("burst", 
+			preload("res://generic/particles/heptagram.png"),
+			particles.global_position,
+			particles.scale.x * 0.5,
+			12,
+			modulate)
 	queue_free()
 
-func _physics_process(_delta: float) -> void:
-	self_modulate = Color.WHITE * (1 - sin(Time.get_ticks_msec()*0.02) * 0.33)
+#func _physics_process(_delta: float) -> void:
+	#self_modulate = Color.WHITE * (1 - sin(Time.get_ticks_msec()*0.02) * 0.33)
