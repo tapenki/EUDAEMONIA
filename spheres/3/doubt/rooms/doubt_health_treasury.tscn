@@ -52,22 +52,22 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave2" unique_id=1233312891]
-position = Vector2(360, 360)
+position = Vector2(330, 330)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
 [node name="SpawnMold2" type="Node2D" parent="Waves/Wave2" unique_id=94657705]
-position = Vector2(540, 360)
+position = Vector2(570, 330)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
 [node name="SpawnMold3" type="Node2D" parent="Waves/Wave2" unique_id=620232239]
-position = Vector2(540, 540)
+position = Vector2(570, 570)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
 [node name="SpawnMold4" type="Node2D" parent="Waves/Wave2" unique_id=577214971]
-position = Vector2(360, 540)
+position = Vector2(330, 570)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
@@ -102,22 +102,22 @@ wait_time = 7.5
 one_shot = true
 
 [node name="SpawnMold1" type="Node2D" parent="Waves/Wave4" unique_id=522248873]
-position = Vector2(120, 450)
+position = Vector2(120, 120)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
 [node name="SpawnMold2" type="Node2D" parent="Waves/Wave4" unique_id=346970312]
-position = Vector2(450, 120)
+position = Vector2(780, 120)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
 [node name="SpawnMold3" type="Node2D" parent="Waves/Wave4" unique_id=1669212887]
-position = Vector2(780, 450)
+position = Vector2(780, 780)
 script = ExtResource("3_s35cg")
 entity = "mold"
 
 [node name="SpawnMold4" type="Node2D" parent="Waves/Wave4" unique_id=127341422]
-position = Vector2(450, 780)
+position = Vector2(120, 780)
 script = ExtResource("3_s35cg")
 entity = "mold"
 

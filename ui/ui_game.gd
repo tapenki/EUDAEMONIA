@@ -149,7 +149,7 @@ func unlearn_all():
 	for path_picker in path_pickers.get_children():
 		path_picker.queue_free()
 	paths.clear()
-	game_menu.get_node("UpgradePoints").update()
+	game_menu.get_node("UpgradePoints").update_points()
 	var path_picker_scene = preload("res://paths/ui/magic_picker.tscn")
 	var previous_picker = null
 	for i in 4:
