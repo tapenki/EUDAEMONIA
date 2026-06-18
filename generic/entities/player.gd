@@ -6,6 +6,10 @@ var attacking: bool
 func _ready() -> void:
 	super()
 	apply_palette(group, "primary")
+	get_node("/root/Main").intermission.connect(intermission)
+
+func intermission(_day: int) -> void:
+	attacking = false
 
 func _physics_process(_delta):
 	if not alive:

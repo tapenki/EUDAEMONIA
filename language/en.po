@@ -816,7 +816,7 @@ msgstr "[outline_size=10]Gate: Secret Passage[/outline_size]"
 msgid "secret_gate_description"
 msgstr "The way forward?"
 
-msgid "land_of_steps_title"
+msgid "steps_title"
 msgstr "Sphere [1]: Land of Steps"
 
 msgid "steps_entrance_gate_title"
@@ -837,7 +837,7 @@ msgstr "[outline_color=#0066dd]Affect: Knock[/outline_color]"
 msgid "knock_description"
 msgstr "[outline_size=10]Upon pressing {keybind}:[/outline_size] Spend a charge to release a shockwave that opens nearby doors. It has [outline_size=10]+[25][/outline_size] damage and applies knockback upon dealing damage.[br]Regain 1 charge upon harvesting nous."
 
-msgid "land_of_depths_title"
+msgid "depths_title"
 msgstr "Sphere [2]: Land of Depths"
 
 msgid "depths_entrance_gate_title"
@@ -858,7 +858,7 @@ msgstr "[outline_color=#00aa00]Weapon: Popgun[/outline_color]"
 msgid "popgun_description"
 msgstr "[outline_size=10]Once every [0.2] seconds:[/outline_size] Launch a bubble with [outline_size=10]+[5][/outline_size] damage."
 
-msgid "land_of_wonder_title"
+msgid "wonder_title"
 msgstr "Sphere [3]: Land of Wonder"
 
 msgid "wonder_entrance_gate_title"
@@ -879,7 +879,7 @@ msgstr "[outline_color=#00aa00]Weapon: Five of Stars[/outline_color]"
 msgid "five_of_stars_description"
 msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Manifest a ring of [outline_size=10][5][/outline_size] missiles with [outline_size=10]+[10][/outline_size] damage."
 
-msgid "land_of_doubt_title"
+msgid "doubt_title"
 msgstr "Sphere [3]: Land of Doubt"
 
 msgid "doubt_entrance_gate_title"
@@ -900,7 +900,7 @@ msgstr "[outline_color=#00aa00]Weapon: Mold Machine[/outline_color]"
 msgid "mold_machine_description"
 msgstr "[outline_size=10]Once every [0.35] seconds:[/outline_size] Launch a mold spore that has [outline_size=10]+[10][/outline_size] damage and can pass through walls."
 
-msgid "land_of_ruin_title"
+msgid "ruin_title"
 msgstr "Sphere [4]: Land of Ruin"
 
 msgid "ruin_entrance_gate_title"
@@ -927,7 +927,7 @@ msgstr "[outline_color=#00aa00]Weapon: Bombardier[/outline_color]"
 msgid "bombardier_description"
 msgstr "[outline_size=10]Once every [0.5] seconds:[/outline_size] Launch a bomb that has [outline_size=10]+[8][/outline_size] damage and explodes on contact."
 
-msgid "land_of_breath_title"
+msgid "breath_title"
 msgstr "Sphere [5]: Land of Breath"
 
 msgid "breath_entrance_gate_title"
@@ -948,7 +948,7 @@ msgstr "[outline_color=#00aa00]Weapon: Part the Earth[/outline_color]"
 msgid "part_the_earth_description"
 msgstr "[outline_size=10]Once every [1.2] seconds:[/outline_size] Manifest a line of [outline_size=10][5][/outline_size] thorns that have [outline_size=10]+[10][/outline_size] damage and [outline_size=10]+[1][/outline_size] pierce."
 
-msgid "land_of_steel_title"
+msgid "steel_title"
 msgstr "Sphere [5]: Land of Steel"
 
 msgid "steel_entrance_gate_title"
@@ -969,7 +969,7 @@ msgstr "[outline_color=#00aa00]Weapon: Hell Hammer[/outline_color]"
 msgid "hell_hammer_description"
 msgstr "[outline_size=10]Once every [1.2] seconds:[/outline_size] Create a shockwave that has [outline_size=10]+[20][/outline_size] damage and applies knockback upon dealing damage."
 
-msgid "land_of_light_title"
+msgid "light_title"
 msgstr "Sphere [6]: Land of Light"
 
 msgid "light_entrance_gate_title"
@@ -996,7 +996,7 @@ msgstr "[outline_color=#00aa00]Weapon: Sight Sickle[/outline_color]"
 msgid "sight_sickle_description"
 msgstr "[outline_size=10]Once every [0.7] seconds:[/outline_size] Swing a laser sickle with [outline_size=10]+[10][/outline_size] damage."
 
-msgid "land_of_night_title"
+msgid "night_title"
 msgstr "Sphere [6]: Land of Night"
 
 msgid "night_entrance_gate_title"
@@ -1028,6 +1028,9 @@ msgstr "Sphere [8]: His Throne"
 
 msgid "pandemonium_title"
 msgstr "Sphere [??]: Pandemonium"
+
+msgid "hell_title"
+msgstr "Sphere [-1]: Hell"
 
 # quotes
 

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bioioo38cm72l"]
+
+[ext_resource type="Texture2D" uid="uid://chdgfsg3ox3v2" path="res://spheres/-1/harvester.png" id="1_jwo30"]
+[ext_resource type="Script" uid="uid://cgti207h18rir" path="res://spheres/-1/harvester.gd" id="2_k4d16"]
+
+[sub_resource type="Curve" id="Curve_hvqru"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.7471181), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_udjv5"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_wwook"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.7471181), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_aq1jw"]
+offsets = PackedFloat32Array(0, 0.1, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.5019608, 1, 1, 1, 0)
+
+[node name="Harvester" type="CPUParticles2D" unique_id=1020073260]
+modulate = Color(1, 0, 0, 1)
+z_index = 5
+amount = 4
+texture = ExtResource("1_jwo30")
+local_coords = true
+draw_order = 1
+gravity = Vector2(0, 0)
+angular_velocity_min = 30.0
+angular_velocity_max = 40.0
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_hvqru")
+color_ramp = SubResource("Gradient_udjv5")
+script = ExtResource("2_k4d16")
+
+[node name="Trail" type="CPUParticles2D" parent="." unique_id=999483243]
+show_behind_parent = true
+amount = 12
+texture = ExtResource("1_jwo30")
+draw_order = 1
+gravity = Vector2(0, 0)
+angular_velocity_min = 30.0
+angular_velocity_max = 40.0
+angle_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_wwook")
+color_ramp = SubResource("Gradient_aq1jw")

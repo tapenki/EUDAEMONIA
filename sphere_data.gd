@@ -379,6 +379,11 @@ var room_data = {
 		"land" : "pandemonium",
 		"challenge" : true,
 	},
+	"hell_entrance_hall" : {
+		"scene" : preload("res://spheres/-1/hell/rooms/hell_entrance_hall.tscn"), 
+		"zoom_scale" : 0.9, 
+		"land" : "hell",
+	},
 	#endregion
 }
 

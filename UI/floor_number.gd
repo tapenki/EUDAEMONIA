@@ -8,12 +8,12 @@ func _ready() -> void:
 func update_floor():
 	if get_node("/root/Main").loop > 0:
 		self.text = "%s - %s - %s" % [
-			tr("land_of_"+SphereData.room_data[get_node("/root/Main").room].get("land")+"_title"),
+			tr(SphereData.room_data[get_node("/root/Main").room].get("land")+"_title"),
 			tr("day_counter") % get_node("/root/Main").day,
 			tr("loop_counter") % get_node("/root/Main").loop
 		]
 	else:
 		self.text = "%s - %s" % [
-			tr("land_of_"+SphereData.room_data[get_node("/root/Main").room].get("land")+"_title"),
+			tr(SphereData.room_data[get_node("/root/Main").room].get("land")+"_title"),
 			tr("day_counter") % get_node("/root/Main").day
 		]
